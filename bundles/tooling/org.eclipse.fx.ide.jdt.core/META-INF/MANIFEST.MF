@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.eclipse.fx.ide.jdt.core;singleton:=true
+Bundle-Version: 0.8.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.jdt.core;bundle-version="3.7.0",
+ org.eclipse.equinox.common;bundle-version="3.6.0",
+ org.eclipse.core.runtime;bundle-version="3.7.0",
+ org.eclipse.jdt.launching;bundle-version="3.6.1"
+Bundle-Activator: org.eclipse.fx.ide.jdt.core.internal.JavaFXCorePlugin
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.fx.ide.jdt.core,
+ org.eclipse.fx.ide.jdt.core.internal;x-friends:="org.eclipse.fx.ide.jdt.ui"
+Bundle-Vendor: %Bundle-Vendor
