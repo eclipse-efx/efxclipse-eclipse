@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="******************************************************************************&#xA;Copyright (c) 2012 BestSolution.at and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Martin Bluehweis&lt;martin.bluehweis@bestsolution.at> - initial API and implementation&#xA;******************************************************************************"
+    modelDirectory="/org.eclipse.fx.ide.jdt.ui/src" modelPluginID="org.eclipse.fx.ide.jdt.ui"
+    modelName="JavaFXAntTask" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" language="">
+  <foreignModel>JavaFXAntTask.ecore</foreignModel>
+  <genPackages prefix="AntTasks" basePackage="org.eclipse.fx.ide.jdt.ui.internal.editors.model"
+      disposableProviderFactory="true" ecorePackage="JavaFXAntTask.ecore#/">
+    <genClasses ecoreClass="JavaFXAntTask.ecore#//AntTask">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/deploy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/jar"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/signjar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//AntTask/buildDirectory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/manifestEntries"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//AntTask/cssToBin"/>
+    </genClasses>
+    <genClasses ecoreClass="JavaFXAntTask.ecore#//Deploy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/embedjnlp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/extension"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/includeDT"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/offlineAllowed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/placeholderref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/placeholderid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/updatemode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/width"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/platform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/preferences"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/application"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/template"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/callbacks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/nativePackage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/splashImage"/>
+    </genClasses>
+    <genClasses ecoreClass="JavaFXAntTask.ecore#//Jar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Jar/platform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Jar/fileset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Jar/application"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Jar/info"/>
+    </genClasses>
+    <genClasses ecoreClass="JavaFXAntTask.ecore#//SignJar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//SignJar/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//SignJar/keypass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//SignJar/keystore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//SignJar/storepass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//SignJar/storetype"/>
+    </genClasses>
+    <nestedGenPackages prefix="Parameters" disposableProviderFactory="true" ecorePackage="JavaFXAntTask.ecore#//parameters">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="JavaFXAntTask.ecore#//parameters/FileSetType">
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/FileSetType/auto"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/FileSetType/jar"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/FileSetType/jnlp"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/FileSetType/native"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/FileSetType/icon"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="JavaFXAntTask.ecore#//parameters/IconType">
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/IconType/default"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/IconType/disabled"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/IconType/rollover"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/IconType/selected"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/IconType/shortcut"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="JavaFXAntTask.ecore#//parameters/SplashMode">
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/SplashMode/any"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/SplashMode/webstart"/>
+      </genEnums>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/FileSet">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/FileSet/arch"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/FileSet/excludes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/FileSet/includes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/FileSet/os"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/FileSet/requiredfor"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/FileSet/type"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Platform">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Platform/refid"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Platform/javafx"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Platform/j2se"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Platform/jVmArgs"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Platform/properties"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/JVmArg">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/JVmArg/value"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Property">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Property/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Property/value"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Preferences">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Preferences/install"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Preferences/menu"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Preferences/refid"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Preferences/shortcut"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Application">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/fallbackclass"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/mainclass"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/preloaderclass"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/refid"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/version"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Application/toolkit"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Application/arguments"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Application/htmlParams"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Application/params"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Argument"/>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/HtmlParam">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/HtmlParam/escape"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/HtmlParam/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/HtmlParam/value"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Param">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Param/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Param/value"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Permissions">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Permissions/cachecertificates"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Permissions/elevated"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Template">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Template/file"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Template/toFile"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Callback">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Callback/refid"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Callback/callbacks"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Info">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Info/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Info/title"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Info/vendor"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Info/icon"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//parameters/Info/splash"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Icon">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Icon/depth"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Icon/href"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Icon/height"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Icon/kind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Icon/width"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Splash">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Splash/href"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Splash/mode"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

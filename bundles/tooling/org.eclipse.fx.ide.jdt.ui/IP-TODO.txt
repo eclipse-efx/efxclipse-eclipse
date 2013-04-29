@@ -1,0 +1,24 @@
+famfamfam (Creative commons 2.5):
+---------------------------------
+icons/application_lightning.png
+icons/page_white_compressed.png
+
+
+Eclipse JDT:
+------------
+icons/alphab_sort_co.gif
+icons/collapseall.gif
+icons/default_co.gif
+icons/discovery.gif
+icons/exportAnt_co.gif
+icons/exportrunnablejar_wiz.gif
+icons/file_obj.gif
+icons/ftr_jar_obj.gif
+icons/hierarchicalLayout.gif
+icons/history_working_set_obj.gif
+icons/library_obj.gif
+icons/newclass_wiz.gif
+icons/toggle_breadcrumb.gif
+
+icons/wizban/newclass_wiz.png
+icons/wizban/xhtml_wiz.png

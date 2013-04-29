@@ -1,0 +1,71 @@
+<p>Java FX application deployment properties</p>
+
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<colgroup><col width="*">
+<col width="*">
+</colgroup><thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom">Field</th>
+<th align="left" valign="bottom">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td><p>Applet Width</p></td>
+<td><p>Width of the application scene, for embedding applications into a web page.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Applet Height</p></td>
+<td><p>Height of the application scene, for embedding applications into a web page.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Embed JNLP</p></td>
+<td><p>If true, embed the JNLP descriptor into the web page. Reduces number of network connections to be made on startup and helps to improve startup time.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Treat files as extensions</p></td>
+<td><p>Treat the files named in srcfiles as extensions. If present, only a portion of the deployment descriptor is generated, and the HTML file is not generated.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Include deployment toolkit</p></td>
+<td><p>If set to true, files related to the Deployment Toolkit will be copied to a web-files subdirectory of the directory specified in outdir. This setting is useful for offline development but is not advised for production.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Offline allowed</p></td>
+<td><p>If the value is true, the cached application can operate even if the client system is disconnected from the network.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Placeholder Ref.</p></td>
+<td><p>Placeholder in the web page where the application will be embedded. This is expected to be JavaScript DOM object.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Placeholder ID</p></td>
+<td><p>Used with callbacks. The ID of the placeholder in the web page where application will be embedded. The JavaScript function <code>document.getElementById()</code> is used to resolve it.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>HTML Template</p></td>
+<td><p>Input template file.</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Template Output File</p></td>
+<td><p>Output file (after preprocessing).</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Webstart Splash</p></td>
+<td><p>Passes the location of the image to be used as a splash screen. Currently custom splash images can only be passed to Web Start applications, and use of this parameter has no impact on standalone applications or applications embedded into web pages.</p><p>Supported deployment mode values are: <b>any</b> (but currently only functional in Web Start mode) or <b>webstart</b>
+</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Webstart Icons</p></td>
+<td><p>Passes an icon to the <code><fx:deploy></code> task, other than a splash screen image.</p><p>Note that in JavaFX 2.2, <code><fx:icon></code> is not used for self-contained applications</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Additional META-INF files</p></td>
+<td><p>These files will be added to the META-INF folder</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Fonts</p></td>
+<td><p>These fonts will be added to the META-INF folder</p></td>
+</tr>
+</tbody>
+</table>

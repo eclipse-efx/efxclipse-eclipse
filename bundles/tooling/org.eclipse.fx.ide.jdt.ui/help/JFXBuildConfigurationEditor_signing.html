@@ -1,0 +1,37 @@
+Digitally signs an application JAR file with a certificate.
+<p>Signs the JAR file as BLOB. In other words, instead of every entry being signed separately, the JAR file is signed as a single binary object.</p>
+<p>This is a new signing method in JavaFX. For traditional signing, the standard Ant <code>signjar</code> task should be used.</p>
+
+
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<colgroup><col width="*">
+<col width="*">
+</colgroup><thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom">Field</th>
+<th align="left" valign="bottom">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td><p>Alias</p></td>
+<td><p>The alias for the key</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Key-Password</p></td>
+<td><p>Password for the private key</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Keystore</p></td>
+<td><p>Keystore file name</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Store-Password</p></td>
+<td><p>Password to check integrity of the keystore or unlock the keystore</p></td>
+</tr>
+<tr align="left" valign="top">
+<td><p>Storetype</p></td>
+<td><p>Keystore type</p></td>
+</tr>
+</tbody>
+</table>

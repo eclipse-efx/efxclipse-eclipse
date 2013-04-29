@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts>
+   <context id="JFXBuildConfigurationEditor_overview">
+      <description> Java FX Build Configuration Editor - Overview</description>
+      <topic href="help/JFXBuildConfigurationEditor_overview.html" label="FX application overview" />
+   </context>
+   <context id="JFXBuildConfigurationEditor_deploy">
+      <description> Java FX Build Configuration Editor - Deploy</description>
+      <topic href="help/JFXBuildConfigurationEditor_deploy.html" label="FX application deployment settings" />
+   </context>
+   <context id="JFXBuildConfigurationEditor_signing">
+      <description> Digitally signs an application JAR file with a certificate.</description>
+      <topic href="help/JFXBuildConfigurationEditor_signing.html" label="Sign FX application jar" />
+   </context>
+</contexts>

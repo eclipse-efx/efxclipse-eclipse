@@ -25,6 +25,7 @@
 		
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.core</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.ui</module>
 	</modules>
 
 	<repositories>
@@ -33,12 +34,12 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/indigo</url>
 		</repository>
-		<!--  repository>
+		<repository>
 			<id>xtext</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
 		</repository>	
-		
+		<!-- 
 		<repository>
 			<id>e4</id>
 			<layout>p2</layout>
