@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.*;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Application;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ApplicationToolkitType;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Argument;
@@ -57,7 +58,7 @@ public class ParametersFactoryImpl extends EFactoryImpl implements ParametersFac
 	 */
 	public static ParametersFactory init() {
 		try {
-			ParametersFactory theParametersFactory = (ParametersFactory)EPackage.Registry.INSTANCE.getEFactory("http://at.bestsolution.efxclipse.tooling.jdt/parameters/1.0"); 
+			ParametersFactory theParametersFactory = (ParametersFactory)EPackage.Registry.INSTANCE.getEFactory("http://org.eclipse.fx.ide.jdt/parameters/1.0"); 
 			if (theParametersFactory != null) {
 				return theParametersFactory;
 			}

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.*;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksFactory;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage;
@@ -42,7 +43,7 @@ public class AntTasksFactoryImpl extends EFactoryImpl implements AntTasksFactory
 	 */
 	public static AntTasksFactory init() {
 		try {
-			AntTasksFactory theAntTasksFactory = (AntTasksFactory)EPackage.Registry.INSTANCE.getEFactory("http://at.bestsolution.efxclipse.tooling.jdt/1.0"); 
+			AntTasksFactory theAntTasksFactory = (AntTasksFactory)EPackage.Registry.INSTANCE.getEFactory("http://org.eclipse.fx.ide.jdt/1.0"); 
 			if (theAntTasksFactory != null) {
 				return theAntTasksFactory;
 			}

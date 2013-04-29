@@ -48,7 +48,7 @@ public interface AntTasksPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://at.bestsolution.efxclipse.tooling.jdt/1.0";
+	String eNS_URI = "http://org.eclipse.fx.ide.jdt/1.0";
 
 	/**
 	 * The package namespace name.

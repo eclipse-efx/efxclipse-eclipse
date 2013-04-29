@@ -15,6 +15,7 @@ package org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.*;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy;

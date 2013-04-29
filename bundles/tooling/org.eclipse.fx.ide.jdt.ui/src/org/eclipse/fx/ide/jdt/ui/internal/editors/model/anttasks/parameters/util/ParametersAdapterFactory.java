@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.*;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Application;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Argument;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Callback;
