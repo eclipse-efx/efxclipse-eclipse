@@ -1,0 +1,26 @@
+Eclipse JDT (EPL):
+------------------
+icons/class_hi.gif
+icons/class_obj.gif
+icons/classf_generate.gif
+icons/correction_cast.gif
+icons/correction_change.gif
+icons/cu_obj.gif
+icons/enum_obj.gif
+icons/field_public_obj.gif
+icons/imp_obj.gif
+icons/impc_obj.gif
+icons/inclusion_filter_attrib.gif
+icons/internalize.gif
+icons/jar_desc_obj.gif
+icons/jtypeassist_co.gif
+icons/methdef_obj.gif
+icons/methpri_obj.gif
+icons/methpro_obj.gif
+icons/methpub_obj.gif
+icons/no_breakpoint.gif
+icons/occ_write.gif
+icons/packd_obj.gif
+icons/statmethpub_obj.gif
+icons/template_obj.gif
+icons/types.gif

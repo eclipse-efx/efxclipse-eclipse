@@ -24,6 +24,7 @@
 	<modules>
 		
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.core</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.ui</module>
 	</modules>
 
 	<repositories>
