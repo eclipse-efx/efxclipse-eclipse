@@ -42,6 +42,11 @@
 			<id>xtext</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
+		</repository>
+		<repository>
+			<id>efx-runtime</id>
+			<layout>p2</layout>
+			<url>file:///Users/tomschindl/git/efxclipse/releng/org.eclipse.fx.updatesite/target/site</url>
 		</repository>	
 		<!-- 
 		<repository>

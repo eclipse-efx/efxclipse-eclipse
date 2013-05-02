@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<name>e(fx)clipse - Tooling - CSS UI</name>
-	<groupId>at.bestsolution.efxclipse.tooling</groupId>
-	<artifactId>at.bestsolution.efxclipse.tooling.css.ui</artifactId>
+	<name>e(fx)clipse - IDE - CSS UI</name>
+	<groupId>org.eclipse.fx.ide</groupId>
+	<artifactId>org.eclipse.fx.ide.css.ui</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
 	<parent>
-		<groupId>at.bestsolution</groupId>
-		<artifactId>efxclipse</artifactId>
-		<relativePath>../at.bestsolution.efxclipse.releng/pom.xml</relativePath>
+		<groupId>org.eclipse.fx.ide</groupId>
+		<artifactId>releng</artifactId>
+		<relativePath>../../../releng/org.eclipse.fx.ide.releng/pom.xml</relativePath>
 		<version>0.8.1-SNAPSHOT</version>
 	</parent>
 
