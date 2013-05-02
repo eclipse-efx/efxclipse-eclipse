@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.bestsolution.at/efxclipse/tooling/css/CssDsl" 
+       class = "org.eclipse.fx.ide.css.cssDsl.CssDslPackage"
+       genModel = "at/bestsolution/efxclipse/tooling/css/CssDsl.genmodel" /> 
+	
+  </extension>
+
+
+
+
+
+</plugin>

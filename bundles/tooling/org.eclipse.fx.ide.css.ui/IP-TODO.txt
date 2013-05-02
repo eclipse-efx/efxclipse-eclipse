@@ -1,0 +1,8 @@
+FamFamFam:
+----------
+icons/page_white_swoosh.png
+
+Self-Created:
+-------------
+icons/property_16x16.png
+icons/selector_16x16.png
