@@ -22,6 +22,7 @@ import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
 import org.eclipse.fx.ide.css.cssDsl.ClassSelector
+import org.eclipse.fx.ide.css.CssDslInjectorProvider
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(CssDslInjectorProvider))

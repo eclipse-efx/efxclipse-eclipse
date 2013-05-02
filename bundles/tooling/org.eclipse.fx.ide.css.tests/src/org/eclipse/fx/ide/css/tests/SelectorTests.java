@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.css.tests;
 
+import org.eclipse.fx.ide.css.CssDslInjectorProvider;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.junit.Test;
