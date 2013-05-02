@@ -2,12 +2,12 @@
  */
 package org.eclipse.fx.ide.css.cssDsl.impl;
 
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.fx.ide.css.cssDsl.ColorTok;
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 

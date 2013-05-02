@@ -27,4 +27,5 @@ Import-Package: org.apache.commons.logging,
  org.junit.runners;version="4.5.0",
  org.junit.runners.model;version="4.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.eclipse.fx.ide.css.tests
+Export-Package: org.eclipse.fx.ide.css.tests,
+ org.eclipse.fx.ide.css

@@ -3,12 +3,12 @@
  */
 package org.eclipse.fx.ide.css.ui;
 
-import org.eclipse.fx.ide.css.ui.internal.CssDslActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import org.eclipse.fx.ide.css.ui.internal.CssDslActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -23,7 +23,7 @@ public class CssDslExecutableExtensionFactory extends AbstractGuiceAwareExecutab
 	
 	@Override
 	protected Injector getInjector() {
-		return CssDslActivator.getInstance().getInjector(CssDslActivator.AT_BESTSOLUTION_EFXCLIPSE_TOOLING_CSS_CSSDSL);
+		return CssDslActivator.getInstance().getInjector(CssDslActivator.ORG_ECLIPSE_FX_IDE_CSS_CSSDSL);
 	}
 	
 }

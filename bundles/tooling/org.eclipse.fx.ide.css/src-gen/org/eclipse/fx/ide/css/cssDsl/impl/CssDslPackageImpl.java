@@ -2,13 +2,13 @@
  */
 package org.eclipse.fx.ide.css.cssDsl.impl;
 
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.fx.ide.css.cssDsl.AttributeSelector;
 import org.eclipse.fx.ide.css.cssDsl.ClassSelector;
 import org.eclipse.fx.ide.css.cssDsl.ColorTok;

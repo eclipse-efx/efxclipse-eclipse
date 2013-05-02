@@ -40,7 +40,7 @@ public class CssHoverProvider extends DefaultEObjectHoverProvider {
 	private CssExt ext;
 	
 	@Inject(optional = true)
-	@Named("at.bestsolution.efxclipse.tooling.css.ui.styleSheetFileName")
+	@Named("org.eclipse.fx.ide.css.ui.styleSheetFileName")
 	private String styleSheetFileName = "/CssDocsStyleSheet.css"; //$NON-NLS-1$
 	
 	// DBG
@@ -67,7 +67,7 @@ public class CssHoverProvider extends DefaultEObjectHoverProvider {
 	 * @return the style sheet, or <code>null</code> if unable to load
 	 */
 	protected String loadStyleSheet() {
-		URL styleSheetURL = Platform.getBundle("at.bestsolution.efxclipse.tooling.css.ui").getEntry(styleSheetFileName); 
+		URL styleSheetURL = Platform.getBundle("org.eclipse.fx.ide.css.ui").getEntry(styleSheetFileName); 
 		if (styleSheetURL != null) {
 			BufferedReader reader = null;
 			try {

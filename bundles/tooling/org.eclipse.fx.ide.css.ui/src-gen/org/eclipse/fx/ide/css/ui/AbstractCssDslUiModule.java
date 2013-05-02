@@ -8,7 +8,7 @@ import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {at.bestsolution.efxclipse.tooling.css.ui.CssDslUiModule}
+ * Manual modifications go to {org.eclipse.fx.ide.css.ui.CssDslUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractCssDslUiModule extends DefaultUiModule {

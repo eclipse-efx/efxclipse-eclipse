@@ -2,10 +2,10 @@
  */
 package org.eclipse.fx.ide.css.cssDsl.impl;
 
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 import org.eclipse.fx.ide.css.cssDsl.CssSelector;
 

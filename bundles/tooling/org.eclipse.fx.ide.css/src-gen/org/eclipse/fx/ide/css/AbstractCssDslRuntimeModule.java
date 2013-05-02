@@ -12,7 +12,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {at.bestsolution.efxclipse.tooling.css.CssDslRuntimeModule}
+ * Manual modifications go to {org.eclipse.fx.ide.css.CssDslRuntimeModule}
  */
  @SuppressWarnings("all")
 public abstract class AbstractCssDslRuntimeModule extends DefaultRuntimeModule {
@@ -21,12 +21,12 @@ public abstract class AbstractCssDslRuntimeModule extends DefaultRuntimeModule {
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "at/bestsolution/efxclipse/tooling/css/CssDsl.properties");
+		properties = tryBindProperties(binder, "org/eclipse/fx/ide/css/CssDsl.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("at.bestsolution.efxclipse.tooling.css.CssDsl");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.eclipse.fx.ide.css.CssDsl");
 	}
 	
 	public void configureFileExtensions(Binder binder) {

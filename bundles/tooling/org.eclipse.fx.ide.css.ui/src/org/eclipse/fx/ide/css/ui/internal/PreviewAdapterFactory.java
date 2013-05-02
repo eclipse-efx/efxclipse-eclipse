@@ -23,7 +23,7 @@ public class PreviewAdapterFactory implements IAdapterFactory {
 	public Object getAdapter(Object adaptableObject, Class adapterType) {
 		if(adapterType == IFXPreviewAdapter.class && adaptableObject instanceof XtextEditor ) {
 			final XtextEditor editor = (XtextEditor) adaptableObject;
-			if( "at.bestsolution.efxclipse.tooling.css.CssDsl".equals(editor.getLanguageName()) ) {
+			if( "org.eclipse.fx.ide.css.CssDsl".equals(editor.getLanguageName()) ) {
 				return new IFXPreviewAdapter() {
 					
 					@Override

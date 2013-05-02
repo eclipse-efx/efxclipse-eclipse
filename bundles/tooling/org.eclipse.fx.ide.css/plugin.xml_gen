@@ -5,7 +5,7 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://www.bestsolution.at/efxclipse/tooling/css/CssDsl" 
+       uri = "http://www.eclipse.org/efxclipse/ide/css/CssDsl" 
        class = "org.eclipse.fx.ide.css.cssDsl.CssDslPackage"
        genModel = "org/eclipse/fx/ide/css/CssDsl.genmodel" /> 
 	

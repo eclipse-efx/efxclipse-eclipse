@@ -38,7 +38,7 @@ public interface CssDslPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  String eNS_URI = "http://www.bestsolution.at/efxclipse/tooling/css/CssDsl";
+  String eNS_URI = "http://www.eclipse.org/efxclipse/ide/css/CssDsl";
 
   /**
    * The package namespace name.

@@ -4,40 +4,12 @@ package org.eclipse.fx.ide.css.cssDsl.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.fx.ide.css.cssDsl.AttributeSelector;
-import org.eclipse.fx.ide.css.cssDsl.ClassSelector;
-import org.eclipse.fx.ide.css.cssDsl.ColorTok;
-import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
-import org.eclipse.fx.ide.css.cssDsl.CssSelector;
-import org.eclipse.fx.ide.css.cssDsl.CssTok;
-import org.eclipse.fx.ide.css.cssDsl.ElementSelector;
-import org.eclipse.fx.ide.css.cssDsl.FuncTok;
-import org.eclipse.fx.ide.css.cssDsl.IdSelector;
-import org.eclipse.fx.ide.css.cssDsl.IdentifierTok;
-import org.eclipse.fx.ide.css.cssDsl.NumberTok;
-import org.eclipse.fx.ide.css.cssDsl.PseudoClass;
-import org.eclipse.fx.ide.css.cssDsl.PseudoClassFunction;
-import org.eclipse.fx.ide.css.cssDsl.PseudoClassName;
-import org.eclipse.fx.ide.css.cssDsl.PseudoClassOrFunc;
-import org.eclipse.fx.ide.css.cssDsl.SimpleSelectorForNegation;
-import org.eclipse.fx.ide.css.cssDsl.StringTok;
-import org.eclipse.fx.ide.css.cssDsl.SymbolTok;
-import org.eclipse.fx.ide.css.cssDsl.URLType;
-import org.eclipse.fx.ide.css.cssDsl.UniversalSelector;
-import org.eclipse.fx.ide.css.cssDsl.UrlTok;
-import org.eclipse.fx.ide.css.cssDsl.WSTok;
-import org.eclipse.fx.ide.css.cssDsl.charset;
-import org.eclipse.fx.ide.css.cssDsl.css_declaration;
-import org.eclipse.fx.ide.css.cssDsl.css_property;
-import org.eclipse.fx.ide.css.cssDsl.importExpression;
-import org.eclipse.fx.ide.css.cssDsl.media;
-import org.eclipse.fx.ide.css.cssDsl.page;
-import org.eclipse.fx.ide.css.cssDsl.ruleset;
-import org.eclipse.fx.ide.css.cssDsl.selector;
-import org.eclipse.fx.ide.css.cssDsl.simple_selector;
-import org.eclipse.fx.ide.css.cssDsl.stylesheet;
+
+import org.eclipse.fx.ide.css.cssDsl.*;
 
 /**
  * <!-- begin-user-doc -->
