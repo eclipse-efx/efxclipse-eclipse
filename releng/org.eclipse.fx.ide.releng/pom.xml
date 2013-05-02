@@ -26,6 +26,10 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.core</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.ui</module>
+		
+		<!-- CSS Tooling -->
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css.ui</module>
 	</modules>
 
 	<repositories>
