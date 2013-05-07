@@ -1,0 +1,34 @@
+blockquote small:before {
+	content:'\61 \62 \63 \00A0 \a010';
+}
+
+.onehex {
+	content:'\0';
+	content:'\a';
+	content:'\b';
+}
+
+.twohex {
+	content:'\01';
+	content:'\ab';
+}
+
+.threehex {
+	content:'\101';
+	content:'\abc'
+}
+
+.fourhex {
+	content:'Down\002193Arrow';
+	content:'\abcd'
+}
+
+.fivehex {
+	content:'\10231';
+	content:'\abcde'  
+}
+
+.sixhex {
+	content:'\102221'; 
+	content:'\10cdef'  
+}

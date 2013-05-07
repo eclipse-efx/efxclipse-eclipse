@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider">
+   <implementation class="org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider"/>
+   <service>
+      <provide interface="org.eclipse.fx.ide.css.extapi.CssExt"/>
+   </service>
+   <reference bind="bindCssExtProposalContributor" cardinality="0..n" interface="org.eclipse.fx.ide.css.cssext.proposal.CssExtProposalContributor" name="CssExtProposalContributor" policy="dynamic" unbind="unbindCssExtProposalContributor"/>
+</scr:component>

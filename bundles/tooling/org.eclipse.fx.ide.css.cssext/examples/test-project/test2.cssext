@@ -1,0 +1,20 @@
+package test2 {
+	transform = lala | lulu;
+	
+	/*
+	 * multi line comment
+	 */
+	ElementDeclaration {
+		// Property Declaration
+		-moz-transform <transform>;
+	}
+	 
+	/**
+	 * doku
+	 */
+	ElementDeclarationWithDoku {
+		/** doku */
+		-moz-transform <transform>;
+	}
+	
+}
