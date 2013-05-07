@@ -290,7 +290,7 @@ public class CssExtDocParser {
 	}
 	
 	private void printImage(StringBuffer out, String image) {
-		URL bundleUrl = Platform.getBundle("at.bestsolution.efxclipse.tooling.css.ui").getEntry("icons/" + (String) image);
+		URL bundleUrl = Platform.getBundle("org.eclipse.fx.ide.css.ui").getEntry("icons/" + (String) image);
 		 URL fileUrl = null;
 	      try {
 	        fileUrl = FileLocator.toFileURL(bundleUrl);

@@ -64,7 +64,7 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	private enum FixedExtensions {
-		JavaFX2(URI.createPlatformPluginURI("/at.bestsolution.efxclipse.tooling.css.jfx/OSGI-INF/jfx2.cssext", true));
+		JavaFX2(URI.createPlatformPluginURI("/org.eclipse.fx.ide.css.jfx/OSGI-INF/jfx2.cssext", true));
 		public final URI uri;
 		private FixedExtensions(URI uri) {
 			this.uri = uri;
@@ -97,7 +97,7 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	/* (non-Javadoc)
-	 * @see at.bestsolution.efxclipse.tooling.css.cssext.ui.ICssExtManager#findPropertyByName(java.lang.String)
+	 * @see org.eclipse.fx.ide.css.cssext.ui.ICssExtManager#findPropertyByName(java.lang.String)
 	 */
 	@Override
 	public PropertyDefinition findPropertyByName(final String propertyName) {
