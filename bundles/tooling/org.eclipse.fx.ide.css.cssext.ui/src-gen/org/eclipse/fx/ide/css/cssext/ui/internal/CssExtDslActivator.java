@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class CssExtDslActivator extends AbstractUIPlugin {
 	
-	public static final String AT_BESTSOLUTION_EFXCLIPSE_TOOLING_CSS_CSSEXT_CSSEXTDSL = "at.bestsolution.efxclipse.tooling.css.cssext.CssExtDsl";
+	public static final String ORG_ECLIPSE_FX_IDE_CSS_CSSEXT_CSSEXTDSL = "org.eclipse.fx.ide.css.cssext.CssExtDsl";
 	
 	private static final Logger logger = Logger.getLogger(CssExtDslActivator.class);
 	
@@ -73,7 +73,7 @@ public class CssExtDslActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (AT_BESTSOLUTION_EFXCLIPSE_TOOLING_CSS_CSSEXT_CSSEXTDSL.equals(grammar)) {
+		if (ORG_ECLIPSE_FX_IDE_CSS_CSSEXT_CSSEXTDSL.equals(grammar)) {
 			return new org.eclipse.fx.ide.css.cssext.CssExtDslRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class CssExtDslActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (AT_BESTSOLUTION_EFXCLIPSE_TOOLING_CSS_CSSEXT_CSSEXTDSL.equals(grammar)) {
+		if (ORG_ECLIPSE_FX_IDE_CSS_CSSEXT_CSSEXTDSL.equals(grammar)) {
 			return new org.eclipse.fx.ide.css.cssext.ui.CssExtDslUiModule(this);
 		}
 		

@@ -10,7 +10,7 @@ import com.google.inject.Injector;
 public class CssExtDslUiInjectorProvider implements IInjectorProvider {
 	
 	public Injector getInjector() {
-		return org.eclipse.fx.ide.css.cssext.ui.internal.CssExtDslActivator.getInstance().getInjector("at.bestsolution.efxclipse.tooling.css.cssext.CssExtDsl");
+		return org.eclipse.fx.ide.css.cssext.ui.internal.CssExtDslActivator.getInstance().getInjector("org.eclipse.fx.ide.css.cssext.CssExtDsl");
 	}
 	
 }

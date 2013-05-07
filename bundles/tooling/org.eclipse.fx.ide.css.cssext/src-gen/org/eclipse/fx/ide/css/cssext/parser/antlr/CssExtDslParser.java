@@ -5,8 +5,8 @@ package org.eclipse.fx.ide.css.cssext.parser.antlr;
 
 import com.google.inject.Inject;
 
-import org.eclipse.fx.ide.css.cssext.services.CssExtDslGrammarAccess;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.fx.ide.css.cssext.services.CssExtDslGrammarAccess;
 
 public class CssExtDslParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

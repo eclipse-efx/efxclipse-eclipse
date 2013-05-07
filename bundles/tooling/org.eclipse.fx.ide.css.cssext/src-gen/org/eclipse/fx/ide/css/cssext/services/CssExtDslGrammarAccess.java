@@ -1541,7 +1541,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("at.bestsolution.efxclipse.tooling.css.cssext.CssExtDsl".equals(grammar.getName())) {
+			if ("org.eclipse.fx.ide.css.cssext.CssExtDsl".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

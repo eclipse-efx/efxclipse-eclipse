@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext">
-  <xtext:Grammar name="at.bestsolution.efxclipse.tooling.css.cssext.CssExtDsl" usedGrammars="/1">
+  <xtext:Grammar name="org.eclipse.fx.ide.css.cssext.CssExtDsl" usedGrammars="/1">
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
       <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="cssExtDsl">
-      <ePackage href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#/"/>
+      <ePackage href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#/"/>
     </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="CssExtension">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CssExtension"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CssExtension"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="imports" operator="+=">
@@ -112,7 +112,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Import">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//Import"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//Import"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="import"/>
@@ -153,7 +153,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="PackageDefinition">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//PackageDefinition"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//PackageDefinition"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -183,7 +183,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Doku">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//Doku"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//Doku"/>
       </type>
       <alternatives xsi:type="xtext:Assignment" feature="content" operator="=">
         <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
@@ -191,19 +191,19 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSBaseType" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSType" definesHiddenTokens="true" hiddenTokens="/0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSType"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSType"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRangedIntType"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRangedIntType"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="?">
@@ -232,7 +232,7 @@
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRangedDoubleType"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRangedDoubleType"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="?">
@@ -296,12 +296,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ElementDefinition">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//ElementDefinition"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//ElementDefinition"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//ElementDefinition"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//ElementDefinition"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="doku" operator="=">
@@ -315,7 +315,7 @@
           <elements xsi:type="xtext:Assignment" feature="super" operator="+=">
             <terminal xsi:type="xtext:CrossReference">
               <type metamodel="/0/@metamodelDeclarations.1">
-                <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//ElementDefinition"/>
+                <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//ElementDefinition"/>
               </type>
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
             </terminal>
@@ -325,7 +325,7 @@
             <elements xsi:type="xtext:Assignment" feature="super" operator="+=">
               <terminal xsi:type="xtext:CrossReference">
                 <type metamodel="/0/@metamodelDeclarations.1">
-                  <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//ElementDefinition"/>
+                  <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//ElementDefinition"/>
                 </type>
                 <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
               </terminal>
@@ -355,12 +355,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="PropertyDefinition">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//Definition"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//Definition"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//PropertyDefinition"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//PropertyDefinition"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="doku" operator="=">
@@ -383,12 +383,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="PseudoClassDefinition">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//PseudoClassDefinition"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//PseudoClassDefinition"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//PseudoClassDefinition"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//PseudoClassDefinition"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="doku" operator="=">
@@ -401,7 +401,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleRef" definesHiddenTokens="true">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleRef"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleRef"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -414,7 +414,7 @@
         <elements xsi:type="xtext:Assignment" feature="ref" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//Definition"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//Definition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
           </terminal>
@@ -424,12 +424,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleDefinition" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//Definition"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//Definition"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleDefinition"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleDefinition"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="doku" operator="=">
@@ -452,12 +452,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleFunc" definesHiddenTokens="true" hiddenTokens="/0/@rules.4 /0/@rules.5">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleFunc"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleFunc"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
@@ -473,14 +473,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleOr" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.4 /0/@rules.5">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="ors" operator="+=">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleOr"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleOr"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="+">
@@ -494,14 +494,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleXor" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="xors" operator="+=">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleXor"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleXor"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="+">
@@ -515,14 +515,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleConcat" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="conc" operator="+=">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleConcat"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleConcat"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" cardinality="+" feature="conc" operator="+=">
@@ -533,14 +533,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleConcatWithoutSpace" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="conc" operator="+=">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleConcatWithoutSpace"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleConcatWithoutSpace"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="+">
@@ -554,14 +554,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRulePostfix" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.26"/>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Action" feature="rule" operator="=">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRulePostfix"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRulePostfix"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="cardinality" operator="=">
@@ -576,12 +576,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleBracket" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleBracket"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleBracket"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Keyword" value="["/>
@@ -593,7 +593,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRulePrimary" definesHiddenTokens="true" hiddenTokens="/0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
@@ -605,7 +605,7 @@
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSNumLiteral"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSNumLiteral"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="value" operator="=">
@@ -616,12 +616,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleRegex" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /0/@rules.5 /0/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleRegex"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleRegex"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="regex" operator="=">
@@ -631,12 +631,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleLiteral">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleLiteral"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleLiteral"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -652,12 +652,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSRuleSymbol">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRule"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRule"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSRuleSymbol"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSRuleSymbol"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -676,13 +676,13 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CSSDefaultValue">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSDefaultValue"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSDefaultValue"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//CSSDefaultValue"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//CSSDefaultValue"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="val" operator="=">
@@ -702,12 +702,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="SubstructureSelector" definesHiddenTokens="true">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//SubstructureSelector"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//SubstructureSelector"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//SubstructureSelector"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//SubstructureSelector"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="selectorName" operator="=">
@@ -724,7 +724,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Substructure">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//Substructure"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//Substructure"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="doku" operator="=">
@@ -743,7 +743,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="SubstructureStyleclass">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//SubstructureStyleclass"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//SubstructureStyleclass"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="doku" operator="=">
@@ -752,7 +752,7 @@
         <elements xsi:type="xtext:Assignment" feature="element" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl#//ElementDefinition"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl#//ElementDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
           </terminal>

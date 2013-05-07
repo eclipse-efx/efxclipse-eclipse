@@ -10,6 +10,6 @@ public class CssExtDslAntlrTokenFileProvider implements IAntlrTokenFileProvider 
 	
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("at/bestsolution/efxclipse/tooling/css/cssext/parser/antlr/internal/InternalCssExtDsl.tokens");
+    	return classLoader.getResourceAsStream("org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.tokens");
 	}
 }

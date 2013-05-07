@@ -2,13 +2,13 @@
  */
 package org.eclipse.fx.ide.css.cssext.cssExtDsl.impl;
 
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSDefaultValue;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSNumLiteral;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRangedDoubleType;

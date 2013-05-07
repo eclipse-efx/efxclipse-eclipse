@@ -28,7 +28,7 @@ public class DefaultCssExtProvider implements CssExt {
 	private @Inject IQualifiedNameProvider nameProvider;
 	
 	public DefaultCssExtProvider() {
-		Injector i = CssExtDslActivator.getInstance().getInjector(CssExtDslActivator.AT_BESTSOLUTION_EFXCLIPSE_TOOLING_CSS_CSSEXT_CSSEXTDSL);
+		Injector i = CssExtDslActivator.getInstance().getInjector(CssExtDslActivator.ORG_ECLIPSE_FX_IDE_CSS_CSSEXT_CSSEXTDSL);
 		i.injectMembers(this);
 	}
 

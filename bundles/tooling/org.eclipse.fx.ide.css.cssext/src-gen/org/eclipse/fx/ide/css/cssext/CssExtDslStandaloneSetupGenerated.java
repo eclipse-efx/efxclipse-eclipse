@@ -27,8 +27,8 @@ public class CssExtDslStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public void register(Injector injector) {
-	if (!EPackage.Registry.INSTANCE.containsKey("http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl")) {
-		EPackage.Registry.INSTANCE.put("http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl", org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage.eINSTANCE);
+	if (!EPackage.Registry.INSTANCE.containsKey("http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl")) {
+		EPackage.Registry.INSTANCE.put("http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl", org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);

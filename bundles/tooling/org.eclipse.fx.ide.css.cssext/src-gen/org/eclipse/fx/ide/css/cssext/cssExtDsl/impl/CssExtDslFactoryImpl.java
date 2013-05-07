@@ -2,7 +2,6 @@
  */
 package org.eclipse.fx.ide.css.cssext.cssExtDsl.impl;
 
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -10,37 +9,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSDefaultValue;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSNumLiteral;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRangedDoubleType;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRangedIntType;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRule;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleBracket;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleConcat;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleConcatWithoutSpace;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleDefinition;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleFunc;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleLiteral;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleOr;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRulePostfix;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleRef;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleRegex;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleSymbol;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleXor;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSType;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslFactory;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.Doku;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.ElementDefinition;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.Import;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.PackageDefinition;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.PropertyDefinition;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.PseudoClassDefinition;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.Substructure;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureSelector;
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass;
+
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +30,7 @@ public class CssExtDslFactoryImpl extends EFactoryImpl implements CssExtDslFacto
   {
     try
     {
-      CssExtDslFactory theCssExtDslFactory = (CssExtDslFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl"); 
+      CssExtDslFactory theCssExtDslFactory = (CssExtDslFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl"); 
       if (theCssExtDslFactory != null)
       {
         return theCssExtDslFactory;

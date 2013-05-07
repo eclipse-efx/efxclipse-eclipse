@@ -2,7 +2,6 @@
  */
 package org.eclipse.fx.ide.css.cssext.cssExtDsl.impl;
 
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRule;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleConcat;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage;
