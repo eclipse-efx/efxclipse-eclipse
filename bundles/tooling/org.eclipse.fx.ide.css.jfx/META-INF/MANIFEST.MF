@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.eclipse.fx.ide.css.jfx
+Bundle-Version: 0.8.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.fx.ide.css.ui;bundle-version="0.8.1",
+ org.eclipse.swt;bundle-version="3.7.0",
+ org.eclipse.ui;bundle-version="3.7.0",
+ org.eclipse.osgi;bundle-version="3.7.0"
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %Bundle-Vendor
