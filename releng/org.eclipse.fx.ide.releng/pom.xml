@@ -27,6 +27,8 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.java6</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.adapter</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.fragment</module>
 		
 		<!-- CSS Tooling -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css</module>
