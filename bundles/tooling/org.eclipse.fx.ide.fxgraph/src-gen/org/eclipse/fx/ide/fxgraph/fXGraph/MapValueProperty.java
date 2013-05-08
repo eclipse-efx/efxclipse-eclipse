@@ -12,11 +12,11 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MapValueProperty#getProperties <em>Properties</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getMapValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getMapValueProperty()
  * @model
  * @generated
  */
@@ -24,7 +24,7 @@ public interface MapValueProperty extends MultiValueProperty
 {
   /**
    * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property}.
+   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.Property}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
@@ -32,7 +32,7 @@ public interface MapValueProperty extends MultiValueProperty
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Properties</em>' containment reference list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getMapValueProperty_Properties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getMapValueProperty_Properties()
    * @model containment="true"
    * @generated
    */

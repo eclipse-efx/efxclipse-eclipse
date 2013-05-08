@@ -6,38 +6,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Define;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Element;
-import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
-import org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Import;
-import org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Model;
-import org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Property;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Script;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference;
-import org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StringValue;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
+
+import org.eclipse.fx.ide.fxgraph.fXGraph.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +19,7 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage
  * @generated
  */
 public class FXGraphSwitch<T> extends Switch<T>

@@ -11,11 +11,11 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getControllerHandledValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getControllerHandledValueProperty()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface ControllerHandledValueProperty extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Methodname</em>' attribute.
    * @see #setMethodname(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getControllerHandledValueProperty_Methodname()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getControllerHandledValueProperty_Methodname()
    * @model
    * @generated
    */
   String getMethodname();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Methodname</em>' attribute.

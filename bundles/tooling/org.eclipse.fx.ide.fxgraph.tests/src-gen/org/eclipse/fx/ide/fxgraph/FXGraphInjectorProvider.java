@@ -3,7 +3,6 @@
 */
 package org.eclipse.fx.ide.fxgraph;
 
-import org.eclipse.fx.ide.fxgraph.FXGraphStandaloneSetup;
 import org.eclipse.xtext.junit4.GlobalRegistries;
 import org.eclipse.xtext.junit4.GlobalRegistries.GlobalStateMemento;
 import org.eclipse.xtext.junit4.IInjectorProvider;

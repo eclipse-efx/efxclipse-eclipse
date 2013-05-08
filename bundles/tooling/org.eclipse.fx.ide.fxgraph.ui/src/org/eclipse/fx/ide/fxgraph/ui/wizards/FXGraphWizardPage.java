@@ -60,7 +60,7 @@ public class FXGraphWizardPage extends AbstractJDTElementPage<FXGraphElement> {
 
 	@Override
 	protected ImageDescriptor getTitleAreaImage(Display display) {
-		return FXGraphActivator.imageDescriptorFromPlugin(FXGraphActivator.AT_BESTSOLUTION_EFXCLIPSE_TOOLING_FXGRAPH_FXGRAPH, "/icons/title_banner.png");
+		return FXGraphActivator.imageDescriptorFromPlugin(FXGraphActivator.ORG_ECLIPSE_FX_IDE_FXGRAPH_FXGRAPH, "/icons/title_banner.png");
 	}
 	
 	@Override

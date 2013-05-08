@@ -5,8 +5,8 @@ package org.eclipse.fx.ide.fxgraph.parser.antlr;
 
 import com.google.inject.Inject;
 
-import org.eclipse.fx.ide.fxgraph.services.FXGraphGrammarAccess;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.fx.ide.fxgraph.services.FXGraphGrammarAccess;
 
 public class FXGraphParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

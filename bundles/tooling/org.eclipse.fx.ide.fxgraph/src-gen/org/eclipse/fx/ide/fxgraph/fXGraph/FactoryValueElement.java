@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getFactoryValueElement()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getFactoryValueElement()
  * @model
  * @generated
  */

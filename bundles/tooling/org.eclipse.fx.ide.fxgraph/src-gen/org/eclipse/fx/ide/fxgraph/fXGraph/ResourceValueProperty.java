@@ -11,11 +11,11 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getResourceValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getResourceValueProperty()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface ResourceValueProperty extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
    * @see #setValue(StringValue)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getResourceValueProperty_Value()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getResourceValueProperty_Value()
    * @model containment="true"
    * @generated
    */
   StringValue getValue();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' containment reference.

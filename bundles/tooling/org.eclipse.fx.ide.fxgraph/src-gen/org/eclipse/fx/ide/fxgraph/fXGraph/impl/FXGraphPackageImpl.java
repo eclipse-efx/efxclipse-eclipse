@@ -2,13 +2,13 @@
  */
 package org.eclipse.fx.ide.fxgraph.fXGraph.impl;
 
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty;
 import org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition;
 import org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty;
@@ -281,7 +281,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.EPackage.Registry
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#eNS_URI
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#eNS_URI
    * @see #init()
    * @generated
    */

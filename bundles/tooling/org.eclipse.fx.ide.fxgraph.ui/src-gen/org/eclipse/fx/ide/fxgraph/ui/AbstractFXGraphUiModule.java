@@ -8,7 +8,7 @@ import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Manual modifications go to {at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphUiModule}
+ * Manual modifications go to {org.eclipse.fx.ide.fxgraph.ui.FXGraphUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractFXGraphUiModule extends DefaultUiModule {

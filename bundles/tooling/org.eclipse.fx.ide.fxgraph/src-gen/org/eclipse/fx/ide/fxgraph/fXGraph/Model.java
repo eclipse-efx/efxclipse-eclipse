@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getPackage <em>Package</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getImports <em>Imports</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getComponentDef <em>Component Def</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getPackage <em>Package</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getComponentDef <em>Component Def</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getModel()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getModel()
  * @model
  * @generated
  */
@@ -36,14 +36,14 @@ public interface Model extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Package</em>' containment reference.
    * @see #setPackage(PackageDeclaration)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getModel_Package()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getModel_Package()
    * @model containment="true"
    * @generated
    */
   PackageDeclaration getPackage();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getPackage <em>Package</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getPackage <em>Package</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Package</em>' containment reference.
@@ -54,7 +54,7 @@ public interface Model extends EObject
 
   /**
    * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import}.
+   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.Import}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
@@ -62,7 +62,7 @@ public interface Model extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Imports</em>' containment reference list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getModel_Imports()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getModel_Imports()
    * @model containment="true"
    * @generated
    */
@@ -78,14 +78,14 @@ public interface Model extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Component Def</em>' containment reference.
    * @see #setComponentDef(ComponentDefinition)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getModel_ComponentDef()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getModel_ComponentDef()
    * @model containment="true"
    * @generated
    */
   ComponentDefinition getComponentDef();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getComponentDef <em>Component Def</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getComponentDef <em>Component Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Component Def</em>' containment reference.

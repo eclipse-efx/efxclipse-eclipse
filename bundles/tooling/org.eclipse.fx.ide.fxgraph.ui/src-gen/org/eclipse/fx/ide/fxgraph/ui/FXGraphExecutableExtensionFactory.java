@@ -3,12 +3,12 @@
  */
 package org.eclipse.fx.ide.fxgraph.ui;
 
-import org.eclipse.fx.ide.fxgraph.ui.internal.FXGraphActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import org.eclipse.fx.ide.fxgraph.ui.internal.FXGraphActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -23,7 +23,7 @@ public class FXGraphExecutableExtensionFactory extends AbstractGuiceAwareExecuta
 	
 	@Override
 	protected Injector getInjector() {
-		return FXGraphActivator.getInstance().getInjector(FXGraphActivator.AT_BESTSOLUTION_EFXCLIPSE_TOOLING_FXGRAPH_FXGRAPH);
+		return FXGraphActivator.getInstance().getInjector(FXGraphActivator.ORG_ECLIPSE_FX_IDE_FXGRAPH_FXGRAPH);
 	}
 	
 }

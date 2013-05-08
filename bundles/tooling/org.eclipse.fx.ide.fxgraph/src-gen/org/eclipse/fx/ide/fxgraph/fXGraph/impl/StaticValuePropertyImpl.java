@@ -2,7 +2,6 @@
  */
 package org.eclipse.fx.ide.fxgraph.fXGraph.impl;
 
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -11,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
 import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty;
 import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;

@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getElement <em>Element</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getElement <em>Element</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getDefine()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getDefine()
  * @model
  * @generated
  */
@@ -33,14 +33,14 @@ public interface Define extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Element</em>' containment reference.
    * @see #setElement(Element)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getDefine_Element()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getDefine_Element()
    * @model containment="true"
    * @generated
    */
   Element getElement();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getElement <em>Element</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getElement <em>Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Element</em>' containment reference.
@@ -59,14 +59,14 @@ public interface Define extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Include Element</em>' containment reference.
    * @see #setIncludeElement(IncludeValueProperty)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getDefine_IncludeElement()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getDefine_IncludeElement()
    * @model containment="true"
    * @generated
    */
   IncludeValueProperty getIncludeElement();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Include Element</em>' containment reference.

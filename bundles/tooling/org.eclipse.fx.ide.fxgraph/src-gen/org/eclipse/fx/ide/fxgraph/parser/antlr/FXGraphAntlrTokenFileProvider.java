@@ -10,6 +10,6 @@ public class FXGraphAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 	
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.tokens");
+    	return classLoader.getResourceAsStream("org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.tokens");
 	}
 }

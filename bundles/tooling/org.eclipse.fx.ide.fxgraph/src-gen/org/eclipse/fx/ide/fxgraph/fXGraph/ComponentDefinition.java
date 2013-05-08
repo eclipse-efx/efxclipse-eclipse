@@ -16,20 +16,20 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#isDynamicRoot <em>Dynamic Root</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#isDynamicRoot <em>Dynamic Root</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition()
  * @model
  * @generated
  */
@@ -45,14 +45,14 @@ public interface ComponentDefinition extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Dynamic Root</em>' attribute.
    * @see #setDynamicRoot(boolean)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_DynamicRoot()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_DynamicRoot()
    * @model
    * @generated
    */
   boolean isDynamicRoot();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#isDynamicRoot <em>Dynamic Root</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#isDynamicRoot <em>Dynamic Root</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Dynamic Root</em>' attribute.
@@ -71,14 +71,14 @@ public interface ComponentDefinition extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_Name()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -97,14 +97,14 @@ public interface ComponentDefinition extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Controller</em>' containment reference.
    * @see #setController(JvmTypeReference)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_Controller()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_Controller()
    * @model containment="true"
    * @generated
    */
   JvmTypeReference getController();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Controller</em>' containment reference.
@@ -123,7 +123,7 @@ public interface ComponentDefinition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Preview Css Files</em>' attribute list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewCssFiles()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewCssFiles()
    * @model unique="false"
    * @generated
    */
@@ -139,14 +139,14 @@ public interface ComponentDefinition extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Preview Resource Bundle</em>' attribute.
    * @see #setPreviewResourceBundle(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewResourceBundle()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewResourceBundle()
    * @model
    * @generated
    */
   String getPreviewResourceBundle();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Preview Resource Bundle</em>' attribute.
@@ -165,7 +165,7 @@ public interface ComponentDefinition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Preview Classpath Entries</em>' attribute list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewClasspathEntries()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewClasspathEntries()
    * @model unique="false"
    * @generated
    */
@@ -181,14 +181,14 @@ public interface ComponentDefinition extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Scene Definition</em>' reference.
    * @see #setSceneDefinition(ComponentDefinition)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_SceneDefinition()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_SceneDefinition()
    * @model
    * @generated
    */
   ComponentDefinition getSceneDefinition();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}' reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Scene Definition</em>' reference.
@@ -199,7 +199,7 @@ public interface ComponentDefinition extends EObject
 
   /**
    * Returns the value of the '<em><b>Scripts</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script}.
+   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.Script}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Scripts</em>' containment reference list isn't clear,
@@ -207,7 +207,7 @@ public interface ComponentDefinition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Scripts</em>' containment reference list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_Scripts()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_Scripts()
    * @model containment="true"
    * @generated
    */
@@ -215,7 +215,7 @@ public interface ComponentDefinition extends EObject
 
   /**
    * Returns the value of the '<em><b>Defines</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define}.
+   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.Define}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Defines</em>' containment reference list isn't clear,
@@ -223,7 +223,7 @@ public interface ComponentDefinition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Defines</em>' containment reference list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_Defines()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_Defines()
    * @model containment="true"
    * @generated
    */
@@ -239,14 +239,14 @@ public interface ComponentDefinition extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Root Node</em>' containment reference.
    * @see #setRootNode(Element)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getComponentDefinition_RootNode()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_RootNode()
    * @model containment="true"
    * @generated
    */
   Element getRootNode();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Root Node</em>' containment reference.

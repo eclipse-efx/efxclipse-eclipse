@@ -11,11 +11,11 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty#getReference <em>Reference</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getCopyValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getCopyValueProperty()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface CopyValueProperty extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reference</em>' reference.
    * @see #setReference(Element)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getCopyValueProperty_Reference()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getCopyValueProperty_Reference()
    * @model
    * @generated
    */
   Element getReference();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty#getReference <em>Reference</em>}' reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty#getReference <em>Reference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Reference</em>' reference.

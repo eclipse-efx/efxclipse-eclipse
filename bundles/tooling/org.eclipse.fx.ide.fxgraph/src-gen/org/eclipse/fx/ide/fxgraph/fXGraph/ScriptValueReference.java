@@ -11,11 +11,11 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference#getReference <em>Reference</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getScriptValueReference()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScriptValueReference()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface ScriptValueReference extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reference</em>' attribute.
    * @see #setReference(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getScriptValueReference_Reference()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScriptValueReference_Reference()
    * @model
    * @generated
    */
   String getReference();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference#getReference <em>Reference</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference#getReference <em>Reference</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Reference</em>' attribute.

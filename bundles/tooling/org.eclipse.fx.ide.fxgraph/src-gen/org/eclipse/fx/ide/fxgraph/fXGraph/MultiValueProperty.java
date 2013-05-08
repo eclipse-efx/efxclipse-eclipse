@@ -9,7 +9,7 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <!-- end-user-doc -->
  *
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getMultiValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getMultiValueProperty()
  * @model
  * @generated
  */

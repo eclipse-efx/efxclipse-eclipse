@@ -2,7 +2,6 @@
  */
 package org.eclipse.fx.ide.fxgraph.fXGraph.impl;
 
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition;
 import org.eclipse.fx.ide.fxgraph.fXGraph.Define;
 import org.eclipse.fx.ide.fxgraph.fXGraph.Element;

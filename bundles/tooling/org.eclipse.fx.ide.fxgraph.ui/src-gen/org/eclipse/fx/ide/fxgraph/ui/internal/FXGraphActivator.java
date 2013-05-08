@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class FXGraphActivator extends AbstractUIPlugin {
 	
-	public static final String AT_BESTSOLUTION_EFXCLIPSE_TOOLING_FXGRAPH_FXGRAPH = "at.bestsolution.efxclipse.tooling.fxgraph.FXGraph";
+	public static final String ORG_ECLIPSE_FX_IDE_FXGRAPH_FXGRAPH = "org.eclipse.fx.ide.fxgraph.FXGraph";
 	
 	private static final Logger logger = Logger.getLogger(FXGraphActivator.class);
 	
@@ -73,7 +73,7 @@ public class FXGraphActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (AT_BESTSOLUTION_EFXCLIPSE_TOOLING_FXGRAPH_FXGRAPH.equals(grammar)) {
+		if (ORG_ECLIPSE_FX_IDE_FXGRAPH_FXGRAPH.equals(grammar)) {
 			return new org.eclipse.fx.ide.fxgraph.FXGraphRuntimeModule();
 		}
 		
@@ -81,7 +81,7 @@ public class FXGraphActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (AT_BESTSOLUTION_EFXCLIPSE_TOOLING_FXGRAPH_FXGRAPH.equals(grammar)) {
+		if (ORG_ECLIPSE_FX_IDE_FXGRAPH_FXGRAPH.equals(grammar)) {
 			return new org.eclipse.fx.ide.fxgraph.ui.FXGraphUiModule(this);
 		}
 		

@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
-import org.eclipse.fx.ide.fxgraph.services.FXGraphGrammarAccess;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
@@ -16,6 +15,7 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternal
 
 import com.google.inject.Inject;
 
+import org.eclipse.fx.ide.fxgraph.services.FXGraphGrammarAccess;
 
 public class FXGraphParser extends AbstractContentAssistParser {
 	

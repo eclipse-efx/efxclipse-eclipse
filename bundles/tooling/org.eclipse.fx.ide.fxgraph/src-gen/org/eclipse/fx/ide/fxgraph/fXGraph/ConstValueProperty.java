@@ -12,12 +12,12 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getField <em>Field</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getField <em>Field</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getConstValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getConstValueProperty()
  * @model
  * @generated
  */
@@ -33,14 +33,14 @@ public interface ConstValueProperty extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
    * @see #setType(JvmTypeReference)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getConstValueProperty_Type()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getConstValueProperty_Type()
    * @model containment="true"
    * @generated
    */
   JvmTypeReference getType();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getType <em>Type</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' containment reference.
@@ -59,14 +59,14 @@ public interface ConstValueProperty extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Field</em>' attribute.
    * @see #setField(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getConstValueProperty_Field()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getConstValueProperty_Field()
    * @model
    * @generated
    */
   String getField();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getField <em>Field</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getField <em>Field</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Field</em>' attribute.

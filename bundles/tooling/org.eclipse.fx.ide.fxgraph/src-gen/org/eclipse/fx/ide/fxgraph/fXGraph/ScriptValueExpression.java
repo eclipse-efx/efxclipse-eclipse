@@ -11,11 +11,11 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getScriptValueExpression()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScriptValueExpression()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface ScriptValueExpression extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Sourcecode</em>' attribute.
    * @see #setSourcecode(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getScriptValueExpression_Sourcecode()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScriptValueExpression_Sourcecode()
    * @model
    * @generated
    */
   String getSourcecode();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Sourcecode</em>' attribute.

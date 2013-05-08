@@ -104,8 +104,8 @@ RULE_WS=13
 'instanceof'=80
 '#'=65
 '>='=25
-'/'=39
 '=='=23
+'/'=39
 'switch'=84
 'script'=63
 'scriptexpression'=75

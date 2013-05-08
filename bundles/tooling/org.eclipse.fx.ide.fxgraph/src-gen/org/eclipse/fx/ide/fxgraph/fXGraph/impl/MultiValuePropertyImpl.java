@@ -2,8 +2,8 @@
  */
 package org.eclipse.fx.ide.fxgraph.fXGraph.impl;
 
-
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
 import org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty;
 

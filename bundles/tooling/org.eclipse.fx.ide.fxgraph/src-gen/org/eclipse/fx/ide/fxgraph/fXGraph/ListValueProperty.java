@@ -12,11 +12,11 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueProperty#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getListValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getListValueProperty()
  * @model
  * @generated
  */
@@ -24,7 +24,7 @@ public interface ListValueProperty extends MultiValueProperty
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueElement}.
+   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Value</em>' containment reference list isn't clear,
@@ -32,7 +32,7 @@ public interface ListValueProperty extends MultiValueProperty
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getListValueProperty_Value()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getListValueProperty_Value()
    * @model containment="true"
    * @generated
    */

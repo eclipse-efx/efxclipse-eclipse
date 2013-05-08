@@ -11,11 +11,11 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getLocationValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getLocationValueProperty()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface LocationValueProperty extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getLocationValueProperty_Value()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getLocationValueProperty_Value()
    * @model
    * @generated
    */
   String getValue();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.

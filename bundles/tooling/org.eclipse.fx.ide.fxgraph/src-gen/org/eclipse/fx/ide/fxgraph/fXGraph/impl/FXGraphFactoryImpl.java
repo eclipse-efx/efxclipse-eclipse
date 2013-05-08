@@ -9,39 +9,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Define;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Element;
-import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphFactory;
-import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
-import org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Import;
-import org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Model;
-import org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Property;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Script;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference;
-import org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StringValue;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
+
+import org.eclipse.fx.ide.fxgraph.fXGraph.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +30,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     try
     {
-      FXGraphFactory theFXGraphFactory = (FXGraphFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph"); 
+      FXGraphFactory theFXGraphFactory = (FXGraphFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph"); 
       if (theFXGraphFactory != null)
       {
         return theFXGraphFactory;

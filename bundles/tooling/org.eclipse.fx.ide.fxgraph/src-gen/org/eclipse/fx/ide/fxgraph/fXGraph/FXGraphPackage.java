@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphFactory
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphFactory
  * @model kind="package"
  * @generated
  */
@@ -38,7 +38,7 @@ public interface FXGraphPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  String eNS_URI = "http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph";
+  String eNS_URI = "http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph";
 
   /**
    * The package namespace name.
@@ -1232,1025 +1232,1025 @@ public interface FXGraphPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Model</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Model
    * @generated
    */
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getPackage <em>Package</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getPackage <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Package</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getPackage()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Model#getPackage()
    * @see #getModel()
    * @generated
    */
   EReference getModel_Package();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getImports <em>Imports</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getImports()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Model#getImports()
    * @see #getModel()
    * @generated
    */
   EReference getModel_Imports();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getComponentDef <em>Component Def</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getComponentDef <em>Component Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Component Def</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model#getComponentDef()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Model#getComponentDef()
    * @see #getModel()
    * @generated
    */
   EReference getModel_ComponentDef();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.PackageDeclaration <em>Package Declaration</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration <em>Package Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Package Declaration</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.PackageDeclaration
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration
    * @generated
    */
   EClass getPackageDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.PackageDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.PackageDeclaration#getName()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration#getName()
    * @see #getPackageDeclaration()
    * @generated
    */
   EAttribute getPackageDeclaration_Name();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import <em>Import</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Import</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Import
    * @generated
    */
   EClass getImport();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Import#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import#getImportedNamespace()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Import#getImportedNamespace()
    * @see #getImport()
    * @generated
    */
   EAttribute getImport_ImportedNamespace();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition <em>Component Definition</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition <em>Component Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Component Definition</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition
    * @generated
    */
   EClass getComponentDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#isDynamicRoot <em>Dynamic Root</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#isDynamicRoot <em>Dynamic Root</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Dynamic Root</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#isDynamicRoot()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#isDynamicRoot()
    * @see #getComponentDefinition()
    * @generated
    */
   EAttribute getComponentDefinition_DynamicRoot();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getName()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getName()
    * @see #getComponentDefinition()
    * @generated
    */
   EAttribute getComponentDefinition_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Controller</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getController()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getController()
    * @see #getComponentDefinition()
    * @generated
    */
   EReference getComponentDefinition_Controller();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}'.
+   * Returns the meta object for the attribute list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Preview Css Files</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewCssFiles()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles()
    * @see #getComponentDefinition()
    * @generated
    */
   EAttribute getComponentDefinition_PreviewCssFiles();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Preview Resource Bundle</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewResourceBundle()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle()
    * @see #getComponentDefinition()
    * @generated
    */
   EAttribute getComponentDefinition_PreviewResourceBundle();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}'.
+   * Returns the meta object for the attribute list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Preview Classpath Entries</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries()
    * @see #getComponentDefinition()
    * @generated
    */
   EAttribute getComponentDefinition_PreviewClasspathEntries();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}'.
+   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Scene Definition</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getSceneDefinition()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getSceneDefinition()
    * @see #getComponentDefinition()
    * @generated
    */
   EReference getComponentDefinition_SceneDefinition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Scripts</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getScripts()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getScripts()
    * @see #getComponentDefinition()
    * @generated
    */
   EReference getComponentDefinition_Scripts();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Defines</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getDefines()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getDefines()
    * @see #getComponentDefinition()
    * @generated
    */
   EReference getComponentDefinition_Defines();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Root Node</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition#getRootNode()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getRootNode()
    * @see #getComponentDefinition()
    * @generated
    */
   EReference getComponentDefinition_RootNode();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element <em>Element</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Element</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element
    * @generated
    */
   EClass getElement();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getType()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getType()
    * @see #getElement()
    * @generated
    */
   EReference getElement_Type();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getValue()
    * @see #getElement()
    * @generated
    */
   EReference getElement_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getName()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getName()
    * @see #getElement()
    * @generated
    */
   EAttribute getElement_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getProperties <em>Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getProperties()
    * @see #getElement()
    * @generated
    */
   EReference getElement_Properties();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getStaticProperties <em>Static Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getStaticProperties <em>Static Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Static Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getStaticProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getStaticProperties()
    * @see #getElement()
    * @generated
    */
   EReference getElement_StaticProperties();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getStaticCallProperties <em>Static Call Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getStaticCallProperties <em>Static Call Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Static Call Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getStaticCallProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getStaticCallProperties()
    * @see #getElement()
    * @generated
    */
   EReference getElement_StaticCallProperties();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getDefaultChildren <em>Default Children</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getDefaultChildren <em>Default Children</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Default Children</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getDefaultChildren()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getDefaultChildren()
    * @see #getElement()
    * @generated
    */
   EReference getElement_DefaultChildren();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getFactory <em>Factory</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Factory</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getFactory()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getFactory()
    * @see #getElement()
    * @generated
    */
   EAttribute getElement_Factory();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getValues <em>Values</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Values</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element#getValues()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element#getValues()
    * @see #getElement()
    * @generated
    */
   EReference getElement_Values();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define <em>Define</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define <em>Define</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Define</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Define
    * @generated
    */
   EClass getDefine();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getElement <em>Element</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getElement()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Define#getElement()
    * @see #getDefine()
    * @generated
    */
   EReference getDefine_Element();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Include Element</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define#getIncludeElement()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Define#getIncludeElement()
    * @see #getDefine()
    * @generated
    */
   EReference getDefine_IncludeElement();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script <em>Script</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script <em>Script</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Script</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Script
    * @generated
    */
   EClass getScript();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script#getLanguage <em>Language</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script#getLanguage <em>Language</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Language</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script#getLanguage()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Script#getLanguage()
    * @see #getScript()
    * @generated
    */
   EAttribute getScript_Language();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script#getSource <em>Source</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Source</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script#getSource()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Script#getSource()
    * @see #getScript()
    * @generated
    */
   EAttribute getScript_Source();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script#getSourcecode <em>Sourcecode</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script#getSourcecode <em>Sourcecode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Sourcecode</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script#getSourcecode()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Script#getSourcecode()
    * @see #getScript()
    * @generated
    */
   EAttribute getScript_Sourcecode();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty <em>Static Call Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty <em>Static Call Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Static Call Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty
    * @generated
    */
   EClass getStaticCallValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getModifier <em>Modifier</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getModifier <em>Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Modifier</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getModifier()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getModifier()
    * @see #getStaticCallValueProperty()
    * @generated
    */
   EAttribute getStaticCallValueProperty_Modifier();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getType()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getType()
    * @see #getStaticCallValueProperty()
    * @generated
    */
   EReference getStaticCallValueProperty_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getName()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getName()
    * @see #getStaticCallValueProperty()
    * @generated
    */
   EAttribute getStaticCallValueProperty_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty#getValue()
    * @see #getStaticCallValueProperty()
    * @generated
    */
   EReference getStaticCallValueProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Static Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty
    * @generated
    */
   EClass getStaticValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Modifier</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getModifier()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getModifier()
    * @see #getStaticValueProperty()
    * @generated
    */
   EAttribute getStaticValueProperty_Modifier();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getName()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getName()
    * @see #getStaticValueProperty()
    * @generated
    */
   EAttribute getStaticValueProperty_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getValue()
    * @see #getStaticValueProperty()
    * @generated
    */
   EReference getStaticValueProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property <em>Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Property <em>Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Property
    * @generated
    */
   EClass getProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property#getModifier <em>Modifier</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Property#getModifier <em>Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Modifier</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property#getModifier()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Property#getModifier()
    * @see #getProperty()
    * @generated
    */
   EAttribute getProperty_Modifier();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Property#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property#getName()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Property#getName()
    * @see #getProperty()
    * @generated
    */
   EAttribute getProperty_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Property#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Property#getValue()
    * @see #getProperty()
    * @generated
    */
   EReference getProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ValueProperty <em>Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty <em>Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty
    * @generated
    */
   EClass getValueProperty();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SingleValueProperty <em>Single Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty <em>Single Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Single Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SingleValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty
    * @generated
    */
   EClass getSingleValueProperty();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MultiValueProperty <em>Multi Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty <em>Multi Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Multi Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MultiValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty
    * @generated
    */
   EClass getMultiValueProperty();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FactoryValueElement <em>Factory Value Element</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement <em>Factory Value Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Factory Value Element</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FactoryValueElement
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement
    * @generated
    */
   EClass getFactoryValueElement();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueElement <em>List Value Element</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement <em>List Value Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>List Value Element</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueElement
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement
    * @generated
    */
   EClass getListValueElement();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueProperty <em>List Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty <em>List Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>List Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty
    * @generated
    */
   EClass getListValueProperty();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueProperty#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueProperty#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty#getValue()
    * @see #getListValueProperty()
    * @generated
    */
   EReference getListValueProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MapValueProperty <em>Map Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty <em>Map Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Map Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MapValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty
    * @generated
    */
   EClass getMapValueProperty();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MapValueProperty#getProperties <em>Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MapValueProperty#getProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty#getProperties()
    * @see #getMapValueProperty()
    * @generated
    */
   EReference getMapValueProperty_Properties();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty <em>Simple Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty <em>Simple Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Simple Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty
    * @generated
    */
   EClass getSimpleValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getStringValue <em>String Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getStringValue <em>String Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>String Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getStringValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getStringValue()
    * @see #getSimpleValueProperty()
    * @generated
    */
   EAttribute getSimpleValueProperty_StringValue();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getBooleanValue <em>Boolean Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getBooleanValue <em>Boolean Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Boolean Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getBooleanValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getBooleanValue()
    * @see #getSimpleValueProperty()
    * @generated
    */
   EAttribute getSimpleValueProperty_BooleanValue();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#isNegative <em>Negative</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#isNegative <em>Negative</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Negative</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#isNegative()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#isNegative()
    * @see #getSimpleValueProperty()
    * @generated
    */
   EAttribute getSimpleValueProperty_Negative();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getIntValue <em>Int Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getIntValue <em>Int Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Int Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getIntValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getIntValue()
    * @see #getSimpleValueProperty()
    * @generated
    */
   EAttribute getSimpleValueProperty_IntValue();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getRealValue <em>Real Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getRealValue <em>Real Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Real Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty#getRealValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getRealValue()
    * @see #getSimpleValueProperty()
    * @generated
    */
   EAttribute getSimpleValueProperty_RealValue();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty <em>Const Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty <em>Const Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Const Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty
    * @generated
    */
   EClass getConstValueProperty();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getType()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getType()
    * @see #getConstValueProperty()
    * @generated
    */
   EReference getConstValueProperty_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getField <em>Field</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getField <em>Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Field</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty#getField()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getField()
    * @see #getConstValueProperty()
    * @generated
    */
   EAttribute getConstValueProperty_Field();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceType <em>Reference Type</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType <em>Reference Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Reference Type</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceType
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType
    * @generated
    */
   EClass getReferenceType();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty <em>Reference Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty <em>Reference Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Reference Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty
    * @generated
    */
   EClass getReferenceValueProperty();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}'.
+   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Reference</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getReference()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getReference()
    * @see #getReferenceValueProperty()
    * @generated
    */
   EReference getReferenceValueProperty_Reference();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getStaticProperties <em>Static Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getStaticProperties <em>Static Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Static Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getStaticProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getStaticProperties()
    * @see #getReferenceValueProperty()
    * @generated
    */
   EReference getReferenceValueProperty_StaticProperties();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getStaticCallProperties <em>Static Call Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getStaticCallProperties <em>Static Call Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Static Call Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getStaticCallProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getStaticCallProperties()
    * @see #getReferenceValueProperty()
    * @generated
    */
   EReference getReferenceValueProperty_StaticCallProperties();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty <em>Include Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty <em>Include Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Include Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty
    * @generated
    */
   EClass getIncludeValueProperty();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getSource <em>Source</em>}'.
+   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Source</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getSource()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getSource()
    * @see #getIncludeValueProperty()
    * @generated
    */
   EReference getIncludeValueProperty_Source();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getName()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getName()
    * @see #getIncludeValueProperty()
    * @generated
    */
   EAttribute getIncludeValueProperty_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getStaticProperties <em>Static Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getStaticProperties <em>Static Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Static Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getStaticProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getStaticProperties()
    * @see #getIncludeValueProperty()
    * @generated
    */
   EReference getIncludeValueProperty_StaticProperties();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getStaticCallProperties <em>Static Call Properties</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getStaticCallProperties <em>Static Call Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Static Call Properties</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty#getStaticCallProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getStaticCallProperties()
    * @see #getIncludeValueProperty()
    * @generated
    */
   EReference getIncludeValueProperty_StaticCallProperties();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty <em>Copy Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty <em>Copy Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Copy Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty
    * @generated
    */
   EClass getCopyValueProperty();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty#getReference <em>Reference</em>}'.
+   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty#getReference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Reference</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty#getReference()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty#getReference()
    * @see #getCopyValueProperty()
    * @generated
    */
   EReference getCopyValueProperty_Reference();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty <em>Controller Handled Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty <em>Controller Handled Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Controller Handled Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
    * @generated
    */
   EClass getControllerHandledValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Methodname</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty#getMethodname()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty#getMethodname()
    * @see #getControllerHandledValueProperty()
    * @generated
    */
   EAttribute getControllerHandledValueProperty_Methodname();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty <em>Script Handler Handled Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty <em>Script Handler Handled Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Script Handler Handled Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty
    * @generated
    */
   EClass getScriptHandlerHandledValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname <em>Functionname</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname <em>Functionname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Functionname</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname()
    * @see #getScriptHandlerHandledValueProperty()
    * @generated
    */
   EAttribute getScriptHandlerHandledValueProperty_Functionname();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression <em>Script Value Expression</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression <em>Script Value Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Script Value Expression</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression
    * @generated
    */
   EClass getScriptValueExpression();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Sourcecode</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression#getSourcecode()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression#getSourcecode()
    * @see #getScriptValueExpression()
    * @generated
    */
   EAttribute getScriptValueExpression_Sourcecode();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference <em>Script Value Reference</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference <em>Script Value Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Script Value Reference</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference
    * @generated
    */
   EClass getScriptValueReference();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference#getReference <em>Reference</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference#getReference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Reference</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference#getReference()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference#getReference()
    * @see #getScriptValueReference()
    * @generated
    */
   EAttribute getScriptValueReference_Reference();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty <em>Location Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty <em>Location Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Location Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty
    * @generated
    */
   EClass getLocationValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty#getValue()
    * @see #getLocationValueProperty()
    * @generated
    */
   EAttribute getLocationValueProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty <em>Resource Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty <em>Resource Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Resource Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty
    * @generated
    */
   EClass getResourceValueProperty();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty#getValue()
    * @see #getResourceValueProperty()
    * @generated
    */
   EReference getResourceValueProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty <em>Bind Value Property</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty <em>Bind Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Bind Value Property</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty
    * @generated
    */
   EClass getBindValueProperty();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty#getElementReference <em>Element Reference</em>}'.
+   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty#getElementReference <em>Element Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Element Reference</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty#getElementReference()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty#getElementReference()
    * @see #getBindValueProperty()
    * @generated
    */
   EReference getBindValueProperty_ElementReference();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty#getAttribute <em>Attribute</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty#getAttribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Attribute</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty#getAttribute()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty#getAttribute()
    * @see #getBindValueProperty()
    * @generated
    */
   EAttribute getBindValueProperty_Attribute();
 
   /**
-   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StringValue <em>String Value</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StringValue <em>String Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>String Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StringValue
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StringValue
    * @generated
    */
   EClass getStringValue();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StringValue#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StringValue#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StringValue#getValue()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StringValue#getValue()
    * @see #getStringValue()
    * @generated
    */

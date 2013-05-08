@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext">
-  <xtext:Grammar name="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph" usedGrammars="/1">
+  <xtext:Grammar name="org.eclipse.fx.ide.fxgraph.FXGraph" usedGrammars="/1">
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
       <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="fXGraph">
-      <ePackage href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#/"/>
+      <ePackage href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#/"/>
     </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="Model">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Model"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Model"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="package" operator="=">
@@ -25,7 +25,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="PackageDeclaration">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//PackageDeclaration"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//PackageDeclaration"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="package"/>
@@ -36,7 +36,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Import">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Import"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Import"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="import"/>
@@ -47,7 +47,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ComponentDefinition">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ComponentDefinition"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ComponentDefinition"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="dynamicRoot" operator="?=">
@@ -110,7 +110,7 @@
             <elements xsi:type="xtext:Assignment" feature="sceneDefinition" operator="=">
               <terminal xsi:type="xtext:CrossReference">
                 <type metamodel="/0/@metamodelDeclarations.1">
-                  <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ComponentDefinition"/>
+                  <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ComponentDefinition"/>
                 </type>
                 <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.52"/>
               </terminal>
@@ -140,7 +140,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Element">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Element"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Element"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="type" operator="=">
@@ -233,7 +233,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Define">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Define"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Define"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="define"/>
@@ -249,7 +249,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Script">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Script"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Script"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="script"/>
@@ -268,7 +268,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="StaticCallValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//StaticCallValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//StaticCallValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="modifier" operator="=">
@@ -293,7 +293,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="StaticValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//StaticValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//StaticValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="modifier" operator="=">
@@ -314,7 +314,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Property">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Property"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Property"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="modifier" operator="=">
@@ -334,7 +334,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
@@ -343,7 +343,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="SingleValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//SingleValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//SingleValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
@@ -363,7 +363,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="MultiValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//MultiValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//MultiValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
@@ -372,7 +372,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="FactoryValueElement">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//FactoryValueElement"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//FactoryValueElement"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
@@ -381,7 +381,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ListValueElement">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ListValueElement"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ListValueElement"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
@@ -392,7 +392,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ListValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ListValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ListValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="["/>
@@ -410,7 +410,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="MapValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//MapValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//MapValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="{"/>
@@ -428,7 +428,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="SimpleValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//SimpleValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//SimpleValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Assignment" feature="stringValue" operator="=">
@@ -457,7 +457,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ConstValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ConstValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ConstValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="const"/>
@@ -472,7 +472,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ReferenceType">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ReferenceType"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ReferenceType"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
@@ -481,14 +481,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ReferenceValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ReferenceValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ReferenceValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="idref"/>
         <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ReferenceType"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ReferenceType"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.10"/>
           </terminal>
@@ -520,14 +520,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="IncludeValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//IncludeValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//IncludeValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="include"/>
         <elements xsi:type="xtext:Assignment" feature="source" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ComponentDefinition"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ComponentDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.52"/>
           </terminal>
@@ -565,14 +565,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="CopyValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//CopyValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//CopyValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="copy"/>
         <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Element"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Element"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.10"/>
           </terminal>
@@ -581,7 +581,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ControllerHandledValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ControllerHandledValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ControllerHandledValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="controllermethod"/>
@@ -592,7 +592,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ScriptHandlerHandledValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ScriptHandlerHandledValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ScriptHandlerHandledValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="scriptmethod"/>
@@ -603,7 +603,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ScriptValueExpression">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ScriptValueExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ScriptValueExpression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="scriptexpression"/>
@@ -614,7 +614,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ScriptValueReference">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ScriptValueReference"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ScriptValueReference"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="scriptvalue"/>
@@ -625,7 +625,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="LocationValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//LocationValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//LocationValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="location"/>
@@ -636,7 +636,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ResourceValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ResourceValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//ResourceValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="rstring"/>
@@ -647,14 +647,14 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="BindValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//BindValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//BindValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="bind"/>
         <elements xsi:type="xtext:Assignment" feature="elementReference" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Element"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//Element"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.10"/>
           </terminal>
@@ -679,7 +679,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="StringValue">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//StringValue"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph#//StringValue"/>
       </type>
       <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
         <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.12"/>

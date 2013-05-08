@@ -2,10 +2,10 @@
  */
 package org.eclipse.fx.ide.fxgraph.fXGraph.impl;
 
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
 import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement;
 

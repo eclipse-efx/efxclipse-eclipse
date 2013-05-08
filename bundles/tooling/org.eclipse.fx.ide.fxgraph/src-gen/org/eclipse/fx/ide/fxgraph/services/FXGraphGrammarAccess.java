@@ -1731,7 +1731,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
 		Grammar grammar = grammarProvider.getGrammar(this);
 		while (grammar != null) {
-			if ("at.bestsolution.efxclipse.tooling.fxgraph.FXGraph".equals(grammar.getName())) {
+			if ("org.eclipse.fx.ide.fxgraph.FXGraph".equals(grammar.getName())) {
 				return grammar;
 			}
 			List<Grammar> grammars = grammar.getUsedGrammars();

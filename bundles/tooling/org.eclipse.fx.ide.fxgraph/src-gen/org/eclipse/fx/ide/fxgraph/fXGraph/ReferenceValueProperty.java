@@ -12,13 +12,13 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getStaticProperties <em>Static Properties</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getStaticCallProperties <em>Static Call Properties</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getStaticProperties <em>Static Properties</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getStaticCallProperties <em>Static Call Properties</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getReferenceValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getReferenceValueProperty()
  * @model
  * @generated
  */
@@ -34,14 +34,14 @@ public interface ReferenceValueProperty extends SingleValueProperty, ListValueEl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reference</em>' reference.
    * @see #setReference(ReferenceType)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getReferenceValueProperty_Reference()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getReferenceValueProperty_Reference()
    * @model
    * @generated
    */
   ReferenceType getReference();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}' reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Reference</em>' reference.
@@ -52,7 +52,7 @@ public interface ReferenceValueProperty extends SingleValueProperty, ListValueEl
 
   /**
    * Returns the value of the '<em><b>Static Properties</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty}.
+   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Static Properties</em>' containment reference list isn't clear,
@@ -60,7 +60,7 @@ public interface ReferenceValueProperty extends SingleValueProperty, ListValueEl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Static Properties</em>' containment reference list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getReferenceValueProperty_StaticProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getReferenceValueProperty_StaticProperties()
    * @model containment="true"
    * @generated
    */
@@ -68,7 +68,7 @@ public interface ReferenceValueProperty extends SingleValueProperty, ListValueEl
 
   /**
    * Returns the value of the '<em><b>Static Call Properties</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty}.
+   * The list contents are of type {@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Static Call Properties</em>' containment reference list isn't clear,
@@ -76,7 +76,7 @@ public interface ReferenceValueProperty extends SingleValueProperty, ListValueEl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Static Call Properties</em>' containment reference list.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getReferenceValueProperty_StaticCallProperties()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getReferenceValueProperty_StaticCallProperties()
    * @model containment="true"
    * @generated
    */

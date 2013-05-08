@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Import#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getImport()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getImport()
  * @model
  * @generated
  */
@@ -32,14 +32,14 @@ public interface Import extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Imported Namespace</em>' attribute.
    * @see #setImportedNamespace(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getImport_ImportedNamespace()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getImport_ImportedNamespace()
    * @model
    * @generated
    */
   String getImportedNamespace();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import#getImportedNamespace <em>Imported Namespace</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Import#getImportedNamespace <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Imported Namespace</em>' attribute.

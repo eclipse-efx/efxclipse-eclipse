@@ -6,8 +6,8 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph" 
-       class = "org.eclipse.fx.ide.fxgraph.FXGraphPackage"
-       genModel = "at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.genmodel" /> 
+       class = "org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage"
+       genModel = "org/eclipse/fx/ide/fxgraph/FXGraph.genmodel" /> 
 	
   </extension>
 

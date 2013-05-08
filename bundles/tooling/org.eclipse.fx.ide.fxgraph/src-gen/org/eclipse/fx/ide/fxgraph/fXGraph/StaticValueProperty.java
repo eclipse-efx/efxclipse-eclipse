@@ -12,13 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getStaticValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getStaticValueProperty()
  * @model
  * @generated
  */
@@ -34,14 +34,14 @@ public interface StaticValueProperty extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Modifier</em>' attribute.
    * @see #setModifier(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getStaticValueProperty_Modifier()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getStaticValueProperty_Modifier()
    * @model
    * @generated
    */
   String getModifier();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Modifier</em>' attribute.
@@ -60,14 +60,14 @@ public interface StaticValueProperty extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getStaticValueProperty_Name()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getStaticValueProperty_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -86,14 +86,14 @@ public interface StaticValueProperty extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
    * @see #setValue(ValueProperty)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getStaticValueProperty_Value()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getStaticValueProperty_Value()
    * @model containment="true"
    * @generated
    */
   ValueProperty getValue();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' containment reference.

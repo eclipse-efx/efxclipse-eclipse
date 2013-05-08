@@ -4,11 +4,11 @@
 package org.eclipse.fx.ide.fxgraph.parseTreeConstruction;
 
 import org.eclipse.emf.ecore.*;
-import org.eclipse.fx.ide.fxgraph.services.FXGraphGrammarAccess;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
 import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
 
+import org.eclipse.fx.ide.fxgraph.services.FXGraphGrammarAccess;
 
 import com.google.inject.Inject;
 

@@ -10,7 +10,7 @@ import com.google.inject.Injector;
 public class FXGraphUiInjectorProvider implements IInjectorProvider {
 	
 	public Injector getInjector() {
-		return org.eclipse.fx.ide.fxgraph.ui.internal.FXGraphActivator.getInstance().getInjector("at.bestsolution.efxclipse.tooling.fxgraph.FXGraph");
+		return org.eclipse.fx.ide.fxgraph.ui.internal.FXGraphActivator.getInstance().getInjector("org.eclipse.fx.ide.fxgraph.FXGraph");
 	}
 	
 }

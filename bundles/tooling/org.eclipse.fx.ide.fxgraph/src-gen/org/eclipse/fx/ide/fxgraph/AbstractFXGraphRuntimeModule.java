@@ -5,7 +5,6 @@ package org.eclipse.fx.ide.fxgraph;
 
 import java.util.Properties;
 
-import org.eclipse.fx.ide.fxgraph.parseTreeConstruction.FXGraphParsetreeConstructor;
 import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.service.DefaultRuntimeModule;
 
@@ -13,7 +12,7 @@ import com.google.inject.Binder;
 import com.google.inject.name.Names;
 
 /**
- * Manual modifications go to {at.bestsolution.efxclipse.tooling.fxgraph.FXGraphRuntimeModule}
+ * Manual modifications go to {org.eclipse.fx.ide.fxgraph.FXGraphRuntimeModule}
  */
  @SuppressWarnings("all")
 public abstract class AbstractFXGraphRuntimeModule extends DefaultRuntimeModule {
@@ -22,12 +21,12 @@ public abstract class AbstractFXGraphRuntimeModule extends DefaultRuntimeModule 
 
 	@Override
 	public void configure(Binder binder) {
-		properties = tryBindProperties(binder, "at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.properties");
+		properties = tryBindProperties(binder, "org/eclipse/fx/ide/fxgraph/FXGraph.properties");
 		super.configure(binder);
 	}
 	
 	public void configureLanguageName(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("at.bestsolution.efxclipse.tooling.fxgraph.FXGraph");
+		binder.bind(String.class).annotatedWith(Names.named(Constants.LANGUAGE_NAME)).toInstance("org.eclipse.fx.ide.fxgraph.FXGraph");
 	}
 	
 	public void configureFileExtensions(Binder binder) {
@@ -42,7 +41,7 @@ public abstract class AbstractFXGraphRuntimeModule extends DefaultRuntimeModule 
 
 	// contributed by org.eclipse.xtext.generator.parseTreeConstructor.ParseTreeConstructorFragment
 	public Class<? extends org.eclipse.xtext.parsetree.reconstr.IParseTreeConstructor> bindIParseTreeConstructor() {
-		return FXGraphParsetreeConstructor.class;
+		return org.eclipse.fx.ide.fxgraph.parseTreeConstruction.FXGraphParsetreeConstructor.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment

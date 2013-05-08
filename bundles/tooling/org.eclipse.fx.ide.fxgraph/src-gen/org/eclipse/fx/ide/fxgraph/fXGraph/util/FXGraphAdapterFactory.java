@@ -2,52 +2,21 @@
  */
 package org.eclipse.fx.ide.fxgraph.fXGraph.util;
 
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Define;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Element;
-import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
-import org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Import;
-import org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Model;
-import org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Property;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.Script;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference;
-import org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty;
-import org.eclipse.fx.ide.fxgraph.fXGraph.StringValue;
-import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
+
+import org.eclipse.fx.ide.fxgraph.fXGraph.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage
  * @generated
  */
 public class FXGraphAdapterFactory extends AdapterFactoryImpl
@@ -283,13 +252,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Model
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Model
    * @generated
    */
   public Adapter createModelAdapter()
@@ -298,13 +267,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.PackageDeclaration <em>Package Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration <em>Package Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.PackageDeclaration
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration
    * @generated
    */
   public Adapter createPackageDeclarationAdapter()
@@ -313,13 +282,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import <em>Import</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Import
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Import
    * @generated
    */
   public Adapter createImportAdapter()
@@ -328,13 +297,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition <em>Component Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition <em>Component Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ComponentDefinition
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition
    * @generated
    */
   public Adapter createComponentDefinitionAdapter()
@@ -343,13 +312,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element <em>Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Element <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Element
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Element
    * @generated
    */
   public Adapter createElementAdapter()
@@ -358,13 +327,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define <em>Define</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define <em>Define</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Define
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Define
    * @generated
    */
   public Adapter createDefineAdapter()
@@ -373,13 +342,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script <em>Script</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script <em>Script</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Script
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Script
    * @generated
    */
   public Adapter createScriptAdapter()
@@ -388,13 +357,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty <em>Static Call Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty <em>Static Call Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticCallValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty
    * @generated
    */
   public Adapter createStaticCallValuePropertyAdapter()
@@ -403,13 +372,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StaticValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty
    * @generated
    */
   public Adapter createStaticValuePropertyAdapter()
@@ -418,13 +387,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property <em>Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.Property <em>Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.Property
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.Property
    * @generated
    */
   public Adapter createPropertyAdapter()
@@ -433,13 +402,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ValueProperty <em>Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty <em>Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty
    * @generated
    */
   public Adapter createValuePropertyAdapter()
@@ -448,13 +417,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SingleValueProperty <em>Single Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty <em>Single Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SingleValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty
    * @generated
    */
   public Adapter createSingleValuePropertyAdapter()
@@ -463,13 +432,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MultiValueProperty <em>Multi Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty <em>Multi Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MultiValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.MultiValueProperty
    * @generated
    */
   public Adapter createMultiValuePropertyAdapter()
@@ -478,13 +447,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FactoryValueElement <em>Factory Value Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement <em>Factory Value Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FactoryValueElement
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement
    * @generated
    */
   public Adapter createFactoryValueElementAdapter()
@@ -493,13 +462,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueElement <em>List Value Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement <em>List Value Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueElement
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement
    * @generated
    */
   public Adapter createListValueElementAdapter()
@@ -508,13 +477,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueProperty <em>List Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty <em>List Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ListValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty
    * @generated
    */
   public Adapter createListValuePropertyAdapter()
@@ -523,13 +492,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MapValueProperty <em>Map Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty <em>Map Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.MapValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.MapValueProperty
    * @generated
    */
   public Adapter createMapValuePropertyAdapter()
@@ -538,13 +507,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty <em>Simple Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty <em>Simple Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.SimpleValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty
    * @generated
    */
   public Adapter createSimpleValuePropertyAdapter()
@@ -553,13 +522,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty <em>Const Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty <em>Const Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ConstValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty
    * @generated
    */
   public Adapter createConstValuePropertyAdapter()
@@ -568,13 +537,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceType <em>Reference Type</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType <em>Reference Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceType
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType
    * @generated
    */
   public Adapter createReferenceTypeAdapter()
@@ -583,13 +552,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty <em>Reference Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty <em>Reference Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ReferenceValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty
    * @generated
    */
   public Adapter createReferenceValuePropertyAdapter()
@@ -598,13 +567,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty <em>Include Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty <em>Include Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.IncludeValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty
    * @generated
    */
   public Adapter createIncludeValuePropertyAdapter()
@@ -613,13 +582,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty <em>Copy Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty <em>Copy Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.CopyValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.CopyValueProperty
    * @generated
    */
   public Adapter createCopyValuePropertyAdapter()
@@ -628,13 +597,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty <em>Controller Handled Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty <em>Controller Handled Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ControllerHandledValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
    * @generated
    */
   public Adapter createControllerHandledValuePropertyAdapter()
@@ -643,13 +612,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty <em>Script Handler Handled Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty <em>Script Handler Handled Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty
    * @generated
    */
   public Adapter createScriptHandlerHandledValuePropertyAdapter()
@@ -658,13 +627,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression <em>Script Value Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression <em>Script Value Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueExpression
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression
    * @generated
    */
   public Adapter createScriptValueExpressionAdapter()
@@ -673,13 +642,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference <em>Script Value Reference</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference <em>Script Value Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptValueReference
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference
    * @generated
    */
   public Adapter createScriptValueReferenceAdapter()
@@ -688,13 +657,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty <em>Location Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty <em>Location Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.LocationValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty
    * @generated
    */
   public Adapter createLocationValuePropertyAdapter()
@@ -703,13 +672,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty <em>Resource Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty <em>Resource Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ResourceValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty
    * @generated
    */
   public Adapter createResourceValuePropertyAdapter()
@@ -718,13 +687,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty <em>Bind Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty <em>Bind Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.BindValueProperty
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty
    * @generated
    */
   public Adapter createBindValuePropertyAdapter()
@@ -733,13 +702,13 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StringValue <em>String Value</em>}'.
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.StringValue <em>String Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.StringValue
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.StringValue
    * @generated
    */
   public Adapter createStringValueAdapter()

@@ -11,11 +11,11 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname <em>Functionname</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname <em>Functionname</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getScriptHandlerHandledValueProperty()
+ * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScriptHandlerHandledValueProperty()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface ScriptHandlerHandledValueProperty extends SingleValueProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Functionname</em>' attribute.
    * @see #setFunctionname(String)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.FXGraphPackage#getScriptHandlerHandledValueProperty_Functionname()
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScriptHandlerHandledValueProperty_Functionname()
    * @model
    * @generated
    */
   String getFunctionname();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname <em>Functionname</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname <em>Functionname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Functionname</em>' attribute.
