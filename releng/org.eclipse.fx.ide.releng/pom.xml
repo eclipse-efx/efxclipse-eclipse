@@ -30,6 +30,10 @@
 		<!-- CSS Tooling -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.ui</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css.jfx</module>
+		
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext.ui</module>
 	</modules>
 
 	<repositories>
