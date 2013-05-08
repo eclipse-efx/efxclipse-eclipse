@@ -5,9 +5,9 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://www.bestsolution.at/efxclipse/tooling/css/cssext/CssExtDsl" 
+       uri = "http://www.eclipse.org/efxclipse/tooling/css/cssext/CssExtDsl" 
        class = "org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage"
-       genModel = "at/bestsolution/efxclipse/tooling/css/cssext/CssExtDsl.genmodel" /> 
+       genModel = "org/eclipse/fx/ide/css/cssext/CssExtDsl.genmodel" /> 
 	
   </extension>
 
