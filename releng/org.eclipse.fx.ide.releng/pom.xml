@@ -34,6 +34,13 @@
 		
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext.ui</module>
+		
+		<!-- FXGraph / FXML -->
+		<module>../../bundles/tooling/org.eclipse.fx.ide.model</module>
+		<!--  module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph.ui</module-->
+		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml</module>
+		
 	</modules>
 
 	<repositories>
