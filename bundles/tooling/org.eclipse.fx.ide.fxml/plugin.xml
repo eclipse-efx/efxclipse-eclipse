@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipse.fx.ide.fxml.editors.FXMLEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
+            extensions="fxml"
+            icon="icons/page_white_code_red.png"
+            id="org.eclipse.fx.ide.fxml.editors.FXMLEditor"
+            name="FXML Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.wst.sse.ui.completionProposal">
+      <proposalComputer
+            activate="true"
+            categoryId="org.eclipse.wst.xml.ui.proposalCategory.xmlTags"
+            class="org.eclipse.fx.ide.fxml.editors.FXMLCompletionProposalComputer"
+            id="org.eclipse.fx.ide.fxml.proposalComputer1">
+         <contentType
+               id="org.eclipse.fx.ide.fxml.file">
+         </contentType>
+      </proposalComputer>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            default-charset="UTF-8"
+            file-extensions="fxml"
+            id="org.eclipse.fx.ide.fxml.file"
+            name="FXML"
+            priority="normal">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.wst.sse.ui.editorConfiguration">
+      <sourceViewerConfiguration
+        	class="org.eclipse.fx.ide.fxml.editors.FXMLTextViewerConfiguration"
+        	target="org.eclipse.fx.ide.fxml.file"/>
+      <documentationTextHover
+            class="org.eclipse.fx.ide.fxml.editors.FXMLTextHover"
+            target="org.eclipse.wst.xml.XML_DEFAULT">
+      </documentationTextHover>
+      <documentationTextHover
+            class="org.eclipse.fx.ide.fxml.editors.FXMLTextHover"
+            target="org.eclipse.wst.xml.PROCESSING_INSTRUCTION">
+      </documentationTextHover>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.fx.ide"
+            class="org.eclipse.fx.ide.fxml.wizards.NewFXMLWizard"
+            icon="icons/page_white_code_red.png"
+            id="org.eclipse.fx.ide.fxml.wizard1"
+            name="New FXML Document"
+            project="false">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.wst.sse.ui.sourcevalidation">
+      <validator
+            class="org.eclipse.fx.ide.fxml.editors.FXMLValidator"
+            scope="total">
+         <contentTypeIdentifier
+               id="org.eclipse.fx.ide.fxml.file">
+            <partitionType
+                  id="org.eclipse.wst.xml.XML_DEFAULT">
+            </partitionType></contentTypeIdentifier>
+      </validator>
+   </extension>
+   <extension
+         point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectors">
+      <hyperlinkDetector
+            activate="true"
+            class="org.eclipse.fx.ide.fxml.editors.FXMLHyperlinkDetector"
+            id="org.eclipse.fx.ide.fxml.hyperlinkDetector1"
+            name="FXML Hyperlink Detector"
+            targetId="org.eclipse.core.runtime.xml">
+      </hyperlinkDetector>
+   </extension>
+   <extension
+         point="org.eclipse.ltk.core.refactoring.renameParticipants">
+      <renameParticipant
+            class="org.eclipse.fx.ide.fxml.refactoring.RenameJFXControllerParticipant"
+            id="org.eclipse.fx.ide.fxml.refactoring.renameParticipant"
+            name="rename">
+            <enablement>
+              <with variable="affectedNatures">
+                <iterate operator="or">
+                  <equals value="org.eclipse.jdt.core.javanature"/>
+                </iterate>
+              </with>
+              <with variable="element">
+                <instanceof value="org.eclipse.jdt.core.ICompilationUnit"></instanceof>
+              </with>
+            </enablement>
+     </renameParticipant>
+   </extension>
+   <extension
+         point="org.eclipse.jdt.core.compilationParticipant">
+      <compilationParticipant
+            class="org.eclipse.fx.ide.fxml.compile.FxmlAnnotationCompilationParticipant"
+            createsProblems="true"
+            id="org.eclipse.fx.ide.fxml.compilationParticipant1">
+         <managedMarker markerType="org.eclipse.jdt.apt.core.compile.problem"/>
+      </compilationParticipant>
+   </extension>
+</plugin>
