@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.bestsolution.efxclipse.tooling.fxgraph/src-gen"
+    editDirectory="/at.bestsolution.efxclipse.tooling.fxgraph.edit/src" editorDirectory="/at.bestsolution.efxclipse.tooling.fxgraph.editor/src"
+    modelPluginID="at.bestsolution.efxclipse.tooling.fxgraph" forceOverwrite="true"
+    modelName="FXGraph" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="at.bestsolution.efxclipse.tooling.fxgraph.edit"
+    editorPluginID="at.bestsolution.efxclipse.tooling.fxgraph.editor" runtimeVersion="2.8"
+    usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types">
+  <genPackages prefix="FXGraph" basePackage="at.bestsolution.efxclipse.tooling.fxgraph"
+      disposableProviderFactory="true" ecorePackage="FXGraph.ecore#/">
+    <genClasses ecoreClass="FXGraph.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Model/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Model/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Model/componentDef"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//PackageDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//PackageDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ComponentDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ComponentDefinition/dynamicRoot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ComponentDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/controller"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ComponentDefinition/previewCssFiles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ComponentDefinition/previewResourceBundle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ComponentDefinition/previewClasspathEntries"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/sceneDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/scripts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/defines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/rootNode"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//Element">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Element/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/staticProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/staticCallProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/defaultChildren"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Element/factory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/values"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//Define">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Define/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Define/includeElement"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Script/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Script/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Script/sourcecode"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//StaticCallValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//StaticCallValueProperty/modifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//StaticCallValueProperty/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//StaticCallValueProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//StaticCallValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//StaticValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//StaticValueProperty/modifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//StaticValueProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//StaticValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Property/modifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Property/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ValueProperty"/>
+    <genClasses ecoreClass="FXGraph.ecore#//SingleValueProperty"/>
+    <genClasses ecoreClass="FXGraph.ecore#//MultiValueProperty"/>
+    <genClasses ecoreClass="FXGraph.ecore#//FactoryValueElement"/>
+    <genClasses ecoreClass="FXGraph.ecore#//ListValueElement"/>
+    <genClasses ecoreClass="FXGraph.ecore#//ListValueProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ListValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//MapValueProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//MapValueProperty/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//SimpleValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/stringValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/booleanValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/negative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/intValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/realValue"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ConstValueProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ConstValueProperty/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ConstValueProperty/field"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ReferenceType"/>
+    <genClasses ecoreClass="FXGraph.ecore#//ReferenceValueProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ReferenceValueProperty/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ReferenceValueProperty/staticProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ReferenceValueProperty/staticCallProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//IncludeValueProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//IncludeValueProperty/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//IncludeValueProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//IncludeValueProperty/staticProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//IncludeValueProperty/staticCallProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//CopyValueProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//CopyValueProperty/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ControllerHandledValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ControllerHandledValueProperty/methodname"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ScriptHandlerHandledValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ScriptHandlerHandledValueProperty/functionname"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ScriptValueExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ScriptValueExpression/sourcecode"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ScriptValueReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ScriptValueReference/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//LocationValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//LocationValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ResourceValueProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ResourceValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//BindValueProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//BindValueProperty/elementReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//BindValueProperty/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//StringValue/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,164 @@
+/*******************************************************************************
+ * Copyright (c) 2012 BestSolution.at and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Tom Schindl<tom.schindl@bestsolution.at> - initial API and implementation
+ *******************************************************************************/
+grammar org.eclipse.fx.ide.fxgraph.FXGraph with org.eclipse.xtext.xbase.Xbase
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate fXGraph "http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph"
+
+Model:
+	package=PackageDeclaration?
+	imports+=Import*
+	componentDef=ComponentDefinition
+;
+
+PackageDeclaration:
+	'package' name=QualifiedName
+;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCard;
+
+ComponentDefinition:
+	(dynamicRoot?='dynamic')? 'component' name=ValidID 
+		(
+			('controlledby' controller=JvmTypeReference)? & 
+			('styledwith' (previewCssFiles+=STRING | ('[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')))? & 
+			( 'resourcefile' previewResourceBundle=STRING )? &
+			( 'extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? &
+			( 'sceneSetup' sceneDefinition=[ComponentDefinition|QualifiedName] )?
+		) 
+	'{'
+		(scripts+=Script)?
+		(defines+=Define (',' defines+=Define)*)?
+		rootNode=Element
+	'}'
+;
+
+
+Element:
+	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'
+		((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element ))*)?
+	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID '{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}' ) )
+;
+
+Define:
+	'define' ( element=Element | includeElement=IncludeValueProperty )
+;
+
+Script:
+	'script' language=ID (source=STRING | sourcecode=SCRIPTLITERAL)
+;
+
+StaticCallValueProperty:
+	modifier=('preview'|'runtime-only')? 'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty
+;
+
+StaticValueProperty:
+	modifier=('preview'|'runtime-only')? 'static' name=ID ':' value=ValueProperty
+;
+
+Property:
+	modifier=('preview'|'runtime-only')? name=ID ':' value=ValueProperty 
+;
+
+ValueProperty:
+	SingleValueProperty | MultiValueProperty
+;
+
+SingleValueProperty:
+	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty | ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference | LocationValueProperty | ResourceValueProperty | BindValueProperty | ConstValueProperty
+;
+
+MultiValueProperty:
+	ListValueProperty | MapValueProperty
+;
+
+FactoryValueElement:
+	SimpleValueProperty | Element
+;
+
+ListValueElement:
+	Element | ReferenceValueProperty | IncludeValueProperty | SimpleValueProperty
+;
+
+ListValueProperty:
+	'[' value += ListValueElement (',' value += ListValueElement)* ']'
+;
+
+MapValueProperty:
+	'{' properties+=Property (',' properties+=Property)* '}'
+;
+
+SimpleValueProperty:
+	stringValue=STRING | booleanValue=("true"|"false") | ( (negative?='-')? (intValue=INT | realValue=REAL))
+;
+
+ConstValueProperty:
+	'const' type=JvmTypeReference '#' field=ID
+;
+
+ReferenceType:
+	Element | IncludeValueProperty
+;
+
+ReferenceValueProperty:
+	'idref' reference=[ReferenceType|ValidID] ('{'
+		(staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))*
+	'}')?
+;
+
+IncludeValueProperty:
+	'include' source=[ComponentDefinition|QualifiedName] ('as' name=ValidID)? ('{'
+		(staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))*
+	'}')?
+;
+
+CopyValueProperty:
+	'copy' reference=[Element|ValidID]
+;
+
+ControllerHandledValueProperty:
+	'controllermethod' methodname=ID
+;
+
+ScriptHandlerHandledValueProperty:
+	'scriptmethod' functionname=STRING
+;
+
+ScriptValueExpression:
+	'scriptexpression' sourcecode=SCRIPTLITERAL
+;
+
+ScriptValueReference:
+	'scriptvalue' reference=ID
+;
+
+LocationValueProperty:
+	'location' value=STRING
+;
+
+ResourceValueProperty:
+	'rstring' value=StringValue
+;
+
+BindValueProperty:
+	'bind' elementReference=[Element|ValidID] '#' attribute=ID
+;
+
+QualifiedNameWithWildCard :
+	QualifiedName  ('.' '*')?;
+
+StringValue:
+	value=STRING
+;
+
+terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
+terminal SCRIPTLITERAL	:  '#{' -> '}#';

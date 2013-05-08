@@ -1,0 +1,7 @@
+famfamfam (Creative commons 2.5):
+---------------------------------
+icons/page_white_coldfusion.png
+
+Eclipse Platform (EPL):
+-----------------------
+icons/title_banner.png
