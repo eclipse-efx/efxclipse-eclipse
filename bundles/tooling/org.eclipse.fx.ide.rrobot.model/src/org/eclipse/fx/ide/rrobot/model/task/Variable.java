@@ -104,7 +104,7 @@ public interface Variable extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Type}.
+	 * The literals are from the enumeration {@link org.eclipse.fx.ide.rrobot.model.task.Type}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -112,7 +112,7 @@ public interface Variable extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Type
+	 * @see org.eclipse.fx.ide.rrobot.model.task.Type
 	 * @see #setType(Type)
 	 * @see org.eclipse.fx.ide.rrobot.model.task.TaskPackage#getVariable_Type()
 	 * @model
@@ -125,7 +125,7 @@ public interface Variable extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Type
+	 * @see org.eclipse.fx.ide.rrobot.model.task.Type
 	 * @see #getType()
 	 * @generated
 	 */

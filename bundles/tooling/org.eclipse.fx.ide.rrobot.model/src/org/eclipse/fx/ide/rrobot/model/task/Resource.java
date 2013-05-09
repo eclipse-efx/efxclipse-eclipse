@@ -11,7 +11,7 @@ package org.eclipse.fx.ide.rrobot.model.task;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.rrobot.model.task.Resource#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +37,7 @@ public interface Resource extends ExcludeableElementMixin {
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.fx.ide.rrobot.model.task.Resource#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.

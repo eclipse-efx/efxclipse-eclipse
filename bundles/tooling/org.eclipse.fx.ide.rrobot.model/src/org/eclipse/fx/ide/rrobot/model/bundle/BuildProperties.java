@@ -26,7 +26,7 @@ public interface BuildProperties extends TemplatedFile {
 
 	/**
 	 * Returns the value of the '<em><b>Bin Includes</b></em>' reference list.
-	 * The list contents are of type {@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource}.
+	 * The list contents are of type {@link org.eclipse.fx.ide.rrobot.model.task.Resource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bin Includes</em>' reference list isn't clear,

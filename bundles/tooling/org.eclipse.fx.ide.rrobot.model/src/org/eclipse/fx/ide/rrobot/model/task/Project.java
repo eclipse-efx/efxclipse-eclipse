@@ -55,7 +55,7 @@ public interface Project extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
-	 * The list contents are of type {@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource}.
+	 * The list contents are of type {@link org.eclipse.fx.ide.rrobot.model.task.Resource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Resources</em>' containment reference list isn't clear,

@@ -255,7 +255,7 @@ public interface FeatureFile extends TemplatedFile {
 	 * @return the value of the '<em>License feature version</em>' attribute.
 	 * @see #setLicense_feature_version(Version)
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage#getFeatureFile_License_feature_version()
-	 * @model dataType="at.bestsolution.efxclipse.tooling.rrobot.model.bundle.Version"
+	 * @model dataType="org.eclipse.fx.ide.rrobot.model.bundle.Version"
 	 * @generated
 	 */
 	Version getLicense_feature_version();

@@ -25,7 +25,7 @@ import org.eclipse.fx.ide.rrobot.model.task.Resource;
 public interface Folder extends Resource {
 	/**
 	 * Returns the value of the '<em><b>Children</b></em>' containment reference list.
-	 * The list contents are of type {@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource}.
+	 * The list contents are of type {@link org.eclipse.fx.ide.rrobot.model.task.Resource}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Children</em>' containment reference list isn't clear,

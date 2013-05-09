@@ -54,7 +54,7 @@ public interface RequiredFeature extends ExcludeableElementMixin {
 
 	/**
 	 * Returns the value of the '<em><b>Match</b></em>' attribute.
-	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule}.
+	 * The literals are from the enumeration {@link org.eclipse.fx.ide.rrobot.model.bundle.MatchRule}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Match</em>' attribute isn't clear,
@@ -62,7 +62,7 @@ public interface RequiredFeature extends ExcludeableElementMixin {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Match</em>' attribute.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.MatchRule
 	 * @see #setMatch(MatchRule)
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage#getRequiredFeature_Match()
 	 * @model
@@ -75,7 +75,7 @@ public interface RequiredFeature extends ExcludeableElementMixin {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Match</em>' attribute.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.MatchRule
 	 * @see #getMatch()
 	 * @generated
 	 */
@@ -92,7 +92,7 @@ public interface RequiredFeature extends ExcludeableElementMixin {
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(Version)
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage#getRequiredFeature_Version()
-	 * @model dataType="at.bestsolution.efxclipse.tooling.rrobot.model.bundle.Version"
+	 * @model dataType="org.eclipse.fx.ide.rrobot.model.bundle.Version"
 	 * @generated
 	 */
 	Version getVersion();

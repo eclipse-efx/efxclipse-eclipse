@@ -65,7 +65,7 @@ public interface RequiredBundle extends ExcludeableElementMixin {
 	 * @return the value of the '<em>Min Version</em>' attribute.
 	 * @see #setMinVersion(Version)
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage#getRequiredBundle_MinVersion()
-	 * @model dataType="at.bestsolution.efxclipse.tooling.rrobot.model.bundle.Version"
+	 * @model dataType="org.eclipse.fx.ide.rrobot.model.bundle.Version"
 	 * @generated
 	 */
 	Version getMinVersion();
@@ -91,7 +91,7 @@ public interface RequiredBundle extends ExcludeableElementMixin {
 	 * @return the value of the '<em>Max Version</em>' attribute.
 	 * @see #setMaxVersion(Version)
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage#getRequiredBundle_MaxVersion()
-	 * @model dataType="at.bestsolution.efxclipse.tooling.rrobot.model.bundle.Version"
+	 * @model dataType="org.eclipse.fx.ide.rrobot.model.bundle.Version"
 	 * @generated
 	 */
 	Version getMaxVersion();

@@ -63,7 +63,7 @@ public interface IncludedFeature extends ExcludeableElementMixin {
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(Version)
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage#getIncludedFeature_Version()
-	 * @model dataType="at.bestsolution.efxclipse.tooling.rrobot.model.bundle.Version"
+	 * @model dataType="org.eclipse.fx.ide.rrobot.model.bundle.Version"
 	 * @generated
 	 */
 	Version getVersion();

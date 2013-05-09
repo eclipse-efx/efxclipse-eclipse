@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.fx.ide.rrobot.model.bundle.*;
 import org.eclipse.fx.ide.rrobot.model.bundle.Attribute;
 import org.eclipse.fx.ide.rrobot.model.bundle.BuildProperties;
 import org.eclipse.fx.ide.rrobot.model.bundle.BundleFactory;

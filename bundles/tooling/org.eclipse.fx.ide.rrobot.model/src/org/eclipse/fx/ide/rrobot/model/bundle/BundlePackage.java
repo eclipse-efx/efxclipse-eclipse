@@ -1539,10 +1539,10 @@ public interface BundlePackage extends EPackage {
 	int PRODUCT_START_CONFIG_FEATURE_COUNT = TaskPackage.EXCLUDEABLE_ELEMENT_MIXIN_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule <em>Match Rule</em>}' enum.
+	 * The meta object id for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.MatchRule <em>Match Rule</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.MatchRule
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getMatchRule()
 	 * @generated
 	 */
@@ -2606,11 +2606,11 @@ public interface BundlePackage extends EPackage {
 	EAttribute getProductStartConfig_StartLevel();
 
 	/**
-	 * Returns the meta object for enum '{@link at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule <em>Match Rule</em>}'.
+	 * Returns the meta object for enum '{@link org.eclipse.fx.ide.rrobot.model.bundle.MatchRule <em>Match Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>Match Rule</em>'.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.MatchRule
 	 * @generated
 	 */
 	EEnum getMatchRule();
@@ -3467,10 +3467,10 @@ public interface BundlePackage extends EPackage {
 		EAttribute PRODUCT_START_CONFIG__START_LEVEL = eINSTANCE.getProductStartConfig_StartLevel();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule <em>Match Rule</em>}' enum.
+		 * The meta object literal for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.MatchRule <em>Match Rule</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.tooling.rrobot.model.bundle.MatchRule
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.MatchRule
 		 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getMatchRule()
 		 * @generated
 		 */

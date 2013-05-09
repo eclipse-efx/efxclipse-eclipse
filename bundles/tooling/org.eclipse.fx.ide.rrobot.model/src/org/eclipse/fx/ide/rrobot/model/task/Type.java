@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.TaskPackage#getType()
+ * @see org.eclipse.fx.ide.rrobot.model.task.TaskPackage#getType()
  * @model
  * @generated
  */

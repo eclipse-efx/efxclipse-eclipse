@@ -815,10 +815,10 @@ public interface TaskPackage extends EPackage {
 	int COMPILATION_UNIT_FEATURE_COUNT = EXCLUDEABLE_ELEMENT_MIXIN_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Type <em>Type</em>}' enum.
+	 * The meta object id for the '{@link org.eclipse.fx.ide.rrobot.model.task.Type <em>Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Type
+	 * @see org.eclipse.fx.ide.rrobot.model.task.Type
 	 * @see org.eclipse.fx.ide.rrobot.model.task.impl.TaskPackageImpl#getType()
 	 * @generated
 	 */
@@ -930,21 +930,21 @@ public interface TaskPackage extends EPackage {
 	EReference getProject_ExcludeExpression();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource <em>Resource</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.fx.ide.rrobot.model.task.Resource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Resource</em>'.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource
+	 * @see org.eclipse.fx.ide.rrobot.model.task.Resource
 	 * @generated
 	 */
 	EClass getResource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.task.Resource#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource#getName()
+	 * @see org.eclipse.fx.ide.rrobot.model.task.Resource#getName()
 	 * @see #getResource()
 	 * @generated
 	 */
@@ -1355,11 +1355,11 @@ public interface TaskPackage extends EPackage {
 	EReference getExcludeableElementMixin_ExcludeExpression();
 
 	/**
-	 * Returns the meta object for enum '{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Type <em>Type</em>}'.
+	 * Returns the meta object for enum '{@link org.eclipse.fx.ide.rrobot.model.task.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>Type</em>'.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Type
+	 * @see org.eclipse.fx.ide.rrobot.model.task.Type
 	 * @generated
 	 */
 	EEnum getType();
@@ -1381,7 +1381,7 @@ public interface TaskPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Generator</em>'.
 	 * @see org.eclipse.fx.ide.rrobot.model.task.Generator
-	 * @model instanceClass="at.bestsolution.efxclipse.tooling.rrobot.model.task.Generator" typeParameters="F"
+	 * @model instanceClass="org.eclipse.fx.ide.rrobot.model.task.Generator" typeParameters="F"
 	 * @generated
 	 */
 	EDataType getGenerator();
@@ -1832,10 +1832,10 @@ public interface TaskPackage extends EPackage {
 		EReference EXCLUDEABLE_ELEMENT_MIXIN__EXCLUDE_EXPRESSION = eINSTANCE.getExcludeableElementMixin_ExcludeExpression();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Type <em>Type</em>}' enum.
+		 * The meta object literal for the '{@link org.eclipse.fx.ide.rrobot.model.task.Type <em>Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Type
+		 * @see org.eclipse.fx.ide.rrobot.model.task.Type
 		 * @see org.eclipse.fx.ide.rrobot.model.task.impl.TaskPackageImpl#getType()
 		 * @generated
 		 */

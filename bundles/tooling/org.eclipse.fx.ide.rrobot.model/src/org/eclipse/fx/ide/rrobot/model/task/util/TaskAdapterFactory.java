@@ -200,13 +200,13 @@ public class TaskAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource <em>Resource</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.rrobot.model.task.Resource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.tooling.rrobot.model.task.Resource
+	 * @see org.eclipse.fx.ide.rrobot.model.task.Resource
 	 * @generated
 	 */
 	public Adapter createResourceAdapter() {
