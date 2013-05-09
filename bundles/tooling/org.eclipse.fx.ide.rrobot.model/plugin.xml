@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.efxclipse.org/rrobot/task/bundle/1.0"
+            class="org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage"
+            genModel="model/AllModelGenerator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.efxclipse.org/rrobot/task/1.0"
+            class="org.eclipse.fx.ide.rrobot.model.task.TaskPackage"
+            genModel="model/AllModelGenerator.genmodel"/>
+   </extension>
+
+</plugin>
