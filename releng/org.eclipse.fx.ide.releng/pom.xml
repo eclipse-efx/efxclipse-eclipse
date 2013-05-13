@@ -35,7 +35,8 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.dsl</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.dsl.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.ui</module>
-		
+		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.ui.e4</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.java7</module>
 				
 		<!-- CSS Tooling -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css</module>
