@@ -30,6 +30,13 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.adapter</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.fragment</module>
 		
+		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.model</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.dsl</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.dsl.ui</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.ui</module>
+		
+				
 		<!-- CSS Tooling -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.ui</module>
