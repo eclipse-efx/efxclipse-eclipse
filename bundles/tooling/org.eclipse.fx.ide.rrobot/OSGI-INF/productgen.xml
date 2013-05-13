@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.fx.ide.rrobot.productgen">
+   <implementation class="org.eclipse.fx.ide.rrobot.impl.generators.ProductGenerator"/>
+   <service>
+      <provide interface="org.eclipse.fx.ide.rrobot.model.task.Generator"/>
+   </service>
+   <property name="type" type="String" value="bundle-product"/>
+</scr:component>

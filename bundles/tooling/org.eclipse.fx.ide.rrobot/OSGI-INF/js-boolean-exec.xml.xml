@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.fx.ide.rrobot.js-boolean-exec">
+   <implementation class="org.eclipse.fx.ide.rrobot.impl.expr.JSBooleanExpressionExec"/>
+   <service>
+      <provide interface="org.eclipse.fx.ide.rrobot.model.task.BooleanExpressionExecutor"/>
+   </service>
+   <property name="executabletype" type="String" value="javascript"/>
+</scr:component>
