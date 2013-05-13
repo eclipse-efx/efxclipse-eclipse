@@ -1,0 +1,94 @@
+RobotTask {
+	variables = {
+		## Maven Group Id
+		STRING "Maven_GroupId" default "my.sample",
+		## Bundle Version
+		STRING "BundleProject_bundleVersion" default "1.0.0.qualifier",
+		## Releng Maven Artifact Id
+		STRING "Maven_RelengArtifactId" default "my.sample.osgi.releng",
+		## Releng Maven Artifact Version
+		STRING "Maven_RelengArtifactVersion" default "${BundleProject_bundleVersion}",
+		## Releng Maven Artifact Path
+		STRING "Maven_RelengArtifactPath" default "../${Maven_RelengArtifactId}",
+		## Name of the project
+		STRING "BundleProject_projectName" default "${Maven_GroupId}.osgi",  
+		## Symbolic id of the bundle
+		STRING "BundleProject_bundleId" default "${Maven_GroupId}.osgi",
+		## Name of the Bundle
+		STRING "BundleProject_bundleName" default "My Sample App",
+		## Vendor of the Bundle
+		STRING "BundleProject_bundleVendor" default "My Company",
+		## Bundle Execution Environment
+		STRING "BundleProject_EE" default "JavaSE-1.7",
+		## Tycho integration
+		BOOLEAN "TychoIntegration" default "true"
+	}
+	projects = {
+		BundleProject "${BundleProject_projectName}" {
+			manifest = ManifestFile "${BundleProject_bundleId}" "${BundleProject_bundleVersion}" "${BundleProject_EE}" {
+				bundlename = "${BundleProject_bundleName}"
+				vendor = "${BundleProject_bundleVendor}"
+				importedPackages = {
+					"javafx.animation" 			[2.0.0,],
+					"javafx.application" 		[2.0.0,],
+					"javafx.beans" 				[2.0.0,],
+					"javafx.beans.binding" 		[2.0.0,],
+					"javafx.beans.property" 	[2.0.0,],
+					"javafx.beans.value" 		[2.0.0,],
+					"javafx.collections" 		[2.0.0,],
+					"javafx.concurrent" 		[2.0.0,],
+					"javafx.event" 				[2.0.0,],
+					"javafx.fxml" 				[2.0.0,],
+					"javafx.geometry" 			[2.0.0,],
+					"javafx.scene" 				[2.0.0,],
+					"javafx.scene.chart" 		[2.0.0,],
+					"javafx.scene.control" 		[2.0.0,],
+					"javafx.scene.control.cell" [2.0.0,],
+					"javafx.scene.effect" 		[2.0.0,],
+					"javafx.scene.image" 		[2.0.0,],
+					"javafx.scene.input" 		[2.0.0,],
+					"javafx.scene.layout" 		[2.0.0,],
+					"javafx.scene.media" 		[2.0.0,],
+					"javafx.scene.paint" 		[2.0.0,],
+					"javafx.scene.shape" 		[2.0.0,],
+					"javafx.scene.text" 		[2.0.0,],
+					"javafx.scene.transform" 	[2.0.0,],
+					"javafx.scene.web" 			[2.0.0,],
+					"javafx.stage"	 			[2.0.0,],
+					"javafx.util" 				[2.0.0,]
+				}
+			}
+			build = BuildProperties {
+				
+			}
+			resources = {
+				Folder "src",
+				DynamicFile "pom.xml" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.PluginPomGenerator" 
+					by "java"
+					{
+						## releng group id
+						STRING "relengGroupId" default "${Maven_GroupId}",
+						## releng artifact id
+						STRING "relengArtifactId" default "${Maven_RelengArtifactId}",
+						## releng releng version
+						STRING "relengArtifactVersion" default "${Maven_RelengArtifactVersion}",
+						## releng releng path
+						STRING "relengPath" default "${Maven_RelengArtifactPath}",
+						## group id
+						STRING "groupId" default "${Maven_GroupId}",
+						## artifactId
+						STRING "artifactId" default "${BundleProject_bundleId}",
+						## baseVersion
+						STRING "baseVersion" default "${BundleProject_bundleVersion}",
+						## pom name
+						STRING "name" default "${Maven_GroupId} - ${BundleProject_bundleName}"
+					} 
+					excluded-if "javascript" /# !TychoIntegration; #/
+			}
+			rootfragments = {
+				fragment "default-src" "src"
+			}
+		}
+	}
+}

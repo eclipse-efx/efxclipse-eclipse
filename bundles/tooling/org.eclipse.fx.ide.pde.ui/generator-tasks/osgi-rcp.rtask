@@ -1,0 +1,275 @@
+RobotTask {
+	variables = {
+		## Maven Group Id
+		STRING "Maven_GroupId" default "my.sample.rcp3x",
+		## Name of the project
+		STRING "BundleProject_projectName" default "${Maven_GroupId}.app",  
+		## Symbolic id of the bundle
+		STRING "BundleProject_bundleId" default "${Maven_GroupId}.app",
+		## Name of the Bundle
+		STRING "BundleProject_bundleName" default "My Sample App",
+		## Vendor of the Bundle
+		STRING "BundleProject_bundleVendor" default "My Company",
+		## Product name
+		STRING "BundleProject_productName" default "My Sample Application",
+		## Bundle Version
+		STRING "BundleProject_bundleVersion" default "1.0.0.qualifier",
+		## Bundle Execution Environment
+		STRING "BundleProject_EE" default "JavaSE-1.7",
+		## Tycho integration
+		BOOLEAN "TychoIntegration" default "true",
+		## Native export integration
+		BOOLEAN "NativeExport" default "true",
+		## ICU Base
+		BOOLEAN "ICUBase" default "false",
+		## Eclipse 3.x
+		BOOLEAN "Eclipse3x" default "false"
+	}
+	projects = {
+		BundleProject "${BundleProject_projectName}" {
+			manifest = ManifestFile "${BundleProject_bundleId}" "${BundleProject_bundleVersion}" "${BundleProject_EE}" {
+				bundlename = "${BundleProject_bundleName}"
+				vendor = "${BundleProject_bundleVendor}"
+				importedPackages = {
+					"javafx.animation" 			[2.0.0,],
+					"javafx.application" 		[2.0.0,],
+					"javafx.beans" 				[2.0.0,],
+					"javafx.beans.binding" 		[2.0.0,],
+					"javafx.beans.property" 	[2.0.0,],
+					"javafx.beans.value" 		[2.0.0,],
+					"javafx.collections" 		[2.0.0,],
+					"javafx.concurrent" 		[2.0.0,],
+					"javafx.event" 				[2.0.0,],
+					"javafx.fxml" 				[2.0.0,],
+					"javafx.geometry" 			[2.0.0,],
+					"javafx.scene" 				[2.0.0,],
+					"javafx.scene.chart" 		[2.0.0,],
+					"javafx.scene.control" 		[2.0.0,],
+					"javafx.scene.control.cell" [2.0.0,],
+					"javafx.scene.effect" 		[2.0.0,],
+					"javafx.scene.image" 		[2.0.0,],
+					"javafx.scene.input" 		[2.0.0,],
+					"javafx.scene.layout" 		[2.0.0,],
+					"javafx.scene.media" 		[2.0.0,],
+					"javafx.scene.paint" 		[2.0.0,],
+					"javafx.scene.shape" 		[2.0.0,],
+					"javafx.scene.text" 		[2.0.0,],
+					"javafx.scene.transform" 	[2.0.0,],
+					"javafx.scene.web" 			[2.0.0,],
+					"javafx.stage"	 			[2.0.0,],
+					"javafx.util" 				[2.0.0,],
+					"javafx.embed.swt" 			[2.0.0,]
+				}
+				requiredBundles = {
+					"org.eclipse.fx.ui.workbench3",
+					"org.eclipse.ui"
+				}
+			}
+			pluginxml = PluginXMLFile {
+				extensions = {
+					// A default application
+					"org.eclipse.core.runtime.applications" {
+						id = "application"
+						elements = {
+							"application" {
+								children = {
+									"run" {
+										attributes = {
+											{ "class" , "${BundleProject_bundleId}.MainApplication" }
+										}
+									}
+								}
+							}
+						}
+					},
+					"org.eclipse.core.runtime.products" {
+						id = "product"
+						elements = {
+							"product" {
+								attributes = {
+									{ "application", 	"${BundleProject_bundleId}.application" },
+									{ "name", 			"${BundleProject_productName}" }
+								}
+								children = {
+									"property" {
+										attributes = {
+											{"name",	"appName"},
+											{"value",	"${BundleProject_productName}"}
+										}
+									},
+									"property" {
+										attributes = {
+											{"name",	"windowImages"},
+											{"value",	"icons/alt_window_16.gif,icons/alt_window_32.gif"}
+										}
+									}
+								}
+							}
+						}
+					},
+					"org.eclipse.ui.perspectives" {
+						elements = {
+							"perspective" {
+								attributes = {
+									{"name", 	"Main Perspective"},
+									{"class", 	"${BundleProject_bundleId}.Perspective"},
+									{"id", 		"${BundleProject_bundleId}.perspective"}
+								}
+							}
+						}
+					},
+					"org.eclipse.ui.views" {
+						elements = {
+							"view" {
+								attributes = {
+									{"name", 	"Main View"},
+									{"icon", 	"icons/sample.gif"},
+									{"class", 	"${BundleProject_bundleId}.views.ViewPart"},
+									{"id", 		"${BundleProject_bundleId}.ViewPart"}
+								}
+							}
+						}
+					}
+				}
+			}
+			build = BuildProperties {
+				
+			}
+			resources = {
+				Folder "src"
+			}
+			rootfragments = {
+				fragment "default-src" "src"
+			}
+			compilation-units = {
+				"${BundleProject_bundleId}.views" in "default-src" {
+					DynamicFile "ViewPart.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.rcp.tpl.ViewPartTpl" by "java" 
+						{
+							## bundle id
+							STRING "bundleId" default "${BundleProject_bundleId}"
+						}
+				},
+				"${BundleProject_bundleId}" in "default-src" {
+					DynamicFile "ApplicationActionBarAdvisor.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.rcp.tpl.ApplicationActionBarAdvisorTpl" by "java" 
+				},
+				"${BundleProject_bundleId}" in "default-src" {
+					DynamicFile "Application.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.rcp.tpl.ApplicationTpl" by "java" 
+				},
+				"${BundleProject_bundleId}" in "default-src" {
+					DynamicFile "ApplicationWorkbenchAdvisor.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.rcp.tpl.ApplicationWorkbenchAdvisorTpl" by "java"
+						{
+							## bundle id
+							STRING "bundleId" default "${BundleProject_bundleId}"
+						} 
+				},
+				"${BundleProject_bundleId}" in "default-src" {
+					DynamicFile "ApplicationWorkbenchWindowAdvisor.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.rcp.tpl.ApplicationWorkbenchWindowAdvisorTpl" by "java" 
+				},
+				"${BundleProject_bundleId}" in "default-src" {
+					DynamicFile "Perspective.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.rcp.tpl.PerspectiveTpl" by "java"
+						{
+							## bundle id
+							STRING "bundleId" default "${BundleProject_bundleId}"
+						} 
+				}
+			}
+		},
+		FeatureProject "${BundleProject_projectName}.feature" {
+			feature = FeatureFile "${BundleProject_bundleId}.feature" { 
+				version = "${BundleProject_bundleVersion}" 
+				featurename = "${BundleProject_productName} Application Feature"
+				description = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				copyright = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				license = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				vendor = "${BundleProject_bundleVendor}"
+				plugins = {
+					"${BundleProject_bundleId}",
+					fragment "org.eclipse.fx.osgi",
+					"org.eclipse.fx.javafx",
+					"com.ibm.icu"  excluded-if "javascript" /# ICUBase; #/, 
+					"com.ibm.icu.base"  excluded-if "javascript" /# !ICUBase; #/,
+					"org.eclipse.core.commands",
+					"org.eclipse.core.contenttype",
+					"org.eclipse.core.databinding",
+					"org.eclipse.core.databinding.observable",
+					"org.eclipse.core.databinding.property",
+					"org.eclipse.core.expressions",
+					"org.eclipse.core.jobs",
+					"org.eclipse.core.runtime",
+					fragment "org.eclipse.core.runtime.compatibility.registry",
+					"org.eclipse.equinox.app",
+					"org.eclipse.equinox.common",
+					"org.eclipse.equinox.preferences",
+					"org.eclipse.equinox.registry",
+					"org.eclipse.help",
+					"org.eclipse.jface",
+					"org.eclipse.jface.databinding",
+					"org.eclipse.osgi",
+					"org.eclipse.swt",
+					fragment "org.eclipse.swt.cocoa.macosx.x86_64",
+					fragment "org.eclipse.swt.gtk.linux.x86",
+					fragment "org.eclipse.swt.gtk.linux.x86_64",
+					fragment "org.eclipse.swt.win32.win32.x86",
+					fragment "org.eclipse.swt.win32.win32.x86_64",
+					"org.eclipse.ui",
+					fragment "org.eclipse.ui.cocoa",
+					"org.eclipse.ui.workbench",
+					
+					"org.eclipse.core.databinding.beans" 				excluded-if "javascript" /# Eclipse3x #/,
+					"javax.annotation"									excluded-if "javascript" /# Eclipse3x #/,
+					"javax.inject"										excluded-if "javascript" /# Eclipse3x #/,
+					"org.apache.batik.css" 								excluded-if "javascript" /# Eclipse3x #/,
+					"org.apache.batik.util"								excluded-if "javascript" /# Eclipse3x #/,
+					"org.apache.batik.util.gui"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.apache.commons.logging"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.core.jobs"								excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.core.resources"						excluded-if "javascript" /# Eclipse3x #/,
+					fragment "org.eclipse.core.resources.win32.x86"		excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.core.commands"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.core.contexts"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.core.di" 							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.core.di.extensions"					excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.core.services"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.bindings"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.css.core"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.css.swt"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.css.swt.theme"					excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.di"								excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.model.workbench"					excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.services"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.widgets"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.workbench"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.workbench.renderers.swt"			excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.workbench.swt"					excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.e4.ui.workbench3"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.emf.common"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.emf.databinding"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.emf.ecore"								excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.emf.ecore.change"						excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.emf.ecore.xmi"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.equinox.concurrent"					excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.equinox.ds"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.equinox.event"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.equinox.util"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.eclipse.osgi.services"							excluded-if "javascript" /# Eclipse3x #/,
+					"org.w3c.css.sac"									excluded-if "javascript" /# Eclipse3x #/,
+					"org.w3c.dom.smil"									excluded-if "javascript" /# Eclipse3x #/,
+					"org.w3c.dom.svg"									excluded-if "javascript" /# Eclipse3x #/,
+					"javax.xml"											excluded-if "javascript" /# Eclipse3x #/		
+				}
+			}
+		}
+	}
+}

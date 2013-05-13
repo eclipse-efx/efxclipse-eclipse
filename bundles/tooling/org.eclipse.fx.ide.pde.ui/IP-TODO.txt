@@ -1,0 +1,22 @@
+famfamfam (Creative commons 2.5):
+---------------------------------
+icons/application_lightning.png
+icons/building_link.png
+icons/page_gear.png
+
+Eclipse JDT (EPL):
+------------------
+icons/wizban/newclass_wiz.png
+
+
+Eclipse PDE:
+------------
+templates_3.6/helloRCP/bin/icons/alt_about.gif
+templates_3.6/helloRCP/bin/icons/alt_launcher.icns
+templates_3.6/helloRCP/bin/icons/alt_launcher.ico
+templates_3.6/helloRCP/bin/icons/alt_launcher.xpm
+templates_3.6/helloRCP/bin/icons/alt_window_16.gif
+templates_3.6/helloRCP/bin/icons/alt_window_32.gif
+templates_3.6/helloRCP/bin/icons/sample.gif
+
+templates_3.6/eclipse3xplugin/bin/icons/sample.gif

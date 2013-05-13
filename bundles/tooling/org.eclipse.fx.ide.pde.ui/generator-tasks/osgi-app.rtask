@@ -1,0 +1,486 @@
+RobotTask {
+	variables = {
+		## Maven Group Id
+		STRING "Maven_GroupId" default "my.sample.osgi",
+		## Name of the project
+		STRING "BundleProject_projectName" default "${Maven_GroupId}.app",  
+		## Symbolic id of the bundle
+		STRING "BundleProject_bundleId" default "${Maven_GroupId}.app",
+		## Name of the Bundle
+		STRING "BundleProject_bundleName" default "My Sample App",
+		## Vendor of the Bundle
+		STRING "BundleProject_bundleVendor" default "My Company",
+		## Product name
+		STRING "BundleProject_productName" default "My Sample Application",
+		## Bundle Version
+		STRING "BundleProject_bundleVersion" default "1.0.0.qualifier",
+		## Bundle Execution Environment
+		STRING "BundleProject_EE" default "JavaSE-1.7",
+		## Tycho integration
+		BOOLEAN "TychoIntegration" default "true",
+		## Native export integration
+		BOOLEAN "NativeExport" default "true",
+		## Eclipse DI
+		BOOLEAN "EclipseDI" default "true",
+		## ICU Base
+		BOOLEAN "ICUBase" default "false"
+	}
+	projects = {
+		BundleProject "${BundleProject_projectName}" {
+			manifest = ManifestFile "${BundleProject_bundleId}" "${BundleProject_bundleVersion}" "${BundleProject_EE}" {
+				bundlename = "${BundleProject_bundleName}"
+				vendor = "${BundleProject_bundleVendor}"
+				importedPackages = {
+					"javax.inject" 				[1.0.0,] excluded-if "javascript" /# !EclipseDI; #/,
+					"javax.annotation" 			[1.0.0,] excluded-if "javascript" /# !EclipseDI; #/,
+					"javafx.animation" 			[2.0.0,],
+					"javafx.application" 		[2.0.0,],
+					"javafx.beans" 				[2.0.0,],
+					"javafx.beans.binding" 		[2.0.0,],
+					"javafx.beans.property" 	[2.0.0,],
+					"javafx.beans.value" 		[2.0.0,],
+					"javafx.collections" 		[2.0.0,],
+					"javafx.concurrent" 		[2.0.0,],
+					"javafx.event" 				[2.0.0,],
+					"javafx.fxml" 				[2.0.0,],
+					"javafx.geometry" 			[2.0.0,],
+					"javafx.scene" 				[2.0.0,],
+					"javafx.scene.chart" 		[2.0.0,],
+					"javafx.scene.control" 		[2.0.0,],
+					"javafx.scene.control.cell" [2.0.0,],
+					"javafx.scene.effect" 		[2.0.0,],
+					"javafx.scene.image" 		[2.0.0,],
+					"javafx.scene.input" 		[2.0.0,],
+					"javafx.scene.layout" 		[2.0.0,],
+					"javafx.scene.media" 		[2.0.0,],
+					"javafx.scene.paint" 		[2.0.0,],
+					"javafx.scene.shape" 		[2.0.0,],
+					"javafx.scene.text" 		[2.0.0,],
+					"javafx.scene.transform" 	[2.0.0,],
+					"javafx.scene.web" 			[2.0.0,],
+					"javafx.stage"	 			[2.0.0,],
+					"javafx.util" 				[2.0.0,]
+				}
+				requiredBundles = {
+					"org.eclipse.fx.javafx",
+					"org.eclipse.fx.ui.application",
+					"org.eclipse.fx.core.databinding",
+					"org.eclipse.fx.ui.databinding",
+					"org.eclipse.fx.ui.di" excluded-if "javascript" /# !EclipseDI; #/,
+					
+					"org.eclipse.equinox.app"
+				}
+			}
+			pluginxml = PluginXMLFile {
+				extensions = {
+					// A default application
+					"org.eclipse.core.runtime.applications" {
+						id = "application"
+						elements = {
+							"application" {
+								attributes = {
+									{"thread","any"},
+									{"cardinality","*"},
+									{"visible","true"}
+								}
+								children = {
+									"run" {
+										attributes = {
+											{ "class" , "${BundleProject_bundleId}.MainApplication" }
+										}
+									}
+								}
+							}
+						}
+					} excluded-if "javascript" /# EclipseDI; #/,
+					// A DI application
+					"org.eclipse.core.runtime.applications" {
+						id = "application"
+						elements = {
+							"application" {
+								attributes = {
+									{"thread","any"},
+									{"cardinality","*"},
+									{"visible","true"}
+								}
+								children = {
+									"run" {
+										attributes = {
+											{ "class" , "org.eclipse.fx.ui.di.DIApplication" }
+										}
+										children = {
+											"parameter" {
+												attributes = {
+													{ "name", "mainClass"},
+													{ "value", "${BundleProject_bundleId}.MainApplication"}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					} excluded-if "javascript" /# !EclipseDI; #/,
+					"org.eclipse.core.runtime.products" {
+						id = "product"
+						elements = {
+							"product" {
+								attributes = {
+									{ "application", 	"${BundleProject_bundleId}.application" },
+									{ "name", 			"${BundleProject_productName}" }
+								}
+								children = {
+									"property" {
+										attributes = {
+											{"name","appName"},
+											{"value","${BundleProject_productName}"}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			build = BuildProperties {
+				binIncludes = {
+					"css"
+				}
+			}
+			resources = {
+				Folder "css" {
+					children = {
+						// Add a file 'default.css' file which has a dummy content
+						DataFile "default.css" {
+							content = "/* Main CSS-File */"
+						}
+					}
+				},
+				Folder "src",
+				DynamicFile "pom.xml" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.PluginPomGenerator" 
+					by "java"
+					{
+						## releng group id
+						STRING "relengGroupId" default "${Maven_GroupId}",
+						## releng artifact id
+						STRING "relengArtifactId" default "${BundleProject_bundleId}.releng",
+						## releng releng path
+						STRING "relengPath" default "../${BundleProject_bundleId}.releng",
+						## group id
+						STRING "groupId" default "${Maven_GroupId}",
+						## artifactId
+						STRING "artifactId" default "${BundleProject_bundleId}",
+						## baseVersion
+						STRING "baseVersion" default "${BundleProject_bundleVersion}",
+						## pom name
+						STRING "name" default "${BundleProject_productName} - application bundle"
+					} 
+					excluded-if "javascript" /# !TychoIntegration; #/
+			}
+			rootfragments = {
+				fragment "default-src" "src"
+			}
+			compilation-units = {
+				"${BundleProject_bundleId}" in "default-src" {
+					DynamicFile "MainApplication.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.app.tpl.ApplicationClassTpl" by "java"
+				}
+				excluded-if "javascript" /# EclipseDI; #/,
+				"${BundleProject_bundleId}" in "default-src" {
+					DynamicFile "MainApplication.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.wizard.app.tpl.DIApplicationClassTpl" by "java"
+				}
+				excluded-if "javascript" /# !EclipseDI; #/
+			}
+		},
+		FeatureProject "${BundleProject_projectName}.feature" {
+			feature = FeatureFile "${BundleProject_bundleId}.feature" { 
+				version = "${BundleProject_bundleVersion}" 
+				featurename = "${BundleProject_productName} Application Feature"
+				description = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				copyright = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				license = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				vendor = "${BundleProject_bundleVendor}"
+				plugins = {
+					"${BundleProject_bundleId}",
+					fragment "org.eclipse.fx.osgi",
+					"org.eclipse.fx.javafx",
+					"org.eclipse.fx.ui.application",
+					"org.eclipse.fx.core.databinding",
+					"org.eclipse.fx.ui.application",
+					"org.eclipse.fx.ui.di" excluded-if "javascript" /# !EclipseDI; #/,
+					"org.eclipse.fx.core" excluded-if "javascript" /# !EclipseDI; #/,
+					"org.eclipse.fx.osgi.util" excluded-if "javascript" /# !EclipseDI; #/,
+					"javax.annotation" excluded-if "javascript" /# !EclipseDI; #/,
+					"javax.inject" excluded-if "javascript" /# !EclipseDI; #/, 
+					"org.eclipse.core.databinding",
+					"org.eclipse.core.databinding.observable",
+					"org.eclipse.core.databinding.property",
+					"org.eclipse.equinox.app",
+					"org.eclipse.osgi",
+					"org.eclipse.equinox.common",
+					"org.eclipse.equinox.registry",
+					"org.eclipse.equinox.ds",
+					"org.eclipse.equinox.event",
+					"org.eclipse.equinox.util",
+					"org.eclipse.osgi.services",
+					"com.ibm.icu"  excluded-if "javascript" /# ICUBase; #/, 
+					"com.ibm.icu.base"  excluded-if "javascript" /# !ICUBase; #/, 
+					"org.eclipse.e4.core.di" excluded-if "javascript" /# !EclipseDI; #/,
+					"org.eclipse.e4.core.contexts" excluded-if "javascript" /# !EclipseDI; #/,
+							
+					"org.eclipse.core.runtime", //TODO Should be removed!
+					"org.eclipse.core.jobs",
+					"org.eclipse.equinox.preferences",
+					"org.eclipse.core.contenttype"
+				}
+			}
+			resources = {
+				DataFile "build.properties" {
+					content = "bin.includes = feature.xml"
+				},
+				DynamicFile "pom.xml" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.FeaturePomGenerator" 
+					by "java"
+					{
+						## releng group id
+						STRING "relengGroupId" default "${Maven_GroupId}",
+						## releng artifact id
+						STRING "relengArtifactId" default "${BundleProject_bundleId}.releng",
+						## releng releng path
+						STRING "relengPath" default "../${BundleProject_bundleId}.releng",
+						## group id
+						STRING "groupId" default "${Maven_GroupId}",
+						## artifactId
+						STRING "artifactId" default "${BundleProject_bundleId}.feature",
+						## baseVersion
+						STRING "baseVersion" default "${BundleProject_bundleVersion}",
+						## pom name
+						STRING "name" default "${BundleProject_productName} - application feature"
+					}
+					excluded-if "javascript" /# !TychoIntegration; #/
+			}
+		},
+		BundleProject "${BundleProject_projectName}.jemmy" {
+			manifest = ManifestFile "${BundleProject_bundleId}.jemmy" "1.0.0.qualifier" "${BundleProject_EE}" {
+				bundlename = "${BundleProject_bundleName} Jemmy UI Tests"
+				vendor = "${BundleProject_bundleVendor}"
+				importedPackages = {
+					"javax.inject" 				[1.0.0,],
+					"javax.annotation" 			[1.0.0,],
+					"javafx.animation" 			[2.0.0,],
+					"javafx.application" 		[2.0.0,],
+					"javafx.beans" 				[2.0.0,],
+					"javafx.beans.binding" 		[2.0.0,],
+					"javafx.beans.property" 	[2.0.0,],
+					"javafx.beans.value" 		[2.0.0,],
+					"javafx.collections" 		[2.0.0,],
+					"javafx.concurrent" 		[2.0.0,],
+					"javafx.event" 				[2.0.0,],
+					"javafx.fxml" 				[2.0.0,],
+					"javafx.geometry" 			[2.0.0,],
+					"javafx.scene" 				[2.0.0,],
+					"javafx.scene.chart" 		[2.0.0,],
+					"javafx.scene.control" 		[2.0.0,],
+					"javafx.scene.control.cell" [2.0.0,],
+					"javafx.scene.effect" 		[2.0.0,],
+					"javafx.scene.image" 		[2.0.0,],
+					"javafx.scene.input" 		[2.0.0,],
+					"javafx.scene.layout" 		[2.0.0,],
+					"javafx.scene.media" 		[2.0.0,],
+					"javafx.scene.paint" 		[2.0.0,],
+					"javafx.scene.shape" 		[2.0.0,],
+					"javafx.scene.text" 		[2.0.0,],
+					"javafx.scene.transform" 	[2.0.0,],
+					"javafx.scene.web" 			[2.0.0,],
+					"javafx.stage"	 			[2.0.0,],
+					"javafx.util" 				[2.0.0,],
+					// The Jemmy Stuff
+					"org.jemmy.action" 				[3.0.0,],
+					"org.jemmy.browser" 			[3.0.0,],
+					"org.jemmy.control" 			[3.0.0,],
+					"org.jemmy.dock" 				[3.0.0,],
+					"org.jemmy.env" 				[3.0.0,],
+					"org.jemmy.fx" 					[3.0.0,],
+					"org.jemmy.fx.control" 			[3.0.0,],
+					"org.jemmy.fx.control.caspian"	[3.0.0,],
+					"org.jemmy.image" 				[3.0.0,],
+					"org.jemmy.image.pixel" 		[3.0.0,],
+					"org.jemmy.input" 				[3.0.0,],
+					"org.jemmy.input.glass" 		[3.0.0,],
+					"org.jemmy.interfaces" 			[3.0.0,],
+					"org.jemmy.lookup" 				[3.0.0,],
+					"org.jemmy.operators" 			[3.0.0,],
+					"org.jemmy.resources" 			[3.0.0,],
+					"org.jemmy.support" 			[3.0.0,],
+					"org.jemmy.timing" 				[3.0.0,]
+				}
+				requiredBundles = {
+					"org.junit4",
+					"org.eclipse.fx.jemmy"
+				}
+			}
+			build = BuildProperties {
+				
+			}
+			resources = {
+				Folder "src",
+				DynamicFile "${BundleProject_bundleId}.jemmy.launch" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.JemmyFeatureLaunchGenerator" 
+					by "java"
+					{
+						## Project name
+						STRING "projectName" default "${BundleProject_bundleId}.jemmy",
+						## Launch features
+						STRING "featureList" default "org.eclipse.fx.jemmy.feature,org.eclipse.fx.jemmy.junit.feature,${BundleProject_bundleId}.feature,${BundleProject_bundleId}.jemmy.feature",
+						## Test Suite class
+						STRING "testSuite" default "${BundleProject_bundleId}.jemmy.TestSuite",
+						## Test Product Id
+						STRING "testProductId" default "${BundleProject_bundleId}.product"
+					},
+				DynamicFile "pom.xml" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.JemmyPomGenerator" 
+					by "java" 
+					{
+						## releng group id
+						STRING "relengGroupId" default "${Maven_GroupId}",
+						## releng artifact id
+						STRING "relengArtifactId" default "${BundleProject_bundleId}.releng",
+						## releng releng path
+						STRING "relengPath" default "../${BundleProject_bundleId}.releng",
+						## group id
+						STRING "groupId" default "${Maven_GroupId}",
+						## artifactId
+						STRING "artifactId" default "${BundleProject_bundleId}.jemmy",
+						## baseVersion
+						STRING "baseVersion" default "${BundleProject_bundleVersion}",
+						## name
+						STRING "name" default "${BundleProject_productName} - jemmy tests",
+						## testBundleId
+						STRING "testBundleId" default "${BundleProject_bundleId}.jemmy",
+						## testSuite
+						STRING "testSuite" default "${BundleProject_bundleId}.jemmy.TestSuite",
+						## testProductId
+						STRING "testProductId" default "${BundleProject_bundleId}.product",
+						## testProductFeature
+						STRING "testProductFeature" default "${BundleProject_bundleId}.feature"
+					}
+			}
+			rootfragments = {
+				fragment "default-src" "src"
+			}
+			compilation-units = {
+				"${BundleProject_bundleId}.jemmy" in "default-src" { 
+					DynamicFile "SampleTestCase.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.SampleTestCaseGenerator" by "java"
+				},
+				"${BundleProject_bundleId}.jemmy" in "default-src" { 
+					DynamicFile "TestSuite.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.TestSuiteGenerator" by "java"
+				}
+			}
+		},
+		FeatureProject "${BundleProject_projectName}.jemmy.feature" {
+			feature = FeatureFile "${BundleProject_bundleId}.jemmy.feature" {
+				version = "${BundleProject_bundleVersion}" 
+				featurename = "${BundleProject_productName} Jemmy JUnit Feature"
+				description = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				copyright = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				license = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				vendor = "${BundleProject_bundleVendor}"
+				plugins = {
+					"${BundleProject_projectName}.jemmy"
+				}
+			}
+			resources = {
+				DataFile "build.properties" {
+					content = "bin.includes = feature.xml"
+				}
+			}
+		},
+		SimpleProject "${BundleProject_projectName}.product" {
+			resources = {
+				ProductFileFeaturebase "${BundleProject_bundleId}.product" {
+					productName = "${BundleProject_productName}"
+					application = "${BundleProject_bundleId}.application"
+					version = "1.0.0" 
+					programArgs = "-nosplash"
+					vmArgs = "-Dosgi.framework.extensions=org.eclipse.fx.osgi"
+					startconfigurations = {
+						"org.eclipse.core.runtime" 		autostarted at  0,
+						"org.eclipse.equinox.common" 	autostarted at  2, 
+						"org.eclipse.equinox.ds" 		autostarted at  1,
+						"org.eclipse.osgi" 				autostarted at -1  
+					}
+					features = {
+						"${BundleProject_bundleId}.feature" "${BundleProject_bundleVersion}"
+					}
+				},
+				DynamicFile "${BundleProject_bundleId}.product.product.launch" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.FeatureLaunchGenerator"
+					by "java" 
+					{
+						## Project name
+						STRING "projectName" default "${BundleProject_bundleId}.product",
+						## Launch feature
+						STRING "feature" default "${BundleProject_projectName}.feature"
+					},
+				DynamicFile "pom.xml" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.ProductPomGenerator" 
+					by "java"
+					{
+						## releng group id
+						STRING "relengGroupId" default "${Maven_GroupId}",
+						## releng artifact id
+						STRING "relengArtifactId" default "${BundleProject_bundleId}.releng",
+						## releng releng path
+						STRING "relengPath" default "../${BundleProject_bundleId}.releng",
+						## group id
+						STRING "groupId" default "${Maven_GroupId}",
+						## artifactId
+						STRING "artifactId" default "${BundleProject_bundleId}.product",
+						## baseVersion
+						STRING "baseVersion" default "${BundleProject_bundleVersion}",
+						## pom name
+						STRING "name" default "${BundleProject_productName} - application product"
+					} 
+					excluded-if "javascript" /# !TychoIntegration; #/
+			}
+		},
+		SimpleProject "${BundleProject_projectName}.releng" { 
+			resources = {
+				DynamicFile "pom.xml" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.RootPomGenerator" 
+					by "java"
+					{
+						## groupId
+						STRING "groupId" default "${Maven_GroupId}",
+						## groupId
+						STRING "artifactId" default "${BundleProject_bundleId}.releng",
+						## description
+						STRING "name" default "${BundleProject_productName} - releng",
+						## baseVersion
+						STRING "baseVersion" default "${BundleProject_bundleVersion}",
+						## modules
+						STRING "modules" default "../${BundleProject_projectName};../${BundleProject_projectName}.feature;../${BundleProject_projectName}.product;../${BundleProject_projectName}.jemmy",
+						## repos
+						STRING "repos" default "juno@http://download.eclipse.org/releases/juno;efxclipse-repo@releases/juno;efxclipse-repo@http://www.efxclipse.org/p2-repos/releases/latest"
+					},
+				DynamicFile "build.xml" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.NativeLaunchGenerator" by "java"
+					excluded-if "javascript" /# !NativeExport #/,
+				URLFile "fx-osgi-launch.jar" "platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/build_bin/fx-osgi-launch.jar"
+					excluded-if "javascript" /# !NativeExport #/ 
+			}
+		} excluded-if "javascript" /# !TychoIntegration; #/
+	}
+}

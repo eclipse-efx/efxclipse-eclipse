@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.pde.ui.pluginContent">
+      <wizard
+            class="org.eclipse.fx.ide.pde.ui.E3PluginWizard"
+            icon="icons/application_lightning.png"
+            id="org.eclipse.fx.ide.pde.ui.3xpart"
+            java="true"
+            name="JavaFX Eclipse 3.x Project"
+            pureOSGi="false"
+            rcp="false"
+            requiresActivator="false"
+            ui-content="true">
+      </wizard>
+      <wizard
+            class="org.eclipse.fx.ide.pde.ui.HelloRCPNewWizard"
+            icon="icons/application_lightning.png"
+            id="org.eclipse.fx.ide.pde.ui.newfxrcp"
+            name="JavaFX Eclipse 3.x RCP"
+            rcp="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.fx.ide"
+            class="org.eclipse.fx.ide.pde.ui.NewJavaFXProductFileWizard"
+            icon="icons/page_gear.png"
+            id="org.eclipse.fx.ide.pde.ui.jfxproduct"
+            name="%wizard.name.1">
+      </wizard>
+      <wizard
+            category="org.eclipse.fx.ide/org.eclipse.fx.ide.clazz"
+            class="org.eclipse.fx.ide.pde.ui.E3ViewPartClassWizard"
+            icon="icons/application_lightning.png"
+            id="org.eclipse.fx.ide.pde.ui.fxviewpart"
+            name="Eclipse 3.x ViewPart Class"
+            project="false">
+      </wizard>
+      <wizard
+            category="org.eclipse.fx.ide/org.eclipse.fx.ide.pde.ui.osgi"
+            class="org.eclipse.fx.ide.pde.ui.wizard.app.NewBundleApplicationWizard"
+            icon="icons/application_lightning.png"
+            id="org.eclipse.fx.ide.pde.ui.osgi.app"
+            name="OSGi Application Project"
+            project="true">
+      </wizard>
+      <category
+            id="org.eclipse.fx.ide.pde.ui.osgi"
+            name="OSGI"
+            parentCategory="org.eclipse.fx.ide">
+      </category>
+      <wizard
+            category="org.eclipse.fx.ide/org.eclipse.fx.ide.pde.ui.osgi"
+            class="org.eclipse.fx.ide.pde.ui.wizard.bundle.NewBundleWizard"
+            icon="icons/application_lightning.png"
+            id="org.eclipse.fx.ide.pde.ui.osgi.bundle"
+            name="OSGi Bundle Project"
+            project="true">
+      </wizard>
+   </extension>
+
+</plugin>
