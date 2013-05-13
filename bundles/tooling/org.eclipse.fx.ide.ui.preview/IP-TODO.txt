@@ -1,0 +1,28 @@
+famfamfam (Creative Commons 2.5)
+--------------------------------
+page_white_code_red.png
+
+Oxygene (Creative Commons 3.0 & LGPL):
+--------------------------------------
+From: svn -r 760421 co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/oxygen-icons
+
+icons/16_16/dialog-error.png
+icons/16_16/dialog-information.png
+icons/16_16/dialog-ok-apply.png
+icons/16_16/dialog-warning.png
+icons/16_16/edit-clear.png
+icons/16_16/security-high.png
+icons/16_16/security-low.png
+icons/16_16/security-medium.png
+icons/16_16/system-switch-user.png
+icons/16_16/task-attempt.png
+icons/16_16/task-complete.png
+icons/16_16/task-reject.png
+icons/16_16/view-preview.png
+
+icons/32_32/dialog-close.png
+
+Eclipse JDT (EPL):
+------------------
+icons/ovr/error_co.gif
+icons/ovr/warning_co.gif
