@@ -1,0 +1,35 @@
+Ensemble (Oracle BSD):
+---------------
+From http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+templates/common/css/images/clef.png
+templates/common/css/images/top-bar.png
+templates/common/css/images/window-close-over.png
+templates/common/css/images/window-close.png
+templates/common/css/images/window-corner.png
+templates/common/css/images/window-expand-over.png
+templates/common/css/images/window-expand.png
+templates/common/css/images/window-min-over.png
+templates/common/css/images/window-min.png
+
+Oxygene (Creative Commons 3.0 & LGPL)
+-------------------------------------
+From: svn -r 760421 co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/oxygen-icons
+
+templates/common/icons/resources/22/games-config-background.png
+templates/common/icons/resources/22/player-volume.png
+templates/common/icons/resources/22/tool-animator.png
+templates/common/icons/resources/edit-image-face-show.png
+templates/common/icons/resources/games-config-background.png
+templates/common/icons/resources/player-volume.png
+templates/common/icons/resources/system-reboot.png
+templates/common/icons/resources/tool-animator.png
+
+
+Dojo (Apache 2.0):
+------------------
+templates/common/icons/resources/movs/mov1.flv (http://svn.dojotoolkit.org/src/demos/trunk/video/media/)
+
+Own (EPL):
+----------
+templates/common/icons/resources/pics/pic1.jpg
+templates/common/icons/resources/pics/pic2.jpg

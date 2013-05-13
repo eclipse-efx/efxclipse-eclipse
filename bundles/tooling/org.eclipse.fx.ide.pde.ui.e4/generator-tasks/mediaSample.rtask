@@ -1,0 +1,339 @@
+RobotTask {
+	// Variables to be used later on
+	variables = {
+		## Name of the project
+		STRING "BundleProject_projectName" default "my.media.app",  
+		## Symbolic id of the bundle
+		STRING "BundleProject_bundleId" default "my.media.app",
+		## Vendor of the Bundle
+		STRING "BundleProject_bundleVendor" default "My Company",
+		## Bundle Execution Environment
+		STRING "BundleProject_EE" default "JavaSE-1.7"
+	}
+	projects = {
+		BundleProject "${BundleProject_projectName}" {
+			manifest = ManifestFile "${BundleProject_bundleId}" "1.0.0" "${BundleProject_EE}" {
+				bundlename = "My Media app"
+				vendor = "${BundleProject_bundleVendor}"
+				importedPackages = {
+					"javax.inject" 				[1.0.0,],
+					"javax.annotation" 			[1.0.0,],
+					"javafx.animation" 			[2.0.0,],
+					"javafx.application" 		[2.0.0,],
+					"javafx.beans" 				[2.0.0,],
+					"javafx.beans.binding" 		[2.0.0,],
+					"javafx.beans.property" 	[2.0.0,],
+					"javafx.beans.value" 		[2.0.0,],
+					"javafx.collections" 		[2.0.0,],
+					"javafx.concurrent" 		[2.0.0,],
+					"javafx.event" 				[2.0.0,],
+					"javafx.fxml" 				[2.0.0,],
+					"javafx.geometry" 			[2.0.0,],
+					"javafx.scene" 				[2.0.0,],
+					"javafx.scene.chart" 		[2.0.0,],
+					"javafx.scene.control" 		[2.0.0,],
+					"javafx.scene.control.cell" [2.0.0,],
+					"javafx.scene.effect" 		[2.0.0,],
+					"javafx.scene.image" 		[2.0.0,],
+					"javafx.scene.input" 		[2.0.0,],
+					"javafx.scene.layout" 		[2.0.0,],
+					"javafx.scene.media" 		[2.0.0,],
+					"javafx.scene.paint" 		[2.0.0,],
+					"javafx.scene.shape" 		[2.0.0,],
+					"javafx.scene.text" 		[2.0.0,],
+					"javafx.scene.transform" 	[2.0.0,],
+					"javafx.scene.web" 			[2.0.0,],
+					"javafx.stage"	 			[2.0.0,],
+					"javafx.util" 				[2.0.0,]
+				}
+				// Required bundles of the project
+				requiredBundles = {
+					"org.eclipse.fx.ui.application",
+					"org.eclipse.fx.ui.workbench.fx",
+					"org.eclipse.e4.ui.model.workbench",
+					"org.eclipse.e4.core.services",
+					"org.eclipse.e4.core.di",
+					"org.eclipse.e4.ui.di",
+					"org.eclipse.e4.core.di.extensions",
+					"org.eclipse.fx.ui.theme",
+					"org.eclipse.fx.ui.di",
+					"org.eclipse.e4.core.contexts",
+					"org.eclipse.fx.core.databinding",
+					"org.eclipse.fx.ui.databinding",
+					"org.eclipse.core.databinding",
+					"org.eclipse.core.databinding.observable",
+					"org.eclipse.core.databinding.property",
+					"org.eclipse.e4.ui.workbench",
+					"org.eclipse.e4.ui.services",
+					"org.eclipse.equinox.app"
+				}
+			}
+			build = BuildProperties {
+				binIncludes = {
+					"css",
+					"icons"
+				}
+			}
+			pluginxml = PluginXMLFile {
+				extensions = {
+					"org.eclipse.core.runtime.products" {
+						id = "product"
+						elements = {
+							"product" {
+								attributes = {
+									{ "name"		, "Media Application"				 							},
+									{ "application"	, "org.eclipse.fx.ui.workbench.fx.application" 	}
+								}
+								children = {
+									"property" {
+										attributes = {
+											{ "name"	, "appName" 						},
+											{ "value"	, "Media Application"			 	}
+										}
+									},
+									"property" {
+										attributes = {
+											{ "name"	, "applicationXMI" 								},
+											{ "value"	, "${BundleProject_bundleId}/Application.e4xmi" }
+										}
+									},
+									"property" {
+										attributes = {
+											{ "name"	, "cssTheme" 		},
+											{ "value"	, "theme.default" 	}
+										}
+									}
+								}
+							}
+						}
+					},
+					"org.eclipse.fx.ui.theme" {
+						elements = {
+							"theme" {
+								attributes = {
+									{ "id"				, "theme.default" 	},
+									{ "basestylesheet" 	, "css/default.css"	}
+								}
+							}
+						}
+					}
+				}
+			}
+			resources = {
+				Folder "src",
+				DynamicFile "Application.e4xmi" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.ApplicationXmiTpl" by "java" 
+					{
+						## root package
+						STRING "rootPackage" default "${BundleProject_bundleId}"
+					},
+				Folder "css" {
+					children = {
+						Folder "images" {
+							children = {
+								URLFile "clef.png" 					"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/clef.png",
+								URLFile "top-bar.png" 				"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/top-bar.png",
+								URLFile "window-close-over.png" 	"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/window-close-over.png",
+								URLFile "window-close.png" 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/window-close.png",
+								URLFile "window-corner.png" 		"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/window-corner.png",
+								URLFile "window-expand-over.png" 	"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/window-expand-over.png",
+								URLFile "window-expand.png" 		"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/window-expand.png",
+								URLFile "window-min-over.png" 		"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/window-min-over.png",
+								URLFile "window-min.png" 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/css/images/window-min.png"
+							}
+						},
+						URLFile "default.css" 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/css/default.css"
+					}
+				},
+				Folder "icons" {
+					children = {
+						Folder "22" {
+							children = {
+								URLFile "games-config-background.png" 	"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/22/games-config-background.png",
+								URLFile "player-volume.png" 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/22/player-volume.png",
+								URLFile "kaffeine.png"		 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/22/kaffeine.png"
+							}
+						},
+						Folder "resources" {
+							children = {
+								Folder "movs" {
+									children = {
+										URLFile "mov1.flv" 	"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/resources/movs/mov1.flv"
+									}
+								},
+								Folder "pics" {
+									children = {
+										URLFile "pic1.jpg" 	"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/resources/pics/pic1.jpg",
+										URLFile "pic2.jpg" 	"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/resources/pics/pic2.jpg"
+									}
+								}
+							}
+						},
+						URLFile "view-preview.png" 				"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/view-preview.png",
+						URLFile "games-config-background.png" 	"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/games-config-background.png",
+						URLFile "player-volume.png" 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/player-volume.png",
+						URLFile "system-restart.png" 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/system-restart.png",
+						URLFile "kaffeine.png"		 			"platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/templates/common/icons/kaffeine.png"
+					}
+				}
+			}
+			rootfragments = {
+				fragment "default-src" "src"
+			}
+			compilation-units = {
+				"${BundleProject_bundleId}.decoration" in "default-src" {
+					DynamicFile "DecorationController.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.decoration.DecorationControllerTpl" by "java"
+				},
+				"${BundleProject_bundleId}.decoration" in "default-src" {
+					DynamicFile "TopArea.fxml" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.decoration.TopAreaTpl" by "java"
+				},
+				"${BundleProject_bundleId}.handlers" in "default-src" {
+					DynamicFile "OpenHandler.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.handlers.OpenHandlerTpl" by "java"
+				},
+				"${BundleProject_bundleId}.handlers" in "default-src" {
+					DynamicFile "RefreshHandler.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.handlers.RefreshHandlerTpl" by "java"
+				},
+				"${BundleProject_bundleId}.model" in "default-src" {
+					DynamicFile "Media.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.model.MediaTpl" by "java"
+				},
+				"${BundleProject_bundleId}.model" in "default-src" {
+					DynamicFile "MediaType.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.model.MediaTypeTpl" by "java"
+				},
+				"${BundleProject_bundleId}.parts" in "default-src" {
+					DynamicFile "MediaListPart.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.parts.MediaListPartTpl" by "java"
+				},
+				"${BundleProject_bundleId}.parts" in "default-src" {
+					DynamicFile "MediaPart.java" 
+						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.parts.MediaPartTpl" by "java"
+				}
+			}
+		},
+		FeatureProject "${BundleProject_projectName}.feature" {
+			feature = FeatureFile "${BundleProject_bundleId}.feature" {
+				version = "1.0.0" 
+				featurename = "Media Application Feature"
+				description = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				copyright = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				license = LinkedString "http://www.efxclipse.org" {
+					"TODO FILL WITH CONTENT"
+				}
+				vendor = "${BundleProject_bundleVendor}"
+				plugins = {
+					"${BundleProject_bundleId}",
+					"org.eclipse.fx.ui.application",
+					"org.eclipse.fx.ui.keybindings",
+					"org.eclipse.fx.ui.keybindings.e4",
+					"org.eclipse.fx.ui.keybindings.generic",
+					"org.eclipse.fx.core.databinding",
+					"org.eclipse.fx.ui.databinding",
+					"org.eclipse.fx.core",
+					"org.eclipse.fx.ui.di",
+					"org.eclipse.fx.ui.dialogs",
+					"org.eclipse.fx.javafx",
+					fragment "org.eclipse.fx.osgi",
+					"org.eclipse.fx.osgi.util",
+					"org.eclipse.fx.ui.panes",
+					"org.eclipse.fx.ui.services",
+					"org.eclipse.fx.ui.theme",
+					"org.eclipse.fx.ui.workbench.base",
+					"org.eclipse.fx.ui.workbench.fx",
+					"org.eclipse.fx.ui.workbench.fx.controls",
+					"org.eclipse.fx.ui.workbench.renderers.base",
+					"org.eclipse.fx.ui.workbench.renderers.fx",
+					"com.ibm.icu",
+					// TODO NEED TO SUPPORT CONDITIONALS HERE "com.ibm.icu.base",
+					"javax.annotation",
+					"javax.inject",
+					"javax.xml",
+					"org.apache.commons.logging",
+					"org.eclipse.core.commands",
+					"org.eclipse.core.contenttype",
+					"org.eclipse.core.databinding",
+					"org.eclipse.core.databinding.observable",
+					"org.eclipse.core.databinding.property",
+					"org.eclipse.core.expressions",
+					"org.eclipse.core.filesystem",
+					"org.eclipse.core.jobs",
+					"org.eclipse.core.resources",
+					"org.eclipse.core.runtime",
+					fragment "org.eclipse.core.runtime.compatibility.registry",
+					"org.eclipse.e4.core.commands",
+					"org.eclipse.e4.core.contexts",
+					"org.eclipse.e4.core.di",
+					"org.eclipse.e4.core.di.extensions",
+					"org.eclipse.e4.core.services",
+					"org.eclipse.e4.ui.di",
+					"org.eclipse.e4.ui.model.workbench",
+					"org.eclipse.e4.ui.services",
+					"org.eclipse.e4.ui.workbench",
+					"org.eclipse.emf.common",
+					"org.eclipse.emf.databinding",
+					"org.eclipse.emf.ecore",
+					"org.eclipse.emf.ecore.change",
+					"org.eclipse.emf.ecore.xmi",
+					"org.eclipse.equinox.app",
+					"org.eclipse.equinox.common",
+					"org.eclipse.equinox.concurrent",
+					"org.eclipse.equinox.ds",
+					"org.eclipse.equinox.event",
+					"org.eclipse.equinox.launcher",
+					"org.eclipse.equinox.preferences",
+					"org.eclipse.equinox.registry",
+					"org.eclipse.equinox.util",
+					"org.eclipse.osgi",
+					"org.eclipse.osgi.services",
+					// We need conditionals here
+					"org.eclipse.equinox.console",
+					"org.apache.felix.gogo.command",
+					"org.apache.felix.gogo.runtime",
+					"org.apache.felix.gogo.shell"
+				}
+			}
+			resources = {
+				DataFile "build.properties" {
+					content = "bin.includes = feature.xml"
+				}
+			}
+		},
+		SimpleProject "${BundleProject_projectName}.product" {
+			resources = {
+				ProductFileFeaturebase "${BundleProject_bundleId}.product" {
+					productName = "${BundleProject_productName}"
+					application = "org.eclipse.fx.ui.workbench.fx.application"
+					version = "1.0.0"
+					programArgs = "-nosplash"
+					vmArgs = "-Dosgi.framework.extensions=org.eclipse.fx.osgi"
+					startconfigurations = {
+						"org.eclipse.core.runtime" 		autostarted at  0,
+						"org.eclipse.equinox.common" 	autostarted at  2, 
+						"org.eclipse.equinox.ds" 		autostarted at  1,
+						"org.eclipse.osgi" 				autostarted at -1  
+					}
+					features = {
+						"${BundleProject_bundleId}.feature" "1.0.0"
+					}
+				},
+				DynamicFile "${BundleProject_bundleId}.product.product.launch" 
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.FeatureLaunchGenerator"
+					by "java" 
+					{
+						## Project name
+						STRING "projectName" default "${BundleProject_bundleId}.product",
+						## Launch feature
+						STRING "feature" default "${BundleProject_projectName}.feature"
+					}		
+			}
+		}
+	}
+}
