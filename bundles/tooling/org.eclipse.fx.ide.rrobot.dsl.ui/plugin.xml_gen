@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="rtask"
+            id="org.eclipse.fx.ide.rrobot.dsl.RTask"
+            name="RTask Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.eclipse.fx.ide.rrobot.dsl.RTask.validate">
+         <activeWhen>
+            <reference
+                    definitionId="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="org.eclipse.fx.ide.rrobot.dsl.RTask" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.eclipse.fx.ide.rrobot.dsl.RTask"
+            name="RTask">
+            <keywordReference id="org.eclipse.fx.ide.rrobot.dsl.ui.keyword_RTask"/>
+        </page>
+        <page
+            category="org.eclipse.fx.ide.rrobot.dsl.RTask"
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.eclipse.fx.ide.rrobot.dsl.RTask.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="org.eclipse.fx.ide.rrobot.dsl.ui.keyword_RTask"/>
+        </page>
+        <page
+            category="org.eclipse.fx.ide.rrobot.dsl.RTask"
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.eclipse.fx.ide.rrobot.dsl.RTask.templates"
+            name="Templates">
+            <keywordReference id="org.eclipse.fx.ide.rrobot.dsl.ui.keyword_RTask"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.eclipse.fx.ide.rrobot.dsl.RTask"
+            name="RTask">
+            <keywordReference id="org.eclipse.fx.ide.rrobot.dsl.ui.keyword_RTask"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="org.eclipse.fx.ide.rrobot.dsl.ui.keyword_RTask"
+            label="RTask"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="org.eclipse.fx.ide.rrobot.dsl.RTask.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="org.eclipse.fx.ide.rrobot.dsl.RTask.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="rtask">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="rtask">
+        </resourceServiceProvider>
+    </extension>
+
+
+    <!-- marker definitions for org.eclipse.fx.ide.rrobot.dsl.RTask -->
+    <extension
+            id="rtask.check.fast"
+            name="RTask Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="rtask.check.normal"
+            name="RTask Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="rtask.check.expensive"
+            name="RTask Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="org.eclipse.fx.ide.rrobot.dsl.RTask.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="org.eclipse.fx.ide.rrobot.dsl.RTask.compare.contentViewers"
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="rtask">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="org.eclipse.fx.ide.rrobot.dsl.RTask.compare.contentMergeViewers"
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="rtask" label="RTask Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="org.eclipse.fx.ide.rrobot.dsl.RTask.editors.documentProviders"
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="rtask">
+    </provider>
+  </extension>
+    <!-- quickfix marker resolution generator for org.eclipse.fx.ide.rrobot.dsl.RTask -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.eclipse.fx.ide.rrobot.dsl.ui.rtask.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.eclipse.fx.ide.rrobot.dsl.ui.rtask.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="org.eclipse.fx.ide.rrobot.dsl.ui.RTaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.eclipse.fx.ide.rrobot.dsl.ui.rtask.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
+
+</plugin>
