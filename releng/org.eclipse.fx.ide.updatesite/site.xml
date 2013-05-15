@@ -7,26 +7,23 @@
       <category name="e(fx)clipse - install"/>
    </feature>
    <feature url="features/org.eclipse.fx.ide.basic.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.basic.feature" version="0.8.1.qualifier">
-      <category name="e(fx)clipse - components"/>
+      <category name="e(fx)clipse - single components"/>
    </feature>
    <feature url="features/org.eclipse.fx.ide.css.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.css.feature" version="0.8.1.qualifier">
-      <category name="e(fx)clipse - components"/>
+      <category name="e(fx)clipse - single components"/>
    </feature>
-   <!--feature url="features/org.eclipse.fx.ide.fxgraph.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.fxgraph.feature" version="0.8.1.qualifier">
-      <category name="e(fx)clipse - components"/>
-   </feature-->
    <feature url="features/org.eclipse.fx.ide.fxml.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.fxml.feature" version="0.8.1.qualifier">
-      <category name="e(fx)clipse - components"/>
+      <category name="e(fx)clipse - single components"/>
    </feature>
    <feature url="features/org.eclipse.fx.ide.pde.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.pde.feature" version="0.8.1.qualifier">
-      <category name="e(fx)clipse - components"/>
+      <category name="e(fx)clipse - single components"/>
    </feature>
    <feature url="features/org.eclipse.fx.ide.pde.prekepler.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.pde.prekepler.feature" version="0.8.1.qualifier">
-      <category name="e(fx)clipse - components"/>
+      <category name="e(fx)clipse - single components"/>
    </feature>
    <feature url="features/org.eclipse.fx.ide.rrobot.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.rrobot.feature" version="0.8.1.qualifier">
-      <category name="e(fx)clipse - components"/>
+      <category name="e(fx)clipse - single components"/>
    </feature>
    <category-def name="e(fx)clipse - install" label="e(fx)clipse - install"/>
-   <category-def name="e(fx)clipse - components" label="e(fx)clipse - components"/>
+   <category-def name="e(fx)clipse - single components" label="e(fx)clipse - single components"/>
 </site>
