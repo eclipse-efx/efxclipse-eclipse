@@ -60,6 +60,9 @@
 		<module>../tooling/org.eclipse.fx.ide.fxml.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.prekepler.feature</module>
+		
+		<module>../tooling/org.eclipse.fx.ide.all.kepler.feature</module>
+		<module>../tooling/org.eclipse.fx.ide.all.prekepler.feature</module>
 	</modules>
 
 	<repositories>
