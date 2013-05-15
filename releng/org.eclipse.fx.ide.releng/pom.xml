@@ -63,6 +63,7 @@
 		
 		<module>../tooling/org.eclipse.fx.ide.all.kepler.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.all.prekepler.feature</module>
+		<module>../org.eclipse.fx.ide.updatesite</module>
 	</modules>
 
 	<repositories>
