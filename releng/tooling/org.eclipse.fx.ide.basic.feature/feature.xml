@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.fx.ide.basic.feature"
-      label="Feature"
+      label="e(fx)clipse - IDE - Basic"
       version="0.8.1.qualifier"
       provider-name="BestSolution.at">
 
@@ -54,6 +54,19 @@
 
    <plugin
          id="org.eclipse.fx.ide.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.fx.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.fx.core.guice"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

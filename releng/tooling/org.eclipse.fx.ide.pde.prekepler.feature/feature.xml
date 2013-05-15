@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.fx.ide.pde.prekepler.feature"
-      label="Feature"
+      label="e(fx)clipse - IDE - Juno/Indigo"
       version="0.8.1.qualifier"
       provider-name="BestSolution.at">
 

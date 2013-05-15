@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.fx.ide.pde.feature"
-      label="Pde"
+      label="e(fx)clipse - IDE - PDE"
       version="0.8.1.qualifier"
       provider-name="BestSolution.at">
 
@@ -18,8 +18,8 @@
    </license>
 
    <requires>
-      <import feature="org.eclipse.fx.ide.rrobot.feature" version="0.8.1.qualifier" match="perfect"/>
-      <import feature="org.eclipse.fx.ide.basic.feature" version="0.8.1.qualifier" match="perfect"/>
+      <import feature="org.eclipse.fx.ide.rrobot.feature"/>
+      <import feature="org.eclipse.fx.ide.basic.feature"/>
    </requires>
 
    <plugin

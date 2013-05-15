@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.fx.ide.css.feature"
-      label="Feature"
+      label="e(fx)clipse - IDE - CSS"
       version="0.8.1.qualifier"
       provider-name="BestSolution.at"
       plugin="org.eclipse.fx.ide.ui">
@@ -19,7 +19,7 @@
    </license>
 
    <requires>
-      <import feature="org.eclipse.fx.ide.basic.feature" version="0.8.1.qualifier" match="perfect"/>
+      <import feature="org.eclipse.fx.ide.basic.feature"/>
    </requires>
 
    <plugin

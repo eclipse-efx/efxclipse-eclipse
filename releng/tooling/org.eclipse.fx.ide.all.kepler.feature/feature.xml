@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.fx.ide.all.kepler.feature"
-      label="e(fx)clipse - Kepler"
+      label="e(fx)clipse - IDE - Kepler"
       version="0.8.1.qualifier"
       provider-name="BestSolution.at">
 
@@ -24,10 +24,6 @@
    <includes
          id="org.eclipse.fx.ide.css.feature"
          version="0.0.0"/>
-
-   <!--includes
-         id="org.eclipse.fx.ide.fxgraph.feature"
-         version="0.0.0"/-->
 
    <includes
          id="org.eclipse.fx.ide.fxml.feature"
