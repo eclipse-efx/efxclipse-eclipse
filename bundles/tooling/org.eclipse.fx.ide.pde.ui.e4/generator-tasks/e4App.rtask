@@ -20,7 +20,9 @@ RobotTask {
 		## Tycho integration
 		BOOLEAN "TychoIntegration" default "true",
 		## Native export integration
-		BOOLEAN "NativeExport" default "true"
+		BOOLEAN "NativeExport" default "true",
+		## JemmyTest
+		BOOLEAN "JemmyTest" default "false"
 	}
 	projects = {
 		// Create an Bundle Project (this will add the PDE-Nature and the required builders to it!)
@@ -451,7 +453,7 @@ RobotTask {
 					DynamicFile "TestSuite.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.TestSuiteGenerator" by "java"
 				}
 			}
-		},
+		} excluded-if "javascript" /# !JemmyTest; #/,
 		FeatureProject "${BundleProject_projectName}.jemmy.feature" {
 			feature = FeatureFile "${BundleProject_bundleId}.jemmy.feature" {
 				version = "${BundleProject_bundleVersion}" 
@@ -475,7 +477,7 @@ RobotTask {
 					content = "bin.includes = feature.xml"
 				}
 			}
-		},
+		} excluded-if "javascript" /# !JemmyTest; #/,
 		SimpleProject "${BundleProject_projectName}.releng" { 
 			resources = {
 				DynamicFile "pom.xml" 
