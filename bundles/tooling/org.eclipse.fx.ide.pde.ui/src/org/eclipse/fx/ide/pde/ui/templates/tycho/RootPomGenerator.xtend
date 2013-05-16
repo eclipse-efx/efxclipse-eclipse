@@ -16,7 +16,7 @@ class RootPomGenerator implements Generator<DynamicFile> {
 		val name = file.variables.findFirst([e| e.key.equals("name")]).defaultValue;
 		
 		val modules = new ArrayList<String>();
-		file.variables.findFirst([e|e.key.equals("modules")]).defaultValue.split(";").forEach
+		file.variables.findFirst([e|e.key.equals("modules")]).defaultValue.split(";")._forEach
 		[
 			modules.add(it)
 		]
@@ -24,7 +24,7 @@ class RootPomGenerator implements Generator<DynamicFile> {
 		val repos = new ArrayList<Repository>();
 		file.variables.findFirst([e|e.key.equals("repos")]).defaultValue.split(";").map [
 			new Repository(it.substring(0,it.indexOf('@')),it.substring(it.indexOf('@')+1,it.length))
-		].forEach [
+		]._forEach [
 			repos.add(it)
 		];
 		
