@@ -25,6 +25,7 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.PropertyDefinition
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleDefinition
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSType
+import java.util.Set
 
 class HTMLDocGenerator {
 	def generate(Resource resource) '''
@@ -332,7 +333,7 @@ class HTMLDocGenerator {
 	</section>
 	'''
 	
-	def allSuperElements(ElementDefinition definition) {
+	def Set<ElementDefinition> allSuperElements(ElementDefinition definition) { 
 		val set = new HashSet<ElementDefinition>
 		for( su : definition.getSuper() ) {
 			set.add(su);
