@@ -84,12 +84,14 @@ public class RTaskParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBundleProjectAccess().getGroup_10(), "rule__BundleProject__Group_10__0");
 					put(grammarAccess.getBundleProjectAccess().getGroup_12(), "rule__BundleProject__Group_12__0");
 					put(grammarAccess.getBundleProjectAccess().getGroup_12_4(), "rule__BundleProject__Group_12_4__0");
+					put(grammarAccess.getBundleProjectAccess().getGroup_14(), "rule__BundleProject__Group_14__0");
 					put(grammarAccess.getSourceFragmentAccess().getGroup(), "rule__SourceFragment__Group__0");
 					put(grammarAccess.getCompilationUnitAccess().getGroup(), "rule__CompilationUnit__Group__0");
 					put(grammarAccess.getCompilationUnitAccess().getGroup_6(), "rule__CompilationUnit__Group_6__0");
 					put(grammarAccess.getFeatureProjectAccess().getGroup(), "rule__FeatureProject__Group__0");
 					put(grammarAccess.getFeatureProjectAccess().getGroup_7(), "rule__FeatureProject__Group_7__0");
 					put(grammarAccess.getFeatureProjectAccess().getGroup_7_4(), "rule__FeatureProject__Group_7_4__0");
+					put(grammarAccess.getFeatureProjectAccess().getGroup_9(), "rule__FeatureProject__Group_9__0");
 					put(grammarAccess.getManifestFileAccess().getGroup(), "rule__ManifestFile__Group__0");
 					put(grammarAccess.getManifestFileAccess().getGroup_8_0(), "rule__ManifestFile__Group_8_0__0");
 					put(grammarAccess.getManifestFileAccess().getGroup_8_1(), "rule__ManifestFile__Group_8_1__0");
@@ -208,6 +210,7 @@ public class RTaskParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBundleProjectAccess().getSourceFragmentsAssignment_10_1(), "rule__BundleProject__SourceFragmentsAssignment_10_1");
 					put(grammarAccess.getBundleProjectAccess().getCompilationUnitsAssignment_12_3(), "rule__BundleProject__CompilationUnitsAssignment_12_3");
 					put(grammarAccess.getBundleProjectAccess().getCompilationUnitsAssignment_12_4_1(), "rule__BundleProject__CompilationUnitsAssignment_12_4_1");
+					put(grammarAccess.getBundleProjectAccess().getExcludeExpressionAssignment_14_1(), "rule__BundleProject__ExcludeExpressionAssignment_14_1");
 					put(grammarAccess.getSourceFragmentAccess().getNameAssignment_1(), "rule__SourceFragment__NameAssignment_1");
 					put(grammarAccess.getSourceFragmentAccess().getFolderAssignment_2(), "rule__SourceFragment__FolderAssignment_2");
 					put(grammarAccess.getCompilationUnitAccess().getPackagenameAssignment_0(), "rule__CompilationUnit__PackagenameAssignment_0");
@@ -218,6 +221,7 @@ public class RTaskParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeatureProjectAccess().getFeatureAssignment_6(), "rule__FeatureProject__FeatureAssignment_6");
 					put(grammarAccess.getFeatureProjectAccess().getResourcesAssignment_7_3(), "rule__FeatureProject__ResourcesAssignment_7_3");
 					put(grammarAccess.getFeatureProjectAccess().getResourcesAssignment_7_4_1(), "rule__FeatureProject__ResourcesAssignment_7_4_1");
+					put(grammarAccess.getFeatureProjectAccess().getExcludeExpressionAssignment_9_1(), "rule__FeatureProject__ExcludeExpressionAssignment_9_1");
 					put(grammarAccess.getManifestFileAccess().getLazyAssignment_1(), "rule__ManifestFile__LazyAssignment_1");
 					put(grammarAccess.getManifestFileAccess().getSingletonAssignment_2(), "rule__ManifestFile__SingletonAssignment_2");
 					put(grammarAccess.getManifestFileAccess().getSymbolicnameAssignment_4(), "rule__ManifestFile__SymbolicnameAssignment_4");

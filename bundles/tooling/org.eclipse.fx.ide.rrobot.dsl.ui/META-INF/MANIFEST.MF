@@ -18,5 +18,6 @@ Require-Bundle: org.eclipse.fx.ide.rrobot.dsl;visibility:=reexport,
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.eclipse.fx.ide.rrobot.dsl.ui.contentassist,
- org.eclipse.fx.ide.rrobot.dsl.ui.contentassist.antlr
+ org.eclipse.fx.ide.rrobot.dsl.ui.contentassist.antlr,
+ org.eclipse.fx.ide.rrobot.dsl.ui.quickfix
 Bundle-Activator: org.eclipse.fx.ide.rrobot.dsl.ui.internal.RTaskActivator

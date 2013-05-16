@@ -23,7 +23,9 @@ RobotTask {
 		## Eclipse DI
 		BOOLEAN "EclipseDI" default "true",
 		## ICU Base
-		BOOLEAN "ICUBase" default "false"
+		BOOLEAN "ICUBase" default "false",
+		## JemmyTest
+		BOOLEAN "JemmyTest" default "false"
 	}
 	projects = {
 		BundleProject "${BundleProject_projectName}" {
@@ -382,7 +384,7 @@ RobotTask {
 					DynamicFile "TestSuite.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.TestSuiteGenerator" by "java"
 				}
 			}
-		},
+		} excluded-if "javascript" /# !JemmyTest; #/,
 		FeatureProject "${BundleProject_projectName}.jemmy.feature" {
 			feature = FeatureFile "${BundleProject_bundleId}.jemmy.feature" {
 				version = "${BundleProject_bundleVersion}" 
@@ -406,7 +408,7 @@ RobotTask {
 					content = "bin.includes = feature.xml"
 				}
 			}
-		},
+		} excluded-if "javascript" /# !JemmyTest; #/,
 		SimpleProject "${BundleProject_projectName}.product" {
 			resources = {
 				ProductFileFeaturebase "${BundleProject_bundleId}.product" {

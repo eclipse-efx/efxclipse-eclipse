@@ -21,6 +21,8 @@ import org.eclipse.fx.ide.pde.ui.wizard.BundleConfigurationPage;
 import org.eclipse.fx.ide.rrobot.dsl.FileLoader;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.pde.internal.core.PDECore;
+import org.eclipse.pde.internal.core.natures.PDE;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -28,7 +30,6 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
-
 import org.eclipse.fx.ide.rrobot.RRobot;
 import org.eclipse.fx.ide.rrobot.model.task.RobotTask;
 
@@ -38,10 +39,14 @@ public class NewBundleApplicationWizard extends Wizard implements INewWizard {
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.data = new AppBundleProjectData();
-		this.data.setJemmyTest(true);
+		this.data.setJemmyTest(isJemmyAvailable());
 		this.data.setTychoIntegration(true);
 		this.data.setNativeExport(true);
 		this.data.setVersion("1.0.0.qualifier");
+	}
+	
+	private boolean isJemmyAvailable() {
+		return PDECore.getDefault().getModelManager().findModel("at.bestsolution.efxclipse.jemmy") != null;
 	}
 
 	@Override
@@ -75,6 +80,7 @@ public class NewBundleApplicationWizard extends Wizard implements INewWizard {
 		additionalData.put("TychoIntegration", data.isTychoIntegration());
 		additionalData.put("NativeExport", data.isNativeExport());
 		additionalData.put("EclipseDI", data.isDiApp());
+		additionalData.put("JemmyTest", data.isJemmyTest());
 		
 		WorkspaceModifyOperation w = new WorkspaceModifyOperation() {
 			

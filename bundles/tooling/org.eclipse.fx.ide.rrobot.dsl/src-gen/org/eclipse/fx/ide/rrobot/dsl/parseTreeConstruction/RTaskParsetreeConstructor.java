@@ -6,14 +6,13 @@ package org.eclipse.fx.ide.rrobot.dsl.parseTreeConstruction;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
-import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
 
 import org.eclipse.fx.ide.rrobot.dsl.services.RTaskGrammarAccess;
 
 import com.google.inject.Inject;
 
 @SuppressWarnings("all")
-public class RTaskParsetreeConstructor extends AbstractParseTreeConstructor {
+public class RTaskParsetreeConstructor extends org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor {
 		
 	@Inject
 	private RTaskGrammarAccess grammarAccess;
@@ -4030,7 +4029,7 @@ protected class InlineBooleanExpression_ExpressionAssignment_1 extends Assignmen
  * 	buildProperties=BuildProperties & ("pluginxml" "=" pluginxml=PluginXMLFile)?) ("resources" "=" "{" resources+=Resource
  * 	("," resources+=Resource)* "}")? "rootfragments" "=" "{" sourceFragments+=SourceFragment (","
  * 	sourceFragments+=SourceFragment)* "}" ("compilation-units" "=" "{" compilationUnits+=CompilationUnit (","
- * 	compilationUnits+=CompilationUnit)* "}")? "}";
+ * 	compilationUnits+=CompilationUnit)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?;
  *
  **/
 
@@ -4038,7 +4037,7 @@ protected class InlineBooleanExpression_ExpressionAssignment_1 extends Assignmen
 // buildProperties=BuildProperties & ("pluginxml" "=" pluginxml=PluginXMLFile)?) ("resources" "=" "{" resources+=Resource
 // ("," resources+=Resource)* "}")? "rootfragments" "=" "{" sourceFragments+=SourceFragment (","
 // sourceFragments+=SourceFragment)* "}" ("compilation-units" "=" "{" compilationUnits+=CompilationUnit (","
-// compilationUnits+=CompilationUnit)* "}")? "}"
+// compilationUnits+=CompilationUnit)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
 protected class BundleProject_Group extends GroupToken {
 	
 	public BundleProject_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4053,7 +4052,8 @@ protected class BundleProject_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new BundleProject_RightCurlyBracketKeyword_13(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new BundleProject_Group_14(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new BundleProject_RightCurlyBracketKeyword_13(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -5286,6 +5286,97 @@ protected class BundleProject_RightCurlyBracketKeyword_13 extends KeywordToken  
 
 }
 
+// ("excluded-if" excludeExpression=BooleanExpression)?
+protected class BundleProject_Group_14 extends GroupToken {
+	
+	public BundleProject_Group_14(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getBundleProjectAccess().getGroup_14();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BundleProject_ExcludeExpressionAssignment_14_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "excluded-if"
+protected class BundleProject_ExcludedIfKeyword_14_0 extends KeywordToken  {
+	
+	public BundleProject_ExcludedIfKeyword_14_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getBundleProjectAccess().getExcludedIfKeyword_14_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BundleProject_RightCurlyBracketKeyword_13(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// excludeExpression=BooleanExpression
+protected class BundleProject_ExcludeExpressionAssignment_14_1 extends AssignmentToken  {
+	
+	public BundleProject_ExcludeExpressionAssignment_14_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getBundleProjectAccess().getExcludeExpressionAssignment_14_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BooleanExpression_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("excludeExpression",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("excludeExpression");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getBooleanExpressionRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getBundleProjectAccess().getExcludeExpressionBooleanExpressionParserRuleCall_14_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new BundleProject_ExcludedIfKeyword_14_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
 
 /************ end Rule BundleProject ****************/
 
@@ -5772,12 +5863,12 @@ protected class CompilationUnit_ExcludeExpressionAssignment_6_1 extends Assignme
  *
  * FeatureProject returns bundle::FeatureProject:
  * 	{bundle::FeatureProject} "FeatureProject" name=EString "{" "feature" "=" feature=FeatureFile ("resources" "=" "{"
- * 	resources+=Resource ("," resources+=Resource)* "}")? "}";
+ * 	resources+=Resource ("," resources+=Resource)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?;
  *
  **/
 
 // {bundle::FeatureProject} "FeatureProject" name=EString "{" "feature" "=" feature=FeatureFile ("resources" "=" "{"
-// resources+=Resource ("," resources+=Resource)* "}")? "}"
+// resources+=Resource ("," resources+=Resource)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
 protected class FeatureProject_Group extends GroupToken {
 	
 	public FeatureProject_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5792,7 +5883,8 @@ protected class FeatureProject_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new FeatureProject_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new FeatureProject_Group_9(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new FeatureProject_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -6272,6 +6364,97 @@ protected class FeatureProject_RightCurlyBracketKeyword_8 extends KeywordToken  
 	}
 
 }
+
+// ("excluded-if" excludeExpression=BooleanExpression)?
+protected class FeatureProject_Group_9 extends GroupToken {
+	
+	public FeatureProject_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getFeatureProjectAccess().getGroup_9();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new FeatureProject_ExcludeExpressionAssignment_9_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "excluded-if"
+protected class FeatureProject_ExcludedIfKeyword_9_0 extends KeywordToken  {
+	
+	public FeatureProject_ExcludedIfKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getFeatureProjectAccess().getExcludedIfKeyword_9_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new FeatureProject_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// excludeExpression=BooleanExpression
+protected class FeatureProject_ExcludeExpressionAssignment_9_1 extends AssignmentToken  {
+	
+	public FeatureProject_ExcludeExpressionAssignment_9_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getFeatureProjectAccess().getExcludeExpressionAssignment_9_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BooleanExpression_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("excludeExpression",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("excludeExpression");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getBooleanExpressionRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getFeatureProjectAccess().getExcludeExpressionBooleanExpressionParserRuleCall_9_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new FeatureProject_ExcludedIfKeyword_9_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
 
 
 /************ end Rule FeatureProject ****************/

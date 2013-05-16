@@ -1703,7 +1703,29 @@ ruleBundleProject returns [EObject current=null]
     {
     	newLeafNode(otherlv_35, grammarAccess.getBundleProjectAccess().getRightCurlyBracketKeyword_13());
     }
+(	otherlv_36='excluded-if' 
+    {
+    	newLeafNode(otherlv_36, grammarAccess.getBundleProjectAccess().getExcludedIfKeyword_14_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBundleProjectAccess().getExcludeExpressionBooleanExpressionParserRuleCall_14_1_0()); 
+	    }
+		lv_excludeExpression_37_0=ruleBooleanExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBundleProjectRule());
+	        }
+       		set(
+       			$current, 
+       			"excludeExpression",
+        		lv_excludeExpression_37_0, 
+        		"BooleanExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))?)
 ;
 
 
@@ -2050,7 +2072,29 @@ ruleFeatureProject returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getFeatureProjectAccess().getRightCurlyBracketKeyword_8());
     }
+(	otherlv_15='excluded-if' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getFeatureProjectAccess().getExcludedIfKeyword_9_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFeatureProjectAccess().getExcludeExpressionBooleanExpressionParserRuleCall_9_1_0()); 
+	    }
+		lv_excludeExpression_16_0=ruleBooleanExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFeatureProjectRule());
+	        }
+       		set(
+       			$current, 
+       			"excludeExpression",
+        		lv_excludeExpression_16_0, 
+        		"BooleanExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))?)
 ;
 
 

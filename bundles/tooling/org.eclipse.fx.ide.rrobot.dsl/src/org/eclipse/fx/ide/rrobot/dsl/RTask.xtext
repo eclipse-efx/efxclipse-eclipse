@@ -110,6 +110,7 @@ BundleProject returns bundle::BundleProject:
 		'rootfragments' '=' '{' sourceFragments+=SourceFragment ( "," sourceFragments+=SourceFragment)* '}'
 		('compilation-units' '=' '{' compilationUnits+=CompilationUnit (',' compilationUnits+=CompilationUnit)* '}')?
 	'}'
+	('excluded-if' excludeExpression=BooleanExpression)?
 ;
 
 SourceFragment returns task::SourceFragment: 
@@ -129,6 +130,7 @@ FeatureProject returns bundle::FeatureProject:
 		'feature' '=' feature=FeatureFile
 		('resources' '=' '{' resources+=Resource ( "," resources+=Resource)* '}' )?
 	'}'
+	('excluded-if' excludeExpression=BooleanExpression)?
 ;
 
 ManifestFile returns bundle::ManifestFile:

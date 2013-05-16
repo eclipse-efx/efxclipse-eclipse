@@ -12,101 +12,101 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalRTaskLexer extends Lexer {
-    public static final int RULE_ID=6;
-    public static final int T__29=29;
     public static final int T__28=28;
-    public static final int T__27=27;
     public static final int T__26=26;
+    public static final int T__68=68;
+    public static final int T__71=71;
     public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=13;
-    public static final int T__21=21;
-    public static final int T__20=20;
+    public static final int RULE_ID=6;
+    public static final int T__45=45;
+    public static final int T__39=39;
+    public static final int T__50=50;
+    public static final int T__97=97;
+    public static final int T__63=63;
     public static final int RULE_SL_DOC=4;
-    public static final int EOF=-1;
-    public static final int RULE_INLINE_SCRIPT=7;
+    public static final int T__80=80;
+    public static final int RULE_SL_COMMENT=11;
+    public static final int T__37=37;
+    public static final int T__86=86;
+    public static final int T__47=47;
+    public static final int T__59=59;
+    public static final int T__56=56;
+    public static final int T__44=44;
+    public static final int T__51=51;
+    public static final int T__76=76;
+    public static final int RULE_ML_COMMENT=10;
+    public static final int T__31=31;
+    public static final int T__35=35;
+    public static final int T__66=66;
     public static final int T__93=93;
-    public static final int T__94=94;
+    public static final int T__21=21;
+    public static final int T__61=61;
+    public static final int T__64=64;
+    public static final int T__96=96;
+    public static final int T__30=30;
+    public static final int T__34=34;
     public static final int T__19=19;
-    public static final int T__91=91;
-    public static final int T__92=92;
-    public static final int T__16=16;
-    public static final int T__90=90;
     public static final int T__15=15;
+    public static final int T__69=69;
+    public static final int T__32=32;
+    public static final int T__75=75;
+    public static final int T__73=73;
+    public static final int T__84=84;
+    public static final int RULE_ANY_OTHER=13;
+    public static final int T__38=38;
+    public static final int RULE_WS=12;
+    public static final int RULE_INT=9;
+    public static final int T__23=23;
+    public static final int T__33=33;
+    public static final int T__62=62;
+    public static final int T__82=82;
+    public static final int EOF=-1;
+    public static final int T__52=52;
+    public static final int T__55=55;
+    public static final int T__41=41;
+    public static final int T__94=94;
+    public static final int T__42=42;
+    public static final int RULE_INLINE_SCRIPT=7;
+    public static final int T__95=95;
+    public static final int T__92=92;
+    public static final int T__89=89;
+    public static final int T__81=81;
+    public static final int T__36=36;
+    public static final int T__27=27;
+    public static final int T__90=90;
+    public static final int T__67=67;
+    public static final int T__54=54;
+    public static final int T__77=77;
+    public static final int T__20=20;
+    public static final int T__60=60;
+    public static final int T__40=40;
+    public static final int T__87=87;
+    public static final int T__46=46;
+    public static final int RULE_STRING=5;
+    public static final int RULE_SIGNED_INT=8;
+    public static final int T__88=88;
+    public static final int T__22=22;
+    public static final int T__72=72;
+    public static final int T__79=79;
+    public static final int T__85=85;
+    public static final int T__65=65;
+    public static final int T__70=70;
+    public static final int T__49=49;
+    public static final int T__58=58;
+    public static final int T__74=74;
+    public static final int T__48=48;
     public static final int T__18=18;
+    public static final int T__43=43;
+    public static final int T__24=24;
+    public static final int T__91=91;
+    public static final int T__16=16;
+    public static final int T__78=78;
     public static final int T__17=17;
     public static final int T__14=14;
-    public static final int T__97=97;
-    public static final int T__96=96;
-    public static final int T__95=95;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
-    public static final int T__85=85;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
-    public static final int T__89=89;
-    public static final int T__88=88;
-    public static final int RULE_ML_COMMENT=10;
-    public static final int RULE_STRING=5;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int T__70=70;
-    public static final int T__76=76;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
-    public static final int T__77=77;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__61=61;
-    public static final int T__60=60;
-    public static final int T__55=55;
-    public static final int T__56=56;
     public static final int T__57=57;
-    public static final int T__58=58;
-    public static final int T__51=51;
-    public static final int T__52=52;
     public static final int T__53=53;
-    public static final int T__54=54;
-    public static final int T__59=59;
-    public static final int RULE_INT=9;
-    public static final int RULE_SIGNED_INT=8;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=11;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int RULE_WS=12;
+    public static final int T__83=83;
+    public static final int T__29=29;
 
     // delegates
     // delegators
@@ -1881,12 +1881,12 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_SL_DOC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:13: ( '##' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:15: '##' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:13: ( '##' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:15: '##' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("##"); 
 
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:20: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:20: (~ ( ( '\\n' | '\\r' ) ) )*
             loop1:
             do {
                 int alt1=2;
@@ -1899,7 +1899,7 @@ public class InternalRTaskLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:20: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:20: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1919,7 +1919,7 @@ public class InternalRTaskLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:36: ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:36: ( ( '\\r' )? '\\n' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1928,9 +1928,9 @@ public class InternalRTaskLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:37: ( '\\r' )? '\\n'
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:37: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:37: ( '\\r' )?
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:37: ( '\\r' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -1939,7 +1939,7 @@ public class InternalRTaskLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5106:37: '\\r'
+                            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5150:37: '\\r'
                             {
                             match('\r'); 
 
@@ -1971,12 +1971,12 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_INLINE_SCRIPT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5108:20: ( '/#' ( options {greedy=false; } : . )* '#/' )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5108:22: '/#' ( options {greedy=false; } : . )* '#/'
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5152:20: ( '/#' ( options {greedy=false; } : . )* '#/' )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5152:22: '/#' ( options {greedy=false; } : . )* '#/'
             {
             match("/#"); 
 
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5108:27: ( options {greedy=false; } : . )*
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5152:27: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -2001,7 +2001,7 @@ public class InternalRTaskLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5108:55: .
+            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5152:55: .
             	    {
             	    matchAny(); 
 
@@ -2031,8 +2031,8 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_SIGNED_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5110:17: ( '-' RULE_INT )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5110:19: '-' RULE_INT
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5154:17: ( '-' RULE_INT )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5154:19: '-' RULE_INT
             {
             match('-'); 
             mRULE_INT(); 
@@ -2052,10 +2052,10 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5112:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5112:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5156:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5156:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5112:11: ( '^' )?
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5156:11: ( '^' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2064,7 +2064,7 @@ public class InternalRTaskLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5112:11: '^'
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5156:11: '^'
                     {
                     match('^'); 
 
@@ -2082,7 +2082,7 @@ public class InternalRTaskLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5112:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5156:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -2131,10 +2131,10 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5114:10: ( ( '0' .. '9' )+ )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5114:12: ( '0' .. '9' )+
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5158:10: ( ( '0' .. '9' )+ )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5158:12: ( '0' .. '9' )+
             {
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5114:12: ( '0' .. '9' )+
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5158:12: ( '0' .. '9' )+
             int cnt7=0;
             loop7:
             do {
@@ -2148,7 +2148,7 @@ public class InternalRTaskLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5114:13: '0' .. '9'
+            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5158:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2180,10 +2180,10 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2201,10 +2201,10 @@ public class InternalRTaskLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -2220,7 +2220,7 @@ public class InternalRTaskLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2236,7 +2236,7 @@ public class InternalRTaskLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2261,10 +2261,10 @@ public class InternalRTaskLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -2280,7 +2280,7 @@ public class InternalRTaskLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2296,7 +2296,7 @@ public class InternalRTaskLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5116:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5160:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2339,12 +2339,12 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5118:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5118:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5162:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5162:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5118:24: ( options {greedy=false; } : . )*
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5162:24: ( options {greedy=false; } : . )*
             loop11:
             do {
                 int alt11=2;
@@ -2369,7 +2369,7 @@ public class InternalRTaskLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5118:52: .
+            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5162:52: .
             	    {
             	    matchAny(); 
 
@@ -2399,12 +2399,12 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop12:
             do {
                 int alt12=2;
@@ -2417,7 +2417,7 @@ public class InternalRTaskLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2437,7 +2437,7 @@ public class InternalRTaskLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:40: ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:40: ( ( '\\r' )? '\\n' )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2446,9 +2446,9 @@ public class InternalRTaskLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:41: ( '\\r' )? '\\n'
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:41: ( '\\r' )?
+                    // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:41: ( '\\r' )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -2457,7 +2457,7 @@ public class InternalRTaskLexer extends Lexer {
                     }
                     switch (alt13) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5120:41: '\\r'
+                            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5164:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2489,10 +2489,10 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5122:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5122:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5166:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5166:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5122:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5166:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt15=0;
             loop15:
             do {
@@ -2546,8 +2546,8 @@ public class InternalRTaskLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5124:16: ( . )
-            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5124:18: .
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5168:16: ( . )
+            // ../org.eclipse.fx.ide.rrobot.dsl/src-gen/org/eclipse/fx/ide/rrobot/dsl/parser/antlr/internal/InternalRTask.g:5168:18: .
             {
             matchAny(); 
 
@@ -3402,7 +3402,7 @@ public class InternalRTaskLexer extends Lexer {
         "\124\4\uffff\1\45\1\uffff\1\50\1\uffff\1\53\1\uffff\1\74\1\73\2"+
         "\uffff\1\46\1\47\6\uffff\1\64\3\uffff\1\56";
     static final String DFA16_specialS =
-        "\1\2\52\uffff\1\1\1\0\u0294\uffff}>";
+        "\1\1\52\uffff\1\0\1\2\u0294\uffff}>";
     static final String[] DFA16_transitionS = {
             "\11\56\2\55\2\56\1\55\22\56\1\55\1\56\1\53\1\45\3\56\1\54\1"+
             "\34\1\36\2\56\1\5\1\47\1\42\1\46\12\52\3\56\1\4\3\56\1\51\1"+
@@ -4156,16 +4156,6 @@ public class InternalRTaskLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA16_44 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA16_44>='\u0000' && LA16_44<='\uFFFF')) ) {s = 115;}
-
-                        else s = 46;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA16_43 = input.LA(1);
 
                         s = -1;
@@ -4175,7 +4165,7 @@ public class InternalRTaskLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 1 : 
                         int LA16_0 = input.LA(1);
 
                         s = -1;
@@ -4270,6 +4260,16 @@ public class InternalRTaskLexer extends Lexer {
                         else if ( ((LA16_0>='\t' && LA16_0<='\n')||LA16_0=='\r'||LA16_0==' ') ) {s = 45;}
 
                         else if ( ((LA16_0>='\u0000' && LA16_0<='\b')||(LA16_0>='\u000B' && LA16_0<='\f')||(LA16_0>='\u000E' && LA16_0<='\u001F')||LA16_0=='!'||(LA16_0>='$' && LA16_0<='&')||(LA16_0>='*' && LA16_0<='+')||(LA16_0>=':' && LA16_0<='<')||(LA16_0>='>' && LA16_0<='@')||LA16_0=='\\'||LA16_0=='`'||LA16_0=='|'||(LA16_0>='~' && LA16_0<='\uFFFF')) ) {s = 46;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA16_44 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA16_44>='\u0000' && LA16_44<='\uFFFF')) ) {s = 115;}
+
+                        else s = 46;
 
                         if ( s>=0 ) return s;
                         break;

@@ -90,6 +90,7 @@ class GeneratorConfigurationPage extends WizardPage {
 			createLabel(group, "Jemmy Unittest stubs:");
 			jemmyButton = createCheckbox(group, listener);
 			jemmyButton.setSelection(data.isJemmyTest());
+			jemmyButton.setEnabled(data.isJemmyTest());
 		}
 		
 		{
