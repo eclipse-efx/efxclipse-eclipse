@@ -80,7 +80,8 @@
 		<repository>
 			<id>efx-runtime</id>
 			<layout>p2</layout>
-			<url>http://downloads.efxclipse.org/eclipse.org/p2/runtime/nightly/site/</url>
+			<!--  url>http://downloads.efxclipse.org/eclipse.org/p2/runtime/nightly/site/</url-->
+			<url>file:///Users/tomschindl/git/efxclipse/releng/org.eclipse.fx.updatesite/target/site</url>
 		</repository>	
 		<!-- 
 		<repository>
