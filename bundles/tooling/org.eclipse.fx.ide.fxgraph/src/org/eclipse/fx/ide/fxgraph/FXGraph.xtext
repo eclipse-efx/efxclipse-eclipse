@@ -24,7 +24,7 @@ PackageDeclaration:
 ;
 
 Import:
-	'import' importedNamespace=QualifiedNameWithWildCard;
+	'import' importedNamespace=QualifiedNameWithWildcard;
 
 ComponentDefinition:
 	(dynamicRoot?='dynamic')? 'component' name=ValidID 
@@ -153,8 +153,6 @@ BindValueProperty:
 	'bind' elementReference=[Element|ValidID] '#' attribute=ID
 ;
 
-QualifiedNameWithWildCard :
-	QualifiedName  ('.' '*')?;
 
 StringValue:
 	value=STRING

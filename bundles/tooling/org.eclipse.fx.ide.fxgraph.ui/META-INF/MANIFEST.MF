@@ -32,5 +32,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.eclipse.fx.ide.fxgraph.ui.contentassist.antlr,
  org.eclipse.fx.ide.fxgraph.ui.internal,
  org.eclipse.fx.ide.fxgraph.ui.util,
- org.eclipse.fx.ide.fxgraph.ui.contentassist
+ org.eclipse.fx.ide.fxgraph.ui.contentassist,
+ org.eclipse.fx.ide.fxgraph.ui.quickfix
 Bundle-Activator: org.eclipse.fx.ide.fxgraph.ui.internal.FXGraphActivator

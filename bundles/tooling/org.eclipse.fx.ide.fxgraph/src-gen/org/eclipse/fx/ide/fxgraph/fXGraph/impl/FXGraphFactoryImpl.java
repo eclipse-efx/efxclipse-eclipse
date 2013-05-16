@@ -30,7 +30,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     try
     {
-      FXGraphFactory theFXGraphFactory = (FXGraphFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/efxclipse/tooling/fxgraph/FXGraph"); 
+      FXGraphFactory theFXGraphFactory = (FXGraphFactory)EPackage.Registry.INSTANCE.getEFactory(FXGraphPackage.eNS_URI);
       if (theFXGraphFactory != null)
       {
         return theFXGraphFactory;
