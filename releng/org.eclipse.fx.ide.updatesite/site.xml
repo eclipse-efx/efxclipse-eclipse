@@ -24,6 +24,9 @@
    <feature url="features/org.eclipse.fx.ide.rrobot.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.rrobot.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
+   <feature url="features/org.eclipse.fx.ide.fxgraph.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.fxgraph.feature" version="0.8.1.qualifier">
+      <category name="e(fx)clipse - single components"/>
+   </feature>
    <category-def name="e(fx)clipse - install" label="e(fx)clipse - install"/>
    <category-def name="e(fx)clipse - single components" label="e(fx)clipse - single components"/>
 </site>

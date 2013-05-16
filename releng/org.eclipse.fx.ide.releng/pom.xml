@@ -50,14 +50,14 @@
 		
 		<!-- FXGraph / FXML -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.model</module>
-		<!--  module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph</module>
-		<module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph.ui</module-->
+		<module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml</module>
 		
 		<module>../tooling/org.eclipse.fx.ide.basic.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.rrobot.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.css.feature</module>
-		<!--  module>../tooling/org.eclipse.fx.ide.fxgraph.feature</module -->
+		<module>../tooling/org.eclipse.fx.ide.fxgraph.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.fxml.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.prekepler.feature</module>
