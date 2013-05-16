@@ -22,7 +22,7 @@ import javafx.application.Application;
 
 import org.eclipse.equinox.app.IApplicationContext;
 
-import org.eclipse.fx.ui.animation.AbstractJFXApplication;
+import org.eclipse.fx.ui.application.AbstractJFXApplication;
 
 public class MainApplication extends AbstractJFXApplication {
 	protected void jfxStart(IApplicationContext applicationContext, Application jfxApplication, Stage primaryStage) {
