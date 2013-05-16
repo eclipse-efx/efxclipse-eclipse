@@ -8,7 +8,7 @@ CSSDefs:
 ;
 
 Import:
-	'import' importedNamespace=QualifiedNameWithWildCard;
+	'import' importedNamespace=QualifiedNameWithWildcard;
 
 PackageDeclaration:
 	'package' name=QualifiedName '{'
@@ -149,9 +149,6 @@ StringProperty:
 	doc=DOCU?
 	'string' name=STRING 'default' defaultValue=STRING
 ;
-
-QualifiedNameWithWildCard :
-	QualifiedName  ('.' '*')?;
 
 terminal DOCU: '/#' -> '#/';
 
