@@ -19,6 +19,7 @@
 
    <requires>
       <import feature="org.eclipse.fx.ide.basic.feature"/>
+      <import feature="org.eclipse.wst.xml_ui.feature"/>
    </requires>
 
    <plugin
