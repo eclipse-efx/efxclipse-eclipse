@@ -74,6 +74,11 @@
 			<url>http://download.eclipse.org/releases/kepler</url>
 		</repository>
 		<repository>
+			<id>juno</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+		<repository>
 			<id>xtext</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
