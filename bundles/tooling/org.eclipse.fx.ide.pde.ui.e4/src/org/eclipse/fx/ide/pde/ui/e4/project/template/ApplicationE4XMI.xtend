@@ -36,6 +36,7 @@ class ApplicationE4XMI implements Generator<DynamicFile> {
 	<addons xmi:id="«EcoreUtil::generateUUID»" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
 	<addons xmi:id="«EcoreUtil::generateUUID»" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
 	<addons xmi:id="«EcoreUtil::generateUUID»" elementId="org.eclipse.fx.ui.keybindings.e4.model" contributionURI="bundleclass://org.eclipse.fx.ui.keybindings.e4/org.eclipse.fx.ui.keybindings.e4.BindingProcessingAddon"/>
+	<addons xmi:id="«EcoreUtil::generateUUID»" elementId="org.eclipse.e4.ui.workbench.addons.HandlerProcessingAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
 </application:Application>
 	'''
 
