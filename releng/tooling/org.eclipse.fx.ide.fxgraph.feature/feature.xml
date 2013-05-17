@@ -19,7 +19,7 @@
 
    <requires>
       <import feature="org.eclipse.fx.ide.basic.feature"/>
-      <import feature="org.eclipse.xtext.sdk" />
+      <import feature="org.eclipse.xtext.sdk"/>
    </requires>
 
    <plugin
@@ -39,5 +39,12 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.fx.ide.ui.preview"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
