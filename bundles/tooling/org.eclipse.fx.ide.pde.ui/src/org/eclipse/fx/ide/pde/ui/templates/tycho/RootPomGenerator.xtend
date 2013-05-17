@@ -22,7 +22,7 @@ class RootPomGenerator implements Generator<DynamicFile> {
 		]
 		
 		if( data.get("JemmyTest") == Boolean::FALSE ) {
-			modules.removeIf([e|e.contains("jemmy")])
+			modules.removeAllElements([e|e.contains("jemmy")])
 		}
 			
 		val repos = new ArrayList<Repository>();
