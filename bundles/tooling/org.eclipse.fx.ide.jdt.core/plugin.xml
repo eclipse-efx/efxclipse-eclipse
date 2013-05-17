@@ -15,4 +15,10 @@
             id="org.eclipse.fx.ide.jdt.core.fxrule">
       </ruleParticipant>
    </extension>
+   <extension
+         point="org.eclipse.jdt.launching.libraryLocationResolvers">
+      <resolver
+            class="org.eclipse.fx.ide.jdt.core.internal.FXLibraryLocationResolver">
+      </resolver>
+   </extension>
 </plugin>
