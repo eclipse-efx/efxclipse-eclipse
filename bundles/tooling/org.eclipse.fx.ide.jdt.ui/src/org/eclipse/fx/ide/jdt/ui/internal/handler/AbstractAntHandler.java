@@ -110,7 +110,12 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 			for ( IPath p : listProjectSourceDirs ) {
 				IFolder t = root.getFolder( p );
 				set.add( t.getProjectRelativePath().toString() );
-				set2.add( new SetupDirectory( t.getProject().getLocation().toFile(), new File( t.getProjectRelativePath().toString() ) ) );
+				
+				if( t.isLinked() ) {
+					set2.add( new SetupDirectory( t.getLocation().toFile().getParentFile(), new File( t.getProjectRelativePath().toString() ) ) );
+				} else {
+					set2.add( new SetupDirectory( t.getProject().getLocation().toFile(), new File( t.getProjectRelativePath().toString() ) ) );  
+				}				
 			}
 			config.projectSourceDirs = set;
 			config.origProjectSourceDirs = set2;
