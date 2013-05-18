@@ -41,4 +41,8 @@
          id="org.eclipse.fx.ide.fxgraph.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.eclipse.fx.ide.converter.feature"
+         version="0.0.0"/>
+
 </feature>
