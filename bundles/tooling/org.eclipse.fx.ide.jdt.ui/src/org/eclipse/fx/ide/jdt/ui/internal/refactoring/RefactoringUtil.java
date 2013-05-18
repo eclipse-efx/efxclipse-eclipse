@@ -12,8 +12,10 @@ package org.eclipse.fx.ide.jdt.ui.internal.refactoring;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.PackageFragment;
@@ -40,11 +42,15 @@ public class RefactoringUtil {
 		IJavaElement je = JavaCore.create( resource );
 		if ( je != null ) {
 			try {
-				return JavaCore.create( resource.getProject() )
-						.findType( je.getParent().getElementName(), je.getElementName().replace( "." + resource.getFileExtension(), "" ) )
-						.getFullyQualifiedName();
+				IJavaProject p = je.getJavaProject();
+				IType t = p.findType( je.getParent().getElementName(), je.getElementName().replace( "." + resource.getFileExtension(), "" ) );
+				if( t == null ) {
+					System.err.println("Unable to construct FQN from '"+je.getParent().getElementName()+"."+je.getElementName().replace( "." + resource.getFileExtension(), "" )+"'");
+					return "";
+				}
+				return t.getFullyQualifiedName(); 
 			}
-			catch ( JavaModelException e ) {
+			catch ( Exception e ) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return "";
