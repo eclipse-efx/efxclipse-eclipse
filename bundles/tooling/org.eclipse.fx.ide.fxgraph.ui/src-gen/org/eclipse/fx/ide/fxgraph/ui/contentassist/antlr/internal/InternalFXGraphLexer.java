@@ -12,115 +12,115 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalFXGraphLexer extends Lexer {
+    public static final int T__65=65;
+    public static final int T__64=64;
+    public static final int T__107=107;
+    public static final int RULE_ML_COMMENT=11;
+    public static final int T__25=25;
+    public static final int T__82=82;
+    public static final int T__89=89;
+    public static final int T__103=103;
+    public static final int T__57=57;
+    public static final int RULE_SCRIPTLITERAL=9;
+    public static final int T__98=98;
+    public static final int RULE_REAL=10;
+    public static final int T__109=109;
     public static final int T__97=97;
-    public static final int T__40=40;
+    public static final int T__69=69;
+    public static final int T__15=15;
+    public static final int T__43=43;
+    public static final int T__41=41;
+    public static final int T__111=111;
+    public static final int T__71=71;
+    public static final int T__70=70;
+    public static final int RULE_WS=13;
     public static final int T__88=88;
-    public static final int T__26=26;
-    public static final int T__86=86;
-    public static final int T__67=67;
-    public static final int T__19=19;
+    public static final int T__18=18;
+    public static final int T__28=28;
+    public static final int RULE_HEX=5;
+    public static final int T__66=66;
+    public static final int T__59=59;
+    public static final int T__105=105;
     public static final int T__30=30;
-    public static final int T__17=17;
+    public static final int T__81=81;
+    public static final int T__45=45;
+    public static final int T__31=31;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__44=44;
+    public static final int T__87=87;
+    public static final int RULE_ID=4;
+    public static final int T__62=62;
+    public static final int T__21=21;
+    public static final int T__29=29;
+    public static final int T__84=84;
+    public static final int T__63=63;
+    public static final int T__19=19;
+    public static final int T__26=26;
+    public static final int T__38=38;
     public static final int T__61=61;
+    public static final int T__17=17;
+    public static final int T__58=58;
+    public static final int T__54=54;
+    public static final int T__27=27;
+    public static final int T__24=24;
+    public static final int T__51=51;
+    public static final int T__39=39;
+    public static final int T__36=36;
     public static final int T__104=104;
     public static final int T__55=55;
-    public static final int T__27=27;
-    public static final int T__107=107;
-    public static final int T__50=50;
-    public static final int T__87=87;
-    public static final int T__60=60;
-    public static final int T__23=23;
-    public static final int T__41=41;
-    public static final int T__73=73;
-    public static final int T__58=58;
-    public static final int T__38=38;
-    public static final int T__93=93;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__45=45;
-    public static final int T__63=63;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__25=25;
-    public static final int T__18=18;
-    public static final int T__100=100;
-    public static final int T__37=37;
     public static final int T__68=68;
-    public static final int T__20=20;
-    public static final int T__39=39;
-    public static final int T__74=74;
-    public static final int T__31=31;
-    public static final int RULE_SCRIPTLITERAL=9;
-    public static final int RULE_INT=6;
-    public static final int T__77=77;
-    public static final int T__62=62;
-    public static final int T__105=105;
-    public static final int T__48=48;
-    public static final int RULE_STRING=8;
-    public static final int EOF=-1;
-    public static final int T__69=69;
-    public static final int T__80=80;
-    public static final int T__46=46;
-    public static final int T__42=42;
-    public static final int T__47=47;
-    public static final int RULE_WS=13;
-    public static final int T__99=99;
-    public static final int T__43=43;
-    public static final int T__111=111;
-    public static final int T__51=51;
-    public static final int RULE_ML_COMMENT=11;
-    public static final int T__95=95;
-    public static final int T__106=106;
-    public static final int T__85=85;
-    public static final int T__56=56;
-    public static final int T__57=57;
-    public static final int T__59=59;
-    public static final int T__89=89;
-    public static final int RULE_ID=4;
-    public static final int T__24=24;
-    public static final int T__82=82;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int T__81=81;
-    public static final int T__44=44;
-    public static final int T__71=71;
-    public static final int T__101=101;
-    public static final int T__66=66;
-    public static final int T__16=16;
-    public static final int T__109=109;
-    public static final int T__32=32;
-    public static final int T__52=52;
-    public static final int T__78=78;
-    public static final int T__70=70;
-    public static final int T__103=103;
-    public static final int T__49=49;
-    public static final int T__22=22;
-    public static final int T__79=79;
-    public static final int RULE_SL_COMMENT=12;
-    public static final int T__96=96;
-    public static final int T__91=91;
-    public static final int RULE_REAL=10;
-    public static final int T__72=72;
-    public static final int T__90=90;
-    public static final int T__35=35;
-    public static final int T__76=76;
-    public static final int T__108=108;
-    public static final int T__29=29;
-    public static final int T__102=102;
-    public static final int T__36=36;
-    public static final int T__84=84;
-    public static final int T__92=92;
-    public static final int T__54=54;
-    public static final int T__33=33;
-    public static final int T__110=110;
-    public static final int T__83=83;
-    public static final int RULE_HEX=5;
     public static final int T__34=34;
-    public static final int T__15=15;
-    public static final int T__94=94;
-    public static final int T__21=21;
-    public static final int T__98=98;
+    public static final int T__33=33;
+    public static final int T__80=80;
+    public static final int T__40=40;
+    public static final int T__37=37;
+    public static final int T__100=100;
+    public static final int T__79=79;
+    public static final int T__96=96;
+    public static final int T__101=101;
     public static final int T__75=75;
-    public static final int T__28=28;
     public static final int T__53=53;
+    public static final int T__32=32;
+    public static final int T__110=110;
+    public static final int T__46=46;
+    public static final int T__99=99;
+    public static final int T__50=50;
+    public static final int T__16=16;
+    public static final int T__95=95;
+    public static final int T__94=94;
+    public static final int T__76=76;
+    public static final int T__42=42;
+    public static final int RULE_INT=6;
+    public static final int T__67=67;
+    public static final int T__48=48;
+    public static final int T__23=23;
+    public static final int T__56=56;
+    public static final int T__108=108;
+    public static final int T__85=85;
+    public static final int RULE_STRING=8;
+    public static final int RULE_ANY_OTHER=14;
+    public static final int T__90=90;
+    public static final int T__20=20;
+    public static final int T__35=35;
+    public static final int T__74=74;
+    public static final int T__91=91;
+    public static final int RULE_SL_COMMENT=12;
+    public static final int T__86=86;
+    public static final int T__73=73;
+    public static final int T__52=52;
+    public static final int T__102=102;
+    public static final int T__78=78;
+    public static final int T__72=72;
+    public static final int T__22=22;
+    public static final int T__47=47;
+    public static final int EOF=-1;
+    public static final int T__92=92;
+    public static final int T__83=83;
+    public static final int T__106=106;
+    public static final int T__60=60;
+    public static final int T__49=49;
+    public static final int T__93=93;
+    public static final int T__77=77;
 
     // delegates
     // delegators
@@ -2154,10 +2154,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_REAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24332:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24332:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24355:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24355:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
             {
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24332:13: ( '0' .. '9' )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24355:13: ( '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -2170,7 +2170,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24332:14: '0' .. '9'
+            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24355:14: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2183,7 +2183,7 @@ public class InternalFXGraphLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24332:29: ( '0' .. '9' )+
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24355:29: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -2197,7 +2197,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24332:30: '0' .. '9'
+            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24355:30: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2229,12 +2229,12 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_SCRIPTLITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24334:20: ( '#{' ( options {greedy=false; } : . )* '}#' )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24334:22: '#{' ( options {greedy=false; } : . )* '}#'
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24357:20: ( '#{' ( options {greedy=false; } : . )* '}#' )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24357:22: '#{' ( options {greedy=false; } : . )* '}#'
             {
             match("#{"); 
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24334:27: ( options {greedy=false; } : . )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24357:27: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -2259,7 +2259,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24334:55: .
+            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24357:55: .
             	    {
             	    matchAny(); 
 
@@ -2289,10 +2289,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:12: ( '0x' | '0X' )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:12: ( '0x' | '0X' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2320,7 +2320,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:13: '0x'
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:13: '0x'
                     {
                     match("0x"); 
 
@@ -2328,7 +2328,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:18: '0X'
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:18: '0X'
                     {
                     match("0X"); 
 
@@ -2338,7 +2338,7 @@ public class InternalFXGraphLexer extends Lexer {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt5=0;
             loop5:
             do {
@@ -2376,7 +2376,7 @@ public class InternalFXGraphLexer extends Lexer {
                 cnt5++;
             } while (true);
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2385,10 +2385,10 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2406,7 +2406,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2430,7 +2430,7 @@ public class InternalFXGraphLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24336:84: ( 'l' | 'L' )
+                            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24359:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2469,11 +2469,11 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24338:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24338:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24361:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24361:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24338:21: ( '0' .. '9' | '_' )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24361:21: ( '0' .. '9' | '_' )*
             loop8:
             do {
                 int alt8=2;
@@ -2522,11 +2522,11 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2535,7 +2535,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2546,7 +2546,7 @@ public class InternalFXGraphLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:36: ( '+' | '-' )?
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:36: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2579,7 +2579,7 @@ public class InternalFXGraphLexer extends Lexer {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -2591,7 +2591,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2615,7 +2615,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24340:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24363:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2648,10 +2648,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24342:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24342:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24365:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24365:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24342:11: ( '^' )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24365:11: ( '^' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2660,7 +2660,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24342:11: '^'
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24365:11: '^'
                     {
                     match('^'); 
 
@@ -2678,7 +2678,7 @@ public class InternalFXGraphLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24342:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24365:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop13:
             do {
                 int alt13=2;
@@ -2727,10 +2727,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2748,10 +2748,10 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -2767,7 +2767,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2783,7 +2783,7 @@ public class InternalFXGraphLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2808,10 +2808,10 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop15:
                     do {
                         int alt15=3;
@@ -2827,7 +2827,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2843,7 +2843,7 @@ public class InternalFXGraphLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24344:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24367:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2886,12 +2886,12 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24346:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24346:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24369:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24369:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24346:24: ( options {greedy=false; } : . )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24369:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -2916,7 +2916,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24346:52: .
+            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24369:52: .
             	    {
             	    matchAny(); 
 
@@ -2946,12 +2946,12 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -2964,7 +2964,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2984,7 +2984,7 @@ public class InternalFXGraphLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:40: ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2993,9 +2993,9 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:41: ( '\\r' )? '\\n'
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:41: ( '\\r' )?
+                    // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -3004,7 +3004,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24348:41: '\\r'
+                            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24371:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3036,10 +3036,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24350:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24350:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24373:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24373:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24350:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24373:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -3093,8 +3093,8 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24352:16: ( . )
-            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24352:18: .
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24375:16: ( . )
+            // ../org.eclipse.fx.ide.fxgraph.ui/src-gen/org/eclipse/fx/ide/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:24375:18: .
             {
             matchAny(); 
 
@@ -3882,8 +3882,8 @@ public class InternalFXGraphLexer extends Lexer {
         "\uffff\2\70\2\u0080\1\56\1\uffff\2\56\2\uffff\1\u0086\6\uffff\2"+
         "\70\1\uffff\11\70\5\uffff\1\u0095\3\uffff\1\u0097\2\uffff\1\u0099"+
         "\14\uffff\10\70\1\u00a6\1\70\1\u00a9\3\70\7\uffff\1\70\1\u00b2\1"+
-        "\70\4\uffff\1\u00b4\2\70\1\uffff\3\70\1\uffff\1\u0080\2\uffff\1"+
-        "\u0080\4\uffff\7\70\1\u00c1\3\70\1\u00c5\1\70\6\uffff\1\u00c7\1"+
+        "\70\4\uffff\1\u00b4\2\70\1\uffff\3\70\1\uffff\1\u0080\1\uffff\1"+
+        "\u0080\5\uffff\7\70\1\u00c1\3\70\1\u00c5\1\70\6\uffff\1\u00c7\1"+
         "\u00c8\12\70\1\uffff\2\70\1\uffff\10\70\1\uffff\1\70\1\uffff\3\70"+
         "\1\u00e4\7\70\1\u00ec\1\uffff\3\70\1\uffff\1\70\2\uffff\2\70\1\u00f3"+
         "\15\70\1\u0101\1\70\1\u0103\1\u0104\5\70\1\u010a\1\70\1\uffff\1"+
@@ -3909,7 +3909,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\1\154\1\162\1\156\5\uffff\1\75\3\uffff\1\76\2\uffff\1\74\14\uffff"+
         "\1\154\1\164\1\163\1\141\1\160\1\145\1\151\1\160\1\44\1\143\1\44"+
         "\1\155\1\145\1\154\7\uffff\1\146\1\44\1\156\4\uffff\1\44\1\143\1"+
-        "\156\1\uffff\1\151\1\167\1\154\1\uffff\1\56\2\uffff\1\60\4\uffff"+
+        "\156\1\uffff\1\151\1\167\1\154\1\uffff\1\56\1\uffff\1\60\5\uffff"+
         "\1\166\1\153\1\164\1\157\1\165\1\162\1\145\1\44\1\145\1\157\1\163"+
         "\1\44\1\141\6\uffff\2\44\2\145\1\164\1\154\1\145\1\156\1\151\1\164"+
         "\1\157\1\145\1\uffff\1\154\1\164\1\uffff\1\160\1\163\1\171\1\141"+
@@ -3943,7 +3943,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\1\75\3\uffff\1\76\2\uffff\1\74\14\uffff\1\162\1\164\1\163\1\171"+
         "\1\160\1\162\1\151\1\160\1\172\1\163\1\172\1\160\1\145\1\164\7\uffff"+
         "\1\146\1\172\1\156\4\uffff\1\172\1\143\1\156\1\uffff\1\151\1\167"+
-        "\1\154\1\uffff\1\154\2\uffff\1\154\4\uffff\1\166\1\153\1\164\1\157"+
+        "\1\154\1\uffff\1\154\1\uffff\1\154\5\uffff\1\166\1\153\1\164\1\157"+
         "\1\165\1\162\1\145\1\172\1\145\1\157\1\163\1\172\1\141\6\uffff\2"+
         "\172\1\162\1\145\1\164\1\154\1\145\1\156\1\151\1\164\1\157\1\145"+
         "\1\uffff\1\154\1\164\1\uffff\1\160\1\164\1\171\1\141\1\154\1\145"+
@@ -3975,7 +3975,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\uffff\1\37\1\16\1\20\1\uffff\1\26\1\21\1\uffff\1\142\1\40\1\27"+
         "\1\136\1\133\1\34\1\137\1\33\1\151\1\152\1\35\1\36\16\uffff\1\51"+
         "\1\52\1\55\1\56\1\57\1\63\1\64\3\uffff\1\143\1\72\1\122\1\73\3\uffff"+
-        "\1\111\3\uffff\1\144\1\uffff\1\145\1\146\1\uffff\1\150\1\153\1\14"+
+        "\1\111\3\uffff\1\144\1\uffff\1\145\1\uffff\1\146\1\150\1\153\1\14"+
         "\1\12\15\uffff\1\15\1\13\1\30\1\17\1\23\1\24\14\uffff\1\65\2\uffff"+
         "\1\112\10\uffff\1\121\1\uffff\1\77\14\uffff\1\130\3\uffff\1\117"+
         "\1\uffff\1\41\1\141\33\uffff\1\123\7\uffff\1\6\6\uffff\1\113\15"+
@@ -3988,7 +3988,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\6\uffff\1\104\2\uffff\1\60\1\uffff\1\102\1\uffff\1\53\4\uffff\1"+
         "\61\4\uffff\1\103\1\101";
     static final String DFA22_specialS =
-        "\1\2\52\uffff\1\1\1\0\u016f\uffff}>";
+        "\1\0\52\uffff\1\1\1\2\u016f\uffff}>";
     static final String[] DFA22_transitionS = {
             "\11\56\2\55\2\56\1\55\22\56\1\55\1\12\1\53\1\37\1\52\1\21\1"+
             "\3\1\54\1\34\1\35\1\17\1\10\1\33\1\11\1\15\1\20\1\47\11\50\1"+
@@ -4034,12 +4034,12 @@ public class InternalFXGraphLexer extends Lexer {
             "",
             "\1\173",
             "\1\174\17\uffff\1\175",
-            "\1\117\1\uffff\12\177\10\uffff\1\u0081\1\uffff\3\u0081\5\uffff"+
-            "\1\u0081\13\uffff\1\176\6\uffff\1\u0082\2\uffff\1\u0081\1\uffff"+
-            "\3\u0081\5\uffff\1\u0081\13\uffff\1\176",
-            "\1\117\1\uffff\12\177\10\uffff\1\u0081\1\uffff\3\u0081\5\uffff"+
-            "\1\u0081\22\uffff\1\u0082\2\uffff\1\u0081\1\uffff\3\u0081\5"+
-            "\uffff\1\u0081",
+            "\1\117\1\uffff\12\177\10\uffff\1\u0082\1\uffff\3\u0082\5\uffff"+
+            "\1\u0082\13\uffff\1\176\6\uffff\1\u0081\2\uffff\1\u0082\1\uffff"+
+            "\3\u0082\5\uffff\1\u0082\13\uffff\1\176",
+            "\1\117\1\uffff\12\177\10\uffff\1\u0082\1\uffff\3\u0082\5\uffff"+
+            "\1\u0082\22\uffff\1\u0081\2\uffff\1\u0082\1\uffff\3\u0082\5"+
+            "\uffff\1\u0082",
             "\1\70\34\uffff\32\70\4\uffff\1\70\1\uffff\32\70",
             "",
             "\0\u0083",
@@ -4130,14 +4130,14 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\u00b8",
             "\1\u00b9",
             "",
-            "\1\117\1\uffff\12\177\10\uffff\1\u0081\1\uffff\3\u0081\5\uffff"+
-            "\1\u0081\22\uffff\1\u0082\2\uffff\1\u0081\1\uffff\3\u0081\5"+
-            "\uffff\1\u0081",
+            "\1\117\1\uffff\12\177\10\uffff\1\u0082\1\uffff\3\u0082\5\uffff"+
+            "\1\u0082\22\uffff\1\u0081\2\uffff\1\u0082\1\uffff\3\u0082\5"+
+            "\uffff\1\u0082",
             "",
+            "\12\u0081\10\uffff\1\u0082\1\uffff\3\u0082\5\uffff\1\u0082"+
+            "\22\uffff\1\u0081\2\uffff\1\u0082\1\uffff\3\u0082\5\uffff\1"+
+            "\u0082",
             "",
-            "\12\u0082\10\uffff\1\u0081\1\uffff\3\u0081\5\uffff\1\u0081"+
-            "\22\uffff\1\u0082\2\uffff\1\u0081\1\uffff\3\u0081\5\uffff\1"+
-            "\u0081",
             "",
             "",
             "",
@@ -4506,26 +4506,6 @@ public class InternalFXGraphLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA22_44 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_44>='\u0000' && LA22_44<='\uFFFF')) ) {s = 131;}
-
-                        else s = 46;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA22_43 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_43>='\u0000' && LA22_43<='\uFFFF')) ) {s = 131;}
-
-                        else s = 46;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA22_0 = input.LA(1);
 
                         s = -1;
@@ -4620,6 +4600,26 @@ public class InternalFXGraphLexer extends Lexer {
                         else if ( ((LA22_0>='\t' && LA22_0<='\n')||LA22_0=='\r'||LA22_0==' ') ) {s = 45;}
 
                         else if ( ((LA22_0>='\u0000' && LA22_0<='\b')||(LA22_0>='\u000B' && LA22_0<='\f')||(LA22_0>='\u000E' && LA22_0<='\u001F')||LA22_0=='@'||LA22_0=='\\'||LA22_0=='`'||(LA22_0>='~' && LA22_0<='\uFFFF')) ) {s = 46;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA22_43 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_43>='\u0000' && LA22_43<='\uFFFF')) ) {s = 131;}
+
+                        else s = 46;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA22_44 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_44>='\u0000' && LA22_44<='\uFFFF')) ) {s = 131;}
+
+                        else s = 46;
 
                         if ( s>=0 ) return s;
                         break;

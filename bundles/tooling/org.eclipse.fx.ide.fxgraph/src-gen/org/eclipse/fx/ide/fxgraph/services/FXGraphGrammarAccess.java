@@ -84,23 +84,31 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		private final Alternatives cImportedNamespaceAlternatives_1_0 = (Alternatives)cImportedNamespaceAssignment_1.eContents().get(0);
+		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0 = (RuleCall)cImportedNamespaceAlternatives_1_0.eContents().get(0);
+		private final RuleCall cImportedNamespaceQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cImportedNamespaceAlternatives_1_0.eContents().get(1);
 		
 		//Import:
-		//	"import" importedNamespace=QualifiedNameWithWildcard;
+		//	"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
 		public ParserRule getRule() { return rule; }
 
-		//"import" importedNamespace=QualifiedNameWithWildcard
+		//"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName)
 		public Group getGroup() { return cGroup; }
 
 		//"import"
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
-		//importedNamespace=QualifiedNameWithWildcard
+		//importedNamespace=(QualifiedNameWithWildcard | QualifiedName)
 		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
 
+		//QualifiedNameWithWildcard | QualifiedName
+		public Alternatives getImportedNamespaceAlternatives_1_0() { return cImportedNamespaceAlternatives_1_0; }
+
 		//QualifiedNameWithWildcard
-		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
+		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0; }
+
+		//QualifiedName
+		public RuleCall getImportedNamespaceQualifiedNameParserRuleCall_1_0_1() { return cImportedNamespaceQualifiedNameParserRuleCall_1_0_1; }
 	}
 
 	public class ComponentDefinitionElements extends AbstractParserRuleElementFinder {
@@ -1746,7 +1754,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Import:
-	//	"import" importedNamespace=QualifiedNameWithWildcard;
+	//	"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
 	public ImportElements getImportAccess() {
 		return (pImport != null) ? pImport : (pImport = new ImportElements());
 	}

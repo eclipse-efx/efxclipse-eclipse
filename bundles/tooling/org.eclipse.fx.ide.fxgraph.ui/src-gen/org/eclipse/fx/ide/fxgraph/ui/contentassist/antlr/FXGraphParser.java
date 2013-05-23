@@ -37,6 +37,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getImportAccess().getImportedNamespaceAlternatives_1_0(), "rule__Import__ImportedNamespaceAlternatives_1_0");
 					put(grammarAccess.getComponentDefinitionAccess().getAlternatives_3_1_1(), "rule__ComponentDefinition__Alternatives_3_1_1");
 					put(grammarAccess.getElementAccess().getAlternatives_1(), "rule__Element__Alternatives_1");
 					put(grammarAccess.getElementAccess().getAlternatives_1_1_2_0(), "rule__Element__Alternatives_1_1_2_0");

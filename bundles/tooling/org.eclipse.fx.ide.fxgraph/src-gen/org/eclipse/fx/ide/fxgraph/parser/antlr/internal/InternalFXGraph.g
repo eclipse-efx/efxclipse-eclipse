@@ -201,20 +201,38 @@ ruleImport returns [EObject current=null]
     }
 (
 (
+(
 		{ 
-	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0()); 
 	    }
-		lv_importedNamespace_1_0=ruleQualifiedNameWithWildcard		{
+		lv_importedNamespace_1_1=ruleQualifiedNameWithWildcard		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getImportRule());
 	        }
        		set(
        			$current, 
        			"importedNamespace",
-        		lv_importedNamespace_1_0, 
+        		lv_importedNamespace_1_1, 
         		"QualifiedNameWithWildcard");
 	        afterParserOrEnumRuleCall();
 	    }
+
+    |		{ 
+	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_1()); 
+	    }
+		lv_importedNamespace_1_2=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getImportRule());
+	        }
+       		set(
+       			$current, 
+       			"importedNamespace",
+        		lv_importedNamespace_1_2, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 
 )
 ))

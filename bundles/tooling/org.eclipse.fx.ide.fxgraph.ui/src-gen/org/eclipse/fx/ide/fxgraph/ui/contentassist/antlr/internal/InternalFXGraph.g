@@ -2885,6 +2885,28 @@ finally {
 
 
 
+rule__Import__ImportedNamespaceAlternatives_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0()); }
+	ruleQualifiedNameWithWildcard
+{ after(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_1()); }
+	ruleQualifiedName
+{ after(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__ComponentDefinition__Alternatives_3_1_1
     @init {
 		int stackSize = keepStackSize();
@@ -21148,8 +21170,9 @@ rule__Import__ImportedNamespaceAssignment_1
     }
 :
 (
-{ before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); }
-	ruleQualifiedNameWithWildcard{ after(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); }
+{ before(grammarAccess.getImportAccess().getImportedNamespaceAlternatives_1_0()); }
+(rule__Import__ImportedNamespaceAlternatives_1_0)
+{ after(grammarAccess.getImportAccess().getImportedNamespaceAlternatives_1_0()); }
 )
 
 ;

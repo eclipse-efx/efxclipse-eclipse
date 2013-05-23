@@ -24,7 +24,7 @@ PackageDeclaration:
 ;
 
 Import:
-	'import' importedNamespace=QualifiedNameWithWildcard;
+	'import' importedNamespace=(QualifiedNameWithWildcard|QualifiedName);
 
 ComponentDefinition:
 	(dynamicRoot?='dynamic')? 'component' name=ValidID 

@@ -398,11 +398,11 @@ protected class PackageDeclaration_NameAssignment_1 extends AssignmentToken  {
 /************ begin Rule Import ****************
  *
  * Import:
- * 	"import" importedNamespace=QualifiedNameWithWildcard;
+ * 	"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
  *
  **/
 
-// "import" importedNamespace=QualifiedNameWithWildcard
+// "import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName)
 protected class Import_Group extends GroupToken {
 	
 	public Import_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -452,7 +452,7 @@ protected class Import_ImportKeyword_0 extends KeywordToken  {
 
 }
 
-// importedNamespace=QualifiedNameWithWildcard
+// importedNamespace=(QualifiedNameWithWildcard | QualifiedName)
 protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
 	
 	public Import_ImportedNamespaceAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -476,9 +476,14 @@ protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("importedNamespace",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("importedNamespace");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0();
+			element = grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0_0();
+			return obj;
+		}
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_1(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_1();
 			return obj;
 		}
 		return null;
