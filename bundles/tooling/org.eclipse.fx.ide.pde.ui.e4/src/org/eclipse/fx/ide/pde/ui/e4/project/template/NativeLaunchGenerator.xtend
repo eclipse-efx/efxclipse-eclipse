@@ -11,8 +11,7 @@ class NativeLaunchGenerator implements Generator<DynamicFile> {
 		val projectName = data.get("BundleProject_projectName") as String;
 		val productName = data.get("BundleProject_productName") as String;
 		val vendorName = data.get("BundleProject_bundleVendor") as String;
-		val osArch = System::getProperty("osgi.os")+"."+System::getProperty("osgi.ws")+"."+System::getProperty("osgi.arch");
-		val launcherdata = new NativeLaunchData("../"+projectName+".product/target/"+osArch+"/eclipse", productName, vendorName);
+		val launcherdata = new NativeLaunchData("../"+projectName+".product/target/"+projectName+".product/noenv/noenv/noenv", productName, vendorName);
 		val gen = new NativeLaunchGenerator();
 		return new ByteArrayInputStream(gen.generate(launcherdata).toString.bytes);
 	}
@@ -24,10 +23,12 @@ class NativeLaunchGenerator implements Generator<DynamicFile> {
 		<path id="fxant">
 			<filelist>
 				<file name="${java.home}\..\lib\ant-javafx.jar"/>
-				<file name="${java.home}\lib\jfxrt.jar"/>
+				<file name="${java.home}\lib\ant-jfxrt.jar"/>
 			</filelist>
 		</path>
-	
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+					uri="javafx:com.sun.javafx.tools.ant"
+					classpathref="fxant"/>
 	</target>
 		
 	<target name="do-deploy" depends="init-fx-tasks">

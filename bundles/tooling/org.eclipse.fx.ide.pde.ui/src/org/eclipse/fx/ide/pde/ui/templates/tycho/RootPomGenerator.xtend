@@ -102,6 +102,22 @@ class RootPomGenerator implements Generator<DynamicFile> {
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>noenv</os>
+							<ws>noenv</ws>
+							<arch>noenv</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
 		</plugins>
 
 
