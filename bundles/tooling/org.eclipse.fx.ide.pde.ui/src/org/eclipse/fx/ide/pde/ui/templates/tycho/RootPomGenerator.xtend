@@ -102,53 +102,6 @@ class RootPomGenerator implements Generator<DynamicFile> {
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
-
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<resolver>p2</resolver>
-					<pomDependencies>consider</pomDependencies>
-					<environments>
-						«IF data.envLinux32»
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86</arch>
-						</environment>
-						«ENDIF»
-						«IF data.envLinux64»
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86_64</arch>
-						</environment>
-						«ENDIF»
-						«IF data.envWin32»
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86</arch>
-						</environment>
-						«ENDIF»
-						«IF data.envWin64»
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86_64</arch>
-						</environment>
-						«ENDIF»
-						«IF data.envMacOS»
-						<environment>
-							<os>macosx</os>
-							<ws>cocoa</ws>
-							<arch>x86_64</arch>
-						</environment>
-						«ENDIF»
-					</environments>
-				</configuration>
-			</plugin>
 		</plugins>
 
 
