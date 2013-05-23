@@ -267,7 +267,6 @@ RobotTask {
 					"org.eclipse.core.jobs",
 					"org.eclipse.core.resources",
 					"org.eclipse.core.runtime",
-					fragment "org.eclipse.core.runtime.compatibility.registry",
 					"org.eclipse.e4.core.commands",
 					"org.eclipse.e4.core.contexts",
 					"org.eclipse.e4.core.di",
