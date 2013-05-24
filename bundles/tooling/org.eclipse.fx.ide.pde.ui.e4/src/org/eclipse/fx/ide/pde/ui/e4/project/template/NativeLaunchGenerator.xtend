@@ -11,7 +11,7 @@ class NativeLaunchGenerator implements Generator<DynamicFile> {
 		val projectName = data.get("BundleProject_projectName") as String;
 		val productName = data.get("BundleProject_productName") as String;
 		val vendorName = data.get("BundleProject_bundleVendor") as String;
-		val launcherdata = new NativeLaunchData("../"+projectName+".product/target/"+projectName+".product/noenv/noenv/noenv", productName, vendorName);
+		val launcherdata = new NativeLaunchData("../"+projectName+".product/target/products/"+projectName+".product/noenv/noenv/noenv", productName, vendorName);
 		val gen = new NativeLaunchGenerator();
 		return new ByteArrayInputStream(gen.generate(launcherdata).toString.bytes);
 	}
