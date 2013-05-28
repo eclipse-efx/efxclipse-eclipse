@@ -16,7 +16,6 @@ import java.util.Set;
 public class OSGiLaunchDef extends BasicLaunchDef {
 	public static Set<PluginLaunchDef> getTargetDefinitions() {
 		Set<PluginLaunchDef> set = new HashSet<PluginLaunchDef>();
-		set.add(PluginLaunchDef.parse("org.eclipse.fx.ui.application@default:default"));
 		set.add(PluginLaunchDef.parse("org.eclipse.fx.core.databinding@default:default"));
 		set.add(PluginLaunchDef.parse("org.eclipse.fx.ui.databinding@default:default"));
 		set.add(PluginLaunchDef.parse("org.eclipse.fx.javafx@default:default"));

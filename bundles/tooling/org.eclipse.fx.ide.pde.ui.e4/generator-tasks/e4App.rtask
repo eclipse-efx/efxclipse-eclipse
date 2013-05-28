@@ -64,7 +64,6 @@ RobotTask {
 				}
 				// Required bundles of the project
 				requiredBundles = {
-					"org.eclipse.fx.ui.application",
 					"org.eclipse.fx.ui.workbench.fx",
 					"org.eclipse.e4.ui.model.workbench",
 					"org.eclipse.e4.core.services",
@@ -193,7 +192,6 @@ RobotTask {
 				vendor = "${BundleProject_bundleVendor}"
 				plugins = {
 					"${BundleProject_bundleId}",
-					"org.eclipse.fx.ui.application",
 					"org.eclipse.fx.ui.keybindings",
 					"org.eclipse.fx.ui.keybindings.e4",
 					"org.eclipse.fx.ui.keybindings.generic",

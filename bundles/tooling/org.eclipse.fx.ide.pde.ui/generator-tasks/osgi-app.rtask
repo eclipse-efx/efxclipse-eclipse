@@ -65,7 +65,7 @@ RobotTask {
 				}
 				requiredBundles = {
 					"org.eclipse.fx.javafx",
-					"org.eclipse.fx.ui.application",
+					"org.eclipse.fx.osgi.util",
 					"org.eclipse.fx.core.databinding",
 					"org.eclipse.fx.ui.databinding",
 					"org.eclipse.fx.ui.di" excluded-if "javascript" /# !EclipseDI; #/,
@@ -212,9 +212,7 @@ RobotTask {
 					"${BundleProject_bundleId}",
 					fragment "org.eclipse.fx.osgi",
 					"org.eclipse.fx.javafx",
-					"org.eclipse.fx.ui.application",
 					"org.eclipse.fx.core.databinding",
-					"org.eclipse.fx.ui.application",
 					"org.eclipse.fx.ui.di" excluded-if "javascript" /# !EclipseDI; #/,
 					"org.eclipse.fx.core" excluded-if "javascript" /# !EclipseDI; #/,
 					"org.eclipse.fx.osgi.util" excluded-if "javascript" /# !EclipseDI; #/,

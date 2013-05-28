@@ -69,7 +69,6 @@ public class JemmyLaunchDef extends BasicLaunchDef {
 	public static Collection<PluginLaunchDef> getTargetPluginsE4() {
 		Set<PluginLaunchDef> l = new HashSet<PluginLaunchDef>();
 		l.addAll(getTargetPluginsOSGi());
-		l.add(new PluginLaunchDef("org.eclipse.fx.ui.application"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.ui.keybindings.e4"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.ui.keybindings.generic"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.ui.keybindings"));

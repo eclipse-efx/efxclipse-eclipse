@@ -220,7 +220,6 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 						l.addAll(Arrays.asList(model.getPluginBase().getId(),
 								"org.eclipse.fx.osgi",
 								"org.eclipse.fx.javafx",
-								"org.eclipse.fx.ui.application",
 								"org.eclipse.fx.core.databinding",
 								"org.eclipse.fx.ui.databinding",
 								"org.eclipse.core.databinding",
@@ -256,10 +255,9 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 	}
 	
 	public IPluginReference[] getDependencies(String schemaVersion) {
-		IPluginReference[] dep = new IPluginReference[3];
+		IPluginReference[] dep = new IPluginReference[2];
 		dep[0] = new PluginReference("org.eclipse.equinox.app", null, 0); //$NON-NLS-1$
 		dep[1] = new PluginReference("org.eclipse.osgi", null, 0); //$NON-NLS-1$
-		dep[2] = new PluginReference("org.eclipse.fx.ui.application", null, 0); //$NON-NLS-1$
 		
 		return dep;
 	}
