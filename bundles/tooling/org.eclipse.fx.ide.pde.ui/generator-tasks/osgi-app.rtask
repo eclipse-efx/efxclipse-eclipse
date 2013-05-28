@@ -321,7 +321,7 @@ RobotTask {
 					"org.jemmy.timing" 				[3.0.0,]
 				}
 				requiredBundles = {
-					"org.junit4",
+					"org.junit",
 					"org.eclipse.fx.jemmy"
 				}
 			}
