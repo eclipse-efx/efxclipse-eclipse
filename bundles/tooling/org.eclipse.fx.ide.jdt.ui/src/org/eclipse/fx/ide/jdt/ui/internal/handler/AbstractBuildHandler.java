@@ -25,6 +25,8 @@ import org.eclipse.core.externaltools.internal.IExternalToolConstants;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationType;
@@ -34,11 +36,14 @@ import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.jdt.ui.internal.JavaFXUIPlugin;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask;
+import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jdt.launching.IVMInstall;
+import org.eclipse.jdt.launching.IVMInstall3;
 import org.eclipse.jdt.launching.IVMInstallType;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.VMStandin;
@@ -64,15 +69,14 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.osgi.framework.Bundle;
 
 
-/**
- * @author Tom Schindl
- * 
- */
 @SuppressWarnings( "restriction" )
 public abstract class AbstractBuildHandler extends AbstractAntHandler {
-
+	
+	private static Logger LOGGER = LoggerCreator.createLogger(AbstractBuildHandler.class); 
+	
 	@Override
 	public Object execute( ExecutionEvent event ) throws ExecutionException {
 		IEvaluationContext context = (IEvaluationContext) event.getApplicationContext();
@@ -175,6 +179,10 @@ public abstract class AbstractBuildHandler extends AbstractAntHandler {
 				}
 			}
 			
+			if( isAnt18AndJDK8(install) ) {
+				cfg.setAttribute( "org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS", "-Dbuild.compiler=javac1.7" );
+			}
+			
 			cfg.doSave();
 			return cfg;
 		}
@@ -182,9 +190,34 @@ public abstract class AbstractBuildHandler extends AbstractAntHandler {
 	}
 	
 	static boolean isJDK(IVMInstall install) {
+		if( install == null ) {
+			return false;
+		}
 		File f = install.getInstallLocation();
 		File tools = new File(new File( f, "lib" ), "tools.jar");
 		return tools.exists();
+	}
+	
+	static boolean isAnt18AndJDK8(IVMInstall install) {
+		boolean rv = true;
+		try {
+			if( install instanceof IVMInstall3 ) {
+				String version = ((IVMInstall3)install).evaluateSystemProperties(new String[] {"java.version"}, new NullProgressMonitor()).get("java.version");
+				if( version != null ) {
+					rv = version.startsWith("1.8.0");
+				}
+			}
+			
+			if( rv ) {
+				Bundle b = Platform.getBundle("org.apache.ant");
+				if( b.getVersion().toString().startsWith("1.9") ) {
+					return false;
+				}
+			}
+		} catch (CoreException e) {
+			LOGGER.error("Unable to detect java version", e);
+		}
+		return rv;
 	}
 	
 	static class JDKSelectionDialog extends TitleAreaDialog {
