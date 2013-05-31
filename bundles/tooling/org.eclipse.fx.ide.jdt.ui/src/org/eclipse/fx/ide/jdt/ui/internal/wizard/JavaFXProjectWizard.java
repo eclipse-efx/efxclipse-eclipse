@@ -21,6 +21,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
@@ -30,9 +31,14 @@ import org.eclipse.fx.ide.jdt.core.JavaFXCore;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksFactory;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersFactory;
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectCtrlClassTemplate;
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectFXGraphTemplate;
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectFXMLTemplate;
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectMainClassTemplate;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
@@ -59,20 +65,25 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 
 	private NewJavaProjectWizardPageOne fFirstPage;
 	private NewJavaFXProjectWizardPageTwo fSecondPage;
+	private NewJavaFXProjectWizardPageThree fThirdPage;
 
 	private IConfigurationElement fConfigElement;
+	
+	private ProjectData projectData;
 
 	public JavaFXProjectWizard() {
-		this(null, null);
+		this(null, null, null);
 	}
 
-	public JavaFXProjectWizard(NewJavaProjectWizardPageOne pageOne, NewJavaFXProjectWizardPageTwo pageTwo) {
+	public JavaFXProjectWizard(NewJavaProjectWizardPageOne pageOne, NewJavaFXProjectWizardPageTwo pageTwo, NewJavaFXProjectWizardPageThree pageThree) {
 		setDefaultPageImageDescriptor(JavaPluginImages.DESC_WIZBAN_NEWJPRJ);
 		setDialogSettings(JavaPlugin.getDefault().getDialogSettings());
 		setWindowTitle(NewWizardMessages.JavaProjectWizard_title);
 
 		fFirstPage= pageOne;
 		fSecondPage= pageTwo;
+		fThirdPage = pageThree;
+		projectData = new ProjectData();
 	}
 
 	/* (non-Javadoc)
@@ -86,7 +97,11 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 
 		if (fSecondPage == null)
 			fSecondPage= new NewJavaFXProjectWizardPageTwo(fFirstPage);
-		addPage(fSecondPage);
+		addPage(fSecondPage); 
+		
+		if( fThirdPage == null )
+			fThirdPage = new NewJavaFXProjectWizardPageThree(projectData);
+		addPage(fThirdPage);
 
 		fFirstPage.init(getSelection(), getActivePart());
 	}
@@ -183,6 +198,49 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 					}
 				};
 				new ProgressMonitorDialog( getShell() ).run( true, false, operation );
+				
+				if( projectData.mainApp || ! projectData.declarativeUiType.equals("None") ) {
+					IJavaProject p = fSecondPage.getJavaProject();
+					IPackageFragment f = p.getPackageFragments()[0];
+					IPath path = f.getPath();
+					
+					for( String s : projectData.packageName.split("\\.") ) {
+						path = path.append(s);
+						p.getProject().getWorkspace().getRoot().getFolder(path).create(true, true, null);
+					}
+					
+					{
+						IFile cssFile = p.getProject().getWorkspace().getRoot().getFile(path.append("application.css"));
+						ByteArrayInputStream in = new ByteArrayInputStream("".getBytes());
+						cssFile.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+						in.close();						
+					}
+					
+					if( projectData.mainApp ) {
+						IFile mainClass = p.getProject().getWorkspace().getRoot().getFile(path.append("Main.java"));
+						ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectMainClassTemplate().generate(projectData).toString().getBytes());
+						mainClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+						in.close();						
+					}
+					
+					if( ! projectData.declarativeUiType.equals("None") ) {
+						if( ! projectData.declarativeUiController.trim().isEmpty() ) {
+							IFile ctrlClass = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiController+".java"));
+							ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectCtrlClassTemplate().generate(projectData).toString().getBytes());
+							ctrlClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+							in.close();	
+						}
+						IFile declarativeUi = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiName+"."+(projectData.declarativeUiType.endsWith("FXML")?"fxml":"fxgraph")));
+						ByteArrayInputStream in = new ByteArrayInputStream(
+								(projectData.declarativeUiType.endsWith("FXML")?
+								new FXProjectFXMLTemplate().generate(projectData).toString().getBytes():
+								new FXProjectFXGraphTemplate().generate(projectData).toString().getBytes()
+								));
+						declarativeUi.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+						in.close();
+					}
+				}
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -245,5 +303,14 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 	@Override
 	public IJavaElement getCreatedElement() {
 		return fSecondPage.getJavaProject();
+	}
+	
+	public static class ProjectData {
+		public boolean mainApp = true;
+		public String packageName = "application";
+		public String declarativeUiType = "None";
+		public String declarativeUiName = "Sample";
+		public String declarativeUiController = "SampleController";
+		public String declarativeUiRootType = "javafx.scene.layout.BorderPane";
 	}
 }
