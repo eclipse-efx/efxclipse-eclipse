@@ -1572,7 +1572,7 @@ package javafx {
  			 * paragraph boundaries.
  			 * </p>
 			 */
-			Text {
+			Text extends shape.Shape {
 				/**
 				 * Defines the font of text.
 				 */
