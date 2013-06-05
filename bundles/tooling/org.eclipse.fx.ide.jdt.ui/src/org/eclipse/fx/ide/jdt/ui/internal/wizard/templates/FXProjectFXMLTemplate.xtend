@@ -1,6 +1,6 @@
 package org.eclipse.fx.ide.jdt.ui.internal.wizard.templates
 
-import org.eclipse.fx.ide.jdt.ui.internal.wizard.JavaFXProjectWizard.ProjectData
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.JavaFXProjectWizard$ProjectData
 
 class FXProjectFXMLTemplate {
 	def generate(ProjectData data) '''
