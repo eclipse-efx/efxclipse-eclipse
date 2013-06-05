@@ -159,7 +159,17 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 							IType type = e.getType();
 							
 							if( f != null ) {
-								
+								IType toType = f.getType();
+								IType fromType = Util.findType(node.getLocalName(), node.getOwnerDocument());
+								if( fromType != null && toType != null ) {
+									if( ! org.eclipse.fx.ide.model.Util.assignable(fromType, toType) ) {
+										FXMLValidationMessage message = new FXMLValidationMessage(IMessage.ERROR_AND_WARNING, "FXMLValidator.incompatibleFieldTypes", fromType.getElementName(), toType.getElementName());
+										IDOMAttr domAttr = (IDOMAttr) attribute;
+										message.setLength(getAttributeLength(structuredDocumentRegion, domAttr));
+										message.setOffset(domAttr.getStartOffset());
+										reporter.addMessage(this, message);
+									}
+								}
 							} else {
 								String fielname = attribute.getNodeValue();
 								FXMLValidationMessage message = new FXMLValidationMessage(IMessage.ERROR_AND_WARNING, "FXMLValidator.unknownControllerField", fxCtrl.getSimpleName(), fielname);
