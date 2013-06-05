@@ -10,11 +10,15 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.model.internal;
 
+import org.eclipse.fx.ide.model.FXPlugin;
 import org.eclipse.fx.ide.model.IFXCtrlField;
+import org.eclipse.fx.ide.model.Visibility;
+import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
+import org.osgi.service.log.LogService;
 
 
 public class FXCtrlField implements IFXCtrlField {
@@ -46,5 +50,25 @@ public class FXCtrlField implements IFXCtrlField {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public Visibility getVisibility() {
+		try {
+			int flags = field.getFlags();
+			
+			if( Flags.isPublic(flags) ) {
+				return Visibility.PUBLIC;
+			} else if( Flags.isPackageDefault(flags) ) {
+				return Visibility.PACKAGE;
+			} else if( Flags.isProtected(flags) ) {
+				return Visibility.PROTECTED;
+			} else {
+				return Visibility.PRIVATE;
+			}
+		} catch(JavaModelException e ) {
+			FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve visibility for field '"+field+"'", e);
+		}
+		
+		return Visibility.PRIVATE;
 	}
 }

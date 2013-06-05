@@ -17,4 +17,5 @@ public interface IFXCtrlField {
 	public IJavaElement getJavaElement();
 	public String getName();
 	public IType getType();
+	public Visibility getVisibility();
 }

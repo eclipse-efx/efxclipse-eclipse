@@ -13,6 +13,7 @@ package org.eclipse.fx.ide.fxml.editors;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
 import java.util.Vector;
@@ -67,12 +68,12 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import org.eclipse.fx.ide.model.FXPlugin;
 import org.eclipse.fx.ide.model.IFXClass;
 import org.eclipse.fx.ide.model.IFXCollectionProperty;
 import org.eclipse.fx.ide.model.IFXCtrlClass;
 import org.eclipse.fx.ide.model.IFXCtrlEventMethod;
+import org.eclipse.fx.ide.model.IFXCtrlField;
 import org.eclipse.fx.ide.model.IFXEnumProperty;
 import org.eclipse.fx.ide.model.IFXEventHandlerProperty;
 import org.eclipse.fx.ide.model.IFXObjectProperty;
@@ -837,6 +838,53 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 							e.printStackTrace();
 						}
 
+					} else if("id".equals(attribute.getLocalName())) {
+						Document d = contentAssistRequest.getNode().getOwnerDocument();
+						Element e = d.getDocumentElement();
+						Attr a = e.getAttributeNodeNS("http://javafx.com/fxml", "controller");
+						if (a != null) {
+							IType t = Util.findType(a.getValue(), d);
+							if (t != null) {
+								IFXCtrlClass ctrlClass = FXPlugin.getClassmodel().findCtrlClass(t.getJavaProject(), t);
+								if (ctrlClass != null) {
+									IType fromType = findType(n.getNodeName(), contentAssistRequest, context);
+									if( fromType != null ) {
+										for( Entry<String,IFXCtrlField> ef : ctrlClass.getAllFields().entrySet() ) {
+											IFXCtrlField f = ef.getValue();
+											if( org.eclipse.fx.ide.model.Util.assignable(fromType, f.getType()) ) {
+												StyledString s = new StyledString(f.getName());
+												s.append(" - " + ctrlClass.getSimpleName(), StyledString.QUALIFIER_STYLER);
+												Image img;
+												switch (f.getVisibility()) {
+												case PUBLIC:
+													img = IconKeys.getIcon(IconKeys.METHOD_PUBLIC_KEY);
+													break;
+												case PACKAGE:
+													img = IconKeys.getIcon(IconKeys.METHOD_DEFAULT_KEY);
+													break;
+												case PROTECTED:
+													img = IconKeys.getIcon(IconKeys.METHOD_PROTECTED_KEY);
+													break;
+												default:
+													img = IconKeys.getIcon(IconKeys.METHOD_PRIVATE_KEY);
+													break;
+												}
+												
+												FXMLCompletionProposal cp = createProposal(
+														contentAssistRequest, 
+														context, 
+														"\""+f.getName(), 
+														s, img, CLASS_ATTRIBUTE_MATCHER);
+												
+												if( cp != null ) {
+													contentAssistRequest.addProposal(cp);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				} else if (attribute.getNodeName().contains(".")) {
 					String[] parts = attribute.getNodeName().split("\\.");
