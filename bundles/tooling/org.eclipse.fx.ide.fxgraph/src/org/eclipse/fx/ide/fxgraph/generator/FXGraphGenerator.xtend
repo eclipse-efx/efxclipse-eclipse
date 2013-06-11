@@ -197,7 +197,7 @@ class FXGraphGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
-	def elementContent(Element element, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
+	def CharSequence elementContent(Element element, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«elementStaticAttributes(element.staticProperties,importManager,preview,skipController)»«elementStaticCallAttributes(element.staticCallProperties,importManager,preview,skipController)»«ENDIF»«IF ! hasNestedProperties(element,preview)»/«ENDIF»> 
 		«IF hasNestedProperties(element,preview)»
 			«FOR e : element.defaultChildren»
@@ -237,7 +237,7 @@ class FXGraphGenerator implements IGenerator {
 		}
 	}
 	
-	def propContents(List<Property> properties, ImportManager importManager, boolean preview, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
+	def CharSequence propContents(List<Property> properties, ImportManager importManager, boolean preview, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
 		«IF simpleAsElement»
 			«FOR prop : properties»
 				«propContent(prop,importManager,preview,simpleAsElement,skipController,skipIncludes)»
@@ -249,7 +249,7 @@ class FXGraphGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
-	def propContent(Property prop, ImportManager importManager, boolean preview, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
+	def CharSequence propContent(Property prop, ImportManager importManager, boolean preview, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.name»>
@@ -289,7 +289,7 @@ class FXGraphGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
-	def includeContent(IncludeValueProperty includeElement, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
+	def CharSequence includeContent(IncludeValueProperty includeElement, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		<fx:include«IF includeElement.name != null» fx:id="«includeElement.name»"«ENDIF» source="/«includeElement.source.fullyQualifiedName.replaceAll("\\.","/")».fxml"«elementStaticAttributes(includeElement.staticProperties,importManager,preview,skipController)»«elementStaticCallAttributes(includeElement.staticCallProperties,importManager,preview,skipController)» «IF !hasNestedProperties(includeElement,preview)»/«ENDIF»>
 		«IF hasNestedProperties(includeElement,preview)»
 			«statCallPropContent(includeElement.staticCallProperties, importManager, preview, skipController, skipIncludes)»
@@ -298,7 +298,7 @@ class FXGraphGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
-	def referenceContent(ReferenceValueProperty referenceElement, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
+	def CharSequence referenceContent(ReferenceValueProperty referenceElement, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		<fx:reference source="«referenceElement.reference.refname»"«elementStaticAttributes(referenceElement.staticProperties,importManager,preview,skipController)»«elementStaticCallAttributes(referenceElement.staticCallProperties,importManager,preview,skipController)» «IF !hasNestedProperties(referenceElement,preview)»/«ENDIF»>
 		«IF hasNestedProperties(referenceElement,preview)»
 			«statCallPropContent(referenceElement.staticCallProperties, importManager, preview, skipController, skipIncludes)»
