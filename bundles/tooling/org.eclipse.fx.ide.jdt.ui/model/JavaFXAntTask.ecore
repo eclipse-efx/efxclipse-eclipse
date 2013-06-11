@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="anttasks" nsURI="http://org.eclipse.fx.ide.jdt/1.0"
-    nsPrefix="anttasks">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="anttasks" nsURI="http://org.eclipse.fx.ide.jdt/1.0" nsPrefix="anttasks">
   <eClassifiers xsi:type="ecore:EClass" name="AntTask">
     <eStructuralFeatures xsi:type="ecore:EReference" name="deploy" eType="#//Deploy"
         containment="true"/>
@@ -51,6 +50,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packagingFormat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="verbose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proxyResolution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Jar">
     <eStructuralFeatures xsi:type="ecore:EReference" name="platform" eType="#//parameters/Platform"

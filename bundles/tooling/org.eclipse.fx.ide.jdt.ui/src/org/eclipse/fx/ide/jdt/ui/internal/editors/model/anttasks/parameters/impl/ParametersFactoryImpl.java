@@ -58,7 +58,7 @@ public class ParametersFactoryImpl extends EFactoryImpl implements ParametersFac
 	 */
 	public static ParametersFactory init() {
 		try {
-			ParametersFactory theParametersFactory = (ParametersFactory)EPackage.Registry.INSTANCE.getEFactory("http://org.eclipse.fx.ide.jdt/parameters/1.0"); 
+			ParametersFactory theParametersFactory = (ParametersFactory)EPackage.Registry.INSTANCE.getEFactory(ParametersPackage.eNS_URI);
 			if (theParametersFactory != null) {
 				return theParametersFactory;
 			}

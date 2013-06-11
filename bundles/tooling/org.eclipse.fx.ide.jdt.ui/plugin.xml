@@ -274,4 +274,19 @@
          file="helpcontext.xml">
       </contexts>
    </extension> 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated JavaFXAntTask -->
+      <package
+            uri="http://org.eclipse.fx.ide.jdt/1.0"
+            class="org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage"
+            genModel="model/JavaFXAntTask.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated JavaFXAntTask -->
+      <package
+            uri="http://org.eclipse.fx.ide.jdt/parameters/1.0"
+            class="org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage"
+            genModel="model/JavaFXAntTask.genmodel"/>
+   </extension>
 </plugin>

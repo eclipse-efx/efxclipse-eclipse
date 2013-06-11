@@ -65,12 +65,12 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 
 		// TODO uncomment
 		// config.builderName = properties.getProperty( "jfx.eclipse.buildername" );
-		if ( task.getDeploy().getApplication().getName() != null ) {
-			config.projectName = task.getDeploy().getApplication().getName();
-		}
-		else {
+//		if ( task.getDeploy().getApplication().getName() != null ) {
+//			config.projectName = task.getDeploy().getApplication().getName();
+//		}
+//		else {
 			config.projectName = f.getProject().getName();
-		}
+//		}
 		config.keyStore = task.getSignjar().getKeystore() != null ? resolvePath( task.getSignjar().getKeystore(), project.getProject() ) : null;
 
 		try {

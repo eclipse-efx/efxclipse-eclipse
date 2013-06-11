@@ -339,13 +339,22 @@ public interface AntTasksPackage extends EPackage {
 	int DEPLOY__VERBOSE = 18;
 
 	/**
+	 * The feature id for the '<em><b>Proxy Resolution</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOY__PROXY_RESOLUTION = 19;
+
+	/**
 	 * The number of structural features of the '<em>Deploy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY_FEATURE_COUNT = 19;
+	int DEPLOY_FEATURE_COUNT = 20;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.JarImpl <em>Jar</em>}' class.
@@ -796,6 +805,17 @@ public interface AntTasksPackage extends EPackage {
 	EAttribute getDeploy_Verbose();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#isProxyResolution <em>Proxy Resolution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Proxy Resolution</em>'.
+	 * @see org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#isProxyResolution()
+	 * @see #getDeploy()
+	 * @generated
+	 */
+	EAttribute getDeploy_ProxyResolution();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Jar <em>Jar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1181,6 +1201,14 @@ public interface AntTasksPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEPLOY__VERBOSE = eINSTANCE.getDeploy_Verbose();
+
+		/**
+		 * The meta object literal for the '<em><b>Proxy Resolution</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEPLOY__PROXY_RESOLUTION = eINSTANCE.getDeploy_ProxyResolution();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.JarImpl <em>Jar</em>}' class.

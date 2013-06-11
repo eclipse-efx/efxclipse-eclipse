@@ -43,7 +43,7 @@ public class AntTasksFactoryImpl extends EFactoryImpl implements AntTasksFactory
 	 */
 	public static AntTasksFactory init() {
 		try {
-			AntTasksFactory theAntTasksFactory = (AntTasksFactory)EPackage.Registry.INSTANCE.getEFactory("http://org.eclipse.fx.ide.jdt/1.0"); 
+			AntTasksFactory theAntTasksFactory = (AntTasksFactory)EPackage.Registry.INSTANCE.getEFactory(AntTasksPackage.eNS_URI);
 			if (theAntTasksFactory != null) {
 				return theAntTasksFactory;
 			}

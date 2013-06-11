@@ -32,7 +32,7 @@ class AntTemplate {
 			«createInitTaskTarget(config)»
 			«createLocalSetup(config)»
 			«compileTarget(config)»
-			«createDoDeployTarget(config.task)»
+			«createDoDeployTarget(config,config.task)»
 		</project>
 		'''.toString
 	}
@@ -161,8 +161,8 @@ class AntTemplate {
 		'''	
 	}
 	
-	def createDoDeployTarget(AntTask task) {
-		val projectName = task.getDeploy().getApplication().getName();
+	def createDoDeployTarget(BuildConfiguration config, AntTask task) {
+		val projectName =  config.projectName;//task.getDeploy().getApplication().getName();
 		val mainClass = task.getDeploy().getApplication().getMainclass();
 		val appletWidth = task.getDeploy().getWidth();
 		val appletHeight = task.getDeploy().getHeight();
@@ -210,7 +210,7 @@ class AntTemplate {
 			</fx:resources> 
 			
 			<fx:application id="fxApplication"
-				name="«projectName»"
+				name="«appTitle»"
 				mainClass="«mainClass»"
 				«IF preloaderClass != null»
 					preloaderClass="«preloaderClass»"
@@ -273,6 +273,9 @@ class AntTemplate {
 					«FOR a : task.getManifestEntries()»
 						<attribute name="«a.getName()»" value="«a.getValue()»"/>
 					«ENDFOR»
+					«IF ! task.deploy.proxyResolution»
+						<attribute name="JavaFX-Feature-Proxy" value="None"/>
+					«ENDIF»
 				</manifest>
 			</fx:jar>
 			

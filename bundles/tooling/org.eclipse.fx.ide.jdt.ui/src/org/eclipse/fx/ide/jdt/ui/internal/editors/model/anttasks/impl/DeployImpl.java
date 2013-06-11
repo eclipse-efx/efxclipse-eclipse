@@ -60,6 +60,7 @@ import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Temp
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#getSplashImage <em>Splash Image</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#getPackagingFormat <em>Packaging Format</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#isVerbose <em>Verbose</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#isProxyResolution <em>Proxy Resolution</em>}</li>
  * </ul>
  * </p>
  *
@@ -375,6 +376,26 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 	 * @ordered
 	 */
 	protected boolean verbose = VERBOSE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isProxyResolution() <em>Proxy Resolution</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isProxyResolution()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PROXY_RESOLUTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isProxyResolution() <em>Proxy Resolution</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isProxyResolution()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean proxyResolution = PROXY_RESOLUTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -922,6 +943,27 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isProxyResolution() {
+		return proxyResolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProxyResolution(boolean newProxyResolution) {
+		boolean oldProxyResolution = proxyResolution;
+		proxyResolution = newProxyResolution;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AntTasksPackage.DEPLOY__PROXY_RESOLUTION, oldProxyResolution, proxyResolution));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -989,6 +1031,8 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 				return getPackagingFormat();
 			case AntTasksPackage.DEPLOY__VERBOSE:
 				return isVerbose();
+			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
+				return isProxyResolution();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1060,6 +1104,9 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 			case AntTasksPackage.DEPLOY__VERBOSE:
 				setVerbose((Boolean)newValue);
 				return;
+			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
+				setProxyResolution((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1129,6 +1176,9 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 			case AntTasksPackage.DEPLOY__VERBOSE:
 				setVerbose(VERBOSE_EDEFAULT);
 				return;
+			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
+				setProxyResolution(PROXY_RESOLUTION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1179,6 +1229,8 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 				return PACKAGING_FORMAT_EDEFAULT == null ? packagingFormat != null : !PACKAGING_FORMAT_EDEFAULT.equals(packagingFormat);
 			case AntTasksPackage.DEPLOY__VERBOSE:
 				return verbose != VERBOSE_EDEFAULT;
+			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
+				return proxyResolution != PROXY_RESOLUTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1217,6 +1269,8 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 		result.append(packagingFormat);
 		result.append(", verbose: ");
 		result.append(verbose);
+		result.append(", proxyResolution: ");
+		result.append(proxyResolution);
 		result.append(')');
 		return result.toString();
 	}

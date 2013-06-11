@@ -50,6 +50,7 @@ import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Temp
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#getSplashImage <em>Splash Image</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#getPackagingFormat <em>Packaging Format</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#isVerbose <em>Verbose</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#isProxyResolution <em>Proxy Resolution</em>}</li>
  * </ul>
  * </p>
  *
@@ -547,5 +548,31 @@ public interface Deploy extends EObject {
 	 * @generated
 	 */
 	void setVerbose(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Proxy Resolution</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Proxy Resolution</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Proxy Resolution</em>' attribute.
+	 * @see #setProxyResolution(boolean)
+	 * @see org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage#getDeploy_ProxyResolution()
+	 * @model
+	 * @generated
+	 */
+	boolean isProxyResolution();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#isProxyResolution <em>Proxy Resolution</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Proxy Resolution</em>' attribute.
+	 * @see #isProxyResolution()
+	 * @generated
+	 */
+	void setProxyResolution(boolean value);
 
 } // Deploy

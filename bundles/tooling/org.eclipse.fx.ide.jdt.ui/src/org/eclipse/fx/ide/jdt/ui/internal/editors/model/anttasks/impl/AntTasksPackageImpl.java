@@ -403,6 +403,15 @@ public class AntTasksPackageImpl extends EPackageImpl implements AntTasksPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDeploy_ProxyResolution() {
+		return (EAttribute)deployEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getJar() {
 		return jarEClass;
 	}
@@ -564,6 +573,7 @@ public class AntTasksPackageImpl extends EPackageImpl implements AntTasksPackage
 		createEAttribute(deployEClass, DEPLOY__SPLASH_IMAGE);
 		createEAttribute(deployEClass, DEPLOY__PACKAGING_FORMAT);
 		createEAttribute(deployEClass, DEPLOY__VERBOSE);
+		createEAttribute(deployEClass, DEPLOY__PROXY_RESOLUTION);
 
 		jarEClass = createEClass(JAR);
 		createEReference(jarEClass, JAR__PLATFORM);
@@ -648,6 +658,7 @@ public class AntTasksPackageImpl extends EPackageImpl implements AntTasksPackage
 		initEAttribute(getDeploy_SplashImage(), ecorePackage.getEString(), "splashImage", null, 0, 1, Deploy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeploy_PackagingFormat(), ecorePackage.getEString(), "packagingFormat", null, 0, 1, Deploy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeploy_Verbose(), ecorePackage.getEBoolean(), "verbose", "false", 0, 1, Deploy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeploy_ProxyResolution(), ecorePackage.getEBoolean(), "proxyResolution", null, 0, 1, Deploy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jarEClass, Jar.class, "Jar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJar_Platform(), theParametersPackage.getPlatform(), null, "platform", null, 0, 1, Jar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

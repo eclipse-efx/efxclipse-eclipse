@@ -18,6 +18,7 @@ import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.paramete
 import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.APPLICATION__TOOLKIT;
 import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.APPLICATION__VERSION;
 import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.INFO__VENDOR;
+import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.INFO__TITLE;
 import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.TEMPLATE__FILE;
 import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.TEMPLATE__TO_FILE;
 
@@ -860,7 +861,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
 				t.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 3, 1 ) );
 				IEMFValueProperty prop = EMFEditProperties.value( editingDomain,
-						FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__APPLICATION, APPLICATION__NAME ) );
+						FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__INFO, INFO__TITLE ) );
 				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
 			}
 
@@ -931,7 +932,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__SPLASH_IMAGE ) );
 				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
 			}
-
+			
 			{
 				toolkit.createLabel( sectionClient, "Manifest-Attributes:" )
 						.setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
@@ -1039,6 +1040,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					c.setInput( PackagingFormat.VALUES );
 					IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PACKAGING_FORMAT ) );
 					dbc.bindValue( selChange.observe( c.getCombo() ), prop.observeDetail( bean ) );
+				}
+				{
+					Button b = toolkit.createButton( sectionClient, "automatic Proxy Resolution", SWT.CHECK );
+					b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 4, 1 ) );
+					IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PROXY_RESOLUTION ) );
+					dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
 				}
 				{
 					Button b = toolkit.createButton( sectionClient, "Convert CSS into binary form", SWT.CHECK );
