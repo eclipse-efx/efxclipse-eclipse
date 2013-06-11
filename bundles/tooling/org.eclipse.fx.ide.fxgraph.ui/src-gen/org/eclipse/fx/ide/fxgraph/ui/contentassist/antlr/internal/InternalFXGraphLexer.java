@@ -12,114 +12,114 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalFXGraphLexer extends Lexer {
-    public static final int T__76=76;
-    public static final int T__110=110;
-    public static final int RULE_SL_COMMENT=12;
-    public static final int T__15=15;
-    public static final int T__68=68;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=11;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int T__39=39;
-    public static final int T__108=108;
-    public static final int T__78=78;
-    public static final int T__52=52;
-    public static final int T__42=42;
-    public static final int T__22=22;
-    public static final int T__89=89;
-    public static final int T__57=57;
-    public static final int T__73=73;
-    public static final int T__26=26;
-    public static final int T__106=106;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__53=53;
-    public static final int T__34=34;
-    public static final int T__83=83;
-    public static final int T__59=59;
-    public static final int T__91=91;
-    public static final int RULE_HEX=5;
-    public static final int T__82=82;
-    public static final int T__30=30;
-    public static final int T__90=90;
-    public static final int T__58=58;
-    public static final int RULE_REAL=10;
-    public static final int T__54=54;
-    public static final int T__47=47;
-    public static final int T__25=25;
-    public static final int T__49=49;
-    public static final int T__43=43;
-    public static final int T__37=37;
-    public static final int T__69=69;
-    public static final int T__32=32;
-    public static final int T__105=105;
-    public static final int T__99=99;
-    public static final int T__62=62;
-    public static final int T__45=45;
-    public static final int T__16=16;
-    public static final int T__102=102;
-    public static final int T__38=38;
-    public static final int T__67=67;
-    public static final int T__60=60;
-    public static final int T__94=94;
-    public static final int RULE_SCRIPTLITERAL=9;
-    public static final int T__51=51;
-    public static final int T__31=31;
-    public static final int T__101=101;
-    public static final int T__81=81;
-    public static final int T__86=86;
-    public static final int T__20=20;
-    public static final int T__103=103;
-    public static final int T__19=19;
-    public static final int T__71=71;
-    public static final int T__17=17;
-    public static final int T__28=28;
-    public static final int T__29=29;
-    public static final int T__87=87;
-    public static final int T__44=44;
-    public static final int T__23=23;
-    public static final int T__79=79;
-    public static final int T__21=21;
     public static final int RULE_ID=4;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=14;
+    public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int EOF=-1;
+    public static final int T__93=93;
+    public static final int T__19=19;
+    public static final int T__94=94;
+    public static final int T__91=91;
+    public static final int T__92=92;
+    public static final int RULE_HEX=5;
+    public static final int T__16=16;
+    public static final int T__90=90;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int RULE_REAL=10;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__99=99;
+    public static final int T__98=98;
+    public static final int T__97=97;
+    public static final int T__96=96;
+    public static final int T__95=95;
     public static final int T__80=80;
-    public static final int RULE_INT=6;
-    public static final int T__65=65;
-    public static final int T__40=40;
-    public static final int T__109=109;
-    public static final int T__46=46;
-    public static final int T__41=41;
-    public static final int T__107=107;
-    public static final int T__50=50;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
     public static final int T__85=85;
     public static final int T__84=84;
-    public static final int T__96=96;
-    public static final int T__18=18;
-    public static final int T__35=35;
-    public static final int T__33=33;
-    public static final int T__95=95;
-    public static final int T__61=61;
-    public static final int T__77=77;
-    public static final int T__56=56;
-    public static final int RULE_STRING=8;
-    public static final int T__92=92;
-    public static final int RULE_WS=13;
-    public static final int T__100=100;
-    public static final int T__104=104;
-    public static final int T__55=55;
-    public static final int T__63=63;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
     public static final int T__88=88;
-    public static final int T__36=36;
-    public static final int T__98=98;
-    public static final int T__64=64;
+    public static final int RULE_ML_COMMENT=11;
+    public static final int RULE_STRING=8;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int T__70=70;
+    public static final int T__76=76;
     public static final int T__75=75;
     public static final int T__74=74;
-    public static final int T__72=72;
-    public static final int T__24=24;
-    public static final int T__93=93;
-    public static final int T__27=27;
-    public static final int T__97=97;
-    public static final int T__70=70;
+    public static final int T__73=73;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int T__77=77;
+    public static final int T__68=68;
+    public static final int T__69=69;
     public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int RULE_SCRIPTLITERAL=9;
+    public static final int T__61=61;
+    public static final int T__60=60;
+    public static final int T__55=55;
+    public static final int T__56=56;
+    public static final int T__57=57;
+    public static final int T__58=58;
+    public static final int T__51=51;
+    public static final int T__52=52;
+    public static final int T__53=53;
+    public static final int T__54=54;
+    public static final int T__107=107;
+    public static final int T__108=108;
+    public static final int T__109=109;
+    public static final int T__103=103;
+    public static final int T__59=59;
+    public static final int T__104=104;
+    public static final int T__105=105;
+    public static final int T__106=106;
+    public static final int T__110=110;
+    public static final int RULE_INT=6;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
     public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__102=102;
+    public static final int T__101=101;
+    public static final int T__100=100;
+    public static final int RULE_SL_COMMENT=12;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int RULE_WS=13;
 
     // delegates
     // delegators
@@ -3848,12 +3848,12 @@ public class InternalFXGraphLexer extends Lexer {
 
     protected DFA22 dfa22 = new DFA22(this);
     static final String DFA22_eotS =
-        "\1\uffff\1\61\1\63\1\65\4\70\1\103\1\106\1\110\1\112\1\115\1\117"+
+        "\1\uffff\1\61\1\63\1\65\4\70\1\103\1\106\1\110\1\112\1\115\1\120"+
         "\1\123\1\125\1\130\1\uffff\5\70\7\uffff\1\70\1\163\1\165\3\70\1"+
-        "\uffff\2\70\2\176\1\56\1\uffff\2\56\2\uffff\1\u0085\6\uffff\2\70"+
+        "\uffff\2\70\2\177\1\56\1\uffff\2\56\2\uffff\1\u0085\6\uffff\2\70"+
         "\1\uffff\11\70\5\uffff\1\u0094\3\uffff\1\u0096\2\uffff\1\u0098\13"+
         "\uffff\10\70\1\u00a5\1\70\1\u00a8\3\70\7\uffff\1\70\1\u00b1\1\70"+
-        "\4\uffff\1\u00b3\2\70\1\uffff\3\70\2\uffff\1\176\1\uffff\1\176\4"+
+        "\4\uffff\1\u00b3\2\70\1\uffff\3\70\1\uffff\1\177\2\uffff\1\177\4"+
         "\uffff\7\70\1\u00c0\3\70\1\u00c4\1\70\6\uffff\1\u00c6\1\u00c7\12"+
         "\70\1\uffff\2\70\1\uffff\10\70\1\uffff\1\70\1\uffff\3\70\1\u00e3"+
         "\7\70\1\u00eb\1\uffff\3\70\1\uffff\1\70\2\uffff\2\70\1\u00f2\15"+
@@ -3880,7 +3880,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\1\154\1\162\1\156\5\uffff\1\75\3\uffff\1\76\2\uffff\1\74\13\uffff"+
         "\1\154\1\164\1\163\1\141\1\160\1\145\1\151\1\160\1\44\1\143\1\44"+
         "\1\155\1\145\1\154\7\uffff\1\146\1\44\1\156\4\uffff\1\44\1\143\1"+
-        "\156\1\uffff\1\151\1\167\1\154\2\uffff\1\56\1\uffff\1\60\4\uffff"+
+        "\156\1\uffff\1\151\1\167\1\154\1\uffff\1\56\2\uffff\1\60\4\uffff"+
         "\1\166\1\153\1\164\1\157\1\165\1\162\1\145\1\44\1\145\1\157\1\163"+
         "\1\44\1\141\6\uffff\2\44\2\145\1\164\1\154\1\145\1\156\1\151\1\164"+
         "\1\157\1\145\1\uffff\1\154\1\164\1\uffff\1\160\1\163\1\171\1\141"+
@@ -3914,7 +3914,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\1\75\3\uffff\1\76\2\uffff\1\74\13\uffff\1\162\1\164\1\163\1\171"+
         "\1\160\1\162\1\151\1\160\1\172\1\163\1\172\1\160\1\145\1\164\7\uffff"+
         "\1\146\1\172\1\156\4\uffff\1\172\1\143\1\156\1\uffff\1\151\1\167"+
-        "\1\154\2\uffff\1\154\1\uffff\1\154\4\uffff\1\166\1\153\1\164\1\157"+
+        "\1\154\1\uffff\1\154\2\uffff\1\154\4\uffff\1\166\1\153\1\164\1\157"+
         "\1\165\1\162\1\145\1\172\1\145\1\157\1\163\1\172\1\141\6\uffff\2"+
         "\172\1\162\1\145\1\164\1\154\1\145\1\156\1\151\1\164\1\157\1\145"+
         "\1\uffff\1\154\1\164\1\uffff\1\160\1\164\1\171\1\141\1\154\1\145"+
@@ -3943,10 +3943,10 @@ public class InternalFXGraphLexer extends Lexer {
         "\21\uffff\1\36\5\uffff\1\51\1\52\1\55\1\56\1\57\1\63\1\64\6\uffff"+
         "\1\111\5\uffff\1\146\2\uffff\1\152\1\153\1\uffff\1\25\1\1\1\2\1"+
         "\137\1\3\1\133\2\uffff\1\146\11\uffff\1\10\1\31\1\11\1\22\1\32\1"+
-        "\uffff\1\37\1\16\1\20\1\uffff\1\26\1\21\1\uffff\1\40\1\141\1\27"+
+        "\uffff\1\37\1\16\1\20\1\uffff\1\26\1\21\1\uffff\1\141\1\40\1\27"+
         "\1\136\1\132\1\34\1\33\1\150\1\151\1\35\1\36\16\uffff\1\51\1\52"+
         "\1\55\1\56\1\57\1\63\1\64\3\uffff\1\142\1\72\1\135\1\73\3\uffff"+
-        "\1\111\3\uffff\1\143\1\144\1\uffff\1\145\1\uffff\1\147\1\152\1\14"+
+        "\1\111\3\uffff\1\143\1\uffff\1\144\1\145\1\uffff\1\147\1\152\1\14"+
         "\1\12\15\uffff\1\15\1\13\1\30\1\17\1\23\1\24\14\uffff\1\65\2\uffff"+
         "\1\112\10\uffff\1\121\1\uffff\1\77\14\uffff\1\127\3\uffff\1\117"+
         "\1\uffff\1\41\1\140\33\uffff\1\122\7\uffff\1\6\6\uffff\1\113\15"+
@@ -3959,7 +3959,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\6\uffff\1\104\2\uffff\1\60\1\uffff\1\102\1\uffff\1\53\4\uffff\1"+
         "\61\4\uffff\1\103\1\101";
     static final String DFA22_specialS =
-        "\1\1\52\uffff\1\0\1\2\u016e\uffff}>";
+        "\1\2\52\uffff\1\0\1\1\u016e\uffff}>";
     static final String[] DFA22_transitionS = {
             "\11\56\2\55\2\56\1\55\22\56\1\55\1\12\1\53\1\37\1\52\1\21\1"+
             "\3\1\54\1\34\1\35\1\17\1\10\1\33\1\11\1\15\1\20\1\47\11\50\1"+
@@ -3979,7 +3979,7 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\107",
             "\1\111",
             "\1\113\1\114",
-            "\1\116\1\uffff\12\120",
+            "\1\116\1\uffff\12\117",
             "\1\122\13\uffff\1\121",
             "\1\124",
             "\1\126\4\uffff\1\127",
@@ -4005,10 +4005,10 @@ public class InternalFXGraphLexer extends Lexer {
             "",
             "\1\172",
             "\1\173\17\uffff\1\174",
-            "\1\120\1\uffff\12\177\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff"+
+            "\1\117\1\uffff\12\176\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff"+
             "\1\u0080\13\uffff\1\175\6\uffff\1\u0081\2\uffff\1\u0080\1\uffff"+
             "\3\u0080\5\uffff\1\u0080\13\uffff\1\175",
-            "\1\120\1\uffff\12\177\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff"+
+            "\1\117\1\uffff\12\176\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff"+
             "\1\u0080\22\uffff\1\u0081\2\uffff\1\u0080\1\uffff\3\u0080\5"+
             "\uffff\1\u0080",
             "\1\70\34\uffff\32\70\4\uffff\1\70\1\uffff\32\70",
@@ -4100,10 +4100,10 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\u00b7",
             "\1\u00b8",
             "",
-            "",
-            "\1\120\1\uffff\12\177\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff"+
+            "\1\117\1\uffff\12\176\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff"+
             "\1\u0080\22\uffff\1\u0081\2\uffff\1\u0080\1\uffff\3\u0080\5"+
             "\uffff\1\u0080",
+            "",
             "",
             "\12\u0081\10\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1\u0080"+
             "\22\uffff\1\u0081\2\uffff\1\u0080\1\uffff\3\u0080\5\uffff\1"+
@@ -4486,6 +4486,16 @@ public class InternalFXGraphLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA22_44 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_44>='\u0000' && LA22_44<='\uFFFF')) ) {s = 130;}
+
+                        else s = 46;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA22_0 = input.LA(1);
 
                         s = -1;
@@ -4580,16 +4590,6 @@ public class InternalFXGraphLexer extends Lexer {
                         else if ( ((LA22_0>='\t' && LA22_0<='\n')||LA22_0=='\r'||LA22_0==' ') ) {s = 45;}
 
                         else if ( ((LA22_0>='\u0000' && LA22_0<='\b')||(LA22_0>='\u000B' && LA22_0<='\f')||(LA22_0>='\u000E' && LA22_0<='\u001F')||LA22_0=='@'||LA22_0=='\\'||LA22_0=='`'||(LA22_0>='~' && LA22_0<='\uFFFF')) ) {s = 46;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA22_44 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_44>='\u0000' && LA22_44<='\uFFFF')) ) {s = 130;}
-
-                        else s = 46;
 
                         if ( s>=0 ) return s;
                         break;

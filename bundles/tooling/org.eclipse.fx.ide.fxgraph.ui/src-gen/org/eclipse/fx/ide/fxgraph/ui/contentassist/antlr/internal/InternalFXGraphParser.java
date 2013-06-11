@@ -25,114 +25,114 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_STRING", "RULE_SCRIPTLITERAL", "RULE_REAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'||'", "'&&'", "'preview'", "'runtime-only'", "'true'", "'false'", "'+='", "'-='", "'=='", "'!='", "'==='", "'!=='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'<=>'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'extends'", "'static'", "'import'", "'extension'", "'super'", "'package'", "'component'", "'{'", "'}'", "'controlledby'", "'styledwith'", "'['", "']'", "','", "'resourcefile'", "'extraClasspath'", "'sceneSetup'", "'('", "')'", "'id'", "'createdby'", "'define'", "'script'", "'call'", "'#'", "':'", "'const'", "'idref'", "'include'", "'as'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'scriptvalue'", "'location'", "'rstring'", "'bind'", "'instanceof'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'?'", "'&'", "'dynamic'", "'::'", "'?.'", "'|'", "'var'"
     };
-    public static final int RULE_SL_COMMENT=12;
-    public static final int T__110=110;
-    public static final int T__76=76;
-    public static final int T__15=15;
-    public static final int T__68=68;
-    public static final int RULE_ML_COMMENT=11;
-    public static final int EOF=-1;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int T__39=39;
-    public static final int T__108=108;
-    public static final int T__78=78;
-    public static final int T__52=52;
-    public static final int T__42=42;
-    public static final int T__22=22;
-    public static final int T__89=89;
-    public static final int T__57=57;
-    public static final int T__73=73;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__106=106;
-    public static final int T__26=26;
-    public static final int T__53=53;
-    public static final int T__34=34;
-    public static final int T__83=83;
-    public static final int T__59=59;
-    public static final int RULE_HEX=5;
-    public static final int T__91=91;
-    public static final int T__82=82;
-    public static final int T__30=30;
-    public static final int T__90=90;
-    public static final int T__58=58;
-    public static final int RULE_REAL=10;
-    public static final int T__47=47;
-    public static final int T__54=54;
-    public static final int T__49=49;
-    public static final int T__25=25;
-    public static final int T__43=43;
-    public static final int T__37=37;
-    public static final int T__69=69;
-    public static final int T__32=32;
-    public static final int T__105=105;
-    public static final int T__99=99;
-    public static final int T__62=62;
-    public static final int T__45=45;
-    public static final int T__16=16;
-    public static final int T__102=102;
-    public static final int T__38=38;
-    public static final int T__67=67;
-    public static final int T__60=60;
-    public static final int T__94=94;
-    public static final int RULE_SCRIPTLITERAL=9;
-    public static final int T__51=51;
-    public static final int T__31=31;
-    public static final int T__101=101;
-    public static final int T__81=81;
-    public static final int T__86=86;
-    public static final int T__20=20;
-    public static final int T__103=103;
-    public static final int T__19=19;
-    public static final int T__71=71;
-    public static final int T__17=17;
-    public static final int T__28=28;
-    public static final int T__29=29;
-    public static final int T__87=87;
-    public static final int T__44=44;
-    public static final int T__23=23;
-    public static final int T__79=79;
-    public static final int T__21=21;
     public static final int RULE_ID=4;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=14;
+    public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int EOF=-1;
+    public static final int T__93=93;
+    public static final int T__19=19;
+    public static final int T__94=94;
+    public static final int T__91=91;
+    public static final int RULE_HEX=5;
+    public static final int T__92=92;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__90=90;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int RULE_REAL=10;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__99=99;
+    public static final int T__98=98;
+    public static final int T__97=97;
+    public static final int T__96=96;
+    public static final int T__95=95;
     public static final int T__80=80;
-    public static final int RULE_INT=6;
-    public static final int T__65=65;
-    public static final int T__40=40;
-    public static final int T__109=109;
-    public static final int T__46=46;
-    public static final int T__41=41;
-    public static final int T__107=107;
-    public static final int T__50=50;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
     public static final int T__85=85;
     public static final int T__84=84;
-    public static final int T__96=96;
-    public static final int T__18=18;
-    public static final int T__35=35;
-    public static final int T__33=33;
-    public static final int T__95=95;
-    public static final int T__61=61;
-    public static final int T__77=77;
-    public static final int T__56=56;
-    public static final int RULE_STRING=8;
-    public static final int T__92=92;
-    public static final int RULE_WS=13;
-    public static final int T__104=104;
-    public static final int T__100=100;
-    public static final int T__55=55;
-    public static final int T__63=63;
-    public static final int T__36=36;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
     public static final int T__88=88;
-    public static final int T__64=64;
-    public static final int T__98=98;
-    public static final int T__75=75;
-    public static final int T__24=24;
+    public static final int RULE_ML_COMMENT=11;
+    public static final int RULE_STRING=8;
+    public static final int T__71=71;
     public static final int T__72=72;
-    public static final int T__74=74;
-    public static final int T__93=93;
-    public static final int T__27=27;
-    public static final int T__97=97;
     public static final int T__70=70;
+    public static final int T__76=76;
+    public static final int T__75=75;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int T__77=77;
+    public static final int T__68=68;
+    public static final int T__69=69;
     public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int RULE_SCRIPTLITERAL=9;
+    public static final int T__61=61;
+    public static final int T__60=60;
+    public static final int T__55=55;
+    public static final int T__56=56;
+    public static final int T__57=57;
+    public static final int T__58=58;
+    public static final int T__51=51;
+    public static final int T__52=52;
+    public static final int T__53=53;
+    public static final int T__54=54;
+    public static final int T__107=107;
+    public static final int T__108=108;
+    public static final int T__109=109;
+    public static final int T__103=103;
+    public static final int T__59=59;
+    public static final int T__104=104;
+    public static final int T__105=105;
+    public static final int T__106=106;
+    public static final int T__110=110;
+    public static final int RULE_INT=6;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
     public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__102=102;
+    public static final int T__101=101;
+    public static final int T__100=100;
+    public static final int RULE_SL_COMMENT=12;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int RULE_WS=13;
 
     // delegates
     // delegators
@@ -8749,9 +8749,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
                 if ( (LA3_2==RULE_ID) ) {
                     switch ( input.LA(3) ) {
-                    case 68:
+                    case 55:
                         {
-                        alt3=3;
+                        alt3=2;
                         }
                         break;
                     case EOF:
@@ -8765,9 +8765,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                         alt3=1;
                         }
                         break;
-                    case 55:
+                    case 68:
                         {
-                        alt3=2;
+                        alt3=3;
                         }
                         break;
                     default:
@@ -8952,9 +8952,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             case 19:
                 {
                 switch ( input.LA(2) ) {
-                case 71:
+                case 49:
                     {
-                    alt4=3;
+                    alt4=2;
                     }
                     break;
                 case RULE_ID:
@@ -8962,9 +8962,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     alt4=1;
                     }
                     break;
-                case 49:
+                case 71:
                     {
-                    alt4=2;
+                    alt4=3;
                     }
                     break;
                 default:
@@ -8981,11 +8981,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA4_3 = input.LA(2);
 
-                if ( (LA4_3==73) ) {
-                    alt4=1;
-                }
-                else if ( (LA4_3==EOF||LA4_3==31||LA4_3==46||(LA4_3>=55 && LA4_3<=56)||LA4_3==59||LA4_3==61||LA4_3==65||(LA4_3>=67 && LA4_3<=68)) ) {
+                if ( (LA4_3==EOF||LA4_3==31||LA4_3==46||(LA4_3>=55 && LA4_3<=56)||LA4_3==59||LA4_3==61||LA4_3==65||(LA4_3>=67 && LA4_3<=68)) ) {
                     alt4=4;
+                }
+                else if ( (LA4_3==73) ) {
+                    alt4=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -9167,9 +9167,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             case 18:
                 {
                 switch ( input.LA(2) ) {
-                case RULE_ID:
+                case 49:
                     {
-                    alt5=1;
+                    alt5=2;
                     }
                     break;
                 case 71:
@@ -9177,9 +9177,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     alt5=3;
                     }
                     break;
-                case 49:
+                case RULE_ID:
                     {
-                    alt5=2;
+                    alt5=1;
                     }
                     break;
                 default:
@@ -9224,11 +9224,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA5_3 = input.LA(2);
 
-                if ( (LA5_3==EOF||LA5_3==31||LA5_3==46||(LA5_3>=55 && LA5_3<=56)||LA5_3==59||LA5_3==61||LA5_3==65||(LA5_3>=67 && LA5_3<=68)) ) {
-                    alt5=4;
-                }
-                else if ( (LA5_3==73) ) {
+                if ( (LA5_3==73) ) {
                     alt5=1;
+                }
+                else if ( (LA5_3==EOF||LA5_3==31||LA5_3==46||(LA5_3>=55 && LA5_3<=56)||LA5_3==59||LA5_3==61||LA5_3==65||(LA5_3>=67 && LA5_3<=68)) ) {
+                    alt5=4;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -10998,11 +10998,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA19_1 = input.LA(2);
 
-                if ( (LA19_1==49) ) {
-                    alt19=1;
-                }
-                else if ( (LA19_1==71) ) {
+                if ( (LA19_1==71) ) {
                     alt19=2;
+                }
+                else if ( (LA19_1==49) ) {
+                    alt19=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -11017,11 +11017,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA19_2 = input.LA(2);
 
-                if ( (LA19_2==49) ) {
-                    alt19=1;
-                }
-                else if ( (LA19_2==71) ) {
+                if ( (LA19_2==71) ) {
                     alt19=2;
+                }
+                else if ( (LA19_2==49) ) {
+                    alt19=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -11140,11 +11140,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA20_1 = input.LA(2);
 
-                if ( (LA20_1==71) ) {
-                    alt20=2;
-                }
-                else if ( (LA20_1==49) ) {
+                if ( (LA20_1==49) ) {
                     alt20=1;
+                }
+                else if ( (LA20_1==71) ) {
+                    alt20=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -11424,11 +11424,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA22_1 = input.LA(2);
 
-                if ( (LA22_1==71) ) {
-                    alt22=2;
-                }
-                else if ( (LA22_1==49) ) {
+                if ( (LA22_1==49) ) {
                     alt22=1;
+                }
+                else if ( (LA22_1==71) ) {
+                    alt22=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -11443,11 +11443,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA22_2 = input.LA(2);
 
-                if ( (LA22_2==71) ) {
-                    alt22=2;
-                }
-                else if ( (LA22_2==49) ) {
+                if ( (LA22_2==49) ) {
                     alt22=1;
+                }
+                else if ( (LA22_2==71) ) {
+                    alt22=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -11566,11 +11566,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA23_1 = input.LA(2);
 
-                if ( (LA23_1==15) ) {
-                    alt23=1;
-                }
-                else if ( (LA23_1==EOF||(LA23_1>=RULE_ID && LA23_1<=RULE_STRING)||(LA23_1>=16 && LA23_1<=17)||(LA23_1>=20 && LA23_1<=52)||(LA23_1>=55 && LA23_1<=56)||(LA23_1>=59 && LA23_1<=61)||(LA23_1>=65 && LA23_1<=66)||(LA23_1>=72 && LA23_1<=73)||LA23_1==77||(LA23_1>=86 && LA23_1<=103)||(LA23_1>=107 && LA23_1<=108)||LA23_1==110) ) {
+                if ( (LA23_1==EOF||(LA23_1>=RULE_ID && LA23_1<=RULE_STRING)||(LA23_1>=16 && LA23_1<=17)||(LA23_1>=20 && LA23_1<=52)||(LA23_1>=55 && LA23_1<=56)||(LA23_1>=59 && LA23_1<=61)||(LA23_1>=65 && LA23_1<=66)||(LA23_1>=72 && LA23_1<=73)||LA23_1==77||(LA23_1>=86 && LA23_1<=103)||(LA23_1>=107 && LA23_1<=108)||LA23_1==110) ) {
                     alt23=2;
+                }
+                else if ( (LA23_1==15) ) {
+                    alt23=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -11585,11 +11585,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 {
                 int LA23_2 = input.LA(2);
 
-                if ( (LA23_2==15) ) {
-                    alt23=1;
-                }
-                else if ( (LA23_2==EOF||(LA23_2>=RULE_ID && LA23_2<=RULE_STRING)||(LA23_2>=16 && LA23_2<=17)||(LA23_2>=20 && LA23_2<=52)||(LA23_2>=55 && LA23_2<=56)||(LA23_2>=59 && LA23_2<=61)||(LA23_2>=65 && LA23_2<=66)||(LA23_2>=72 && LA23_2<=73)||LA23_2==77||(LA23_2>=86 && LA23_2<=103)||(LA23_2>=107 && LA23_2<=108)||LA23_2==110) ) {
+                if ( (LA23_2==EOF||(LA23_2>=RULE_ID && LA23_2<=RULE_STRING)||(LA23_2>=16 && LA23_2<=17)||(LA23_2>=20 && LA23_2<=52)||(LA23_2>=55 && LA23_2<=56)||(LA23_2>=59 && LA23_2<=61)||(LA23_2>=65 && LA23_2<=66)||(LA23_2>=72 && LA23_2<=73)||LA23_2==77||(LA23_2>=86 && LA23_2<=103)||(LA23_2>=107 && LA23_2<=108)||LA23_2==110) ) {
                     alt23=2;
+                }
+                else if ( (LA23_2==15) ) {
+                    alt23=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -14244,11 +14244,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                 if ( (LA42_2==RULE_ID) ) {
                     int LA42_3 = input.LA(3);
 
-                    if ( ((LA42_3>=15 && LA42_3<=17)||(LA42_3>=22 && LA42_3<=44)||LA42_3==46||LA42_3==59||(LA42_3>=65 && LA42_3<=66)||LA42_3==77||LA42_3==86||(LA42_3>=107 && LA42_3<=108)) ) {
-                        alt42=1;
-                    }
-                    else if ( (LA42_3==73) ) {
+                    if ( (LA42_3==73) ) {
                         alt42=2;
+                    }
+                    else if ( ((LA42_3>=15 && LA42_3<=17)||(LA42_3>=22 && LA42_3<=44)||LA42_3==46||LA42_3==59||(LA42_3>=65 && LA42_3<=66)||LA42_3==77||LA42_3==86||(LA42_3>=107 && LA42_3<=108)) ) {
+                        alt42=1;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return ;}
@@ -71225,193 +71225,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
     // Delegated rules
 
-    public final boolean synpred140_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred140_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred193_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred193_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred167_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred167_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred204_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred204_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred146_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred146_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred207_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred207_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred97_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred97_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred142_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred142_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred96_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred96_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred73_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred73_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred152_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred152_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred143_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred143_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred148_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred148_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred195_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred195_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -71435,11 +71253,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred205_InternalFXGraph() {
+    public final boolean synpred190_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred205_InternalFXGraph_fragment(); // can never throw exception
+            synpred190_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -71449,11 +71267,39 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred184_InternalFXGraph() {
+    public final boolean synpred143_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred184_InternalFXGraph_fragment(); // can never throw exception
+            synpred143_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred96_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred96_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred204_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred204_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -71477,11 +71323,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred212_InternalFXGraph() {
+    public final boolean synpred195_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred212_InternalFXGraph_fragment(); // can never throw exception
+            synpred195_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -71491,207 +71337,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred103_InternalFXGraph() {
+    public final boolean synpred146_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred103_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred147_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred147_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred145_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred145_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred151_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred151_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred209_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred209_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred211_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred211_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred185_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred185_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred199_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred199_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred178_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred178_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred190_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred190_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred141_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred141_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred149_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred149_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred179_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred179_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred206_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred206_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred144_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred144_InternalFXGraph_fragment(); // can never throw exception
+            synpred146_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -71715,11 +71365,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred191_InternalFXGraph() {
+    public final boolean synpred211_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred191_InternalFXGraph_fragment(); // can never throw exception
+            synpred211_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -71734,6 +71384,62 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         int start = input.mark();
         try {
             synpred208_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred144_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred144_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred103_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred103_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred207_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred207_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred152_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred152_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -71771,6 +71477,300 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
+    public final boolean synpred151_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred151_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred148_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred148_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred205_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred205_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred167_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred167_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred140_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred140_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred97_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred97_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred206_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred206_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred178_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred178_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred142_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred142_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred145_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred145_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred184_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred184_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred212_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred212_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred191_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred191_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred199_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred199_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred209_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred209_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred185_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred185_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred141_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred141_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred179_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred179_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred73_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred73_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred149_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred149_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred147_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred147_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
 
 
     protected DFA1 dfa1 = new DFA1(this);
@@ -71794,22 +71794,22 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     static final String DFA1_eotS =
         "\6\uffff";
     static final String DFA1_eofS =
-        "\1\uffff\1\3\2\uffff\1\3\1\uffff";
+        "\1\uffff\1\3\3\uffff\1\3";
     static final String DFA1_minS =
-        "\1\4\1\56\1\4\1\uffff\1\56\1\uffff";
+        "\1\4\1\56\1\4\2\uffff\1\56";
     static final String DFA1_maxS =
-        "\1\4\1\152\1\51\1\uffff\1\152\1\uffff";
+        "\1\4\1\152\1\51\2\uffff\1\152";
     static final String DFA1_acceptS =
-        "\3\uffff\1\2\1\uffff\1\1";
+        "\3\uffff\1\2\1\1\1\uffff";
     static final String DFA1_specialS =
         "\6\uffff}>";
     static final String[] DFA1_transitionS = {
             "\1\1",
             "\1\2\3\uffff\1\3\3\uffff\1\3\63\uffff\1\3",
-            "\1\4\44\uffff\1\5",
+            "\1\5\44\uffff\1\4",
             "",
-            "\1\2\3\uffff\1\3\3\uffff\1\3\63\uffff\1\3",
-            ""
+            "",
+            "\1\2\3\uffff\1\3\3\uffff\1\3\63\uffff\1\3"
     };
 
     static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
@@ -71854,14 +71854,14 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     static final String DFA28_maxS =
         "\1\46\2\uffff\1\42\10\uffff";
     static final String DFA28_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\12\1\6\1\3";
+        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\12\1\3\1\6";
     static final String DFA28_specialS =
         "\14\uffff}>";
     static final String[] DFA28_transitionS = {
             "\1\3\1\6\1\1\1\2\1\4\1\5\1\7\1\10\1\11",
             "",
             "",
-            "\1\12\3\uffff\1\13",
+            "\1\13\3\uffff\1\12",
             "",
             "",
             "",
@@ -72414,7 +72414,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     static final String DFA90_acceptS =
         "\1\uffff\1\2\11\uffff\1\1";
     static final String DFA90_specialS =
-        "\2\uffff\1\1\1\3\1\10\1\4\1\7\1\0\1\6\1\2\1\5\1\uffff}>";
+        "\2\uffff\1\7\1\4\1\2\1\5\1\1\1\6\1\0\1\10\1\3\1\uffff}>";
     static final String[] DFA90_transitionS = {
             "\5\1\7\uffff\2\1\2\uffff\12\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1"+
             "\11\1\12\16\1\2\uffff\2\1\2\uffff\3\1\3\uffff\2\1\5\uffff\2"+
@@ -72469,96 +72469,6 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA90_7 = input.LA(1);
-
-                         
-                        int index90_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index90_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA90_2 = input.LA(1);
-
-                         
-                        int index90_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index90_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA90_9 = input.LA(1);
-
-                         
-                        int index90_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index90_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA90_3 = input.LA(1);
-
-                         
-                        int index90_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index90_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA90_5 = input.LA(1);
-
-                         
-                        int index90_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index90_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA90_10 = input.LA(1);
-
-                         
-                        int index90_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index90_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
                         int LA90_8 = input.LA(1);
 
                          
@@ -72573,7 +72483,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                         input.seek(index90_8);
                         if ( s>=0 ) return s;
                         break;
-                    case 7 : 
+                    case 1 : 
                         int LA90_6 = input.LA(1);
 
                          
@@ -72588,7 +72498,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                         input.seek(index90_6);
                         if ( s>=0 ) return s;
                         break;
-                    case 8 : 
+                    case 2 : 
                         int LA90_4 = input.LA(1);
 
                          
@@ -72601,6 +72511,96 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
                          
                         input.seek(index90_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA90_10 = input.LA(1);
+
+                         
+                        int index90_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index90_10);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA90_3 = input.LA(1);
+
+                         
+                        int index90_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index90_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA90_5 = input.LA(1);
+
+                         
+                        int index90_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index90_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA90_7 = input.LA(1);
+
+                         
+                        int index90_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index90_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA90_2 = input.LA(1);
+
+                         
+                        int index90_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index90_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA90_9 = input.LA(1);
+
+                         
+                        int index90_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred145_InternalFXGraph()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index90_9);
                         if ( s>=0 ) return s;
                         break;
             }
