@@ -786,22 +786,13 @@ public interface FXGraphPackage extends EPackage
   int SIMPLE_VALUE_PROPERTY__NEGATIVE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Int Value</b></em>' attribute.
+   * The feature id for the '<em><b>Number</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_VALUE_PROPERTY__INT_VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Real Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_VALUE_PROPERTY__REAL_VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
+  int SIMPLE_VALUE_PROPERTY__NUMBER = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Simple Value Property</em>' class.
@@ -810,7 +801,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+  int SIMPLE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ConstValuePropertyImpl <em>Const Value Property</em>}' class.
@@ -1896,26 +1887,15 @@ public interface FXGraphPackage extends EPackage
   EAttribute getSimpleValueProperty_Negative();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getIntValue <em>Int Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getNumber <em>Number</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Int Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getIntValue()
+   * @return the meta object for the attribute '<em>Number</em>'.
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getNumber()
    * @see #getSimpleValueProperty()
    * @generated
    */
-  EAttribute getSimpleValueProperty_IntValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getRealValue <em>Real Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Real Value</em>'.
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getRealValue()
-   * @see #getSimpleValueProperty()
-   * @generated
-   */
-  EAttribute getSimpleValueProperty_RealValue();
+  EAttribute getSimpleValueProperty_Number();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty <em>Const Value Property</em>}'.
@@ -2812,20 +2792,12 @@ public interface FXGraphPackage extends EPackage
     EAttribute SIMPLE_VALUE_PROPERTY__NEGATIVE = eINSTANCE.getSimpleValueProperty_Negative();
 
     /**
-     * The meta object literal for the '<em><b>Int Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_VALUE_PROPERTY__INT_VALUE = eINSTANCE.getSimpleValueProperty_IntValue();
-
-    /**
-     * The meta object literal for the '<em><b>Real Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SIMPLE_VALUE_PROPERTY__REAL_VALUE = eINSTANCE.getSimpleValueProperty_RealValue();
+    EAttribute SIMPLE_VALUE_PROPERTY__NUMBER = eINSTANCE.getSimpleValueProperty_Number();
 
     /**
      * The meta object literal for the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ConstValuePropertyImpl <em>Const Value Property</em>}' class.

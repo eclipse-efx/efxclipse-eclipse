@@ -609,12 +609,12 @@ public class FXMLLoader {
 			} else {
 				try {
 					Integer i = Integer.parseInt(value);
-					vp.setIntValue(i);
+					vp.setNumber(value);
 					vp.setNegative(i < 0);
 				} catch (NumberFormatException e) {
 					try {
 						Double i = Double.parseDouble(value);
-						vp.setRealValue(i);
+						vp.setNumber(value);
 						vp.setNegative(i < 0);
 					} catch (NumberFormatException ex) {
 						vp.setStringValue(value);

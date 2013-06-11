@@ -3356,28 +3356,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SimpleValueProperty__Alternatives_2_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSimpleValuePropertyAccess().getIntValueAssignment_2_1_0()); }
-(rule__SimpleValueProperty__IntValueAssignment_2_1_0)
-{ after(grammarAccess.getSimpleValuePropertyAccess().getIntValueAssignment_2_1_0()); }
-)
-
-    |(
-{ before(grammarAccess.getSimpleValuePropertyAccess().getRealValueAssignment_2_1_1()); }
-(rule__SimpleValueProperty__RealValueAssignment_2_1_1)
-{ after(grammarAccess.getSimpleValuePropertyAccess().getRealValueAssignment_2_1_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 
 rule__ReferenceValueProperty__Alternatives_2_1
     @init {
@@ -7874,9 +7852,9 @@ rule__SimpleValueProperty__Group_2__1__Impl
     }
 :
 (
-{ before(grammarAccess.getSimpleValuePropertyAccess().getAlternatives_2_1()); }
-(rule__SimpleValueProperty__Alternatives_2_1)
-{ after(grammarAccess.getSimpleValuePropertyAccess().getAlternatives_2_1()); }
+{ before(grammarAccess.getSimpleValuePropertyAccess().getNumberAssignment_2_1()); }
+(rule__SimpleValueProperty__NumberAssignment_2_1)
+{ after(grammarAccess.getSimpleValuePropertyAccess().getNumberAssignment_2_1()); }
 )
 
 ;
@@ -21880,29 +21858,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SimpleValueProperty__IntValueAssignment_2_1_0
+rule__SimpleValueProperty__NumberAssignment_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getSimpleValuePropertyAccess().getIntValueINTTerminalRuleCall_2_1_0_0()); }
-	RULE_INT{ after(grammarAccess.getSimpleValuePropertyAccess().getIntValueINTTerminalRuleCall_2_1_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SimpleValueProperty__RealValueAssignment_2_1_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getSimpleValuePropertyAccess().getRealValueREALTerminalRuleCall_2_1_1_0()); }
-	RULE_REAL{ after(grammarAccess.getSimpleValuePropertyAccess().getRealValueREALTerminalRuleCall_2_1_1_0()); }
+{ before(grammarAccess.getSimpleValuePropertyAccess().getNumberNumberParserRuleCall_2_1_0()); }
+	ruleNumber{ after(grammarAccess.getSimpleValuePropertyAccess().getNumberNumberParserRuleCall_2_1_0()); }
 )
 
 ;
@@ -24251,8 +24214,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-
-RULE_REAL : ('0'..'9')* '.' ('0'..'9')+;
 
 RULE_SCRIPTLITERAL : '#{' ( options {greedy=false;} : . )*'}#';
 

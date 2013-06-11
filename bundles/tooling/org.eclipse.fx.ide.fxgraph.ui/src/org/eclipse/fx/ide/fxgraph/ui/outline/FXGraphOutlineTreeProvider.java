@@ -219,16 +219,11 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			b.append(p.getBooleanValue());
 		} else if( p.getStringValue() != null ) {
 			b.append(p.getStringValue());
-		} else if( p.getRealValue() != 0 ) {
+		} else if( p.getNumber() != null ) {
 			if( p.isNegative() ) {
 				b.append("-");
 			}
-			b.append(p.getRealValue());
-		} else {
-			if( p.isNegative() ) {
-				b.append("-");
-			}
-			b.append(p.getIntValue());
+			b.append(p.getNumber());
 		}
 		return b.toString();
 	}

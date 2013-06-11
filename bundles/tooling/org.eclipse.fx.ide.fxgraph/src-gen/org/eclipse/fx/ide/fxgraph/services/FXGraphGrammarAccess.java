@@ -1118,17 +1118,14 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Assignment cNegativeAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final Keyword cNegativeHyphenMinusKeyword_2_0_0 = (Keyword)cNegativeAssignment_2_0.eContents().get(0);
-		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
-		private final Assignment cIntValueAssignment_2_1_0 = (Assignment)cAlternatives_2_1.eContents().get(0);
-		private final RuleCall cIntValueINTTerminalRuleCall_2_1_0_0 = (RuleCall)cIntValueAssignment_2_1_0.eContents().get(0);
-		private final Assignment cRealValueAssignment_2_1_1 = (Assignment)cAlternatives_2_1.eContents().get(1);
-		private final RuleCall cRealValueREALTerminalRuleCall_2_1_1_0 = (RuleCall)cRealValueAssignment_2_1_1.eContents().get(0);
+		private final Assignment cNumberAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNumberNumberParserRuleCall_2_1_0 = (RuleCall)cNumberAssignment_2_1.eContents().get(0);
 		
 		//SimpleValueProperty:
-		//	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? (intValue=INT | realValue=REAL);
+		//	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number;
 		public ParserRule getRule() { return rule; }
 
-		//stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? (intValue=INT | realValue=REAL)
+		//stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//stringValue=STRING
@@ -1149,7 +1146,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"false"
 		public Keyword getBooleanValueFalseKeyword_1_0_1() { return cBooleanValueFalseKeyword_1_0_1; }
 
-		//negative?="-"? (intValue=INT | realValue=REAL)
+		//negative?="-"? number=Number
 		public Group getGroup_2() { return cGroup_2; }
 
 		//negative?="-"?
@@ -1158,20 +1155,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"-"
 		public Keyword getNegativeHyphenMinusKeyword_2_0_0() { return cNegativeHyphenMinusKeyword_2_0_0; }
 
-		//intValue=INT | realValue=REAL
-		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
+		//number=Number
+		public Assignment getNumberAssignment_2_1() { return cNumberAssignment_2_1; }
 
-		//intValue=INT
-		public Assignment getIntValueAssignment_2_1_0() { return cIntValueAssignment_2_1_0; }
-
-		//INT
-		public RuleCall getIntValueINTTerminalRuleCall_2_1_0_0() { return cIntValueINTTerminalRuleCall_2_1_0_0; }
-
-		//realValue=REAL
-		public Assignment getRealValueAssignment_2_1_1() { return cRealValueAssignment_2_1_1; }
-
-		//REAL
-		public RuleCall getRealValueREALTerminalRuleCall_2_1_1_0() { return cRealValueREALTerminalRuleCall_2_1_1_0; }
+		//Number
+		public RuleCall getNumberNumberParserRuleCall_2_1_0() { return cNumberNumberParserRuleCall_2_1_0; }
 	}
 
 	public class ConstValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -1692,7 +1680,6 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	private ResourceValuePropertyElements pResourceValueProperty;
 	private BindValuePropertyElements pBindValueProperty;
 	private StringValueElements pStringValue;
-	private TerminalRule tREAL;
 	private TerminalRule tSCRIPTLITERAL;
 	
 	private final Grammar grammar;
@@ -1914,7 +1901,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SimpleValueProperty:
-	//	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? (intValue=INT | realValue=REAL);
+	//	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number;
 	public SimpleValuePropertyElements getSimpleValuePropertyAccess() {
 		return (pSimpleValueProperty != null) ? pSimpleValueProperty : (pSimpleValueProperty = new SimpleValuePropertyElements());
 	}
@@ -2057,12 +2044,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getStringValueAccess().getRule();
 	}
 
-	//terminal REAL returns ecore::EDouble:
-	//	"0".."9"* "." "0".."9"+;
-	public TerminalRule getREALRule() {
-		return (tREAL != null) ? tREAL : (tREAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REAL"));
-	} 
-
+	////terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
 	//terminal SCRIPTLITERAL:
 	//	"#{"->"}#";
 	public TerminalRule getSCRIPTLITERALRule() {

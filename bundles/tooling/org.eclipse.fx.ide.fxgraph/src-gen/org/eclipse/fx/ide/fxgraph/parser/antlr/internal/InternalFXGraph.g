@@ -2003,44 +2003,25 @@ ruleSimpleValueProperty returns [EObject current=null]
 	    }
 
 )
-)?((
+)?(
 (
-		lv_intValue_3_0=RULE_INT
-		{
-			newLeafNode(lv_intValue_3_0, grammarAccess.getSimpleValuePropertyAccess().getIntValueINTTerminalRuleCall_2_1_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getSimpleValuePropertyAccess().getNumberNumberParserRuleCall_2_1_0()); 
+	    }
+		lv_number_3_0=ruleNumber		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSimpleValuePropertyRule());
+	            $current = createModelElementForParent(grammarAccess.getSimpleValuePropertyRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
-       			"intValue",
-        		lv_intValue_3_0, 
-        		"INT");
+       			"number",
+        		lv_number_3_0, 
+        		"Number");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)
-    |(
-(
-		lv_realValue_4_0=RULE_REAL
-		{
-			newLeafNode(lv_realValue_4_0, grammarAccess.getSimpleValuePropertyAccess().getRealValueREALTerminalRuleCall_2_1_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSimpleValuePropertyRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"realValue",
-        		lv_realValue_4_0, 
-        		"REAL");
-	    }
-
-)
-))))
+)))
 ;
 
 
@@ -8027,8 +8008,6 @@ ruleXImportDeclaration returns [EObject current=null]
 
 
 
-
-RULE_REAL : ('0'..'9')* '.' ('0'..'9')+;
 
 RULE_SCRIPTLITERAL : '#{' ( options {greedy=false;} : . )*'}#';
 

@@ -81,8 +81,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/stringValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/booleanValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/negative"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/intValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/realValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/number"/>
     </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//ConstValueProperty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ConstValueProperty/type"/>

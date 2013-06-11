@@ -139,10 +139,10 @@ public class ValuePropertyFormatter {
 				formattedValue = v.getBooleanValue();
 			} else if (v.getStringValue() != null) {
 				formattedValue = "\"" + v.getStringValue() + "\"";
-			} else if (v.getRealValue() != 0.0) {
-				formattedValue = "" + v.getRealValue();
+			} else if (v.getNumber() != null) {
+				formattedValue = "" + v.getNumber();
 			} else {
-				formattedValue = "" + v.getIntValue();
+				formattedValue = "" + v.getNumber();
 			}
 		} else if (value instanceof ListValueProperty) {
 			final StringBuffer sb = new StringBuffer();

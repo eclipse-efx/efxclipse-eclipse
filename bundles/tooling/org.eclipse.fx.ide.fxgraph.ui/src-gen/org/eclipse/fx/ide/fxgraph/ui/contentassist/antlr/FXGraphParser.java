@@ -54,7 +54,6 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getListValueElementAccess().getAlternatives(), "rule__ListValueElement__Alternatives");
 					put(grammarAccess.getSimpleValuePropertyAccess().getAlternatives(), "rule__SimpleValueProperty__Alternatives");
 					put(grammarAccess.getSimpleValuePropertyAccess().getBooleanValueAlternatives_1_0(), "rule__SimpleValueProperty__BooleanValueAlternatives_1_0");
-					put(grammarAccess.getSimpleValuePropertyAccess().getAlternatives_2_1(), "rule__SimpleValueProperty__Alternatives_2_1");
 					put(grammarAccess.getReferenceTypeAccess().getAlternatives(), "rule__ReferenceType__Alternatives");
 					put(grammarAccess.getReferenceValuePropertyAccess().getAlternatives_2_1(), "rule__ReferenceValueProperty__Alternatives_2_1");
 					put(grammarAccess.getReferenceValuePropertyAccess().getAlternatives_2_2_1(), "rule__ReferenceValueProperty__Alternatives_2_2_1");
@@ -358,8 +357,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimpleValuePropertyAccess().getStringValueAssignment_0(), "rule__SimpleValueProperty__StringValueAssignment_0");
 					put(grammarAccess.getSimpleValuePropertyAccess().getBooleanValueAssignment_1(), "rule__SimpleValueProperty__BooleanValueAssignment_1");
 					put(grammarAccess.getSimpleValuePropertyAccess().getNegativeAssignment_2_0(), "rule__SimpleValueProperty__NegativeAssignment_2_0");
-					put(grammarAccess.getSimpleValuePropertyAccess().getIntValueAssignment_2_1_0(), "rule__SimpleValueProperty__IntValueAssignment_2_1_0");
-					put(grammarAccess.getSimpleValuePropertyAccess().getRealValueAssignment_2_1_1(), "rule__SimpleValueProperty__RealValueAssignment_2_1_1");
+					put(grammarAccess.getSimpleValuePropertyAccess().getNumberAssignment_2_1(), "rule__SimpleValueProperty__NumberAssignment_2_1");
 					put(grammarAccess.getConstValuePropertyAccess().getTypeAssignment_1(), "rule__ConstValueProperty__TypeAssignment_1");
 					put(grammarAccess.getConstValuePropertyAccess().getFieldAssignment_3(), "rule__ConstValueProperty__FieldAssignment_3");
 					put(grammarAccess.getReferenceValuePropertyAccess().getReferenceAssignment_1(), "rule__ReferenceValueProperty__ReferenceAssignment_1");

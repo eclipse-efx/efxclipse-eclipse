@@ -21,8 +21,7 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty;
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getStringValue <em>String Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#isNegative <em>Negative</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getIntValue <em>Int Value</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getRealValue <em>Real Value</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getNumber <em>Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,44 +90,24 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
   protected boolean negative = NEGATIVE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
+   * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIntValue()
+   * @see #getNumber()
    * @generated
    * @ordered
    */
-  protected static final int INT_VALUE_EDEFAULT = 0;
+  protected static final String NUMBER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
+   * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIntValue()
+   * @see #getNumber()
    * @generated
    * @ordered
    */
-  protected int intValue = INT_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getRealValue() <em>Real Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRealValue()
-   * @generated
-   * @ordered
-   */
-  protected static final double REAL_VALUE_EDEFAULT = 0.0;
-
-  /**
-   * The cached value of the '{@link #getRealValue() <em>Real Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRealValue()
-   * @generated
-   * @ordered
-   */
-  protected double realValue = REAL_VALUE_EDEFAULT;
+  protected String number = NUMBER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -225,9 +204,9 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getIntValue()
+  public String getNumber()
   {
-    return intValue;
+    return number;
   }
 
   /**
@@ -235,35 +214,12 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIntValue(int newIntValue)
+  public void setNumber(String newNumber)
   {
-    int oldIntValue = intValue;
-    intValue = newIntValue;
+    String oldNumber = number;
+    number = newNumber;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.SIMPLE_VALUE_PROPERTY__INT_VALUE, oldIntValue, intValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public double getRealValue()
-  {
-    return realValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRealValue(double newRealValue)
-  {
-    double oldRealValue = realValue;
-    realValue = newRealValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.SIMPLE_VALUE_PROPERTY__REAL_VALUE, oldRealValue, realValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.SIMPLE_VALUE_PROPERTY__NUMBER, oldNumber, number));
   }
 
   /**
@@ -282,10 +238,8 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
         return getBooleanValue();
       case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NEGATIVE:
         return isNegative();
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__INT_VALUE:
-        return getIntValue();
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__REAL_VALUE:
-        return getRealValue();
+      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NUMBER:
+        return getNumber();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -309,11 +263,8 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
       case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NEGATIVE:
         setNegative((Boolean)newValue);
         return;
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__INT_VALUE:
-        setIntValue((Integer)newValue);
-        return;
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__REAL_VALUE:
-        setRealValue((Double)newValue);
+      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NUMBER:
+        setNumber((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -338,11 +289,8 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
       case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NEGATIVE:
         setNegative(NEGATIVE_EDEFAULT);
         return;
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__INT_VALUE:
-        setIntValue(INT_VALUE_EDEFAULT);
-        return;
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__REAL_VALUE:
-        setRealValue(REAL_VALUE_EDEFAULT);
+      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NUMBER:
+        setNumber(NUMBER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -364,10 +312,8 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
         return BOOLEAN_VALUE_EDEFAULT == null ? booleanValue != null : !BOOLEAN_VALUE_EDEFAULT.equals(booleanValue);
       case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NEGATIVE:
         return negative != NEGATIVE_EDEFAULT;
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__INT_VALUE:
-        return intValue != INT_VALUE_EDEFAULT;
-      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__REAL_VALUE:
-        return realValue != REAL_VALUE_EDEFAULT;
+      case FXGraphPackage.SIMPLE_VALUE_PROPERTY__NUMBER:
+        return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
     }
     return super.eIsSet(featureID);
   }
@@ -389,10 +335,8 @@ public class SimpleValuePropertyImpl extends SingleValuePropertyImpl implements 
     result.append(booleanValue);
     result.append(", negative: ");
     result.append(negative);
-    result.append(", intValue: ");
-    result.append(intValue);
-    result.append(", realValue: ");
-    result.append(realValue);
+    result.append(", number: ");
+    result.append(number);
     result.append(')');
     return result.toString();
   }

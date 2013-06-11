@@ -5600,11 +5600,11 @@ protected class MapValueProperty_RightCurlyBracketKeyword_3 extends KeywordToken
 /************ begin Rule SimpleValueProperty ****************
  *
  * SimpleValueProperty:
- * 	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? (intValue=INT | realValue=REAL);
+ * 	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number;
  *
  **/
 
-// stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? (intValue=INT | realValue=REAL)
+// stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number
 protected class SimpleValueProperty_Alternatives extends AlternativesToken {
 
 	public SimpleValueProperty_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5706,7 +5706,7 @@ protected class SimpleValueProperty_BooleanValueAssignment_1 extends AssignmentT
 
 }
 
-// negative?="-"? (intValue=INT | realValue=REAL)
+// negative?="-"? number=Number
 protected class SimpleValueProperty_Group_2 extends GroupToken {
 	
 	public SimpleValueProperty_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5721,7 +5721,7 @@ protected class SimpleValueProperty_Group_2 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new SimpleValueProperty_Alternatives_2_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new SimpleValueProperty_NumberAssignment_2_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -5761,39 +5761,16 @@ protected class SimpleValueProperty_NegativeAssignment_2_0 extends AssignmentTok
 
 }
 
-// intValue=INT | realValue=REAL
-protected class SimpleValueProperty_Alternatives_2_1 extends AlternativesToken {
-
-	public SimpleValueProperty_Alternatives_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
+// number=Number
+protected class SimpleValueProperty_NumberAssignment_2_1 extends AssignmentToken  {
 	
-	@Override
-	public Alternatives getGrammarElement() {
-		return grammarAccess.getSimpleValuePropertyAccess().getAlternatives_2_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new SimpleValueProperty_IntValueAssignment_2_1_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new SimpleValueProperty_RealValueAssignment_2_1_1(lastRuleCallOrigin, this, 1, inst);
-			default: return null;
-		}	
-	}
-
-}
-
-// intValue=INT
-protected class SimpleValueProperty_IntValueAssignment_2_1_0 extends AssignmentToken  {
-	
-	public SimpleValueProperty_IntValueAssignment_2_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public SimpleValueProperty_NumberAssignment_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getSimpleValuePropertyAccess().getIntValueAssignment_2_1_0();
+		return grammarAccess.getSimpleValuePropertyAccess().getNumberAssignment_2_1();
 	}
 
     @Override
@@ -5806,52 +5783,17 @@ protected class SimpleValueProperty_IntValueAssignment_2_1_0 extends AssignmentT
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("intValue",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("intValue");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getSimpleValuePropertyAccess().getIntValueINTTerminalRuleCall_2_1_0_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getSimpleValuePropertyAccess().getIntValueINTTerminalRuleCall_2_1_0_0();
+		if((value = eObjectConsumer.getConsumable("number",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("number");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getSimpleValuePropertyAccess().getNumberNumberParserRuleCall_2_1_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getSimpleValuePropertyAccess().getNumberNumberParserRuleCall_2_1_0();
 			return obj;
 		}
 		return null;
 	}
 
 }
-
-// realValue=REAL
-protected class SimpleValueProperty_RealValueAssignment_2_1_1 extends AssignmentToken  {
-	
-	public SimpleValueProperty_RealValueAssignment_2_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getSimpleValuePropertyAccess().getRealValueAssignment_2_1_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new SimpleValueProperty_NegativeAssignment_2_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("realValue",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("realValue");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getSimpleValuePropertyAccess().getRealValueREALTerminalRuleCall_2_1_1_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getSimpleValuePropertyAccess().getRealValueREALTerminalRuleCall_2_1_1_0();
-			return obj;
-		}
-		return null;
-	}
-
-}
-
 
 
 

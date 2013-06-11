@@ -14,8 +14,7 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getStringValue <em>String Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#isNegative <em>Negative</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getIntValue <em>Int Value</em>}</li>
- *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getRealValue <em>Real Value</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getNumber <em>Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,55 +103,29 @@ public interface SimpleValueProperty extends SingleValueProperty, FactoryValueEl
   void setNegative(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Int Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Number</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Int Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Number</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Int Value</em>' attribute.
-   * @see #setIntValue(int)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getSimpleValueProperty_IntValue()
+   * @return the value of the '<em>Number</em>' attribute.
+   * @see #setNumber(String)
+   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getSimpleValueProperty_Number()
    * @model
    * @generated
    */
-  int getIntValue();
+  String getNumber();
 
   /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getIntValue <em>Int Value</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getNumber <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Int Value</em>' attribute.
-   * @see #getIntValue()
+   * @param value the new value of the '<em>Number</em>' attribute.
+   * @see #getNumber()
    * @generated
    */
-  void setIntValue(int value);
-
-  /**
-   * Returns the value of the '<em><b>Real Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Real Value</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Real Value</em>' attribute.
-   * @see #setRealValue(double)
-   * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getSimpleValueProperty_RealValue()
-   * @model
-   * @generated
-   */
-  double getRealValue();
-
-  /**
-   * Sets the value of the '{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getRealValue <em>Real Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Real Value</em>' attribute.
-   * @see #getRealValue()
-   * @generated
-   */
-  void setRealValue(double value);
+  void setNumber(String value);
 
 } // SimpleValueProperty

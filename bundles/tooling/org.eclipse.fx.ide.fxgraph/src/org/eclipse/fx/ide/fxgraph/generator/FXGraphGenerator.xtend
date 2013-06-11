@@ -222,17 +222,17 @@ class FXGraphGenerator implements IGenerator {
 			return "<String fx:value=\"" + value.stringValue +"\" />";
 		} else if( value.booleanValue != null ) {
 			return "<Boolean fx:value=\"" + value.booleanValue + "\" />";
-		} else if( value.realValue != 0 ) {
+		} else if( value.number != null && value.number.isIntNumber ) {
 			if( value.negative ) {
-				return "<Double fx:value=\"-" + value.realValue + "\" />";
+				return "<Double fx:value=\"-" + value.number + "\" />";
 			} else {
-				return "<Double fx:value=\"" + value.realValue + "\" />";
+				return "<Double fx:value=\"" + value.number + "\" />";
 			}
 		} else {
 			if( value.negative ) {
-				return "<Integer fx:value=\"-" + value.intValue + "\" />";
+				return "<Integer fx:value=\"-" + value.number + "\" />";
 			} else {
-				return "<Integer fx:value=\"" + value.intValue + "\" />";
+				return "<Integer fx:value=\"" + value.number + "\" />";
 			}
 		}
 	}
@@ -609,17 +609,17 @@ class FXGraphGenerator implements IGenerator {
 			return value.stringValue;
 		} else if( value.booleanValue != null ) {
 			return value.booleanValue;
-		} else if( value.realValue != 0 ) {
+		} else if( value.number != null && value.number.isIntNumber ) {
 			if( value.negative ) {
-				return "-" + value.realValue;
+				return "-" + value.number;
 			} else {
-				return value.realValue;
+				return value.number;
 			}
 		} else {
 			if( value.negative ) {
-				return "-" + value.intValue;
+				return "-" + value.number;
 			} else {
-				return value.intValue;
+				return value.number;
 			}
 		}
 	}
@@ -760,5 +760,9 @@ class FXGraphGenerator implements IGenerator {
 		val builder = new StringBuilder()
 		importManager.appendType(r.type, builder)
 		builder.toString
+	}
+	
+	def static isIntNumber(String number) {
+		number.matches("\\d[\\d|_]*")
 	}
 }

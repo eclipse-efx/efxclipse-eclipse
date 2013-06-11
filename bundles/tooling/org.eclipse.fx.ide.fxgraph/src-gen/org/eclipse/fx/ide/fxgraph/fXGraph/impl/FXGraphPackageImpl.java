@@ -961,19 +961,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSimpleValueProperty_IntValue()
+  public EAttribute getSimpleValueProperty_Number()
   {
     return (EAttribute)simpleValuePropertyEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSimpleValueProperty_RealValue()
-  {
-    return (EAttribute)simpleValuePropertyEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1405,8 +1395,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__STRING_VALUE);
     createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__BOOLEAN_VALUE);
     createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__NEGATIVE);
-    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__INT_VALUE);
-    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__REAL_VALUE);
+    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__NUMBER);
 
     constValuePropertyEClass = createEClass(CONST_VALUE_PROPERTY);
     createEReference(constValuePropertyEClass, CONST_VALUE_PROPERTY__TYPE);
@@ -1592,8 +1581,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEAttribute(getSimpleValueProperty_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSimpleValueProperty_BooleanValue(), ecorePackage.getEString(), "booleanValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSimpleValueProperty_Negative(), ecorePackage.getEBoolean(), "negative", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSimpleValueProperty_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSimpleValueProperty_RealValue(), ecorePackage.getEDouble(), "realValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleValueProperty_Number(), ecorePackage.getEString(), "number", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constValuePropertyEClass, ConstValueProperty.class, "ConstValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConstValueProperty_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, ConstValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
