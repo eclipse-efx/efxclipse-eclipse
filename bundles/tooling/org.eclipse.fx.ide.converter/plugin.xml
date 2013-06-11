@@ -31,40 +31,10 @@
                </with>
             </visibleWhen>
          </command>
-         <command
-               commandId="org.eclipse.fx.ide.converter.fxml"
-               label="Convert FXML to FXGraph"
-               style="push">
-            <visibleWhen
-                  checkEnabled="true">
-               <with
-                     variable="activeMenuSelection">
-                  <iterate
-                        ifEmpty="false"
-                        operator="and">
-                     <adapt
-                           type="org.eclipse.core.resources.IFile">
-                        <test
-                              property="org.eclipse.core.resources.name"
-                              value="*.fxml">
-                        </test>
-                     </adapt>
-                  </iterate>
-                  <count
-                        value="1">
-                  </count>
-               </with>
-            </visibleWhen>
-         </command>
       </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
-      <command
-            defaultHandler="org.eclipse.fx.ide.converter.ConvertFXMLHandler"
-            id="org.eclipse.fx.ide.converter.fxml"
-            name="Convert FXML">
-      </command>
       <command
             defaultHandler="org.eclipse.fx.ide.converter.ConvertSVGHandler"
             id="org.eclipse.fx.ide.converter.svg"
