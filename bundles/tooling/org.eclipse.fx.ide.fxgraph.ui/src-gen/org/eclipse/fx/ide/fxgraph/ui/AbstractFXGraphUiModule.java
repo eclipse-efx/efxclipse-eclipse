@@ -49,6 +49,11 @@ public abstract class AbstractFXGraphUiModule extends DefaultUiModule {
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
+	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
+		return org.eclipse.fx.ide.fxgraph.ui.labeling.FXGraphLabelProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
 	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.eclipse.fx.ide.fxgraph.ui.labeling.FXGraphDescriptionLabelProvider.class);
 	}
@@ -144,11 +149,6 @@ public abstract class AbstractFXGraphUiModule extends DefaultUiModule {
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper> bindIHyperlinkHelper() {
-		return org.eclipse.xtext.common.types.xtext.ui.TypeAwareHyperlinkHelper.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher> bindPrefixMatcher() {
 		return org.eclipse.xtext.ui.editor.contentassist.FQNPrefixMatcher.class;
 	}
@@ -211,6 +211,11 @@ public abstract class AbstractFXGraphUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
 	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends org.eclipse.xtext.xbase.ui.validation.XbaseUIValidator> bindXbaseUIValidator() {
 		return org.eclipse.xtext.xbase.ui.validation.XbaseUIValidator.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
+	public Class<? extends org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper> bindIHyperlinkHelper() {
+		return org.eclipse.xtext.xbase.ui.navigation.TypeLiteralAwareHyperlinkHelper.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
@@ -279,11 +284,6 @@ public abstract class AbstractFXGraphUiModule extends DefaultUiModule {
 			binder.bind(org.eclipse.xtext.ui.editor.IURIEditorOpener.class).annotatedWith(org.eclipse.xtext.ui.LanguageSpecific.class).to(org.eclipse.xtext.xbase.ui.jvmmodel.navigation.DerivedMemberAwareEditorOpener.class); 
 			binder.bind(org.eclipse.xtext.common.types.ui.navigation.IDerivedMemberAwareEditorOpener.class).to(org.eclipse.xtext.xbase.ui.jvmmodel.navigation.DerivedMemberAwareEditorOpener.class); 
 		};
-	}
-
-	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
-	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
-		return org.eclipse.xtext.xbase.ui.labeling.XbaseLabelProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.xbase.XbaseGeneratorFragment
