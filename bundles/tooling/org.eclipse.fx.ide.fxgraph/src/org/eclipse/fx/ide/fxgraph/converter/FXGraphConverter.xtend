@@ -29,7 +29,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 
 class FXGraphConverter {
 	def generate(Model model) '''
-	«IF model.getPackage()?.name?.length > 0»
+	«IF model?.getPackage()?.name.length > 0»
 	package «model.getPackage().name»
 	«ENDIF»
 	«generateImports(model.imports)»
@@ -37,7 +37,7 @@ class FXGraphConverter {
 	«generateComponentDefinition(model.componentDef)»
 	'''
 
-	def generateComponentDefinition(ComponentDefinition cd) '''
+	def CharSequence generateComponentDefinition(ComponentDefinition cd) '''
 	«IF cd.dynamicRoot»dynamic «ENDIF»component «cd.name»«generateController(cd.controller)»«generateStyle(cd.previewCssFiles)»«generateResourceBundle(cd.previewResourceBundle)»«generateExtraClassPath(cd.previewClasspathEntries)»«generateSceneSetup(cd.sceneDefinition)» {
 		«FOR Script s : cd.scripts»
 			«generateScript(s)»
@@ -87,7 +87,7 @@ class FXGraphConverter {
 		«IF s.source!=null»«s.source»«ELSE»«s.sourcecode»«ENDIF»
 	}#	'''
 
-	def generateElement(Element element) '''
+	def CharSequence generateElement(Element element) '''
 		«IF element.factory!=null»«element.type.simpleName» createdby «element.factory» {
 		«var Boolean comma = false»
 		«FOR FactoryValueElement e : element.values»
