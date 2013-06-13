@@ -17,6 +17,10 @@
       [Enter License Description here.]
    </license>
 
+   <requires>
+      <import feature="org.eclipse.xtend.sdk" version="2.4.2" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="org.eclipse.fx.ide.rrobot"
          download-size="0"

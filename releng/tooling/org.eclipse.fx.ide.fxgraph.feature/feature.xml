@@ -19,7 +19,7 @@
 
    <requires>
       <import feature="org.eclipse.fx.ide.basic.feature"/>
-      <import feature="org.eclipse.xtext.sdk"/>
+      <import feature="org.eclipse.xtext.sdk" version="2.4.2" match="greaterOrEqual"/>
    </requires>
 
    <plugin
