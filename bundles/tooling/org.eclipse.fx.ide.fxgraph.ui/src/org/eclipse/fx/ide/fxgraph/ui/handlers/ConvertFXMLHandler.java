@@ -11,6 +11,7 @@
 package org.eclipse.fx.ide.fxgraph.ui.handlers;
 
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Map;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -26,8 +27,11 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.fx.ide.fxgraph.converter.FXGraphConverter;
 import org.eclipse.fx.ide.fxgraph.converter.FXMLLoader;
+import org.eclipse.fx.ide.fxgraph.converter.IFXMLFile;
 import org.eclipse.fx.ide.fxgraph.fXGraph.Model;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.ToolFactory;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
@@ -88,10 +92,38 @@ public class ConvertFXMLHandler extends AbstractHandler {
 		return null;
 	}
 	
-	protected String convert(IFile outFile, IFile file)
+	protected String convert(IFile outFile, final IFile file)
 			throws ExecutionException {
 		FXMLLoader loader = new FXMLLoader();
-		Model m = loader.loadModel(file);
+		Model m = loader.loadModel(new IFXMLFile() {
+			
+			@Override
+			public String getPackagename() {
+				String packName = null;
+				IJavaElement j = JavaCore.create(file.getParent());
+				if (j instanceof IPackageFragment) {
+					IPackageFragment p = (IPackageFragment) j;
+					packName = p.getElementName();
+				}
+				return packName;
+			}
+			
+			@Override
+			public String getName() {
+				return file.getName();
+			}
+			
+			@Override
+			public InputStream getContent() {
+				try {
+					return file.getContents();
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return null;
+			}
+		});
 		return new FXGraphConverter().generate(m).toString();
 	}
 

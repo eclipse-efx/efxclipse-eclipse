@@ -17,7 +17,6 @@ import java.util.Stack;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.fx.ide.fxgraph.fXGraph.BindValueProperty;
 import org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition;
 import org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty;
@@ -40,9 +39,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference;
 import org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty;
 import org.eclipse.fx.ide.fxgraph.fXGraph.StringValue;
 import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
-import org.eclipse.jdt.core.IJavaElement;
-import org.eclipse.jdt.core.IPackageFragment;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmPrimitiveType;
 import org.eclipse.xtext.common.types.TypesFactory;
@@ -53,13 +49,13 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class FXMLLoader {
 
-	public Model loadModel(IFile file) {
+	public Model loadModel(IFXMLFile file) {
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			factory.setNamespaceAware(true);
 			SAXParser parser = factory.newSAXParser();
 			FXMLHandler handler = new FXMLHandler(file);
-			parser.parse(file.getContents(), handler);
+			parser.parse(file.getContent(), handler);
 			return handler.model;
 		} catch (Throwable e) {
 			throw new RuntimeException(e);
@@ -67,7 +63,7 @@ public class FXMLLoader {
 	}
 
 	static class FXMLHandler extends DefaultHandler {
-		private final IFile fxmlFile;
+		private final IFXMLFile fxmlFile;
 		private Model model;
 
 		private Map<String, Element> elements = new HashMap<String, Element>();
@@ -81,7 +77,7 @@ public class FXMLLoader {
 		private String thePropertyIDontWantToForget = null;
 		private boolean constant = false;
 
-		public FXMLHandler(IFile fxmlFile) {
+		public FXMLHandler(IFXMLFile fxmlFile) {
 			this.fxmlFile = fxmlFile;
 		}
 
@@ -89,17 +85,12 @@ public class FXMLLoader {
 		public void startDocument() {
 			model = FXGraphFactory.eINSTANCE.createModel();
 
-			String packName = null;
-			IJavaElement j = JavaCore.create(fxmlFile.getParent());
-			if (j instanceof IPackageFragment) {
-				IPackageFragment p = (IPackageFragment) j;
-				packName = p.getElementName();
-			}
+			String packName = fxmlFile.getPackagename();
 
 			if (packName != null) {
 				PackageDeclaration pack = FXGraphFactory.eINSTANCE
 						.createPackageDeclaration();
-				pack.setName(packName);
+				pack.setName(fxmlFile.getPackagename());
 				model.setPackage(pack);
 			}
 
