@@ -497,7 +497,9 @@ RobotTask {
 				DynamicFile "build.xml" 
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.NativeLaunchGenerator" by "java"
 					excluded-if "javascript" /# !NativeExport #/,
-				URLFile "fx-osgi-launch.jar" "platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/build_bin/fx-osgi-launch.jar"
+				URLFile "fx-osgi-launch-7.jar" "platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/build_bin/fx-osgi-launch-7.jar"
+					excluded-if "javascript" /# !NativeExport #/, 
+				URLFile "fx-osgi-launch-8.jar" "platform:/plugin/org.eclipse.fx.ide.pde.ui.e4/build_bin/fx-osgi-launch-8.jar"
 					excluded-if "javascript" /# !NativeExport #/ 
 			}
 		} excluded-if "javascript" /# !TychoIntegration; #/
