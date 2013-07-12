@@ -15,6 +15,8 @@ import java.io.File;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.fx.core.log.Logger;
+import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jdt.core.IAccessRule;
 import org.eclipse.jdt.core.IClasspathAttribute;
 import org.eclipse.jdt.core.IClasspathEntry;
@@ -26,6 +28,8 @@ import org.eclipse.jdt.launching.LibraryLocation;
 
 public class BuildPathSupport {
 	public static final String WEB_JAVADOC_LOCATION = "http://docs.oracle.com/javafx/2/api/";
+	
+	private static final Logger LOGGER = LoggerCreator.createLogger(BuildPathSupport.class);
 		
 	public static IClasspathEntry getJavaFXLibraryEntry(IJavaProject project) {
 		IPath[] paths = getFxJarPath(project);
@@ -93,7 +97,7 @@ public class BuildPathSupport {
 		};
 		
 		jarLocationPath = checkPaths[0];
-		
+				
 		if( ! jarLocationPath.toFile().exists() ) {
 			for( IPath p : checkPaths ) {
 				if( p.toFile().exists() ) {
@@ -104,6 +108,13 @@ public class BuildPathSupport {
 		}
 		
 		if( ! jarLocationPath.toFile().exists() ) {
+			LOGGER.error("Unable to detect JavaFX jar for JRE " + i.getName());
+			LOGGER.error("	JRE: " + installDir.getAbsolutePath());
+			LOGGER.error("	Checked paths:" );
+			for( IPath p : checkPaths ) {
+				LOGGER.error("		" + p.toFile().getAbsolutePath());
+			}
+			
 			return null;
 		}
 		
