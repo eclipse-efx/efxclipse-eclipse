@@ -35,5 +35,8 @@ public interface ICssExtManager {
 	public abstract void addCssExtProposalContributer(CssExtProposalContributor c);
 	public abstract void removeCssExtProposalContributer(CssExtProposalContributor c);
 	
+	public void addCssExtensionModelProvider(ICSSExtModelProvider p);
+	public void removeCssExtensionModelProvider(ICSSExtModelProvider p);
+	
 	public List<Proposal> getContributedProposalsForRule(IFile f, String fqRuleName);
 }

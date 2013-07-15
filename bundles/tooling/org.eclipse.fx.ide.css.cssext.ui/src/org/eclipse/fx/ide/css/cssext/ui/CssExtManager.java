@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.fx.core.log.Log;
 import org.eclipse.fx.core.log.Logger;
+import org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider;
 import org.eclipse.fx.ide.css.cssext.ICssExtManager;
 import org.eclipse.fx.ide.css.cssext.proposal.CssExtProposalContributor;
 import org.eclipse.fx.ide.css.cssext.ui.SearchHelper.ElementDefinitionFilter;
@@ -54,56 +55,54 @@ public class CssExtManager implements ICssExtManager {
 	private @Log("cssext.manager") Logger logger;
 	
 	private List<CssExtProposalContributor> proposalContributors = new ArrayList<>();
+	private List<ICSSExtModelProvider> extensionModelProvider = new ArrayList<ICSSExtModelProvider>();
 	
-	private static void log(String string) {
-		System.err.println("MANAGER: " + string);
-	}
-	private static void logf(String format, Object...args) {
-		System.err.printf("MANAGER: " + format , args);
-		System.err.println();
-	}
+//	private static void log(String string) {
+//		System.err.println("MANAGER: " + string);
+//	}
+//	private static void logf(String format, Object...args) {
+//		System.err.printf("MANAGER: " + format , args);
+//		System.err.println();
+//	}
+//	
+//	private enum FixedExtensions {
+//		JavaFX2(URI.createPlatformPluginURI("/org.eclipse.fx.ide.css.jfx/OSGI-INF/jfx2.cssext", true));
+//		public final URI uri;
+//		private FixedExtensions(URI uri) {
+//			this.uri = uri;
+//		}
+//	}
 	
-	private enum FixedExtensions {
-		JavaFX2(URI.createPlatformPluginURI("/org.eclipse.fx.ide.css.jfx/OSGI-INF/jfx2.cssext", true));
-		public final URI uri;
-		private FixedExtensions(URI uri) {
-			this.uri = uri;
-		}
-	}
-	
-	private Set<CssExtension> model = new HashSet<CssExtension>();
+//	private Set<CssExtension> model = new HashSet<CssExtension>();
 	
 	private boolean loaded = false;
 	
 	static int count = 0;
 	public CssExtManager() {
-		logf("Ext Manager #%d" ,++count);
-		// load javafx2
+//		logger.debugf("Ext Manager #%d" ,++count);
 	}
 	
-	public void registerExtenstion(URI uri) {
-		logf("loading %s", uri);
-		ResourceSet rs = new ResourceSetImpl();
-		Resource resource = rs.getResource(FixedExtensions.JavaFX2.uri, true);
-		CssExtension model = (CssExtension) resource.getContents().get(0);
-		
-		this.model.add(model);
-	}
-	
-	public void load() {
-		if (loaded) return;
-		registerExtenstion(FixedExtensions.JavaFX2.uri);
-		loaded = true;
-	}
+//	public void registerExtenstion(URI uri) {
+//		logf("loading %s", uri);
+//		ResourceSet rs = new ResourceSetImpl();
+//		Resource resource = rs.getResource(FixedExtensions.JavaFX2.uri, true);
+//		CssExtension model = (CssExtension) resource.getContents().get(0);
+//		
+//		this.model.add(model);
+//	}
+//	
+//	public void load() {
+//		if (loaded) return;
+//		registerExtenstion(FixedExtensions.JavaFX2.uri);
+//		loaded = true;
+//	}
 	
 	/* (non-Javadoc)
 	 * @see org.eclipse.fx.ide.css.cssext.ui.ICssExtManager#findPropertyByName(java.lang.String)
 	 */
 	@Override
 	public PropertyDefinition findPropertyByName(IFile f, final String propertyName) {
-		load();
-		
-		List<PropertyDefinition> search = new SearchHelper(model).findPropertiesByFilter(new PropertyDefinitionFilter() {
+		List<PropertyDefinition> search = new SearchHelper(collectModels(f)).findPropertiesByFilter(new PropertyDefinitionFilter() {
 			
 			@Override
 			public boolean returnOnFirstHit() {
@@ -154,7 +153,7 @@ public class CssExtManager implements ICssExtManager {
 				
 				Queue<ElementDefinition> superElements = new LinkedList<>();
 				
-				superElements.addAll(new SearchHelper(model).findObjects(new SearchFilter<ElementDefinition>() {
+				superElements.addAll(new SearchHelper(collectModels(f)).findObjects(new SearchFilter<ElementDefinition>() {
 					@Override
 					public Class<ElementDefinition> getSearchClass() {
 						return ElementDefinition.class;
@@ -201,8 +200,7 @@ public class CssExtManager implements ICssExtManager {
 	
 	@Override
 	public List<PropertyDefinition> findAllProperties(IFile f) {
-		load();
-		List<PropertyDefinition> defs = new SearchHelper(model).findPropertiesByFilter(new PropertyDefinitionFilter() {
+		List<PropertyDefinition> defs = new SearchHelper(collectModels(f)).findPropertiesByFilter(new PropertyDefinitionFilter() {
 			
 			@Override
 			public boolean returnOnFirstHit() {
@@ -219,9 +217,7 @@ public class CssExtManager implements ICssExtManager {
 	
 	@Override
 	public ElementDefinition findElementByName(IFile f, final String elName) {
-		load();
-		
-		List<ElementDefinition> search = new SearchHelper(model).findObjects(new SearchFilter<ElementDefinition>() {
+		List<ElementDefinition> search = new SearchHelper(collectModels(f)).findObjects(new SearchFilter<ElementDefinition>() {
 			
 			@Override
 			public Class<ElementDefinition> getSearchClass() {
@@ -244,9 +240,7 @@ public class CssExtManager implements ICssExtManager {
 	
 	@Override
 	public ElementDefinition findElementByStyleClass(IFile f, final String styleClass) {
-		load();
-		
-		List<ElementDefinition> r = new SearchHelper(model).findObjects(new SearchFilter<ElementDefinition>() {
+		List<ElementDefinition> r = new SearchHelper(collectModels(f)).findObjects(new SearchFilter<ElementDefinition>() {
 			@Override
 			public Class<ElementDefinition> getSearchClass() {
 				return ElementDefinition.class;
@@ -329,5 +323,23 @@ public class CssExtManager implements ICssExtManager {
 		}
 		
 		return result;
+	}
+	
+	@Override
+	public void addCssExtensionModelProvider(ICSSExtModelProvider p) {
+		extensionModelProvider.add(p);
+	}
+	
+	@Override
+	public void removeCssExtensionModelProvider(ICSSExtModelProvider p) {
+		extensionModelProvider.remove(p);
+	}
+	
+	private Set<CssExtension> collectModels(IFile file) {
+		Set<CssExtension> rv = new HashSet<>();
+		for( ICSSExtModelProvider p : extensionModelProvider ) {
+			rv.addAll(p.getModels(file));
+		}
+		return rv;
 	}
 }

@@ -1697,7 +1697,7 @@ package javafx {
  			 * common user interactions in a manner which is consistent and predictable
  			 * for the user.
 			 */
-			Control extends Parent {
+			Control extends layout.Region {
 				/**
 				 * The class name of the Control's Skin.
 				 */

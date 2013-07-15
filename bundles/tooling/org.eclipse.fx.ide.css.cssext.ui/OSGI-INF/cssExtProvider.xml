@@ -5,4 +5,5 @@
       <provide interface="org.eclipse.fx.ide.css.extapi.CssExt"/>
    </service>
    <reference bind="bindCssExtProposalContributor" cardinality="0..n" interface="org.eclipse.fx.ide.css.cssext.proposal.CssExtProposalContributor" name="CssExtProposalContributor" policy="dynamic" unbind="unbindCssExtProposalContributor"/>
+   <reference bind="bindCssExtensionModelProvider" cardinality="0..n" interface="org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider" name="ICSSExtModelProvider" policy="dynamic" unbind="unbindCssExtensionModelProvider"/>
 </scr:component>

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider;
 import org.eclipse.fx.ide.css.cssext.ICssExtManager;
 import org.eclipse.fx.ide.css.cssext.parser.CssExtParser;
 import org.eclipse.fx.ide.css.cssext.proposal.CssExtProposalContributor;
@@ -124,5 +125,12 @@ public class DefaultCssExtProvider implements CssExt {
 	public void unbindCssExtProposalContributor(CssExtProposalContributor c) {
 		cssExtManager.removeCssExtProposalContributer(c);
 	}
-
+	
+	public void bindCssExtensionModelProvider(ICSSExtModelProvider p) {
+		cssExtManager.addCssExtensionModelProvider(p);
+	}
+	
+	public void unbindCssExtensionModelProvider(ICSSExtModelProvider p) {
+		cssExtManager.removeCssExtensionModelProvider(p);
+	}
 }
