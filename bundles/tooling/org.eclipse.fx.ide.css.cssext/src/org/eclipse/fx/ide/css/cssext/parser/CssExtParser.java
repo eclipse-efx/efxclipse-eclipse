@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.css.cssext.ICssExtManager;
@@ -34,7 +35,6 @@ import org.eclipse.fx.ide.css.cssext.parser.result.ResultNode;
 import org.eclipse.fx.ide.css.cssext.parser.result.State;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
-
 import org.eclipse.fx.core.log.Log;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.css.cssDsl.ColorTok;
@@ -66,29 +66,29 @@ public class CssExtParser {
 		NO_CONSUME;
 	}
 	
-	private ResultNode parse(ParserInputCursor input, CSSRule rule, ConsumeWS consumeWS) {
+	private ResultNode parse(IFile f, ParserInputCursor input, CSSRule rule, ConsumeWS consumeWS) {
 		Assert.isNotNull(rule, "rule must not be null");
 		Assert.isNotNull(input, "input must not be null");
 		ResultNode result = null;
 		
 		switch(rule.eClass().getClassifierID()) {
-		case CssExtDslPackage.CSS_RULE_BRACKET: result = parseBracket(input, (CSSRuleBracket)rule, consumeWS); 
+		case CssExtDslPackage.CSS_RULE_BRACKET: result = parseBracket(f, input, (CSSRuleBracket)rule, consumeWS); 
 			break;
-		case CssExtDslPackage.CSS_RULE_REF: result = parseRef(input, (CSSRuleRef)rule, consumeWS); 
+		case CssExtDslPackage.CSS_RULE_REF: result = parseRef(f, input, (CSSRuleRef)rule, consumeWS); 
 			break;
-		case CssExtDslPackage.CSS_RULE_OR: result = parseOr(input, (CSSRuleOr) rule, consumeWS); 
+		case CssExtDslPackage.CSS_RULE_OR: result = parseOr(f, input, (CSSRuleOr) rule, consumeWS); 
 			break;
-		case CssExtDslPackage.CSS_RULE_XOR: result = parseConcatOr(input, (CSSRuleXor) rule, consumeWS); 
+		case CssExtDslPackage.CSS_RULE_XOR: result = parseConcatOr(f, input, (CSSRuleXor) rule, consumeWS); 
 			break;
-		case CssExtDslPackage.CSS_RULE_CONCAT: result = parseConcat(input, (CSSRuleConcat) rule, consumeWS); 
+		case CssExtDslPackage.CSS_RULE_CONCAT: result = parseConcat(f, input, (CSSRuleConcat) rule, consumeWS); 
 			break;
-		case CssExtDslPackage.CSS_RULE_CONCAT_WITHOUT_SPACE: result = parseConcatWithoutSpace(input, (CSSRuleConcatWithoutSpace) rule, consumeWS); 
+		case CssExtDslPackage.CSS_RULE_CONCAT_WITHOUT_SPACE: result = parseConcatWithoutSpace(f, input, (CSSRuleConcatWithoutSpace) rule, consumeWS); 
 			break;
 		case CssExtDslPackage.CSS_RULE_LITERAL: result = parseLiteral(input, (CSSRuleLiteral) rule, consumeWS); 
 			break;
 		case CssExtDslPackage.CSS_RULE_SYMBOL: result = parseSymbol(input, (CSSRuleSymbol) rule, consumeWS);
 			break;
-		case CssExtDslPackage.CSS_RULE_POSTFIX: result = parsePostfix(input, (CSSRulePostfix) rule, consumeWS);
+		case CssExtDslPackage.CSS_RULE_POSTFIX: result = parsePostfix(f, input, (CSSRulePostfix) rule, consumeWS);
 			break;
 		case CssExtDslPackage.CSS_RULE_REGEX: result = parseRegex(input, (CSSRuleRegex)rule, consumeWS);
 			break;
@@ -108,13 +108,13 @@ public class CssExtParser {
 		return result;
 	}
 	
-	private ResultNode parseOr(ParserInputCursor input, CSSRuleOr or, ConsumeWS consumeWS) {
+	private ResultNode parseOr(IFile f, ParserInputCursor input, CSSRuleOr or, ConsumeWS consumeWS) {
 		ResultNode orResult = new ResultNode(NodeType.OR);
 		orResult.remainingInput = input.copy();
 		orResult.status = State.FORWARD;
 		
 		for (CSSRule rule : or.getOrs()) {
-			ResultNode result = parse(input.copy(), rule, consumeWS);
+			ResultNode result = parse(f,input.copy(), rule, consumeWS);
 			orResult.next.add(result);
 		}
 		
@@ -122,7 +122,7 @@ public class CssExtParser {
 	}
 	
 	// Concat
-	private ResultNode parseConcat(ParserInputCursor l, CSSRuleConcat r, ConsumeWS consumeWS) {
+	private ResultNode parseConcat(IFile f, ParserInputCursor l, CSSRuleConcat r, ConsumeWS consumeWS) {
 		ResultNode concatResult = new ResultNode(NodeType.CONCAT);
 		concatResult.remainingInput = l.copy();
 		concatResult.status = State.FORWARD;
@@ -133,7 +133,7 @@ public class CssExtParser {
 			final boolean isFirstRule = r.getConc().indexOf(rule) == 0;
 			for (ResultNode last : concatResult.findLast()) {
 				if (last.isValid()) {
-					last.next.add(parse(last.remainingInput, rule, isFirstRule?consumeWS:ConsumeWS.MUST_CONSUME));
+					last.next.add(parse(f, last.remainingInput, rule, isFirstRule?consumeWS:ConsumeWS.MUST_CONSUME));
 					
 				}
 			}
@@ -145,7 +145,7 @@ public class CssExtParser {
 	}
 	
 	// Concat without space
-	private ResultNode parseConcatWithoutSpace(ParserInputCursor l, CSSRuleConcatWithoutSpace r, ConsumeWS consumeWS) {
+	private ResultNode parseConcatWithoutSpace(IFile f, ParserInputCursor l, CSSRuleConcatWithoutSpace r, ConsumeWS consumeWS) {
 		ResultNode concatResult = new ResultNode(NodeType.CONCAT_WITHOUT_SPACE);
 		concatResult.remainingInput = l.copy();
 		concatResult.status = State.FORWARD;
@@ -156,11 +156,11 @@ public class CssExtParser {
 			final boolean isFirstRule = r.getConc().indexOf(rule) == 0;
 			for (ResultNode last : concatResult.findLast()) {
 				if (last.isValid()) {
-					last.next.add(parse(last.remainingInput, rule, isFirstRule?consumeWS:ConsumeWS.NO_CONSUME));
+					last.next.add(parse(f,last.remainingInput, rule, isFirstRule?consumeWS:ConsumeWS.NO_CONSUME));
 				}
 				else if (!isFirstRule && last.status == State.PROPOSE) {
 //					// if the last was a proposal we go on with empty input to get multiple proposals in sequence
-					ResultNode node = parse(ParserInputCursor.emptyParserInputCursor(), rule, ConsumeWS.NO_CONSUME);
+					ResultNode node = parse(f,ParserInputCursor.emptyParserInputCursor(), rule, ConsumeWS.NO_CONSUME);
 					node.findByState(State.PROPOSE);
 					for (ResultNode n : node.findLast()) {
 						n.proposal = wrapMultiProposal(last.proposal, n.proposal);
@@ -174,8 +174,8 @@ public class CssExtParser {
 		return concatResult;
 	}
 	
-	private ResultNode parseBracket(ParserInputCursor in, CSSRuleBracket rule, ConsumeWS consumeWS) {
-		return parse(in, rule.getInner(), consumeWS);
+	private ResultNode parseBracket(IFile f, ParserInputCursor in, CSSRuleBracket rule, ConsumeWS consumeWS) {
+		return parse(f, in, rule.getInner(), consumeWS);
 		
 //		ResultNode result = new ResultNode();
 //		result.nodeSymbol = "[]";
@@ -187,36 +187,36 @@ public class CssExtParser {
 //		return result;
 	}
 	
-	private ResultNode parsePostfix(ParserInputCursor in, CSSRulePostfix r, ConsumeWS consumeWS) {
+	private ResultNode parsePostfix(IFile f, ParserInputCursor in, CSSRulePostfix r, ConsumeWS consumeWS) {
 		ResultNode result = null;
 		if( r.getCardinality() != null && ! r.getCardinality().isEmpty() ) {
 			switch (r.getCardinality().charAt(0)) {
 			case '?':
-				result = parseOptional(in, r.getRule(), consumeWS);
+				result = parseOptional(f, in, r.getRule(), consumeWS);
 				break;
 			case '*':
-				result = parseStar(in, r.getRule(), consumeWS);
+				result = parseStar(f, in, r.getRule(), consumeWS);
 				break;
 			case '+':
-				result = parsePlus(in, r.getRule(), consumeWS);
+				result = parsePlus(f, in, r.getRule(), consumeWS);
 				break;
 			}	
 		}
 		return result;
 	}
 	
-	private ResultNode parseOptional(ParserInputCursor in, CSSRule rule, ConsumeWS consumeWS) {
+	private ResultNode parseOptional(IFile f, ParserInputCursor in, CSSRule rule, ConsumeWS consumeWS) {
 		ResultNode result = new ResultNode(NodeType.OPTIONAL);
 		result.remainingInput = in.copy();
 		result.status = State.FORWARD;
 		
 		result.next.add(ResultNode.createSkipNode(result));
-		result.next.add(parse(in.copy(), rule, consumeWS));
+		result.next.add(parse(f, in.copy(), rule, consumeWS));
 		
 		return result;
 	}
 	
-	private ResultNode parseStar(ParserInputCursor in, CSSRule rule, ConsumeWS consumeWS) {
+	private ResultNode parseStar(IFile f, ParserInputCursor in, CSSRule rule, ConsumeWS consumeWS) {
 		ResultNode result = new ResultNode(NodeType.STAR);
 		result.status = State.FORWARD;
 		result.remainingInput = in.copy();
@@ -229,7 +229,7 @@ public class CssExtParser {
 		while (!last.isEmpty()) {
 			ResultNode cur = last.poll();
 			if (cur.isValid()) {
-				ResultNode n = parse(cur.remainingInput.copy(), rule, consumeWS);
+				ResultNode n = parse(f, cur.remainingInput.copy(), rule, consumeWS);
 				
 				last.addAll(n.findLast());
 				
@@ -268,7 +268,7 @@ public class CssExtParser {
 	}
 	
 	
-	private ResultNode parsePlus(ParserInputCursor in, CSSRule rule, ConsumeWS consumeWS) {
+	private ResultNode parsePlus(IFile f, ParserInputCursor in, CSSRule rule, ConsumeWS consumeWS) {
 		ResultNode result = new ResultNode(NodeType.PLUS);
 		result.status = State.FORWARD;
 		result.remainingInput = in.copy();
@@ -281,7 +281,7 @@ public class CssExtParser {
 			ResultNode cur = last.poll();
 			if (cur.isValid()) {
 				
-				ResultNode n = parse(cur.remainingInput.copy(), rule, consumeWS);
+				ResultNode n = parse(f, cur.remainingInput.copy(), rule, consumeWS);
 				cur.next.add(n);
 				
 				if (iteration >= 1) {
@@ -369,8 +369,8 @@ public class CssExtParser {
 		return result;
 	}
 	
-	private ResultNode parseRef(ParserInputCursor l, CSSRuleRef r, ConsumeWS consumeWS) {
-		CSSRule rule =  manager.resolveReference(r);
+	private ResultNode parseRef(IFile f, ParserInputCursor l, CSSRuleRef r, ConsumeWS consumeWS) {
+		CSSRule rule =  manager.resolveReference(f,r);
 		if (rule == null) {
 			logger.debug("resolving rule ref " + r.getRef().getName() + " returned null (maybe a function?) !!!!!");
 			ResultNode inv = new ResultNode(NodeType.REF);
@@ -378,13 +378,13 @@ public class CssExtParser {
 			return inv;
 		}
 		
-		ResultNode rv = parse(l, rule, consumeWS);
+		ResultNode rv = parse(f, l, rule, consumeWS);
 		
 		Definition ref = r.getRef();
 		QualifiedName fqn = nameProvider.getFullyQualifiedName(ref);
 		
 		if (l.isConsumedOrOnlyWSLeft()) {
-			List<Proposal> contributedProposalsForRule = manager.getContributedProposalsForRule(fqn.toString());
+			List<Proposal> contributedProposalsForRule = manager.getContributedProposalsForRule(f,fqn.toString());
 			for (Proposal c : contributedProposalsForRule) {
 				ResultNode e = new ResultNode(NodeType.REF);
 				e.status = State.PROPOSE;
@@ -398,7 +398,7 @@ public class CssExtParser {
 	
 	// Xor
 	// TODO check rule
-	private ResultNode parseConcatOr(ParserInputCursor l, CSSRuleXor r, ConsumeWS consumeWS) {
+	private ResultNode parseConcatOr(IFile f, ParserInputCursor l, CSSRuleXor r, ConsumeWS consumeWS) {
 		
 //		ResultNode result = new ResultNode(NodeType.CONCAT_OR);
 //		result.status = State.INVALID;
@@ -427,7 +427,7 @@ public class CssExtParser {
 			//try on all
 			for (ResultNode last : concatOrResult.findLast()) {
 				if (last.isValid()) {
-					ResultNode path = parse(last.remainingInput, rule, consumeWS);
+					ResultNode path = parse(f, last.remainingInput, rule, consumeWS);
 					for (ResultNode pathEnd : path.findLast()) {
 						if (pathEnd.isValid()) {
 							match = true;
@@ -932,7 +932,7 @@ public class CssExtParser {
 		return false;
 	}
 	
-	public List<Proposal> findProposals(String element, String propertyName, List<CssTok> prefixToks, String prefix) {
+	public List<Proposal> findProposals(IFile f, String element, String propertyName, List<CssTok> prefixToks, String prefix) {
 		
 		// TODO for now we skip the prefixstring queries
 		//if (prefix.length() > 0) return Collections.emptyList();
@@ -954,7 +954,7 @@ public class CssExtParser {
 
 		List<Proposal> result = new ArrayList<Proposal>();
 
-		PropertyDefinition def = manager.findPropertyByName(propertyName);
+		PropertyDefinition def = manager.findPropertyByName(f,propertyName);
 		if (def != null) {
 			final ParserInput input = new ParserInput(prefixToks);
 			
@@ -962,7 +962,7 @@ public class CssExtParser {
 			
 			logger.debugf("starting with input: %s", cursor);
 			final long parseBegin = System.nanoTime();
-			final ResultNode res = parse(cursor, def.getRule(), ConsumeWS.MAY_CONSUME);
+			final ResultNode res = parse(f, cursor, def.getRule(), ConsumeWS.MAY_CONSUME);
 			final long parseDuration = System.nanoTime() - parseBegin;
 			logger.debugf("parse needed %2.3fms returnd with %s", parseDuration*10e-6, res);
 			
@@ -1023,7 +1023,7 @@ public class CssExtParser {
 		return proposals;
 	}
 	
-	public List<ValidationResult> validateProperty(String element, String propertyName, List<CssTok> tokens) {
+	public List<ValidationResult> validateProperty(IFile f, String element, String propertyName, List<CssTok> tokens) {
 		
 		// debug output
 		logger.debugf("validateProperty( %s, %s )", element, propertyName);
@@ -1038,7 +1038,7 @@ public class CssExtParser {
 			}
 		}
 		
-		PropertyDefinition def = manager.findPropertyByName(propertyName);
+		PropertyDefinition def = manager.findPropertyByName(f, propertyName);
 		if (def != null) {
 			
 //			ParserInput input = new ParserInput(tokens);

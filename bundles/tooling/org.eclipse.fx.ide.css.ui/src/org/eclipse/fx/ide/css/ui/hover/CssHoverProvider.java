@@ -17,16 +17,16 @@ import java.net.URL;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.internal.text.html.HTMLPrinter;
-import org.eclipse.jface.resource.JFaceResources;
-import org.eclipse.swt.graphics.FontData;
-import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider;
-
 import org.eclipse.fx.ide.css.cssDsl.ColorTok;
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
 import org.eclipse.fx.ide.css.cssDsl.FuncTok;
 import org.eclipse.fx.ide.css.cssDsl.NumberTok;
 import org.eclipse.fx.ide.css.extapi.CssExt;
+import org.eclipse.fx.ide.css.util.Utils;
+import org.eclipse.jface.internal.text.html.HTMLPrinter;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.swt.graphics.FontData;
+import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
@@ -161,7 +161,7 @@ public class CssHoverProvider extends DefaultEObjectHoverProvider {
 	 */
 	@Override
 	protected String getFirstLine(EObject o) {
-		String firstLine =  ext.getDocumentationHeader(o);
+		String firstLine =  ext.getDocumentationHeader(Utils.getFile(o.eResource()),o);
 		
 		if (firstLine==null) {
 			firstLine = super.getFirstLine(o);
@@ -170,7 +170,7 @@ public class CssHoverProvider extends DefaultEObjectHoverProvider {
 	}
 	
 	protected boolean hasHover(EObject o) {
-		String firstLine = ext.getDocumentationHeader(o);
+		String firstLine = ext.getDocumentationHeader(Utils.getFile(o.eResource()),o);
 		return firstLine != null;
 	}
 }

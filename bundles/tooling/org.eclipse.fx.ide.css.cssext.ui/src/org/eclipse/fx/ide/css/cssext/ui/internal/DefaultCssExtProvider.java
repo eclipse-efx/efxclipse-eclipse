@@ -3,13 +3,13 @@ package org.eclipse.fx.ide.css.cssext.ui.internal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.css.cssext.ICssExtManager;
 import org.eclipse.fx.ide.css.cssext.parser.CssExtParser;
 import org.eclipse.fx.ide.css.cssext.proposal.CssExtProposalContributor;
 import org.eclipse.fx.ide.css.cssext.ui.doc.CssExtDocParser;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
-
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
 import org.eclipse.fx.ide.css.cssDsl.selector;
@@ -33,33 +33,33 @@ public class DefaultCssExtProvider implements CssExt {
 	}
 
 	@Override
-	public String getDocumentationHeader(EObject obj) {
-		return docParser.getDocHead(obj);
+	public String getDocumentationHeader(IFile f, EObject obj) {
+		return docParser.getDocHead(f,obj);
 	}
 
 	@Override
-	public String getDocumentation(EObject obj) {
-		return docParser.getDocumentation(obj);
+	public String getDocumentation(IFile f, EObject obj) {
+		return docParser.getDocumentation(f,obj);
 	}
 
 	@Override
-	public List<Proposal> getPropertyProposalsForSelector(
+	public List<Proposal> getPropertyProposalsForSelector(IFile f, 
 			List<selector> selectors) {
 
 		List<Proposal> result = new ArrayList<>();
 		
 		List<PropertyDefinition> defs = new ArrayList<>();
 		if (selectors == null || selectors.isEmpty()) {
-			defs.addAll(cssExtManager.findAllProperties());
+			defs.addAll(cssExtManager.findAllProperties(f));
 		}
 		else {
 			for (selector selector: selectors) {
-				defs.addAll(cssExtManager.findPropertiesBySelector(selector));
+				defs.addAll(cssExtManager.findPropertiesBySelector(f,selector));
 			}
 		}
 		
 		if (defs.isEmpty()) {
-			defs.addAll(cssExtManager.findAllProperties());
+			defs.addAll(cssExtManager.findAllProperties(f));
 		}
 		
 		for (PropertyDefinition def : defs) {
@@ -108,12 +108,12 @@ public class DefaultCssExtProvider implements CssExt {
 	}
 	
 	@Override
-	public List<Proposal> getValueProposalsForProperty(List<selector> selector,
+	public List<Proposal> getValueProposalsForProperty(IFile f, List<selector> selector,
 			css_property property, List<CssTok> prefixTok, String prefixString) {
 		
 		// TODO add element
 		
-		return parser.findProposals(null, property.getName(), prefixTok, prefixString);
+		return parser.findProposals(f, null, property.getName(), prefixTok, prefixString);
 		
 	}
 	

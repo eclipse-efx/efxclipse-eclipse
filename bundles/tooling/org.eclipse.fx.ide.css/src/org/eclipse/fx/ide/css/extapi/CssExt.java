@@ -12,6 +12,7 @@ package org.eclipse.fx.ide.css.extapi;
 
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
@@ -19,7 +20,6 @@ import org.eclipse.fx.ide.css.cssDsl.selector;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
-
 
 import com.google.inject.Provider;
 
@@ -29,11 +29,11 @@ import com.google.inject.Provider;
  */
 public interface CssExt {
 
-	public List<Proposal> getPropertyProposalsForSelector(List<selector> selector);
-	public List<Proposal> getValueProposalsForProperty(List<selector> selector, css_property property, List<CssTok> prefixTok, String prefixString);
+	public List<Proposal> getPropertyProposalsForSelector(IFile f, List<selector> selector);
+	public List<Proposal> getValueProposalsForProperty(IFile f, List<selector> selector, css_property property, List<CssTok> prefixTok, String prefixString);
 	
-	public String getDocumentationHeader(EObject obj);
-	public String getDocumentation(EObject obj);
+	public String getDocumentationHeader(IFile f, EObject obj);
+	public String getDocumentation(IFile f, EObject obj);
 	
 	
 	public static class OsgiCssExtServiceProvider implements Provider<CssExt> {

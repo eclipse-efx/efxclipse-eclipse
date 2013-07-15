@@ -21,8 +21,8 @@ import org.eclipse.fx.ide.css.cssDsl.ruleset;
 import org.eclipse.fx.ide.css.cssDsl.selector;
 import org.eclipse.fx.ide.css.extapi.CssExt;
 import org.eclipse.fx.ide.css.extapi.Proposal;
+import org.eclipse.fx.ide.css.util.Utils;
 import org.eclipse.xtext.validation.Check;
-
 
 import com.google.inject.Inject;
  
@@ -51,7 +51,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 		
 		URI uri = dec.eResource().getURI();
 		
-		List<Proposal> properties = ext.getPropertyProposalsForSelector(null);
+		List<Proposal> properties = ext.getPropertyProposalsForSelector(Utils.getFile(dec.eResource()),null);
 				//extension.getAllProperties(uri);
 		
 		boolean known = false;
@@ -74,7 +74,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 //				selectorProps.addAll(extension.getPropertiesForSelector(uri, selector));
 //			}
 			
-			List<Proposal> selectorProps = ext.getPropertyProposalsForSelector(selectors);
+			List<Proposal> selectorProps = ext.getPropertyProposalsForSelector(Utils.getFile(dec.eResource()),selectors);
 			
 			if (selectorProps.size() > 0) {
 				boolean supported = false;

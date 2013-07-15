@@ -15,6 +15,7 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
@@ -24,7 +25,6 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.ui.IImageHelper;
 import org.eclipse.xtext.ui.editor.hover.html.XtextElementLinks;
 import org.eclipse.xtext.ui.label.DeclarativeLabelProvider;
-
 import org.eclipse.fx.ide.css.cssDsl.ClassSelector;
 import org.eclipse.fx.ide.css.cssDsl.ColorTok;
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
@@ -145,11 +145,11 @@ public class CssExtDocParser {
 		return "no documentation found";
 	}
 	
-	protected String getDocForProperty(String propertyName) {
-		return getDocForProperty(findPropertyByName(propertyName));
+	protected String getDocForProperty(IFile f, String propertyName) {
+		return getDocForProperty(findPropertyByName(f,propertyName));
 	}
 
-	public String getDocumentation(EObject o) {
+	public String getDocumentation(IFile f, EObject o) {
 		// css ext lang elements
 		if (o instanceof ElementDefinition) {
 			return getDocForElement((ElementDefinition)o);
@@ -169,16 +169,16 @@ public class CssExtDocParser {
 		
 		// css lang elements
 		if (o instanceof ClassSelector) {
-			return getDocForStyleClass(((ClassSelector)o).getName());
+			return getDocForStyleClass(f,((ClassSelector)o).getName());
 		}
 		if (o instanceof IdSelector) {
 			return null;
 		}
 		if (o instanceof ElementSelector) {
-			return getDocForElement(((ElementSelector) o).getName());
+			return getDocForElement(f,((ElementSelector) o).getName());
 		}
 		if (o instanceof css_property) {
-			return getDocForProperty(((css_property) o).getName());
+			return getDocForProperty(f,((css_property) o).getName());
 		}
 		
 		return "no documentation found";
@@ -212,18 +212,18 @@ public class CssExtDocParser {
 		return formatRule(rule) + javadoc;
 	}
 	
-	protected String getDocForStyleClass(String styleClass) {
+	protected String getDocForStyleClass(IFile f, String styleClass) {
 		Assert.isNotNull(styleClass);
-		ElementDefinition element = findElementByStyleClass(styleClass);
+		ElementDefinition element = findElementByStyleClass(f, styleClass);
 		if (element != null) {
 			return getDocForElement(element);
 		}
 		return null;
 	} 
 
-	protected String getDocForElement(String elName) {
+	protected String getDocForElement(IFile f, String elName) {
 		Assert.isNotNull(elName);
-		ElementDefinition element = findElementByName(elName);
+		ElementDefinition element = findElementByName(f,elName);
 		if (element != null) {
 			return getDocForElement(element);
 		}
@@ -247,9 +247,9 @@ public class CssExtDocParser {
 		return "not documented!";
 	}
 
-	protected String getDocHeadForProperty(String propertyName) {
+	protected String getDocHeadForProperty(IFile f, String propertyName) {
 		Assert.isNotNull(propertyName);
-		PropertyDefinition property = findPropertyByName(propertyName);
+		PropertyDefinition property = findPropertyByName(f, propertyName);
 		if (property != null) {
 			return getDocHeadForProperty(property);
 		}
@@ -270,8 +270,8 @@ public class CssExtDocParser {
 		return out.toString();
 	}
 
-	protected String getDocHeadForElement(String elName) {
-		ElementDefinition element = findElementByName(elName);
+	protected String getDocHeadForElement(IFile f, String elName) {
+		ElementDefinition element = findElementByName(f, elName);
 		if (element != null) {
 			// we only show docs for Elements which have no styleclass
 			if (element.getStyleclass() == null) {
@@ -281,8 +281,8 @@ public class CssExtDocParser {
 		return null;
 	}
 	
-	protected String getDocHeadForStyleClass(String styleClass) {
-		ElementDefinition element = findElementByStyleClass(styleClass);
+	protected String getDocHeadForStyleClass(IFile f, String styleClass) {
+		ElementDefinition element = findElementByStyleClass(f, styleClass);
 		if (element != null) {
 			return getDocHeadForElement(element);
 		}
@@ -362,19 +362,19 @@ public class CssExtDocParser {
 	}
 	
 	
-	private PropertyDefinition findPropertyByName(String propertyName) {
-		return cssExtManager.findPropertyByName(propertyName);
+	private PropertyDefinition findPropertyByName(IFile f, String propertyName) {
+		return cssExtManager.findPropertyByName(f, propertyName);
 	}
 	
-	private ElementDefinition findElementByName(String elName) {
-		return cssExtManager.findElementByName(elName);
+	private ElementDefinition findElementByName(IFile f, String elName) {
+		return cssExtManager.findElementByName(f, elName);
 	}
 	
-	private ElementDefinition findElementByStyleClass(String styleClass) {
-		return cssExtManager.findElementByStyleClass(styleClass);
+	private ElementDefinition findElementByStyleClass(IFile f, String styleClass) {
+		return cssExtManager.findElementByStyleClass(f, styleClass);
 	}
 
-	public String getDocHead(EObject o) {
+	public String getDocHead(IFile f, EObject o) {
 		
 		// css ext lang elements
 		if (o instanceof CSSRuleDefinition) {
@@ -392,16 +392,16 @@ public class CssExtDocParser {
 		
 		// css lang elements
 		if (o instanceof ClassSelector) {
-			ElementDefinition element = findElementByStyleClass(((ClassSelector) o).getName());
+			ElementDefinition element = findElementByStyleClass(f,((ClassSelector) o).getName());
 			if (element != null) {
 				return getDocHeadForElement(element);
 			}
 		}
 		if (o instanceof ElementSelector) {
-			return getDocHeadForElement(((ElementSelector) o).getName());
+			return getDocHeadForElement(f,((ElementSelector) o).getName());
 		}
 		if (o instanceof css_property) {
-			return getDocHeadForProperty(((css_property) o).getName());
+			return getDocHeadForProperty(f,((css_property) o).getName());
 		}
 		if (o instanceof simple_selector) {
 			simple_selector s = ((simple_selector)o);
@@ -409,7 +409,7 @@ public class CssExtDocParser {
 			if (s.getElement() instanceof ElementSelector) {
 				elementName = ((ElementSelector)s.getElement()).getName();
 			}
-			return getDocHeadForElement(elementName);
+			return getDocHeadForElement(f,elementName);
 		}
 		// TODO add some color support here
 		// we may need some kind of type info before
