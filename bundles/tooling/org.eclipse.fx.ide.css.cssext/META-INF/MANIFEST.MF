@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.fx.core.guice;bundle-version="0.8.1",
  org.eclipse.fx.ide.css;bundle-version="0.8.1",
  org.eclipse.osgi;bundle-version="3.7.2",
- org.eclipse.core.resources;bundle-version="3.8.100"
+ org.eclipse.core.resources;bundle-version="3.7.0"
 Import-Package: org.apache.log4j,
  org.eclipse.core.runtime;version="3.4.0",
  org.eclipse.xtext.xbase.lib
