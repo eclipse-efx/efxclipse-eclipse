@@ -39,6 +39,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Builder;
@@ -54,6 +55,7 @@ import org.eclipse.fx.ide.ui.preview.text.XMLConfiguration;
 import org.eclipse.fx.ide.ui.preview.text.XMLPartitionScanner;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
@@ -72,11 +74,13 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPart;
@@ -85,9 +89,52 @@ import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
 
 
+
+
+
+
 import com.google.inject.Inject;
 
 public class LivePreviewPart extends ViewPart {
+	public enum SCREEN_SIZE {
+		DEFAULT("<default>",-1,-1),
+//		IPHONE_DEFAULT("iPhone 320×480",320,480),
+		IPHONE_4_RETINA("iPhone4 640×960 - Retina",640,960),
+		IPHONE_5("iPhone5 640×1136",640,1136),
+		IPAD_DEFAULT("iPad 768×1024",768,1024),
+		IPAD_RETINA("iPad 1536×2048 - Retina",1536,2048),
+		ANDROID_240_320("Android 240x320 - ldpi",240,320),
+		ANDROID_320_480("Android 320x480 mdpi",320,480),
+		ANDROID_480_800("Android 480x800 hdpi",480,800),
+		ANDROID_600_1024("Android 600x1024 mdpi",600,1024),
+		ANDROID_720_1280("Android 720x1280 mdpi",720,1280),
+		ANDROID_800_1280("Android 800x1280 mdpi",800,1280),
+		DESKTOP_1024_768("1024x768",1024,768),
+		DESKTOP_1280_1024("1280x1024",1280,1024);
+		
+		private String name;
+		private int width;
+		private int height;
+		
+		private SCREEN_SIZE(String name, int width, int height) {
+			this.name = name;
+			this.width = width;
+			this.height = height;
+		}
+	}
+	
+	static class ScreenAction extends Action {
+		public ScreenAction(SCREEN_SIZE size) {
+			super(size.name, IAction.AS_RADIO_BUTTON);
+		}
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			super.run();
+		}
+	}
+	
 	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
 	@Inject
 	private LivePreviewSynchronizer synchronizer;
@@ -143,6 +190,8 @@ public class LivePreviewPart extends ViewPart {
 	private ContentData currentData;
 	
 	private Scene currentScene;
+	
+	private SCREEN_SIZE currentSize = SCREEN_SIZE.DEFAULT;
 
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/security-high.png"));
@@ -350,8 +399,32 @@ public class LivePreviewPart extends ViewPart {
 		};
 		refresh.setToolTipText("Force a refresh");
 
+		
+		MenuManager mgr = new MenuManager();
+		for( SCREEN_SIZE s : SCREEN_SIZE.values() ) {
+			mgr.add(new ScreenAction(s));
+		}
+		final Menu m = mgr.createContextMenu(parent);
+		
+		Action screenSize = new Action("ScreenSize",IAction.AS_DROP_DOWN_MENU) {
+			@Override
+			public void runWithEvent(Event event) {
+				if( event.detail == SWT.DROP_DOWN ) {
+					ToolItem i = (ToolItem) event.widget;
+					m.setLocation(i.getParent().toDisplay(event.x, event.y));
+					m.setVisible(true);
+				}
+			}
+		};
+		
+		getViewSite().getActionBars().getToolBarManager().add(screenSize);
 		getViewSite().getActionBars().getToolBarManager().add(refresh);
 		getViewSite().getActionBars().getToolBarManager().add(loadController);
+	}
+	
+	void updateResolution(SCREEN_SIZE size) {
+		currentSize = size;
+		synchronizer.refreshPreview();
 	}
 
 	@Override
@@ -484,8 +557,17 @@ public class LivePreviewPart extends ViewPart {
 					rootPane_new = (Node) root;
 					
 					if( scene == null ) {
-						BorderPane p = new BorderPane();
-						p.setCenter(rootPane_new);
+						Parent p;
+						if( currentSize == SCREEN_SIZE.DEFAULT ) {
+							BorderPane b = new BorderPane();
+							b.setCenter(rootPane_new);
+							p = b;
+						} else {
+							AnchorPane b = new AnchorPane();
+							
+							p = b;
+						}
+						
 						scene = new Scene(p, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
 						if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
 							scene.setCamera(new PerspectiveCamera());
