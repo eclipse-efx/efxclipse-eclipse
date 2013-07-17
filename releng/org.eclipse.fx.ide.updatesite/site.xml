@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.fx.ide.all.kepler.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.all.kepler.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.all.kepler.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.all.kepler.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - install"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.all.prekepler.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.all.prekepler.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.all.prekepler.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.all.prekepler.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - install"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.basic.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.basic.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.basic.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.basic.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.css.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.css.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.css.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.css.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.fxml.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.fxml.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.fxml.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.fxml.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.pde.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.pde.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.pde.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.pde.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.pde.prekepler.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.pde.prekepler.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.pde.prekepler.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.pde.prekepler.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.rrobot.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.rrobot.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.rrobot.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.rrobot.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.fxgraph.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.fxgraph.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.fxgraph.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.fxgraph.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.converter.feature_0.8.1.qualifier.jar" id="org.eclipse.fx.ide.converter.feature" version="0.8.1.qualifier">
+   <feature url="features/org.eclipse.fx.ide.converter.feature_0.9.0.qualifier.jar" id="org.eclipse.fx.ide.converter.feature" version="0.8.1.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
    <category-def name="e(fx)clipse - install" label="e(fx)clipse - install"/>
