@@ -49,6 +49,8 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.fx.ide.ui.preview.bundle.Activator;
+import org.eclipse.fx.ide.ui.preview.skins.BasicPreviewer;
+import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4HorizontalPreview;
 import org.eclipse.fx.ide.ui.preview.text.AnnotationAccess;
 import org.eclipse.fx.ide.ui.preview.text.ColorManager;
 import org.eclipse.fx.ide.ui.preview.text.XMLConfiguration;
@@ -87,6 +89,8 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
+
+
 
 
 
@@ -192,6 +196,15 @@ public class LivePreviewPart extends ViewPart {
 	private Scene currentScene;
 	
 	private SCREEN_SIZE currentSize = SCREEN_SIZE.DEFAULT;
+	
+	private AppleIPhone4HorizontalPreview horizontal_iphone4 = new AppleIPhone4HorizontalPreview(640,960);
+	private AppleIPhone4HorizontalPreview vertical_iphone4 = new AppleIPhone4HorizontalPreview(960,640);
+	
+	private Map<SCREEN_SIZE, BasicPreviewer[]> previewers = new HashMap<>();
+	{
+		previewers.put(SCREEN_SIZE.IPHONE_4_RETINA, new BasicPreviewer[] { horizontal_iphone4, vertical_iphone4 });
+		previewers.put(SCREEN_SIZE.IPHONE_5, new BasicPreviewer[] { horizontal_iphone4, vertical_iphone4 });
+	}
 
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/security-high.png"));
