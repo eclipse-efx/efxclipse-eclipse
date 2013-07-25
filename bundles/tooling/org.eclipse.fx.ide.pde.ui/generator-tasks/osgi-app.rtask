@@ -473,7 +473,7 @@ RobotTask {
 						## modules
 						STRING "modules" default "../${BundleProject_projectName};../${BundleProject_projectName}.feature;../${BundleProject_projectName}.product;../${BundleProject_projectName}.jemmy",
 						## repos
-						STRING "repos" default "efxclipse-repo@http://downloads.efxclipse.org/p2-repos/runtime/releases/latest"
+						STRING "repos" default "efxclipse-repo@http://download.eclipse.org/efxclipse/runtime-nightly/site;efxclipse-addons@http://downloads.efxclipse.org/efxclipse.bestsolution.at/p2-repos/runtime/nightly/site/"
 					},
 				DynamicFile "build.xml" 
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.NativeLaunchGenerator" by "java"
