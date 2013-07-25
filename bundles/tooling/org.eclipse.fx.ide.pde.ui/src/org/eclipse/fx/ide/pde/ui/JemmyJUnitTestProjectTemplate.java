@@ -95,7 +95,7 @@ public class JemmyJUnitTestProjectTemplate extends FXPDETemplateSection {
 
 	public IPluginReference[] getDependencies(String schemaVersion) {
 		IPluginReference[] dep = new IPluginReference[2];
-		dep[0] = new PluginReference("org.eclipse.fx.jemmy", null, 0); //$NON-NLS-1$
+		dep[0] = new PluginReference("at.bestsolution.efxclipse.jemmy", null, 0); //$NON-NLS-1$
 		dep[1] = new PluginReference("org.junit4", null, 0); //$NON-NLS-1$
 		
 		return dep;

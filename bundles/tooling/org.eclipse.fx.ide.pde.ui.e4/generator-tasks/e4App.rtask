@@ -391,7 +391,7 @@ RobotTask {
 				}
 				requiredBundles = {
 					"org.junit",
-					"org.eclipse.fx.jemmy"
+					"at.bestsolution.efxclipse.jemmy"
 				}
 			}
 			build = BuildProperties {
@@ -406,7 +406,7 @@ RobotTask {
 						## Project name
 						STRING "projectName" default "${BundleProject_bundleId}.jemmy",
 						## Launch features
-						STRING "featureList" default "org.eclipse.fx.jemmy.feature,org.eclipse.fx.jemmy.junit.feature,${BundleProject_bundleId}.feature,${BundleProject_bundleId}.jemmy.feature",
+						STRING "featureList" default "at.bestsolution.efxclipse.jemmy.feature,at.bestsolution.efxclipse.jemmy.junit.feature,${BundleProject_bundleId}.feature,${BundleProject_bundleId}.jemmy.feature",
 						## Test Suite class
 						STRING "testSuite" default "${BundleProject_bundleId}.jemmy.TestSuite",
 						## Test Product Id

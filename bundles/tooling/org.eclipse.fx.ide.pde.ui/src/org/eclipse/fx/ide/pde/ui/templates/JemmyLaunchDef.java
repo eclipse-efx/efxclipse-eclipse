@@ -77,7 +77,7 @@ public class JemmyLaunchDef extends BasicLaunchDef {
 		l.add(new PluginLaunchDef("org.eclipse.fx.ui.di"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.ui.dialogs"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.javafx"));
-		l.add(new PluginLaunchDef("org.eclipse.fx.jemmy"));
+		l.add(new PluginLaunchDef("at.bestsolution.efxclipse.jemmy"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.osgi.util"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.osgi","default","false"));
 		l.add(new PluginLaunchDef("org.eclipse.fx.ui.panes"));
