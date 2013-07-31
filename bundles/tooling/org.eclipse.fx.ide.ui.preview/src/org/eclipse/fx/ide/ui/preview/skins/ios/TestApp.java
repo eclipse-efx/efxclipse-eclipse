@@ -11,8 +11,12 @@
 package org.eclipse.fx.ide.ui.preview.skins.ios;
 
 import javafx.application.Application;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.transform.Transform;
 import javafx.stage.Stage;
 
 import org.eclipse.fx.ide.ui.preview.skins.ios.galaxyS3.AndroidPhoneVerticalPreview;
@@ -27,9 +31,9 @@ public class TestApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-//		AppleIPhone4VerticalPreview skin = new AppleIPhone4VerticalPreview(640,960);
+		AppleIPhone4VerticalPreview skin = new AppleIPhone4VerticalPreview(640,960);
 //		AppleIPhone4HorizontalPreview skin = new AppleIPhone4HorizontalPreview(960,640);
-		AndroidPhoneVerticalPreview skin = new AndroidPhoneVerticalPreview(640,960);
+//		AndroidPhoneVerticalPreview skin = new AndroidPhoneVerticalPreview(640,960);
 		
 //		skin.setPrefWidth(700);
 //		skin.setPrefHeight(1000);
@@ -39,7 +43,18 @@ public class TestApp extends Application {
 //		
 //		skin.setMaxWidth(700);
 //		skin.setMaxHeight(1000);
-		BorderPane p = new BorderPane(skin.getSimulatorNode());
+		
+		BorderPane p = new BorderPane();
+		
+		Node n = skin.getSimulatorNode();
+//		Rectangle n = new Rectangle(200, 200, Color.RED);
+//		n.setStroke(Color.BLACK);
+		p.setTop(n);
+		n.getTransforms().addAll(Transform.scale(0.5, 0.5));
+//		n.setScaleX(0.5);
+//		n.setScaleY(0.5);
+		
+		
 		p.setStyle("-fx-background-color: green");
 		
 		Scene s = new Scene(p,1400,1400);

@@ -39,44 +39,48 @@ public class AppleIPhone4VerticalPreview extends BasicPreviewer {
 		this.contentHeight = contentHeight;
 	}
 	
+	private static String getIconUrl(String url) {
+		return AppleIPhone4VerticalPreview.class.getClassLoader().getResource(url).toExternalForm();
+	}
+	
 	private void init() {
 		pane = new BorderPane();
 		{
 			HBox box = new HBox();
 			
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/03.png"));
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/04.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/03.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/04.png")));
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/05.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/05.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/06.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/06.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/07.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/07.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/08.png"));
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/09.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/08.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/09.png")));
 			
 			pane.setTop(box);			
 		}
 		
 		{
 			VBox box = new VBox();
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/11.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/11.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/14.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/14.png")), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
@@ -87,11 +91,11 @@ public class AppleIPhone4VerticalPreview extends BasicPreviewer {
 
 		{
 			VBox box = new VBox();
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/13.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/13.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/16.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/16.png")), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
@@ -102,35 +106,35 @@ public class AppleIPhone4VerticalPreview extends BasicPreviewer {
 		
 		{
 			HBox box = new HBox();
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/17.png"));
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/18.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/17.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/18.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/19.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/19.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/20.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/20.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/21.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/21.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/22.png"));
-			box.getChildren().add(new ImageView("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/23.png"));
-			
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/22.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/vertical/23.png")));
 			
 			pane.setBottom(box);
 		}
 		
 		contentPane = new AnchorPane();
+		contentPane.setStyle("-fx-background-color: white;");
 		this.pane.setCenter(contentPane);
 		setContentSize(contentWidth, contentHeight);
 	}
@@ -145,13 +149,16 @@ public class AppleIPhone4VerticalPreview extends BasicPreviewer {
 			contentPane.setMinSize(width,height);
 			contentPane.setMaxSize(width,height);
 
-			pane.setMinSize(width+117+158, height+2*29);
-			pane.setPrefSize(width+117+158, height+2*29);
-			pane.setMaxSize(width+117+158, height+2*29);			
+			pane.setMinSize(width+2*29, height+117+158);
+			pane.setPrefSize(width+2*29, height+117+158);
+			pane.setMaxSize(width+2*29, height+117+158);
 		}
 	}
 	
 	public void setContent(Node node) {
+		if( contentPane == null ) {
+			init();
+		}
 		AnchorPane.setLeftAnchor(node, 0.0);
 		AnchorPane.setRightAnchor(node, 0.0);
 		AnchorPane.setTopAnchor(node, 0.0);
