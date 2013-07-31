@@ -53,7 +53,7 @@ class JemmyLaunch implements Generator<DynamicFile> {
 			}
 		}
 			
-		launchDef.getTargetPlugins().add(new PluginLaunchDef("org.eclipse.fx.jemmy"));
+		launchDef.getTargetPlugins().add(new PluginLaunchDef("at.bestsolution.efxclipse.jemmy"));
 		launchDef.getTargetPlugins().add(new PluginLaunchDef("org.eclipse.jdt.junit.runtime"));
 		launchDef.getTargetPlugins().add(new PluginLaunchDef("org.eclipse.jdt.junit4.runtime"));
 		launchDef.getTargetPlugins().add(new PluginLaunchDef("org.eclipse.osgi.services"));

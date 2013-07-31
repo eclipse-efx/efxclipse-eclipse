@@ -218,6 +218,7 @@ RobotTask {
 					"javax.inject",
 					"javax.xml",
 					"org.apache.commons.logging",
+					"org.apache.commons.lang",
 					"org.eclipse.core.commands",
 					"org.eclipse.core.contenttype",
 					"org.eclipse.core.databinding",
@@ -391,7 +392,7 @@ RobotTask {
 				}
 				requiredBundles = {
 					"org.junit",
-					"org.eclipse.fx.jemmy"
+					"at.bestsolution.efxclipse.jemmy"
 				}
 			}
 			build = BuildProperties {
@@ -406,7 +407,7 @@ RobotTask {
 						## Project name
 						STRING "projectName" default "${BundleProject_bundleId}.jemmy",
 						## Launch features
-						STRING "featureList" default "org.eclipse.fx.jemmy.feature,org.eclipse.fx.jemmy.junit.feature,${BundleProject_bundleId}.feature,${BundleProject_bundleId}.jemmy.feature",
+						STRING "featureList" default "at.bestsolution.efxclipse.jemmy.feature,at.bestsolution.efxclipse.jemmy.junit.feature,${BundleProject_bundleId}.feature,${BundleProject_bundleId}.jemmy.feature",
 						## Test Suite class
 						STRING "testSuite" default "${BundleProject_bundleId}.jemmy.TestSuite",
 						## Test Product Id
@@ -493,7 +494,7 @@ RobotTask {
 						## modules
 						STRING "modules" default "../${BundleProject_projectName};../${BundleProject_projectName}.feature;../${BundleProject_projectName}.product;../${BundleProject_projectName}.jemmy",
 						## repos
-						STRING "repos" default "efxclipse-repo@http://downloads.efxclipse.org/p2-repos/runtime/releases/latest"
+						STRING "repos" default "efxclipse-repo@http://download.eclipse.org/efxclipse/runtime-nightly/site;efxclipse-addons@http://downloads.efxclipse.org/efxclipse.bestsolution.at/p2-repos/runtime/nightly/site/"
 					},
 				DynamicFile "build.xml" 
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.NativeLaunchGenerator" by "java"

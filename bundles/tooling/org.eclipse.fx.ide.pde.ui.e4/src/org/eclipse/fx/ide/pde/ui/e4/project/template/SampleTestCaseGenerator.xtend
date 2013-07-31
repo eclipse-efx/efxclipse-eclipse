@@ -14,9 +14,8 @@ class SampleTestCaseGenerator implements Generator<File> {
 	
 	def generate(String packageName) '''package «packageName»;
 
-import junit.framework.Assert;
-
 import org.jemmy.fx.SceneDock;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

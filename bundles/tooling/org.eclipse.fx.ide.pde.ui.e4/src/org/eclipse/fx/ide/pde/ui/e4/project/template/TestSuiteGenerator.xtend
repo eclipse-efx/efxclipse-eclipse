@@ -17,7 +17,7 @@ class TestSuiteGenerator implements Generator<File> {
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import org.eclipse.fx.jemmy.OSGiJemmyBootstrapTestCase;
+import at.bestsolution.efxclipse.jemmy.OSGiJemmyBootstrapTestCase;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ SampleTestCase.class })

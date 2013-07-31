@@ -27,4 +27,6 @@ class ReflectionHelper {
 		
 		return p.value;
 	}
+	
+//	def static 
 }
