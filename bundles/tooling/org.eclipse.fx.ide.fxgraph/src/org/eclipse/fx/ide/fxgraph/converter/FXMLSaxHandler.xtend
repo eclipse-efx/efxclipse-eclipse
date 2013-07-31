@@ -11,22 +11,33 @@ import org.eclipse.xtext.common.types.TypesFactory
 import javax.inject.Inject
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import javax.xml.parsers.SAXParserFactory
 
 class FXMLSaxHandler extends DefaultHandler {
-	Model model;
+	public Model model;
 
 	Stack<Object> stack = new Stack;
 	
 //	@Inject
 //	private IJvmTypeProvider.Factory jdtTypeProviderFactory;
 
-	private IJvmTypeProvider jdtTypeProvider;
+//	private IJvmTypeProvider jdtTypeProvider;
+
+	private String packageName;
+
+	new(String packageName)
+	{
+		this.packageName = packageName;
+	}
 
 	override startDocument() throws SAXException {
 //		jdtTypeProvider = jdtTypeProviderFactory.findOrCreateTypeProvider(new ResourceSetImpl)
 		model = FXGraphFactory.eINSTANCE.createModel
-		val componentDef = FXGraphFactory.eINSTANCE.createComponentDefinition
+		val pack = FXGraphFactory.eINSTANCE.createPackageDeclaration
+		pack.setName(packageName)
+		model.setPackage(pack)
 		
+		val componentDef = FXGraphFactory.eINSTANCE.createComponentDefinition
 		model.componentDef = componentDef
 	}
 	
@@ -50,6 +61,8 @@ class FXMLSaxHandler extends DefaultHandler {
 			// A property
 			val e = stack.peek as Element
 			val prop = FXGraphFactory.eINSTANCE.createProperty
+			val vProp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+			
 			e.properties.add(prop)
 			
 			stack.push(prop)
@@ -62,6 +75,10 @@ class FXMLSaxHandler extends DefaultHandler {
 			jvmType.simpleName = localName
 			t.type = jvmType
 			e.type = t
+			
+			if( model.componentDef.rootNode == null ) {
+				model.componentDef.rootNode = e
+			}
 		
 			stack.push(e)
 		}
@@ -69,10 +86,5 @@ class FXMLSaxHandler extends DefaultHandler {
 	
 	override endElement(String uri, String localName, String qName) throws SAXException {
 		stack.pop
-	}
-	
-	def static void main(String[] args) {
-		val h = new FXMLSaxHandler()
-		 
 	}
 }
