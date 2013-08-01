@@ -15,7 +15,7 @@ class ReflectionHelper {
 		val m = c.methods.findFirst[name == methodName && (parameterCount == 1 || (layoutConstraint && parameterCount == 2) )]
 		val t = m?.parameterTypes.get(if (layoutConstraint) 1 else 0)
 		
-		return if( t?.enum ) t?.name else null
+		return if( t != null && t?.enum ) t?.name else null
 	}
 	
 	def static needsBuilder(JvmTypeReference type) {
@@ -54,9 +54,9 @@ class ReflectionHelper {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
 		val m = c.getMethod("get"+attribute.toFirstUpper)
 		
-		if( m.returnType == boolean ) {
+		if( m.returnType.boolean ) {
 			return ValueType.BOOLEAN	
-		} else if( m.returnType == double || m.returnType == int ) {
+		} else if( m.returnType.numeric ) {
 			return ValueType.NUMBER
 		} else if( m.returnType == String ) {
 			return ValueType.STRING
@@ -71,11 +71,9 @@ class ReflectionHelper {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
 		val m = c.getMethod("get"+attribute.toFirstUpper, Node)
 		
-		println(m.returnType)
-		
-		if( m.returnType == boolean ) {
+		if( m.returnType.boolean ) {
 			return ValueType.BOOLEAN	
-		} else if( m.returnType == double || m.returnType == int || m.returnType == Integer || m.returnType == Double ) {
+		} else if( m.returnType.numeric ) {
 			return ValueType.NUMBER
 		} else if( m.returnType == String ) {
 			return ValueType.STRING
@@ -84,5 +82,13 @@ class ReflectionHelper {
 		} else {
 			return ValueType.CLASS
 		}
+	}
+	
+	def static isBoolean(Class<?> c) {
+		return c == boolean || c == Boolean
+	}
+	
+	def static isNumeric(Class<?> c) {
+		return c == double || c == int || c == Integer || c == Double
 	}
 }
