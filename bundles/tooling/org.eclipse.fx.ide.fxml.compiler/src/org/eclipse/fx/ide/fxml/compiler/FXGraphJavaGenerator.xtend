@@ -64,6 +64,7 @@ class FXGraphJavaGenerator {
 					«generateElementDef(varName,p.value as Element)»
 					«name».set«p.name.toFirstUpper»(«varName»);
 					«staticProperties(varName,p.value as Element)»
+					«staticCallProperties(varName,p.value as Element)»
 				}
 			«ELSEIF p.value instanceof ListValueProperty»
 				«FOR l : (p.value as ListValueProperty).value»
@@ -74,6 +75,7 @@ class FXGraphJavaGenerator {
 						«generateElementDef(varName,l as Element)»
 						«name».get«p.name.toFirstUpper»().add(«varName»);
 						«staticProperties(varName,l as Element)»
+						«staticCallProperties(varName,l as Element)»
 						«ENDIF»
 					}
 				«ENDFOR»
@@ -89,6 +91,31 @@ class FXGraphJavaGenerator {
 		«ENDFOR»
 	«ENDIF»
 	'''
+	
+	def staticCallProperties(String name, Element element) '''
+	«FOR prop : element.staticCallProperties»
+		«val type = prop.type»
+		«IF prop.value instanceof SimpleValueProperty»
+			«IF (prop.value as SimpleValueProperty).stringValue != null»
+				«val enumType = ReflectionHelper.getEnumType(type, prop.name, true)»
+				«IF enumType != null»
+					// an enum type
+					«type.simpleName».set«prop.name.toFirstUpper»(«name»,«enumType».«(prop.value as SimpleValueProperty).stringValue»);
+				«ELSE»
+					// a simple value
+					«type.simpleName».set«prop.name.toFirstUpper»(«name»,«(prop.value as SimpleValueProperty).simpleAttributeValue»);
+				«ENDIF»
+			«ELSE»
+				«type.simpleName».set«prop.name.toFirstUpper»(«name»,«(prop.value as SimpleValueProperty).simpleAttributeValue»);
+			«ENDIF»
+		«ELSEIF prop.value instanceof Element»
+			«val varname = 'e_'+getVarIndex»
+			«generateElementDef(varname,prop.value as Element)»
+			«type.simpleName».set«prop.name.toFirstUpper»(«name»,«varname»);
+		«ENDIF»
+	«ENDFOR»
+	'''
+	
 	
 	def staticProperties(String name, Element element) '''
 	«FOR prop : element.staticProperties»

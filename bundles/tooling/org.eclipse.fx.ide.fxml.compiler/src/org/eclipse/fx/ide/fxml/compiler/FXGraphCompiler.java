@@ -18,6 +18,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -25,6 +29,7 @@ import org.eclipse.fx.ide.fxgraph.converter.FXGraphConverter;
 import org.eclipse.fx.ide.fxgraph.converter.FXMLLoader;
 import org.eclipse.fx.ide.fxgraph.converter.IFXMLFile;
 import org.eclipse.fx.ide.fxgraph.fXGraph.Model;
+import org.xml.sax.SAXException;
 
 import com.google.inject.Inject;
 import com.google.inject.Injector;
@@ -38,15 +43,30 @@ public class FXGraphCompiler {
 	public static void main(String[] args) {
 		Injector injector = new org.eclipse.fx.ide.fxgraph.FXGraphStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
 		FXGraphCompiler main = injector.getInstance(FXGraphCompiler.class);
-		main.compile(args[0], args[1],null);
+		try {
+			main.compile(injector, args[0], args[1],null);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	public void compile(final String string, final String sourcePrefix, String outputPrefix) {
+	public void compile(Injector injector, final String string, final String sourcePrefix, String outputPrefix) throws SAXException, IOException, ParserConfigurationException {
 		Model m;
 		String fxgraph = string;
 		if( string.endsWith("fxml") ) {
-			FXMLLoader loader = new FXMLLoader();
-			m = loader.loadModel(new IFXMLFile() {
+			SAXParserFactory f = SAXParserFactory.newInstance();
+			f.setNamespaceAware(true);
+			SAXParser p = f.newSAXParser();
+			
+			FXMLSaxHandler h = injector.getInstance(FXMLSaxHandler.class);
+			IFXMLFile fi = new IFXMLFile() {
 				
 				@Override
 				public String getPackagename() {
@@ -54,7 +74,7 @@ public class FXGraphCompiler {
 						return "dummy";
 					} else {
 						String filePath = new File(string).getParent();
-						String packagename = filePath.substring(sourcePrefix.length()+1);
+						String packagename = filePath.substring(sourcePrefix.length());
 						return packagename.replace('/', '.');
 					}
 				}
@@ -74,7 +94,9 @@ public class FXGraphCompiler {
 					}
 					return null;
 				}
-			});
+			};
+			h.setFile(fi);
+			p.parse(fi.getContent(), h);
 			
 			fxgraph = "/tmp/"+UUID.randomUUID().toString()+".fxgraph";
 			
@@ -83,7 +105,7 @@ public class FXGraphCompiler {
 //			out.deleteOnExit();
 			try {
 				FileOutputStream outStream = new FileOutputStream(out);
-				outStream.write(new FXGraphConverter().generate(m).toString().getBytes());
+				outStream.write(new FXGraphGenerator().generate(h.model).toString().getBytes());
 				outStream.close();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
