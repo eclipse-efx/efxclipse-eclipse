@@ -6,6 +6,9 @@ import java.util.Map
 import java.util.List
 import org.eclipse.xtext.common.types.JvmType
 import javafx.scene.Node
+import java.lang.reflect.Modifier
+import static extension org.eclipse.fx.ide.fxml.compiler.BitOperations.*
+import java.lang.reflect.Field
 
 class ReflectionHelper {
 	def static getEnumType(JvmTypeReference type, String attributeName, boolean layoutConstraint) {
@@ -16,6 +19,48 @@ class ReflectionHelper {
 		val t = m?.parameterTypes.get(if (layoutConstraint) 1 else 0)
 		
 		return if( t != null && t?.enum ) t?.name else null
+	}
+	
+	def static hasMethod(JvmTypeReference type, String name, Class<?>... parameters) {
+		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		try {
+			c.getDeclaredMethod(name,parameters)
+			return true;	
+		} catch(NoSuchMethodException e) {
+			return false;
+		}
+		
+	}
+	
+	def static findField(Class<?> c, String name) {
+		var NoSuchFieldException initialException = null;
+		var l = c;
+		while( l != null && l != Object ) {
+			try {
+				return l.getDeclaredField(name)	
+			} catch(NoSuchFieldException e) {
+				if( initialException == null ) {
+					initialException = e
+				}
+			}
+			l = l.superclass
+		}
+		
+		throw initialException
+	}
+	
+	def static boolean hasAccessibleField(JvmTypeReference type, String refPackage, String name) {
+		var c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		var Field field = c.findField(name)
+		
+		if( field.modifiers.bitSet(Modifier.PUBLIC) ) {
+			return true;
+		} else if( field.modifiers.bitSet(Modifier.PRIVATE) ) {
+			return false;
+		} else if( c.package.name == refPackage ) {
+			return true;
+		}
+		return false;
 	}
 	
 	def static needsBuilder(JvmTypeReference type) {
@@ -35,6 +80,9 @@ class ReflectionHelper {
 	}
 	
 	def static getFqnType(String simpleName, Map<String,String> imports, List<String> globalImports) {
+		if( simpleName.contains('.') ) {
+			return simpleName;
+		}
 		val rv = imports.get(simpleName)
 		if( rv == null ) {
 			for( String ns : globalImports ) {

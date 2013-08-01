@@ -57,92 +57,180 @@ public class FXGraphCompiler {
 		}
 	}
 	
-	public void compile(Injector injector, final String string, final String sourcePrefix, String outputPrefix) throws SAXException, IOException, ParserConfigurationException {
-		Model m;
-		String fxgraph = string;
-		if( string.endsWith("fxml") ) {
-			SAXParserFactory f = SAXParserFactory.newInstance();
-			f.setNamespaceAware(true);
-			SAXParser p = f.newSAXParser();
+	public void compileFXML(Injector injector, final String string, final String sourcePrefix, String outputPrefix , boolean debug) throws SAXException, IOException, ParserConfigurationException {
+		SAXParserFactory f = SAXParserFactory.newInstance();
+		f.setNamespaceAware(true);
+		SAXParser p = f.newSAXParser();
+		
+		FXMLSaxHandler h = injector.getInstance(FXMLSaxHandler.class);
+		IFXMLFile fi = new IFXMLFile() {
 			
-			FXMLSaxHandler h = injector.getInstance(FXMLSaxHandler.class);
-			IFXMLFile fi = new IFXMLFile() {
-				
-				@Override
-				public String getPackagename() {
-					if( sourcePrefix == null) {
-						return "dummy";
-					} else {
-						String filePath = new File(string).getParent();
-						String packagename = filePath.substring(sourcePrefix.length());
-						return packagename.replace('/', '.');
-					}
+			@Override
+			public String getPackagename() {
+				if( sourcePrefix == null) {
+					return "dummy";
+				} else {
+					String filePath = new File(string).getParent();
+					String packagename = filePath.substring(sourcePrefix.length());
+					packagename = packagename.replace('/', '.');
+					
+					return packagename.startsWith(".") ? packagename.substring(1) : packagename;
 				}
-				
-				@Override
-				public String getName() {
-					return new File(string).getName();
-				}
-				
-				@Override
-				public InputStream getContent() {
-					try {
-						return new FileInputStream(string);
-					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					return null;
-				}
-			};
-			h.setFile(fi);
-			p.parse(fi.getContent(), h);
+			}
 			
-			fxgraph = "/tmp/"+UUID.randomUUID().toString()+".fxgraph";
+			@Override
+			public String getName() {
+				return new File(string).getName();
+			}
+			
+			@Override
+			public InputStream getContent() {
+				try {
+					return new FileInputStream(string);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return null;
+			}
+		};
+		h.setFile(fi);
+		p.parse(fi.getContent(), h);
+		
+		if( debug ) {
+			String fxgraph = "/tmp/"+UUID.randomUUID().toString()+".fxgraph";
 			
 			File out = new File(fxgraph);
-			System.err.println(out);
-//			out.deleteOnExit();
-			try {
-				FileOutputStream outStream = new FileOutputStream(out);
-				outStream.write(new FXGraphGenerator().generate(h.model).toString().getBytes());
-				outStream.close();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			String data = new FXGraphGenerator().generate(h.model).toString();
+			FileOutputStream outStream = new FileOutputStream(out);
+			outStream.write(data.getBytes());
+			outStream.close();
+			
+			compileFXGraph(injector, fxgraph, string, sourcePrefix, outputPrefix);
+		} else {
+			generateJavaFile(h.model, string, sourcePrefix, outputPrefix);
+		}
+	}
+	
+	public void compileFXGraph(Injector injector, String inputFile, final String inputOriginalFile, final String sourcePrefix, String outputPrefix) throws SAXException, IOException, ParserConfigurationException {
+		ResourceSet set = resourceSetProvider.get();
+		Resource resource = set.getResource(URI.createURI(inputFile), true);
+		
+		generateJavaFile( (Model)resource.getContents().get(0), inputOriginalFile, sourcePrefix, outputPrefix);
+	}
+	
+	public void generateJavaFile(Model m, String inputOriginalFile, final String sourcePrefix, String outputPrefix) throws IOException {
+		FXGraphJavaGenerator c = new FXGraphJavaGenerator(m);
+		
+		String outFile = inputOriginalFile.replaceAll("fxgraph$", "java").replaceAll("fxml$", "java");
+		
+		if( outputPrefix != null ) {
+			String filePath = new File(outFile).getAbsolutePath();
+			String packagename = filePath.substring(sourcePrefix.length()+1);
+			File f = new File(outputPrefix,packagename);
+			f.getParentFile().mkdirs();
+			outFile = f.getAbsolutePath();
 		}
 		
-		ResourceSet set = resourceSetProvider.get();
-		Resource resource = set.getResource(URI.createURI(fxgraph), true);
-		
-		m = (Model)resource.getContents().get(0);	
-		
-		FXGraphJavaGenerator c = new FXGraphJavaGenerator();
-		
-		try {
-			String outFile = string.replaceAll("fxgraph$", "java").replaceAll("fxml$", "java");
-			
-			if( outputPrefix != null ) {
-				String filePath = new File(outFile).getAbsolutePath();
-				String packagename = filePath.substring(sourcePrefix.length()+1);
-				File f = new File(outputPrefix,packagename);
-				f.getParentFile().mkdirs();
-				outFile = f.getAbsolutePath();
-			}
-			
-			FileOutputStream out = new FileOutputStream(outFile);
-			out.write(c.generate(m).toString().getBytes());
-			out.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
+		FileOutputStream out = new FileOutputStream(outFile);
+		out.write(c.generate().toString().getBytes());
+		out.close();
+	}
+	
+	public void compile(Injector injector, final String filename, final String sourcePrefix, String outputPrefix) throws SAXException, IOException, ParserConfigurationException {
+		if( filename.endsWith("fxml") ) {
+			compileFXML(injector, filename, sourcePrefix, outputPrefix, false);
+		} else {
+			compileFXGraph(injector, filename, filename, sourcePrefix, outputPrefix);
+		}
+//		
+//		Model m;
+//		String fxgraph = string;
+//		if( string.endsWith("fxml") ) {
+//			SAXParserFactory f = SAXParserFactory.newInstance();
+//			f.setNamespaceAware(true);
+//			SAXParser p = f.newSAXParser();
+//			
+//			FXMLSaxHandler h = injector.getInstance(FXMLSaxHandler.class);
+//			IFXMLFile fi = new IFXMLFile() {
+//				
+//				@Override
+//				public String getPackagename() {
+//					if( sourcePrefix == null) {
+//						return "dummy";
+//					} else {
+//						String filePath = new File(string).getParent();
+//						String packagename = filePath.substring(sourcePrefix.length());
+//						return packagename.replace('/', '.');
+//					}
+//				}
+//				
+//				@Override
+//				public String getName() {
+//					return new File(string).getName();
+//				}
+//				
+//				@Override
+//				public InputStream getContent() {
+//					try {
+//						return new FileInputStream(string);
+//					} catch (FileNotFoundException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//					return null;
+//				}
+//			};
+//			h.setFile(fi);
+//			p.parse(fi.getContent(), h);
+//			
+//			fxgraph = "/tmp/"+UUID.randomUUID().toString()+".fxgraph";
+//			
+//			File out = new File(fxgraph);
+//			System.err.println(out);
+////			out.deleteOnExit();
+//			try {
+//				String data = new FXGraphGenerator().generate(h.model).toString();
+//				System.err.println(data);
+//				FileOutputStream outStream = new FileOutputStream(out);
+//				outStream.write(data.getBytes());
+//				outStream.close();
+//			} catch (FileNotFoundException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//		ResourceSet set = resourceSetProvider.get();
+//		Resource resource = set.getResource(URI.createURI(fxgraph), true);
+//		
+//		m = (Model)resource.getContents().get(0);	
+//		
+//		FXGraphJavaGenerator c = new FXGraphJavaGenerator(m);
+//		
+//		try {
+//			String outFile = string.replaceAll("fxgraph$", "java").replaceAll("fxml$", "java");
+//			
+//			if( outputPrefix != null ) {
+//				String filePath = new File(outFile).getAbsolutePath();
+//				String packagename = filePath.substring(sourcePrefix.length()+1);
+//				File f = new File(outputPrefix,packagename);
+//				f.getParentFile().mkdirs();
+//				outFile = f.getAbsolutePath();
+//			}
+//			
+//			FileOutputStream out = new FileOutputStream(outFile);
+//			out.write(c.generate().toString().getBytes());
+//			out.close();
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}		
 	}
 }

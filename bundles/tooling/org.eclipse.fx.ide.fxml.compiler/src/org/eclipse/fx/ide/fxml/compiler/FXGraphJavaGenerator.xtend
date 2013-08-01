@@ -8,19 +8,28 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty
 import static extension org.eclipse.fx.ide.fxml.compiler.ReflectionHelper.*
 import java.util.Set
 import java.util.HashSet
+import java.net.URL
+import java.util.ResourceBundle
 
 class FXGraphJavaGenerator {
 	int varIndex = 0;
 	Set<String> extraImports = new HashSet;
+	Model model;
+	boolean fieldReflection
+	
+	new(Model model) {
+		this.model = model;
+	}
 	
 	def getVarIndex() {
 		varIndex = varIndex + 1;
 		return varIndex;
 	}
 	
-	def generate(Model model) '''
+	def generate() '''
 	package «model.package.name»;
 	
+	import java.net.URL;
 	import org.eclipse.fx.core.fxml.FXMLDocument;
 	import java.util.ResourceBundle;
 	
@@ -35,24 +44,68 @@ class FXGraphJavaGenerator {
 	«ENDFOR»
 	
 	public class «model.componentDef.name» extends FXMLDocument<«model.componentDef.rootNode.type.simpleName»> {
-		public «model.componentDef.rootNode.type.simpleName» load(ResourceBundle bundle) {
+		public «model.componentDef.rootNode.type.simpleName» load(URL location, ResourceBundle resourceBundle) {
+			«IF hasController() »
+				«model.componentDef.controller.qualifiedName» _c = new «model.componentDef.controller.qualifiedName»();
+			«ENDIF»
 			«content»
+			«IF hasController() && model.componentDef.controller.hasMethod("initialize",URL,ResourceBundle)»
+				_c.initialize(location,resourceBundle);
+			«ENDIF»
 			return root;
 		}
+	
+		«IF fieldReflection»
+			private static void setFieldReflective(String n, Object c, Object v) {
+				try {
+					Field f = «model.componentDef.controller.type.qualifiedName».class.getDeclaredField(n);
+					f.setAccessible(true);
+					f.set(c, v);
+				} catch(Throwable e) {
+					e.printStackTrace();
+				}
+			}
+		«ENDIF»
 	}
+	'''
+	
+	def hasController() {
+		return model.componentDef.controller != null
+	}
+	
+	def void enableFieldReflection(String name) {
+		fieldReflection = true;
+		registerImport("java.lang.reflect.*")
+	}
+	
+	def void registerImport(String name) {
+		extraImports.add(name)
+	}
+	
+	def controllerFieldAccess(String name, Element element) '''
+	«IF model.componentDef.controller.hasAccessibleField(model.package.name,element.name)»
+		_c.«element.name» = «name»;
+	«ELSE»
+		«enableFieldReflection(element.name)»
+		// resort to reflection
+		setFieldReflective("«element.name»", _c, «name»);
+	«ENDIF»
 	'''
 	
 	def CharSequence generateElementDef(String name, Element element) '''
 	«IF element.type.needsBuilder»
 		«element.type.simpleName» «name»;
 		«element.type.simpleName»Builder «name»Builder = «element.type.simpleName»Builder.create();
-		«val dummy = extraImports.add(element.type.qualifiedName+"Builder")»
+		«registerImport(element.type.qualifiedName+"Builder")»
 		«FOR p : element.properties»
 			«IF p.value instanceof SimpleValueProperty»
 				«name»Builder.«p.name»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
 			«ENDIF»
 		«ENDFOR»
 		«name» = «name»Builder.build();
+		«IF element.name != null && hasController()»
+			«controllerFieldAccess(name,element)»
+		«ENDIF»
 	«ELSE»
 		«element.type.simpleName» «name» = new «element.type.simpleName»();
 		«FOR p : element.properties»
@@ -89,6 +142,9 @@ class FXGraphJavaGenerator {
 				«name».get«element.type.defaultAttribute.toFirstUpper»().add(«varName»);
 			}
 		«ENDFOR»
+		«IF element.name != null && hasController()»
+			«controllerFieldAccess(name,element)»
+		«ENDIF»
 	«ENDIF»
 	'''
 	

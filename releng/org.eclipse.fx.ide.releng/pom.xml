@@ -58,6 +58,7 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.converter</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml.compiler</module>
 		
 		<module>../tooling/org.eclipse.fx.ide.basic.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.rrobot.feature</module>

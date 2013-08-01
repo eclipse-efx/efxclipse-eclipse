@@ -25,17 +25,20 @@ class FXMLSaxHandler extends DefaultHandler {
 
 	Stack<Object> stack = new Stack;
 	
-	private IJvmTypeProvider provider;
+	private final IJvmTypeProvider provider;
 	
-	private Map<String,String> simpleToFqn = new HashMap
-	private List<String> globalImports
+	private final Map<String,String> simpleToFqn
+	private final List<String> globalImports
 	private IFXMLFile file;
+	
+	private static String FXML_NAMESPACE = "http://javafx.com/fxml"
 
 	@Inject
 	new(IJvmTypeProvider.Factory jdtTypeProviderFactory)
 	{
 		this.provider = jdtTypeProviderFactory.createTypeProvider
 		this.globalImports = new ArrayList
+		this.simpleToFqn = new HashMap
 		this.globalImports.add("java.lang");
 	}
 	
@@ -108,44 +111,56 @@ class FXMLSaxHandler extends DefaultHandler {
 			t.type = provider.findTypeByName(ReflectionHelper.getFqnType(localName,simpleToFqn,globalImports))
 			e.setType(t);
 			
+//			println(localName + " => " + t.type)
+			
 			var i = 0;
 			while( i < attributes.length ) {
-				if( ! attributes.getLocalName(i).contains('.') ) {
-					val vt = ReflectionHelper.getValueType(t.type,attributes.getLocalName(i))
-					val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
-					if( vt == ValueType.BOOLEAN ) {
-						vp.booleanValue = attributes.getValue(i)
-					} else if( vt == ValueType.NUMBER ) {
-						vp.number = attributes.getValue(i)
-					} else {
-						vp.stringValue = attributes.getValue(i)
+				if( FXML_NAMESPACE.equals(attributes.getURI(i)) ) {
+					if( "id".equals(attributes.getLocalName(i)) ) {
+						e.name = attributes.getValue(i)
+					} else if( "controller".equals(attributes.getLocalName(i)) ) {
+						val ct = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference()
+						ct.type = provider.findTypeByName(ReflectionHelper.getFqnType(attributes.getValue(i),simpleToFqn,globalImports))
+						model.componentDef.controller = ct
 					}
-					
-					val pp = FXGraphFactory.eINSTANCE.createProperty
-					pp.name = attributes.getLocalName(i)
-					pp.value = vp
-					e.properties += pp
 				} else {
-					val idx = attributes.getLocalName(i).indexOf('.')
-					val type = provider.findTypeByName(ReflectionHelper.getFqnType(attributes.getLocalName(i).substring(0,idx),simpleToFqn,globalImports))
-					
-					val vt = ReflectionHelper.getStaticValueType(type,attributes.getLocalName(i).substring(idx+1))
-					val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
-					if( vt == ValueType.BOOLEAN ) {
-						vp.booleanValue = attributes.getValue(i)
-					} else if( vt == ValueType.NUMBER ) {
-						vp.number = attributes.getValue(i)
+					if( ! attributes.getLocalName(i).contains('.') ) {
+						val vt = ReflectionHelper.getValueType(t.type,attributes.getLocalName(i))
+						val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+						if( vt == ValueType.BOOLEAN ) {
+							vp.booleanValue = attributes.getValue(i)
+						} else if( vt == ValueType.NUMBER ) {
+							vp.number = attributes.getValue(i)
+						} else {
+							vp.stringValue = attributes.getValue(i)
+						}
+						
+						val pp = FXGraphFactory.eINSTANCE.createProperty
+						pp.name = attributes.getLocalName(i)
+						pp.value = vp
+						e.properties += pp
 					} else {
-						vp.stringValue = attributes.getValue(i)
-					}
-					
-					val pp = FXGraphFactory.eINSTANCE.createStaticCallValueProperty
-					val ttype = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference()
-					ttype.type = type
-					pp.setType(ttype)
-					pp.name = attributes.getLocalName(i).substring(attributes.getLocalName(i).indexOf('.')+1)
-					pp.value = vp
-					e.staticCallProperties += pp
+						val idx = attributes.getLocalName(i).indexOf('.')
+						val type = provider.findTypeByName(ReflectionHelper.getFqnType(attributes.getLocalName(i).substring(0,idx),simpleToFqn,globalImports))
+						
+						val vt = ReflectionHelper.getStaticValueType(type,attributes.getLocalName(i).substring(idx+1))
+						val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+						if( vt == ValueType.BOOLEAN ) {
+							vp.booleanValue = attributes.getValue(i)
+						} else if( vt == ValueType.NUMBER ) {
+							vp.number = attributes.getValue(i)
+						} else {
+							vp.stringValue = attributes.getValue(i)
+						}
+						
+						val pp = FXGraphFactory.eINSTANCE.createStaticCallValueProperty
+						val ttype = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference()
+						ttype.type = type
+						pp.setType(ttype)
+						pp.name = attributes.getLocalName(i).substring(attributes.getLocalName(i).indexOf('.')+1)
+						pp.value = vp
+						e.staticCallProperties += pp
+					}					
 				}
 				
 				i = i +1;

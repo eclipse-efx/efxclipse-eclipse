@@ -15,14 +15,14 @@ class FXGraphGenerator {
 	import «i.importedNamespace»
 	«ENDFOR»
 	
-	component «m.componentDef.name» {
+	component «m.componentDef.name» «IF m.componentDef.controller != null»controlledby «m.componentDef.controller.qualifiedName»«ENDIF» {
 		
 		«element(m.componentDef.rootNode)»
 	}
 	'''
 	
 	def CharSequence element(Element e) '''
-	«e.type.type.simpleName» {
+	«e.type.type.simpleName» «IF e.name != null»id «e.name» «ENDIF»{
 		«FOR p : e.properties»
 			«IF e.properties.head != p»,«ENDIF»«p.name» : «valueProp(p.value)»
 		«ENDFOR»

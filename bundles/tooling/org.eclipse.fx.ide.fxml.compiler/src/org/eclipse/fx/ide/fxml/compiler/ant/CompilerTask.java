@@ -31,6 +31,7 @@ import com.google.inject.Injector;
 public abstract class CompilerTask extends Task {
 	private String srcDir;
 	private String destDir;
+	private String classpathref;
 	private final boolean fxgraph;
 
 	public CompilerTask(boolean fxgraph) {
@@ -52,15 +53,25 @@ public abstract class CompilerTask extends Task {
 	public String getDestDir() {
 		return destDir;
 	}
+	
+//	public void setClasspathref(String classpathref) {
+//		this.classpathref = classpathref;
+//	}
+//	
+//	public String getClasspathref() {
+//		return classpathref;
+//	}
 
 	@Override
 	public void execute() throws BuildException {
 		File f = new File(getLocation().getFileName());
 		File sourceDirectory = new File(f.getParentFile(), srcDir);
 		File outDirectory = new File(f.getParentFile(), destDir);
-
+		
+		
 		final String sourcePrefix = sourceDirectory.getAbsolutePath();
 		final String outPrefix = outDirectory.getAbsolutePath();
+		
 		final Injector injector = new org.eclipse.fx.ide.fxgraph.FXGraphStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
 		final FXGraphCompiler compiler = injector.getInstance(FXGraphCompiler.class);
 
@@ -82,6 +93,7 @@ public abstract class CompilerTask extends Task {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//		Thread.currentThread().setContextClassLoader(original);
 	}
 
 	class FileFinder extends SimpleFileVisitor<Path> {
