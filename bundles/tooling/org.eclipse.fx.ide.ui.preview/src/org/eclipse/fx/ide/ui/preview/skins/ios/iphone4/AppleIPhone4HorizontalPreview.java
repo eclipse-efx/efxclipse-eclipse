@@ -10,10 +10,8 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.ui.preview.skins.ios.iphone4;
 
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -28,23 +26,17 @@ import javafx.scene.layout.VBox;
 import org.eclipse.fx.ide.ui.preview.skins.BasicPreviewer;
 
 public class AppleIPhone4HorizontalPreview extends BasicPreviewer {
-	private BorderPane pane;
-	private AnchorPane contentPane;
-	
-	private int contentWidth;
-	private int contentHeight;
 	
 	public AppleIPhone4HorizontalPreview(int contentWidth, int contentHeight) {
-		this.contentWidth = contentWidth;
-		this.contentHeight = contentHeight;
+		super(contentWidth, contentHeight);
 	}
 	
 	private static String getIconUrl(String url) {
 		return AppleIPhone4HorizontalPreview.class.getClassLoader().getResource(url).toExternalForm();
 	}
 	
-	private void init() {
-		pane = new BorderPane();
+	protected BorderPane createContentPane() {
+		BorderPane pane = new BorderPane();
 		{
 			HBox box = new HBox();
 			
@@ -131,43 +123,16 @@ public class AppleIPhone4HorizontalPreview extends BasicPreviewer {
 			pane.setBottom(box);
 		}
 		
-		contentPane = new AnchorPane();
-		this.pane.setCenter(contentPane);
-		setContentSize(contentWidth, contentHeight);
-	}
-	
-	@Override
-	public void setContentSize(int width, int height) {
-		if( pane == null ) {
-			this.contentWidth = width;
-			this.contentHeight = height;
-		} else {
-			contentPane.setPrefSize(width,height);
-			contentPane.setMinSize(width,height);
-			contentPane.setMaxSize(width,height);
-
-			pane.setMinSize(width+117+158, height+2*29);
-			pane.setPrefSize(width+117+158, height+2*29);
-			pane.setMaxSize(width+117+158, height+2*29);			
-		}
-	}
-		
-	public void setContent(Node node) {
-		if( contentPane == null ) {
-			init();
-		}
-		AnchorPane.setLeftAnchor(node, 0.0);
-		AnchorPane.setRightAnchor(node, 0.0);
-		AnchorPane.setTopAnchor(node, 0.0);
-		AnchorPane.setBottomAnchor(node, 0.0);
-		contentPane.getChildren().setAll(node);
-	}
-	
-	@Override
-	public Node getSimulatorNode() {
-		if( pane == null ) {
-			init();
-		}
 		return pane;
 	}
+	
+	@Override
+	protected double marginHeight() {
+		return 2*29;
+	}
+
+	@Override
+	protected double marginWidth() {
+		return 117+158;
+	}	
 }

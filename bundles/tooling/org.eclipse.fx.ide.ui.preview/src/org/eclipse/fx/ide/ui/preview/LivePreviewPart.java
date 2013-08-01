@@ -51,7 +51,7 @@ import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.fx.ide.ui.preview.bundle.Activator;
 import org.eclipse.fx.ide.ui.preview.skins.BasicPreviewer;
-import org.eclipse.fx.ide.ui.preview.skins.ios.galaxyS3.AndroidPhoneVerticalPreview;
+import org.eclipse.fx.ide.ui.preview.skins.android.galaxyS3.AndroidPhoneVerticalPreview;
 import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4HorizontalPreview;
 import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4VerticalPreview;
 import org.eclipse.fx.ide.ui.preview.text.AnnotationAccess;
@@ -92,6 +92,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
+
 
 
 

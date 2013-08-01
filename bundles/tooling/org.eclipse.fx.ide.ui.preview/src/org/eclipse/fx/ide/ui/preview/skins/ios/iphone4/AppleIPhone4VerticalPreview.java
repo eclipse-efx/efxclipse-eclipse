@@ -10,10 +10,8 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.ui.preview.skins.ios.iphone4;
 
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -28,23 +26,17 @@ import javafx.scene.layout.VBox;
 import org.eclipse.fx.ide.ui.preview.skins.BasicPreviewer;
 
 public class AppleIPhone4VerticalPreview extends BasicPreviewer {
-	private BorderPane pane;
-	private AnchorPane contentPane;
-	
-	private int contentWidth;
-	private int contentHeight;
-	
 	public AppleIPhone4VerticalPreview(int contentWidth, int contentHeight) {
-		this.contentWidth = contentWidth;
-		this.contentHeight = contentHeight;
+		super(contentWidth, contentHeight);
 	}
 	
 	private static String getIconUrl(String url) {
 		return AppleIPhone4VerticalPreview.class.getClassLoader().getResource(url).toExternalForm();
 	}
 	
-	private void init() {
-		pane = new BorderPane();
+	protected BorderPane createContentPane() {
+		BorderPane pane = new BorderPane();
+		
 		{
 			HBox box = new HBox();
 			
@@ -133,44 +125,16 @@ public class AppleIPhone4VerticalPreview extends BasicPreviewer {
 			pane.setBottom(box);
 		}
 		
-		contentPane = new AnchorPane();
-		contentPane.setStyle("-fx-background-color: white;");
-		this.pane.setCenter(contentPane);
-		setContentSize(contentWidth, contentHeight);
-	}
-	
-	@Override
-	public void setContentSize(int width, int height) {
-		if( pane == null ) {
-			this.contentWidth = width;
-			this.contentHeight = height;
-		} else {
-			contentPane.setPrefSize(width,height);
-			contentPane.setMinSize(width,height);
-			contentPane.setMaxSize(width,height);
-
-			pane.setMinSize(width+2*29, height+117+158);
-			pane.setPrefSize(width+2*29, height+117+158);
-			pane.setMaxSize(width+2*29, height+117+158);
-		}
-	}
-	
-	public void setContent(Node node) {
-		if( contentPane == null ) {
-			init();
-		}
-		AnchorPane.setLeftAnchor(node, 0.0);
-		AnchorPane.setRightAnchor(node, 0.0);
-		AnchorPane.setTopAnchor(node, 0.0);
-		AnchorPane.setBottomAnchor(node, 0.0);
-		contentPane.getChildren().setAll(node);
-	}
-	
-	@Override
-	public Node getSimulatorNode() {
-		if( pane == null ) {
-			init();
-		}
 		return pane;
 	}
+	
+	@Override
+	protected double marginHeight() {
+		return 117+158;
+	}
+	
+	@Override
+	protected double marginWidth() {
+		return 2*29;
+	}	
 }
