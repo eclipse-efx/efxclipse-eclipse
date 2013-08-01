@@ -19,15 +19,19 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 import org.eclipse.fx.ide.fxml.compiler.FXGraphCompiler;
+import org.xml.sax.SAXException;
 
 import com.google.inject.Injector;
 
 public abstract class CompilerTask extends Task {
 	private String srcDir;
 	private String destDir;
+	private String classpathref;
 	private final boolean fxgraph;
 
 	public CompilerTask(boolean fxgraph) {
@@ -49,16 +53,26 @@ public abstract class CompilerTask extends Task {
 	public String getDestDir() {
 		return destDir;
 	}
+	
+//	public void setClasspathref(String classpathref) {
+//		this.classpathref = classpathref;
+//	}
+//	
+//	public String getClasspathref() {
+//		return classpathref;
+//	}
 
 	@Override
 	public void execute() throws BuildException {
 		File f = new File(getLocation().getFileName());
 		File sourceDirectory = new File(f.getParentFile(), srcDir);
 		File outDirectory = new File(f.getParentFile(), destDir);
-
+		
+		
 		final String sourcePrefix = sourceDirectory.getAbsolutePath();
 		final String outPrefix = outDirectory.getAbsolutePath();
-		Injector injector = new org.eclipse.fx.ide.fxgraph.FXGraphStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
+		
+		final Injector injector = new org.eclipse.fx.ide.fxgraph.FXGraphStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
 		final FXGraphCompiler compiler = injector.getInstance(FXGraphCompiler.class);
 
 		try {
@@ -67,13 +81,19 @@ public abstract class CompilerTask extends Task {
 				@Override
 				public void call(String file) {
 					System.out.println("Compiling " + file);
-					compiler.compile(file, sourcePrefix, outPrefix);
+					try {
+						compiler.compile(injector, file, sourcePrefix, outPrefix);
+					} catch (SAXException | IOException | ParserConfigurationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//		Thread.currentThread().setContextClassLoader(original);
 	}
 
 	class FileFinder extends SimpleFileVisitor<Path> {

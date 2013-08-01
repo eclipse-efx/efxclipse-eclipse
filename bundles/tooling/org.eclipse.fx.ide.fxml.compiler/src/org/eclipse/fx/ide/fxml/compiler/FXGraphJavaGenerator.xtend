@@ -8,19 +8,28 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty
 import static extension org.eclipse.fx.ide.fxml.compiler.ReflectionHelper.*
 import java.util.Set
 import java.util.HashSet
+import java.net.URL
+import java.util.ResourceBundle
 
 class FXGraphJavaGenerator {
 	int varIndex = 0;
 	Set<String> extraImports = new HashSet;
+	Model model;
+	boolean fieldReflection
+	
+	new(Model model) {
+		this.model = model;
+	}
 	
 	def getVarIndex() {
 		varIndex = varIndex + 1;
 		return varIndex;
 	}
 	
-	def generate(Model model) '''
+	def generate() '''
 	package «model.package.name»;
 	
+	import java.net.URL;
 	import org.eclipse.fx.core.fxml.FXMLDocument;
 	import java.util.ResourceBundle;
 	
@@ -35,24 +44,68 @@ class FXGraphJavaGenerator {
 	«ENDFOR»
 	
 	public class «model.componentDef.name» extends FXMLDocument<«model.componentDef.rootNode.type.simpleName»> {
-		public «model.componentDef.rootNode.type.simpleName» load(ResourceBundle bundle) {
+		public «model.componentDef.rootNode.type.simpleName» load(URL location, ResourceBundle resourceBundle) {
+			«IF hasController() »
+				«model.componentDef.controller.qualifiedName» _c = new «model.componentDef.controller.qualifiedName»();
+			«ENDIF»
 			«content»
+			«IF hasController() && model.componentDef.controller.hasMethod("initialize",URL,ResourceBundle)»
+				_c.initialize(location,resourceBundle);
+			«ENDIF»
 			return root;
 		}
+	
+		«IF fieldReflection»
+			private static void setFieldReflective(Class<?> owner, String n, Object c, Object v) {
+				try {
+					Field f = owner.getDeclaredField(n);
+					f.setAccessible(true);
+					f.set(c, v);
+				} catch(Throwable e) {
+					e.printStackTrace();
+				}
+			}
+		«ENDIF»
 	}
+	'''
+	
+	def hasController() {
+		return model.componentDef.controller != null
+	}
+	
+	def void enableFieldReflection(String name) {
+		fieldReflection = true;
+		registerImport("java.lang.reflect.*")
+	}
+	
+	def void registerImport(String name) {
+		extraImports.add(name)
+	}
+	
+	def controllerFieldAccess(String name, Element element) '''
+	«IF model.componentDef.controller.hasAccessibleField(model.package.name,element.name)»
+		_c.«element.name» = «name»;
+	«ELSE»
+		«enableFieldReflection(element.name)»
+		// resort to reflection
+		setFieldReflective(«model.componentDef.controller.getFieldOwner(element.name)».class, "«element.name»", _c, «name»);
+	«ENDIF»
 	'''
 	
 	def CharSequence generateElementDef(String name, Element element) '''
 	«IF element.type.needsBuilder»
 		«element.type.simpleName» «name»;
 		«element.type.simpleName»Builder «name»Builder = «element.type.simpleName»Builder.create();
-		«val dummy = extraImports.add(element.type.qualifiedName+"Builder")»
+		«registerImport(element.type.qualifiedName+"Builder")»
 		«FOR p : element.properties»
 			«IF p.value instanceof SimpleValueProperty»
 				«name»Builder.«p.name»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
 			«ENDIF»
 		«ENDFOR»
 		«name» = «name»Builder.build();
+		«IF element.name != null && hasController()»
+			«controllerFieldAccess(name,element)»
+		«ENDIF»
 	«ELSE»
 		«element.type.simpleName» «name» = new «element.type.simpleName»();
 		«FOR p : element.properties»
@@ -64,6 +117,7 @@ class FXGraphJavaGenerator {
 					«generateElementDef(varName,p.value as Element)»
 					«name».set«p.name.toFirstUpper»(«varName»);
 					«staticProperties(varName,p.value as Element)»
+					«staticCallProperties(varName,p.value as Element)»
 				}
 			«ELSEIF p.value instanceof ListValueProperty»
 				«FOR l : (p.value as ListValueProperty).value»
@@ -74,6 +128,7 @@ class FXGraphJavaGenerator {
 						«generateElementDef(varName,l as Element)»
 						«name».get«p.name.toFirstUpper»().add(«varName»);
 						«staticProperties(varName,l as Element)»
+						«staticCallProperties(varName,l as Element)»
 						«ENDIF»
 					}
 				«ENDFOR»
@@ -87,8 +142,36 @@ class FXGraphJavaGenerator {
 				«name».get«element.type.defaultAttribute.toFirstUpper»().add(«varName»);
 			}
 		«ENDFOR»
+		«IF element.name != null && hasController()»
+			«controllerFieldAccess(name,element)»
+		«ENDIF»
 	«ENDIF»
 	'''
+	
+	def staticCallProperties(String name, Element element) '''
+	«FOR prop : element.staticCallProperties»
+		«val type = prop.type»
+		«IF prop.value instanceof SimpleValueProperty»
+			«IF (prop.value as SimpleValueProperty).stringValue != null»
+				«val enumType = ReflectionHelper.getEnumType(type, prop.name, true)»
+				«IF enumType != null»
+					// an enum type
+					«type.simpleName».set«prop.name.toFirstUpper»(«name»,«enumType».«(prop.value as SimpleValueProperty).stringValue»);
+				«ELSE»
+					// a simple value
+					«type.simpleName».set«prop.name.toFirstUpper»(«name»,«(prop.value as SimpleValueProperty).simpleAttributeValue»);
+				«ENDIF»
+			«ELSE»
+				«type.simpleName».set«prop.name.toFirstUpper»(«name»,«(prop.value as SimpleValueProperty).simpleAttributeValue»);
+			«ENDIF»
+		«ELSEIF prop.value instanceof Element»
+			«val varname = 'e_'+getVarIndex»
+			«generateElementDef(varname,prop.value as Element)»
+			«type.simpleName».set«prop.name.toFirstUpper»(«name»,«varname»);
+		«ENDIF»
+	«ENDFOR»
+	'''
+	
 	
 	def staticProperties(String name, Element element) '''
 	«FOR prop : element.staticProperties»
