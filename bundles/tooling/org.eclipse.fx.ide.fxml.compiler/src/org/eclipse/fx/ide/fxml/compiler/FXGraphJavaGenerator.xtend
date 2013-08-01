@@ -56,9 +56,9 @@ class FXGraphJavaGenerator {
 		}
 	
 		«IF fieldReflection»
-			private static void setFieldReflective(String n, Object c, Object v) {
+			private static void setFieldReflective(Class<?> owner, String n, Object c, Object v) {
 				try {
-					Field f = «model.componentDef.controller.type.qualifiedName».class.getDeclaredField(n);
+					Field f = owner.getDeclaredField(n);
 					f.setAccessible(true);
 					f.set(c, v);
 				} catch(Throwable e) {
@@ -88,7 +88,7 @@ class FXGraphJavaGenerator {
 	«ELSE»
 		«enableFieldReflection(element.name)»
 		// resort to reflection
-		setFieldReflective("«element.name»", _c, «name»);
+		setFieldReflective(«model.componentDef.controller.getFieldOwner(element.name)».class, "«element.name»", _c, «name»);
 	«ENDIF»
 	'''
 	

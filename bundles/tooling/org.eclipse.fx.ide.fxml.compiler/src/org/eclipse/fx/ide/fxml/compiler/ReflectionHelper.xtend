@@ -63,6 +63,11 @@ class ReflectionHelper {
 		return false;
 	}
 	
+	def static getFieldOwner(JvmTypeReference type, String name) {
+		var c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		return findField(c,name).declaringClass.name
+	}
+	
 	def static needsBuilder(JvmTypeReference type) {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
 		return c.constructors.findFirst[parameterCount==0] == null
