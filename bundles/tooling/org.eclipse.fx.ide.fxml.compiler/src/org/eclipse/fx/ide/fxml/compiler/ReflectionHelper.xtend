@@ -1,11 +1,9 @@
 package org.eclipse.fx.ide.fxml.compiler
 
 import org.eclipse.xtext.common.types.JvmTypeReference
-import javafx.beans.DefaultProperty
 import java.util.Map
 import java.util.List
 import org.eclipse.xtext.common.types.JvmType
-import javafx.scene.Node
 import java.lang.reflect.Modifier
 import static extension org.eclipse.fx.ide.fxml.compiler.BitOperations.*
 import java.lang.reflect.Field
@@ -18,7 +16,7 @@ class ReflectionHelper {
 		val m = c.methods.findFirst[name == methodName && (parameterCount == 1 || (layoutConstraint && parameterCount == 2) )]
 		val t = m?.parameterTypes.get(if (layoutConstraint) 1 else 0)
 		
-		return if( t != null && t?.enum ) t?.name else null
+		return if( t != null && t.enum ) t?.name else null
 	}
 	
 	def static hasMethod(JvmTypeReference type, String name, Class<?>... parameters) {
@@ -74,14 +72,7 @@ class ReflectionHelper {
 	}
 	
 	def static defaultAttribute(JvmTypeReference type) {
-		var c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
-		var DefaultProperty p
-		do {
-			p = c.getAnnotation(typeof(DefaultProperty))
-			c = c.superclass;
-		} while( p == null && c != typeof(Object) )
-		
-		return p.value;
+		return ReflectionFX.defaultAttribute(type)
 	}
 	
 	def static getFqnType(String simpleName, Map<String,String> imports, List<String> globalImports) {
@@ -121,8 +112,7 @@ class ReflectionHelper {
 	}
 	
 	def static getStaticValueType(JvmType type, String attribute) {
-		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
-		val m = c.getMethod("get"+attribute.toFirstUpper, Node)
+		val m = ReflectionFX.getStaticMethod(type,attribute);
 		
 		if( m.returnType.boolean ) {
 			return ValueType.BOOLEAN	
