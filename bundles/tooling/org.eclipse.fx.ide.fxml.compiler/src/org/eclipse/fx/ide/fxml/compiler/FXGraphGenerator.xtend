@@ -6,6 +6,7 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty
+import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
 
 class FXGraphGenerator {
 	def generate(Model m) '''
@@ -52,6 +53,10 @@ class FXGraphGenerator {
 		«listValue(p)»«IF lp.value.last != p»,«ENDIF»
 		«ENDFOR»
 	]
+	'''
+	
+	def dispatch valueProp(ControllerHandledValueProperty cp) '''
+		controllermethod «cp.methodname»
 	'''
 	
 	def dispatch valueProp(SimpleValueProperty sp) '''

@@ -6,19 +6,18 @@ import java.util.HashMap
 import java.util.List
 import java.util.Map
 import java.util.Stack
+import org.eclipse.fx.ide.fxgraph.converter.IFXMLFile
 import org.eclipse.fx.ide.fxgraph.fXGraph.Element
 import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphFactory
+import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.Model
 import org.eclipse.fx.ide.fxgraph.fXGraph.Property
+import org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider
 import org.xml.sax.Attributes
 import org.xml.sax.SAXException
 import org.xml.sax.helpers.DefaultHandler
-import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty
-import org.eclipse.fx.ide.fxgraph.converter.IFXMLFile
-import org.eclipse.fx.ide.fxgraph.fXGraph.StaticCallValueProperty
 
 class FXMLSaxHandler extends DefaultHandler {
 	public Model model;
@@ -111,8 +110,6 @@ class FXMLSaxHandler extends DefaultHandler {
 			t.type = provider.findTypeByName(ReflectionHelper.getFqnType(localName,simpleToFqn,globalImports))
 			e.setType(t);
 			
-//			println(localName + " => " + t.type)
-			
 			var i = 0;
 			while( i < attributes.length ) {
 				if( FXML_NAMESPACE.equals(attributes.getURI(i)) ) {
@@ -126,19 +123,31 @@ class FXMLSaxHandler extends DefaultHandler {
 				} else {
 					if( ! attributes.getLocalName(i).contains('.') ) {
 						val vt = ReflectionHelper.getValueType(t.type,attributes.getLocalName(i))
-						val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
-						if( vt == ValueType.BOOLEAN ) {
-							vp.booleanValue = attributes.getValue(i)
-						} else if( vt == ValueType.NUMBER ) {
-							vp.number = attributes.getValue(i)
-						} else {
-							vp.stringValue = attributes.getValue(i)
-						}
 						
-						val pp = FXGraphFactory.eINSTANCE.createProperty
-						pp.name = attributes.getLocalName(i)
-						pp.value = vp
-						e.properties += pp
+						if( vt == ValueType.EVENT_CLASS ) {
+							val vp = FXGraphFactory.eINSTANCE.createControllerHandledValueProperty
+							vp.setMethodname(attributes.getValue(i).substring(1))
+							
+							val pp = FXGraphFactory.eINSTANCE.createProperty
+							pp.name = attributes.getLocalName(i)
+							pp.value = vp
+							e.properties += pp
+							
+						} else {
+							val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+							if( vt == ValueType.BOOLEAN ) {
+								vp.booleanValue = attributes.getValue(i)
+							} else if( vt == ValueType.NUMBER ) {
+								vp.number = attributes.getValue(i)
+							} else {
+								vp.stringValue = attributes.getValue(i)
+							}
+							
+							val pp = FXGraphFactory.eINSTANCE.createProperty
+							pp.name = attributes.getLocalName(i)
+							pp.value = vp
+							e.properties += pp
+						}
 					} else {
 						val idx = attributes.getLocalName(i).indexOf('.')
 						val type = provider.findTypeByName(ReflectionHelper.getFqnType(attributes.getLocalName(i).substring(0,idx),simpleToFqn,globalImports))

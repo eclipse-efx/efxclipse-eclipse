@@ -10,6 +10,7 @@ import java.util.Set
 import java.util.HashSet
 import java.net.URL
 import java.util.ResourceBundle
+import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
 
 class FXGraphJavaGenerator {
 	int varIndex = 0;
@@ -46,7 +47,7 @@ class FXGraphJavaGenerator {
 	public class «model.componentDef.name» extends FXMLDocument<«model.componentDef.rootNode.type.simpleName»> {
 		public «model.componentDef.rootNode.type.simpleName» load(URL location, ResourceBundle resourceBundle) {
 			«IF hasController() »
-				«model.componentDef.controller.qualifiedName» _c = new «model.componentDef.controller.qualifiedName»();
+				final «model.componentDef.controller.qualifiedName» _c = new «model.componentDef.controller.qualifiedName»();
 			«ENDIF»
 			«content»
 			«IF hasController() && model.componentDef.controller.hasMethod("initialize",URL,ResourceBundle)»
@@ -92,6 +93,15 @@ class FXGraphJavaGenerator {
 	«ENDIF»
 	'''
 	
+	def eventBindingAccess(String name, String propertyName, String methodName, Element element) '''
+		«registerImport("javafx.event.EventHandler")»
+		«name».set«propertyName.toFirstUpper»(new EventHandler<«element.type.eventType(propertyName)»>() {
+			public void handle(«element.type.eventType(propertyName)» event) {
+				_c.«methodName»(«IF !model.componentDef.controller.hasMethod(methodName)»event«ENDIF»);
+			}
+		});
+	'''
+	
 	def CharSequence generateElementDef(String name, Element element) '''
 	«IF element.type.needsBuilder»
 		«element.type.simpleName» «name»;
@@ -111,6 +121,8 @@ class FXGraphJavaGenerator {
 		«FOR p : element.properties»
 			«IF p.value instanceof SimpleValueProperty»
 				«name».set«p.name.toFirstUpper»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+			«ELSEIF p.value instanceof ControllerHandledValueProperty && hasController()»
+				«eventBindingAccess(name, p.name, (p.value as ControllerHandledValueProperty).methodname, element)»
 			«ELSEIF p.value instanceof Element»
 				{
 					«val varName = 'e_'+getVarIndex»
