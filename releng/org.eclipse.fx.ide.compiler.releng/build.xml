@@ -1,9 +1,14 @@
-<project name="Repackage Compiler" default="repackage">
-	<property name="xtext-prefix" value="/Users/tomschindl/Applications/Eclipse/eclipse-kepler-m7/plugins/" />
-	<property name="emf-prefix" value="/Users/tomschindl/Applications/Eclipse/eclipse-kepler-m7/plugins/" />
-	<property name="platform-prefix" value="/Users/tomschindl/Applications/Eclipse/eclipse-kepler-m7/plugins/" />
-	<property name="orbit-prefix" value="/Users/tomschindl/Applications/Eclipse/eclipse-kepler-m7/plugins/" />
-	<property name="efx-prefix" value="/Users/tomschindl/Downloads/site_assembly_ide/plugins/" />
+<project name="Repackage Compiler" default="publish">
+	<property name="root-prefix" value="/home/data/httpd/download.eclipse.org" />
+	<property name="xtext-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
+	<property name="emf-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
+	<property name="platform-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
+	<property name="orbit-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
+	<property name="efx-prefix" value="${root-prefix}/efxclipse/updates-nightly" />
+	
+	<tstamp>
+		<format property="time" pattern="yyyyMMddHHmm" offset="-5" unit="hour"/>
+	</tstamp>
 	
 	<target name="repackage">
 		<delete dir="repack" />
@@ -12,35 +17,41 @@
 		<mkdir dir="repack"/>
 		<mkdir dir="target"/>
 		
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.xtend.lib_2.4.2.v201306040922.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.xtext.xbase.lib_2.4.2.v201306040922.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.emf.mwe2.runtime_2.4.0.v201306040844.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.emf.mwe.utils_1.3.0.v201306040844.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.xtext_2.4.2.v201306040922.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.xtext.util_2.4.2.v201306040922.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.xtext.common.types_2.4.2.v201306040922.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.xtext.common.types.ui_2.4.2.v201306040922.jar"></unzip>
-		<unzip dest="repack" src="${xtext-prefix}/org.eclipse.xtext.xbase_2.4.2.v201306040922.jar"></unzip>
-		
-		<unzip dest="repack" src="${orbit-prefix}/com.google.guava_10.0.1.v201203051515.jar"></unzip>
-		<unzip dest="repack" src="${emf-prefix}/org.eclipse.emf.ecore.xmi_2.9.0.v20130528-0742.jar"></unzip>
-		<unzip dest="repack" src="${emf-prefix}/org.eclipse.emf.ecore_2.9.0.v20130528-0742.jar"></unzip>
-		<unzip dest="repack" src="${emf-prefix}/org.eclipse.emf.common_2.9.0.v20130528-0742.jar"></unzip>
-		<unzip dest="repack" src="${orbit-prefix}/org.antlr.runtime_3.2.0.v201101311130.jar"></unzip>
-		<unzip dest="repack" src="${orbit-prefix}/com.google.inject_3.0.0.v201203062045.jar"></unzip>
-		<unzip dest="repack" src="${orbit-prefix}/org.apache.commons.cli_1.2.0.v201105210650.jar"></unzip>
-		<unzip dest="repack" src="${orbit-prefix}/javax.inject_1.0.0.v20091030.jar"></unzip>
-		<unzip dest="repack" src="${orbit-prefix}/org.apache.log4j_1.2.15.v201012070815.jar"></unzip>
-		<unzip dest="repack" src="${orbit-prefix}/org.apache.commons.logging_1.1.1.v201101211721.jar"></unzip>
-		<unzip dest="repack" src="${platform-prefix}/org.eclipse.jdt.annotation_1.1.0.v20130122-1933.jar"></unzip>
-		<unzip dest="repack" src="${platform-prefix}/org.eclipse.core.runtime_3.9.0.v20130326-1255.jar"></unzip>
-		<unzip dest="repack" src="${platform-prefix}/org.eclipse.jdt.core_3.9.0.v20130501-2249.jar"></unzip>
-		<unzip dest="repack" src="${platform-prefix}/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar"></unzip>
-		
 		<unzip dest="repack">
+			<fileset dir="${xtext-prefix}">
+				<include name="org.eclipse.xtend.lib_2.4.2*.jar"/>
+				<include name="org.eclipse.xtext.xbase.lib_2.4.2*.jar"/>
+				<include name="org.eclipse.emf.mwe2.runtime_2.4.0*.jar"/>
+				<include name="org.eclipse.emf.mwe.utils_1.3.0*.jar"/>
+				<include name="org.eclipse.xtext_2.4.2*.jar"/>
+				<include name="org.eclipse.xtext.util_2.4.2*.jar"/>
+				<include name="org.eclipse.xtext.common.types_2.4.2*.jar"/>
+				<include name="org.eclipse.xtext.common.types.ui_2.4.2*.jar"/>
+				<include name="org.eclipse.xtext.xbase_2.4.2*.jar"/>
+			</fileset>
+			<fileset dir="${emf-prefix}">
+				<include name="org.eclipse.emf.ecore.xmi_2.9.0*.jar"/>
+				<include name="org.eclipse.emf.ecore_2.9.0*.jar"/>
+				<include name="org.eclipse.emf.common_2.9.0*.jar"/>
+			</fileset>
+			<fileset dir="${platform-prefix}">
+				<include name="org.eclipse.jdt.annotation_1.1.0*.jar"/>
+				<include name="org.eclipse.core.runtime_3.9.0*.jar"/>
+				<include name="org.eclipse.jdt.core_3.9.0*.jar"/>
+				<include name="org.eclipse.equinox.common_3.6.200*.jar"/>
+			</fileset>
+			<fileset dir="${orbit-prefix}">
+				<include name="com.google.guava_10.0.1*.jar"/>
+				<include name="org.antlr.runtime_3.2.0*.jar"/>
+				<include name="com.google.inject_3.0.0*.jar"/>
+				<include name="org.apache.commons.cli_1.2.0*.jar"/>
+				<include name="javax.inject_1.0.0*.jar"/>
+				<include name="org.apache.log4j_1.2.15*.jar"/>
+				<include name="org.apache.commons.logging_1.1.1*.jar"/>
+			</fileset>
 			<fileset dir="${efx-prefix}">
-				<include name="org.eclipse.fx.ide.fxgraph_*.jar"/>
-				<include name="org.eclipse.fx.ide.fxml.compiler_*.jar"/>
+				<include name="org.eclipse.fx.ide.fxgraph_0.9.0*.jar"/>
+				<include name="org.eclipse.fx.ide.fxml.compiler_0.9.0*.jar"/>
 			</fileset>
 		</unzip>
 		<delete dir="repack/META-INF" />
@@ -56,14 +67,17 @@
 		<delete file="repack/modeling32.png" />
 		<delete file="repack/plugin.properties" />
 		<delete file="repack/plugin.xml" />
-		<tstamp>
-		      <format property="time" pattern="yyyyMMddHHmm"
-		          offset="-5" unit="hour"/>
-		    </tstamp>
+		
 		<jar destfile="target/org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar">
 			<fileset dir="repack">
 				<include name="**/*"/>
 			</fileset>
 		</jar>
+	</target>
+	
+	<target name="publish">
+		<delete dir="${root-prefix}/efxclipse/compiler-nightly" />
+		<mkdir dir="${root-prefix}/efxclipse/compiler-nightly"/>
+		<copyfile dest="${root-prefix}/efxclipse/compiler-nightly/org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar" src="target/org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar"/>
 	</target>
 </project>
