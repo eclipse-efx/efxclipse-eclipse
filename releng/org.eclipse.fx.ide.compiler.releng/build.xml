@@ -68,7 +68,7 @@
 		<delete file="repack/plugin.properties" />
 		<delete file="repack/plugin.xml" />
 		
-		<jar destfile="target/org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar">
+		<jar destfile="target/org.eclipse.fx.fxml.compiler_0.9.0-SNAPSHOT.jar">
 			<fileset dir="repack">
 				<include name="**/*"/>
 			</fileset>
@@ -80,7 +80,7 @@
 		<mkdir dir="${root-prefix}/efxclipse/compiler-nightly"/>
 		<copy todir="${root-prefix}/efxclipse/compiler-nightly/">
 			<fileset dir="target">
-				<include name="org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar"/>
+				<include name="org.eclipse.fx.fxml.compiler_0.9.0-SNAPSHOT.jar"/>
 			</fileset>
 		</copy>
 		<delete dir="repack" />
