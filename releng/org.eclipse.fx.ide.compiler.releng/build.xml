@@ -75,9 +75,15 @@
 		</jar>
 	</target>
 	
-	<target name="publish">
+	<target name="publish" depends="repackage">
 		<delete dir="${root-prefix}/efxclipse/compiler-nightly" />
 		<mkdir dir="${root-prefix}/efxclipse/compiler-nightly"/>
-		<copyfile dest="${root-prefix}/efxclipse/compiler-nightly/org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar" src="target/org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar"/>
+		<copy todir="${root-prefix}/efxclipse/compiler-nightly/">
+			<fileset dir="target">
+				<include name="org.eclipse.fx.fxml.compiler_0.9.0.${time}.jar"/>
+			</fileset>
+		</copy>
+		<delete dir="repack" />
+		<delete dir="target" />
 	</target>
 </project>
