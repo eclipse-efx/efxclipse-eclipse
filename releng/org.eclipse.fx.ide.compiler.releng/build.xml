@@ -4,7 +4,7 @@
 	<property name="emf-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
 	<property name="platform-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
 	<property name="orbit-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
-	<property name="efx-prefix" value="${root-prefix}/efxclipse/updates-nightly" />
+	<property name="efx-prefix" value="${root-prefix}/efxclipse/updates-nightly/site/plugins" />
 	
 	<tstamp>
 		<format property="time" pattern="yyyyMMddHHmm" offset="-5" unit="hour"/>
