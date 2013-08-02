@@ -10,9 +10,12 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.ui.preview.skins;
 
+import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4HorizontalPreview;
+
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.Rectangle;
 
 
 public abstract class BasicPreviewer {
@@ -36,6 +39,7 @@ public abstract class BasicPreviewer {
 			this.contentWidth = width;
 			this.contentHeight = height;
 		} else {
+			contentPane.setClip(new Rectangle(0,0,width,height));
 			contentPane.setPrefSize(width,height);
 			contentPane.setMinSize(width,height);
 			contentPane.setMaxSize(width,height);
@@ -66,4 +70,9 @@ public abstract class BasicPreviewer {
 		}
 		return pane;
 	}
+	
+	protected static String getIconUrl(String url) {
+		return BasicPreviewer.class.getClassLoader().getResource(url).toExternalForm();
+	}
+
 }

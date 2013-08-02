@@ -31,11 +31,6 @@ public class AppleIPadVerticalPreview extends BasicPreviewer {
 		super(contentWidth, contentHeight);
 	}
 
-	private static String getIconUrl(String url) {
-		return AppleIPadVerticalPreview.class.getClassLoader().getResource(url).toExternalForm();
-	}
-
-	
 	@Override
 	protected BorderPane createContentPane() {
 		BorderPane pane = new BorderPane();

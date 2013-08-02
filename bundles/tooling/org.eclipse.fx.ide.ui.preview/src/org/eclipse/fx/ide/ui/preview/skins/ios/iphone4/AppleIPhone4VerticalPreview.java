@@ -30,10 +30,6 @@ public class AppleIPhone4VerticalPreview extends BasicPreviewer {
 		super(contentWidth, contentHeight);
 	}
 	
-	private static String getIconUrl(String url) {
-		return AppleIPhone4VerticalPreview.class.getClassLoader().getResource(url).toExternalForm();
-	}
-	
 	protected BorderPane createContentPane() {
 		BorderPane pane = new BorderPane();
 		

@@ -35,70 +35,70 @@ public class AndroidPhoneVerticalPreview extends BasicPreviewer {
 		BorderPane pane = new BorderPane();
 		{
 			HBox box = new HBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/01.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/02.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/01.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/02.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/03.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/03.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/04.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/05.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/04.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/05.png")));
 			
 			pane.setTop(box);			
 		}
 		
 		{
 			VBox box = new VBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/06.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/06.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/08.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/08.png")), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/10.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/10.png")));
 			
 			pane.setLeft(box);
 		}
 
 		{
 			VBox box = new VBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/07.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/07.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/09.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/09.png")), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/11.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/11.png")));
 			pane.setRight(box);
 		}
 		
 		{
 			HBox box = new HBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/12.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/13.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/12.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/13.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/14.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/14.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/15.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/16.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/15.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyS3/vertical/16.png")));
 						
 			pane.setBottom(box);
 		}	

@@ -37,29 +37,29 @@ public class AndroidTabletVerticalPreview extends BasicPreviewer {
 		
 		{
 			HBox box = new HBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/01.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/02.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/01.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/02.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/03.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/03.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/04.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/04.png")));
 
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/05.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/05.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/06.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/07.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/06.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/07.png")));
 			
 			
 			pane.setTop(box);
@@ -67,11 +67,11 @@ public class AndroidTabletVerticalPreview extends BasicPreviewer {
 		
 		{
 			VBox box = new VBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/08.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/08.png")));
 
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/10.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/10.png")), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
@@ -82,11 +82,11 @@ public class AndroidTabletVerticalPreview extends BasicPreviewer {
 		
 		{
 			VBox box = new VBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/09.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/09.png")));
 
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/11.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/11.png")), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
@@ -97,29 +97,29 @@ public class AndroidTabletVerticalPreview extends BasicPreviewer {
 		
 		{
 			HBox box = new HBox();
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/12.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/13.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/12.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/13.png")));
 			
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/14.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/14.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/15.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/15.png")));
 
 			{
 				Region r = new Region();
-				Background g = new Background(new BackgroundImage(new Image("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/16.png"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
+				Background g = new Background(new BackgroundImage(new Image(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/16.png")), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT));
 				r.setBackground(g);
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/17.png"));
-			box.getChildren().add(new ImageView("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/18.png"));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/17.png")));
+			box.getChildren().add(new ImageView(getIconUrl("org/eclipse/fx/ide/ui/preview/skins/android/resources/galaxyNote2/vertical/18.png")));
 			
 			
 			pane.setBottom(box);
@@ -135,8 +135,7 @@ public class AndroidTabletVerticalPreview extends BasicPreviewer {
 
 	@Override
 	protected double marginHeight() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2*84;
 	}
 
 }

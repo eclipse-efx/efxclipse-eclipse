@@ -39,7 +39,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.transform.Transform;
@@ -51,7 +50,12 @@ import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.fx.ide.ui.preview.bundle.Activator;
 import org.eclipse.fx.ide.ui.preview.skins.BasicPreviewer;
+import org.eclipse.fx.ide.ui.preview.skins.android.galaxyNote2.AndroidTabletHorizontalPreview;
+import org.eclipse.fx.ide.ui.preview.skins.android.galaxyNote2.AndroidTabletVerticalPreview;
+import org.eclipse.fx.ide.ui.preview.skins.android.galaxyS3.AndroidPhoneHorizontalPreview;
 import org.eclipse.fx.ide.ui.preview.skins.android.galaxyS3.AndroidPhoneVerticalPreview;
+import org.eclipse.fx.ide.ui.preview.skins.ios.ipad.AppleIPadHorizontalPreview;
+import org.eclipse.fx.ide.ui.preview.skins.ios.ipad.AppleIPadVerticalPreview;
 import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4HorizontalPreview;
 import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4VerticalPreview;
 import org.eclipse.fx.ide.ui.preview.text.AnnotationAccess;
@@ -93,17 +97,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
 
-
-
-
-
-
-
-
-
-
-
-
 import com.google.inject.Inject;
 
 public class LivePreviewPart extends ViewPart {
@@ -112,14 +105,16 @@ public class LivePreviewPart extends ViewPart {
 //		IPHONE_DEFAULT("iPhone 320×480",320,480),
 		IPHONE_4_RETINA("iPhone4 640×960 - Retina",640,960, true),
 		IPHONE_5("iPhone5 640×1136",640,1136, true),
-//		IPAD_DEFAULT("iPad 768×1024",768,1024, true),
-//		IPAD_RETINA("iPad 1536×2048 - Retina",1536,2048,true),
-//		ANDROID_240_320("Android 240x320 - ldpi",240,320,true),
+		IPAD_DEFAULT("iPad 768×1024",768,1024, true),
+		IPAD_RETINA("iPad 1536×2048 - Retina",1536,2048,true),
+		ANDROID_PHONE_600_1024("Android 600x1024",600,1024,true),
+		ANDROID_PHONE_720_1280("Galaxy S III 720x1280",720,1280,true),
+		ANDROID_480_800("Galaxy Note II 480x800",480,800,true),
+		ANDROID_720_1280("Galaxy Note II 720x1280",720,1280,true),
+		ANDROID_800_1280("Galaxy Note II 800x1280",800,1280,true),
+//		ANDROID_240_320("Android 240x320 ldpi",240,320,true),
 //		ANDROID_320_480("Android 320x480 mdpi",320,480,true),
-//		ANDROID_480_800("Android 480x800 hdpi",480,800,true),
-//		ANDROID_600_1024("Android 600x1024 mdpi",600,1024,true),
-//		ANDROID_720_1280("Android 720x1280 mdpi",720,1280,true),
-//		ANDROID_800_1280("Android 800x1280 mdpi",800,1280,true),
+//		
 //		DESKTOP_1024_768("1024x768",1024,768,false),
 //		DESKTOP_1280_1024("1280x1024",1280,1024,false)
 		;
@@ -147,6 +142,7 @@ public class LivePreviewPart extends ViewPart {
 		
 		@Override
 		public void run() {
+			screenSize.setText(size.name);
 			updateResolution(size);
 		}
 	}
@@ -209,13 +205,31 @@ public class LivePreviewPart extends ViewPart {
 	
 	private SCREEN_SIZE currentSize = SCREEN_SIZE.DEFAULT;
 	
-	private AppleIPhone4HorizontalPreview horizontal_iphone4 = new AppleIPhone4HorizontalPreview(960,640);
-	private AppleIPhone4VerticalPreview vertical_iphone4 = new AppleIPhone4VerticalPreview(640,960);
 	
 	private Map<SCREEN_SIZE, BasicPreviewer[]> previewers = new HashMap<>();
+	private Action screenSize;
 	{
+		AppleIPhone4HorizontalPreview horizontal_iphone4 = new AppleIPhone4HorizontalPreview(960,640);
+		AppleIPhone4VerticalPreview vertical_iphone4 = new AppleIPhone4VerticalPreview(640,960);
+		
+		AppleIPadHorizontalPreview horizontal_ipad = new AppleIPadHorizontalPreview(1024, 768);
+		AppleIPadVerticalPreview vertical_ipad = new AppleIPadVerticalPreview(768, 1024);
+		
+		AndroidPhoneHorizontalPreview horizonal_android_phone = new AndroidPhoneHorizontalPreview(1024,600);
+		AndroidPhoneVerticalPreview vertical_android_phone = new AndroidPhoneVerticalPreview(600,1024);
+
+		AndroidTabletHorizontalPreview horizontal_android_tablet = new AndroidTabletHorizontalPreview(800, 480);
+		AndroidTabletVerticalPreview vertical_android_tablet = new AndroidTabletVerticalPreview(480,800);
+		
 		previewers.put(SCREEN_SIZE.IPHONE_4_RETINA, new BasicPreviewer[] { vertical_iphone4, horizontal_iphone4 });
 		previewers.put(SCREEN_SIZE.IPHONE_5, new BasicPreviewer[] { vertical_iphone4, horizontal_iphone4 });
+		previewers.put(SCREEN_SIZE.IPAD_DEFAULT, new BasicPreviewer[] { vertical_ipad, horizontal_ipad });
+		previewers.put(SCREEN_SIZE.IPAD_RETINA, new BasicPreviewer[] { vertical_ipad, horizontal_ipad });
+		previewers.put(SCREEN_SIZE.ANDROID_PHONE_600_1024, new BasicPreviewer[] { vertical_android_phone, horizonal_android_phone });
+		previewers.put(SCREEN_SIZE.ANDROID_PHONE_720_1280, new BasicPreviewer[] { vertical_android_phone, horizonal_android_phone });
+		previewers.put(SCREEN_SIZE.ANDROID_480_800, new BasicPreviewer[] { vertical_android_tablet, horizontal_android_tablet });
+		previewers.put(SCREEN_SIZE.ANDROID_720_1280, new BasicPreviewer[] { vertical_android_tablet, horizontal_android_tablet });
+		previewers.put(SCREEN_SIZE.ANDROID_800_1280, new BasicPreviewer[] { vertical_android_tablet, horizontal_android_tablet });		
 	}
 
 	static {
@@ -430,7 +444,7 @@ public class LivePreviewPart extends ViewPart {
 		}
 		final Menu m = mgr.createContextMenu(parent);
 		
-		Action screenSize = new Action("ScreenSize",IAction.AS_DROP_DOWN_MENU) {
+		screenSize = new Action("ScreenSize",IAction.AS_DROP_DOWN_MENU) {
 			@Override
 			public void runWithEvent(Event event) {
 				if( event.detail == SWT.DROP_DOWN ) {
@@ -448,6 +462,11 @@ public class LivePreviewPart extends ViewPart {
 	
 	void updateResolution(SCREEN_SIZE size) {
 		currentSize = size;
+		BasicPreviewer[] pv = previewers.get(size);
+		if( pv != null ) {
+			pv[0].setContentSize(size.width, size.height);
+			pv[1].setContentSize(size.height, size.width);
+		}
 		synchronizer.refreshPreview();
 	}
 
