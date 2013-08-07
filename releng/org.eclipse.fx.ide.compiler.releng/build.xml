@@ -67,10 +67,16 @@
 		<delete file="repack/modeling32.png" />
 		<delete file="repack/plugin.properties" />
 		<delete file="repack/plugin.xml" />
+		<delete file="repack/about_org.eclipse.xtend.lib.html" />
+		<delete file="repack/about_org.eclipse.xtext.xbase.lib.html" />
+		<delete file="repack/about.html" />
 		
 		<jar destfile="target/org.eclipse.fx.fxml.compiler_0.9.0-SNAPSHOT.jar">
 			<fileset dir="repack">
 				<include name="**/*"/>
+			</fileset>
+			<fileset dir="about-files">
+				<include name="*.html"/>
 			</fileset>
 		</jar>
 	</target>
