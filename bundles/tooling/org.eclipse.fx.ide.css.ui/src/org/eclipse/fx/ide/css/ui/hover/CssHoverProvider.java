@@ -114,7 +114,7 @@ public class CssHoverProvider extends DefaultEObjectHoverProvider {
 	}
 	
 	protected String getHoverInfoAsHtml(EObject o) {
-		// QnD hack to get tooltips back
+		// TODO need better solution to get tooltips working
 		if( o instanceof ColorTok ) {
 			ColorTok t = (ColorTok) o;
 			String rv = "<table><tr><td><div style='height: 20px; width: 20px;border:1;border-style:solid;background-color: "+t.getValue()+"'></div></td><td>"+t.getValue()+"</td></tr></table>";
