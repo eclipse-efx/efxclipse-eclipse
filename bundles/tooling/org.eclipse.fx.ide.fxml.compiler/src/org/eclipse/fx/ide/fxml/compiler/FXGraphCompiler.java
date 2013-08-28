@@ -98,15 +98,11 @@ public class FXGraphCompiler {
 		p.parse(fi.getContent(), h);
 		
 		if( debug ) {
-			String fxgraph = "/tmp/"+UUID.randomUUID().toString()+".fxgraph";
-			
-			File out = new File(fxgraph);
 			String data = new FXGraphGenerator().generate(h.model).toString();
-			FileOutputStream outStream = new FileOutputStream(out);
-			outStream.write(data.getBytes());
-			outStream.close();
+			System.err.println("============");
+			System.err.println(new String(data.getBytes()));
 			
-			compileFXGraph(injector, fxgraph, string, sourcePrefix, outputPrefix);
+			generateJavaFile(h.model, string, sourcePrefix, outputPrefix);
 		} else {
 			generateJavaFile(h.model, string, sourcePrefix, outputPrefix);
 		}

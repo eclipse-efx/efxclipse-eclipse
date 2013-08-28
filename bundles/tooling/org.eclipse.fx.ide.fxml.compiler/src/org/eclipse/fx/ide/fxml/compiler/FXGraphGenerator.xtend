@@ -39,15 +39,15 @@ class FXGraphGenerator {
 	}
 	'''
 	
-	def dispatch valueProp(ValueProperty p) '''
+	def dispatch CharSequence valueProp(ValueProperty p) '''
 	// unhandled type «p»
 	'''
 	
-	def dispatch valueProp(Element p) '''
+	def dispatch CharSequence valueProp(Element p) '''
 	«element(p)»
 	'''
 	
-	def dispatch valueProp(ListValueProperty lp) '''
+	def dispatch CharSequence valueProp(ListValueProperty lp) '''
 	[
 		«FOR p : lp.value»
 		«listValue(p)»«IF lp.value.last != p»,«ENDIF»
@@ -55,11 +55,11 @@ class FXGraphGenerator {
 	]
 	'''
 	
-	def dispatch valueProp(ControllerHandledValueProperty cp) '''
+	def dispatch CharSequence valueProp(ControllerHandledValueProperty cp) '''
 		controllermethod «cp.methodname»
 	'''
 	
-	def dispatch valueProp(SimpleValueProperty sp) '''
+	def dispatch CharSequence valueProp(SimpleValueProperty sp) '''
 	«IF sp.booleanValue != null»
 		«sp.booleanValue»
 	«ELSEIF sp.number != null»
@@ -71,6 +71,10 @@ class FXGraphGenerator {
 	
 	def dispatch listValue(Element e) '''
 	«element(e)»
+	'''
+	
+	def dispatch listValue(SimpleValueProperty sp) '''
+	«valueProp(sp)»
 	'''
 	
 	def dispatch listValue(ReferenceValueProperty rp) '''

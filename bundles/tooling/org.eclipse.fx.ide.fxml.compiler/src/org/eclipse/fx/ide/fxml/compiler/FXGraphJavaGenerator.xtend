@@ -11,12 +11,14 @@ import java.util.HashSet
 import java.net.URL
 import java.util.ResourceBundle
 import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
+import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty
 
 class FXGraphJavaGenerator {
 	int varIndex = 0;
 	Set<String> extraImports = new HashSet;
 	Model model;
 	boolean fieldReflection
+	boolean resourceUrl
 	
 	new(Model model) {
 		this.model = model;
@@ -44,10 +46,26 @@ class FXGraphJavaGenerator {
 	import «i»;
 	«ENDFOR»
 	
+	@SuppressWarnings("all")
 	public class «model.componentDef.name» extends FXMLDocument<«model.componentDef.rootNode.type.simpleName»> {
+		«IF hasController() »
+			«model.componentDef.controller.qualifiedName» _c;
+			
+			public 	«model.componentDef.controller.qualifiedName» getController() {
+				return _c;
+			}
+		«ELSE»
+			public Object getController() {
+				return null;
+			}
+		«ENDIF»
+		
 		public «model.componentDef.rootNode.type.simpleName» load(URL location, ResourceBundle resourceBundle) {
 			«IF hasController() »
-				final «model.componentDef.controller.qualifiedName» _c = new «model.componentDef.controller.qualifiedName»();
+				_c = new «model.componentDef.controller.qualifiedName»();
+			«ENDIF»
+			«IF resourceUrl»
+				final String baseURL = createBaseURL(location);
 			«ENDIF»
 			«content»
 			«IF hasController() && model.componentDef.controller.hasMethod("initialize",URL,ResourceBundle)»
@@ -55,6 +73,13 @@ class FXGraphJavaGenerator {
 			«ENDIF»
 			return root;
 		}
+	
+		«IF resourceUrl»
+			private static String createBaseURL(URL url) {
+				String externalForm = url.toExternalForm();
+				return externalForm.substring(0,externalForm.lastIndexOf('/'));
+			}
+		«ENDIF»
 	
 		«IF fieldReflection»
 			private static void setFieldReflective(Class<?> owner, String n, Object c, Object v) {
@@ -83,6 +108,10 @@ class FXGraphJavaGenerator {
 		extraImports.add(name)
 	}
 	
+	def void enableResourceUrl() {
+		resourceUrl = true;
+	}
+	
 	def controllerFieldAccess(String name, Element element) '''
 	«IF model.componentDef.controller.hasAccessibleField(model.package.name,element.name)»
 		_c.«element.name» = «name»;
@@ -104,12 +133,25 @@ class FXGraphJavaGenerator {
 	
 	def CharSequence generateElementDef(String name, Element element) '''
 	«IF element.type.needsBuilder»
-		«element.type.simpleName» «name»;
-		«element.type.simpleName»Builder «name»Builder = «element.type.simpleName»Builder.create();
-		«registerImport(element.type.qualifiedName+"Builder")»
+		«IF "javafx.scene.image.Image" == element.type.qualifiedName»
+			Image «name»;
+			ImageBuilder «name»Builder = ImageBuilder.create();
+			«registerImport("org.eclipse.fx.core.fxml.ImageBuilder")»
+		«ELSEIF "java.net.URL" == element.type.qualifiedName»
+			URL «name»;
+			URLBuilder «name»Builder = URLBuilder.create();
+			«registerImport("org.eclipse.fx.core.fxml.URLBuilder")»
+		«ELSE»
+			«element.type.simpleName» «name»;
+			«element.type.simpleName»Builder «name»Builder = «element.type.simpleName»Builder.create();
+			«registerImport(element.type.qualifiedName+"Builder")»
+		«ENDIF»
 		«FOR p : element.properties»
 			«IF p.value instanceof SimpleValueProperty»
 				«name»Builder.«p.name»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+			«ELSEIF p.value instanceof ResourceValueProperty»
+				«name»Builder.«p.name»(baseURL + "/«(p.value as ResourceValueProperty).value.value»");
+				«enableResourceUrl()»
 			«ENDIF»
 		«ENDFOR»
 		«name» = «name»Builder.build();
@@ -120,7 +162,16 @@ class FXGraphJavaGenerator {
 		«element.type.simpleName» «name» = new «element.type.simpleName»();
 		«FOR p : element.properties»
 			«IF p.value instanceof SimpleValueProperty»
-				«name».set«p.name.toFirstUpper»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+				«IF (p.value as SimpleValueProperty).stringValue != null»
+					«val enumType = ReflectionHelper.getEnumType(element.type, p.name, false)»
+					«IF enumType != null»
+						«name».set«p.name.toFirstUpper»(«enumType».«(p.value as SimpleValueProperty).stringValue»);
+					«ELSE»
+						«name».set«p.name.toFirstUpper»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+					«ENDIF»
+				«ELSE»
+					«name».set«p.name.toFirstUpper»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+				«ENDIF»
 			«ELSEIF p.value instanceof ControllerHandledValueProperty && hasController()»
 				«eventBindingAccess(name, p.name, (p.value as ControllerHandledValueProperty).methodname, element)»
 			«ELSEIF p.value instanceof Element»
@@ -138,12 +189,19 @@ class FXGraphJavaGenerator {
 					«val varName = 'e_'+i»
 						«IF l instanceof Element»
 						«generateElementDef(varName,l as Element)»
-						«name».get«p.name.toFirstUpper»().add(«varName»);
+						«IF "java.net.URL" == (l as Element).type.qualifiedName»
+							«name».get«p.name.toFirstUpper»().add(«varName».toExternalForm());
+						«ELSE»
+							«name».get«p.name.toFirstUpper»().add(«varName»);
+						«ENDIF»
 						«staticProperties(varName,l as Element)»
 						«staticCallProperties(varName,l as Element)»
 						«ENDIF»
 					}
 				«ENDFOR»
+			«ELSEIF p.value instanceof ResourceValueProperty»
+				«name».set«p.name.toFirstUpper»(baseURL + "/«(p.value as ResourceValueProperty).value.value»");
+				«enableResourceUrl()»
 			«ENDIF»
 		«ENDFOR»
 		«FOR p : element.defaultChildren»
@@ -151,7 +209,12 @@ class FXGraphJavaGenerator {
 				«val i = getVarIndex»
 				«val varName = 'e_'+i»
 				«generateElementDef(varName,p)»
-				«name».get«element.type.defaultAttribute.toFirstUpper»().add(«varName»);
+«««				Need better check!
+				«IF "java.net.URL" == p.type.qualifiedName»
+					«name».get«element.type.defaultAttribute.toFirstUpper»().add(«varName».toExternalForm());
+				«ELSE»
+					«name».get«element.type.defaultAttribute.toFirstUpper»().add(«varName»);
+				«ENDIF»
 			}
 		«ENDFOR»
 		«IF element.name != null && hasController()»
@@ -214,9 +277,20 @@ class FXGraphJavaGenerator {
 			return value.booleanValue;
 		} else if( value.number != null ) {
 			if( value.negative ) {
-				return "-" + value.number;
+				if( value.number == "-Infinity" ) {
+					return "Double.NEGATIVE_INFINITY";
+				} else {
+					return "-" + value.number;	
+				}
 			} else {
-				return value.number;
+				if( value.number == "-Infinity" ) {
+					return "Double.NEGATIVE_INFINITY";
+				} else if( value.number == "Infinity" ) {
+					return "Double.POSITIVE_INFINITY";
+				} else {
+					return value.number;
+				}
+				
 			}
 		}
 	}

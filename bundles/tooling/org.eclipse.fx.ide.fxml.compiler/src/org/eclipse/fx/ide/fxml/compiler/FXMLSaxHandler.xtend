@@ -122,31 +122,68 @@ class FXMLSaxHandler extends DefaultHandler {
 					}
 				} else {
 					if( ! attributes.getLocalName(i).contains('.') ) {
-						val vt = ReflectionHelper.getValueType(t.type,attributes.getLocalName(i))
-						
-						if( vt == ValueType.EVENT_CLASS ) {
-							val vp = FXGraphFactory.eINSTANCE.createControllerHandledValueProperty
-							vp.setMethodname(attributes.getValue(i).substring(1))
-							
+						if( attributes.getValue(i).startsWith("@") ) {
+							val vp = FXGraphFactory.eINSTANCE.createResourceValueProperty()
+							val sv = FXGraphFactory.eINSTANCE.createStringValue;
+							sv.value = attributes.getValue(i).substring(1)
+							vp.setValue(sv);
 							val pp = FXGraphFactory.eINSTANCE.createProperty
 							pp.name = attributes.getLocalName(i)
 							pp.value = vp
 							e.properties += pp
-							
 						} else {
-							val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
-							if( vt == ValueType.BOOLEAN ) {
-								vp.booleanValue = attributes.getValue(i)
-							} else if( vt == ValueType.NUMBER ) {
-								vp.number = attributes.getValue(i)
+							if( "javafx.scene.image.Image" == t.type.qualifiedName ) {
+								val attname = attributes.getLocalName(i)
+								val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+								if( "requestedWidth" ==  attname || "requestedHeight" == attname ) {
+									vp.number = attributes.getValue(i)
+								} else if( "preserveRatio" == attname || "smooth" == attname || "backgroundLoading" == attname ) {
+									vp.booleanValue = attributes.getValue(i)
+								}
+								val pp = FXGraphFactory.eINSTANCE.createProperty
+								pp.name = attributes.getLocalName(i)
+								pp.value = vp
+								e.properties += pp			
+//							} else if( "javafx.scene.shape.TriangleMesh" == t.type.qualifiedName ) {
+//								
 							} else {
-								vp.stringValue = attributes.getValue(i)
+								val vt = ReflectionHelper.getValueType(t.type,attributes.getLocalName(i))
+						
+								if( vt == ValueType.EVENT_CLASS ) {
+									val vp = FXGraphFactory.eINSTANCE.createControllerHandledValueProperty
+									vp.setMethodname(attributes.getValue(i).substring(1))
+									
+									val pp = FXGraphFactory.eINSTANCE.createProperty
+									pp.name = attributes.getLocalName(i)
+									pp.value = vp
+									e.properties += pp
+									
+								} else if( vt == ValueType.LIST ) {
+									val vp = FXGraphFactory.eINSTANCE.createListValueProperty
+									val lv = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+									lv.stringValue = attributes.getValue(i)
+									vp.value += lv
+									
+									val pp = FXGraphFactory.eINSTANCE.createProperty
+									pp.name = attributes.getLocalName(i)
+									pp.value = vp
+									e.properties += pp
+								} else {
+									val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+									if( vt == ValueType.BOOLEAN ) {
+										vp.booleanValue = attributes.getValue(i)
+									} else if( vt == ValueType.NUMBER ) {
+										vp.number = attributes.getValue(i)
+									} else {
+										vp.stringValue = attributes.getValue(i)
+									}
+									
+									val pp = FXGraphFactory.eINSTANCE.createProperty
+									pp.name = attributes.getLocalName(i)
+									pp.value = vp
+									e.properties += pp
+								}	
 							}
-							
-							val pp = FXGraphFactory.eINSTANCE.createProperty
-							pp.name = attributes.getLocalName(i)
-							pp.value = vp
-							e.properties += pp
 						}
 					} else {
 						val idx = attributes.getLocalName(i).indexOf('.')

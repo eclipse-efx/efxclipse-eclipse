@@ -9,9 +9,16 @@ import static extension org.eclipse.fx.ide.fxml.compiler.BitOperations.*
 import java.lang.reflect.Field
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.WildcardType
+import java.lang.reflect.Method
 
 class ReflectionHelper {
 	private static Class<?> EVENT_HANDLER_CLASS = Class::forName("javafx.event.EventHandler",false, typeof(ReflectionHelper).classLoader);
+	
+	def static isAssignable(JvmTypeReference target, JvmTypeReference source) {
+		val targetClass = Class::forName(target.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		val sourceClass = Class::forName(source.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		return targetClass.isAssignableFrom(sourceClass)
+	}
 	
 	def static getEnumType(JvmTypeReference type, String attributeName, boolean layoutConstraint) {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
@@ -118,7 +125,17 @@ class ReflectionHelper {
 	
 	def static getValueType(JvmType type, String attribute) {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
-		val m = c.getMethod("get"+attribute.toFirstUpper)
+		
+		var Method m;
+		try {
+			m = c.getMethod("get"+attribute.toFirstUpper)	
+		} catch(NoSuchMethodException e) {
+			try {
+				m = c.getMethod("is"+attribute.toFirstUpper)	
+			} catch( NoSuchMethodException e2) {
+				throw e;
+			}
+		}
 		
 		if( m.returnType.boolean ) {
 			return ValueType.BOOLEAN	
