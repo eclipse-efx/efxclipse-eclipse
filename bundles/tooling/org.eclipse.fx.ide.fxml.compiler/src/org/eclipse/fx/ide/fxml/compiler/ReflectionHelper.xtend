@@ -58,6 +58,16 @@ class ReflectionHelper {
 		throw initialException
 	}
 	
+	def static boolean hasField(JvmTypeReference type, String refPackage, String name) {
+		var c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		try {
+			c.findField(name)
+			return true;
+		} catch( NoSuchFieldException e ) {
+			return false;
+		}
+	}
+	
 	def static boolean hasAccessibleField(JvmTypeReference type, String refPackage, String name) {
 		var c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
 		var Field field = c.findField(name)

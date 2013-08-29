@@ -12,6 +12,8 @@ import java.net.URL
 import java.util.ResourceBundle
 import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty
+import javax.lang.model.type.ReferenceType
+import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty
 
 class FXGraphJavaGenerator {
 	int varIndex = 0;
@@ -22,6 +24,11 @@ class FXGraphJavaGenerator {
 	
 	new(Model model) {
 		this.model = model;
+		registerImport("java.net.URL");
+		registerImport("org.eclipse.fx.core.fxml.FXMLDocument");
+		registerImport("java.util.Map");
+		registerImport("java.util.HashMap");
+		registerImport("java.util.ResourceBundle");
 	}
 	
 	def getVarIndex() {
@@ -31,10 +38,6 @@ class FXGraphJavaGenerator {
 	
 	def generate() '''
 	package «model.package.name»;
-	
-	import java.net.URL;
-	import org.eclipse.fx.core.fxml.FXMLDocument;
-	import java.util.ResourceBundle;
 	
 	«var content = generateElementDef("root", model.componentDef.rootNode)»
 	
@@ -48,6 +51,7 @@ class FXGraphJavaGenerator {
 	
 	@SuppressWarnings("all")
 	public class «model.componentDef.name» extends FXMLDocument<«model.componentDef.rootNode.type.simpleName»> {
+		private Map<String,Object> namespaceMap = new HashMap<>();
 		«IF hasController() »
 			«model.componentDef.controller.qualifiedName» _c;
 			
@@ -113,12 +117,14 @@ class FXGraphJavaGenerator {
 	}
 	
 	def controllerFieldAccess(String name, Element element) '''
-	«IF model.componentDef.controller.hasAccessibleField(model.package.name,element.name)»
-		_c.«element.name» = «name»;
-	«ELSE»
-		«enableFieldReflection(element.name)»
-		// resort to reflection
-		setFieldReflective(«model.componentDef.controller.getFieldOwner(element.name)».class, "«element.name»", _c, «name»);
+	«IF model.componentDef.controller.hasField(model.package.name,element.name)»
+		«IF model.componentDef.controller.hasAccessibleField(model.package.name,element.name)»
+			_c.«element.name» = «name»;
+		«ELSE»
+			«enableFieldReflection(element.name)»
+			// resort to reflection
+			setFieldReflective(«model.componentDef.controller.getFieldOwner(element.name)».class, "«element.name»", _c, «name»);
+		«ENDIF»
 	«ENDIF»
 	'''
 	
@@ -174,6 +180,8 @@ class FXGraphJavaGenerator {
 				«ENDIF»
 			«ELSEIF p.value instanceof ControllerHandledValueProperty && hasController()»
 				«eventBindingAccess(name, p.name, (p.value as ControllerHandledValueProperty).methodname, element)»
+			«ELSEIF p.value instanceof ReferenceValueProperty»
+				«name».set«p.name.toFirstUpper»((«((p.value as ReferenceValueProperty).reference as Element).type.qualifiedName»)namespaceMap.get("«((p.value as ReferenceValueProperty).reference as Element).name»"));
 			«ELSEIF p.value instanceof Element»
 				{
 					«val varName = 'e_'+getVarIndex»
@@ -221,6 +229,9 @@ class FXGraphJavaGenerator {
 			«controllerFieldAccess(name,element)»
 		«ENDIF»
 	«ENDIF»
+	«IF element.name != null»
+		namespaceMap.put("«element.name»",«name»);
+	«ENDIF»
 	'''
 	
 	def staticCallProperties(String name, Element element) '''
@@ -239,6 +250,8 @@ class FXGraphJavaGenerator {
 			«ELSE»
 				«type.simpleName».set«prop.name.toFirstUpper»(«name»,«(prop.value as SimpleValueProperty).simpleAttributeValue»);
 			«ENDIF»
+		«ELSEIF prop.value instanceof ReferenceValueProperty»
+			«type.simpleName».set«prop.name.toFirstUpper»(«name»,(«((prop.value as ReferenceValueProperty).reference as Element).type.qualifiedName»)namespaceMap.get("«((prop.value as ReferenceValueProperty).reference as Element).name»"));
 		«ELSEIF prop.value instanceof Element»
 			«val varname = 'e_'+getVarIndex»
 			«generateElementDef(varname,prop.value as Element)»
@@ -262,6 +275,8 @@ class FXGraphJavaGenerator {
 			«ELSE»
 				«type.simpleName».set«prop.name.toFirstUpper»(«name»,«(prop.value as SimpleValueProperty).simpleAttributeValue»);
 			«ENDIF»
+		«ELSEIF prop.value instanceof ReferenceValueProperty»
+			«type.simpleName».set«prop.name.toFirstUpper»(«name»,((«((prop.value as ReferenceValueProperty).reference as Element).type.qualifiedName»)namespaceMap.get("«((prop.value as ReferenceValueProperty).reference as Element).name»"));
 		«ELSEIF prop.value instanceof Element»
 			«val varname = 'e_'+getVarIndex»
 			«generateElementDef(varname,prop.value as Element)»
