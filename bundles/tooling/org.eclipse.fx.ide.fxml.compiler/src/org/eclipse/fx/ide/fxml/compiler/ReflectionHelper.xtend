@@ -25,7 +25,7 @@ class ReflectionHelper {
 		
 		val methodName = "set"+attributeName.toFirstUpper
 		val m = c.methods.findFirst[name == methodName && (parameterCount == 1 || (layoutConstraint && parameterCount == 2) )]
-		val t = m?.parameterTypes.get(if (layoutConstraint) 1 else 0)
+		val t = m?.parameterTypes?.get(if (layoutConstraint) 1 else 0)
 		
 		return if( t != null && t.enum ) t?.name else null
 	}
@@ -131,6 +131,23 @@ class ReflectionHelper {
 			}
 		}
 		return rv;
+	}
+	
+	def static getType(JvmType type, String attribute) {
+		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		
+		var Method m;
+		try {
+			m = c.getMethod("get"+attribute.toFirstUpper)	
+		} catch(NoSuchMethodException e) {
+			try {
+				m = c.getMethod("is"+attribute.toFirstUpper)	
+			} catch( NoSuchMethodException e2) {
+				throw e;
+			}
+		}
+		
+		return m.returnType.name;
 	}
 	
 	def static getValueType(JvmType type, String attribute) {

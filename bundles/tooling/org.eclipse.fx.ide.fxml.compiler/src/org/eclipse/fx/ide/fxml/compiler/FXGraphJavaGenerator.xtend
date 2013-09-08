@@ -154,7 +154,21 @@ class FXGraphJavaGenerator {
 		«ENDIF»
 		«FOR p : element.properties»
 			«IF p.value instanceof SimpleValueProperty»
-				«name»Builder.«p.name»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+				«IF (p.value as SimpleValueProperty).stringValue != null»
+					«val enumType = ReflectionHelper.getEnumType(element.type, p.name, false)»
+					«IF enumType != null»
+						«name»Builder.«p.name»(«enumType».«(p.value as SimpleValueProperty).stringValue»);
+					«ELSE»
+						«val type = ReflectionHelper.getValueType(element.type.type, p.name)»
+						«IF type == ValueType.CLASS»
+							«name»Builder.«p.name»(«ReflectionHelper.getType(element.type.type, p.name)».valueOf("«(p.value as SimpleValueProperty).stringValue»"));
+						«ELSE»
+							«name»Builder.«p.name»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+						«ENDIF»
+					«ENDIF»
+				«ELSE»
+					«name»Builder.«p.name»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+				«ENDIF»
 			«ELSEIF p.value instanceof ResourceValueProperty»
 				«name»Builder.«p.name»(baseURL + "/«(p.value as ResourceValueProperty).value.value»");
 				«enableResourceUrl()»
@@ -173,7 +187,12 @@ class FXGraphJavaGenerator {
 					«IF enumType != null»
 						«name».set«p.name.toFirstUpper»(«enumType».«(p.value as SimpleValueProperty).stringValue»);
 					«ELSE»
-						«name».set«p.name.toFirstUpper»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+						«val type = ReflectionHelper.getValueType(element.type.type, p.name)»
+						«IF type == ValueType.CLASS»
+							«name».set«p.name.toFirstUpper»(«ReflectionHelper.getType(element.type.type, p.name)».valueOf("«(p.value as SimpleValueProperty).stringValue»"));
+						«ELSE»
+							«name».set«p.name.toFirstUpper»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
+						«ENDIF»
 					«ENDIF»
 				«ELSE»
 					«name».set«p.name.toFirstUpper»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
