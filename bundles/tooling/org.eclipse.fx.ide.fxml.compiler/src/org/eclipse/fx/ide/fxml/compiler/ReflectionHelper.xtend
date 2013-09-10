@@ -24,7 +24,7 @@ class ReflectionHelper {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
 		
 		val methodName = "set"+attributeName.toFirstUpper
-		val m = c.methods.findFirst[name == methodName && (parameterCount == 1 || (layoutConstraint && parameterCount == 2) )]
+		val m = c.methods.findFirst[name == methodName && (parameterTypes.length == 1 || (layoutConstraint && parameterTypes.length == 2) )]
 		val t = m?.parameterTypes?.get(if (layoutConstraint) 1 else 0)
 		
 		return if( t != null && t.enum ) t?.name else null
@@ -89,7 +89,7 @@ class ReflectionHelper {
 	
 	def static needsBuilder(JvmTypeReference type) {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
-		return c.constructors.findFirst[parameterCount==0] == null
+		return c.constructors.findFirst[parameterTypes.length==0] == null
 	}
 	
 	def static defaultAttribute(JvmTypeReference type) {
