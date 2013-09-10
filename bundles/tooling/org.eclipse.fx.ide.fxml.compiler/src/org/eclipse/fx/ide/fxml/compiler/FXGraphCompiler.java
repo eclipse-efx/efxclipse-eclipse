@@ -72,7 +72,7 @@ public class FXGraphCompiler {
 				} else {
 					String filePath = new File(string).getParent();
 					String packagename = filePath.substring(sourcePrefix.length());
-					packagename = packagename.replace('/', '.');
+					packagename = packagename.replace('\\', '.').replace('/', '.');
 					
 					return packagename.startsWith(".") ? packagename.substring(1) : packagename;
 				}
