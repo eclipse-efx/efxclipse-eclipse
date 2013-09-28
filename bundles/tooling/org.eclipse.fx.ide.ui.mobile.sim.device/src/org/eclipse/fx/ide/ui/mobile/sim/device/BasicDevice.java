@@ -8,9 +8,7 @@
  * Contributors:
  *     Tom Schindl <tom.schindl@bestsolution.at> - initial API and implementation
  *******************************************************************************/
-package org.eclipse.fx.ide.ui.preview.skins;
-
-import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4HorizontalPreview;
+package org.eclipse.fx.ide.ui.mobile.sim.device;
 
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
@@ -18,7 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Rectangle;
 
 
-public abstract class BasicPreviewer {
+public abstract class BasicDevice {
 	private BorderPane pane;
 	private AnchorPane contentPane;
 	
@@ -29,7 +27,7 @@ public abstract class BasicPreviewer {
 	protected abstract double marginWidth();
 	protected abstract double marginHeight();
 	
-	public BasicPreviewer(double contentWidth, double contentHeight) {
+	public BasicDevice(double contentWidth, double contentHeight) {
 		this.contentWidth = contentWidth;
 		this.contentHeight = contentHeight;
 	}
@@ -72,7 +70,7 @@ public abstract class BasicPreviewer {
 	}
 	
 	protected static String getIconUrl(String url) {
-		return BasicPreviewer.class.getClassLoader().getResource(url).toExternalForm();
+		return BasicDevice.class.getClassLoader().getResource(url).toExternalForm();
 	}
 
 }

@@ -48,16 +48,16 @@ import javafx.util.BuilderFactory;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.fx.ide.ui.mobile.sim.device.BasicDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyNote2.AndroidTabletHorizontalDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyNote2.AndroidTabletVerticalDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyS3.AndroidPhoneHorizontalDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyS3.AndroidPhoneVerticalDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.ios.ipad.AppleIPadHorizontalDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.ios.ipad.AppleIPadVerticalDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.ios.iphone.AppleIPhone4HorizontalDevice;
+import org.eclipse.fx.ide.ui.mobile.sim.device.ios.iphone.AppleIPhone4VerticalDevice;
 import org.eclipse.fx.ide.ui.preview.bundle.Activator;
-import org.eclipse.fx.ide.ui.preview.skins.BasicPreviewer;
-import org.eclipse.fx.ide.ui.preview.skins.android.galaxyNote2.AndroidTabletHorizontalPreview;
-import org.eclipse.fx.ide.ui.preview.skins.android.galaxyNote2.AndroidTabletVerticalPreview;
-import org.eclipse.fx.ide.ui.preview.skins.android.galaxyS3.AndroidPhoneHorizontalPreview;
-import org.eclipse.fx.ide.ui.preview.skins.android.galaxyS3.AndroidPhoneVerticalPreview;
-import org.eclipse.fx.ide.ui.preview.skins.ios.ipad.AppleIPadHorizontalPreview;
-import org.eclipse.fx.ide.ui.preview.skins.ios.ipad.AppleIPadVerticalPreview;
-import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4HorizontalPreview;
-import org.eclipse.fx.ide.ui.preview.skins.ios.iphone4.AppleIPhone4VerticalPreview;
 import org.eclipse.fx.ide.ui.preview.text.AnnotationAccess;
 import org.eclipse.fx.ide.ui.preview.text.ColorManager;
 import org.eclipse.fx.ide.ui.preview.text.XMLConfiguration;
@@ -206,30 +206,30 @@ public class LivePreviewPart extends ViewPart {
 	private SCREEN_SIZE currentSize = SCREEN_SIZE.DEFAULT;
 	
 	
-	private Map<SCREEN_SIZE, BasicPreviewer[]> previewers = new HashMap<>();
+	private Map<SCREEN_SIZE, BasicDevice[]> previewers = new HashMap<>();
 	private Action screenSize;
 	{
-		AppleIPhone4HorizontalPreview horizontal_iphone4 = new AppleIPhone4HorizontalPreview(960,640);
-		AppleIPhone4VerticalPreview vertical_iphone4 = new AppleIPhone4VerticalPreview(640,960);
+		AppleIPhone4HorizontalDevice horizontal_iphone4 = new AppleIPhone4HorizontalDevice(960,640);
+		AppleIPhone4VerticalDevice vertical_iphone4 = new AppleIPhone4VerticalDevice(640,960);
 		
-		AppleIPadHorizontalPreview horizontal_ipad = new AppleIPadHorizontalPreview(1024, 768);
-		AppleIPadVerticalPreview vertical_ipad = new AppleIPadVerticalPreview(768, 1024);
+		AppleIPadHorizontalDevice horizontal_ipad = new AppleIPadHorizontalDevice(1024, 768);
+		AppleIPadVerticalDevice vertical_ipad = new AppleIPadVerticalDevice(768, 1024);
 		
-		AndroidPhoneHorizontalPreview horizonal_android_phone = new AndroidPhoneHorizontalPreview(1024,600);
-		AndroidPhoneVerticalPreview vertical_android_phone = new AndroidPhoneVerticalPreview(600,1024);
+		AndroidPhoneHorizontalDevice horizonal_android_phone = new AndroidPhoneHorizontalDevice(1024,600);
+		AndroidPhoneVerticalDevice vertical_android_phone = new AndroidPhoneVerticalDevice(600,1024);
 
-		AndroidTabletHorizontalPreview horizontal_android_tablet = new AndroidTabletHorizontalPreview(800, 480);
-		AndroidTabletVerticalPreview vertical_android_tablet = new AndroidTabletVerticalPreview(480,800);
+		AndroidTabletHorizontalDevice horizontal_android_tablet = new AndroidTabletHorizontalDevice(800, 480);
+		AndroidTabletVerticalDevice vertical_android_tablet = new AndroidTabletVerticalDevice(480,800);
 		
-		previewers.put(SCREEN_SIZE.IPHONE_4_RETINA, new BasicPreviewer[] { vertical_iphone4, horizontal_iphone4 });
-		previewers.put(SCREEN_SIZE.IPHONE_5, new BasicPreviewer[] { vertical_iphone4, horizontal_iphone4 });
-		previewers.put(SCREEN_SIZE.IPAD_DEFAULT, new BasicPreviewer[] { vertical_ipad, horizontal_ipad });
-		previewers.put(SCREEN_SIZE.IPAD_RETINA, new BasicPreviewer[] { vertical_ipad, horizontal_ipad });
-		previewers.put(SCREEN_SIZE.ANDROID_PHONE_600_1024, new BasicPreviewer[] { vertical_android_phone, horizonal_android_phone });
-		previewers.put(SCREEN_SIZE.ANDROID_PHONE_720_1280, new BasicPreviewer[] { vertical_android_phone, horizonal_android_phone });
-		previewers.put(SCREEN_SIZE.ANDROID_480_800, new BasicPreviewer[] { vertical_android_tablet, horizontal_android_tablet });
-		previewers.put(SCREEN_SIZE.ANDROID_720_1280, new BasicPreviewer[] { vertical_android_tablet, horizontal_android_tablet });
-		previewers.put(SCREEN_SIZE.ANDROID_800_1280, new BasicPreviewer[] { vertical_android_tablet, horizontal_android_tablet });		
+		previewers.put(SCREEN_SIZE.IPHONE_4_RETINA, new BasicDevice[] { vertical_iphone4, horizontal_iphone4 });
+		previewers.put(SCREEN_SIZE.IPHONE_5, new BasicDevice[] { vertical_iphone4, horizontal_iphone4 });
+		previewers.put(SCREEN_SIZE.IPAD_DEFAULT, new BasicDevice[] { vertical_ipad, horizontal_ipad });
+		previewers.put(SCREEN_SIZE.IPAD_RETINA, new BasicDevice[] { vertical_ipad, horizontal_ipad });
+		previewers.put(SCREEN_SIZE.ANDROID_PHONE_600_1024, new BasicDevice[] { vertical_android_phone, horizonal_android_phone });
+		previewers.put(SCREEN_SIZE.ANDROID_PHONE_720_1280, new BasicDevice[] { vertical_android_phone, horizonal_android_phone });
+		previewers.put(SCREEN_SIZE.ANDROID_480_800, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
+		previewers.put(SCREEN_SIZE.ANDROID_720_1280, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
+		previewers.put(SCREEN_SIZE.ANDROID_800_1280, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });		
 	}
 
 	static {
@@ -462,7 +462,7 @@ public class LivePreviewPart extends ViewPart {
 	
 	void updateResolution(SCREEN_SIZE size) {
 		currentSize = size;
-		BasicPreviewer[] pv = previewers.get(size);
+		BasicDevice[] pv = previewers.get(size);
 		if( pv != null ) {
 			pv[0].setContentSize(size.width, size.height);
 			pv[1].setContentSize(size.height, size.width);
@@ -606,7 +606,7 @@ public class LivePreviewPart extends ViewPart {
 							b.setCenter(rootPane_new);
 							p = b;
 						} else {
-							BasicPreviewer[] v = previewers.get(currentSize);
+							BasicDevice[] v = previewers.get(currentSize);
 							Node n = rootPane_new;
 							rootPane_new = v[0].getSimulatorNode();
 							v[0].setContent(n);

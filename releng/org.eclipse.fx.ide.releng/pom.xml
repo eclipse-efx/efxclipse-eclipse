@@ -42,6 +42,7 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.ui.e4</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.java7</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.mobile.sim.device</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.preview</module>
 				
 		<!-- CSS Tooling -->
