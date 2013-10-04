@@ -224,6 +224,7 @@ RobotTask {
 					"org.eclipse.equinox.app",
 					"org.eclipse.osgi",
 					"org.eclipse.equinox.common",
+					"org.eclipse.equinox.launcher",
 					"org.eclipse.equinox.registry",
 					"org.eclipse.equinox.ds",
 					"org.eclipse.equinox.event",
