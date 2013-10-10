@@ -51,7 +51,7 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 			
 			{
 				Region r = new Region();
-				r.setStyle("-fx-background-image: url('"+getIconUrl(ROOT_URL+"/11.png")+"'); -fx-background-repeat: repeat-x;");
+				r.setStyle("-fx-background-image: url('"+getIconUrl(ROOT_URL+"/11.png")+"'); -fx-background-repeat: repeat-y;");
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
@@ -60,7 +60,7 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 			
 			{
 				Region r = new Region();
-				r.setStyle("-fx-background-image: url('"+getIconUrl(ROOT_URL+"/15.png")+"'); -fx-background-repeat: repeat-x;");
+				r.setStyle("-fx-background-image: url('"+getIconUrl(ROOT_URL+"/15.png")+"'); -fx-background-repeat: repeat-y;");
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
@@ -70,20 +70,20 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 
 		{
 			VBox box = new VBox();
-			box.getChildren().add(new ImageView(getIconUrl("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/10.png")));
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/10.png")));
 			
 			{
 				Region r = new Region();
-				r.setStyle("-fx-background-image: url('"+getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/12.png")+"'); -fx-background-repeat: repeat-y;");
+				r.setStyle("-fx-background-image: url('"+getIconUrl(ROOT_URL+"/12.png")+"'); -fx-background-repeat: repeat-y;");
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView(getIconUrl("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/14.png")));
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/14.png")));
 			
 			{
 				Region r = new Region();
-				r.setStyle("-fx-background-image: url('"+getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/16.png")+"'); -fx-background-repeat: repeat-y;");
+				r.setStyle("-fx-background-image: url('"+getIconUrl(ROOT_URL+"/16.png")+"'); -fx-background-repeat: repeat-y;");
 				VBox.setVgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
@@ -93,17 +93,17 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 		
 		{
 			HBox box = new HBox();
-			box.getChildren().add(new ImageView(getIconUrl("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/19.png")));
-			box.getChildren().add(new ImageView(getIconUrl("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/20.png")));
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/19.png")));
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/20.png")));
 			
 			{
 				Region r = new Region();
-				r.setStyle("-fx-background-image: url('"+getIconUrl("org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/21.png")+"'); -fx-background-repeat: repeat-x;");
+				r.setStyle("-fx-background-image: url('"+getIconUrl(ROOT_URL+"/21.png")+"'); -fx-background-repeat: repeat-x;");
 				HBox.setHgrow(r, Priority.ALWAYS);
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView(getIconUrl("/org/eclipse/fx/ide/ui/preview/skins/ios/resources/iphone4/horizontal/22.png")));
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/22.png")));
 				
 			pane.setBottom(box);
 		}

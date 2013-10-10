@@ -70,6 +70,7 @@ public abstract class BasicDevice {
 	}
 	
 	protected static String getIconUrl(String url) {
+		System.err.println("RESOURCE: " + url);
 		return BasicDevice.class.getClassLoader().getResource(url).toExternalForm();
 	}
 
