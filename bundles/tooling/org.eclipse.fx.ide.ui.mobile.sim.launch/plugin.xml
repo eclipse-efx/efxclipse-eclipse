@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchDelegate"
+            id="org.eclipse.fx.ide.ui.mobile.sim.launch.launchConfigurationType"
+            modes="run, debug"
+            name="Mobile Simulator"
+            public="true"
+            sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector">
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchConfigurationTabGroup"
+            id="org.eclipse.fx.ide.ui.mobile.sim.launch.launchConfigurationTabGroup"
+            type="org.eclipse.fx.ide.ui.mobile.sim.launch.launchConfigurationType">
+         <launchMode
+               mode="debug"
+               perspective="org.eclipse.debug.ui.DebugPerspective">
+         </launchMode>
+         <launchMode
+               mode="run">
+         </launchMode>
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchShortcut"
+            icon="icons/images.png"
+            id="org.eclipse.fx.ide.ui.mobile.sim.launch.shortcut"
+            label="Mobile Simulator"
+            modes="run, debug">
+         <contextualLaunch>
+            <enablement>
+               <with
+                     variable="selection">
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.fx.ide.ui.mobile.sim.launch.isMobileApp">
+                  </test>
+               </with>
+            </enablement>
+         </contextualLaunch>
+      </shortcut>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.fx.ide.ui.mobile.sim.launch.MobileAppPropertyTester"
+            id="org.eclipse.fx.ide.ui.mobile.sim.launch.propertyTester"
+            namespace="org.eclipse.fx.ide.ui.mobile.sim.launch"
+            properties="isMobileApp"
+            type="java.lang.Object">
+      </propertyTester>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.eclipse.fx.ide.ui.mobile.sim.launch.launchConfigurationType"
+            icon="icons/images.png"
+            id="org.eclipse.fx.ide.ui.mobile.sim.launch.launchConfigurationTypeImage">
+      </launchConfigurationTypeImage>
+   </extension>
+
+</plugin>

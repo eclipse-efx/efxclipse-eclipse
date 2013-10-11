@@ -55,29 +55,29 @@ public class MobileDeviceSimulator extends Application {
 	}
 	
 	private BasicDevice createDevice() {
-		String type = findParam(DEVICE_TYPE,null);
-		String orientation = findParam(DEVICE_ORIENTATION,"vertical");
-		String displaySize = findParam(DEVICE_ORIENTATION,"1024x768");
+		String type = findParam(DEVICE_TYPE,"IPHONE");
+		String orientation = findParam(DEVICE_ORIENTATION,"VERTICAL");
+		String displaySize = findParam(DISPLAYSIZE,"768x1024");
 		
 		int width = Integer.parseInt(displaySize.substring(0,displaySize.indexOf('x')));
 		int height = Integer.parseInt(displaySize.substring(displaySize.indexOf('x')+1));
 		
-		if( orientation.equals("vertical") ) {
-			if( "android-phone".equals(type) ) {
+		if( orientation.equals("VERTICAL") ) {
+			if( "ANDROID_PHONE".equals(type) ) {
 				return new AndroidPhoneVerticalDevice(width, height);
-			} else if( "android-tablet".equals(type) ) {
+			} else if( "ANDROID_TABLET".equals(type) ) {
 				return new AndroidTabletVerticalDevice(width, height);
-			} else if( "ipad".equals(type) ) {
+			} else if( "IPAD".equals(type) ) {
 				return new AppleIPadVerticalDevice(width, height);
 			} else {
 				return new AppleIPhone4VerticalDevice(width, height);
 			}
 		} else {
-			if( "android-phone".equals(type) ) {
+			if( "ANDROID_PHONE".equals(type) ) {
 				return new AndroidPhoneHorizontalDevice(width, height);
-			} else if( "android-tablet".equals(type) ) {
+			} else if( "ANDROID_TABLET".equals(type) ) {
 				return new AndroidTabletHorizontalDevice(width, height);
-			} else if( "ipad".equals(type) ) {
+			} else if( "IPAD".equals(type) ) {
 				return new AppleIPadHorizontalDevice(width, height);
 			} else {
 				return new AppleIPhone4HorizontalDevice(width, height);
