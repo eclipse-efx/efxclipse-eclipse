@@ -7,6 +7,10 @@
             class="org.eclipse.fx.ide.jdt.core.internal.JavaFXClasspathContainerInitializer"
             id="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER">
       </classpathContainerInitializer>
+      <classpathContainerInitializer
+            class="org.eclipse.fx.ide.jdt.core.internal.MobileClasspathContainer"
+            id="org.eclipse.fx.ide.jdt.core.MOBILE_CONTAINER">
+      </classpathContainerInitializer>
    </extension>
    <extension
          point="org.eclipse.jdt.launching.executionEnvironments">

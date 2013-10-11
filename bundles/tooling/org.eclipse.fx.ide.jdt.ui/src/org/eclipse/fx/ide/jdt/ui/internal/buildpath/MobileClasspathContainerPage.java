@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 BestSolution.at and others.
+ * Copyright (c) 2013 BestSolution.at and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,19 +28,18 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
-
 @SuppressWarnings("restriction")
-public class JavaFXContainerWizardPage extends NewElementWizardPage implements IClasspathContainerPage, IClasspathContainerPageExtension {
+public class MobileClasspathContainerPage extends NewElementWizardPage implements IClasspathContainerPage, IClasspathContainerPageExtension {
 	private IClasspathEntry fContainerEntryResult;
 	
-	public JavaFXContainerWizardPage() {
-		super("JavaFXContainerPage"); //$NON-NLS-1$
+	public MobileClasspathContainerPage() {
+		super("MobileContainerPage"); //$NON-NLS-1$
 		
-		setTitle("JavaFX Library");
-		setDescription("JavaFX Library Selection");
+		setTitle("Mobile SDK Library");
+		setDescription("Mobile SDK Library Selection");
 		setImageDescriptor(JavaPluginImages.DESC_WIZBAN_ADD_LIBRARY);
 
-		fContainerEntryResult = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH);
+		fContainerEntryResult = JavaCore.newContainerEntry(JavaFXCore.MOBILE_CONTAINER_PATH);
 	}
 
 	@Override
@@ -72,7 +71,7 @@ public class JavaFXContainerWizardPage extends NewElementWizardPage implements I
 			IClasspathContainer[] containers= { null };
 			JavaCore.setClasspathContainer(fContainerEntryResult.getPath(), javaProjects, containers, null);
 		} catch (JavaModelException e) {
-			ExceptionHandler.handle(e, getShell(), "JavaFX Container Error", "Error configuring JavaFX Classpath Container");
+			ExceptionHandler.handle(e, getShell(), "Mobile Container Error", "Error configuring Mobile Classpath Container");
 			return false;
 		}
 		return true;
@@ -86,7 +85,6 @@ public class JavaFXContainerWizardPage extends NewElementWizardPage implements I
 	
 	@Override
 	public void setSelection(IClasspathEntry containerEntry) {
-//		fContainerEntryResult = containerEntry;
 	}
 
 	@Override
