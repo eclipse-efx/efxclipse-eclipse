@@ -143,7 +143,7 @@ public class LivePreviewPart extends ViewPart {
 		@Override
 		public void run() {
 			screenSize.setText(size.name);
-			updateResolution(size);
+			updateResolution(size,currentHorizontal);
 		}
 	}
 	
@@ -208,6 +208,7 @@ public class LivePreviewPart extends ViewPart {
 	
 	private Map<SCREEN_SIZE, BasicDevice[]> previewers = new HashMap<>();
 	private Action screenSize;
+	private boolean currentHorizontal;
 	{
 		AppleIPhone4HorizontalDevice horizontal_iphone4 = new AppleIPhone4HorizontalDevice(960,640);
 		AppleIPhone4VerticalDevice vertical_iphone4 = new AppleIPhone4VerticalDevice(640,960);
@@ -454,14 +455,20 @@ public class LivePreviewPart extends ViewPart {
 				}
 			}
 		};
-		
 		getViewSite().getActionBars().getToolBarManager().add(screenSize);
+		getViewSite().getActionBars().getToolBarManager().add(new Action("Horizontal",Action.AS_CHECK_BOX) {
+			@Override
+			public void run() {
+				updateResolution(currentSize, isChecked());
+			}
+		});
 		getViewSite().getActionBars().getToolBarManager().add(refresh);
 		getViewSite().getActionBars().getToolBarManager().add(loadController);
 	}
 	
-	void updateResolution(SCREEN_SIZE size) {
+	void updateResolution(SCREEN_SIZE size, boolean horizontal) {
 		currentSize = size;
+		currentHorizontal = horizontal;
 		BasicDevice[] pv = previewers.get(size);
 		if( pv != null ) {
 			pv[0].setContentSize(size.width, size.height);
@@ -608,8 +615,8 @@ public class LivePreviewPart extends ViewPart {
 						} else {
 							BasicDevice[] v = previewers.get(currentSize);
 							Node n = rootPane_new;
-							rootPane_new = v[0].getSimulatorNode();
-							v[0].setContent(n);
+							rootPane_new = v[currentHorizontal ? 1 : 0].getSimulatorNode();
+							v[currentHorizontal ? 1 : 0].setContent(n);
 							
 							BorderPane container = new BorderPane();
 							container.setTop(rootPane_new);
