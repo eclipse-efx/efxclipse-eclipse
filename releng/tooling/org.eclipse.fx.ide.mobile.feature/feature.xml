@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.fx.ide.all.kepler.feature"
-      label="e(fx)clipse - IDE - Kepler"
+      id="org.eclipse.fx.ide.mobile.feature"
+      label="Feature"
       version="0.9.0.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://www.example.com/description">
-      Feature collecting all IDE-Features for Kepler installs
+      Feature holding Mobile support
    </description>
 
    <copyright url="http://www.bestsolution.at">
@@ -107,36 +107,25 @@ Everyone is permitted to copy and distribute copies of this Agreement, but in or
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
    </license>
 
-   <includes
-         id="org.eclipse.fx.ide.basic.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.eclipse.fx.ide.ui.mobile.sim.device"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <includes
-         id="org.eclipse.fx.ide.css.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.eclipse.fx.ide.ui.mobile.sim.launch"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <includes
-         id="org.eclipse.fx.ide.fxml.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.fx.ide.pde.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.fx.ide.rrobot.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.fx.ide.fxgraph.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.fx.ide.converter.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.fx.ide.mobile.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.eclipse.fx.ui.mobile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

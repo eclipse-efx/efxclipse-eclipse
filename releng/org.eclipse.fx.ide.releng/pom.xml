@@ -61,6 +61,9 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.converter</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml.compiler</module>
 		
+		<!-- Mobile -->
+		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.mobile.sim.launch</module>
+		
 		<module>../tooling/org.eclipse.fx.ide.basic.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.rrobot.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.css.feature</module>
@@ -69,6 +72,7 @@
 		<module>../tooling/org.eclipse.fx.ide.converter.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.prekepler.feature</module>
+		<module>../tooling/org.eclipse.fx.ide.mobile.feature</module>
 		
 		<module>../tooling/org.eclipse.fx.ide.all.kepler.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.all.prekepler.feature</module>
