@@ -41,6 +41,7 @@ public abstract class BasicDevice {
 			contentPane.setPrefSize(width,height);
 			contentPane.setMinSize(width,height);
 			contentPane.setMaxSize(width,height);
+//			contentPane.setStyle("-fx-background-color: red;");
 
 			double wPlus = marginWidth();
 			double hPlus = marginHeight();

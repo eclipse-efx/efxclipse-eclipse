@@ -116,7 +116,7 @@ public class AppleIPhone4VerticalDevice extends BasicDevice {
 	
 	@Override
 	protected double marginHeight() {
-		return 117+158;
+		return 117+114;
 	}
 	
 	@Override

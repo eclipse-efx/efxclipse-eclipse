@@ -65,6 +65,8 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 				box.getChildren().add(r);
 			}
 			
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/19_2.png")));
+			
 			pane.setLeft(box);
 		}
 
@@ -88,12 +90,14 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 				box.getChildren().add(r);
 			}
 			
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/22_2.png")));
+			
 			pane.setRight(box);
 		}
 		
 		{
 			HBox box = new HBox();
-			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/19.png")));
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/19_1.png")));
 			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/20.png")));
 			
 			{
@@ -103,7 +107,7 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 				box.getChildren().add(r);
 			}
 			
-			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/22.png")));
+			box.getChildren().add(new ImageView(getIconUrl(ROOT_URL+"/22_1.png")));
 				
 			pane.setBottom(box);
 		}
@@ -113,11 +117,11 @@ public class AppleIPhone4HorizontalDevice extends BasicDevice {
 	
 	@Override
 	protected double marginHeight() {
-		return 2*29;
+		return 27+29;
 	}
 
 	@Override
 	protected double marginWidth() {
-		return 117+158;
+		return 117+114;
 	}	
 }

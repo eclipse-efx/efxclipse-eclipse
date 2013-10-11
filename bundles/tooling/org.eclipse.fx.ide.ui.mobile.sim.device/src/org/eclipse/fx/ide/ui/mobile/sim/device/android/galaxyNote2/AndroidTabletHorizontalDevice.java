@@ -120,8 +120,7 @@ public class AndroidTabletHorizontalDevice extends BasicDevice {
 
 	@Override
 	protected double marginWidth() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2*84;
 	}
 
 	@Override
