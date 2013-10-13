@@ -10,7 +10,10 @@ class FXProjectMainClassTemplate {
 	import javafx.stage.Stage;
 	import javafx.scene.Scene;
 	import «IF !data.declarativeUiType.equals("None")»«data.declarativeUiRootType»«ELSE»javafx.scene.layout.BorderPane«ENDIF»;
+	«IF !data.declarativeUiType.equals("None")»
 	import javafx.fxml.FXMLLoader;
+	«ENDIF»
+
 	
 	public class Main extends Application {
 		@Override
@@ -19,7 +22,7 @@ class FXProjectMainClassTemplate {
 				«IF data.declarativeUiType.equals("None")»
 				BorderPane root = new BorderPane();
 				«ELSE»
-				«data.declarativeUiRootType.split("\\.").last» root = FXMLLoader.load(getClass().getResource("«data.declarativeUiName».fxml"));
+				«data.declarativeUiRootType.split("\\.").last» root = («data.declarativeUiRootType.split("\\.").last»)FXMLLoader.load(getClass().getResource("«data.declarativeUiName».fxml"));
 				«ENDIF»
 				Scene scene = new Scene(root,400,400);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

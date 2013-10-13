@@ -35,6 +35,7 @@ import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectCtrlClassTem
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectFXGraphTemplate;
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectFXMLTemplate;
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectMainClassTemplate;
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectMainMobileClassTemplate;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
@@ -131,9 +132,20 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 			try {
 				IJavaProject p = (IJavaProject) newElement;
 				IClasspathEntry[] current = p.getRawClasspath();
-				IClasspathEntry[] currentFX = new IClasspathEntry[current.length+1];
+				
+				int i = current.length+1;
+				if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.MOBILE) ) {
+					i += 1;
+				}
+				
+				IClasspathEntry[] currentFX = new IClasspathEntry[i];
 				System.arraycopy(current, 0, currentFX, 0, current.length);
-				currentFX[current.length] = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH);  
+				currentFX[current.length] = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH); 
+				
+				if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.MOBILE) ) {
+					currentFX[current.length+1] = JavaCore.newContainerEntry(JavaFXCore.MOBILE_CONTAINER_PATH);
+				}
+				
 				p.setRawClasspath(currentFX, new NullProgressMonitor());
 			} catch (JavaModelException e1) {
 				// TODO Auto-generated catch block
@@ -199,46 +211,49 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 				};
 				new ProgressMonitorDialog( getShell() ).run( true, false, operation );
 				
-				if( projectData.mainApp || ! projectData.declarativeUiType.equals("None") ) {
-					IJavaProject p = fSecondPage.getJavaProject();
-					IPackageFragment f = p.getPackageFragments()[0];
-					IPath path = f.getPath();
-					
-					for( String s : projectData.packageName.split("\\.") ) {
-						path = path.append(s);
-						p.getProject().getWorkspace().getRoot().getFolder(path).create(true, true, null);
+				IJavaProject p = fSecondPage.getJavaProject();
+				IPackageFragment f = p.getPackageFragments()[0];
+				IPath path = f.getPath();
+				
+				for( String s : projectData.packageName.split("\\.") ) {
+					path = path.append(s);
+					p.getProject().getWorkspace().getRoot().getFolder(path).create(true, true, null);
+				}
+				
+				{
+					IFile cssFile = p.getProject().getWorkspace().getRoot().getFile(path.append("application.css"));
+					ByteArrayInputStream in = new ByteArrayInputStream("".getBytes());
+					cssFile.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+					in.close();						
+				}
+				
+				if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.DESKTOP) ) {
+					IFile mainClass = p.getProject().getWorkspace().getRoot().getFile(path.append("Main.java"));
+					ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectMainClassTemplate().generate(projectData).toString().getBytes());
+					mainClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+					in.close();						
+				} else if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.MOBILE) ) {
+					IFile mainClass = p.getProject().getWorkspace().getRoot().getFile(path.append("Main.java"));
+					ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectMainMobileClassTemplate().generate(projectData).toString().getBytes());
+					mainClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+					in.close();
+				}
+				
+				if( ! projectData.declarativeUiType.equals("None") ) {
+					if( ! projectData.declarativeUiController.trim().isEmpty() ) {
+						IFile ctrlClass = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiController+".java"));
+						ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectCtrlClassTemplate().generate(projectData).toString().getBytes());
+						ctrlClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+						in.close();	
 					}
-					
-					{
-						IFile cssFile = p.getProject().getWorkspace().getRoot().getFile(path.append("application.css"));
-						ByteArrayInputStream in = new ByteArrayInputStream("".getBytes());
-						cssFile.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
-						in.close();						
-					}
-					
-					if( projectData.mainApp ) {
-						IFile mainClass = p.getProject().getWorkspace().getRoot().getFile(path.append("Main.java"));
-						ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectMainClassTemplate().generate(projectData).toString().getBytes());
-						mainClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
-						in.close();						
-					}
-					
-					if( ! projectData.declarativeUiType.equals("None") ) {
-						if( ! projectData.declarativeUiController.trim().isEmpty() ) {
-							IFile ctrlClass = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiController+".java"));
-							ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectCtrlClassTemplate().generate(projectData).toString().getBytes());
-							ctrlClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
-							in.close();	
-						}
-						IFile declarativeUi = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiName+"."+(projectData.declarativeUiType.endsWith("FXML")?"fxml":"fxgraph")));
-						ByteArrayInputStream in = new ByteArrayInputStream(
-								(projectData.declarativeUiType.endsWith("FXML")?
-								new FXProjectFXMLTemplate().generate(projectData).toString().getBytes():
-								new FXProjectFXGraphTemplate().generate(projectData).toString().getBytes()
-								));
-						declarativeUi.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
-						in.close();
-					}
+					IFile declarativeUi = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiName+"."+(projectData.declarativeUiType.endsWith("FXML")?"fxml":"fxgraph")));
+					ByteArrayInputStream in = new ByteArrayInputStream(
+							(projectData.declarativeUiType.endsWith("FXML")?
+							new FXProjectFXMLTemplate().generate(projectData).toString().getBytes():
+							new FXProjectFXGraphTemplate().generate(projectData).toString().getBytes()
+							));
+					declarativeUi.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+					in.close();
 				}
 				
 			} catch (Exception e) {
@@ -306,7 +321,7 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 	}
 	
 	public static class ProjectData {
-		public boolean mainApp = true;
+		public String mainApp = "Desktop";
 		public String packageName = "application";
 		public String declarativeUiType = "None";
 		public String declarativeUiName = "Sample";

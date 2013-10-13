@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.ui.preview;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,7 +35,6 @@ import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartConstants;
 import org.eclipse.ui.part.EditorPart;
-
 import org.eclipse.fx.ide.ui.editor.IFXMLProviderAdapter;
 import org.eclipse.fx.ide.ui.editor.IFXPreviewAdapter;
 
@@ -134,6 +134,14 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 					}
 				} else if (e.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
 					listRefLibraries.add(e.getPath());
+				} else if( e.getEntryKind() == IClasspathEntry.CPE_CONTAINER ) {
+					if( ! e.getPath().toString().startsWith("org.eclipse.jdt.launching.JRE_CONTAINER")
+							&& ! e.getPath().toString().startsWith("org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER")) {
+						IClasspathContainer cp = JavaCore.getClasspathContainer(e.getPath(), project);
+						for( IClasspathEntry ce : cp.getClasspathEntries() ) {
+							listRefLibraries.add(ce.getPath());
+						}
+					}
 				} else if( "org.eclipse.pde.core.requiredPlugins".equals(e.getPath().toString()) ) {
 					IClasspathContainer cpContainer = JavaCore.getClasspathContainer(e.getPath(), project);
 					for( IClasspathEntry cpEntry : cpContainer.getClasspathEntries() ) {
@@ -179,6 +187,13 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 			if (f.exists()) {
 				try {
 					rv.add(f.getLocation().toFile().toURI().toURL());
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if( lib.toFile().exists() ) {
+				try {
+					rv.add(lib.toFile().toURI().toURL());
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -688,8 +688,9 @@ public class LivePreviewPart extends ViewPart {
 				
 				scene.getStylesheets().addAll(contentData.cssFiles);
 				currentScene = scene;
+				System.err.println("SELECTED FIRST ENTRY");
+				folder.setSelection(0);
 				swtFXContainer.setScene(scene);
-				
 			} catch (Exception e) {
 				StringWriter sw = new StringWriter();
 				e.printStackTrace(new PrintWriter(sw));

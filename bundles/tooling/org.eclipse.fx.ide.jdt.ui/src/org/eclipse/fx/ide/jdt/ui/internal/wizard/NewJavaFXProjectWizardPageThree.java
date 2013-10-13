@@ -34,8 +34,11 @@ public class NewJavaFXProjectWizardPageThree extends WizardPage {
 	private Text declarativeUiFilename;
 	private Text declarativeUiControllerName;
 	private Group g;
-	private Button mainApplication;
+	private Combo mainApplication;
 	private Text packageName;
+	
+	public static final String MOBILE = "Mobile";
+	public static final String DESKTOP = "Desktop";
 	
 	protected NewJavaFXProjectWizardPageThree(ProjectData projectData) {
 		super( FXML_PAGE );
@@ -43,12 +46,10 @@ public class NewJavaFXProjectWizardPageThree extends WizardPage {
 	}
 
 	private void validate() {
-		if( projectData.mainApp || ! projectData.declarativeUiType.equals("None")  ) {
-			if( projectData.packageName.trim().isEmpty() ) {
-				setErrorMessage("Package name must not be empty");
-				setPageComplete(false);
-				return;
-			}
+		if( projectData.packageName.trim().isEmpty() ) {
+			setErrorMessage("Package name must not be empty");
+			setPageComplete(false);
+			return;
 		}
 		
 		if( ! projectData.declarativeUiType.equals("None") ) {
@@ -68,14 +69,15 @@ public class NewJavaFXProjectWizardPageThree extends WizardPage {
 		
 		{
 			Label l = new Label(container, SWT.NONE);
-			l.setText("Main-Application");
+			l.setText("Application type");
 			
-			mainApplication = new Button(container, SWT.CHECK);
-			mainApplication.setSelection(projectData.mainApp);
+			mainApplication = new Combo(container, SWT.READ_ONLY);
+			mainApplication.setItems(new String[]{DESKTOP,MOBILE});
+			mainApplication.select(0); 
 			mainApplication.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					projectData.mainApp = mainApplication.getSelection();
+					projectData.mainApp = mainApplication.getSelectionIndex() == 0 ? "Desktop" : "Mobile";
 					validate();
 				}
 			});
@@ -108,7 +110,7 @@ public class NewJavaFXProjectWizardPageThree extends WizardPage {
 			l.setText( "Language" );
 			
 			declarativeUiType = new Combo( g, SWT.READ_ONLY );
-			declarativeUiType.setItems( new String[] { "None","FXML","FxGraph" } );
+			declarativeUiType.setItems( new String[] { "None","FxGraph","FXML" } );
 			
 			int i = 0;
 			for( String s : declarativeUiType.getItems() ) {
@@ -146,7 +148,8 @@ public class NewJavaFXProjectWizardPageThree extends WizardPage {
 					"javafx.scene.layout.Region", 
 					"javafx.scene.layout.StackPane", 
 					"javafx.scene.layout.TilePane", 
-					"javafx.scene.layout.VBox"
+					"javafx.scene.layout.VBox",
+					"org.eclipse.fx.ui.mobile.Deck"
 			});
 			declarativeUiRootType.setEnabled(false);
 			
