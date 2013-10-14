@@ -17,8 +17,10 @@ import org.eclipse.jdt.debug.ui.launchConfigurations.JavaMainTab;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -126,6 +128,13 @@ public class MobileSimulatorLaunchConfigurationTabGroup extends AbstractLaunchCo
 							}
 						}
 					});
+					deviceType.addSelectionChangedListener(new ISelectionChangedListener() {
+						
+						@Override
+						public void selectionChanged(SelectionChangedEvent event) {
+							updateLaunchConfigurationDialog();
+						}
+					});
 					deviceType.setInput(DeviceType.values());
 				}
 				
@@ -142,6 +151,13 @@ public class MobileSimulatorLaunchConfigurationTabGroup extends AbstractLaunchCo
 							return element == Orientation.HORIZONTAL ? "horizontal" : "vertical";
 						}
 					});
+					deviceOrientation.addSelectionChangedListener(new ISelectionChangedListener() {
+						
+						@Override
+						public void selectionChanged(SelectionChangedEvent event) {
+							updateLaunchConfigurationDialog();
+						}
+					});
 					deviceOrientation.setInput(Orientation.values());
 				}
 				
@@ -150,8 +166,22 @@ public class MobileSimulatorLaunchConfigurationTabGroup extends AbstractLaunchCo
 					l.setText("Display size:");
 					
 					width = new Text(g, SWT.BORDER);
+					width.addModifyListener(new ModifyListener() {
+						
+						@Override
+						public void modifyText(ModifyEvent e) {
+							updateLaunchConfigurationDialog();
+						}
+					});
 					new Label(g, SWT.NONE).setText("x");
 					height = new Text(g, SWT.BORDER);
+					height.addModifyListener(new ModifyListener() {
+						
+						@Override
+						public void modifyText(ModifyEvent e) {
+							updateLaunchConfigurationDialog();
+						}
+					});
 				}
 			}
 			
