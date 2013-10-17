@@ -6,7 +6,7 @@ class FXProjectMainMobileClassTemplate {
 	def generate(ProjectData data) '''
 	package «data.packageName»;
 	
-	import javafx.scene.Node;
+	import javafx.scene.layout.Region;
 	import «IF !data.declarativeUiType.equals("None")»«data.declarativeUiRootType»«ELSE»org.eclipse.fx.ui.mobile.Deck«ENDIF»;
 	import org.eclipse.fx.ui.mobile.MobileApp;
 	«IF !data.declarativeUiType.equals("None")»
@@ -16,7 +16,7 @@ class FXProjectMainMobileClassTemplate {
 
 	public class Main extends MobileApp {
 	
-		public Node createUI() {
+		public Region createUI() {
 			«IF data.declarativeUiType.equals("None")»
 				Deck root = new Deck();
 				return root;
