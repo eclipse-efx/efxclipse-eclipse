@@ -23,6 +23,14 @@ public class FXLibraryLocationResolver implements ILibraryLocationResolver {
 
 	@Override
 	public IPath getSourcePath(IPath libraryPath) {
+		if( libraryPath.lastSegment().endsWith("jfxrt.jar") ) {
+			File jarLocation = libraryPath.toFile();
+			File jdkHome = jarLocation.getParentFile().getParentFile().getParentFile().getParentFile();
+			IPath srcPath = new Path(jdkHome.getAbsolutePath()).append("javafx-src.zip");
+			if( srcPath.toFile().exists() ) {
+				return srcPath;
+			}
+		}
 		return Path.EMPTY;
 	}
 
