@@ -60,15 +60,22 @@ public class MobileClasspathContainer extends ClasspathContainerInitializer {
 	}
 
 	public IClasspathEntry[] createEntries() {
-		IPluginModelBase findModel = PDECore.getDefault().getModelManager().findModel("org.eclipse.fx.ui.mobile");
+		return new IClasspathEntry[] { 
+				createPDEEntry("org.eclipse.fx.ui.mobile"),
+				createPDEEntry("org.eclipse.fx.core")
+		};
+	}
+	
+	private IClasspathEntry createPDEEntry(String bundleName) {
+		IPluginModelBase findModel = PDECore.getDefault().getModelManager().findModel(bundleName);
 		
 		String installLocation = findModel.getInstallLocation();
 		File f = new File(installLocation);
 		
 		if( f.isDirectory() ) {
-			return new IClasspathEntry[] {JavaCore.newLibraryEntry(new Path(installLocation+"/bin"), null,null)};
+			return JavaCore.newLibraryEntry(new Path(installLocation+"/bin"), null,null);
 		} else {
-			return new IClasspathEntry[] {JavaCore.newLibraryEntry(new Path(installLocation), null,null)};
+			return JavaCore.newLibraryEntry(new Path(installLocation), null,null);
 		}
 	}
 }
