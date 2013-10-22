@@ -3,13 +3,16 @@ package org.eclipse.fx.ide.ui.mobile.sim.launch;
 import java.util.List;
 
 import org.eclipse.core.expressions.PropertyTester;
+import org.eclipse.fx.core.log.Logger;
+import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jface.viewers.IStructuredSelection;
 
 public class MobileAppPropertyTester extends PropertyTester {
-
+	private static Logger LOGGER = LoggerCreator.createLogger(MobileAppPropertyTester.class);
+	
 	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 		try {
@@ -23,14 +26,17 @@ public class MobileAppPropertyTester extends PropertyTester {
 						try {
 							for( IType t : u.getTypes() ) {
 								String name = t.getSuperclassName();
-								String[][] resolveType = t.resolveType(name);
 								StringBuilder b = new StringBuilder();
-								if( resolveType.length > 0 ) {
-									for( String s : resolveType[0] ) {
-										if( b.length() > 0 ) {
-											b.append(".");
-										}
-										b.append(s);
+								if( name != null ) {
+									String[][] resolveType = t.resolveType(name);
+									
+									if( resolveType.length > 0 ) {
+										for( String s : resolveType[0] ) {
+											if( b.length() > 0 ) {
+												b.append(".");
+											}
+											b.append(s);
+										}	
 									}	
 								}
 								
@@ -39,14 +45,13 @@ public class MobileAppPropertyTester extends PropertyTester {
 								}
 							}
 						} catch (JavaModelException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+							LOGGER.error("Failed to analyze class", e);
 						}
 					}
 				}
 			}
-		} catch(Exception e) {
-			e.printStackTrace();
+		} catch(Throwable e) {
+			LOGGER.error("Unexpected error", e);
 		}
 		
 		return false;
