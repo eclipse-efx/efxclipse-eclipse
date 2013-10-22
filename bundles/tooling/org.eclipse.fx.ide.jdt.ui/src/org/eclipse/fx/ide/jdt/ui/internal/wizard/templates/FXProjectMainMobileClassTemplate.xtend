@@ -10,7 +10,7 @@ class FXProjectMainMobileClassTemplate {
 	import «IF !data.declarativeUiType.equals("None")»«data.declarativeUiRootType»«ELSE»org.eclipse.fx.ui.mobile.Deck«ENDIF»;
 	import org.eclipse.fx.ui.mobile.MobileApp;
 	«IF !data.declarativeUiType.equals("None")»
-	import javafx.fxml.FXMLLoader;
+	import org.eclipse.fx.core.fxml.ExtendedFXMLLoader;
 	import java.io.IOException;
 	«ENDIF»
 
@@ -22,7 +22,7 @@ class FXProjectMainMobileClassTemplate {
 				return root;
 			«ELSE»
 				try {
-					«data.declarativeUiRootType.split("\\.").last» root = («data.declarativeUiRootType.split("\\.").last»)FXMLLoader.load(getClass().getResource("«data.declarativeUiName».fxml"));
+					«data.declarativeUiRootType.split("\\.").last» root = («data.declarativeUiRootType.split("\\.").last»)new ExtendedFXMLLoader().load(getClass().getClassLoader(),"«data.packageName.replace('.','/')»/«data.declarativeUiName».fxml"));
 					return root;
 				} catch(IOException e) {
 					e.printStackTrace();
