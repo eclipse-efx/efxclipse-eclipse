@@ -152,8 +152,8 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 				e1.printStackTrace();
 			}
 
-			final IFile buildFile = fSecondPage.getJavaProject().getProject().getFile(new Path("build.fxbuild"));
-			try {
+			if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.DESKTOP) ) {
+				final IFile buildFile = fSecondPage.getJavaProject().getProject().getFile(new Path("build.fxbuild"));
 				AntTask task = AntTasksFactory.eINSTANCE.createAntTask();
 				task.setBuildDirectory( "${project}/build" );
 				task.setDeploy( AntTasksFactory.eINSTANCE.createDeploy() );
@@ -209,8 +209,18 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 						}
 					}
 				};
-				new ProgressMonitorDialog( getShell() ).run( true, false, operation );
-				
+				try {
+					new ProgressMonitorDialog( getShell() ).run( true, false, operation );
+				} catch (InvocationTargetException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			try {
 				IJavaProject p = fSecondPage.getJavaProject();
 				IPackageFragment f = p.getPackageFragments()[0];
 				IPath path = f.getPath();
