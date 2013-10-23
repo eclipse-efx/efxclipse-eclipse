@@ -134,14 +134,6 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 					}
 				} else if (e.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
 					listRefLibraries.add(e.getPath());
-				} else if( e.getEntryKind() == IClasspathEntry.CPE_CONTAINER ) {
-					if( ! e.getPath().toString().startsWith("org.eclipse.jdt.launching.JRE_CONTAINER")
-							&& ! e.getPath().toString().startsWith("org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER")) {
-						IClasspathContainer cp = JavaCore.getClasspathContainer(e.getPath(), project);
-						for( IClasspathEntry ce : cp.getClasspathEntries() ) {
-							listRefLibraries.add(ce.getPath());
-						}
-					}
 				} else if( "org.eclipse.pde.core.requiredPlugins".equals(e.getPath().toString()) ) {
 					IClasspathContainer cpContainer = JavaCore.getClasspathContainer(e.getPath(), project);
 					for( IClasspathEntry cpEntry : cpContainer.getClasspathEntries() ) {
@@ -154,7 +146,15 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 							listRefLibraries.add(cpEntry.getPath());
 						}
 					}
-				}
+				} else if( e.getEntryKind() == IClasspathEntry.CPE_CONTAINER ) {
+					if( ! e.getPath().toString().startsWith("org.eclipse.jdt.launching.JRE_CONTAINER")
+							&& ! e.getPath().toString().startsWith("org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER")) {
+						IClasspathContainer cp = JavaCore.getClasspathContainer(e.getPath(), project);
+						for( IClasspathEntry ce : cp.getClasspathEntries() ) {
+							listRefLibraries.add(ce.getPath());
+						}
+					}
+				} 
 			}
 		} catch (JavaModelException e) {
 			// TODO Auto-generated catch block
