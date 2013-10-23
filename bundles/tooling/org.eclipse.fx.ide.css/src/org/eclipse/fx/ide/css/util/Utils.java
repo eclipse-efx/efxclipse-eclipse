@@ -21,14 +21,14 @@ import org.eclipse.emf.ecore.resource.Resource;
 public class Utils {
 	public static IFile getFile(Resource resource) {
 		URI uri = resource.getURI();
-		IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
+		IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(URI.decode(uri.segment(1)));
 		
 		IPath path = null;
 		for( int i = 2; i < uri.segmentCount(); i++ ) {
 			if( path == null ) {
-				path = new Path(uri.segment(i));
+				path = new Path(URI.decode(uri.segment(i)));
 			} else {
-				path = path.append(uri.segment(i));
+				path = path.append(URI.decode(uri.segment(i)));
 			}
 		}
 		
@@ -37,4 +37,5 @@ public class Utils {
 		}
 		return null;
 	}
+	
 }
