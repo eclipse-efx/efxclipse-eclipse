@@ -47,6 +47,7 @@ public class MobileDeviceSimulator extends Application {
 		if( mainClass != null ) {
 			Class<MobileApp> clazz = (Class<MobileApp>) Class.class.forName(mainClass);
 			MobileApp app = clazz.newInstance();
+			root.getStylesheets().addAll(app.getInitialStylesheets());
 			dev.setContent(app.createUI());
 		}
 		

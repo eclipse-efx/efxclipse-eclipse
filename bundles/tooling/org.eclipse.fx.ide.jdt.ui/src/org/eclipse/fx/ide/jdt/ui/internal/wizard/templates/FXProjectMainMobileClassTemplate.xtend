@@ -9,6 +9,7 @@ class FXProjectMainMobileClassTemplate {
 	import javafx.scene.layout.Region;
 	import «IF !data.declarativeUiType.equals("None")»«data.declarativeUiRootType»«ELSE»org.eclipse.fx.ui.mobile.Deck«ENDIF»;
 	import org.eclipse.fx.ui.mobile.MobileApp;
+	import java.util.Collections;
 	«IF !data.declarativeUiType.equals("None")»
 	import org.eclipse.fx.core.fxml.ExtendedFXMLLoader;
 	import java.io.IOException;
@@ -29,7 +30,10 @@ class FXProjectMainMobileClassTemplate {
 				}
 				return null;
 			«ENDIF»
-			
+		}
+		
+		public List<String> getInitialStylesheets() {
+			return Collections.singletonList(getClass().getResource("application.css").toExternalForm());
 		}
 	}
 	'''
