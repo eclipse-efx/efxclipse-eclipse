@@ -8,8 +8,6 @@ import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.ILaunchShortcut;
-import org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchConfigurationTabGroup.DeviceType;
-import org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchConfigurationTabGroup.Orientation;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMember;

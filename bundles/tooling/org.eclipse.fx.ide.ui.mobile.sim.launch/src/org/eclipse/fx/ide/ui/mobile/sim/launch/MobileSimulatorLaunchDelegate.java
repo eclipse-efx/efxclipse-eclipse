@@ -8,8 +8,6 @@ import java.util.Set;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.ILaunchConfiguration;
-import org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchConfigurationTabGroup.DeviceType;
-import org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchConfigurationTabGroup.Orientation;
 import org.eclipse.jdt.launching.JavaLaunchDelegate;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.internal.core.PDECore;
