@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchConfigurationTabGroup.DeviceType;
 import org.eclipse.fx.ide.ui.mobile.sim.launch.MobileSimulatorLaunchConfigurationTabGroup.Orientation;
@@ -38,6 +39,9 @@ public class MobileSimulatorLaunchDelegate extends JavaLaunchDelegate {
 		IPluginModelBase findModel = PDECore.getDefault().getModelManager().findModel("org.eclipse.fx.ide.ui.mobile.sim.device");
 		
 		String installLocation = findModel.getInstallLocation();
+		if( installLocation == null ) {
+			installLocation = Platform.getBundle("org.eclipse.fx.ide.ui.mobile.sim.device").getLocation();
+		}
 		File f = new File(installLocation);
 		
 		if( f.isDirectory() ) {
