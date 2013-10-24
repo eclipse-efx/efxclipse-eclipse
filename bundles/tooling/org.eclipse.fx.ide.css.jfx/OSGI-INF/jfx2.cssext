@@ -2564,7 +2564,7 @@ package javafx {
         	/**
         	 * Base class for text input controls.
         	 */
-        	TextInputControl {
+        	TextInputControl extends Control {
         		-fx-font <font> default: null;
         		-fx-font-family <font-family> default: null; 	/* INHERITED */
 				-fx-font-size <font-size> default: null;  		/* INHERITED */
