@@ -236,6 +236,9 @@ class FXGraphJavaGenerator {
 				«val i = getVarIndex»
 				«val varName = 'e_'+i»
 				«generateElementDef(varName,p)»
+				«staticProperties(varName,p)»
+				«staticCallProperties(varName,p)»
+
 «««				Need better check!
 				«IF "java.net.URL" == p.type.qualifiedName»
 					«name».get«element.type.defaultAttribute.toFirstUpper»().add(«varName».toExternalForm());
