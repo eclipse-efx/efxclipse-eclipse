@@ -1,6 +1,7 @@
 package org.eclipse.fx.ide.ui.mobile.sim.launch;
 
 import java.io.File;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +30,6 @@ public class MobileSimulatorLaunchDelegate extends JavaLaunchDelegate {
 		s += " -displaySize " + configuration.getAttribute(MobileSimulatorLaunchConfigurationTabGroup.DEVICE_SIZE, "640x1136");
 		s += " -applicationClass " + configuration.getAttribute(MobileSimulatorLaunchConfigurationTabGroup.APP_CLASS, "");
 		
-		System.err.println("LAUNCH: " + s);
 		return s;
 	}
 
@@ -40,10 +40,16 @@ public class MobileSimulatorLaunchDelegate extends JavaLaunchDelegate {
 		if( installLocation == null ) {
 			//FIXME This is a hack!
 			installLocation = Platform.getBundle("org.eclipse.fx.ide.ui.mobile.sim.device").getLocation().substring("reference:file:".length());
+			try {
+				installLocation = new File(new File(Platform.getInstallLocation().getURL().toURI()),installLocation).toString();
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.err.println("LOADING FROM: " + installLocation);
+			System.out.println("LOADING FROM: " + installLocation);
 		}
 		
-		System.err.println("LOADING FROM: " + installLocation);
-		System.out.println("LOADING FROM: " + installLocation);
 		File f = new File(installLocation);
 		
 		if( f.isDirectory() ) {
