@@ -41,6 +41,9 @@ public class MobileSimulatorLaunchDelegate extends JavaLaunchDelegate {
 			//FIXME This is a hack!
 			installLocation = Platform.getBundle("org.eclipse.fx.ide.ui.mobile.sim.device").getLocation().substring("reference:file:".length());
 		}
+		
+		System.err.println("LOADING FROM: " + installLocation);
+		System.out.println("LOADING FROM: " + installLocation);
 		File f = new File(installLocation);
 		
 		if( f.isDirectory() ) {
