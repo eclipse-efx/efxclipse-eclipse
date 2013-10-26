@@ -38,7 +38,8 @@ public class MobileSimulatorLaunchDelegate extends JavaLaunchDelegate {
 		
 		String installLocation = findModel == null ? null : findModel.getInstallLocation();
 		if( installLocation == null ) {
-			installLocation = Platform.getBundle("org.eclipse.fx.ide.ui.mobile.sim.device").getLocation();
+			//FIXME This is a hack!
+			installLocation = Platform.getBundle("org.eclipse.fx.ide.ui.mobile.sim.device").getLocation().substring("reference:file:".length());
 		}
 		File f = new File(installLocation);
 		
