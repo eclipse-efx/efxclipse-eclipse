@@ -36,7 +36,7 @@ public class MobileSimulatorLaunchDelegate extends JavaLaunchDelegate {
 	private String getSimulatorPath() {
 		IPluginModelBase findModel = PDECore.getDefault().getModelManager().findModel("org.eclipse.fx.ide.ui.mobile.sim.device");
 		
-		String installLocation = findModel.getInstallLocation();
+		String installLocation = findModel == null ? null : findModel.getInstallLocation();
 		if( installLocation == null ) {
 			installLocation = Platform.getBundle("org.eclipse.fx.ide.ui.mobile.sim.device").getLocation();
 		}
