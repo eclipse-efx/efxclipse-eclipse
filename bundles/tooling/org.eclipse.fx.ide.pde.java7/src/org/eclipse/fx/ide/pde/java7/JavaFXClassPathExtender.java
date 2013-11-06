@@ -61,6 +61,10 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 			// Check the default VM
 			if( env.getDefaultVM() != null ) {
 				if( onExtPath(env.getDefaultVM()) ) {
+					IClasspathEntry cp = getSWTEntry(env.getDefaultVM(), project);
+					if( cp != null ) {
+						return Collections.singletonList(cp);
+					}
 					return Collections.emptyList();
 				} else {
 					IClasspathEntry cpe = getEntry(env.getDefaultVM(), project);
@@ -74,6 +78,10 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 			for( IVMInstall vm : env.getCompatibleVMs() ) {
 				if( env.isStrictlyCompatible(vm) ) {
 					if( onExtPath(vm) ) {
+						IClasspathEntry cp = getSWTEntry(vm, project);
+						if( cp != null ) {
+							return Collections.singletonList(cp);
+						}
 						return Collections.emptyList();
 					} else {
 						IClasspathEntry cpe = getEntry(vm, project);
@@ -86,6 +94,20 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		}
 		
 		return Collections.emptyList();
+	}
+	
+	private IClasspathEntry getSWTEntry(IVMInstall vm, BundleDescription project) {
+		IPath[] swtFxJarPath = BuildPathSupport.getSwtFxJarPath(vm);
+		if( swtFxJarPath != null ) {
+			List<IAccessRule> l = new ArrayList<IAccessRule>();
+			l.add(JavaCore.newAccessRule(new Path("javafx.embed.swt".replace('.', '/')+"/*"),IAccessRule.K_ACCESSIBLE));
+			IClasspathAttribute[] extraAttributes = {
+					JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, swtFxJarPath[1] == null || !swtFxJarPath[1].toFile().exists() ? BuildPathSupport.WEB_JAVADOC_LOCATION : swtFxJarPath[1].toFile().toURI().toString())
+			};
+			
+			return JavaCore.newLibraryEntry(swtFxJarPath[0], swtFxJarPath[2], null, l.toArray(new IAccessRule[0]), extraAttributes, false);
+		}
+		return null;
 	}
 	
 	private IClasspathEntry getEntry(IVMInstall vm, BundleDescription project) {

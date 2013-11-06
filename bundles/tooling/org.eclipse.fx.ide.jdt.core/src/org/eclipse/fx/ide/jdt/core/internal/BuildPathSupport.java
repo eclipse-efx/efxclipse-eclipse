@@ -75,6 +75,34 @@ public class BuildPathSupport {
 		return new IPath[] { jarLocationPath, javadocLocation, antJarLocationPath, sourceLocationPath };
 	}
 	
+	public static IPath[] getSwtFxJarPath(IVMInstall i) {
+		File installDir = i.getInstallLocation();
+		IPath[] checkPaths = {
+				// JDK 8
+				new Path(installDir.getAbsolutePath()).append("jre").append("lib").append("jfxswt.jar"),
+				new Path(installDir.getAbsolutePath()).append("lib").append("jfxswt.jar") // JRE
+			};
+		
+		IPath jarLocationPath = null;
+		IPath javadocLocation = null;
+		IPath sourceLocationPath = null;
+		
+		jarLocationPath = checkPaths[0];
+		
+		if( ! jarLocationPath.toFile().exists() ) {
+			for( IPath p : checkPaths ) {
+				if( p.toFile().exists() ) {
+					jarLocationPath = p;
+					break;
+				}
+			}
+		}
+		
+		sourceLocationPath = new Path(installDir.getAbsolutePath()).append("javafx-src.zip");
+		
+		return new IPath[] { jarLocationPath, javadocLocation, sourceLocationPath };
+	}
+	
 	public static IPath[] getFxJarPath(IVMInstall i) {
 		for( LibraryLocation l : JavaRuntime.getLibraryLocations(i) ) {
 			if( "jfxrt.jar".equals(l.getSystemLibraryPath().lastSegment()) ) {
