@@ -541,7 +541,7 @@ public class LivePreviewPart extends ViewPart {
 
 		try {
 			currentFile = contentData.file;
-			loader.setStaticLoad(!preference.getBoolean(PREF_LOAD_CONTROLLER, false));
+			ReflectiveInvoke.setStaticLoad(loader, !preference.getBoolean(PREF_LOAD_CONTROLLER, false));
 			try {
 				// TODO Should we set this to the bin-Folder??
 				loader.setLocation(contentData.file.getParent().getLocation().toFile().getAbsoluteFile().toURI().toURL());
