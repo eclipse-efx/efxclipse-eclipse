@@ -308,10 +308,10 @@ public class LivePreviewPart extends ViewPart {
 
 		document = new Document();
 		
-		parent.getDisplay().asyncExec(new Runnable() {
-
-			@Override
-			public void run() {
+//		parent.getDisplay().syncExec(new Runnable() {
+//
+//			@Override
+//			public void run() {
 
 				{
 					CTabItem item = new CTabItem(folder, SWT.NONE);
@@ -408,8 +408,8 @@ public class LivePreviewPart extends ViewPart {
 				if( currentData != null ) {
 					refreshContent(currentData);
 				}
-			}
-		});
+//			}
+//		});
 		
 		parent.layout(true, true);
 
@@ -498,17 +498,26 @@ public class LivePreviewPart extends ViewPart {
 	private void refreshContent(final ContentData contentData) {
 		this.currentData = contentData;
 		if (folder != null && !folder.isDisposed()) {
-			folder.getDisplay().syncExec(new Runnable() {
-
-				@Override
-				public void run() {
-					try {
-						saveRefreshContent(contentData);	
-					} catch(Throwable t) {
-						t.printStackTrace();
-					}
+			if( Thread.currentThread() == folder.getDisplay().getThread() ) {
+				try {
+					saveRefreshContent(contentData);
+				} catch( Throwable t ) {
+					t.printStackTrace();
 				}
-			});
+			} else {
+				folder.getDisplay().asyncExec(new Runnable() {
+
+					@Override
+					public void run() {
+						try {
+							saveRefreshContent(contentData);	
+						} catch(Throwable t) {
+							t.printStackTrace();
+						}
+					}
+				});	
+			}
+			
 		}
 	}
 
