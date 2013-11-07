@@ -31,6 +31,7 @@ class FXMLSaxHandler extends DefaultHandler {
 	private final List<String> globalImports
 	private IFXMLFile file;
 	private Map<String,Element> idMap = new HashMap
+	private boolean valueOfType = false;
 	
 	private static String FXML_NAMESPACE = "http://javafx.com/fxml"
 
@@ -105,6 +106,16 @@ class FXMLSaxHandler extends DefaultHandler {
 			
 			stack.push(prop)
 		} else {
+			if( attributes.getValue(FXML_NAMESPACE,"value") != null ) {
+				val p = stack.peek as Property;
+				val lp = p.value as ListValueProperty
+				val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+				vp.setStringValue(attributes.getValue(FXML_NAMESPACE,"value"));
+				lp.value += vp;
+				valueOfType = true;
+				return;
+			}
+			
 			// An element
 			val e = FXGraphFactory.eINSTANCE.createElement
 			
@@ -197,7 +208,7 @@ class FXMLSaxHandler extends DefaultHandler {
 									pp.name = attributes.getLocalName(i)
 									pp.value = vp
 									e.properties += pp
-								}	
+								}										
 							}
 						}
 					} else {
@@ -255,6 +266,10 @@ class FXMLSaxHandler extends DefaultHandler {
 	}
 	
 	override endElement(String uri, String localName, String qName) throws SAXException {
+		if( valueOfType ) {
+			valueOfType = false;
+			return;
+		}
 		val o = stack.pop
 		if( ! stack.empty && o instanceof Element ) {
 			if( stack.peek instanceof Element ) {

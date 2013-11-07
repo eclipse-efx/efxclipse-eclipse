@@ -179,7 +179,11 @@ class FXGraphJavaGenerator {
 			«controllerFieldAccess(name,element)»
 		«ENDIF»
 	«ELSE»
-		«element.type.simpleName» «name» = new «element.type.simpleName»();
+		«IF element.type.qualifiedName == 'java.lang.String'»
+			«element.type.simpleName» «name» = «element.type.simpleName».valueOf("«element»");
+		«ELSE»
+			«element.type.simpleName» «name» = new «element.type.simpleName»();
+		«ENDIF»
 		«FOR p : element.properties»
 			«IF p.value instanceof SimpleValueProperty»
 				«IF (p.value as SimpleValueProperty).stringValue != null»
@@ -215,14 +219,16 @@ class FXGraphJavaGenerator {
 					«val i = getVarIndex»
 					«val varName = 'e_'+i»
 						«IF l instanceof Element»
-						«generateElementDef(varName,l as Element)»
-						«IF "java.net.URL" == (l as Element).type.qualifiedName»
-							«name».get«p.name.toFirstUpper»().add(«varName».toExternalForm());
-						«ELSE»
-							«name».get«p.name.toFirstUpper»().add(«varName»);
-						«ENDIF»
-						«staticProperties(varName,l as Element)»
-						«staticCallProperties(varName,l as Element)»
+							«generateElementDef(varName,l as Element)»
+							«IF "java.net.URL" == (l as Element).type.qualifiedName»
+								«name».get«p.name.toFirstUpper»().add(«varName».toExternalForm());
+							«ELSE»
+								«name».get«p.name.toFirstUpper»().add(«varName»);
+							«ENDIF»
+							«staticProperties(varName,l as Element)»
+							«staticCallProperties(varName,l as Element)»
+						«ELSEIF l instanceof SimpleValueProperty»
+							«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).simpleAttributeValue»);
 						«ENDIF»
 					}
 				«ENDFOR»
