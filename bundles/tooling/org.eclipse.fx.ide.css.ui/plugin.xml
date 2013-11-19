@@ -8,7 +8,7 @@
         <editor
               class="org.eclipse.fx.ide.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
               contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-              default="true"
+              default="false"
               extensions="css"
               icon="icons/page_white_swoosh.png"
               id="org.eclipse.fx.ide.css.CssDsl"
