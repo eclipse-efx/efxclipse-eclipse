@@ -22619,11 +22619,11 @@ protected class JvmLowerBound_TypeReferenceAssignment_1 extends AssignmentToken 
 /************ begin Rule JvmTypeParameter ****************
  *
  * JvmTypeParameter:
- * 	name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* | constraints+=JvmLowerBound)?;
+ * 	name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*)?;
  *
  **/
 
-// name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* | constraints+=JvmLowerBound)?
+// name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*)?
 protected class JvmTypeParameter_Group extends GroupToken {
 	
 	public JvmTypeParameter_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -22638,7 +22638,7 @@ protected class JvmTypeParameter_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new JvmTypeParameter_Alternatives_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new JvmTypeParameter_Group_1(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new JvmTypeParameter_NameAssignment_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
@@ -22686,46 +22686,23 @@ protected class JvmTypeParameter_NameAssignment_0 extends AssignmentToken  {
 
 }
 
-// (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* | constraints+=JvmLowerBound)?
-protected class JvmTypeParameter_Alternatives_1 extends AlternativesToken {
-
-	public JvmTypeParameter_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
+// (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*)?
+protected class JvmTypeParameter_Group_1 extends GroupToken {
 	
-	@Override
-	public Alternatives getGrammarElement() {
-		return grammarAccess.getJvmTypeParameterAccess().getAlternatives_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new JvmTypeParameter_Group_1_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new JvmTypeParameter_ConstraintsAssignment_1_1(lastRuleCallOrigin, this, 1, inst);
-			default: return null;
-		}	
-	}
-
-}
-
-// constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*
-protected class JvmTypeParameter_Group_1_0 extends GroupToken {
-	
-	public JvmTypeParameter_Group_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public JvmTypeParameter_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getJvmTypeParameterAccess().getGroup_1_0();
+		return grammarAccess.getJvmTypeParameterAccess().getGroup_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new JvmTypeParameter_ConstraintsAssignment_1_0_1(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new JvmTypeParameter_ConstraintsAssignment_1_0_0(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new JvmTypeParameter_ConstraintsAssignment_1_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmTypeParameter_ConstraintsAssignment_1_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -22733,15 +22710,15 @@ protected class JvmTypeParameter_Group_1_0 extends GroupToken {
 }
 
 // constraints+=JvmUpperBound
-protected class JvmTypeParameter_ConstraintsAssignment_1_0_0 extends AssignmentToken  {
+protected class JvmTypeParameter_ConstraintsAssignment_1_0 extends AssignmentToken  {
 	
-	public JvmTypeParameter_ConstraintsAssignment_1_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public JvmTypeParameter_ConstraintsAssignment_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getJvmTypeParameterAccess().getConstraintsAssignment_1_0_0();
+		return grammarAccess.getJvmTypeParameterAccess().getConstraintsAssignment_1_0();
 	}
 
     @Override
@@ -22760,7 +22737,7 @@ protected class JvmTypeParameter_ConstraintsAssignment_1_0_0 extends AssignmentT
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getJvmUpperBoundRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getJvmTypeParameterAccess().getConstraintsJvmUpperBoundParserRuleCall_1_0_0_0(); 
+				element = grammarAccess.getJvmTypeParameterAccess().getConstraintsJvmUpperBoundParserRuleCall_1_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -22779,15 +22756,15 @@ protected class JvmTypeParameter_ConstraintsAssignment_1_0_0 extends AssignmentT
 }
 
 // constraints+=JvmUpperBoundAnded*
-protected class JvmTypeParameter_ConstraintsAssignment_1_0_1 extends AssignmentToken  {
+protected class JvmTypeParameter_ConstraintsAssignment_1_1 extends AssignmentToken  {
 	
-	public JvmTypeParameter_ConstraintsAssignment_1_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public JvmTypeParameter_ConstraintsAssignment_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getJvmTypeParameterAccess().getConstraintsAssignment_1_0_1();
+		return grammarAccess.getJvmTypeParameterAccess().getConstraintsAssignment_1_1();
 	}
 
     @Override
@@ -22806,7 +22783,7 @@ protected class JvmTypeParameter_ConstraintsAssignment_1_0_1 extends AssignmentT
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getJvmUpperBoundAndedRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getJvmTypeParameterAccess().getConstraintsJvmUpperBoundAndedParserRuleCall_1_0_1_0(); 
+				element = grammarAccess.getJvmTypeParameterAccess().getConstraintsJvmUpperBoundAndedParserRuleCall_1_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -22818,55 +22795,8 @@ protected class JvmTypeParameter_ConstraintsAssignment_1_0_1 extends AssignmentT
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new JvmTypeParameter_ConstraintsAssignment_1_0_1(lastRuleCallOrigin, next, actIndex, consumed);
-			case 1: return new JvmTypeParameter_ConstraintsAssignment_1_0_0(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return null;
-		}	
-	}	
-}
-
-
-// constraints+=JvmLowerBound
-protected class JvmTypeParameter_ConstraintsAssignment_1_1 extends AssignmentToken  {
-	
-	public JvmTypeParameter_ConstraintsAssignment_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getJvmTypeParameterAccess().getConstraintsAssignment_1_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new JvmLowerBound_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("constraints",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("constraints");
-		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
-			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getJvmLowerBoundRule().getType().getClassifier())) {
-				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getJvmTypeParameterAccess().getConstraintsJvmLowerBoundParserRuleCall_1_1_0(); 
-				consumed = obj;
-				return param;
-			}
-		}
-		return null;
-	}
-
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		if(value == inst.getEObject() && !inst.isConsumed()) return null;
-		switch(index) {
-			case 0: return new JvmTypeParameter_NameAssignment_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new JvmTypeParameter_ConstraintsAssignment_1_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new JvmTypeParameter_ConstraintsAssignment_1_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
