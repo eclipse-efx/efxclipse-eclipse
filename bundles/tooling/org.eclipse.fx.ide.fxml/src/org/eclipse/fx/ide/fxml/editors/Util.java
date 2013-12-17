@@ -26,14 +26,24 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.ProcessingInstruction;
 
+/**
+ * Utility methods
+ */
 @SuppressWarnings("restriction")
 public class Util {
-	public static IJavaProject findProject(Document xmlDoc) {
+	static IJavaProject findProject(Document xmlDoc) {
 		String baseLocation = ((IDOMNode) xmlDoc).getModel().getBaseLocation();
 		IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(baseLocation));
 		return JavaCore.create(f.getProject());
 	}
-	
+
+	/**
+	 * Get all imported types
+	 * 
+	 * @param xmlDoc
+	 *            the document
+	 * @return list of imports
+	 */
 	public static List<String> getImportedTypes(Document xmlDoc) {
 		NodeList list = xmlDoc.getChildNodes();
 
@@ -42,7 +52,7 @@ public class Util {
 			Node n = list.item(i);
 			if (n.getNodeType() == Node.PROCESSING_INSTRUCTION_NODE) {
 				String data = ((ProcessingInstruction) n).getData();
-				if (data.endsWith("?")) {
+				if (data.endsWith("?")) { //$NON-NLS-1$
 					data = data.substring(0, data.length() - 1);
 				}
 				imports.add(data);
@@ -50,11 +60,11 @@ public class Util {
 		}
 		return imports;
 	}
-	
-	public static IType findType(String name, Document xmlDoc) {
+
+	static IType findType(String name, Document xmlDoc) {
 		IJavaProject jpProject = findProject(xmlDoc);
-		
-		if( name.contains(".") ) {
+
+		if (name.contains(".")) { //$NON-NLS-1$
 			try {
 				IType t = jpProject.findType(name);
 				if (t != null) {
@@ -64,12 +74,12 @@ public class Util {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 
 		List<String> imports = getImportedTypes(xmlDoc);
 		for (String i : imports) {
-			if (i.endsWith("." + name)) {
+			if (i.endsWith("." + name)) { //$NON-NLS-1$
 				try {
 					IType t = jpProject.findType(i);
 					if (t != null) {
@@ -83,7 +93,7 @@ public class Util {
 		}
 
 		for (String i : imports) {
-			if (i.endsWith("*")) {
+			if (i.endsWith("*")) { //$NON-NLS-1$
 				try {
 					IType t = jpProject.findType(i.substring(0, i.length() - 1) + name);
 					if (t != null) {

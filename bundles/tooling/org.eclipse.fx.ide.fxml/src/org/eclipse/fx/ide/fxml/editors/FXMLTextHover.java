@@ -47,6 +47,9 @@ import org.eclipse.fx.ide.model.IFXEnumProperty;
 import org.eclipse.fx.ide.model.IFXEventHandlerProperty;
 import org.eclipse.fx.ide.model.IFXProperty;
 
+/**
+ * Hover information provider
+ */
 @SuppressWarnings("restriction")
 public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHoverExtension2 {
 	private JavadocHoverWrapper javadocWrapper = new JavadocHoverWrapper();
@@ -69,35 +72,34 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 
 		if (flatNode != null) {
 			region = flatNode.getRegionAtCharacterOffset(offset);
-		}
-
-		
-		if (region != null) {
-			// only supply hoverhelp for tag name, attribute name, or
-			// attribute value
-			String regionType = region.getType();
-			if ((regionType == DOMRegionContext.XML_TAG_NAME) || (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_NAME) || (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_VALUE) || (regionType == DOMRegionContext.XML_PI_CONTENT)) {
-				try {
-					// check if we are at whitespace before or after line
-					IRegion line = textViewer.getDocument().getLineInformationOfOffset(offset);
-					if ((offset > (line.getOffset())) && (offset < (line.getOffset() + line.getLength()))) {
-						// check if we are in region's trailing whitespace
-						// (whitespace after relevant info)
-						if (offset < flatNode.getTextEndOffset(region)) {
-							return new Region(flatNode.getStartOffset(region), region.getTextLength());
+			if (region != null) {
+				// only supply hoverhelp for tag name, attribute name, or
+				// attribute value
+				String regionType = region.getType();
+				if ((regionType == DOMRegionContext.XML_TAG_NAME) || (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_NAME) || (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_VALUE) || (regionType == DOMRegionContext.XML_PI_CONTENT)) {
+					try {
+						// check if we are at whitespace before or after line
+						IRegion line = textViewer.getDocument().getLineInformationOfOffset(offset);
+						if ((offset > (line.getOffset())) && (offset < (line.getOffset() + line.getLength()))) {
+							// check if we are in region's trailing whitespace
+							// (whitespace after relevant info)
+							if (offset < flatNode.getTextEndOffset(region)) {
+								return new Region(flatNode.getStartOffset(region), region.getTextLength());
+							}
 						}
 					}
-				}
-				catch (BadLocationException e) {
-					Logger.logException(e);
+					catch (BadLocationException e) {
+						Logger.logException(e);
+					}
 				}
 			}
 		}
+		
 		return null;
 	}
 
 	
-	public static IJavaElement computeTagNameHelp(IDOMNode xmlnode) {
+	static IJavaElement computeTagNameHelp(IDOMNode xmlnode) {
 		if( Character.isLowerCase(xmlnode.getNodeName().charAt(0)) ) {
 			Node parent = xmlnode.getParentNode();
 			if( parent == null || parent.getNodeName() == null ||  parent.getOwnerDocument() == null) {
@@ -114,8 +116,8 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 				}
 			}
 		} else {
-			if( xmlnode.getNodeName().contains(".") ) {
-				String[] parts = xmlnode.getNodeName().split("\\.");
+			if( xmlnode.getNodeName().contains(".") ) { //$NON-NLS-1$
+				String[] parts = xmlnode.getNodeName().split("\\."); //$NON-NLS-1$
 				IType ownerType = Util.findType(parts[0], xmlnode.getOwnerDocument());
 				if( ownerType != null ) {
 					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
@@ -145,7 +147,7 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 		return null;
 	}
 	
-	public static IJavaElement computeTagAttNameHelp(IDOMNode xmlnode,int offset) {
+	static IJavaElement computeTagAttNameHelp(IDOMNode xmlnode,int offset) {
 		NamedNodeMap m = xmlnode.getAttributes();
 		IDOMNode attribute = null;
 		if( m != null ) {
@@ -160,8 +162,8 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 		if( attribute != null ) {
 			Node parent = xmlnode;
 			
-			if( attribute.getNodeName().contains(".") ) {
-				String[] parts = attribute.getNodeName().split("\\.");
+			if( attribute.getNodeName().contains(".") ) { //$NON-NLS-1$
+				String[] parts = attribute.getNodeName().split("\\."); //$NON-NLS-1$
 				IType ownerType = Util.findType(parts[0], parent.getOwnerDocument());
 				if( ownerType != null ) {
 					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
@@ -189,7 +191,7 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 		return null;
 	}
 	
-	public static IJavaElement computeTagAttValueHelp(IDOMNode xmlnode, int offset) {
+	static IJavaElement computeTagAttValueHelp(IDOMNode xmlnode, int offset) {
 		NamedNodeMap m = xmlnode.getAttributes();
 		IDOMNode attribute = null;
 		if( m == null ) {
@@ -206,13 +208,13 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 			Node parent = xmlnode;
 			IFXProperty p = null;
 			
-			if( "http://javafx.com/fxml".equals(attribute.getNamespaceURI()) ) {
+			if( "http://javafx.com/fxml".equals(attribute.getNamespaceURI()) ) { //$NON-NLS-1$
 				Document d = xmlnode.getOwnerDocument();
 				return Util.findType(attribute.getNodeValue(), d);
 			}
 			
-			if( attribute.getNodeName().contains(".") ) {
-				String[] parts = attribute.getNodeName().split("\\.");
+			if( attribute.getNodeName().contains(".") ) { //$NON-NLS-1$
+				String[] parts = attribute.getNodeName().split("\\."); //$NON-NLS-1$
 				IType ownerType = Util.findType(parts[0], parent.getOwnerDocument());
 				if( ownerType != null ) {
 					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
@@ -246,10 +248,10 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if( p instanceof IFXEventHandlerProperty && attribute.getNodeValue().startsWith("#") ) {
+			} else if( p instanceof IFXEventHandlerProperty && attribute.getNodeValue().startsWith("#") ) { //$NON-NLS-1$
 				Document d = xmlnode.getOwnerDocument();
 				Element e = d.getDocumentElement();
-				Attr a = e.getAttributeNodeNS("http://javafx.com/fxml", "controller");
+				Attr a = e.getAttributeNodeNS("http://javafx.com/fxml", "controller");  //$NON-NLS-1$//$NON-NLS-2$
 				if (a != null) {
 					IType t = Util.findType(a.getValue(), d);
 					if( t != null ) {
@@ -269,9 +271,9 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 	
 	@Override
 	public IInformationControlCreator getHoverControlCreator() {
-		if( element != null ) {
-			javadocWrapper.setJavaElement(element);
-			return javadocWrapper.getHoverControlCreator();
+		if( this.element != null ) {
+			this.javadocWrapper.setJavaElement(this.element);
+			return this.javadocWrapper.getHoverControlCreator();
 		}
 		return null;
 	}
@@ -282,7 +284,7 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 			return null;
 		}
 		
-		element = null;
+		this.element = null;
 
 		int documentOffset = hoverRegion.getOffset();
 		
@@ -302,40 +304,40 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 			if (region != null) {
 				String regionType = region.getType();
 				if (regionType == DOMRegionContext.XML_TAG_NAME) {
-					element = computeTagNameHelp((IDOMNode) treeNode);
+					this.element = computeTagNameHelp((IDOMNode) treeNode);
 				}
 				else if (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_NAME) {
 					IDOMNode dom = (IDOMNode)treeNode;
 					if( dom instanceof ProcessingInstruction ) {
 						String fqn = dom.getNodeValue();
-						if( fqn.endsWith("?") ) {
+						if( fqn.endsWith("?") ) { //$NON-NLS-1$
 							fqn = fqn.substring(0,fqn.length()-1);
 						}
-						element = Util.findType(fqn, dom.getOwnerDocument());
+						this.element = Util.findType(fqn, dom.getOwnerDocument());
 					} else {
-						element = computeTagAttNameHelp((IDOMNode) treeNode, documentOffset);	
+						this.element = computeTagAttNameHelp((IDOMNode) treeNode, documentOffset);	
 					}
 				}
 				else if( regionType == DOMRegionContext.XML_PI_CONTENT) {
 					IDOMNode dom = (IDOMNode)treeNode;
 					String fqn = dom.getNodeValue();
-					if( fqn.endsWith("?") ) {
+					if( fqn.endsWith("?") ) { //$NON-NLS-1$
 						fqn = fqn.substring(0,fqn.length()-1);
 					}
-					if( !(fqn.endsWith(".css") || fqn.endsWith(".properties") || fqn.endsWith("*"))  ) {
-						element = Util.findType(fqn, dom.getOwnerDocument());	
+					if( !(fqn.endsWith(".css") || fqn.endsWith(".properties") || fqn.endsWith("*"))  ) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						this.element = Util.findType(fqn, dom.getOwnerDocument());	
 					}
 				}
 				else if (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_VALUE) {
-					element = computeTagAttValueHelp((IDOMNode) treeNode, documentOffset);
+					this.element = computeTagAttValueHelp((IDOMNode) treeNode, documentOffset);
 				}
 			}
 		}
 		
 		
-		if( element != null ) {
-			javadocWrapper.setJavaElement(element);
-			return javadocWrapper.getHoverInfo2(textViewer, hoverRegion);
+		if( this.element != null ) {
+			this.javadocWrapper.setJavaElement(this.element);
+			return this.javadocWrapper.getHoverInfo2(textViewer, hoverRegion);
 		}
 		return null;
 	}

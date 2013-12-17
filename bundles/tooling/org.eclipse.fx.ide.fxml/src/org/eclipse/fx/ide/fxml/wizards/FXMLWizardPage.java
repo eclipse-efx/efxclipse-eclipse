@@ -48,33 +48,36 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
-
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.fx.ide.ui.wizards.AbstractJDTElementPage;
 
+/**
+ * Page to create FXML
+ */
 public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
-	private IType customSelection;
+	IType customSelection;
 	
 	protected FXMLWizardPage(IPackageFragmentRoot froot, IPackageFragment fragment, IWorkspaceRoot fWorkspaceRoot) {
-		super("fxml", "FXML File", "Create a new FXML File", froot, fragment, fWorkspaceRoot);
+		super("fxml", Messages.FXMLWizardPage_1, Messages.FXMLWizardPage_0, froot, fragment, fWorkspaceRoot); //$NON-NLS-1$
 	}
 
 	@Override
 	protected ImageDescriptor getTitleAreaImage(Display display) {
-		return Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/title_banner.png");
+		return AbstractUIPlugin.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/title_banner.png"); //$NON-NLS-1$
 	}
 	
 	@Override
 	protected void createFields(Composite parent, DataBindingContext dbc) {
 		{
 			Label l = new Label(parent, SWT.NONE);
-			l.setText("Root Element");
+			l.setText(Messages.FXMLWizardPage_4);
 			
 			final ComboViewer viewer = new ComboViewer(parent);
 			viewer.setLabelProvider(new LabelProvider() {
 				@Override
 				public String getText(Object element) {
 					IType t = (IType)element;
-					return t.getElementName() + " - " + t.getPackageFragment().getElementName();
+					return t.getElementName() + " - " + t.getPackageFragment().getElementName(); //$NON-NLS-1$
 				}
 			});
 			viewer.setContentProvider(new ArrayContentProvider());
@@ -83,13 +86,13 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 			viewer.getControl().setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 			
 			Button button = new Button(parent, SWT.PUSH);
-			button.setText("Browse ...");
+			button.setText(Messages.FXMLWizardPage_6);
 			button.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					IType type = findContainerType();
 					if( type != null ) {
-						customSelection = type;
+						FXMLWizardPage.this.customSelection = type;
 						viewer.setInput(getTypes());
 						viewer.setSelection(new StructuredSelection(type));
 					}
@@ -101,12 +104,12 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 				
 				@Override
 				public void propertyChange(PropertyChangeEvent evt) {
-					if( "fragmentRoot".equals(evt.getPropertyName()) ) {
+					if( "fragmentRoot".equals(evt.getPropertyName()) ) { //$NON-NLS-1$
 						viewer.setInput(getTypes());
 					}
 				}
 			});
-			dbc.bindValue(ViewerProperties.singleSelection().observe(viewer), BeanProperties.value("rootElement").observe(getClazz()));
+			dbc.bindValue(ViewerProperties.singleSelection().observe(viewer), BeanProperties.value("rootElement").observe(getClazz())); //$NON-NLS-1$
 			
 			if( types.size() > 0 ) {
 				viewer.setSelection(new StructuredSelection(types.get(0)));
@@ -115,10 +118,10 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 		
 		{
 			Label l = new Label(parent, SWT.NONE);
-			l.setText("Dynamic Root (fx:root)");
+			l.setText(Messages.FXMLWizardPage_9);
 			
 			Button b = new Button(parent, SWT.CHECK);
-			dbc.bindValue(WidgetProperties.selection().observe(b), BeanProperties.value("fxRoot").observe(getClazz()));
+			dbc.bindValue(WidgetProperties.selection().observe(b), BeanProperties.value("fxRoot").observe(getClazz())); //$NON-NLS-1$
 		}
 	}
 	
@@ -127,13 +130,13 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 			IJavaProject project= getClazz().getFragmentRoot().getJavaProject();
 			
 			try {
-				IType superType = project.findType("javafx.scene.Parent");
+				IType superType = project.findType("javafx.scene.Parent"); //$NON-NLS-1$
 				
 				if( superType != null ) {
 					IJavaSearchScope searchScope = SearchEngine.createStrictHierarchyScope(project, superType, true, false, null);		
 					
-					SelectionDialog dialog = JavaUI.createTypeDialog(getShell(), PlatformUI.getWorkbench().getProgressService(), searchScope, IJavaElementSearchConstants.CONSIDER_CLASSES, false, "");
-					dialog.setTitle("Find Preloader");
+					SelectionDialog dialog = JavaUI.createTypeDialog(getShell(), PlatformUI.getWorkbench().getProgressService(), searchScope, IJavaElementSearchConstants.CONSIDER_CLASSES, false, ""); //$NON-NLS-1$
+					dialog.setTitle(Messages.FXMLWizardPage_3);
 					if (dialog.open() == Window.OK) {
 						IType type = (IType) dialog.getResult()[0];
 						return type;
@@ -148,28 +151,29 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 		return null;
 	}
 	
+	@Override
 	protected void revalidate() {
 		if( getClazz().getName() == null || getClazz().getName().trim().length() == 0 ) {
 			setPageComplete(false);
-			setMessage("Enter a name", IMessageProvider.ERROR);
+			setMessage(Messages.FXMLWizardPage_2, IMessageProvider.ERROR);
 		} else if(Character.isLowerCase(getClazz().getName().charAt(0))) {
 			setPageComplete(true);
-			setMessage("An FXML file should start with an uppercase", IMessageProvider.WARNING);
+			setMessage(Messages.FXMLWizardPage_5, IMessageProvider.WARNING);
 		} else {
 			setPageComplete(true);
 			setMessage(null);
 		}
 	}
 	
-	private List<IType> getTypes() {
+	List<IType> getTypes() {
 		List<IType> list = new ArrayList<IType>();
 		
 		if( getClazz().getFragmentRoot() != null ) {
 			IJavaProject jp = getClazz().getFragmentRoot().getJavaProject();
 			
-			if( customSelection != null ) {
+			if( this.customSelection != null ) {
 				try {
-					IType t = jp.findType(customSelection.getFullyQualifiedName());
+					IType t = jp.findType(this.customSelection.getFullyQualifiedName());
 					if( t != null && ! list.contains(t) ) {
 						list.add(t);
 					}
@@ -196,16 +200,16 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 			}
 			
 			for(String s : new String[] {
-					"javafx.scene.layout.AnchorPane", 
-					"javafx.scene.layout.BorderPane", 
-					"javafx.scene.layout.FlowPane", 
-					"javafx.scene.layout.GridPane", 
-					"javafx.scene.layout.HBox", 
-					"javafx.scene.layout.Region", 
-					"javafx.scene.layout.StackPane", 
-					"javafx.scene.layout.TilePane", 
-					"javafx.scene.layout.VBox",
-					"javafx.scene.Scene"
+					"javafx.scene.layout.AnchorPane",  //$NON-NLS-1$
+					"javafx.scene.layout.BorderPane",  //$NON-NLS-1$
+					"javafx.scene.layout.FlowPane",  //$NON-NLS-1$
+					"javafx.scene.layout.GridPane",  //$NON-NLS-1$
+					"javafx.scene.layout.HBox",  //$NON-NLS-1$
+					"javafx.scene.layout.Region",  //$NON-NLS-1$
+					"javafx.scene.layout.StackPane",  //$NON-NLS-1$
+					"javafx.scene.layout.TilePane",  //$NON-NLS-1$
+					"javafx.scene.layout.VBox", //$NON-NLS-1$
+					"javafx.scene.Scene" //$NON-NLS-1$
 				}) {
 				try {
 					IType t = jp.findType(s);

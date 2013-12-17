@@ -43,7 +43,6 @@ import org.eclipse.search.core.text.TextSearchEngine;
 import org.eclipse.search.core.text.TextSearchMatchAccess;
 import org.eclipse.search.core.text.TextSearchRequestor;
 import org.eclipse.search.ui.text.FileTextSearchScope;
-import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.MultiTextEdit;
 import org.eclipse.text.edits.ReplaceEdit;
 import org.eclipse.text.edits.TextEditGroup;
@@ -70,9 +69,9 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 	@Override
 	protected boolean initialize(Object element) {
 		if (element instanceof ICompilationUnit) {
-			renamedElement = (ICompilationUnit) element;
+			this.renamedElement = (ICompilationUnit) element;
 			try {
-				for (IJavaElement e : renamedElement.getChildren()) {
+				for (IJavaElement e : this.renamedElement.getChildren()) {
 					if (e instanceof IType) {
 						// check fields
 						for (IField m : ((IType) e).getFields()) {
@@ -107,8 +106,8 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 	 * @param an
 	 *            an annotation
 	 */
-	private boolean isFxmlAnnotation(IAnnotation a) {
-		if ("FXML".equals(a.getElementName())) {
+	private static boolean isFxmlAnnotation(IAnnotation a) {
+		if ("FXML".equals(a.getElementName())) { //$NON-NLS-1$
 			return true;
 		} else {
 			return false;
@@ -153,28 +152,28 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 			OperationCanceledException {
 		final HashMap<Object, Change> changes = new HashMap<Object, Change>();
 
-		if (renamedElement != null) {
-			String fullname = renamedElement.getElementName();
-			String extension = "."
-					+ renamedElement.getCorrespondingResource()
+		if (this.renamedElement != null) {
+			String fullname = this.renamedElement.getElementName();
+			String extension = "." //$NON-NLS-1$
+					+ this.renamedElement.getCorrespondingResource()
 							.getFileExtension();
 			String controllerClassName = fullname.substring(0,
 					fullname.length() - extension.length());
-			IResource[] roots = renamedElement.getCorrespondingResource()
+			IResource[] roots = this.renamedElement.getCorrespondingResource()
 					.getWorkspace().getRoot().getProjects();
-			String pack = "";
-			if (renamedElement.getPackageDeclarations().length > 0) {
-				pack = renamedElement.getPackageDeclarations()[0]
-						.getElementName() + ".";
+			String pack = ""; //$NON-NLS-1$
+			if (this.renamedElement.getPackageDeclarations().length > 0) {
+				pack = this.renamedElement.getPackageDeclarations()[0]
+						.getElementName() + "."; //$NON-NLS-1$
 			}
 			final String oldFullyQualifiedName = pack + controllerClassName;
 			final String newFullyQualifiedName = pack
-					+ getArguments().getNewName().replace(".java", "");
+					+ getArguments().getNewName().replace(".java", ""); //$NON-NLS-1$ //$NON-NLS-2$
 			createChangesForFullyQualifiedOccurrences(pm, changes, roots,
 					oldFullyQualifiedName, newFullyQualifiedName);
 			createChangesForNotFullyQualifiedOccurrences(pm, changes, roots,
 					pack, controllerClassName, getArguments().getNewName()
-							.replace(".java", ""));
+							.replace(".java", "")); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		if (changes.isEmpty()) {
 			return null;
@@ -197,7 +196,7 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 			final HashMap<Object, Change> changes, IResource[] roots,
 			final String oldFullyQualifiedName,
 			final String newFullyQualifiedName) {
-		String[] fileNamePatterns = { "*.fxml", "*.fxgraph" }; //$NON-NLS-1$
+		String[] fileNamePatterns = { "*.fxml", "*.fxgraph" }; //$NON-NLS-1$ //$NON-NLS-2$
 		FileTextSearchScope scope = FileTextSearchScope.newSearchScope(roots,
 				fileNamePatterns, false);
 
@@ -247,7 +246,7 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 		FileTextSearchScope scope = FileTextSearchScope.newSearchScope(roots,
 				fileNamePatterns, false);
 
-		Pattern pattern = Pattern.compile("\"" + oldName + "\"");
+		Pattern pattern = Pattern.compile("\"" + oldName + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 
 		TextSearchRequestor collector = new TextSearchRequestor() {
 			@Override
@@ -264,7 +263,7 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 					List<String> l = Util.getImportedTypes(doc);
 
 					for (String imp : l) {
-						if (imp.startsWith(pack + "*")
+						if (imp.startsWith(pack + "*") //$NON-NLS-1$
 								|| imp.startsWith(pack + oldName)) {
 							found = true;
 							break;
@@ -295,7 +294,7 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 						changes.put(file, change);
 					}
 
-					int index = content.indexOf("\"" + oldName + "\"");
+					int index = content.indexOf("\"" + oldName + "\""); //$NON-NLS-1$ //$NON-NLS-2$
 					if (index >= 0) {
 						ReplaceEdit edit = new ReplaceEdit(index + 1,
 								oldName.length(), newName);

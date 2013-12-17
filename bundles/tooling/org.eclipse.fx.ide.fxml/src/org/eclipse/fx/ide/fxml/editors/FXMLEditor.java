@@ -38,13 +38,17 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+/**
+ * The FXML-Editor
+ */
 public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAdapter {
-	private static final String FX_NAMESPACE = "http://javafx.com/fxml";
+	
 	@Override
 	public String getPreviewFXML() {
 		return getSourceViewer().getDocument().get();
 	}
 
+	@SuppressWarnings({ "deprecation", "restriction" })
 	@Override
 	public List<String> getPreviewCSSFiles() {
 		final IFile file = getFile();
@@ -52,8 +56,8 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 		Properties propFile = getProperties();
 
 		if (propFile != null) {
-			if (propFile.getProperty("fxmlpreview.all.stylesheets") != null) {
-				for (String f : propFile.getProperty("fxmlpreview.all.stylesheets").split(",")) {
+			if (propFile.getProperty("fxmlpreview.all.stylesheets") != null) { //$NON-NLS-1$
+				for (String f : propFile.getProperty("fxmlpreview.all.stylesheets").split(",")) { //$NON-NLS-1$ //$NON-NLS-2$
 					File absFile = RelativeFileLocator.locateFile(file, f.trim());
 					if (absFile != null) {
 						try {
@@ -66,9 +70,9 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 				}
 			}
 
-			String fileConfig = "fxmlpreview.file." + file.getName().substring(0, file.getName().length() - 5);
-			if (propFile.getProperty(fileConfig + ".stylesheets") != null) {
-				for (String f : propFile.getProperty(fileConfig + ".stylesheets").split(",")) {
+			String fileConfig = "fxmlpreview.file." + file.getName().substring(0, file.getName().length() - 5); //$NON-NLS-1$
+			if (propFile.getProperty(fileConfig + ".stylesheets") != null) { //$NON-NLS-1$
+				for (String f : propFile.getProperty(fileConfig + ".stylesheets").split(",")) { //$NON-NLS-1$ //$NON-NLS-2$
 					File absFile = RelativeFileLocator.locateFile(file, f.trim());
 					if (absFile != null) {
 						try {
@@ -87,7 +91,7 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
 				@Override
 				public void processingInstruction(String target, String data) throws SAXException {
-					if( "scenebuilder-stylesheet".equals(target) ) {
+					if( "scenebuilder-stylesheet".equals(target) ) { //$NON-NLS-1$
 						File absFile = RelativeFileLocator.locateFile(file, data);
 						if( absFile != null ) {
 							try {
@@ -114,6 +118,7 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 		return cssFiles;
 	}
 
+	@SuppressWarnings({ "deprecation", "restriction" })
 	@Override
 	public String getPreviewResourceBundle() {
 		final IFile file = getFile();
@@ -124,7 +129,7 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
 				@Override
 				public void processingInstruction(String target, String data) throws SAXException {
-					if( "scenebuilder-preview-i18n-resource".equals(target) ) {
+					if( "scenebuilder-preview-i18n-resource".equals(target) ) { //$NON-NLS-1$
 						File absFile = RelativeFileLocator.locateFile(file, data);
 						if( absFile != null && absFile.exists() ) {
 							ref.set(absFile.getAbsolutePath());
@@ -152,17 +157,17 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 
 		
 		if (propFile != null) {
-			String fileConfig = "fxmlpreview.file." + file.getName().substring(0, file.getName().length() - 5);
+			String fileConfig = "fxmlpreview.file." + file.getName().substring(0, file.getName().length() - 5); //$NON-NLS-1$
 
-			if (propFile.getProperty("fxmlpreview.all.messagefile") != null) {
-				File f = RelativeFileLocator.locateFile(file, propFile.getProperty("fxmlpreview.all.messagefile"));
+			if (propFile.getProperty("fxmlpreview.all.messagefile") != null) { //$NON-NLS-1$
+				File f = RelativeFileLocator.locateFile(file, propFile.getProperty("fxmlpreview.all.messagefile")); //$NON-NLS-1$
 				if (f != null && f.exists()) {
 					return f.getAbsolutePath();
 				}
 			}
 
-			if (propFile.getProperty(fileConfig + ".messagefile") != null) {
-				File f = RelativeFileLocator.locateFile(file, propFile.getProperty(fileConfig + ".messagefile").trim());
+			if (propFile.getProperty(fileConfig + ".messagefile") != null) { //$NON-NLS-1$
+				File f = RelativeFileLocator.locateFile(file, propFile.getProperty(fileConfig + ".messagefile").trim()); //$NON-NLS-1$
 				if (f != null && f.exists()) {
 					return f.getAbsolutePath();
 				}
@@ -175,14 +180,11 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 	private Properties getProperties() {
 		IFile file = getFile();
 		IProject project = file.getProject();
-		IFile previewConfig = project.getFile(new Path("fxml-preview.properties"));
+		IFile previewConfig = project.getFile(new Path("fxml-preview.properties")); //$NON-NLS-1$
 
 		if (previewConfig.exists()) {
-			InputStream stream = null;
-
 			Properties propFile = new Properties();
-			try {
-				stream = previewConfig.getContents(true);
+			try(InputStream stream = previewConfig.getContents(true) ) {
 				propFile.load(stream);
 				return propFile;
 			} catch (CoreException e) {
@@ -191,13 +193,6 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} finally {
-				if (stream != null) {
-					try {
-						stream.close();
-					} catch (IOException e) {
-					}
-				}
 			}
 		}
 

@@ -12,9 +12,17 @@ package org.eclipse.fx.ide.fxml.editors;
 
 import org.eclipse.wst.validation.internal.core.Message;
 
+/**
+ * Validation message
+ */
 @SuppressWarnings("restriction")
 public class FXMLValidationMessage extends Message {
+	/**
+	 * @param severity
+	 * @param messageKey
+	 * @param aParams
+	 */
 	public FXMLValidationMessage(int severity, String messageKey, String... aParams) {
-		super("org.eclipse.fx.ide.fxml.editors.messages", severity, messageKey, aParams);
+		super("org.eclipse.fx.ide.fxml.editors.messages", severity, messageKey, aParams); //$NON-NLS-1$
 	}
 }

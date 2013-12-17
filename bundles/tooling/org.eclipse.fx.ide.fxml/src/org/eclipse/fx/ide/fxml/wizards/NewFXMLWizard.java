@@ -30,18 +30,25 @@ import org.eclipse.fx.ide.fxml.wizards.template.FXMLTemplate;
 import org.eclipse.fx.ide.ui.wizards.AbstractNewJDTElementWizard;
 import org.eclipse.fx.ide.ui.wizards.template.IGenerator;
 
+/**
+ * Wizard to create FXML File
+ */
 public class NewFXMLWizard extends AbstractNewJDTElementWizard<FXMLElement> {
-	private static final String SETTINGS_FILE = "new-fxml-settings.xml";
-	public static final String KEY_LAST_SELECTIONS = "KEY_LAST_SELECTIONS";
+	private static final String SETTINGS_FILE = "new-fxml-settings.xml"; //$NON-NLS-1$
+	static final String KEY_LAST_SELECTIONS = "KEY_LAST_SELECTIONS"; //$NON-NLS-1$
 	
 	private static final int MAX_HISTORY_SIZE = 20;
 	
+	/**
+	 * Create a new instance
+	 */
 	public NewFXMLWizard() {
 		if( getDialogSettings() == null ) {
-			DialogSettings settings = new DialogSettings("new-fxml");
+			DialogSettings settings = new DialogSettings("new-fxml"); //$NON-NLS-1$
 			try {
 				settings.load(SETTINGS_FILE);
 			} catch (IOException e) {
+				//nothing
 			}
 			setDialogSettings(settings);
 		}
@@ -54,7 +61,7 @@ public class NewFXMLWizard extends AbstractNewJDTElementWizard<FXMLElement> {
 	
 	@Override
 	public void addPages() {
-		addPage(new FXMLWizardPage(root,fragment,ResourcesPlugin.getWorkspace().getRoot()));
+		addPage(new FXMLWizardPage(this.root,this.fragment,ResourcesPlugin.getWorkspace().getRoot()));
 	}
 	
 	@Override
@@ -64,21 +71,20 @@ public class NewFXMLWizard extends AbstractNewJDTElementWizard<FXMLElement> {
 		if( finish && getDialogSettings() != null ) {
 			IFile propFile = getPropertiesFile();
 			if( ! propFile.exists() ) {
-				InputStream in = getClass().getClassLoader().getResourceAsStream("tpl_fxml-preview.properties");
-				if( in != null ) {
-					try {
-						propFile.create(in, true, null);
-					} catch (CoreException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				try(InputStream in = getClass().getClassLoader().getResourceAsStream("tpl_fxml-preview.properties")) { //$NON-NLS-1$
+					if( in != null ) {
+						try {
+							propFile.create(in, true, null);
+						} catch (CoreException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
-					try {
-						in.close();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+				} catch (IOException e) {
+					// TODO: handle exception
+					e.printStackTrace();
 				}
+				
 			}
 			
 			IDialogSettings settings = getDialogSettings();
@@ -116,13 +122,13 @@ public class NewFXMLWizard extends AbstractNewJDTElementWizard<FXMLElement> {
 
 	@Override
 	protected IFile createFile() {
-		if (fragment != null) {
-			String fxgraph = getDomainClass().getName() + ".fxml";
-			IFolder p = (IFolder) fragment.getResource();
+		if (this.fragment != null) {
+			String fxgraph = getDomainClass().getName() + ".fxml"; //$NON-NLS-1$
+			IFolder p = (IFolder) this.fragment.getResource();
 			IResource resource = p.getFile(fxgraph);
 			return (IFile) resource;
 		} else {
-			String fxgraph = getDomainClass().getName() + ".fxml";
+			String fxgraph = getDomainClass().getName() + ".fxml"; //$NON-NLS-1$
 			IFolder p = (IFolder) getDomainClass().getFragmentRoot().getResource();
 			return p.getFile(fxgraph);
 		}
@@ -130,6 +136,6 @@ public class NewFXMLWizard extends AbstractNewJDTElementWizard<FXMLElement> {
 	
 	private IFile getPropertiesFile() {
 		IProject p = (IProject) getDomainClass().getFragmentRoot().getJavaProject().getResource();
-		return p.getFile("fxml-preview.properties");
+		return p.getFile("fxml-preview.properties"); //$NON-NLS-1$
 	}
 }

@@ -101,7 +101,7 @@ public class FxmlAnnotationCompilationParticipant extends
 	/**
 	 * @param context
 	 */
-	private List<CategorizedProblem> checkCU(final ICompilationUnit unit,
+	private static List<CategorizedProblem> checkCU(final ICompilationUnit unit,
 			final Collection<CategorizedProblem> existingProblems) {
 		List<CategorizedProblem> problems = new ArrayList<CategorizedProblem>();
 		if (existingProblems != null) {
@@ -196,7 +196,7 @@ public class FxmlAnnotationCompilationParticipant extends
 		return problems;
 	}
 
-	private int getMethodLineNumber(final IType type, final IMethod method)
+	private static int getMethodLineNumber(final IType type, final IMethod method)
 			throws JavaModelException {
 		String source = type.getCompilationUnit().getSource();
 		String sourceUpToMethod = source.substring(0, method.getSourceRange()

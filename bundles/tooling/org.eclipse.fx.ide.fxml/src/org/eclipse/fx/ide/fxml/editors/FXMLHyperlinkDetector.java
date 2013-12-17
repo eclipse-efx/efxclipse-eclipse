@@ -25,11 +25,11 @@ import org.eclipse.wst.xml.core.internal.regions.DOMRegionContext;
 import org.w3c.dom.Node;
 import org.w3c.dom.ProcessingInstruction;
 
+/**
+ * Detector for hyperlink areas in FXML-Documents
+ */
 @SuppressWarnings("restriction")
 public class FXMLHyperlinkDetector extends AbstractHyperlinkDetector {
-
-	public FXMLHyperlinkDetector() {
-	}
 
 	@Override
 	public IHyperlink[] detectHyperlinks(ITextViewer textViewer, IRegion hoverRegion, boolean canShowMultipleHyperlinks) {
@@ -68,7 +68,7 @@ public class FXMLHyperlinkDetector extends AbstractHyperlinkDetector {
 					IDOMNode dom = (IDOMNode)treeNode;
 					if( dom instanceof ProcessingInstruction ) {
 						String fqn = dom.getNodeValue();
-						if( fqn.endsWith("?") ) {
+						if( fqn.endsWith("?") ) { //$NON-NLS-1$
 							fqn = fqn.substring(0,fqn.length()-1);
 						}
 						link = new FXMLJavaElementHyperLink(Util.findType(fqn, dom.getOwnerDocument()),new Region(flatNode.getStartOffset(region), region.getTextLength()), (IDOMNode)treeNode, regionType, documentOffset);
@@ -86,14 +86,14 @@ public class FXMLHyperlinkDetector extends AbstractHyperlinkDetector {
 					String value = dom.getNodeValue();
 					
 					// Strip the ? it is part of the value
-					if( value.endsWith("?") ) {
+					if( value.endsWith("?") ) { //$NON-NLS-1$
 						value = value.substring(0,value.length()-1);
 					}
 					
-					if( value.endsWith(".css") || value.endsWith(".properties")  ) {
+					if( value.endsWith(".css") || value.endsWith(".properties")  ) { //$NON-NLS-1$ //$NON-NLS-2$
 						link = new ResourceHyperLink(new Region(flatNode.getStartOffset(region), region.getTextLength()), (IDOMNode) treeNode, value);	
 					} else {
-						if(!  value.endsWith("*") ) {
+						if(!  value.endsWith("*") ) { //$NON-NLS-1$
 							link = new FXMLJavaElementHyperLink(Util.findType(value, dom.getOwnerDocument()),new Region(flatNode.getStartOffset(region), region.getTextLength()), (IDOMNode)treeNode, regionType, documentOffset);
 						}						
 					}
@@ -121,7 +121,7 @@ public class FXMLHyperlinkDetector extends AbstractHyperlinkDetector {
 		
 		@Override
 		public IRegion getHyperlinkRegion() {
-			return region;
+			return this.region;
 		}
 
 		@Override
@@ -136,12 +136,12 @@ public class FXMLHyperlinkDetector extends AbstractHyperlinkDetector {
 
 		@Override
 		public void open() {
-			String baseLocation = xmlnode.getModel().getBaseLocation();
+			String baseLocation = this.xmlnode.getModel().getBaseLocation();
 			IContainer c = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(baseLocation)).getParent();
-			IFile f = c.getFile(new Path(resourceValue));
-			if( resourceValue.endsWith(".css") ) {
+			IFile f = c.getFile(new Path(this.resourceValue));
+			if( this.resourceValue.endsWith(".css") ) { //$NON-NLS-1$
 				try {
-					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(new FileEditorInput(f), "org.eclipse.fx.ide.css.CssDsl");
+					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(new FileEditorInput(f), "org.eclipse.fx.ide.css.CssDsl"); //$NON-NLS-1$
 				} catch (PartInitException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -169,7 +169,7 @@ public class FXMLHyperlinkDetector extends AbstractHyperlinkDetector {
 		
 		@Override
 		public IRegion getHyperlinkRegion() {
-			return region;
+			return this.region;
 		}
 
 		@Override
@@ -186,14 +186,14 @@ public class FXMLHyperlinkDetector extends AbstractHyperlinkDetector {
 		public void open() {
 			IJavaElement element = this.element;
 			if( element == null ) {
-				if (regionType == DOMRegionContext.XML_TAG_NAME) {
-					element = FXMLTextHover.computeTagNameHelp(xmlnode);
+				if (this.regionType == DOMRegionContext.XML_TAG_NAME) {
+					element = FXMLTextHover.computeTagNameHelp(this.xmlnode);
 				}
-				else if (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_NAME) {
-					element = FXMLTextHover.computeTagAttNameHelp(xmlnode, documentOffset);
+				else if (this.regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_NAME) {
+					element = FXMLTextHover.computeTagAttNameHelp(this.xmlnode, this.documentOffset);
 				}
-				else if (regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_VALUE) {
-					element = FXMLTextHover.computeTagAttValueHelp(xmlnode, documentOffset);
+				else if (this.regionType == DOMRegionContext.XML_TAG_ATTRIBUTE_VALUE) {
+					element = FXMLTextHover.computeTagAttValueHelp(this.xmlnode, this.documentOffset);
 				}				
 			}
 

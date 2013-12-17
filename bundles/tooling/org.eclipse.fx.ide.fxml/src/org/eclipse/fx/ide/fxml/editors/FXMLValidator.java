@@ -58,7 +58,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
 import org.eclipse.fx.ide.model.FXPlugin;
 import org.eclipse.fx.ide.model.IFXClass;
 import org.eclipse.fx.ide.model.IFXCtrlClass;
@@ -68,6 +67,9 @@ import org.eclipse.fx.ide.model.IFXEventHandlerProperty;
 import org.eclipse.fx.ide.model.IFXProperty;
 import org.eclipse.fx.ide.ui.util.IconKeys;
 
+/**
+ * Validates the FXML-Document and provides quick fixes
+ */
 @SuppressWarnings("restriction")
 public class FXMLValidator extends AbstractValidator implements IValidator, ISourceValidator {
 	private IDocument document;
@@ -106,13 +108,13 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		// remove old messages
 		reporter.removeAllMessages(this);
 
-		IStructuredDocumentRegion[] regions = ((IStructuredDocument) document).getStructuredDocumentRegions(dirtyRegion.getOffset(), dirtyRegion.getLength());
+		IStructuredDocumentRegion[] regions = ((IStructuredDocument) this.document).getStructuredDocumentRegions(dirtyRegion.getOffset(), dirtyRegion.getLength());
 		for (int i = 0; i < regions.length; i++) {
 			validate(regions[i], reporter);
 		}
 	}
 
-	public void validate(IStructuredDocumentRegion structuredDocumentRegion, IReporter reporter) {
+	private void validate(IStructuredDocumentRegion structuredDocumentRegion, IReporter reporter) {
 		if (structuredDocumentRegion == null) {
 			return;
 		}
@@ -132,7 +134,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		for (int i = 0; i < textRegions.size(); i++) {
 			ITextRegion textRegion = textRegions.get(i);
 			if (textRegion.getType() == DOMRegionContext.XML_TAG_OPEN) {
-				IndexedRegion treeNode = getNode(document, structuredDocumentRegion.getStartOffset(textRegion));
+				IndexedRegion treeNode = getNode(this.document, structuredDocumentRegion.getStartOffset(textRegion));
 				if (treeNode == null) {
 					return;
 				}
@@ -154,7 +156,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 					Map<String, IFXProperty> props = e.getAllProperties();
 					for (int j = 0; j < nnm.getLength(); j++) {
 						Node attribute = nnm.item(j);
-						if (attribute.getNodeName().equals("fx:id")) {
+						if (attribute.getNodeName().equals("fx:id")) { //$NON-NLS-1$
 							IFXCtrlField f = fxCtrl.getAllFields().get(attribute.getNodeValue());
 							IType type = e.getType();
 							
@@ -163,7 +165,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 								IType fromType = Util.findType(node.getLocalName(), node.getOwnerDocument());
 								if( fromType != null && toType != null ) {
 									if( ! org.eclipse.fx.ide.model.Util.assignable(fromType, toType) ) {
-										FXMLValidationMessage message = new FXMLValidationMessage(IMessage.ERROR_AND_WARNING, "FXMLValidator.incompatibleFieldTypes", fromType.getElementName(), toType.getElementName());
+										FXMLValidationMessage message = new FXMLValidationMessage(IMessage.ERROR_AND_WARNING, "FXMLValidator.incompatibleFieldTypes", fromType.getElementName(), toType.getElementName()); //$NON-NLS-1$
 										IDOMAttr domAttr = (IDOMAttr) attribute;
 										message.setLength(getAttributeLength(structuredDocumentRegion, domAttr));
 										message.setOffset(domAttr.getStartOffset());
@@ -172,7 +174,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 								}
 							} else {
 								String fielname = attribute.getNodeValue();
-								FXMLValidationMessage message = new FXMLValidationMessage(IMessage.ERROR_AND_WARNING, "FXMLValidator.unknownControllerField", fxCtrl.getSimpleName(), fielname);
+								FXMLValidationMessage message = new FXMLValidationMessage(IMessage.ERROR_AND_WARNING, "FXMLValidator.unknownControllerField", fxCtrl.getSimpleName(), fielname); //$NON-NLS-1$
 								IDOMAttr domAttr = (IDOMAttr) attribute;
 								message.setLength(getAttributeLength(structuredDocumentRegion, domAttr));
 								message.setOffset(domAttr.getStartOffset());
@@ -187,7 +189,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 								IFXCtrlEventMethod evtMethod = fxCtrl.getAllEventMethods().get(attribute.getNodeValue().substring(1));
 								if (evtMethod == null) {
 									String methodName = nnm.item(j).getNodeValue().substring(1);
-									FXMLValidationMessage message = new FXMLValidationMessage(IMessage.HIGH_SEVERITY, "FXMLValidator.unknownControllerMethod", fxCtrl.getSimpleName(), methodName);
+									FXMLValidationMessage message = new FXMLValidationMessage(IMessage.HIGH_SEVERITY, "FXMLValidator.unknownControllerMethod", fxCtrl.getSimpleName(), methodName); //$NON-NLS-1$
 									IDOMAttr domAttr = (IDOMAttr) attribute;
 
 									message.setLength(getAttributeLength(structuredDocumentRegion, domAttr));
@@ -206,16 +208,17 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		}
 	}
 	
-	private int getAttributeLength(IStructuredDocumentRegion structuredDocumentRegion, IDOMAttr domAttr) {
+	@SuppressWarnings("deprecation")
+	private static int getAttributeLength(IStructuredDocumentRegion structuredDocumentRegion, IDOMAttr domAttr) {
 		int l = domAttr.getValueRegionStartOffset() - domAttr.getStartOffset();
 		l += structuredDocumentRegion.getText(domAttr.getValueRegion()).length();
-		return l; // domAttr.getLength() too long
+		return l; // domAttr.getLength() too long 
 	}
 
-	private IFXCtrlClass getController(IDOMNode node) {
+	private static IFXCtrlClass getController(IDOMNode node) {
 		Document d = node.getOwnerDocument();
 		Element docEl = d.getDocumentElement();
-		Attr a = docEl.getAttributeNodeNS("http://javafx.com/fxml", "controller");
+		Attr a = docEl.getAttributeNodeNS("http://javafx.com/fxml", "controller");  //$NON-NLS-1$//$NON-NLS-2$
 
 		if (a != null && a.getValue() != null && !a.getValue().trim().isEmpty()) {
 			IType type = Util.findType(a.getValue(), d);
@@ -227,10 +230,10 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		return null;
 	}
 
-	private IFXClass computeTagNameHelp(IDOMNode xmlnode) {
+	private static IFXClass computeTagNameHelp(IDOMNode xmlnode) {
 		if (!Character.isLowerCase(xmlnode.getNodeName().charAt(0))) {
-			if (xmlnode.getNodeName().contains(".")) {
-				String[] parts = xmlnode.getNodeName().split("\\.");
+			if (xmlnode.getNodeName().contains(".")) { //$NON-NLS-1$
+				String[] parts = xmlnode.getNodeName().split("\\."); //$NON-NLS-1$
 				IType ownerType = Util.findType(parts[0], xmlnode.getOwnerDocument());
 				if (ownerType != null) {
 					return FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
@@ -247,7 +250,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		return null;
 	}
 
-	private IndexedRegion getNode(IDocument document, int documentOffset) {
+	private static IndexedRegion getNode(IDocument document, int documentOffset) {
 		IndexedRegion node = null;
 		IModelManager mm = StructuredModelManager.getModelManager();
 		IStructuredModel model = null;
@@ -269,7 +272,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		return node;
 	}
 
-	private boolean isStartTag(IStructuredDocumentRegion structuredDocumentRegion) {
+	private static boolean isStartTag(IStructuredDocumentRegion structuredDocumentRegion) {
 		if ((structuredDocumentRegion == null) || structuredDocumentRegion.isDeleted()) {
 			return false;
 		}
@@ -278,7 +281,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 
 	@Override
 	public void cleanup(IReporter reporter) {
-		document = null;
+		this.document = null;
 	}
 
 	private boolean shouldValidate(IResource file, boolean checkExtension) {
@@ -286,7 +289,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 			return false;
 		if (checkExtension) {
 			String extension = file.getFileExtension();
-			if (extension != null && "xml".endsWith(extension.toLowerCase(Locale.US)))
+			if (extension != null && "xml".endsWith(extension.toLowerCase(Locale.US))) //$NON-NLS-1$
 				return true;
 		}
 
@@ -295,7 +298,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 			contentDescription = ((IFile) file).getContentDescription();
 			if (contentDescription != null) {
 				IContentType contentType = contentDescription.getContentType();
-				return contentDescription != null && contentType.isKindOf(getXMLContentType());
+				return contentType.isKindOf(getXMLContentType());
 			}
 		} catch (CoreException e) {
 			Logger.logException(e);
@@ -304,10 +307,10 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 	}
 
 	private IContentType getXMLContentType() {
-		if (fRootContentType == null) {
-			fRootContentType = Platform.getContentTypeManager().getContentType("org.eclipse.core.runtime.xml");
+		if (this.fRootContentType == null) {
+			this.fRootContentType = Platform.getContentTypeManager().getContentType("org.eclipse.core.runtime.xml"); //$NON-NLS-1$
 		}
-		return fRootContentType;
+		return this.fRootContentType;
 	}
 
 	@Override
@@ -334,10 +337,10 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 			validateV1Project(helper, reporter);
 	}
 
-	private boolean shouldValidate(IResourceProxy proxy) {
+	boolean shouldValidate(IResourceProxy proxy) {
 		if (proxy.getType() == IResource.FILE) {
 			String name = proxy.getName();
-			if (name.toLowerCase(Locale.US).endsWith(".fxml")) {
+			if (name.toLowerCase(Locale.US).endsWith(".fxml")) { //$NON-NLS-1$
 				return true;
 			}
 		}
@@ -349,6 +352,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		if (helper instanceof IWorkbenchContext) {
 			IProject project = ((IWorkbenchContext) helper).getProject();
 			IResourceProxyVisitor visitor = new IResourceProxyVisitor() {
+				@Override
 				public boolean visit(IResourceProxy proxy) throws CoreException {
 					if (shouldValidate(proxy)) {
 						validateV1File((IFile) proxy.requestResource(), reporter);
@@ -365,7 +369,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		}
 	}
 
-	private void validateV1File(IFile currentFile, IReporter reporter) {
+	void validateV1File(IFile currentFile, IReporter reporter) {
 		Message message = new LocalizedMessage(IMessage.LOW_SEVERITY, currentFile.getFullPath().toString().substring(1));
 		reporter.displaySubtask(FXMLValidator.this, message);
 
@@ -393,9 +397,9 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 	}
 
 	static class UnknownControllerFieldQuickAssist implements IQuickAssistProcessor {
-		private final String fieldName;
-		private final IType fieldType;
-		private final IFXCtrlClass controller;
+		final String fieldName;
+		final IType fieldType;
+		final IFXCtrlClass controller;
 
 		public UnknownControllerFieldQuickAssist(final String fieldName, final IType fieldType, final IFXCtrlClass controller) {
 			this.fieldName = fieldName;
@@ -421,25 +425,25 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 		@Override
 		public ICompletionProposal[] computeQuickAssistProposals(IQuickAssistInvocationContext invocationContext) {
 			return new ICompletionProposal[] {
-				new BaseCompletionProposalImpl("Add field '"+fieldName+"' to controller '"+controller.getSimpleName()+"'",null,invocationContext.getOffset(),0) {
+				new BaseCompletionProposalImpl("Add field '"+this.fieldName+"' to controller '"+this.controller.getSimpleName()+"'",null,invocationContext.getOffset(),0) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 					
 					@Override
 					public void apply(IDocument document) {
 						try {
-							IType type = controller.getType();
-							String[][] resolvedType = type.resolveType("FXML");
+							IType type = UnknownControllerFieldQuickAssist.this.controller.getType();
+							String[][] resolvedType = type.resolveType("FXML"); //$NON-NLS-1$
 
 							if( resolvedType == null ) {
-								type.getCompilationUnit().createImport("javafx.fxml.FXML", null, new NullProgressMonitor());	
+								type.getCompilationUnit().createImport("javafx.fxml.FXML", null, new NullProgressMonitor());	 //$NON-NLS-1$
 							}
 							
-							resolvedType = type.resolveType(Signature.getSimpleName(fieldType.getElementName()));
+							resolvedType = type.resolveType(Signature.getSimpleName(UnknownControllerFieldQuickAssist.this.fieldType.getElementName()));
 							
 							if( resolvedType == null ) {
-								type.getCompilationUnit().createImport(fieldType.getFullyQualifiedName(), null, new NullProgressMonitor());
+								type.getCompilationUnit().createImport(UnknownControllerFieldQuickAssist.this.fieldType.getFullyQualifiedName(), null, new NullProgressMonitor());
 							}
 							
-							type.createField("@FXML " + Signature.getSimpleName(fieldType.getElementName()) + " " + fieldName + ";", null, true, new NullProgressMonitor());
+							type.createField("@FXML " + Signature.getSimpleName(UnknownControllerFieldQuickAssist.this.fieldType.getElementName()) + " " + UnknownControllerFieldQuickAssist.this.fieldName + ";", null, true, new NullProgressMonitor()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						} catch (JavaModelException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -451,9 +455,9 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 	}
 
 	static class UnknownControllerEventMethodQuickFixAssist implements IQuickAssistProcessor {
-		private final String methodName;
-		private final IFXCtrlClass controller;
-		private final IFXEventHandlerProperty property;
+		final String methodName;
+		final IFXCtrlClass controller;
+		final IFXEventHandlerProperty property;
 
 		public UnknownControllerEventMethodQuickFixAssist(final String methodName, final IFXCtrlClass controller, final IFXEventHandlerProperty property) {
 			this.methodName = methodName;
@@ -463,7 +467,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 
 		@Override
 		public String getErrorMessage() {
-			return "THIS IS THE ERROR MESSAGE";
+			return "THIS IS THE ERROR MESSAGE"; //$NON-NLS-1$
 		}
 
 		@Override
@@ -478,19 +482,19 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 
 		@Override
 		public ICompletionProposal[] computeQuickAssistProposals(IQuickAssistInvocationContext invocationContext) {
-			return new ICompletionProposal[] { new BaseCompletionProposalImpl("Add '" + methodName + "()' to controller '" + controller.getSimpleName() + "'", IconKeys.getIcon(IconKeys.EVENT_KEY), invocationContext.getOffset(), 0) {
+			return new ICompletionProposal[] { new BaseCompletionProposalImpl("Add '" + this.methodName + "()' to controller '" + this.controller.getSimpleName() + "'", IconKeys.getIcon(IconKeys.EVENT_KEY), invocationContext.getOffset(), 0) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 				@Override
 				public void apply(IDocument document) {
 					try {
-						IType type = controller.getType();
+						IType type = UnknownControllerEventMethodQuickFixAssist.this.controller.getType();
 
-						String[][] resolvedType = type.resolveType("FXML");
+						String[][] resolvedType = type.resolveType("FXML"); //$NON-NLS-1$
 						if (resolvedType == null) {
-							type.getCompilationUnit().createImport("javafx.fxml.FXML", null, new NullProgressMonitor());
+							type.getCompilationUnit().createImport("javafx.fxml.FXML", null, new NullProgressMonitor()); //$NON-NLS-1$
 						}
 
-						type.createMethod("@FXML public void " + methodName + "() {}", null, true, new NullProgressMonitor());
+						type.createMethod("@FXML public void " + UnknownControllerEventMethodQuickFixAssist.this.methodName + "() {}", null, true, new NullProgressMonitor()); //$NON-NLS-1$ //$NON-NLS-2$
 					} catch (JavaModelException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -498,30 +502,30 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 
 					// Retrigger validation
 					try {
-						document.replace(0, 0, "");
+						document.replace(0, 0, ""); //$NON-NLS-1$
 					} catch (BadLocationException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
-			}, new BaseCompletionProposalImpl("Add '" + methodName + "(" + property.getEventTypeAsString(false) + ")' to controller '" + controller.getSimpleName() + "'", IconKeys.getIcon(IconKeys.EVENT_KEY), invocationContext.getOffset(), invocationContext.getLength()) {
+			}, new BaseCompletionProposalImpl("Add '" + this.methodName + "(" + this.property.getEventTypeAsString(false) + ")' to controller '" + this.controller.getSimpleName() + "'", IconKeys.getIcon(IconKeys.EVENT_KEY), invocationContext.getOffset(), invocationContext.getLength()) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
 				@Override
 				public void apply(IDocument document) {
 					try {
-						IType type = controller.getType();
-						String[][] resolvedType = type.resolveType("FXML");
+						IType type = UnknownControllerEventMethodQuickFixAssist.this.controller.getType();
+						String[][] resolvedType = type.resolveType("FXML"); //$NON-NLS-1$
 						if (resolvedType == null) {
-							type.getCompilationUnit().createImport("javafx.fxml.FXML", null, new NullProgressMonitor());
+							type.getCompilationUnit().createImport("javafx.fxml.FXML", null, new NullProgressMonitor()); //$NON-NLS-1$
 						}
 
-						resolvedType = type.resolveType(property.getEventTypeAsString(false));
+						resolvedType = type.resolveType(UnknownControllerEventMethodQuickFixAssist.this.property.getEventTypeAsString(false));
 
 						if (resolvedType == null) {
-							type.getCompilationUnit().createImport(property.getEventTypeAsString(true), null, new NullProgressMonitor());
+							type.getCompilationUnit().createImport(UnknownControllerEventMethodQuickFixAssist.this.property.getEventTypeAsString(true), null, new NullProgressMonitor());
 						}
 
-						type.createMethod("@FXML public void " + methodName + "(" + property.getEventTypeAsString(false) + " event) {}", null, true, new NullProgressMonitor());
+						type.createMethod("@FXML public void " + UnknownControllerEventMethodQuickFixAssist.this.methodName + "(" + UnknownControllerEventMethodQuickFixAssist.this.property.getEventTypeAsString(false) + " event) {}", null, true, new NullProgressMonitor()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 					} catch (JavaModelException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -529,7 +533,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 
 					// Retrigger validation
 					try {
-						document.replace(0, 0, "");
+						document.replace(0, 0, ""); //$NON-NLS-1$
 					} catch (BadLocationException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -554,7 +558,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 
 		@Override
 		public Point getSelection(IDocument document) {
-			return new Point(replacementOffset + cursorPosition, 0);
+			return new Point(this.replacementOffset + this.cursorPosition, 0);
 		}
 
 		@Override
@@ -564,12 +568,12 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 
 		@Override
 		public String getDisplayString() {
-			return label;
+			return this.label;
 		}
 
 		@Override
 		public Image getImage() {
-			return image;
+			return this.image;
 		}
 
 		@Override
