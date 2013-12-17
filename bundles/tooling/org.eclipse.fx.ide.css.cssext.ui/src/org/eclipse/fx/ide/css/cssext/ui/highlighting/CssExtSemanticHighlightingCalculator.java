@@ -14,10 +14,10 @@ import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.nodemodel.BidiTreeIterator;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.impl.HiddenLeafNode;
+import org.eclipse.xtext.parser.IParseResult;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
-
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleDefinition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleRef;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition;
@@ -32,11 +32,17 @@ public class CssExtSemanticHighlightingCalculator implements
 	@Override
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
-		if( resource == null || resource.getParseResult() == null) {
+		if( resource == null) {
 			return;
 		}
 		
-		INode root = resource.getParseResult().getRootNode();
+		IParseResult pr = resource.getParseResult();
+		
+		if( pr == null ) {
+			return;
+		}
+		
+		INode root = pr.getRootNode();
 		BidiTreeIterator<INode> it = root.getAsTreeIterable().iterator();
 		while( it.hasNext() ) {
 			INode node = it.next();

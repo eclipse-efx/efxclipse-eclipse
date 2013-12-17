@@ -294,16 +294,17 @@ public class CssExtDocParser {
 		 URL fileUrl = null;
 	      try {
 	        fileUrl = FileLocator.toFileURL(bundleUrl);
+	        String url = fileUrl.toExternalForm();
+			out.append("<img class=\"symbol\" src=\""+ url +"\"/>");
 	      }
 	      catch (IOException e) {
-	        fileUrl = null;
+	        e.printStackTrace();
 	      }
 		
-		String url = fileUrl.toExternalForm();
-		out.append("<img class=\"symbol\" src=\""+ url +"\"/>");
+		
 	}
 	private void printName(StringBuffer out, String name) {
-		out.append("<span class=\"name\"><b>" + name + "</b></span>");
+		out.append("<span class=\"name\"><b>" + name + "</b></span>"); //$NON-NLS-1$
 	}
 	private void printStyleClass(StringBuffer out, ElementDefinition elDef) {
 		if (elDef.getStyleclass() != null) {
