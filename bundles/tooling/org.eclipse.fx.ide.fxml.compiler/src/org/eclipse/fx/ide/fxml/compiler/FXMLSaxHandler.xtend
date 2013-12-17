@@ -271,7 +271,7 @@ class FXMLSaxHandler extends DefaultHandler {
 			return;
 		}
 		val o = stack.pop
-		if( ! stack.empty && o instanceof Element ) {
+		if( ! stack.isEmpty && o instanceof Element ) {
 			if( stack.peek instanceof Element ) {
 				(stack.peek as Element).defaultChildren += o as Element
 			} if( stack.peek instanceof StaticCallValueProperty ) {
