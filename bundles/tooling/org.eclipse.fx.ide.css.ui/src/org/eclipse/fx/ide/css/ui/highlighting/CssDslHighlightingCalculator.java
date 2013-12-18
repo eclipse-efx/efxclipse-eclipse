@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
-
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
 import org.eclipse.fx.ide.css.cssDsl.ElementSelector;
 import org.eclipse.fx.ide.css.cssDsl.FuncTok;
@@ -45,54 +45,71 @@ public class CssDslHighlightingCalculator implements ISemanticHighlightingCalcul
 			
 			if (o instanceof ElementSelector) {
 				final ICompositeNode n = NodeModelUtils.getNode((EObject)o);
-				acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.ELEMENT);
+				if( n != null ) {
+					acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.ELEMENT);	
+				}
 			}
 			else if (o instanceof IdentifierTok) {
 				final ICompositeNode n = NodeModelUtils.getNode((EObject)o);
-				acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.DEFAULT_ID);
+				if( n != null ) {
+					acceptor.addPosition(n.getOffset(), n.getLength(), DefaultHighlightingConfiguration.DEFAULT_ID);	
+				}
 			}
 			else if( o instanceof css_declaration ) {
 				css_declaration dec = (css_declaration) o;
 				if( dec.getProperty() != null && dec.getProperty().getName() != null && dec.getProperty().getName().trim().length() > 0 ) {
 					ICompositeNode n = NodeModelUtils.getNode(dec);
-					if( n.hasChildren() ) {
-						acceptor.addPosition(n.getFirstChild().getOffset(), n.getFirstChild().getLength(), CssDslHighlightingConfiguration.DECLARATIONNAME);
-					}	
+					if( n != null ) {
+						if( n.hasChildren() ) {
+							acceptor.addPosition(n.getFirstChild().getOffset(), n.getFirstChild().getLength(), CssDslHighlightingConfiguration.DECLARATIONNAME);
+						}							
+					}
 				}
 			} 
 			else if( o instanceof simple_selector ) {
 				final ICompositeNode n = NodeModelUtils.getNode((EObject)o);
-				acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.SELECTOR);
+				if( n != null ) {
+					acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.SELECTOR);	
+				}
 			}
 			else if (o instanceof URLType) {
 				final URLType url = (URLType) o;
 				final ICompositeNode n = NodeModelUtils.getNode(url);
-				acceptor.addPosition(n.getOffset(), 4, CssDslHighlightingConfiguration.FUNCTION);
-				acceptor.addPosition(n.getOffset()+4, n.getLength()-5, CssDslHighlightingConfiguration.URL);
-				acceptor.addPosition(n.getOffset() + n.getLength() - 1, 1, CssDslHighlightingConfiguration.FUNCTION);
+				if( n != null ) {
+					acceptor.addPosition(n.getOffset(), 4, CssDslHighlightingConfiguration.FUNCTION);
+					acceptor.addPosition(n.getOffset()+4, n.getLength()-5, CssDslHighlightingConfiguration.URL);
+					acceptor.addPosition(n.getOffset() + n.getLength() - 1, 1, CssDslHighlightingConfiguration.FUNCTION);					
+				}
 			}
 			else if (o instanceof FuncTok) {
 				final FuncTok funcTok = (FuncTok) o;
 				final ICompositeNode n = NodeModelUtils.getNode(funcTok);
 				
 				int nameLength = funcTok.getName().getName().length();
-				acceptor.addPosition(n.getOffset(), nameLength + 1, CssDslHighlightingConfiguration.FUNCTION);
+				if( n != null ) {
+					acceptor.addPosition(n.getOffset(), nameLength + 1, CssDslHighlightingConfiguration.FUNCTION);	
+				}
 				
 				for (CssTok tok : ((FuncTok) o).getParams()) {
 					if (tok instanceof SymbolTok) {
-						if (",".equals(((SymbolTok) tok).getSymbol())) {
+						if (",".equals(((SymbolTok) tok).getSymbol())) { //$NON-NLS-1$
 							ICompositeNode colonNode = NodeModelUtils.getNode(tok);
-							acceptor.addPosition(colonNode.getOffset(), colonNode.getLength(), CssDslHighlightingConfiguration.FUNCTION);
+							if( colonNode != null ) {
+								acceptor.addPosition(colonNode.getOffset(), colonNode.getLength(), CssDslHighlightingConfiguration.FUNCTION);	
+							}
 						}
 					}
 				}
 				
-				acceptor.addPosition(n.getOffset() + n.getLength() - 1, 1, CssDslHighlightingConfiguration.FUNCTION);
+				if( n != null ) {
+					acceptor.addPosition(n.getOffset() + n.getLength() - 1, 1, CssDslHighlightingConfiguration.FUNCTION);	
+				}
 			}
 			else if (o instanceof StringTok) {
 				final ICompositeNode n = NodeModelUtils.getNode((EObject)o);
-				
-				acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.STRING_ID);
+				if( n != null ) {
+					acceptor.addPosition(n.getOffset(), n.getLength(), DefaultHighlightingConfiguration.STRING_ID);	
+				}
 			}
 		}
 	}
