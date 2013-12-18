@@ -91,7 +91,7 @@ class FXGraphConverter {
 		«IF element.factory!=null»«element.type.simpleName» createdby «element.factory» {
 		«var Boolean comma = false»
 		«FOR FactoryValueElement e : element.values»
-			«IF comma»,«ENDIF»«IF e instanceof Element»«generateElement(new CastHelper().castToElement(e))»«ELSE»«IF e instanceof SimpleValueProperty»«ENDIF»«new ValuePropertyFormatter(e).formattedValue»«ENDIF»
+			«IF comma»,«ENDIF»«IF e instanceof Element»«generateElement(e as Element)»«ELSE»«IF e instanceof SimpleValueProperty»«ENDIF»«new ValuePropertyFormatter(e).formattedValue»«ENDIF»
 			«val nix = comma = true»
 		«ENDFOR»			
 		}«ELSE»
@@ -141,7 +141,7 @@ class FXGraphConverter {
 		«var Boolean comma = false»
 		«FOR ListValueElement e : list.value»
 			«IF comma»,«ENDIF»
-			«IF e instanceof Element»«generateElement(new CastHelper().castToElement(e))»«ELSE»«new ValuePropertyFormatter(e).formattedValue»«ENDIF»
+			«IF e instanceof Element»«generateElement(e as Element)»«ELSE»«new ValuePropertyFormatter(e).formattedValue»«ENDIF»
 			«val nix = comma = true»
 		«ENDFOR»	
 		]'''
@@ -154,7 +154,7 @@ class FXGraphConverter {
 		«var Boolean comma = false»
 		«FOR FactoryValueElement e : element.values»
 			«IF comma»,«ENDIF»
-			«IF e instanceof Element»«generateElement(new CastHelper().castToElement(e))»
+			«IF e instanceof Element»«generateElement(e as Element)»
 			«ELSE»
 				«IF e instanceof SimpleValueProperty»«new ValuePropertyFormatter(e).formattedValue»«ENDIF»
 			«ENDIF»
