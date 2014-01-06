@@ -198,14 +198,15 @@
 					<version>${tycho-version}</version>
 					<configuration>
 						<encoding>UTF-8</encoding>
-						<!-- mvn install:install-file -Dfile=/Users/tomschindl/Applications/javafx-sdk2.2.0-beta/rt/lib/jfxrt.jar -DgroupId=javafx -DartifactId=javafx.mvn -Dversion=2.2.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -->
 						<extraClasspathElements>
-							<extraClasspathElement>
-								<groupId>javafx</groupId>
-								<artifactId>javafx.mvn</artifactId>
-								<version>2.2.0-SNAPSHOT</version>
-							</extraClasspathElement>
-						</extraClasspathElements>
+				            <extraClasspathElement>
+				                <groupId>com.oracle</groupId>
+				                <artifactId>javafx</artifactId>
+				                <version>8.0.0-SNAPSHOT</version>
+				                <systemPath>${java.home}/lib/jfxswt.jar</systemPath>
+				                <scope>system</scope>
+				            </extraClasspathElement>
+        				</extraClasspathElements> 
 					</configuration>
 				</plugin>
 				<plugin>
