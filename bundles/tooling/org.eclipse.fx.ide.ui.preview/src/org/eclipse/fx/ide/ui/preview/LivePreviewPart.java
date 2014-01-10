@@ -209,6 +209,7 @@ public class LivePreviewPart extends ViewPart {
 	private Map<SCREEN_SIZE, BasicDevice[]> previewers = new HashMap<>();
 	private Action screenSize;
 	private boolean currentHorizontal;
+	private Scene defaultScene;
 	{
 		AppleIPhone4HorizontalDevice horizontal_iphone4 = new AppleIPhone4HorizontalDevice(960,640);
 		AppleIPhone4VerticalDevice vertical_iphone4 = new AppleIPhone4VerticalDevice(640,960);
@@ -325,9 +326,9 @@ public class LivePreviewPart extends ViewPart {
 					item.setControl(swtFXContainer);
 
 					rootPane_new = new BorderPane();
-					Scene scene = new Scene((Parent) rootPane_new, 1000, 1000);
-					currentScene = scene;
-					swtFXContainer.setScene(scene);
+					defaultScene = new Scene(new BorderPane(rootPane_new), -1, -1, Platform.isSupported(ConditionalFeature.SCENE3D));
+					currentScene = defaultScene;
+					swtFXContainer.setScene(defaultScene);
 				}
 
 				{
@@ -632,10 +633,13 @@ public class LivePreviewPart extends ViewPart {
 							p = container;
 						}
 						
-						scene = new Scene(p, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
-						if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
-							scene.setCamera(new PerspectiveCamera());
-						}	
+						((BorderPane)defaultScene.getRoot()).setCenter(p);
+						scene = defaultScene;
+//						
+//						scene = new Scene(p, -1, -1, Platform.isSupported(ConditionalFeature.SCENE3D));
+//						if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
+//							scene.setCamera(new PerspectiveCamera());
+//						}	
 					} else {
 						Node n = scene.getRoot().lookup("#previewcontainer");
 						if( n == null || ! (n instanceof Parent) ) {
