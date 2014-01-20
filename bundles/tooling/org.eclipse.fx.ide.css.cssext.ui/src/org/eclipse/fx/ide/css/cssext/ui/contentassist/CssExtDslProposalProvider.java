@@ -14,5 +14,5 @@ package org.eclipse.fx.ide.css.cssext.ui.contentassist;
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class CssExtDslProposalProvider extends AbstractCssExtDslProposalProvider {
-
+	//Nothing todo
 }
