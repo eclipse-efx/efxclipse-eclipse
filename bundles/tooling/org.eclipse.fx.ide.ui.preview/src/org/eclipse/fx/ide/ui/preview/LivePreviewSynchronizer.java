@@ -118,21 +118,26 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 			extraJarPath.addAll(calculateProjectClasspath(JavaCore.create(file.getProject())));
 		}
 		
+//		System.err.println("RESOURCE BUNDLE: " + resourceBundle);
+		
 		return new ContentData(contents, previewSceneSetup, cssFiles, resourceBundle, extraJarPath, file);
 	}
 
 	
 	private void resolveDataProject(IJavaProject project, Set<IPath> outputPath, Set<IPath> listRefLibraries) {
+//		System.err.println("START RESOLVE: " + project.getElementName());
 		try {
 			IClasspathEntry[] entries = project.getRawClasspath();
 			outputPath.add(project.getOutputLocation());
 			for (IClasspathEntry e : entries) {
+//				System.err.println(e + " ====> " + e.getEntryKind());
 				if (e.getEntryKind() == IClasspathEntry.CPE_PROJECT) {
 					IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(e.getPath().lastSegment());
 					if (p.exists()) {
 						resolveDataProject(JavaCore.create(p), outputPath, listRefLibraries);
 					}
 				} else if (e.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
+//					System.err.println("CPE_LIBRARY PUSHING: " + e.getPath());
 					listRefLibraries.add(e.getPath());
 				} else if( "org.eclipse.pde.core.requiredPlugins".equals(e.getPath().toString()) ) {
 					IClasspathContainer cpContainer = JavaCore.getClasspathContainer(e.getPath(), project);
@@ -143,6 +148,7 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 								resolveDataProject(JavaCore.create(p), outputPath, listRefLibraries);
 							}
 						} else if( cpEntry.getEntryKind() == IClasspathEntry.CPE_LIBRARY ) {
+//							System.err.println("requiredPlugins & CPE_LIBRARY PUSHING: " + e.getPath());
 							listRefLibraries.add(cpEntry.getPath());
 						}
 					}
@@ -151,7 +157,14 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 							&& ! e.getPath().toString().startsWith("org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER")) {
 						IClasspathContainer cp = JavaCore.getClasspathContainer(e.getPath(), project);
 						for( IClasspathEntry ce : cp.getClasspathEntries() ) {
-							listRefLibraries.add(ce.getPath());
+							if( ce.getEntryKind() == IClasspathEntry.CPE_LIBRARY ) {
+								listRefLibraries.add(ce.getPath());	
+							} else if( ce.getEntryKind() == IClasspathEntry.CPE_PROJECT ) {
+								IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(e.getPath().lastSegment());
+								if (p.exists()) {
+									resolveDataProject(JavaCore.create(p), outputPath, listRefLibraries);
+								}
+							}
 						}
 					}
 				} 
@@ -160,6 +173,7 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//		System.err.println("END RESOLVE");
 	}
 
 	private List<URL> calculateProjectClasspath(IJavaProject jp) {
@@ -183,6 +197,7 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 		}
 
 		for (IPath lib : libraries) {
+//			System.err.println("LIB: " + lib);
 			IFile f = root.getFile(lib);
 			if (f.exists()) {
 				try {
