@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.fx.ide.fxml.feature"
       label="e(fx)clipse - IDE - FXML"
-      version="0.9.0.qualifier"
+      version="1.0.0.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://www.example.com/description">

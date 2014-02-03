@@ -1,1 +1,0 @@
-Class is copied from PDE 3.9

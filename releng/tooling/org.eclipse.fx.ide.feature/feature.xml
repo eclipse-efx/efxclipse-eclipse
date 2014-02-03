@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.fx.ide.all.prekepler.feature"
-      label="e(fx)clipse - IDE - Juno/Indigo"
-      version="0.9.0.qualifier"
+      id="org.eclipse.fx.ide.feature"
+      label="e(fx)clipse - IDE - Kepler"
+      version="1.0.0.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://www.example.com/description">
-      Feature collecting all IDE-Features for Pre-Kepler (Juno/Indigo) installs
+      Feature collecting all IDE-Features for Kepler installs
    </description>
 
    <copyright url="http://www.bestsolution.at">
@@ -108,11 +108,35 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <includes
-         id="org.eclipse.fx.ide.all.kepler.feature"
+         id="org.eclipse.fx.ide.basic.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.fx.ide.pde.prekepler.feature"
+         id="org.eclipse.fx.ide.css.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.fx.ide.fxml.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.fx.ide.pde.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.fx.ide.rrobot.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.fx.ide.fxgraph.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.fx.ide.converter.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.fx.ide.mobile.feature"
          version="0.0.0"/>
 
 </feature>

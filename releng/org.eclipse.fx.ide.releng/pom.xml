@@ -11,7 +11,7 @@
 
 	<groupId>org.eclipse.fx.ide</groupId>
 	<artifactId>releng</artifactId>
-	<version>0.9.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<tycho-version>0.18.0</tycho-version>
@@ -21,7 +21,8 @@
 		<mockito-version>1.8.4</mockito-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<platform-version>[3.7,3.8)</platform-version>
-		<runtime_repo>http://download.eclipse.org/efxclipse/runtime-nightly/site/</runtime_repo>
+		<!--  runtime_repo>http://download.eclipse.org/efxclipse/runtime-nightly/site/</runtime_repo-->
+		<runtime_repo>file:/Users/tomschindl/git/efxclipse/releng/org.eclipse.fx.updatesite/target/site</runtime_repo>
 		<download-publish-path>/home/data/httpd/download.eclipse.org/efxclipse/updates-nightly</download-publish-path>
 		<eclipse-repo.url>https://repo.eclipse.org/content/repositories/releases/</eclipse-repo.url>
 	</properties>
@@ -32,8 +33,6 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.java6</module>
-		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.adapter</module>
-		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.fragment</module>
 		
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.model</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot</module>
@@ -71,24 +70,17 @@
 		<module>../tooling/org.eclipse.fx.ide.fxml.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.converter.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.feature</module>
-		<module>../tooling/org.eclipse.fx.ide.pde.prekepler.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.mobile.feature</module>
 		
-		<module>../tooling/org.eclipse.fx.ide.all.kepler.feature</module>
-		<module>../tooling/org.eclipse.fx.ide.all.prekepler.feature</module>
+		<module>../tooling/org.eclipse.fx.ide.feature</module>
 		<module>../org.eclipse.fx.ide.updatesite</module>
 	</modules>
 
 	<repositories>
 		<repository>
-			<id>kepler</id>
+			<id>luna</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/kepler</url>
-		</repository>
-		<repository>
-			<id>juno</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/juno</url>
+			<url>http://download.eclipse.org/releases/luna</url>
 		</repository>
 		<repository>
 			<id>xtext</id>
