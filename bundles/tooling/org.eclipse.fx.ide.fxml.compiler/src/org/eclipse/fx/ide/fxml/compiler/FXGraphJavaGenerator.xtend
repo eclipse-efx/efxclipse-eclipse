@@ -29,6 +29,7 @@ class FXGraphJavaGenerator {
 		registerImport("java.util.Map");
 		registerImport("java.util.HashMap");
 		registerImport("java.util.ResourceBundle");
+		registerImport("javafx.util.Callback");
 	}
 	
 	def getVarIndex() {
@@ -64,9 +65,13 @@ class FXGraphJavaGenerator {
 			}
 		«ENDIF»
 		
-		public «model.componentDef.rootNode.type.simpleName» load(URL location, ResourceBundle resourceBundle) {
+		public «model.componentDef.rootNode.type.simpleName» load(URL location, ResourceBundle resourceBundle, Callback<Class<?>, Object> controllerFactory) {
 			«IF hasController() »
-				_c = new «model.componentDef.controller.qualifiedName»();
+				if( controllerFactory != null ) {
+					_c = («model.componentDef.controller.qualifiedName»)controllerFactory.call(«model.componentDef.controller.qualifiedName».class);
+				} else {
+					_c = new «model.componentDef.controller.qualifiedName»();
+				}
 			«ENDIF»
 			«IF resourceUrl»
 				final String baseURL = createBaseURL(location);
