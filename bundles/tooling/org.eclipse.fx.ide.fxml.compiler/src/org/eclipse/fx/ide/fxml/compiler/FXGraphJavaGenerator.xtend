@@ -70,7 +70,11 @@ class FXGraphJavaGenerator {
 				if( controllerFactory != null ) {
 					_c = («model.componentDef.controller.qualifiedName»)controllerFactory.call(«model.componentDef.controller.qualifiedName».class);
 				} else {
+					«IF model.componentDef.controller.hasNoArgConstructor»
 					_c = new «model.componentDef.controller.qualifiedName»();
+					«ELSE»
+					// «model.componentDef.controller.qualifiedName» cannot be instantiated by reflection
+					«ENDIF»
 				}
 			«ENDIF»
 			«IF resourceUrl»

@@ -20,6 +20,11 @@ class ReflectionHelper {
 		return targetClass.isAssignableFrom(sourceClass)
 	}
 	
+	def static hasNoArgConstructor(JvmTypeReference type) {
+		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
+		return ! c.interface && ! Modifier::isAbstract(c.modifiers) && c.getConstructor() != null;
+	}
+	
 	def static getEnumType(JvmTypeReference type, String attributeName, boolean layoutConstraint) {
 		val c = Class::forName(type.qualifiedName, false, typeof(ReflectionHelper).getClassLoader())
 		
