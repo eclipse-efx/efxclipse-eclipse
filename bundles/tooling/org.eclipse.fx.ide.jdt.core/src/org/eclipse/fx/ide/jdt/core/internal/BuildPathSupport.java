@@ -98,7 +98,7 @@ public class BuildPathSupport {
 			}
 		}
 		
-		if( ! jarLocationPath.toFile().exists() ) {
+		if( jarLocationPath.toFile().exists() ) {
 			sourceLocationPath = new Path(installDir.getAbsolutePath()).append("javafx-src.zip");
 			
 			return new IPath[] { jarLocationPath, javadocLocation, sourceLocationPath };
