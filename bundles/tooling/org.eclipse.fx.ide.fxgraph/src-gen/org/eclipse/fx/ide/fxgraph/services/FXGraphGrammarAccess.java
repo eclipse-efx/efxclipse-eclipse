@@ -2084,7 +2084,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpMultiAssign:
-	//	"+=" | "-=";
+	//	"+=" | "-=" | "*=" | "/=" | "%=" | "<" "<=" | ">" ">"? ">=";
 	public XbaseGrammarAccess.OpMultiAssignElements getOpMultiAssignAccess() {
 		return gaXbase.getOpMultiAssignAccess();
 	}
@@ -2262,13 +2262,33 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XCastedExpression returns XExpression:
-	//	XMemberFeatureCall (=> ({XCastedExpression.target=current} "as") type=JvmTypeReference)*;
+	//	XPostfixOperation (=> ({XCastedExpression.target=current} "as") type=JvmTypeReference)*;
 	public XbaseGrammarAccess.XCastedExpressionElements getXCastedExpressionAccess() {
 		return gaXbase.getXCastedExpressionAccess();
 	}
 	
 	public ParserRule getXCastedExpressionRule() {
 		return getXCastedExpressionAccess().getRule();
+	}
+
+	//XPostfixOperation returns XExpression:
+	//	XMemberFeatureCall => ({XPostfixOperation.operand=current} feature=[types::JvmIdentifiableElement|OpPostfix])?;
+	public XbaseGrammarAccess.XPostfixOperationElements getXPostfixOperationAccess() {
+		return gaXbase.getXPostfixOperationAccess();
+	}
+	
+	public ParserRule getXPostfixOperationRule() {
+		return getXPostfixOperationAccess().getRule();
+	}
+
+	//OpPostfix:
+	//	"++" | "--";
+	public XbaseGrammarAccess.OpPostfixElements getOpPostfixAccess() {
+		return gaXbase.getOpPostfixAccess();
+	}
+	
+	public ParserRule getOpPostfixRule() {
+		return getOpPostfixAccess().getRule();
 	}
 
 	//XMemberFeatureCall returns XExpression:
@@ -2288,9 +2308,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XPrimaryExpression returns XExpression:
-	//	XConstructorCall | XBlockExpression | XSwitchExpression | XFeatureCall | XLiteral | XIfExpression | XForLoopExpression
-	//	| XWhileExpression | XDoWhileExpression | XThrowExpression | XReturnExpression | XTryCatchFinallyExpression |
-	//	XParenthesizedExpression;
+	//	XConstructorCall | XBlockExpression | XSwitchExpression | XSynchronizedExpression | XFeatureCall | XLiteral |
+	//	XIfExpression | XForLoopExpression | XBasicForLoopExpression | XWhileExpression | XDoWhileExpression |
+	//	XThrowExpression | XReturnExpression | XTryCatchFinallyExpression | XParenthesizedExpression;
 	public XbaseGrammarAccess.XPrimaryExpressionElements getXPrimaryExpressionAccess() {
 		return gaXbase.getXPrimaryExpressionAccess();
 	}
@@ -2351,7 +2371,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XExpressionInClosure returns XExpression:
-	//	{XBlockExpression} (expressions+=XExpressionInsideBlock ";"?)*;
+	//	{XBlockExpression} (expressions+=XExpressionOrVarDeclaration ";"?)*;
 	public XbaseGrammarAccess.XExpressionInClosureElements getXExpressionInClosureAccess() {
 		return gaXbase.getXExpressionInClosureAccess();
 	}
@@ -2392,8 +2412,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XSwitchExpression returns XExpression:
-	//	{XSwitchExpression} "switch" (=> (localVarName=ValidID ":")? switch=XExpression | => ("(" localVarName=ValidID ":")
-	//	switch=XExpression ")") "{" cases+=XCasePart+ ("default" ":" default=XExpression)? "}";
+	//	{XSwitchExpression} "switch" (=> ("(" declaredParam=JvmFormalParameter ":") switch=XExpression ")" | =>
+	//	(declaredParam=JvmFormalParameter ":")? switch=XExpression) "{" cases+=XCasePart* ("default" ":" default=XExpression)?
+	//	"}";
 	public XbaseGrammarAccess.XSwitchExpressionElements getXSwitchExpressionAccess() {
 		return gaXbase.getXSwitchExpressionAccess();
 	}
@@ -2403,7 +2424,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XCasePart:
-	//	typeGuard=JvmTypeReference? ("case" case=XExpression)? ":" then=XExpression;
+	//	{XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | ",");
 	public XbaseGrammarAccess.XCasePartElements getXCasePartAccess() {
 		return gaXbase.getXCasePartAccess();
 	}
@@ -2413,7 +2434,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XForLoopExpression returns XExpression:
-	//	{XForLoopExpression} "for" "(" declaredParam=JvmFormalParameter ":" forExpression=XExpression ")"
+	//	=> ({XForLoopExpression} "for" "(" declaredParam=JvmFormalParameter ":") forExpression=XExpression ")"
 	//	eachExpression=XExpression;
 	public XbaseGrammarAccess.XForLoopExpressionElements getXForLoopExpressionAccess() {
 		return gaXbase.getXForLoopExpressionAccess();
@@ -2421,6 +2442,18 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getXForLoopExpressionRule() {
 		return getXForLoopExpressionAccess().getRule();
+	}
+
+	//XBasicForLoopExpression returns XExpression:
+	//	{XBasicForLoopExpression} "for" "(" (initExpressions+=XExpressionOrVarDeclaration (","
+	//	initExpressions+=XExpressionOrVarDeclaration)*)? ";" expression=XExpression? ";" (updateExpressions+=XExpression (","
+	//	updateExpressions+=XExpression)*)? ")" eachExpression=XExpression;
+	public XbaseGrammarAccess.XBasicForLoopExpressionElements getXBasicForLoopExpressionAccess() {
+		return gaXbase.getXBasicForLoopExpressionAccess();
+	}
+	
+	public ParserRule getXBasicForLoopExpressionRule() {
+		return getXBasicForLoopExpressionAccess().getRule();
 	}
 
 	//XWhileExpression returns XExpression:
@@ -2444,7 +2477,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XBlockExpression returns XExpression:
-	//	{XBlockExpression} "{" (expressions+=XExpressionInsideBlock ";"?)* "}";
+	//	{XBlockExpression} "{" (expressions+=XExpressionOrVarDeclaration ";"?)* "}";
 	public XbaseGrammarAccess.XBlockExpressionElements getXBlockExpressionAccess() {
 		return gaXbase.getXBlockExpressionAccess();
 	}
@@ -2453,14 +2486,14 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXBlockExpressionAccess().getRule();
 	}
 
-	//XExpressionInsideBlock returns XExpression:
+	//XExpressionOrVarDeclaration returns XExpression:
 	//	XVariableDeclaration | XExpression;
-	public XbaseGrammarAccess.XExpressionInsideBlockElements getXExpressionInsideBlockAccess() {
-		return gaXbase.getXExpressionInsideBlockAccess();
+	public XbaseGrammarAccess.XExpressionOrVarDeclarationElements getXExpressionOrVarDeclarationAccess() {
+		return gaXbase.getXExpressionOrVarDeclarationAccess();
 	}
 	
-	public ParserRule getXExpressionInsideBlockRule() {
-		return getXExpressionInsideBlockAccess().getRule();
+	public ParserRule getXExpressionOrVarDeclarationRule() {
+		return getXExpressionOrVarDeclarationAccess().getRule();
 	}
 
 	//XVariableDeclaration returns XExpression:
@@ -2617,6 +2650,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getXTryCatchFinallyExpressionRule() {
 		return getXTryCatchFinallyExpressionAccess().getRule();
+	}
+
+	//XSynchronizedExpression returns XExpression:
+	//	=> ({XSynchronizedExpression} "synchronized" "(") param=XExpression ")" expression=XExpression;
+	public XbaseGrammarAccess.XSynchronizedExpressionElements getXSynchronizedExpressionAccess() {
+		return gaXbase.getXSynchronizedExpressionAccess();
+	}
+	
+	public ParserRule getXSynchronizedExpressionRule() {
+		return getXSynchronizedExpressionAccess().getRule();
 	}
 
 	//XCatchClause:
@@ -2813,14 +2856,25 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XImportDeclaration:
-	//	"import" (static?="static" extension?="extension"? importedType=[JvmDeclaredType|QualifiedName] "." "*" |
-	//	importedType=[JvmDeclaredType|QualifiedName] | importedNamespace=QualifiedNameWithWildcard) ";"?;
+	//	"import" (static?="static" extension?="extension"? importedType=[JvmDeclaredType|QualifiedNameInStaticImport]
+	//	(wildcard?="*" | memberName=ValidID) | importedType=[JvmDeclaredType|QualifiedName] |
+	//	importedNamespace=QualifiedNameWithWildcard) ";"?;
 	public XtypeGrammarAccess.XImportDeclarationElements getXImportDeclarationAccess() {
 		return gaXbase.getXImportDeclarationAccess();
 	}
 	
 	public ParserRule getXImportDeclarationRule() {
 		return getXImportDeclarationAccess().getRule();
+	}
+
+	//QualifiedNameInStaticImport:
+	//	(ValidID ".")+;
+	public XtypeGrammarAccess.QualifiedNameInStaticImportElements getQualifiedNameInStaticImportAccess() {
+		return gaXbase.getQualifiedNameInStaticImportAccess();
+	}
+	
+	public ParserRule getQualifiedNameInStaticImportRule() {
+		return getQualifiedNameInStaticImportAccess().getRule();
 	}
 
 	//terminal ID:
