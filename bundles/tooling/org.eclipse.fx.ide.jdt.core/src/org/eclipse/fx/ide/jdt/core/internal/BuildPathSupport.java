@@ -98,9 +98,13 @@ public class BuildPathSupport {
 			}
 		}
 		
-		sourceLocationPath = new Path(installDir.getAbsolutePath()).append("javafx-src.zip");
+		if( ! jarLocationPath.toFile().exists() ) {
+			sourceLocationPath = new Path(installDir.getAbsolutePath()).append("javafx-src.zip");
+			
+			return new IPath[] { jarLocationPath, javadocLocation, sourceLocationPath };
+		}
 		
-		return new IPath[] { jarLocationPath, javadocLocation, sourceLocationPath };
+		return null;
 	}
 	
 	public static IPath[] getFxJarPath(IVMInstall i) {
