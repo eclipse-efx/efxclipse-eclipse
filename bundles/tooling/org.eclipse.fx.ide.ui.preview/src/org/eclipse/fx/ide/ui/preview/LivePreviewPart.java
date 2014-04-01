@@ -326,7 +326,9 @@ public class LivePreviewPart extends ViewPart {
 					item.setControl(swtFXContainer);
 
 					rootPane_new = new BorderPane();
-					defaultScene = new Scene(new BorderPane(rootPane_new), -1, -1, Platform.isSupported(ConditionalFeature.SCENE3D));
+					BorderPane pane = new BorderPane();
+					pane.setCenter(rootPane_new);
+					defaultScene = new Scene(pane, -1, -1, Platform.isSupported(ConditionalFeature.SCENE3D));
 					currentScene = defaultScene;
 					swtFXContainer.setScene(defaultScene);
 				}
