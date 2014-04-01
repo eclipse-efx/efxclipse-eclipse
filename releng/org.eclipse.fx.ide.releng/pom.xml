@@ -21,8 +21,7 @@
 		<mockito-version>1.8.4</mockito-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<platform-version>[3.7,3.8)</platform-version>
-		<runtime_repo>http://download.eclipse.org/efxclipse/runtime-nightly/site/</runtime_repo>
-		<!--  runtime_repo>file:/Users/tomschindl/git/efxclipse/releng/org.eclipse.fx.updatesite/target/site</runtime_repo-->
+		<efx_shared_runtime>http://download.eclipse.org/efxclipse/runtime-shared-nightly/site/</efx_shared_runtime>
 		<download-publish-path>/home/data/httpd/download.eclipse.org/efxclipse/updates-nightly</download-publish-path>
 		<eclipse-repo.url>https://repo.eclipse.org/content/repositories/releases/</eclipse-repo.url>
 	</properties>
@@ -88,9 +87,9 @@
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
 		</repository>
 		<repository>
-			<id>efx-runtime</id>
+			<id>efx-shared-runtime</id>
 			<layout>p2</layout>
-			<url>${runtime_repo}</url>
+			<url>${efx_shared_runtime}</url>
 		</repository>	
 	</repositories>
 
