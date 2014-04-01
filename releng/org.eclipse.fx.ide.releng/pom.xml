@@ -14,8 +14,8 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
-		<tycho-version>0.18.0</tycho-version>
-		<tycho-extras.version>0.18.0</tycho-extras.version>
+		<tycho-version>0.20.0</tycho-version>
+		<tycho-extras.version>0.20.0</tycho-extras.version>
 		<cbi-plugins.version>1.0.3</cbi-plugins.version>
 		<junit-version>4.8.1</junit-version>
 		<mockito-version>1.8.4</mockito-version>
@@ -120,7 +120,7 @@
 			<plugin>
  				<groupId>org.eclipse.xtend</groupId>
  				<artifactId>xtend-maven-plugin</artifactId>
- 				<version>2.4.2</version>
+ 				<version>2.5.3</version>
  				<executions>
  					<execution>
  						<goals>
@@ -197,6 +197,13 @@
 				                <systemPath>${java.home}/lib/jfxswt.jar</systemPath>
 				                <scope>system</scope>
 				            </extraClasspathElement>
+				            <extraClasspathElement>
+				            	<groupId>com.oracle</groupId>
+  								<artifactId>javafx2</artifactId>
+  								<version>2.2.0-SNAPSHOT</version>
+  								<scope>system</scope>
+  								<systemPath>${java.home}/lib/jfxrt.jar</systemPath>
+  							</extraClasspathElement>
         				</extraClasspathElements> 
 					</configuration>
 				</plugin>
