@@ -7,6 +7,6 @@ Bundle-Activator: org.eclipse.fx.ide.model.FXPlugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.core;bundle-version="3.7.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.fx.ide.model,
  org.eclipse.fx.ide.model.internal.utils;x-friends:="org.eclipse.fx.ide.fxgraph.ui"
