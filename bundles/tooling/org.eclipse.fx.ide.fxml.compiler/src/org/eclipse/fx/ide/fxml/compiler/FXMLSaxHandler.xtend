@@ -142,11 +142,20 @@ class FXMLSaxHandler extends DefaultHandler {
 					}
 				} else {
 					if( ! attributes.getLocalName(i).contains('.') ) {
-						if( attributes.getValue(i).startsWith("@") ) {
+						if( attributes.getValue(i).startsWith("%") ) {
 							val vp = FXGraphFactory.eINSTANCE.createResourceValueProperty()
 							val sv = FXGraphFactory.eINSTANCE.createStringValue;
 							sv.value = attributes.getValue(i).substring(1)
 							vp.setValue(sv);
+							
+							val pp = FXGraphFactory.eINSTANCE.createProperty
+							pp.name = attributes.getLocalName(i)
+							pp.value = vp
+							e.properties += pp
+						} else if( attributes.getValue(i).startsWith("@") ) {
+							val vp = FXGraphFactory.eINSTANCE.createLocationValueProperty()
+							vp.value = attributes.getValue(i).substring(1);
+							
 							val pp = FXGraphFactory.eINSTANCE.createProperty
 							pp.name = attributes.getLocalName(i)
 							pp.value = vp

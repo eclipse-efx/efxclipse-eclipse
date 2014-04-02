@@ -13,6 +13,7 @@ import java.util.ResourceBundle
 import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty
+import org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty
 
 class FXGraphJavaGenerator {
 	int varIndex = 0;
@@ -259,8 +260,11 @@ class FXGraphJavaGenerator {
 						«ENDIF»
 					}
 				«ENDFOR»
+			«ELSEIF p.value instanceof LocationValueProperty»
+				«name».set«p.name.toFirstUpper»(baseURL + "/«(p.value as LocationValueProperty).value»");
+				«enableResourceUrl()»
 			«ELSEIF p.value instanceof ResourceValueProperty»
-				«name».set«p.name.toFirstUpper»(baseURL + "/«(p.value as ResourceValueProperty).value.value»");
+				«name».set«p.name.toFirstUpper»(resourceBundle.getString("«(p.value as ResourceValueProperty).value.value»"));
 				«enableResourceUrl()»
 			«ENDIF»
 		«ENDFOR»
