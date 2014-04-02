@@ -12,7 +12,6 @@ import java.net.URL
 import java.util.ResourceBundle
 import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty
-import javax.lang.model.type.ReferenceType
 import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty
 
 class FXGraphJavaGenerator {
@@ -26,6 +25,7 @@ class FXGraphJavaGenerator {
 		this.model = model;
 		registerImport("java.net.URL");
 		registerImport("org.eclipse.fx.core.fxml.FXMLDocument");
+		registerImport("org.eclipse.fx.core.fxml.FXMLDocument.LoadData");
 		registerImport("java.util.Map");
 		registerImport("java.util.HashMap");
 		registerImport("java.util.ResourceBundle");
@@ -40,7 +40,7 @@ class FXGraphJavaGenerator {
 	def generate() '''
 	package «model.package.name»;
 	
-	«var content = generateElementDef("root", model.componentDef.rootNode)»
+	«var content = generateElementDef("root", model.componentDef.rootNode, model.componentDef.dynamicRoot)»
 	
 	«FOR i : model.imports»
 	import «i.importedNamespace»;
@@ -65,7 +65,11 @@ class FXGraphJavaGenerator {
 			}
 		«ENDIF»
 		
-		public «model.componentDef.rootNode.type.simpleName» load(URL location, ResourceBundle resourceBundle, Callback<Class<?>, Object> controllerFactory) {
+		public «model.componentDef.rootNode.type.simpleName» load(LoadData<«model.componentDef.rootNode.type.simpleName»> loadData) {
+			final URL location = loadData.location;
+			final ResourceBundle resourceBundle = loadData.bundle;
+			final Callback<Class<?>, Object> controllerFactory = loadData.controllerFactory;
+	
 			«IF hasController() »
 				if( controllerFactory != null ) {
 					_c = («model.componentDef.controller.qualifiedName»)controllerFactory.call(«model.componentDef.controller.qualifiedName».class);
@@ -146,8 +150,20 @@ class FXGraphJavaGenerator {
 		});
 	'''
 	
-	def CharSequence generateElementDef(String name, Element element) '''
-	«IF element.type.needsBuilder»
+//	def CharSequence generateElementDef(ComponentDefinition componentDef) '''
+//		«IF componentDef.dynamicRoot»
+//			«componentDef.rootNode.type.simpleName» root = loadData.rootNode;
+//		«ELSE»
+//			«generateElementDef("root", componentDef.rootNode)»
+//		«ENDIF»
+//	'''
+
+	def CharSequence generateElementDef(String name, Element element) {
+		generateElementDef(name,element,false);
+	}
+	
+	def CharSequence generateElementDef(String name, Element element, boolean dynRoot) '''
+	«IF ! dynRoot && element.type.needsBuilder»
 		«IF "javafx.scene.image.Image" == element.type.qualifiedName»
 			Image «name»;
 			ImageBuilder «name»Builder = ImageBuilder.create();
@@ -188,7 +204,9 @@ class FXGraphJavaGenerator {
 			«controllerFieldAccess(name,element)»
 		«ENDIF»
 	«ELSE»
-		«IF element.type.qualifiedName == 'java.lang.String'»
+		«IF dynRoot»
+			«element.type.simpleName» «name» = loadData.rootNode;
+		«ELSEIF element.type.qualifiedName == 'java.lang.String'»
 			«element.type.simpleName» «name» = «element.type.simpleName».valueOf("«element»");
 		«ELSE»
 			«element.type.simpleName» «name» = new «element.type.simpleName»();

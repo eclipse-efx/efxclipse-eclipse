@@ -76,7 +76,7 @@ class FXMLSaxHandler extends DefaultHandler {
 	}
 	
 	override startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-		if( localName.contains('.') ) {
+		if( uri != FXML_NAMESPACE && localName.contains('.') ) {
 			// A static property
 			val e = stack.peek as Element
 			val prop = FXGraphFactory.eINSTANCE.createStaticCallValueProperty
@@ -89,7 +89,7 @@ class FXMLSaxHandler extends DefaultHandler {
 			
 			e.staticCallProperties.add(prop);
 			stack.push(prop)			
-		} else if( Character.isLowerCase(localName.charAt(0)) ) {
+		} else if( uri != FXML_NAMESPACE && Character.isLowerCase(localName.charAt(0)) ) {
 			// A property
 			val e = stack.peek as Element
 			val prop = FXGraphFactory.eINSTANCE.createProperty
@@ -119,8 +119,14 @@ class FXMLSaxHandler extends DefaultHandler {
 			// An element
 			val e = FXGraphFactory.eINSTANCE.createElement
 			
-			val t = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference()
-			t.type = provider.findTypeByName(ReflectionHelper.getFqnType(localName,simpleToFqn,globalImports))
+			val isDynRoot = localName == 'root' && uri == FXML_NAMESPACE 
+			val t = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference();
+			if( isDynRoot ) {
+				model.componentDef.dynamicRoot = true;
+				t.type = provider.findTypeByName(ReflectionHelper.getFqnType(attributes.getValue("type"),simpleToFqn,globalImports))
+			} else {
+				t.type = provider.findTypeByName(ReflectionHelper.getFqnType(localName,simpleToFqn,globalImports))
+			}
 			e.setType(t);
 			
 			var i = 0;
@@ -158,7 +164,9 @@ class FXMLSaxHandler extends DefaultHandler {
 								e.properties += pp
 							}
 						} else {
-							if( "javafx.scene.image.Image" == t.type.qualifiedName ) {
+							if( isDynRoot && "type" == attributes.getLocalName(i) ) {
+								// Skip this attribute
+							} else if( "javafx.scene.image.Image" == t.type.qualifiedName ) {
 								val attname = attributes.getLocalName(i)
 								val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
 								if( "requestedWidth" ==  attname || "requestedHeight" == attname ) {

@@ -118,7 +118,7 @@ public class FXGraphCompiler {
 	public void generateJavaFile(Model m, String inputOriginalFile, final String sourcePrefix, String outputPrefix) throws IOException {
 		FXGraphJavaGenerator c = new FXGraphJavaGenerator(m);
 		
-		String outFile = inputOriginalFile.replaceAll("fxgraph$", "java").replaceAll("fxml$", "java");
+		String outFile = inputOriginalFile.replaceAll("fxgraph$", "java").replaceAll("fxml$", "java").replaceAll("fxmlb$", "java");
 		
 		if( outputPrefix != null ) {
 			String filePath = new File(outFile).getAbsolutePath();
@@ -127,14 +127,13 @@ public class FXGraphCompiler {
 			f.getParentFile().mkdirs();
 			outFile = f.getAbsolutePath();
 		}
-		
 		FileOutputStream out = new FileOutputStream(outFile);
 		out.write(c.generate().toString().getBytes());
 		out.close();
 	}
 	
 	public void compile(Injector injector, final String filename, final String sourcePrefix, String outputPrefix) throws SAXException, IOException, ParserConfigurationException {
-		if( filename.endsWith("fxml") ) {
+		if( filename.endsWith("fxml") || filename.endsWith("fxmlb") ) {
 			compileFXML(injector, filename, sourcePrefix, outputPrefix, false);
 		} else {
 			compileFXGraph(injector, filename, filename, sourcePrefix, outputPrefix);
