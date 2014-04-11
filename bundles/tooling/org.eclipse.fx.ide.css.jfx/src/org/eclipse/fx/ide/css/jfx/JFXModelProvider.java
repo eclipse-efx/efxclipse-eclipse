@@ -38,6 +38,9 @@ public class JFXModelProvider implements ICSSExtModelProvider {
 	
 	@Override
 	public Collection<CssExtension> getModels(IFile file) {
+		if( ! file.getName().endsWith(".css") ) {
+			return Collections.emptyList();
+		}
 		try {
 			System.err.println("logger: " + logger.isEnabled(Level.DEBUG));
 			logger.debug("Resolving models on file '"+file+"'");
