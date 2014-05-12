@@ -10,6 +10,16 @@
        genModel = "at/bestsolution/efxclipse/tooling/css/CssDsl.genmodel" /> 
 	
   </extension>
+  <extension
+        id="nature"
+        name="CSS Editor Nature"
+        point="org.eclipse.core.resources.natures">
+     <runtime>
+        <run
+              class="org.eclipse.fx.ide.css.CSSEditorNature">
+        </run>
+     </runtime>
+  </extension>
 
 
 

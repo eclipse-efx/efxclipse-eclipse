@@ -18,9 +18,11 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -49,6 +51,7 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.ElementDefinition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.PropertyDefinition;
 import org.eclipse.fx.ide.css.extapi.Proposal;
+import org.eclipse.fx.ide.css.ui.CssFile;
 
 public class CssExtManager implements ICssExtManager {
 
@@ -336,10 +339,18 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	private Set<CssExtension> collectModels(IFile file) {
-		Set<CssExtension> rv = new HashSet<>();
-		for( ICSSExtModelProvider p : extensionModelProvider ) {
-			rv.addAll(p.getModels(file));
+		CssFile cssFile = (CssFile) Platform.getAdapterManager().getAdapter(file, CssFile.class);
+		
+		if (cssFile != null) {
+			return cssFile.collectCssExtension();
 		}
-		return rv;
+		else {
+		
+			Set<CssExtension> rv = new HashSet<>();
+			for( ICSSExtModelProvider p : extensionModelProvider ) {
+				rv.addAll(p.getModels(file));
+			}
+			return rv;
+		}
 	}
 }

@@ -25,7 +25,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
 import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode;
-
+import org.eclipse.xtext.ui.editor.outline.impl.EStructuralFeatureNode;
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 import org.eclipse.fx.ide.css.cssDsl.ruleset;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleBracket;
@@ -41,6 +41,7 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.Doku;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.ElementDefinition;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.Import;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.PackageDefinition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.PropertyDefinition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.PseudoClassDefinition;
@@ -59,6 +60,7 @@ public class CssExtDslOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	}
 	
 	private String findFullPackageName(PackageDefinition d) {
+		if (d == null) return "<null>";
 		String name = d.getName();
 		EObject c = d.eContainer();
 		while (c != null && c instanceof PackageDefinition) {
@@ -69,7 +71,13 @@ public class CssExtDslOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		return name;
 	}
 	
+	
+	
 	protected void _createChildren(DocumentRootNode parentNode, CssExtension ext) {
+		
+		if (!ext.getImports().isEmpty()) {
+			createEStructuralFeatureNode(parentNode, ext, CssExtDslPackage.Literals.CSS_EXTENSION__IMPORTS, null, "Imports", false);
+		}
 		
 		SortedSet<PackageDefinition> packages = new TreeSet<PackageDefinition>(new Comparator<PackageDefinition>() {
 			@Override
@@ -86,12 +94,17 @@ public class CssExtDslOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			PackageDefinition current = packages.last();
 			packages.remove(current);
 			
-			createEObjectNode(parentNode, current, labelProvider.getImage(current), findFullPackageName(current), false);
+			if (current != null) {
+				createEObjectNode(parentNode, current, labelProvider.getImage(current), findFullPackageName(current), false);
 			
-			for (PackageDefinition d : current.getSubpackages()) {
-				packages.add(d);
+				for (PackageDefinition d : current.getSubpackages()) {
+					packages.add(d);
+				}
+				packages.addAll(current.getSubpackages());
 			}
-			packages.addAll(current.getSubpackages());
+			else {
+				System.err.println("current was null, parent is " + parentNode);
+			}
 		}
 		
 		
