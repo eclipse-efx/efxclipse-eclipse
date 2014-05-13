@@ -12,6 +12,7 @@ package org.eclipse.fx.ide.model.internal.utils;
 
 import org.eclipse.fx.ide.model.IFXPrimitiveProperty;
 import org.eclipse.fx.ide.model.IFXPrimitiveProperty.Type;
+import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.IMemberValuePair;
 import org.eclipse.jdt.core.IType;
@@ -21,7 +22,7 @@ import org.eclipse.jdt.core.Signature;
 
 public class Util {
 	@SuppressWarnings("unchecked")
-	public static <R> R getAnnotationMemberValue(IAnnotation annotation, String name) throws JavaModelException {
+	public static <@Nullable R> R getAnnotationMemberValue(IAnnotation annotation, String name) throws JavaModelException {
 		for (IMemberValuePair pair : annotation.getMemberValuePairs()) {
 			if( name.equals(pair.getMemberName()) ) {
 				return (R) pair.getValue();
