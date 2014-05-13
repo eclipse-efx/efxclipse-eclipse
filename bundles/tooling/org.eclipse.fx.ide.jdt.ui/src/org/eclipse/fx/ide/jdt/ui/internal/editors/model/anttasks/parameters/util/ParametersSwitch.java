@@ -16,23 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.*;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Application;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Argument;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Callback;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.FileSet;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.HtmlParam;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Icon;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Info;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.JVmArg;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.KeyValuePair;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Param;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Permissions;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Platform;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Preferences;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Property;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Splash;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Template;
+import org.eclipse.jdt.annotation.Nullable;
 
 
 /**
@@ -48,7 +32,7 @@ import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Temp
  * @see org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage
  * @generated
  */
-public class ParametersSwitch<T> extends Switch<T> {
+public class ParametersSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
