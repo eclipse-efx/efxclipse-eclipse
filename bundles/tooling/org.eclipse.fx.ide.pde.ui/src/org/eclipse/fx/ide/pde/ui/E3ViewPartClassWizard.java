@@ -41,7 +41,7 @@ public class E3ViewPartClassWizard extends AbstractNewClassWizard<JDTElement> {
 			IBundleProjectService bpService = Activator.getDefault().acquireService(IBundleProjectService.class);
 			IProject p = root.getJavaProject().getProject();
 			
-			if( p.hasNature("org.eclipse.pde.PluginNature") ) {
+			if( p.hasNature("org.eclipse.pde.PluginNature") && bpService != null ) {
 				IBundleProjectDescription bundleDesc = bpService.getDescription(p);
 				
 				IRequiredBundleDescription requireDesc = bpService.newRequiredBundle("org.eclipse.fx.ui.workbench3", null, false, false);
