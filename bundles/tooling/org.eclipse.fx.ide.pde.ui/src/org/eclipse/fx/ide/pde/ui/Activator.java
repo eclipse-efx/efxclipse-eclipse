@@ -12,6 +12,7 @@ package org.eclipse.fx.ide.pde.ui;
 
 import java.net.URL;
 
+import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -47,7 +48,7 @@ public class Activator extends AbstractUIPlugin {
 		super.stop(context);
 	}
 	
-	public <S> S acquireService(Class<S> serviceClass) {
+	public <@Nullable S> S acquireService(Class<S> serviceClass) {
 		ServiceReference<S> reference = getBundle().getBundleContext().getServiceReference(serviceClass);
 		if (reference == null)
 			return null;
