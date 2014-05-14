@@ -3,12 +3,9 @@
 package org.eclipse.fx.ide.rrobot.model.bundle.util;
 
 import org.eclipse.fx.ide.rrobot.model.bundle.*;
-
 import org.eclipse.fx.ide.rrobot.model.task.Resource;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.fx.ide.rrobot.model.bundle.Attribute;
 import org.eclipse.fx.ide.rrobot.model.bundle.BuildProperties;
@@ -37,6 +34,7 @@ import org.eclipse.fx.ide.rrobot.model.task.File;
 import org.eclipse.fx.ide.rrobot.model.task.JDTProject;
 import org.eclipse.fx.ide.rrobot.model.task.Project;
 import org.eclipse.fx.ide.rrobot.model.task.TemplatedFile;
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +49,7 @@ import org.eclipse.fx.ide.rrobot.model.task.TemplatedFile;
  * @see org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage
  * @generated
  */
-public class BundleSwitch<T> extends Switch<T> {
+public class BundleSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

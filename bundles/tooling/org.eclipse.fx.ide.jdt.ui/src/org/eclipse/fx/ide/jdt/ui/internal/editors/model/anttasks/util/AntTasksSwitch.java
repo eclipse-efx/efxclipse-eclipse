@@ -16,11 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.*;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Jar;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.SignJar;
+import org.eclipse.jdt.annotation.Nullable;
 
 
 /**
@@ -36,7 +32,7 @@ import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.SignJar;
  * @see org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage
  * @generated
  */
-public class AntTasksSwitch<T> extends Switch<T> {
+public class AntTasksSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

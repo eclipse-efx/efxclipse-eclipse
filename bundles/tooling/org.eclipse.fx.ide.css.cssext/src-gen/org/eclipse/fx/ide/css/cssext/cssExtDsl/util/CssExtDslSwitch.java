@@ -4,10 +4,9 @@ package org.eclipse.fx.ide.css.cssext.cssExtDsl.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.*;
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.*;
  * @see org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage
  * @generated
  */
-public class CssExtDslSwitch<T> extends Switch<T>
+public class CssExtDslSwitch<@Nullable T> extends Switch<T>
 {
   /**
    * The cached model package

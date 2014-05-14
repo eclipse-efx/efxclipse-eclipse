@@ -23,8 +23,8 @@ import org.eclipse.fx.ide.rrobot.model.task.TaskPackage;
 import org.eclipse.fx.ide.rrobot.model.task.TemplatedFile;
 import org.eclipse.fx.ide.rrobot.model.task.URLFile;
 import org.eclipse.fx.ide.rrobot.model.task.Variable;
-
 import org.eclipse.fx.ide.rrobot.model.task.Resource;
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ import org.eclipse.fx.ide.rrobot.model.task.Resource;
  * @see org.eclipse.fx.ide.rrobot.model.task.TaskPackage
  * @generated
  */
-public class TaskSwitch<T> extends Switch<T> {
+public class TaskSwitch<@Nullable T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
