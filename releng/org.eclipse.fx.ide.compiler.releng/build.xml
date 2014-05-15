@@ -1,9 +1,9 @@
 <project name="Repackage Compiler" default="publish">
 	<property name="root-prefix" value="/home/data/httpd/download.eclipse.org" />
-	<property name="xtext-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
-	<property name="emf-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
-	<property name="platform-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
-	<property name="orbit-prefix" value="${root-prefix}/releases/kepler/201306260900/plugins" />
+	<property name="xtext-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
+	<property name="emf-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
+	<property name="platform-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
+	<property name="orbit-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
 	<property name="efx-prefix" value="${root-prefix}/efxclipse/updates-nightly/site/plugins" />
 	
 	<tstamp>
@@ -19,25 +19,25 @@
 		
 		<unzip dest="repack">
 			<fileset dir="${xtext-prefix}">
-				<include name="org.eclipse.xtend.lib_2.4.2*.jar"/>
-				<include name="org.eclipse.xtext.xbase.lib_2.4.2*.jar"/>
-				<include name="org.eclipse.emf.mwe2.runtime_2.4.0*.jar"/>
-				<include name="org.eclipse.emf.mwe.utils_1.3.0*.jar"/>
-				<include name="org.eclipse.xtext_2.4.2*.jar"/>
-				<include name="org.eclipse.xtext.util_2.4.2*.jar"/>
-				<include name="org.eclipse.xtext.common.types_2.4.2*.jar"/>
-				<include name="org.eclipse.xtext.common.types.ui_2.4.2*.jar"/>
-				<include name="org.eclipse.xtext.xbase_2.4.2*.jar"/>
+				<include name="org.eclipse.xtend.lib_2.6.0*.jar"/>
+				<include name="org.eclipse.xtext.xbase.lib_2.6.0*.jar"/>
+				<include name="org.eclipse.emf.mwe2.runtime_2.6.0*.jar"/>
+				<include name="org.eclipse.emf.mwe.utils_1.3.2*.jar"/>
+				<include name="org.eclipse.xtext_2.6.0*.jar"/>
+				<include name="org.eclipse.xtext.util_2.6.0*.jar"/>
+				<include name="org.eclipse.xtext.common.types_2.6.0*.jar"/>
+				<include name="org.eclipse.xtext.common.types.ui_2.6.0*.jar"/>
+				<include name="org.eclipse.xtext.xbase_2.6.0*.jar"/>
 			</fileset>
 			<fileset dir="${emf-prefix}">
-				<include name="org.eclipse.emf.ecore.xmi_2.9.0*.jar"/>
-				<include name="org.eclipse.emf.ecore_2.9.0*.jar"/>
-				<include name="org.eclipse.emf.common_2.9.0*.jar"/>
+				<include name="org.eclipse.emf.ecore.xmi_2.10.0*.jar"/>
+				<include name="org.eclipse.emf.ecore_2.10.0*.jar"/>
+				<include name="org.eclipse.emf.common_2.10.0*.jar"/>
 			</fileset>
 			<fileset dir="${platform-prefix}">
 				<include name="org.eclipse.jdt.annotation_1.1.0*.jar"/>
-				<include name="org.eclipse.core.runtime_3.9.0*.jar"/>
-				<include name="org.eclipse.jdt.core_3.9.0*.jar"/>
+				<include name="org.eclipse.core.runtime_3.10.0*.jar"/>
+				<include name="org.eclipse.jdt.core_3.10.0*.jar"/>
 				<include name="org.eclipse.equinox.common_3.6.200*.jar"/>
 			</fileset>
 			<fileset dir="${orbit-prefix}">
