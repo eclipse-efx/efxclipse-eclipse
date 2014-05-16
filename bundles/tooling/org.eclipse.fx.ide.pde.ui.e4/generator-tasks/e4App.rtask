@@ -210,7 +210,6 @@ RobotTask {
 					"org.eclipse.fx.ui.theme",
 					"org.eclipse.fx.ui.workbench.base",
 					"org.eclipse.fx.ui.workbench.fx",
-					"org.eclipse.fx.ui.workbench.fx.controls",
 					"org.eclipse.fx.ui.workbench.renderers.base",
 					"org.eclipse.fx.ui.workbench.renderers.fx",
 					"org.eclipse.fx.ui.lifecycle",
