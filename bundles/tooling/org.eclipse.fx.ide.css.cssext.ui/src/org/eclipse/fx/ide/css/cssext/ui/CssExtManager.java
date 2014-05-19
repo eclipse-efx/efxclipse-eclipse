@@ -51,7 +51,6 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.ElementDefinition;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.PropertyDefinition;
 import org.eclipse.fx.ide.css.extapi.Proposal;
-import org.eclipse.fx.ide.css.ui.CssFile;
 
 public class CssExtManager implements ICssExtManager {
 
@@ -342,10 +341,11 @@ public class CssExtManager implements ICssExtManager {
 		CssFile cssFile = (CssFile) Platform.getAdapterManager().getAdapter(file, CssFile.class);
 		
 		if (cssFile != null) {
-			return cssFile.collectCssExtension();
+			System.err.println("USING extensions from cssFile");
+			return cssFile.getEnabledCssExtensions();
 		}
 		else {
-		
+			System.err.println("defaulting to old provider");
 			Set<CssExtension> rv = new HashSet<>();
 			for( ICSSExtModelProvider p : extensionModelProvider ) {
 				rv.addAll(p.getModels(file));

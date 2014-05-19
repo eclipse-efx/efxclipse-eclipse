@@ -1,15 +1,17 @@
-package org.eclipse.fx.ide.css.ui;
+package org.eclipse.fx.ide.css.cssext.ui;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.fx.ide.css.cssext.ui.CssFile.CssExtensionNfo;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -52,20 +54,26 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 
 		
 		System.err.println("ELEMENT: " + getElement() + " = " + getElement().getClass().getSimpleName());
-		CssFile cssFile = getCssFile();
+		final CssFile cssFile = getCssFile();
 		
 		final Label l = new Label(area, SWT.NONE);
 		l.setText("This is my Property Page\n" + (cssFile != null ? cssFile.toString() : "cssFile was null!"));
 		l.setEnabled(useCustom);
 		
-		final ListViewer v = new ListViewer(area, SWT.CHECK | SWT.BORDER | SWT.FULL_SELECTION);
-		v.getList().setLayoutData(new GridData(GridData.FILL_BOTH));
-		v.setLabelProvider(new LabelProvider());
+		final TableViewer v = new TableViewer(area, SWT.CHECK | SWT.BORDER | SWT.FULL_SELECTION);
+		v.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
+		v.setLabelProvider(new LabelProvider() {
+			@Override
+			public String getText(Object element) {
+				CssExtensionNfo nfo = (CssExtensionNfo) element;
+				return nfo.uri.toString();
+			}
+		});
 		v.setContentProvider(new ArrayContentProvider());
 		
 		if (cssFile != null) {
-			v.getList().setEnabled(useCustom);
-			v.setInput(cssFile.getExtList());
+			v.getTable().setEnabled(useCustom);
+			v.setInput(cssFile.collectCssExtension());
 		}
 		
 		b.addSelectionListener(new SelectionAdapter() {
@@ -73,7 +81,18 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 			public void widgetSelected(SelectionEvent e) {
 				boolean useCustom = b.getSelection();
 				l.setEnabled(useCustom);
-				v.getList().setEnabled(useCustom);
+				v.getTable().setEnabled(useCustom);
+			}
+		});
+		
+		final Button but = new Button(area, SWT.PUSH);
+		but.setText("Test");
+		but.setLayoutData(new GridData(GridData.FILL_BOTH));
+		but.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (cssFile != null)
+					cssFile.getCssExtensions();
 			}
 		});
 		

@@ -1,4 +1,4 @@
-package org.eclipse.fx.ide.css.ui;
+package org.eclipse.fx.ide.css.cssext.ui;
 
 import org.eclipse.core.runtime.IAdapterFactory;
 
