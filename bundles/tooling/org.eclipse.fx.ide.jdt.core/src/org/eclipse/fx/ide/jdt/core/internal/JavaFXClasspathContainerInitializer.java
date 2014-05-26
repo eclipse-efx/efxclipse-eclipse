@@ -11,28 +11,32 @@
 package org.eclipse.fx.ide.jdt.core.internal;
 
 import java.io.File;
-import java.io.IOError;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.fx.ide.jdt.core.FXVersionUtil;
 import org.eclipse.fx.ide.jdt.core.JavaFXCore;
 import org.eclipse.jdt.core.ClasspathContainerInitializer;
+import org.eclipse.jdt.core.ElementChangedEvent;
 import org.eclipse.jdt.core.IClasspathContainer;
 import org.eclipse.jdt.core.IClasspathEntry;
+import org.eclipse.jdt.core.IElementChangedListener;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.IJavaElementDelta;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.internal.eval.InstallException;
+import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.osgi.framework.Bundle;
-import org.osgi.framework.FrameworkUtil;
 
 
-public class JavaFXClasspathContainerInitializer extends
-		ClasspathContainerInitializer {
+public class JavaFXClasspathContainerInitializer extends ClasspathContainerInitializer {
 
 	private static class JavaFXContainer implements IClasspathContainer {
 
@@ -62,17 +66,29 @@ public class JavaFXClasspathContainerInitializer extends
 
 	}
 	
-	private static IClasspathEntry getJavaFX8CssExt() {
+	public static IClasspathEntry getCssExtClasspathEntry(IJavaProject project) {
 		try {
-		String pluginId = "org.eclipse.fx.ide.css.jfx8";
-		Bundle bundle = Platform.getBundle(pluginId);
-		System.err.println("bundle location: " + bundle.getLocation());
-		File bundleFile = FileLocator.getBundleFile(bundle);
-		
+			return getCssExtClasspathEntry(JavaRuntime.getVMInstall(project));
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
-		Path path = new Path(bundleFile.getAbsolutePath());
-		
-		return JavaCore.newLibraryEntry(path, null, null);
+	private static IClasspathEntry getCssExtClasspathEntry(IVMInstall i) {
+		switch (FXVersionUtil.getFxVersion(i)) {
+		case FX2: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX2_BUNDLE_NAME);
+		case FX8: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
+		}
+		return null;
+	}
+	
+	private static IClasspathEntry getBundleAsEntryByName(String name) {
+		try {
+			final Bundle bundle = Platform.getBundle(name);
+			final File bundleFile = FileLocator.getBundleFile(bundle);
+			final Path path = new Path(bundleFile.getAbsolutePath());
+			return JavaCore.newLibraryEntry(path, null, null);
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -81,27 +97,83 @@ public class JavaFXClasspathContainerInitializer extends
 	}
 	
 	@Override
-	public void initialize(IPath containerPath, IJavaProject project)
-			throws CoreException {
+	public boolean canUpdateClasspathContainer(IPath containerPath, IJavaProject project) {
+		return true;
+	}
+	
+	@Override
+	public void requestClasspathContainerUpdate(IPath containerPath, IJavaProject project, IClasspathContainer containerSuggestion) throws CoreException {
+		System.err.println("requestUpdate " + containerSuggestion);
+		
 		if (isValidJUnitContainerPath(containerPath)) {
-			JavaFXContainer container = getNewContainer(containerPath, project);
-
+			final JavaFXContainer container = getNewContainer(containerPath, project);
 			JavaCore.setClasspathContainer(containerPath, new IJavaProject[] { project }, 	new IClasspathContainer[] { container }, null);
 		}
 	}
 	
-	private static JavaFXContainer getNewContainer(IPath containerPath, IJavaProject project) {
-		IClasspathEntry entry= null;
-		entry= BuildPathSupport.getJavaFXLibraryEntry(project);
-		
-		
-		IClasspathEntry[] entries;
-		if (entry == null) {
-			entries= new IClasspathEntry[] { getJavaFX8CssExt() };
-		} else {
-			entries= new IClasspathEntry[] { getJavaFX8CssExt(), entry };
+	
+	@Override
+	public void initialize(IPath containerPath, IJavaProject project) throws CoreException {
+		if (isValidJUnitContainerPath(containerPath)) {
+			final JavaFXContainer container = getNewContainer(containerPath, project);
+			JavaCore.setClasspathContainer(containerPath, new IJavaProject[] { project }, 	new IClasspathContainer[] { container }, null);
 		}
-		return new JavaFXContainer(containerPath, entries);
+		
+		// register update hook
+		IElementChangedListener listener = new IElementChangedListener() {
+			
+			@Override
+			public void elementChanged(ElementChangedEvent event) {
+				if (event.getDelta().getKind() == IJavaElementDelta.CHANGED && (event.getDelta().getFlags() & IJavaElementDelta.F_CHILDREN) == IJavaElementDelta.F_CHILDREN) {
+					// change on JavaModel
+					for (IJavaElementDelta delta : event.getDelta().getAffectedChildren()) {
+						if ((delta.getFlags() & IJavaElementDelta.F_CLASSPATH_CHANGED) == IJavaElementDelta.F_CLASSPATH_CHANGED) {
+							// classpath change on ??
+							if (delta.getElement().getElementType() == IJavaElement.JAVA_PROJECT && delta.getElement().getJavaProject().equals(project)) {
+								// classpath change
+								System.err.println("Classpath Change on " + project.getElementName());
+								System.err.println("The classpath has changed, scheduling JavaFX SDK Container update");
+								try {
+									requestClasspathContainerUpdate(containerPath, project, null);
+								}
+								catch (CoreException e) {
+									e.printStackTrace();
+								}
+							}
+							
+						}
+						
+						
+					}
+					
+					
+				}
+				else {
+					System.err.println("EVENT NOT HANDLED: " + event);
+				}
+			}
+		};
+		JavaCore.addElementChangedListener(listener);
+		// TODO remove listener
+		
+	}
+	
+	
+	private static JavaFXContainer getNewContainer(IPath containerPath, IJavaProject project) {
+		final IClasspathEntry jfxLibEntry = BuildPathSupport.getJavaFXLibraryEntry(project);
+		final IClasspathEntry cssExtEntry = getCssExtClasspathEntry(project);
+		
+		final List<IClasspathEntry> entries = new ArrayList<>();
+
+		if (jfxLibEntry != null) {
+			entries.add(jfxLibEntry);
+		}
+		
+		if (cssExtEntry != null) {
+			entries.add(cssExtEntry);
+		}
+		
+		return new JavaFXContainer(containerPath, entries.toArray(new IClasspathEntry[0]));
 	}
 
 	private static boolean isValidJUnitContainerPath(IPath path) {

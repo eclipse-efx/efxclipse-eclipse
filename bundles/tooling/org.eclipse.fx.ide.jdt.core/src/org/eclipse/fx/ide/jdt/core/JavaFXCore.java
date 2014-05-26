@@ -22,4 +22,8 @@ public class JavaFXCore {
 
 	public final static IPath MOBILE_CONTAINER_PATH = new Path(MOBILE_CONTAINER_ID); //$NON-NLS-1$
 
+	
+	public static final String CSSEXT_FX8_BUNDLE_NAME = "org.eclipse.fx.ide.css.jfx8"; //$NON-NLS-1$
+	public static final String CSSEXT_FX2_BUNDLE_NAME = "org.eclipse.fx.ide.css.jfx2"; //$NON-NLS-1$
+	
 }

@@ -11,9 +11,11 @@
 package org.eclipse.fx.ide.jdt.core.internal;
 
 import java.io.File;
+import java.util.Map;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.osgi.util.LoggerCreator;
@@ -23,6 +25,8 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.IVMInstall;
+import org.eclipse.jdt.launching.IVMInstall2;
+import org.eclipse.jdt.launching.IVMInstall3;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.LibraryLocation;
 
@@ -30,7 +34,7 @@ public class BuildPathSupport {
 	public static final String WEB_JAVADOC_LOCATION = "http://docs.oracle.com/javafx/2/api/";
 	
 	private static final Logger LOGGER = LoggerCreator.createLogger(BuildPathSupport.class);
-		
+	
 	public static IClasspathEntry getJavaFXLibraryEntry(IJavaProject project) {
 		IPath[] paths = getFxJarPath(project);
 		if( paths != null ) {
@@ -74,6 +78,7 @@ public class BuildPathSupport {
 
 		return new IPath[] { jarLocationPath, javadocLocation, antJarLocationPath, sourceLocationPath };
 	}
+	
 	
 	public static IPath[] getSwtFxJarPath(IVMInstall i) {
 		File installDir = i.getInstallLocation();
