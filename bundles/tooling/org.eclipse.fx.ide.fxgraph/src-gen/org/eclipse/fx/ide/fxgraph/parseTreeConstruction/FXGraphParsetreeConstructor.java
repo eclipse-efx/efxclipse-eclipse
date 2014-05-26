@@ -11517,9 +11517,8 @@ protected class XPostfixOperation_FeatureAssignment_1_0_1 extends AssignmentToke
  * 	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment | =>
  * 	({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ("<"
  * 	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
- * 	feature=[types::JvmIdentifiableElement|FeatureCallID] (=> explicitOperationCall?="("
- * 	(memberCallArguments+=XShortClosure | memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")?
- * 	memberCallArguments+=XClosure?)*;
+ * 	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
+ * 	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? memberCallArguments+=XClosure?)*;
  *
  **/
 
@@ -11527,9 +11526,8 @@ protected class XPostfixOperation_FeatureAssignment_1_0_1 extends AssignmentToke
 // feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment | =>
 // ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ("<"
 // typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-// feature=[types::JvmIdentifiableElement|FeatureCallID] (=> explicitOperationCall?="("
-// (memberCallArguments+=XShortClosure | memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")?
-// memberCallArguments+=XClosure?)*
+// feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
+// memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? memberCallArguments+=XClosure?)*
 protected class XMemberFeatureCall_Group extends GroupToken {
 	
 	public XMemberFeatureCall_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11623,7 +11621,7 @@ protected class XMemberFeatureCall_XPrimaryExpressionParserRuleCall_0 extends Ru
 // (=> ({XAssignment.assignable=current} ("." | explicitStatic?="::") feature=[types::JvmIdentifiableElement|FeatureCallID]
 // OpSingleAssign) value=XAssignment | => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." |
 // explicitStatic?="::")) ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)*
-// ">")? feature=[types::JvmIdentifiableElement|FeatureCallID] (=> explicitOperationCall?="("
+// ">")? feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="("
 // (memberCallArguments+=XShortClosure | memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")?
 // memberCallArguments+=XClosure?)*
 protected class XMemberFeatureCall_Alternatives_1 extends AlternativesToken {
@@ -11952,9 +11950,8 @@ protected class XMemberFeatureCall_ValueAssignment_1_0_1 extends AssignmentToken
 
 // => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ("<"
 // typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-// feature=[types::JvmIdentifiableElement|FeatureCallID] (=> explicitOperationCall?="("
-// (memberCallArguments+=XShortClosure | memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")?
-// memberCallArguments+=XClosure?
+// feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
+// memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? memberCallArguments+=XClosure?
 protected class XMemberFeatureCall_Group_1_1 extends GroupToken {
 	
 	public XMemberFeatureCall_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12382,7 +12379,7 @@ protected class XMemberFeatureCall_GreaterThanSignKeyword_1_1_1_3 extends Keywor
 }
 
 
-// feature=[types::JvmIdentifiableElement|FeatureCallID]
+// feature=[types::JvmIdentifiableElement|IdOrSuper]
 protected class XMemberFeatureCall_FeatureAssignment_1_1_2 extends AssignmentToken  {
 	
 	public XMemberFeatureCall_FeatureAssignment_1_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -20014,14 +20011,15 @@ protected class XFeatureCall_FeatureCallArgumentsAssignment_4 extends Assignment
  *
  * XConstructorCall returns XExpression:
  * 	{XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<"
- * 	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? ("("
- * 	(arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")? arguments+=XClosure?;
+ * 	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? (=>
+ * 	explicitConstructorCall?="(" (arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")?
+ * 	arguments+=XClosure?;
  *
  **/
 
 // {XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<" typeArguments+=JvmArgumentTypeReference
-// ("," typeArguments+=JvmArgumentTypeReference)* ">")? ("(" (arguments+=XShortClosure | arguments+=XExpression (","
-// arguments+=XExpression)*)? ")")? arguments+=XClosure?
+// ("," typeArguments+=JvmArgumentTypeReference)* ">")? (=> explicitConstructorCall?="(" (arguments+=XShortClosure |
+// arguments+=XExpression ("," arguments+=XExpression)*)? ")")? arguments+=XClosure?
 protected class XConstructorCall_Group extends GroupToken {
 	
 	public XConstructorCall_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -20344,7 +20342,8 @@ protected class XConstructorCall_GreaterThanSignKeyword_3_3 extends KeywordToken
 }
 
 
-// (=> "(" (arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")?
+// (=> explicitConstructorCall?="(" (arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)?
+// ")")?
 protected class XConstructorCall_Group_4 extends GroupToken {
 	
 	public XConstructorCall_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -20366,16 +20365,16 @@ protected class XConstructorCall_Group_4 extends GroupToken {
 
 }
 
-// => "("
-protected class XConstructorCall_LeftParenthesisKeyword_4_0 extends KeywordToken  {
+// => explicitConstructorCall?="("
+protected class XConstructorCall_ExplicitConstructorCallAssignment_4_0 extends AssignmentToken  {
 	
-	public XConstructorCall_LeftParenthesisKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public XConstructorCall_ExplicitConstructorCallAssignment_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getXConstructorCallAccess().getLeftParenthesisKeyword_4_0();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getXConstructorCallAccess().getExplicitConstructorCallAssignment_4_0();
 	}
 
     @Override
@@ -20385,6 +20384,18 @@ protected class XConstructorCall_LeftParenthesisKeyword_4_0 extends KeywordToken
 			case 1: return new XConstructorCall_ConstructorAssignment_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("explicitConstructorCall",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("explicitConstructorCall");
+		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getXConstructorCallAccess().getExplicitConstructorCallLeftParenthesisKeyword_4_0_0();
+			return obj;
+		}
+		return null;
 	}
 
 }
@@ -20452,7 +20463,7 @@ protected class XConstructorCall_ArgumentsAssignment_4_1_0 extends AssignmentTok
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new XConstructorCall_LeftParenthesisKeyword_4_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new XConstructorCall_ExplicitConstructorCallAssignment_4_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -20521,7 +20532,7 @@ protected class XConstructorCall_ArgumentsAssignment_4_1_1_0 extends AssignmentT
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new XConstructorCall_LeftParenthesisKeyword_4_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new XConstructorCall_ExplicitConstructorCallAssignment_4_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -20637,6 +20648,7 @@ protected class XConstructorCall_RightParenthesisKeyword_4_2 extends KeywordToke
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new XConstructorCall_Alternatives_4_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new XConstructorCall_ExplicitConstructorCallAssignment_4_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -21472,11 +21484,11 @@ protected class XThrowExpression_ExpressionAssignment_2 extends AssignmentToken 
 /************ begin Rule XReturnExpression ****************
  *
  * XReturnExpression returns XExpression:
- * 	{XReturnExpression} "return" => expression=XExpression?;
+ * 	{XReturnExpression} "return" -> expression=XExpression?;
  *
  **/
 
-// {XReturnExpression} "return" => expression=XExpression?
+// {XReturnExpression} "return" -> expression=XExpression?
 protected class XReturnExpression_Group extends GroupToken {
 	
 	public XReturnExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -21554,7 +21566,7 @@ protected class XReturnExpression_ReturnKeyword_1 extends KeywordToken  {
 
 }
 
-// => expression=XExpression?
+// -> expression=XExpression?
 protected class XReturnExpression_ExpressionAssignment_2 extends AssignmentToken  {
 	
 	public XReturnExpression_ExpressionAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

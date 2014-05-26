@@ -215,6 +215,7 @@ RobotTask {
 					"org.eclipse.fx.core.databinding",
 					"org.eclipse.fx.ui.di" excluded-if "javascript" /# !EclipseDI; #/,
 					"org.eclipse.fx.core" excluded-if "javascript" /# !EclipseDI; #/,
+					"org.eclipse.fx.core.fxml" excluded-if "javascript" /# !EclipseDI; #/,
 					"org.eclipse.fx.osgi.util" excluded-if "javascript" /# !EclipseDI; #/,
 					"javax.annotation" excluded-if "javascript" /# !EclipseDI; #/,
 					"javax.inject" excluded-if "javascript" /# !EclipseDI; #/, 
