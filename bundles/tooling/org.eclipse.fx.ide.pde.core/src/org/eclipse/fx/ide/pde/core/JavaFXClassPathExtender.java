@@ -11,12 +11,16 @@ package org.eclipse.fx.ide.pde.core;
  *******************************************************************************/
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.fx.ide.jdt.core.FXVersion;
 import org.eclipse.fx.ide.jdt.core.FXVersionUtil;
 import org.eclipse.fx.ide.jdt.core.JavaFXCore;
@@ -35,6 +39,7 @@ import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.PluginRegistry;
 import org.eclipse.pde.internal.core.ClasspathUtilCore;
 import org.omg.CORBA.UNKNOWN;
+import org.osgi.framework.Bundle;
 
 @SuppressWarnings("restriction")
 public class JavaFXClassPathExtender implements IClasspathContributor {
@@ -72,14 +77,22 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		return null;
 	}
 	
-	private IClasspathEntry getBundleAsEntryByName(String name) {
-		final IPluginModelBase model = PluginRegistry.findModel(name);
-		if (model != null) {
-			final IPath path = new Path(model.getInstallLocation());
-			final IPath srcPath = ClasspathUtilCore.getSourceAnnotation(model, ".");
-			return JavaCore.newLibraryEntry(path, srcPath, null);
+	private static IClasspathEntry getBundleAsEntryByName(String name) {
+		try {
+			final Bundle bundle = Platform.getBundle(name);
+			if (bundle != null) {
+				final File bundleFile = FileLocator.getBundleFile(bundle);
+				final Path path = new Path(bundleFile.getAbsolutePath());
+				return JavaCore.newLibraryEntry(path, null, null);
+			}
+			else {
+				return null;
+			}
 		}
-		return null;
+		catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	private IClasspathEntry getSWTFXEntry(IVMInstall vm) {

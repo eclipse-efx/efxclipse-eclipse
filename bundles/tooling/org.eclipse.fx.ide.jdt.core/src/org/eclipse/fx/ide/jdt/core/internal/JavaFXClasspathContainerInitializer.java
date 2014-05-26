@@ -86,9 +86,14 @@ public class JavaFXClasspathContainerInitializer extends ClasspathContainerIniti
 	private static IClasspathEntry getBundleAsEntryByName(String name) {
 		try {
 			final Bundle bundle = Platform.getBundle(name);
-			final File bundleFile = FileLocator.getBundleFile(bundle);
-			final Path path = new Path(bundleFile.getAbsolutePath());
-			return JavaCore.newLibraryEntry(path, null, null);
+			if (bundle != null) {
+				final File bundleFile = FileLocator.getBundleFile(bundle);
+				final Path path = new Path(bundleFile.getAbsolutePath());
+				return JavaCore.newLibraryEntry(path, null, null);
+			}
+			else {
+				return null;
+			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
