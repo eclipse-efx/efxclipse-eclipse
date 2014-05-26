@@ -74,9 +74,12 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 	
 	private IClasspathEntry getBundleAsEntryByName(String name) {
 		final IPluginModelBase model = PluginRegistry.findModel(name);
-		final IPath path = new Path(model.getInstallLocation());
-		final IPath srcPath = ClasspathUtilCore.getSourceAnnotation(model, ".");
-		return JavaCore.newLibraryEntry(path, srcPath, null);
+		if (model != null) {
+			final IPath path = new Path(model.getInstallLocation());
+			final IPath srcPath = ClasspathUtilCore.getSourceAnnotation(model, ".");
+			return JavaCore.newLibraryEntry(path, srcPath, null);
+		}
+		return null;
 	}
 	
 	private IClasspathEntry getSWTFXEntry(IVMInstall vm) {
