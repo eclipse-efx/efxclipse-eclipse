@@ -134,14 +134,21 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.fx.ide.css.jfx"
+         id="org.eclipse.fx.ide.css.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.fx.ide.css.ui"
+         id="org.eclipse.fx.ide.css.jfx2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.fx.ide.css.jfx8"
          download-size="0"
          install-size="0"
          version="0.0.0"

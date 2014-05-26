@@ -40,14 +40,15 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.dsl.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.ui.e4</module>
-		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.java7</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.core</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.mobile.sim.device</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.preview</module>
 				
 		<!-- CSS Tooling -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.ui</module>
-		<module>../../bundles/tooling/org.eclipse.fx.ide.css.jfx</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css.jfx2</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css.jfx8</module>
 		
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext.ui</module>
