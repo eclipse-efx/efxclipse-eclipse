@@ -21,7 +21,9 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.wst.xml.core.internal.provisional.document.IDOMNode;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.ProcessingInstruction;
@@ -31,6 +33,26 @@ import org.w3c.dom.ProcessingInstruction;
  */
 @SuppressWarnings("restriction")
 public class Util {
+	private static final String FXML_NAMESPACE = "http://javafx.com/fxml";
+	private static final String FXML_NAMESPACE_1 = "http://javafx.com/fxml/1";
+	
+	/**
+	 * Check if the namespace in FXML
+	 * @param value the namespace value
+	 * @return <code>true</code> if a valid FXML namespace
+	 */
+	public static final boolean isFXMLNamespace(String value) {
+		return FXML_NAMESPACE.equals(value) || FXML_NAMESPACE_1.equals(value);
+	}
+	
+	public static Attr getFXMLAttribute(Element e, String localName) {
+		Attr attribute = e.getAttributeNodeNS(FXML_NAMESPACE, localName);
+		if( attribute == null ) {
+			attribute = e.getAttributeNodeNS(FXML_NAMESPACE_1, localName);
+		}
+		return attribute;
+	}
+	
 	static IJavaProject findProject(Document xmlDoc) {
 		String baseLocation = ((IDOMNode) xmlDoc).getModel().getBaseLocation();
 		IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(baseLocation));

@@ -218,7 +218,7 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 	private static IFXCtrlClass getController(IDOMNode node) {
 		Document d = node.getOwnerDocument();
 		Element docEl = d.getDocumentElement();
-		Attr a = docEl.getAttributeNodeNS("http://javafx.com/fxml", "controller");  //$NON-NLS-1$//$NON-NLS-2$
+		Attr a = Util.getFXMLAttribute(docEl, "controller");  //$NON-NLS-1$
 
 		if (a != null && a.getValue() != null && !a.getValue().trim().isEmpty()) {
 			IType type = Util.findType(a.getValue(), d);

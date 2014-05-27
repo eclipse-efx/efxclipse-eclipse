@@ -777,7 +777,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			}
 
 			if (attribute != null) {
-				if ("http://javafx.com/fxml".equals(attribute.getNamespaceURI())) { //$NON-NLS-1$
+				if (Util.isFXMLNamespace(attribute.getNamespaceURI())) { 
 					if("constant".equals(attribute.getLocalName())) { //$NON-NLS-1$
 						IType type = findType(n.getNodeName(), contentAssistRequest, context);
 						if (type != null) {
@@ -848,7 +848,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 					} else if("id".equals(attribute.getLocalName())) { //$NON-NLS-1$
 						Document d = contentAssistRequest.getNode().getOwnerDocument();
 						Element e = d.getDocumentElement();
-						Attr a = e.getAttributeNodeNS("http://javafx.com/fxml", "controller"); //$NON-NLS-1$ //$NON-NLS-2$
+						Attr a = Util.getFXMLAttribute(e, "controller"); //$NON-NLS-1$
 						if (a != null) {
 							IType t = Util.findType(a.getValue(), d);
 							if (t != null) {
@@ -951,7 +951,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 	private static void createAttributeValueEventHandlerProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXEventHandlerProperty p) {
 		Document d = contentAssistRequest.getNode().getOwnerDocument();
 		Element e = d.getDocumentElement();
-		Attr a = e.getAttributeNodeNS("http://javafx.com/fxml", "controller");  //$NON-NLS-1$//$NON-NLS-2$
+		Attr a = Util.getFXMLAttribute(e, "controller");  //$NON-NLS-1$
 		if (a != null) {
 			IType t = Util.findType(a.getValue(), d);
 			if (t != null) {

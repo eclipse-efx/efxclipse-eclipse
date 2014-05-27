@@ -18,7 +18,7 @@ class FXMLTemplate implements IGenerator<org.eclipse.fx.ide.fxml.wizards.templat
 		
 		<?import «element.rootElement.fullyQualifiedName»?>
 		
-		«IF element.fxRoot»<fx:root xmlns:fx="http://javafx.com/fxml" type="«element.rootElement.elementName»">«ELSE»<«element.rootElement.elementName» xmlns:fx="http://javafx.com/fxml">«ENDIF»
+		«IF element.fxRoot»<fx:root xmlns:fx="http://javafx.com/fxml/1" type="«element.rootElement.elementName»">«ELSE»<«element.rootElement.elementName» xmlns:fx="http://javafx.com/fxml/1">«ENDIF»
 			<!-- TODO Add Nodes -->
 		«IF element.fxRoot»</fx:root>«ELSE»</«element.rootElement.elementName»>«ENDIF»
 		

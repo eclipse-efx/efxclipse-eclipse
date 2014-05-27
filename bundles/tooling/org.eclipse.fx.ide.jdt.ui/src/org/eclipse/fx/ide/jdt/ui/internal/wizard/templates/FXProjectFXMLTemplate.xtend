@@ -8,7 +8,7 @@ class FXProjectFXMLTemplate {
 		
 	<?import «data.declarativeUiRootType»?>
 		
-	<«data.declarativeUiRootType.split("\\.").last» xmlns:fx="http://javafx.com/fxml" «IF !data.declarativeUiController.empty»fx:controller="«data.packageName».«data.declarativeUiController»"«ENDIF»>
+	<«data.declarativeUiRootType.split("\\.").last» xmlns:fx="http://javafx.com/fxml/1" «IF !data.declarativeUiController.empty»fx:controller="«data.packageName».«data.declarativeUiController»"«ENDIF»>
 		<!-- TODO Add Nodes -->
 	</«data.declarativeUiRootType.split("\\.").last»>
 	'''
