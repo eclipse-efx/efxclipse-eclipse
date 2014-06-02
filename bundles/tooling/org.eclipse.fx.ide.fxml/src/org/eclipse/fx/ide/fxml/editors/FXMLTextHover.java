@@ -38,7 +38,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.ProcessingInstruction;
-
 import org.eclipse.fx.ide.model.FXPlugin;
 import org.eclipse.fx.ide.model.IFXClass;
 import org.eclipse.fx.ide.model.IFXCtrlClass;
@@ -208,7 +207,7 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 			Node parent = xmlnode;
 			IFXProperty p = null;
 			
-			if( "http://javafx.com/fxml".equals(attribute.getNamespaceURI()) ) { //$NON-NLS-1$
+			if( Util.isFXMLNamespace(attribute.getNamespaceURI()) ) {
 				Document d = xmlnode.getOwnerDocument();
 				return Util.findType(attribute.getNodeValue(), d);
 			}
@@ -251,7 +250,7 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 			} else if( p instanceof IFXEventHandlerProperty && attribute.getNodeValue().startsWith("#") ) { //$NON-NLS-1$
 				Document d = xmlnode.getOwnerDocument();
 				Element e = d.getDocumentElement();
-				Attr a = e.getAttributeNodeNS("http://javafx.com/fxml", "controller");  //$NON-NLS-1$//$NON-NLS-2$
+				Attr a = Util.getFXMLAttribute(e, "controller");  //$NON-NLS-1$
 				if (a != null) {
 					IType t = Util.findType(a.getValue(), d);
 					if( t != null ) {
