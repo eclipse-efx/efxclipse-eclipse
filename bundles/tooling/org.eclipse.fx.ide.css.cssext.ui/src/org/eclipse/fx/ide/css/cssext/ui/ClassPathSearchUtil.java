@@ -46,7 +46,12 @@ public class ClassPathSearchUtil {
 		}
 		@Override
 		public URI toURI() {
-			return URI.createURI(uri);
+			try {
+				return URI.createURI(uri);
+			}
+			catch (IllegalArgumentException e) {
+				throw new IllegalArgumentException("Issue with the following URI: " + uri, e);
+			}
 		}
 	}
 	
