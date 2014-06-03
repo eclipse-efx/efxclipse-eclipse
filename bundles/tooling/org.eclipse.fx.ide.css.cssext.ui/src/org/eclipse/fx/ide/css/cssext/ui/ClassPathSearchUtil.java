@@ -64,15 +64,16 @@ public class ClassPathSearchUtil {
 		while (entries.hasMoreElements()) {
 			ZipEntry el = entries.nextElement();
 			if (el.getName().endsWith(".cssext")) {
-				System.err.println("found one: " + absoluteJarPath + " ! " + el.getName());
-				results.add(new StringUriEntry("jar:file://" + absoluteJarPath + "!" + el.getName()));
+//				System.err.println("found one: " + absoluteJarPath + " ! " + el.getName());
+				String elPath = el.getName().startsWith("/") ? el.getName() : "/" + el.getName();
+				results.add(new StringUriEntry("jar:file://" + absoluteJarPath + "!" + elPath));
 			}
 		}
 		return results;
 	}
 	
 	private static void searchFolderRec(File file, List<Entry> result) throws IOException {
-		System.err.println("filecheck: " + file);
+//		System.err.println("filecheck: " + file);
 		if (file.isDirectory()) {
 			for (File f : file.listFiles()) {
 				searchFolderRec(f, result);
@@ -80,7 +81,7 @@ public class ClassPathSearchUtil {
 		}
 		else {
 			if (file.getName().endsWith(".cssext")) {
-				System.err.println("add");
+//				System.err.println("add");
 				result.add(new StringUriEntry("file://" + file.getAbsolutePath()));
 			}
 		}
@@ -93,9 +94,8 @@ public class ClassPathSearchUtil {
 	}
 	
 	
-	
 	public static List<Entry> checkJar(String absoluteJarPath) {
-		System.err.println("ceckJar " + absoluteJarPath);
+//		System.err.println("checkJar(" + absoluteJarPath + ")");
 		List<Entry> results = cache.get(absoluteJarPath);
 		if (results == null) {
 			try {
@@ -106,11 +106,12 @@ public class ClassPathSearchUtil {
 				e.printStackTrace();
 			}
 		}
+//		System.err.println("checkJar: " + (results != null ? results.size() : "no") + " hits");
 		return results;
 	}
 
 	public static List<Entry> checkFolder(String absolutePath) {
-		System.err.println("checkFolder " + absolutePath);
+//		System.err.println("checkFolder(" + absolutePath + ")");
 		List<Entry> results = cache.get(absolutePath);
 		if (results == null) {
 			try {
@@ -121,6 +122,7 @@ public class ClassPathSearchUtil {
 				e.printStackTrace();
 			}
 		}
+//		System.err.println("checkFolder: " + (results != null ? results.size() : "no") + " hits");
 		return results;
 	}
 	

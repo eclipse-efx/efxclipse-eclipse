@@ -26,6 +26,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.fx.ide.css.cssext.CssExtDslStandaloneSetup;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
@@ -116,43 +117,46 @@ public class CssFile {
 			final IProject project = findProject();
 			System.err.println("project = " + project);
 			final IJavaProject javaProject = JavaCore.create(project);
-			System.err.println("javaProject = " + javaProject);
+//			System.err.println("javaProject? " + (javaProject==null));
+			
+			long locCount = 0;
 			
 			for (IClasspathEntry e : javaProject.getResolvedClasspath(true)) {
-				System.err.println("ENTRY " + e);
+//				System.err.println("ENTRY " + e);
+				locCount++;
 				switch (e.getEntryKind()) {
 				case IClasspathEntry.CPE_LIBRARY: {
 					if ("jar".equals(e.getPath().getFileExtension())) {
-						System.err.println(" file ends with .jar - using jar check");
+//						System.err.println(" file ends with .jar - using jar check");
 						List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(e.getPath().toFile().getAbsolutePath());
-						System.err.println("-> "  + result);
+//						System.err.println("-> " + result.size() + " hits: " + result);
 						allFiles.addAll(result);
 					}
 					else {
-						System.err.println(" trying java file api");
+//						System.err.println(" trying java file api");
 						// try folder
 						List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(e.getPath().toFile().getAbsolutePath());
-						System.err.println("-> " + result);
+//						System.err.println("-> " + result.size() + " hits: " + result);
 						allFiles.addAll(result);
 					}
 				}
 				break;
 				case IClasspathEntry.CPE_PROJECT: {
 					IProject p = (IProject) project.getParent().findMember(e.getPath());
-					System.err.println("project " + p);
+//					System.err.println("project " + p);
 					IJavaProject jp = JavaCore.create(p);
 //					System.err.println("javaproject " + jp);
-					System.err.println("javaproject outputloc " + jp.getOutputLocation());
+//					System.err.println("javaproject outputloc " + jp.getOutputLocation());
 					IResource output = project.getParent().findMember(jp.getOutputLocation());
-					System.err.println("outputfolder " + output);
+//					System.err.println("outputfolder " + output);
 					List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(output);
-					System.err.println("-> "  + result);
+//					System.err.println("-> " + result.size() + " hits: " + result);
 					allFiles.addAll(result);
 				}
 				break;
 					
 				default: {
-					System.err.println("NOT HANDLED!");
+					System.err.println("Entry not handled!! " + e);
 				}
 					
 				}
@@ -160,6 +164,7 @@ public class CssFile {
 				
 				
 			}
+			System.err.println("Checked " + locCount + " entries and found " + allFiles.size() + " cssext definitions: " + allFiles);
 		}
 		catch (JavaModelException e) {
 			e.printStackTrace();
@@ -169,6 +174,7 @@ public class CssFile {
 		for (ClassPathSearchUtil.Entry entry : allFiles) {
 			
 			// load model
+			
 			try {
 				URI uri = entry.toURI();
 				ResourceSet rs = new ResourceSetImpl();
