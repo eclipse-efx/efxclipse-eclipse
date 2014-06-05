@@ -81,8 +81,8 @@ public class ClassPathSearchUtil {
 		}
 		else {
 			if (file.getName().endsWith(".cssext")) {
-//				System.err.println("add");
-				result.add(new StringUriEntry("file://" + file.getAbsolutePath()));
+				// we replace all \ with / for windows - if we don't do that URI.lastSegment returns null and EMF uses an xmi resource to load the xtext file
+				result.add(new StringUriEntry("file://" + file.getAbsolutePath().replaceAll("\\\\", "/")));
 			}
 		}
 	}
@@ -136,9 +136,7 @@ public class ClassPathSearchUtil {
 		
 		@Override
 		public boolean visit(IResource resource) throws CoreException {
-			System.err.println("visit " + resource);
-			
-			
+//			System.err.println("visit " + resource);
 			if (resource instanceof IContainer) {
 				return true;
 			}
@@ -151,10 +149,8 @@ public class ClassPathSearchUtil {
 				}
 				
 			}
-			
 			return false;
 		}
-		
 	}
 	
 	public static List<Entry> checkResource(IResource r) {
@@ -165,7 +161,7 @@ public class ClassPathSearchUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.err.println("found " + v.getResult());
+//		System.err.println("found " + v.getResult());
 		return v.getResult();
 	}
 	

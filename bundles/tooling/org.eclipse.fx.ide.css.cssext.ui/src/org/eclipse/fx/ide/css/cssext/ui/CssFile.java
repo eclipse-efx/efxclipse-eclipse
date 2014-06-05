@@ -18,12 +18,15 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Factory;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.fx.ide.css.cssext.CssExtDslStandaloneSetup;
@@ -32,6 +35,7 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
 
 /**
  * @author ccaks
@@ -115,7 +119,8 @@ public class CssFile {
 		List<ClassPathSearchUtil.Entry> allFiles = new ArrayList<>();
 		try  {
 			final IProject project = findProject();
-			System.err.println("project = " + project);
+			final IContainer workspace = project.getParent();
+//			System.err.println("project = " + project);
 			final IJavaProject javaProject = JavaCore.create(project);
 //			System.err.println("javaProject? " + (javaProject==null));
 			
@@ -125,31 +130,51 @@ public class CssFile {
 //				System.err.println("ENTRY " + e);
 				locCount++;
 				switch (e.getEntryKind()) {
+				case IClasspathEntry.CPE_SOURCE: {
+					final IResource resource = workspace.findMember(e.getPath());
+//					System.err.println("CPE_SOURCE: Resource= " + resource);
+					final List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(resource);
+					allFiles.addAll(result);
+				}
+				break;
 				case IClasspathEntry.CPE_LIBRARY: {
+					final IPath path = e.getPath();
 					if ("jar".equals(e.getPath().getFileExtension())) {
 //						System.err.println(" file ends with .jar - using jar check");
-						List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(e.getPath().toFile().getAbsolutePath());
+						List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(path.toFile().getAbsolutePath());
 //						System.err.println("-> " + result.size() + " hits: " + result);
 						allFiles.addAll(result);
 					}
 					else {
 //						System.err.println(" trying java file api");
-						// try folder
-						List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(e.getPath().toFile().getAbsolutePath());
-//						System.err.println("-> " + result.size() + " hits: " + result);
-						allFiles.addAll(result);
+						
+						IPath binPath = path.append("bin");
+						if (binPath.toFile().exists()) {
+							// try bin path
+							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(binPath.toFile().getAbsolutePath());
+//							System.err.println("-> " + result.size() + " hits: " + result);
+							allFiles.addAll(result);
+						}
+						else {
+							// try whole folder
+							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(path.toFile().getAbsolutePath());
+//							System.err.println("-> " + result.size() + " hits: " + result);
+							allFiles.addAll(result);
+						}
+						
 					}
 				}
 				break;
 				case IClasspathEntry.CPE_PROJECT: {
-					IProject p = (IProject) project.getParent().findMember(e.getPath());
+					final IPath path = e.getPath();
+					final IProject p = (IProject) project.getParent().findMember(path);
 //					System.err.println("project " + p);
-					IJavaProject jp = JavaCore.create(p);
+					final IJavaProject jp = JavaCore.create(p);
 //					System.err.println("javaproject " + jp);
 //					System.err.println("javaproject outputloc " + jp.getOutputLocation());
-					IResource output = project.getParent().findMember(jp.getOutputLocation());
+					final IResource output = project.getParent().findMember(jp.getOutputLocation());
 //					System.err.println("outputfolder " + output);
-					List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(output);
+					final List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(output);
 //					System.err.println("-> " + result.size() + " hits: " + result);
 					allFiles.addAll(result);
 				}
@@ -171,19 +196,20 @@ public class CssFile {
 		}
 		
 		Set<CssExtensionNfo> extensions = new HashSet<>();
+		final ResourceSet rs = new ResourceSetImpl();
 		for (ClassPathSearchUtil.Entry entry : allFiles) {
-			
 			// load model
-			
+			final URI uri = entry.toURI();
 			try {
-				URI uri = entry.toURI();
-				ResourceSet rs = new ResourceSetImpl();
-				Resource resource = rs.getResource(uri, true);
-				CssExtension ex = (CssExtension) resource.getContents().get(0);
+				Resource resource = rs.createResource(uri);
+				resource.setURI(uri);
+				resource.load(Collections.emptyMap());
+				
+				final CssExtension ex = (CssExtension) resource.getContents().get(0);
 				extensions.add(new CssExtensionNfo(uri, ex));
 			}
 			catch (Exception e) {
-				System.err.println("could not load model : " + entry.toURI());
+				System.err.println("could not load model : " + uri);
 				e.printStackTrace();
 			}
 			
