@@ -36,13 +36,13 @@ public class ClassPathSearchUtil {
 		}
 		@Override
 		public URI toURI() {
-			return URI.createPlatformResourceURI(f.getFullPath().toString(), true);
+			return URI.createPlatformResourceURI(f.getFullPath().toString().replace('\\', '/'), true);
 		}
 	}
 	public static class StringUriEntry extends Entry {
 		public final String uri;
 		public StringUriEntry(String uri) {
-			this.uri = uri;
+			this.uri = uri.replace('\\', '/');
 		}
 		@Override
 		public URI toURI() {
@@ -66,7 +66,7 @@ public class ClassPathSearchUtil {
 			if (el.getName().endsWith(".cssext")) {
 //				System.err.println("found one: " + absoluteJarPath + " ! " + el.getName());
 				String elPath = el.getName().startsWith("/") ? el.getName() : "/" + el.getName();
-				results.add(new StringUriEntry("jar:file://" + absoluteJarPath + "!" + elPath));
+				results.add(new StringUriEntry("jar:file:" + absoluteJarPath.replace('\\', '/') + "!" + elPath));
 			}
 		}
 		return results;
