@@ -151,6 +151,10 @@
             </or>
          </enabledWhen>
       </handler>
+      <handler
+            class="org.eclipse.fx.ide.jdt.ui.internal.handler.AddFXBeanGetterSetterHandler"
+            commandId="org.eclipse.fx.ide.jdt.ui.fxgettersetter">
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -184,6 +188,15 @@
             </visibleWhen>
          </command>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.source.menu?after=codeGroup">
+         <command
+               commandId="org.eclipse.fx.ide.jdt.ui.fxgettersetter"
+               label="Generate JavaFX Getters and Setters"
+               style="push">
+         </command>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
@@ -194,6 +207,10 @@
       <command
             id="org.eclipse.fx.ide.jdt.ui.generateAnt"
             name="%command.name.0">
+      </command>
+      <command
+            id="org.eclipse.fx.ide.jdt.ui.fxgettersetter"
+            name="FX Getter and Setter">
       </command>
    </extension>
    <extension

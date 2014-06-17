@@ -40,9 +40,15 @@ import org.eclipse.swt.graphics.Point;
 
 public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProposalComputer {
 	
+	public enum Type {
+		GETTER,
+		SETTER,
+		ACCESSOR
+	}
+	
 	@Override
 	public List<ICompletionProposal> computeCompletionProposals(ContentAssistInvocationContext context, IProgressMonitor monitor) {
-		if (context instanceof JavaContentAssistInvocationContext && false) {
+		if (context instanceof JavaContentAssistInvocationContext && Boolean.FALSE == true) {
 			JavaContentAssistInvocationContext javaContext= (JavaContentAssistInvocationContext) context;
 			CompletionContext completionContext = javaContext.getCoreContext();
 			IJavaElement enclosingElement= null;
@@ -92,9 +98,9 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 											if( assignable(fieldType, writableType) ) {
 												String setterName = NamingConventions.suggestSetterName(type.getJavaProject(), curr.getElementName(), curr.getFlags(), false, null);
 												if( ! hasMethod(methods, setterName) ) {
-													StyledString s = new StyledString(setterName+"("+toValue(fieldType, booleanType, doubleType, floatType, intType, longType, stringType)+") : void" );
-													s.append( " - Setter for '" + curr.getElementName() + "'", StyledString.QUALIFIER_STYLER);
-													l.add(new CompletionProposalImpl(setterName,s));
+													StyledString s = new StyledString(setterName+"("+toValue(fieldType, booleanType, doubleType, floatType, intType, longType, stringType)+")" + " : void" ); //$NON-NLS-1$
+													s.append( " - Setter for '" + curr.getElementName() + "'", StyledString.QUALIFIER_STYLER); //$NON-NLS-1$ //$NON-NLS-2$
+													l.add(new CompletionProposalImpl(setterName,s, setterName + "("+toValue(fieldType, booleanType, doubleType, floatType, intType, longType, stringType)+" "+curr.getElementName()+")",curr,Type.SETTER,offset));
 												}
 											}
 										} else if( Character.isWhitespace(prefix.charAt(0)) && prefix.endsWith("is") ) {
@@ -104,7 +110,7 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 												if( ! hasMethod(methods, getterName) ) {
 													StyledString s = new StyledString(getterName+"() : boolean" );
 													s.append( " - Getter for '" + curr.getElementName() + "'", StyledString.QUALIFIER_STYLER );
-													l.add(new CompletionProposalImpl(getterName,s));
+													l.add(new CompletionProposalImpl(getterName,s,getterName+"()",curr,Type.GETTER,offset));
 												}
 											}
 										} else if( "get".equals(prefix) ) {
@@ -113,14 +119,14 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 												if( ! hasMethod(methods, getterName) ) {
 													StyledString s = new StyledString(getterName+"() : " + toValue(fieldType, booleanType, doubleType, floatType, intType, longType, stringType));
 													s.append( " - Getter for '" + curr.getElementName() + "'", StyledString.QUALIFIER_STYLER );
-													l.add(new CompletionProposalImpl(getterName,s));
+													l.add(new CompletionProposalImpl(getterName,s,toValue(fieldType, booleanType, doubleType, floatType, intType, longType, stringType) + " " + getterName+"()",curr,Type.GETTER,offset));
 												}
 											}
 										} else if( Character.isWhitespace(prefix.charAt(2)) ) {
-											String propertyName = curr.getElementName()+"Property";
+											String propertyName = curr.getElementName()+"Property() : " + fieldType.getElementName();
 											if( ! hasMethod(methods, propertyName) ) {
 												StyledString s = new StyledString(propertyName);
-												l.add(new CompletionProposalImpl(propertyName,s));
+												l.add(new CompletionProposalImpl(propertyName,s,fieldType.getElementName() + " " + curr.getElementName()+"Property()",curr,Type.ACCESSOR,offset));
 											}
 										}
 									}
@@ -137,6 +143,9 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 					e.printStackTrace();
 				}
 			}
+			
+			System.err.println(l);
+			
 			return l;
 		}
 		return Collections.emptyList();
@@ -228,33 +237,75 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 	static class CompletionProposalImpl implements ICompletionProposal, ICompletionProposalExtension6 {
 		private final String label;
 		private final StyledString styledString;
+		private final IField field;
+		private final Type type;
+		private final int offset;
+		private final String method;
 		
-		public CompletionProposalImpl(String label, StyledString styledString) {
+		public CompletionProposalImpl(String label, StyledString styledString, String method, IField field, Type type, int offset) {
 			this.label = label;
 			this.styledString = styledString;
+			this.field = field;
+			this.type = type;
+			this.offset = offset;
+			this.method = method;
 		}
 		
-		/* (non-Javadoc)
-		 * @see org.eclipse.jface.text.contentassist.ICompletionProposal#apply(org.eclipse.jface.text.IDocument)
-		 */
 		@Override
 		public void apply(IDocument document) {
-			// TODO Auto-generated method stub
-			
+			//FIXME We need to get smarter (ident, ....)
+			switch (type) {
+			case SETTER:
+			{
+				StringBuilder b = new StringBuilder("public void " +method);
+				b.append(" {\n");
+				b.append("		this." + field.getElementName()+".set("+field.getElementName()+");\n");
+				b.append("	}");
+				try {
+					document.replace(offset, 3, b.toString());
+				} catch (BadLocationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
+			}
+			case GETTER:
+			{
+				StringBuilder b = new StringBuilder("public "+method);
+				b.append(" {\n");
+				b.append("		return this."+ field.getElementName() + ".get();\n");
+				b.append("	}");
+				try {
+					document.replace(offset, 3, b.toString());
+				} catch (BadLocationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
+			}
+			default:
+			{
+				StringBuilder b = new StringBuilder("public "+method);
+				b.append(" {\n");
+				b.append("		return this."+ field.getElementName() + ";\n");
+				b.append("	}");
+				try {
+					document.replace(offset+3, 0, b.toString());
+				} catch (BadLocationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
+			}
+			}
 		}
 
-		/* (non-Javadoc)
-		 * @see org.eclipse.jface.text.contentassist.ICompletionProposal#getSelection(org.eclipse.jface.text.IDocument)
-		 */
 		@Override
 		public Point getSelection(IDocument document) {
 			// TODO Auto-generated method stub
 			return null;
 		}
 
-		/* (non-Javadoc)
-		 * @see org.eclipse.jface.text.contentassist.ICompletionProposal#getAdditionalProposalInfo()
-		 */
 		@Override
 		public String getAdditionalProposalInfo() {
 			// TODO Auto-generated method stub
@@ -271,9 +322,6 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 			return JavaPluginImages.get(JavaPluginImages.IMG_MISC_PUBLIC);
 		}
 
-		/* (non-Javadoc)
-		 * @see org.eclipse.jface.text.contentassist.ICompletionProposal#getContextInformation()
-		 */
 		@Override
 		public IContextInformation getContextInformation() {
 			// TODO Auto-generated method stub
