@@ -1,9 +1,9 @@
 <project name="Repackage Compiler" default="publish">
 	<property name="root-prefix" value="/home/data/httpd/download.eclipse.org" />
-	<property name="xtext-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
-	<property name="emf-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
-	<property name="platform-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
-	<property name="orbit-prefix" value="${root-prefix}/releases/luna/201405090900/plugins" />
+	<property name="xtext-prefix" value="${root-prefix}/releases/luna/201406250900/plugins" />
+	<property name="emf-prefix" value="${root-prefix}/releases/luna/201406250900/plugins" />
+	<property name="platform-prefix" value="${root-prefix}/releases/luna/201406250900/plugins" />
+	<property name="orbit-prefix" value="${root-prefix}/releases/luna/201406250900/plugins" />
 	<property name="efx-prefix" value="${root-prefix}/efxclipse/updates-nightly/site/plugins" />
 	
 	<tstamp>
