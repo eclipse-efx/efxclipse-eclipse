@@ -13,19 +13,14 @@ package org.eclipse.fx.ide.jdt.ui.internal.handler;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringJoiner;
-
-import javafx.beans.property.StringProperty;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.commands.ITypedParameter;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.fx.ide.jdt.ui.internal.Util;
-import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
@@ -34,47 +29,46 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeParameter;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
+import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.AbstractTypeDeclaration;
 import org.eclipse.jdt.core.dom.AnonymousClassDeclaration;
+import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.FieldAccess;
+import org.eclipse.jdt.core.dom.FieldDeclaration;
+import org.eclipse.jdt.core.dom.IMethodBinding;
+import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.NodeFinder;
+import org.eclipse.jdt.core.dom.SimpleName;
+import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
+import org.eclipse.jdt.internal.core.util.ASTNodeFinder;
 import org.eclipse.jdt.internal.corext.ValidateEditException;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility2;
 import org.eclipse.jdt.internal.corext.dom.ASTNodes;
+import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
 import org.eclipse.jdt.internal.corext.refactoring.util.RefactoringASTParser;
 import org.eclipse.jdt.internal.corext.util.CodeFormatterUtil;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
-import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.actions.SelectionConverter;
 import org.eclipse.jdt.internal.ui.javaeditor.ASTProvider;
-import org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
-import org.eclipse.jdt.internal.ui.viewsupport.JavaElementImageProvider;
-import org.eclipse.jdt.ui.JavaElementImageDescriptor;
+import org.eclipse.jdt.internal.ui.text.correction.ASTResolving;
 import org.eclipse.jdt.ui.JavaElementLabelProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ArrayContentProvider;
-import org.eclipse.jface.viewers.CellEditor;
-import org.eclipse.jface.viewers.CheckboxCellEditor;
 import org.eclipse.jface.viewers.CheckboxTableViewer;
-import org.eclipse.jface.viewers.ColumnLabelProvider;
-import org.eclipse.jface.viewers.EditingSupport;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.jface.viewers.TableViewerColumn;
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -82,7 +76,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.text.edits.TextEdit;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 @SuppressWarnings("restriction")
@@ -201,7 +194,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				
 				for( Object o : viewer.getCheckedElements() ) {
 					IField f = (IField) o;
-					generateAccessors(type, propertyType, listRewriter, f, null);
+					generateAccessors(astRoot, type, propertyType, listRewriter, f, null);
 				}
 				
 				TextEdit fEdit = astRewrite.rewriteAST();
@@ -219,66 +212,66 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				e.printStackTrace();
 			}
 			
-			super.okPressed();
+//			super.okPressed();
 		}
 	}
 	
-	static void generateAccessors(IType ownerType, IType propertyType, ListRewrite rewrite, IField f, IJavaElement sibling) throws JavaModelException {
-		IType fieldType = Util.toType(ownerType, f.getTypeSignature());
+	static IMethodBinding findMethodBinding(ITypeBinding type, String name) throws JavaModelException {
+		for( IMethodBinding b : type.getDeclaredMethods() ) {
+			if( name.equals(b.getName()) && b.getParameterTypes().length == 0 ) {
+				return b; 
+			}
+		}
+		if( "java.lang.Object".equals(type.getQualifiedName()) ) {
+			return null;	
+		}
+		return findMethodBinding(type.getSuperclass(), name);
+	}
+	
+	static void generateAccessors(CompilationUnit cu, IType ownerType, IType propertyType, ListRewrite rewrite, IField f, IJavaElement sibling) throws JavaModelException {
+		ASTNode astNode = ASTNodeSearchUtil.getAstNode(cu, f.getSourceRange().getOffset(), f.getSourceRange().getLength());
+		FieldDeclaration fDec = (FieldDeclaration) astNode;
 		
-		boolean readonlyWrapper = isReadonlyWrapper(fieldType);
+		ITypeBinding tp = fDec.getType().resolveBinding();
+		// first search for get which returns the primitive type
+		IMethodBinding accessMethod = findMethodBinding(tp, "get");
+		if( accessMethod == null ) {
+			accessMethod = findMethodBinding(tp, "getValue");
+		}
 		
-		String propertyContent = generatePropertyAccessContent(f, fieldType, readonlyWrapper);
+		if( accessMethod == null ) {
+			return;
+		}
+		
+		IMethodBinding readonlyMethod = findMethodBinding(tp, "getReadOnlyProperty");
+		
+		String propertyContent = generatePropertyAccessContent(f, readonlyMethod);
 		
 		ASTNode insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, propertyContent , rewrite, insertion);
 		
-		String getterContent = generateGetAccessContent(f, fieldType);
+		String getterContent = generateGetAccessContent(f, accessMethod);
 		insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, getterContent , rewrite, insertion);
 		
-		if( ! readonlyWrapper && ! isReadonly(fieldType, propertyType) ) {
-			String setterContent = generateSetAccessContent(f, fieldType);
+		IType fieldType = Util.toType(ownerType, f.getTypeSignature());
+		if( readonlyMethod == null && ! isReadonly(fieldType, propertyType) ) {
+			String setterContent = generateSetAccessContent(f, accessMethod);
 			insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 			addNewAccessor(ownerType, f, setterContent , rewrite, insertion);
 		}
-		
 	}
 	
-	static IMethod getMethod(IType type, String methodName, String... arguments) throws JavaModelException {
-		IMethod method = type.getMethod(methodName, new String[0]);
-		if( ! method.exists() ) {
-			for( String s : type.getSuperInterfaceNames() ) {
-				IMethod m = getMethod(type.getJavaProject().findType(s), methodName, arguments);
-				if( m.exists() ) {
-					return m;
-				}
-			}
-			
-			String[][] resolveType = type.resolveType(type.getSuperclassName());
-			String fqn = resolveType[0][0]+"."+resolveType[0][1]; //$NON-NLS-1$
-			if( ! "java.lang.Object".equals(fqn) ) {
-				return getMethod(type.getJavaProject().findType(fqn), methodName, arguments);	
-			}
-		}
-		return method;
-	}
-	
-	static String generateSetAccessContent(IField f, IType fieldType) throws JavaModelException {
+	static String generateSetAccessContent(IField f, IMethodBinding accessMethod) throws JavaModelException {
 		String lineDelim = "\n";
 		StringBuffer buf = new StringBuffer();
 		buf.append("public void");
-		
-		IMethod method = getMethod(fieldType, "get"); //$NON-NLS-1$
-		if( !method.exists() ) {
-			method = getMethod(fieldType,"getValue"); //$NON-NLS-1$
-		}
-		
-		String sig = getType(f, method);
+				
+		String sig = accessMethod.getReturnType().getQualifiedName();
 		
 		buf.append(" set" + Util.toFirstUpper(f.getElementName()) + "(final "+sig+" "+f.getElementName()+") {");
 		buf.append(lineDelim);
-		buf.append("this."+f.getElementName()+"."+ method.getElementName().replace("get", "set") + "("+f.getElementName()+");");
+		buf.append("this."+f.getElementName()+"Property()."+ accessMethod.getName().replace("get", "set") + "("+f.getElementName()+");");
 		buf.append(lineDelim);
 		buf.append("}");
 		buf.append(lineDelim);
@@ -286,17 +279,12 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 		return buf.toString();
 	}
 	
-	static String generateGetAccessContent(IField f, IType fieldType) throws JavaModelException {
+	static String generateGetAccessContent(IField f, IMethodBinding accessMethod) throws JavaModelException {
 		String lineDelim = "\n";
 		StringBuffer buf = new StringBuffer();
 		buf.append("public ");
 		
-		IMethod method = getMethod(fieldType, "get"); //$NON-NLS-1$
-		if( !method.exists() ) {
-			method = getMethod(fieldType,"getValue"); //$NON-NLS-1$
-		}
-		
-		String sig = getType(f, method);
+		String sig = accessMethod.getReturnType().getQualifiedName();
 		buf.append(sig);
 		
 		if( "boolean".equals(sig) ) {
@@ -305,59 +293,50 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			buf.append(" get" + Util.toFirstUpper(f.getElementName()) + "() {");
 		}
 		buf.append(lineDelim);
-		buf.append("return this."+f.getElementName()+"."+method.getElementName() + "();");
+		buf.append("return this."+f.getElementName()+"Property()."+accessMethod.getName() + "();");
 		buf.append(lineDelim);
 		buf.append("}");
 		buf.append(lineDelim);
 		
 		return buf.toString();
 	}
+//	
+//	static String getType(IField f, IMethod method) throws JavaModelException {
+//		String returnType = method.getReturnType();
+//		String sig = Signature.toString(returnType);
+//		
+//		String typedParameter = null;
+//		ITypeParameter[] typeParameterSignatures = method.getDeclaringType().getTypeParameters();
+//		if( typeParameterSignatures.length == 1 ) {
+//			typedParameter = typeParameterSignatures[0].getElementName();
+//		}
+//		if( sig.equals(typedParameter) ) {
+//			String[] typeArgs = Signature.getTypeArguments(f.getTypeSignature());
+//			if( typeArgs.length > 0 ) {
+//				return Signature.toString(typeArgs[0]);
+//			} else {
+//				//FIXME We need to search now!!!
+//				return "String";	
+//			}
+//			
+//		} else {
+//			return sig;			
+//		}
+//	}
 	
-	static String getType(IField f, IMethod method) throws JavaModelException {
-		String returnType = method.getReturnType();
-		String sig = Signature.toString(returnType);
-		
-		String typedParameter = null;
-		ITypeParameter[] typeParameterSignatures = method.getDeclaringType().getTypeParameters();
-		if( typeParameterSignatures.length == 1 ) {
-			typedParameter = typeParameterSignatures[0].getElementName();
-		}
-		if( sig.equals(typedParameter) ) {
-			String[] typeArgs = Signature.getTypeArguments(f.getTypeSignature());
-			if( typeArgs.length > 0 ) {
-				return Signature.toString(typeArgs[0]);
-			} else {
-				//FIXME We need to search now!!!
-				return "String";	
-			}
-			
-		} else {
-			return sig;			
-		}
-	}
-	
-	static String generatePropertyAccessContent(IField f, IType fieldType, boolean readonlyWrapper) throws IllegalArgumentException, JavaModelException {
+	static String generatePropertyAccessContent(IField f, IMethodBinding readonlyBinding) throws IllegalArgumentException, JavaModelException {
 		String lineDelim = "\n";
 		StringBuffer buf = new StringBuffer();
 		buf.append("public ");
-		if( readonlyWrapper ) {
-			String returnType = fieldType.getMethod("getReadOnlyProperty", new String[0]).getReturnType();
-			String sig = Signature.toString(returnType);
-			String[] typeArguments = Signature.getTypeArguments(returnType);
-			if( typeArguments.length == 0 ) {
-				buf.append(sig);				
-			} else {
-				String[] typeArgs = Signature.getTypeArguments(f.getTypeSignature());
-				buf.append(Signature.toString(returnType.replace(typeArguments[0], typeArgs[0])));
-			}
-			
+		if( readonlyBinding != null ) {
+			buf.append(readonlyBinding.getReturnType().getQualifiedName());
 		} else {
 			buf.append(Signature.toString(f.getTypeSignature()));	
 		}
 		
 		buf.append(" " + f.getElementName()+"Property() {");
 		buf.append(lineDelim);
-		buf.append("return this."+f.getElementName() + ( readonlyWrapper ? ".getReadOnlyProperty()" : "" ) + ";");
+		buf.append("return this."+f.getElementName() + ( readonlyBinding != null ? ".getReadOnlyProperty()" : "" ) + ";");
 		buf.append(lineDelim);
 		buf.append("}");
 		buf.append(lineDelim);
