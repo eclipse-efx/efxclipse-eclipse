@@ -254,32 +254,28 @@
               commandId="org.eclipse.fx.ide.css.ui.addNature"
               label="Add CSS Editor Nature"
               style="push">
-           <visibleWhen
-                 checkEnabled="false">
-              <not>
-                 <adapt
-                       type="org.eclipse.core.resources.IResource">
-                    <test
-                          property="org.eclipse.core.resources.projectNature"
-                          value="org.eclipse.fx.ide.css.nature">
-                    </test>
-                 </adapt>
-              </not>
+           <visibleWhen>
+           		<with variable="selection">
+           			<not>
+           			 <iterate operator="and" ifEmpty="false">
+          				<test property="org.eclipse.core.resources.projectNature" 
+                  			value="org.eclipse.fx.ide.css.nature" />
+        			</iterate>
+        			</not>
+           		</with>
            </visibleWhen>
         </command>
         <command
               commandId="org.eclipse.fx.ide.css.ui.removeNature"
               label="Remove CSS Editor Nature"
               style="push">
-           <visibleWhen
-                 checkEnabled="false">
-              <adapt
-                    type="org.eclipse.core.resources.IResource">
-                 <test
-                       property="org.eclipse.core.resources.projectNature"
-                       value="org.eclipse.fx.ide.css.nature">
-                 </test>
-              </adapt>
+           <visibleWhen>
+           		<with variable="selection">
+           			 <iterate operator="and" ifEmpty="false">
+          				<test property="org.eclipse.core.resources.projectNature" 
+                  			value="org.eclipse.fx.ide.css.nature" />
+        			</iterate>
+           		</with>
            </visibleWhen>
         </command>
      </menuContribution>

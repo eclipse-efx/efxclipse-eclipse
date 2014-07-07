@@ -20,6 +20,8 @@ import org.eclipse.core.runtime.CoreException;
  */
 public class CSSEditorNature implements IProjectNature {
 
+	public static final String NATURE_ID = "org.eclipse.fx.ide.css.nature";
+	
 	private IProject project;
 	
 	/* (non-Javadoc)

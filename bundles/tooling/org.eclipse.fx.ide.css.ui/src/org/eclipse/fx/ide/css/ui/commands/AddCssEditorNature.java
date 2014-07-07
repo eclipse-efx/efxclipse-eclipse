@@ -9,25 +9,34 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.fx.core.log.Logger;
+import org.eclipse.fx.ide.css.CSSEditorNature;
+import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public class AddCssEditorNature extends AbstractHandler implements IHandler {
 
-	private final static String NATURE_ID = "org.eclipse.fx.ide.css.nature";
+	private Logger logger;
+	private Logger getLogger() {
+		if (this.logger == null) {
+			this.logger = LoggerCreator.createLogger(RemoveCssEditorNature.class);
+		}
+		return this.logger;
+	}
 	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final IProject project = getProject(event);
-
+		this.getLogger().debug("adding css nature to " + project.getName()); //$NON-NLS-1$
 		try {
 			IProjectDescription description = project.getDescription();
 			String[] natureIds = description.getNatureIds();
 			
 			boolean found = false;
 			for (String natureId : natureIds) {
-				if (NATURE_ID.equals(natureId)) {
+				if (CSSEditorNature.NATURE_ID.equals(natureId)) {
 					found = true;
 					break;
 				}
@@ -39,7 +48,7 @@ public class AddCssEditorNature extends AbstractHandler implements IHandler {
 				for (i = 0; i < natureIds.length; i++) {
 					newNatureIds[i] = natureIds[i];
 				}
-				newNatureIds[natureIds.length] = NATURE_ID;
+				newNatureIds[natureIds.length] = CSSEditorNature.NATURE_ID;
 				description.setNatureIds(newNatureIds);
 				project.setDescription(description, new NullProgressMonitor());
 			}
