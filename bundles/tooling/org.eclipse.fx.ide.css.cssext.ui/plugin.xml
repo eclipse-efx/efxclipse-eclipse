@@ -309,6 +309,12 @@
                    <adapt
                          type="org.eclipse.core.resources.IProject">
                    </adapt>
+                   <adapt
+                         type="org.eclipse.jdt.core.IPackageFragment">
+                   </adapt>
+                   <adapt
+                         type="org.eclipse.jdt.core.IPackageFragmentRoot">
+                   </adapt>
                 </or>
              </and>
           </enabledWhen>
