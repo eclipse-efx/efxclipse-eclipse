@@ -31,7 +31,7 @@ import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.LibraryLocation;
 
 public class BuildPathSupport {
-	public static final String WEB_JAVADOC_LOCATION = "http://docs.oracle.com/javafx/2/api/";
+	public static final String WEB_JAVADOC_LOCATION = "http://docs.oracle.com/javase/8/javafx/api/";
 	
 	private static final Logger LOGGER = LoggerCreator.createLogger(BuildPathSupport.class);
 	
