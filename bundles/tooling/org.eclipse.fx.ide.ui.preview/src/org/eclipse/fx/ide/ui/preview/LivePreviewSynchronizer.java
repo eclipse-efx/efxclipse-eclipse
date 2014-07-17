@@ -155,12 +155,15 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 				} else if( e.getEntryKind() == IClasspathEntry.CPE_CONTAINER ) {
 					if( ! e.getPath().toString().startsWith("org.eclipse.jdt.launching.JRE_CONTAINER")
 							&& ! e.getPath().toString().startsWith("org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER")) {
+//						System.err.println("====> A container");
+						
 						IClasspathContainer cp = JavaCore.getClasspathContainer(e.getPath(), project);
 						for( IClasspathEntry ce : cp.getClasspathEntries() ) {
+//							System.err.println(ce.getEntryKind() + "=> " + ce);
 							if( ce.getEntryKind() == IClasspathEntry.CPE_LIBRARY ) {
 								listRefLibraries.add(ce.getPath());	
 							} else if( ce.getEntryKind() == IClasspathEntry.CPE_PROJECT ) {
-								IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(e.getPath().lastSegment());
+								IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(ce.getPath().lastSegment());
 								if (p.exists()) {
 									resolveDataProject(JavaCore.create(p), outputPath, listRefLibraries);
 								}
