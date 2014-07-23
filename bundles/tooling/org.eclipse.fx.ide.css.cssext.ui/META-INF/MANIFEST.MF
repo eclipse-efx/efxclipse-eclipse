@@ -21,26 +21,26 @@ Require-Bundle: org.eclipse.fx.ide.css.cssext;visibility:=reexport,
  org.eclipse.jdt.core;bundle-version="3.7.3"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.fx.ide.css.cssext.ui;
+Export-Package: org.eclipse.fx.ide.css.cssext.ui;x-internal:=true;
   uses:="org.eclipse.core.resources,
    org.eclipse.ui.plugin,
    org.osgi.framework,
    org.eclipse.xtext.ui,
    org.eclipse.xtext.ui.guice,
    com.google.inject",
- org.eclipse.fx.ide.css.cssext.ui.contentassist;
+ org.eclipse.fx.ide.css.cssext.ui.contentassist;x-internal:=true;
   uses:="org.eclipse.xtext,
    org.eclipse.emf.ecore,
    org.eclipse.xtext.common.ui.contentassist,
    org.eclipse.xtext.ui.editor.contentassist",
- org.eclipse.fx.ide.css.cssext.ui.contentassist.antlr;
+ org.eclipse.fx.ide.css.cssext.ui.contentassist.antlr;x-internal:=true;
   uses:="org.eclipse.xtext,
    org.eclipse.fx.ide.css.cssext.services,
    org.eclipse.fx.ide.css.cssext.ui.contentassist.antlr.internal,
    org.eclipse.xtext.ui.editor.contentassist.antlr.internal,
    org.eclipse.xtext.ui.codetemplates.ui.partialEditing,
    org.eclipse.xtext.ui.editor.contentassist.antlr",
- org.eclipse.fx.ide.css.cssext.ui.internal;uses:="org.eclipse.ui.plugin,org.osgi.framework,com.google.inject"
+ org.eclipse.fx.ide.css.cssext.ui.internal;x-internal:=true;uses:="org.eclipse.ui.plugin,org.osgi.framework,com.google.inject"
 Bundle-Activator: org.eclipse.fx.ide.css.cssext.ui.internal.CssExtDslActivator
 Service-Component: OSGI-INF/cssExtProvider.xml,
  OSGI-INF/ColorProposalContributor.xml
