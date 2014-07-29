@@ -20,7 +20,9 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.jdt.ui.internal.Util;
+import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
@@ -57,9 +59,11 @@ import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CheckboxTableViewer;
+import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -108,12 +112,21 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 		return null;
 	}
 
-	
+	static class PropertyItem {
+		final IField field;
+//		boolean makeFinal = true;
+		
+		public PropertyItem(IField field) {
+			this.field = field;
+		}
+	}
 	
 	public static class GetterSetterDialog extends TitleAreaDialog {
+		private Logger logger = LoggerCreator.createLogger(getClass());
 		private final IType type;
 		private Util util;
 		private CheckboxTableViewer viewer;
+		private Button makeMethodsFinal;
 		
 		public GetterSetterDialog(Shell parentShell, IType type) {
 			super(parentShell);
@@ -138,23 +151,34 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			gd.heightHint=200;
 			this.viewer.getControl().setLayoutData(gd);
 			this.viewer.setContentProvider(ArrayContentProvider.getInstance());
-//			viewer.getTable().setHeaderVisible(true);
-//			viewer.getTable().setLinesVisible(true);
-			this.viewer.setLabelProvider(new JavaElementLabelProvider());
+			JavaElementLabelProvider provider = new JavaElementLabelProvider();
+			this.viewer.setLabelProvider(new ColumnLabelProvider() {
+				@Override
+				public Image getImage(Object element) {
+					return provider.getImage(((PropertyItem)element).field);
+				}
+				
+				@Override
+				public String getText(Object element) {
+					PropertyItem i = (PropertyItem) element;
+					return provider.getText(i.field);
+				}
+			});
+			
+			
 			try {
-				List<IField> candidates = new ArrayList<>();
+				List<PropertyItem> candidates = new ArrayList<>();
 				for( IField f : this.type.getFields() ) {
 					if( this.util.isPropertyField(this.type, f) 
 							&& ! this.type.getMethod("get" + Util.toFirstUpper(f.getElementName()), new String[0]).exists() //$NON-NLS-1$
 							&& ! this.type.getMethod("is" + Util.toFirstUpper(f.getElementName()), new String[0]).exists() //$NON-NLS-1$
 							&& ! this.type.getMethod(f.getElementName()+"Property", new String[0]).exists()) { //$NON-NLS-1$
-						candidates.add(f);
+						candidates.add(new PropertyItem(f));
 					}
 				}
 				this.viewer.setInput(candidates);
 			} catch (JavaModelException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				this.logger.error("Failure while analyzing the class", e); //$NON-NLS-1$
 			}
 			
 			Composite buttonContainer = new Composite(content, SWT.NONE);
@@ -174,50 +198,50 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				b.setLayoutData(new GridData(SWT.FILL,SWT.DEFAULT,false,false));
 			}
 			
+			{
+				this.makeMethodsFinal = new Button(buttonContainer, SWT.CHECK);
+				this.makeMethodsFinal.setText("make methods final");
+				this.makeMethodsFinal.addListener(SWT.Selection, (e) -> this.viewer.setAllChecked(false));
+				this.makeMethodsFinal.setSelection(true);
+				this.makeMethodsFinal.setLayoutData(new GridData(SWT.FILL,SWT.DEFAULT,false,false));
+			}
+			
 			return container;
 		}
 		
 		@Override
 		protected void okPressed() {
 			try {
-				CompilationUnit astRoot = new RefactoringASTParser(ASTProvider.SHARED_AST_LEVEL).parse(type.getCompilationUnit(), true);
+				CompilationUnit astRoot = new RefactoringASTParser(ASTProvider.SHARED_AST_LEVEL).parse(this.type.getCompilationUnit(), true);
 				
-				final ICompilationUnit unit= type.getCompilationUnit();
+				final ICompilationUnit unit= this.type.getCompilationUnit();
 				final ASTRewrite astRewrite= ASTRewrite.create(astRoot.getAST());
 				ListRewrite listRewriter= null;
-				if (type.isAnonymous()) {
-					final ClassInstanceCreation creation= (ClassInstanceCreation) ASTNodes.getParent(NodeFinder.perform(astRoot, type.getNameRange()), ClassInstanceCreation.class);
+				if (this.type.isAnonymous()) {
+					final ClassInstanceCreation creation= (ClassInstanceCreation) ASTNodes.getParent(NodeFinder.perform(astRoot, this.type.getNameRange()), ClassInstanceCreation.class);
 					if (creation != null) {
 						final AnonymousClassDeclaration declaration= creation.getAnonymousClassDeclaration();
 						if (declaration != null)
 							listRewriter= astRewrite.getListRewrite(declaration, AnonymousClassDeclaration.BODY_DECLARATIONS_PROPERTY);
 					}
 				} else {
-					final AbstractTypeDeclaration declaration= (AbstractTypeDeclaration) ASTNodes.getParent(NodeFinder.perform(astRoot, type.getNameRange()), AbstractTypeDeclaration.class);
+					final AbstractTypeDeclaration declaration= (AbstractTypeDeclaration) ASTNodes.getParent(NodeFinder.perform(astRoot, this.type.getNameRange()), AbstractTypeDeclaration.class);
 					if (declaration != null)
 						listRewriter= astRewrite.getListRewrite(declaration, declaration.getBodyDeclarationsProperty());
 				}
 				
-				IType propertyType = type.getJavaProject().findType("javafx.beans.property.Property");
+				IType propertyType = this.type.getJavaProject().findType("javafx.beans.property.Property"); //$NON-NLS-1$
 				
-				for( Object o : viewer.getCheckedElements() ) {
-					IField f = (IField) o;
-					generateAccessors(astRoot, type, propertyType, listRewriter, f, null);
+				for( Object o : this.viewer.getCheckedElements() ) {
+					PropertyItem i = (PropertyItem) o;
+					generateAccessors(astRoot, this.type, propertyType, listRewriter, i.field, null, this.makeMethodsFinal.getSelection());
 				}
 				
 				TextEdit fEdit = astRewrite.rewriteAST();
 				JavaModelUtil.applyEdit(unit, fEdit, true, new SubProgressMonitor(new NullProgressMonitor(), 1));
 				
-			} catch(JavaModelException e) {
-				e.printStackTrace();
-			}
-			// TODO Auto-generated method stub
-			catch (ValidateEditException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch(CoreException e) {
+				this.logger.error("Failure while generating accessor code", e); //$NON-NLS-1$
 			}
 			
 			super.okPressed();
@@ -230,130 +254,107 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				return b; 
 			}
 		}
-		if( "java.lang.Object".equals(type.getQualifiedName()) ) {
+		if( "java.lang.Object".equals(type.getQualifiedName()) ) { //$NON-NLS-1$
 			return null;	
 		}
 		return findMethodBinding(type.getSuperclass(), name);
 	}
 	
-	static void generateAccessors(CompilationUnit cu, IType ownerType, IType propertyType, ListRewrite rewrite, IField f, IJavaElement sibling) throws JavaModelException {
+	static void generateAccessors(CompilationUnit cu, IType ownerType, IType propertyType, ListRewrite rewrite, IField f, IJavaElement sibling, boolean makeFinal) throws JavaModelException {
 		ASTNode astNode = ASTNodeSearchUtil.getAstNode(cu, f.getSourceRange().getOffset(), f.getSourceRange().getLength());
 		FieldDeclaration fDec = (FieldDeclaration) astNode;
 		
 		ITypeBinding tp = fDec.getType().resolveBinding();
 		// first search for get which returns the primitive type
-		IMethodBinding accessMethod = findMethodBinding(tp, "get");
+		IMethodBinding accessMethod = findMethodBinding(tp, "get"); //$NON-NLS-1$
 		if( accessMethod == null ) {
-			accessMethod = findMethodBinding(tp, "getValue");
+			accessMethod = findMethodBinding(tp, "getValue"); //$NON-NLS-1$
 		}
 		
 		if( accessMethod == null ) {
 			return;
 		}
 		
-		IMethodBinding readonlyMethod = findMethodBinding(tp, "getReadOnlyProperty");
+		IMethodBinding readonlyMethod = findMethodBinding(tp, "getReadOnlyProperty"); //$NON-NLS-1$
 		
-		String propertyContent = generatePropertyAccessContent(f, readonlyMethod);
+		String propertyContent = generatePropertyAccessContent(f, makeFinal, readonlyMethod);
 		
 		ASTNode insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, propertyContent , rewrite, insertion);
 		
-		String getterContent = generateGetAccessContent(f, accessMethod);
+		String getterContent = generateGetAccessContent(f, makeFinal, accessMethod);
 		insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, getterContent , rewrite, insertion);
 		
 		IType fieldType = Util.toType(ownerType, f.getTypeSignature());
 		if( readonlyMethod == null && ! isReadonly(fieldType, propertyType) ) {
-			String setterContent = generateSetAccessContent(f, accessMethod);
+			String setterContent = generateSetAccessContent(f, makeFinal, accessMethod);
 			insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 			addNewAccessor(ownerType, f, setterContent , rewrite, insertion);
 		}
 	}
 	
-	static String generateSetAccessContent(IField f, IMethodBinding accessMethod) throws JavaModelException {
-		String lineDelim = "\n";
+	static String generateSetAccessContent(IField f, boolean makeFinal, IMethodBinding accessMethod) throws JavaModelException {
+		String lineDelim = "\n"; //$NON-NLS-1$
 		StringBuffer buf = new StringBuffer();
-		buf.append("public void");
+		buf.append("public "+(makeFinal?"final ":"")+" void");    //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$//$NON-NLS-4$
 				
 		String sig = accessMethod.getReturnType().getQualifiedName();
 		
-		buf.append(" set" + Util.toFirstUpper(f.getElementName()) + "(final "+sig+" "+f.getElementName()+") {");
+		buf.append(" set" + Util.toFirstUpper(f.getElementName()) + "(final "+sig+" "+f.getElementName()+") {"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		buf.append(lineDelim);
-		buf.append("this."+f.getElementName()+"Property()."+ accessMethod.getName().replace("get", "set") + "("+f.getElementName()+");");
+		buf.append("this."+f.getElementName()+"Property()."+ accessMethod.getName().replace("get", "set") + "("+f.getElementName()+");");    //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$//$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
 		buf.append(lineDelim);
-		buf.append("}");
+		buf.append("}"); //$NON-NLS-1$
 		buf.append(lineDelim);
 		
 		return buf.toString();
 	}
 	
-	static String generateGetAccessContent(IField f, IMethodBinding accessMethod) throws JavaModelException {
-		String lineDelim = "\n";
+	static String generateGetAccessContent(IField f, boolean makeFinal, IMethodBinding accessMethod) throws JavaModelException {
+		String lineDelim = "\n"; //$NON-NLS-1$
 		StringBuffer buf = new StringBuffer();
-		buf.append("public ");
+		buf.append("public "+(makeFinal?"final ":""));   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 		
 		String sig = accessMethod.getReturnType().getQualifiedName();
 		buf.append(sig);
 		
-		if( "boolean".equals(sig) ) {
-			buf.append(" is" + Util.toFirstUpper(f.getElementName()) + "() {");
+		if( "boolean".equals(sig) ) { //$NON-NLS-1$
+			buf.append(" is" + Util.toFirstUpper(f.getElementName()) + "() {");  //$NON-NLS-1$//$NON-NLS-2$
 		} else {
-			buf.append(" get" + Util.toFirstUpper(f.getElementName()) + "() {");
+			buf.append(" get" + Util.toFirstUpper(f.getElementName()) + "() {");  //$NON-NLS-1$//$NON-NLS-2$
 		}
 		buf.append(lineDelim);
-		buf.append("return this."+f.getElementName()+"Property()."+accessMethod.getName() + "();");
+		buf.append("return this."+f.getElementName()+"Property()."+accessMethod.getName() + "();");   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 		buf.append(lineDelim);
-		buf.append("}");
+		buf.append("}"); //$NON-NLS-1$
 		buf.append(lineDelim);
 		
 		return buf.toString();
 	}
-//	
-//	static String getType(IField f, IMethod method) throws JavaModelException {
-//		String returnType = method.getReturnType();
-//		String sig = Signature.toString(returnType);
-//		
-//		String typedParameter = null;
-//		ITypeParameter[] typeParameterSignatures = method.getDeclaringType().getTypeParameters();
-//		if( typeParameterSignatures.length == 1 ) {
-//			typedParameter = typeParameterSignatures[0].getElementName();
-//		}
-//		if( sig.equals(typedParameter) ) {
-//			String[] typeArgs = Signature.getTypeArguments(f.getTypeSignature());
-//			if( typeArgs.length > 0 ) {
-//				return Signature.toString(typeArgs[0]);
-//			} else {
-//				//FIXME We need to search now!!!
-//				return "String";	
-//			}
-//			
-//		} else {
-//			return sig;			
-//		}
-//	}
 	
-	static String generatePropertyAccessContent(IField f, IMethodBinding readonlyBinding) throws IllegalArgumentException, JavaModelException {
-		String lineDelim = "\n";
+	static String generatePropertyAccessContent(IField f, boolean makeFinal, IMethodBinding readonlyBinding) throws IllegalArgumentException, JavaModelException {
+		String lineDelim = "\n"; //$NON-NLS-1$
 		StringBuffer buf = new StringBuffer();
-		buf.append("public ");
+		buf.append("public "+(makeFinal?"final ":""));   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 		if( readonlyBinding != null ) {
 			buf.append(readonlyBinding.getReturnType().getQualifiedName());
 		} else {
 			buf.append(Signature.toString(f.getTypeSignature()));	
 		}
 		
-		buf.append(" " + f.getElementName()+"Property() {");
+		buf.append(" " + f.getElementName()+"Property() {");  //$NON-NLS-1$//$NON-NLS-2$
 		buf.append(lineDelim);
-		buf.append("return this."+f.getElementName() + ( readonlyBinding != null ? ".getReadOnlyProperty()" : "" ) + ";");
+		buf.append("return this."+f.getElementName() + ( readonlyBinding != null ? ".getReadOnlyProperty()" : "" ) + ";"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		buf.append(lineDelim);
-		buf.append("}");
+		buf.append("}"); //$NON-NLS-1$
 		buf.append(lineDelim);
 		
 		return buf.toString();
 	}
 	
 	static boolean isReadonlyWrapper(IType fieldType) throws JavaModelException {
-		return fieldType.getMethod("getReadOnlyProperty", new String[0]).exists();
+		return fieldType.getMethod("getReadOnlyProperty", new String[0]).exists(); //$NON-NLS-1$
 	}
 	
 	static boolean isReadonly(IType fieldType, IType propertyType) {
