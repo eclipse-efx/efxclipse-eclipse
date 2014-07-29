@@ -24,31 +24,22 @@ import org.eclipse.fx.ide.jdt.ui.internal.Util;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
-import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
-import org.eclipse.jdt.core.ITypeParameter;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
-import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.AbstractTypeDeclaration;
 import org.eclipse.jdt.core.dom.AnonymousClassDeclaration;
-import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.FieldAccess;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.NodeFinder;
-import org.eclipse.jdt.core.dom.SimpleName;
-import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
-import org.eclipse.jdt.internal.core.util.ASTNodeFinder;
 import org.eclipse.jdt.internal.corext.ValidateEditException;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility2;
@@ -60,9 +51,9 @@ import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jdt.internal.ui.actions.SelectionConverter;
 import org.eclipse.jdt.internal.ui.javaeditor.ASTProvider;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
-import org.eclipse.jdt.internal.ui.text.correction.ASTResolving;
 import org.eclipse.jdt.ui.JavaElementLabelProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
+import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CheckboxTableViewer;
@@ -71,6 +62,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -106,7 +98,6 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			}
 		} else if( selection instanceof IStructuredSelection ) {
 			List list = ((IStructuredSelection) selection).toList();
-			System.err.println(list);
 		}
 		
 		if( type != null ) {
@@ -140,16 +131,16 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			
 			Composite content = new Composite(container, SWT.NONE);
 			content.setLayoutData(new GridData(GridData.FILL_BOTH));
-			content.setLayout(new GridLayout());
+			content.setLayout(new GridLayout(2,false));
 			
-			viewer = new CheckboxTableViewer(new Table(content, SWT.FULL_SELECTION|SWT.CHECK|SWT.BORDER|SWT.V_SCROLL|SWT.H_SCROLL));
+			this.viewer = new CheckboxTableViewer(new Table(content, SWT.FULL_SELECTION|SWT.CHECK|SWT.BORDER|SWT.V_SCROLL|SWT.H_SCROLL));
 			GridData gd = new GridData(GridData.FILL_BOTH);
 			gd.heightHint=200;
-			viewer.getControl().setLayoutData(gd);
-			viewer.setContentProvider(ArrayContentProvider.getInstance());
+			this.viewer.getControl().setLayoutData(gd);
+			this.viewer.setContentProvider(ArrayContentProvider.getInstance());
 //			viewer.getTable().setHeaderVisible(true);
 //			viewer.getTable().setLinesVisible(true);
-			viewer.setLabelProvider(new JavaElementLabelProvider());
+			this.viewer.setLabelProvider(new JavaElementLabelProvider());
 			try {
 				List<IField> candidates = new ArrayList<>();
 				for( IField f : this.type.getFields() ) {
@@ -160,10 +151,27 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 						candidates.add(f);
 					}
 				}
-				viewer.setInput(candidates);
+				this.viewer.setInput(candidates);
 			} catch (JavaModelException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+			
+			Composite buttonContainer = new Composite(content, SWT.NONE);
+			buttonContainer.setLayout(GridLayoutFactory.fillDefaults().create());
+			buttonContainer.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_BEGINNING));
+			{
+				Button b = new Button(buttonContainer, SWT.PUSH);
+				b.setText("Select All");
+				b.addListener(SWT.Selection, (e) -> this.viewer.setAllChecked(true));
+				b.setLayoutData(new GridData(SWT.FILL,SWT.DEFAULT,false,false));
+			}
+			
+			{
+				Button b = new Button(buttonContainer, SWT.PUSH);
+				b.setText("Deselect All");
+				b.addListener(SWT.Selection, (e) -> this.viewer.setAllChecked(false));
+				b.setLayoutData(new GridData(SWT.FILL,SWT.DEFAULT,false,false));
 			}
 			
 			return container;
@@ -212,7 +220,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				e.printStackTrace();
 			}
 			
-//			super.okPressed();
+			super.okPressed();
 		}
 	}
 	
