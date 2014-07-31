@@ -12,37 +12,35 @@ package org.eclipse.fx.ide.css.cssext.ui;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource.Factory;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.fx.ide.css.cssext.CssExtDslStandaloneSetup;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
 
 /**
  * @author ccaks
  *
  */
 public class CssFile {
-
+	private static Map<URI, CssExtensionNfo> EXTENSION_CACHE = new HashMap<>();
+	
 	public static class CssExtensionNfo {
 		public final URI uri;
 		public final CssExtension model;
@@ -200,20 +198,27 @@ public class CssFile {
 		for (ClassPathSearchUtil.Entry entry : allFiles) {
 			// load model
 			final URI uri = entry.toURI();
-			try {
-				Resource resource = rs.createResource(uri);
-				resource.setURI(uri);
-				resource.load(Collections.emptyMap());
-				
-				final CssExtension ex = (CssExtension) resource.getContents().get(0);
-				extensions.add(new CssExtensionNfo(uri, ex));
-			}
-			catch (Exception e) {
-				System.err.println("could not load model : " + uri);
-				e.printStackTrace();
+			if( EXTENSION_CACHE.containsKey(uri) ) {
+				extensions.add(EXTENSION_CACHE.get(uri));
+			} else {
+				try {
+					Resource resource = rs.createResource(uri);
+					resource.setURI(uri);
+					resource.load(Collections.emptyMap());
+					
+					final CssExtension ex = (CssExtension) resource.getContents().get(0);
+					CssExtensionNfo e = new CssExtensionNfo(uri, ex);
+					EXTENSION_CACHE.put(uri, e);
+					extensions.add(e);
+				}
+				catch (Exception e) {
+					System.err.println("could not load model : " + uri);
+					e.printStackTrace();
+				}				
 			}
 			
 		}
+		
 		return extensions;
 	}
 }
