@@ -273,7 +273,7 @@
              adaptableType="org.eclipse.core.resources.IResource"
              class="org.eclipse.fx.ide.css.cssext.ui.CssAdapterFactory">
           <adapter
-                type="org.eclipse.fx.ide.css.cssext.ui.CssFile">
+                type="org.eclipse.fx.ide.css.cssext.ui.ICssResource">
           </adapter>
        </factory>
     </extension>

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Christoph Caks<ccaks@bestsolution.at> - initial API and implementation
+ *     Christoph Caks <ccaks@bestsolution.at> - initial API and implementation
  *******************************************************************************/
 package org.eclipse.fx.ide.css.cssext.ui;
 
@@ -338,7 +338,7 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	private Set<CssExtension> collectModels(IFile file) {
-		CssFile cssFile = (CssFile) Platform.getAdapterManager().getAdapter(file, CssFile.class);
+		ICssResource cssFile = (ICssResource) Platform.getAdapterManager().getAdapter(file, ICssResource.class);
 		
 		if (cssFile != null) {
 			System.err.println("USING extensions from cssFile");
