@@ -48,7 +48,9 @@ public class Util {
 	public boolean isPropertyField(IType owerType, IField f) {
 		try {
 			IType type = toType(owerType, f.getTypeSignature());
-			return assignable(type,getReadOnlyProperty());
+			if( type != null ) {
+				return assignable(type,getReadOnlyProperty());	
+			}
 		} catch (JavaModelException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
