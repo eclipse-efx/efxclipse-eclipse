@@ -125,7 +125,6 @@ public class ExtensionRegistry {
 		public void elementChanged(ElementChangedEvent event) {
 			List<URI> changedExtensions = new ArrayList<URI>();
 			recCheckChangedExtensions(event.getDelta(), changedExtensions);
-			System.err.println(changedExtensions);
 			for (URI changedEx : changedExtensions) {
 				invalidateExtension(changedEx);
 			}

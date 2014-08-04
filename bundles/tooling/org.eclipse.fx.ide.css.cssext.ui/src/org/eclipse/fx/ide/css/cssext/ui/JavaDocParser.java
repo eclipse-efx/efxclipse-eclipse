@@ -47,7 +47,6 @@ public class JavaDocParser {
 	
 	
 	public static void main(String[] args) {
-		System.err.println("begin");
 		String s = 	"/**\n";
 		 s+=		" * No whitespace is allowed between the number and units if provided.\n";
 		 s+=		" *  TODO wie bau ma so was ein!?\n";

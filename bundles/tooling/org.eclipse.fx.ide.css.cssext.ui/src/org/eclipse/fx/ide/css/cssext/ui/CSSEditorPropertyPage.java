@@ -258,23 +258,23 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 					ArrayList<URI> input = new ArrayList<>();
 					
 					List<URI> inheritedClasspathExtensions = r.getInheritedClasspathExtensions();
-					System.err.println("adding inherited classpath extensions: " + inheritedClasspathExtensions.size() + " / " + inheritedClasspathExtensions);
+					getLogger().debug("adding inherited classpath extensions: " + inheritedClasspathExtensions.size() + " / " + inheritedClasspathExtensions);
 					input.addAll(inheritedClasspathExtensions);
-					System.err.println("result -> " + input.size() + " / " + input);
+					getLogger().debug("result -> " + input.size() + " / " + input);
 					List<URI> classpathExtensions = r.getClasspathExtensions();
-					System.err.println("adding classpath extensions: " + classpathExtensions.size() + " / " + classpathExtensions);
+					getLogger().debug("adding classpath extensions: " + classpathExtensions.size() + " / " + classpathExtensions);
 					input.addAll(classpathExtensions);
-					System.err.println("result -> " + input.size() + " / " + input);
+					getLogger().debug("result -> " + input.size() + " / " + input);
 					List<URI> inheritedCustomExtensions = r.getInheritedCustomExtensions();
-					System.err.println("adding inherited custom extensions: " + inheritedCustomExtensions.size() + " / " + inheritedCustomExtensions);
+					getLogger().debug("adding inherited custom extensions: " + inheritedCustomExtensions.size() + " / " + inheritedCustomExtensions);
 					input.addAll(inheritedCustomExtensions);
-					System.err.println("result -> " + input.size() + " / " + input);
+					getLogger().debug("result -> " + input.size() + " / " + input);
 					List<URI> customExtensions = r.getCustomExtensions();
-					System.err.println("adding custom extensions: " + customExtensions.size() + " / " + customExtensions);
+					getLogger().debug("adding custom extensions: " + customExtensions.size() + " / " + customExtensions);
 					input.addAll(customExtensions);
-					System.err.println("result -> " + input.size() + " / " + input);
+					getLogger().debug("result -> " + input.size() + " / " + input);
 					
-					System.err.println("SETTING INPUT TO " + input);
+					getLogger().debug("SETTING INPUT TO " + input);
 					extensionViewer.setInput(input);
 				}
 				else {

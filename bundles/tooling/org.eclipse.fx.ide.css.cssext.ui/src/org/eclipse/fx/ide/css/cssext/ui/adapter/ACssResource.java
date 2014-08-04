@@ -111,6 +111,7 @@ public abstract class ACssResource implements ICssResource {
 	}
 	
 	private List<URI> parseURIs(String data) {
+		getLogger().debug("parseURIs(" + data + ")");
 		String[] disabledExtensionURIs = data.split(",");
 		List<URI> uris = new ArrayList<>();
 		for (String uriString : disabledExtensionURIs) {
@@ -119,7 +120,7 @@ public abstract class ACssResource implements ICssResource {
 				uris.add(uri);
 			}
 		}
-		System.err.println("result = " + uris.size() + " / " + uris);
+		getLogger().debug(" result = " + uris.size() + " / " + uris);
 		return uris;
 	}
 	
@@ -127,7 +128,6 @@ public abstract class ACssResource implements ICssResource {
 		setUseCustom(Boolean.parseBoolean(this.adaptedObject.getPersistentProperty(KEY_USE_CUSTOM)));
 		
 		final String disabledExtensionsData = this.adaptedObject.getPersistentProperty(KEY_DISABLED_EXTENSIONS);
-		System.err.println("parsing disabled extensions data: " + disabledExtensionsData);
 		if (disabledExtensionsData != null) {
 			List<URI> uris = parseURIs(disabledExtensionsData);
 			propertyChangeSupport.firePropertyChange("disabledCssExtensions", disabledExtensions, disabledExtensions = uris);
@@ -138,20 +138,17 @@ public abstract class ACssResource implements ICssResource {
 		
 		
 		final String customExtensionsData = this.adaptedObject.getPersistentProperty(KEY_CUSTOM_EXTENSIONS);
-		System.err.println("parsing disabled extensions data: " + customExtensionsData);
 		if (customExtensionsData != null) {
 			List<URI> uris = parseURIs(customExtensionsData);
-			System.err.println("result = " + uris.size() + " / " + uris);
 			propertyChangeSupport.firePropertyChange("customCssExtensions", customExtensions, customExtensions = uris);
 		}
 		else {
 			propertyChangeSupport.firePropertyChange("customCssExtensions", customExtensions, customExtensions = new ArrayList<>());
 		}
 		
-		
-		System.err.println("LOAD DONE");
-		System.err.println("disabled: " + disabledExtensions);
-		System.err.println("custom: " + customExtensions);
+		getLogger().debug("load done");
+		getLogger().debug("disabled: " + disabledExtensions);
+		getLogger().debug("custom: " + customExtensions);
 	}
 	
 	
@@ -241,20 +238,16 @@ public abstract class ACssResource implements ICssResource {
 	
 	@Override
 	public List<URI> getAllEnabledExtensions() {
-		getLogger().debug("getAllEnabledExtensions()");
+		getLogger().trace("getAllEnabledExtensions()");
 		List<URI> allEnabled = new ArrayList<>();
 		
 		ICssResource parentResource = getParentResource();
 		if (parentResource != null) {
 			allEnabled.addAll(parentResource.getAllEnabledExtensions());
 		}
-		getLogger().debug("after add from parent: " + allEnabled);
 		allEnabled.addAll(getClasspathExtensions());
-		getLogger().debug("after cp: " + allEnabled);
 		allEnabled.addAll(getCustomExtensions());
-		getLogger().debug("after custom: " + allEnabled);
 		allEnabled.removeAll(getDisabledExtensions());
-		getLogger().debug("after disabled: " + allEnabled);
 		
 		return allEnabled;
 	}

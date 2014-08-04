@@ -321,7 +321,7 @@ public class CssExtManager implements ICssExtManager {
 		for (CssExtProposalContributor c : proposalContributors) {
 			if (fqRuleName.equals(c.getRule())) {
 				result.add(c.getProposal());
-				System.err.println("found " + c.getProposal() + " for " + fqRuleName);
+				logger.debug("found " + c.getProposal() + " for " + fqRuleName);
 			}
 		}
 		
@@ -342,11 +342,11 @@ public class CssExtManager implements ICssExtManager {
 		ICssResource cssFile = (ICssResource) Platform.getAdapterManager().getAdapter(file, ICssResource.class);
 		
 		if (cssFile != null) {
-			System.err.println("USING extensions from cssFile");
+			logger.debug("USING extensions from cssFile");
 			return cssFile.getEnabledCssExtensions();
 		}
 		else {
-			System.err.println("defaulting to old provider");
+			logger.debug("defaulting to old provider");
 			Set<CssExtension> rv = new HashSet<>();
 			for( ICSSExtModelProvider p : extensionModelProvider ) {
 				rv.addAll(p.getModels(file));
