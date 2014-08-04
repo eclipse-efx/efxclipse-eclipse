@@ -212,7 +212,7 @@ RobotTask {
 					"org.eclipse.fx.ui.workbench.fx",
 					"org.eclipse.fx.ui.workbench.renderers.base",
 					"org.eclipse.fx.ui.workbench.renderers.fx",
-					"org.eclipse.fx.ui.lifecycle",
+					"org.eclipse.fx.ui.workbench.services",
 					"com.ibm.icu",
 					// TODO NEED TO SUPPORT CONDITIONALS HERE "com.ibm.icu.base",
 					"javax.annotation",

@@ -192,6 +192,13 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			typeName = parent.getAttributes().getNamedItem("type").getNodeValue(); //$NON-NLS-1$
 		}
 		
+		if( ! existingAttributes.contains("fx:id") ) { //$NON-NLS-1$
+			FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, "fx:id=\"\"", new StyledString("fx:id").append(" - FXML built-in", StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.CLASS_KEY), DEFAULT_PRIORITY+10, MATCHER); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			if( cp != null ) {
+				contentAssistRequest.addProposal(cp);
+			}
+		}
+		
 		if (typeName != null) {
 			
 			if (Character.isLowerCase(typeName.charAt(0)) || typeName.contains(".")) { //$NON-NLS-1$
@@ -249,9 +256,11 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 							}
 						}
 					} else {
-						FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, "fx:controller=\"\"", new StyledString("fx:controller").append(" - FXML built-in", StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.CLASS_KEY), DEFAULT_PRIORITY+10, MATCHER); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						if( cp != null ) {
-							contentAssistRequest.addProposal(cp);	
+						if( ! existingAttributes.contains("fx:controller") ) { //$NON-NLS-1$
+							FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, "fx:controller=\"\"", new StyledString("fx:controller").append(" - FXML built-in", StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.CLASS_KEY), DEFAULT_PRIORITY+10, MATCHER); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+							if( cp != null ) {
+								contentAssistRequest.addProposal(cp);	
+							}	
 						}
 					}
 				}

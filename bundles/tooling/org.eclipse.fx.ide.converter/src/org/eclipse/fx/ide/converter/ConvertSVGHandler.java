@@ -10,27 +10,38 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.converter;
 
+import java.io.InputStream;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.fx.formats.svg.converter.FXMLConverter;
 import org.eclipse.fx.formats.svg.handler.XMLLoader;
 import org.eclipse.fx.formats.svg.svg.SvgSvgElement;
+import org.eclipse.fx.osgi.util.LoggerCreator;
+import org.eclipse.jdt.annotation.NonNull;
 
+/**
+ * Handler to convert SVG to FXML
+ */
 public class ConvertSVGHandler extends AbstractConverterHandler {
 
+	@SuppressWarnings("null")
 	@Override
-	protected String convert(IFile outFile, IFile file) throws ExecutionException {
-		try {
-			XMLLoader loader = new XMLLoader();
-			SvgSvgElement root = loader.loadDocument(outFile.getFullPath().toOSString(), file.getContents());
+	protected String convert(@NonNull IFile outFile, @NonNull IFile file) throws ExecutionException {
+		try(InputStream contents = file.getContents()) {
+			if( contents == null ) {
+				throw new ExecutionException("Could not retrieve file contents"); //$NON-NLS-1$
+			}
+			SvgSvgElement root = XMLLoader.loadDocument(outFile.getFullPath().toOSString(), contents);
 			return new FXMLConverter(root).generate().toString();
 		} catch (Exception e) {
-			throw new ExecutionException("Conversion failed", e);
+			LoggerCreator.createLogger(getClass()).error("Conversion failed", e); //$NON-NLS-1$
+			throw new ExecutionException("Conversion failed", e); //$NON-NLS-1$
 		}
 	}
 
 	@Override
 	protected String getTargetFileExtension() {
-		return ".fxml";
+		return ".fxml"; //$NON-NLS-1$
 	}
 }

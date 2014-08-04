@@ -835,6 +835,7 @@ package javafx {
 	 */
 	radial-gradient = radial-gradient([ focus-angle <angle>, ]? [ focus-distance <percentage>, ]? [ center <point>, ]? radius [ <length> | <percentage> ] [ [ repeat | reflect ], ]? <color-stop>[, <color-stop>]+);
 	
+	alignment = [ top-left | top-center | top-right | center-left | center | center-right bottom-left | bottom-center | bottom-right | baseline-left | baseline-center | baseline-right ];
 	
 	package scene {
 		blend-mode = [ add | blue | color-burn | color-dodge | darken | difference | exclusion | green | hard-light | lighten | multiply | overlay | red | screen | soft-light | src-atop | src-in | src-out | src-over ];
@@ -954,8 +955,6 @@ package javafx {
 			border-style = <dash-style> [phase @NUM]? [centered | inside | outside]? [line-join [miter @NUM | bevel | round]]? [line-cap [square | butt | round]]?;
 			dash-style = [ none | solid | dotted | dashed | <segments> ];
 			segments = segments( @NUM, @NUM [, @NUM]*);
-			
-			alignment = [ top-left | top-center | top-right | center-left | center | center-right bottom-left | bottom-center | bottom-right | baseline-left | baseline-center | baseline-right ];
 			
 			//TODO REMOVE if attribute references are available
 			
@@ -1197,7 +1196,30 @@ package javafx {
 				 * -fx-border-image-slice and -fx-border-image-width. There is no shorthand notation for -fx-image-borders at this time.
 				 */
 				-fx-image-borders <-fx-border-image-source> [ <-fx-border-image-insets> || <-fx-border-image-repeat> || <-fx-border-image-slice> || <-fx-border-image-width> ] default: null;
-				
+				/**
+				 * The preferred width of the region
+				 */
+				-fx-pref-width <size> default:-1.0;
+				/**
+				 * The preferred height of the region
+				 */
+				-fx-pref-height <size> default:-1.0;
+				/**
+				 * The min width of the region
+				 */
+				-fx-min-width <size> default:-1.0;
+				/**
+				 * The min height of the region
+				 */
+				-fx-min-height <size> default:-1.0;
+				/**
+				 * The max width of the region
+				 */
+				-fx-max-width <size> default:-1.0;
+				/**
+				 * The max height of the region
+				 */
+				-fx-max-height <size> default:-1.0;
 			}
 			/**
 			 * Base class for layout panes which need to expose the children list as public
@@ -1641,6 +1663,10 @@ package javafx {
 				 * Defines if each line of text should have a line below it.
 				 */
 				-fx-underline <boolean> default: false;
+				/**
+				 * Defines how the bounds are calculated
+				 */
+				-fx-bounds-type [ logical | visual | logical_vertical_center ] default: logical;
 			}
 		}
 		package web {
@@ -2088,7 +2114,9 @@ package javafx {
         		 */
         		-fx-use-system-menu-bar <boolean> default: false;
         		substructure Desktop {
-        			Menu styleclass menu
+        			layout.HBox styleclass container {
+        				MenuButton styleclass menu
+        			}
         		} 
         	}
         	/**
@@ -2111,7 +2139,14 @@ package javafx {
  			 * API.
         	 */
         	MenuItem extends Control styleclass menu-item {
-        		// TODO SUPPORT STYLE_CLASS  
+        		//TODO on desktops the Item is a Button!!!!
+        		-fx-text-fill <paint> default: black;
+        		substructure Desktop {
+        			Label styleclass label
+        			layout.StackPane styleclass right-container {
+        				layout.Region styleclass arrow
+        			}
+        		}
         	}
         	/**
         	 * A Pagination control is used for navigation between pages of a single content,
@@ -2138,6 +2173,7 @@ package javafx {
         		 * page alignment 
         		 */
         		-fx-page-information-alignment [top | bottom | left | right] default: true;
+        		-fx-arrow-button-gap <size> default: 4;
         		
         		substructure Desktop {
         			layout.StackPane styleclass page
@@ -2175,6 +2211,8 @@ package javafx {
         		-fx-indeterminate-bar-escape <boolean> default: true;
         		-fx-indeterminate-bar-flip <boolean> default: true;
         		-fx-indeterminate-bar-animation-time @NUM default: 2.0;
+        		-fx-indeterminate-segment-count @INT default: 8;
+        		-fx-spin-enabled <boolean> default: false;
         		substructure Desktop {
         			layout.StackPane styleclass track {
         				layout.Region styleclass bar
@@ -2555,6 +2593,7 @@ package javafx {
  			 * plain text. 
         	 */
         	TextArea extends TextInputControl styleclass text-area {
+        		-fx-pref-column-count @INT default:40;
         		substructure Desktop {
         			ScrollPane styleclass scroll-pane {
         				layout.Region styleclass content
@@ -2593,6 +2632,7 @@ package javafx {
         			top-left | top-center | top-right | center-left | 
         			center | center-right | bottom-left | bottom-center | bottom-right | baseline-left | baseline-center | baseline-right
         		] default: center-left;
+        		-fx-pref-column-count @INT default: 12;
         	}
         	/**
         	 * A TitledPane is a panel with a title that can be opened and closed.
@@ -2643,6 +2683,8 @@ package javafx {
         		 * The orientation
         		 */
         		-fx-orientation [ horizontal | vertical ] default: horizontal;
+        		-fx-spacing <size> default 0;
+        		-fx-alignment <alignment> default: top-left;
         		/**
         		 * applies if this ToolBar is horizontal
         		 */
@@ -2697,6 +2739,9 @@ package javafx {
 				-fx-font-size <font-size> default: null;  		/* INHERITED */
 				-fx-font-style <font-style> default: null;  	/* INHERITED */
 				-fx-font-weight <font-weight> default: null;  	/* INHERITED */
+				//TODO At runtime the tip is represented as a label so it inherits ALL attributes
+				//     from Label
+				-fx-text-fill <paint> default: null;
         		substructure Desktop {
         			Label styleclass label
         			layout.StackPane styleclass page-corner

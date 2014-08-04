@@ -31,5 +31,5 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %Bundle-Vendor
 Export-Package: org.eclipse.fx.ide.pde.ui.templates;x-friends:="org.eclipse.fx.ide.pde.e4",
  org.eclipse.fx.ide.pde.ui.templates.tycho;x-friends:="org.eclipse.fx.ide.pde.e4",
- org.eclipse.fx.ide.pde.ui.wizard,
- org.eclipse.fx.ide.pde.ui.wizard.model
+ org.eclipse.fx.ide.pde.ui.wizard;x-internal:=true,
+ org.eclipse.fx.ide.pde.ui.wizard.model;x-internal:=true

@@ -22,10 +22,14 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.ISources;
 
+/**
+ * Basic handler for conversions
+ */
 public abstract class AbstractConverterHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -43,6 +47,10 @@ public abstract class AbstractConverterHandler extends AbstractHandler {
 						f.getName().length() - f.getFileExtension().length()
 								- 1)
 						+ getTargetFileExtension()));
+				if( outFile == null ) {
+					throw new ExecutionException("Unable to get file from folder"); //$NON-NLS-1$
+				}
+				
 				String content = convert(outFile, f);
 
 				if (!outFile.exists()) {
@@ -70,7 +78,7 @@ public abstract class AbstractConverterHandler extends AbstractHandler {
 		return null;
 	}
 
-	protected abstract String convert(IFile outFile, IFile file)
+	protected abstract String convert(@NonNull IFile outFile, @NonNull IFile file)
 			throws ExecutionException;
 
 	protected abstract String getTargetFileExtension();
