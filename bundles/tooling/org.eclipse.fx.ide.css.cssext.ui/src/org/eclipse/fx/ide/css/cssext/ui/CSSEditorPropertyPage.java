@@ -101,6 +101,7 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 		ISWTObservableValue lEnabled = SWTObservables.observeEnabled(l);
 		dbc.bindValue(lEnabled, useCustomObsModel);
 		
+		l.setText("Computed Extensions:");
 		
 		final TableViewer extensionViewer = new TableViewer(area, SWT.BORDER | SWT.FULL_SELECTION);
 		extensionViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
@@ -176,6 +177,12 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 		ISWTObservableValue vClasspathEnabled = SWTObservables.observeEnabled(extensionViewer.getControl());
 		dbc.bindValue(vClasspathEnabled, useCustomObsModel);
 		
+		final Label l2 = new Label(area, SWT.NONE);
+		l2.setEnabled(useCustom);
+		ISWTObservableValue l2Enabled = SWTObservables.observeEnabled(l2);
+		dbc.bindValue(l2Enabled, useCustomObsModel);
+		l2.setText("User Extensions:");
+		
 		final TableViewer vUser = new TableViewer(area, SWT.CHECK | SWT.BORDER | SWT.FULL_SELECTION);
 		vUser.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
 		vUser.setLabelProvider(new LabelProvider() {
@@ -249,7 +256,7 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 				if (event.diff.getNewValue() != null) {
 					str = event.diff.getNewValue().toString();
 				}
-				l.setText("ICssResource: " + str);
+				//l.setText("ICssResource: " + str);
 				
 				
 			final ICssResource r = (ICssResource) event.diff.getNewValue();
