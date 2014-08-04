@@ -246,8 +246,11 @@ public abstract class ACssResource implements ICssResource {
 			allEnabled.addAll(parentResource.getAllEnabledExtensions());
 		}
 		allEnabled.addAll(getClasspathExtensions());
-		allEnabled.addAll(getCustomExtensions());
-		allEnabled.removeAll(getDisabledExtensions());
+		
+		if (useCustom) {
+			allEnabled.addAll(getCustomExtensions());
+			allEnabled.removeAll(getDisabledExtensions());
+		}
 		
 		return allEnabled;
 	}
