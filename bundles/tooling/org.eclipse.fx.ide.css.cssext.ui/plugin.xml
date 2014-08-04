@@ -271,9 +271,9 @@
           point="org.eclipse.core.runtime.adapters">
        <factory
              adaptableType="org.eclipse.core.resources.IResource"
-             class="org.eclipse.fx.ide.css.cssext.ui.CssAdapterFactory">
+             class="org.eclipse.fx.ide.css.cssext.ui.adapter.CssAdapterFactory">
           <adapter
-                type="org.eclipse.fx.ide.css.cssext.ui.ICssResource">
+                type="org.eclipse.fx.ide.css.cssext.ui.adapter.ICssResource">
           </adapter>
        </factory>
     </extension>

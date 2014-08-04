@@ -35,6 +35,7 @@ import org.eclipse.fx.ide.css.cssext.proposal.CssExtProposalContributor;
 import org.eclipse.fx.ide.css.cssext.ui.SearchHelper.ElementDefinitionFilter;
 import org.eclipse.fx.ide.css.cssext.ui.SearchHelper.PropertyDefinitionFilter;
 import org.eclipse.fx.ide.css.cssext.ui.SearchHelper.SearchFilter;
+import org.eclipse.fx.ide.css.cssext.ui.adapter.ICssResource;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;

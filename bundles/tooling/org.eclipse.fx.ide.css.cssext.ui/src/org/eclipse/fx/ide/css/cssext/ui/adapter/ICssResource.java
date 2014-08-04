@@ -8,7 +8,7 @@
  * Contributors:
  *     Christoph Caks <ccaks@bestsolution.at> - initial API and implementation
  *******************************************************************************/
-package org.eclipse.fx.ide.css.cssext.ui;
+package org.eclipse.fx.ide.css.cssext.ui.adapter;
 
 import java.util.Collection;
 import java.util.List;

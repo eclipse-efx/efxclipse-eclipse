@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
+import org.eclipse.fx.ide.css.cssext.ui.adapter.ICssResource;
 import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;

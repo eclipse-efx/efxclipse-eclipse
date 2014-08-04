@@ -21,7 +21,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.fx.core.log.Logger;
-import org.eclipse.fx.ide.css.cssext.ui.ClassPathSearchUtil;
 import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jdt.core.ElementChangedEvent;
 import org.eclipse.jdt.core.IClasspathEntry;

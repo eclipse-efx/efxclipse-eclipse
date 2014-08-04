@@ -1,4 +1,4 @@
-package org.eclipse.fx.ide.css.cssext.ui;
+package org.eclipse.fx.ide.css.cssext.ui.adapter;
 
 import java.io.File;
 import java.io.IOException;

@@ -8,7 +8,7 @@
  * Contributors:
  *     Christoph Caks <ccaks@bestsolution.at> - initial API and implementation
  *******************************************************************************/
-package org.eclipse.fx.ide.css.cssext.ui;
+package org.eclipse.fx.ide.css.cssext.ui.adapter;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
-import org.eclipse.fx.ide.css.cssext.ui.adapter.ExtensionRegistry;
 import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.xtext.parser.packrat.tokens.ParsedAction;
 
