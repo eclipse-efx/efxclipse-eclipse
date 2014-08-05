@@ -52,6 +52,7 @@
 		
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext.ui</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext.proposals</module>
 		
 		<!-- FXGraph / FXML -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.model</module>
