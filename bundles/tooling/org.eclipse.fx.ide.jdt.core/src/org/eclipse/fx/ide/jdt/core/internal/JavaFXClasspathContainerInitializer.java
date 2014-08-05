@@ -136,8 +136,6 @@ public class JavaFXClasspathContainerInitializer extends ClasspathContainerIniti
 							// classpath change on ??
 							if (delta.getElement().getElementType() == IJavaElement.JAVA_PROJECT && delta.getElement().getJavaProject().equals(project)) {
 								// classpath change
-								System.err.println("Classpath Change on " + project.getElementName());
-								System.err.println("The classpath has changed, scheduling JavaFX SDK Container update");
 								try {
 									requestClasspathContainerUpdate(containerPath, project, null);
 								}
@@ -147,14 +145,9 @@ public class JavaFXClasspathContainerInitializer extends ClasspathContainerIniti
 							}
 							
 						}
-						
-						
 					}
 					
 					
-				}
-				else {
-					System.err.println("EVENT NOT HANDLED: " + event);
 				}
 			}
 		};
