@@ -254,10 +254,22 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				return b; 
 			}
 		}
+		
+		for( ITypeBinding tp : type.getInterfaces() ) {
+			IMethodBinding b = findMethodBinding(tp, name);
+			if( b != null ) {
+				return b;
+			}
+		}
+		
 		if( "java.lang.Object".equals(type.getQualifiedName()) ) { //$NON-NLS-1$
 			return null;	
 		}
-		return findMethodBinding(type.getSuperclass(), name);
+		ITypeBinding superclass = type.getSuperclass();
+		if( superclass != null ) {
+			return findMethodBinding(superclass, name);	
+		}
+		return null;
 	}
 	
 	static void generateAccessors(CompilationUnit cu, IType ownerType, IType propertyType, ListRewrite rewrite, IField f, IJavaElement sibling, boolean makeFinal) throws JavaModelException {
