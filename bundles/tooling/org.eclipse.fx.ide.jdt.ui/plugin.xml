@@ -210,7 +210,7 @@
       </command>
       <command
             id="org.eclipse.fx.ide.jdt.ui.fxgettersetter"
-            name="FX Getter and Setter">
+            name="Generate JavaFX Getters and Setters">
       </command>
    </extension>
    <extension
