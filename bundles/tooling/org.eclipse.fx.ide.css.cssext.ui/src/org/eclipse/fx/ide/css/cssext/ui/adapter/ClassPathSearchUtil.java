@@ -59,14 +59,17 @@ public class ClassPathSearchUtil {
 	
 	private static List<Entry> searchJar(String absoluteJarPath) throws IOException {
 		List<Entry> results = new ArrayList<>();
-		ZipFile jar = new ZipFile(absoluteJarPath);
-		Enumeration<? extends ZipEntry> entries = jar.entries();
-		while (entries.hasMoreElements()) {
-			ZipEntry el = entries.nextElement();
-			if (el.getName().endsWith(".cssext")) {
-				String elPath = el.getName().startsWith("/") ? el.getName() : "/" + el.getName();
-				results.add(new StringUriEntry("jar:file:" + absoluteJarPath.replace('\\', '/') + "!" + elPath));
-			}
+		try(ZipFile jar = new ZipFile(absoluteJarPath) ) {
+			Enumeration<? extends ZipEntry> entries = jar.entries();
+			while (entries.hasMoreElements()) {
+				ZipEntry el = entries.nextElement();
+				if (el.getName().endsWith(".cssext")) {
+					String elPath = el.getName().startsWith("/") ? el.getName() : "/" + el.getName();
+					results.add(new StringUriEntry("jar:file:" + absoluteJarPath.replace('\\', '/') + "!" + elPath));
+				}
+			}			
+		} catch( IOException e ) {
+			e.printStackTrace();
 		}
 		return results;
 	}
