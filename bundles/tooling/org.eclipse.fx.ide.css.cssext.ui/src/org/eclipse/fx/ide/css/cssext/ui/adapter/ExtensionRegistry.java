@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
+import org.eclipse.fx.ide.css.cssext.generator.Main;
 import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jdt.core.ElementChangedEvent;
 import org.eclipse.jdt.core.IElementChangedListener;
@@ -32,9 +33,29 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaElementDelta;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.ltk.internal.core.refactoring.resource.ResourceModifications.CreateDescription;
+import org.eclipse.xtext.diagnostics.Diagnostic;
+import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
+import org.eclipse.xtext.diagnostics.Severity;
+import org.eclipse.xtext.xtext.XtextLinker;
+
+import com.google.inject.Inject;
+import com.google.inject.Injector;
 
 public class ExtensionRegistry {
 
+	public static class Dummy {
+		
+		@Inject
+		XtextLinker linker;
+		
+		
+	}
+	
+	
+	
+	
+	
 	/**
 	 * a simple holder class for a css extension. it allows to defer the model loading, and to invalidate the model 
 	 * @author ccaks
@@ -42,11 +63,19 @@ public class ExtensionRegistry {
 	 */
 	public static class ExtensionHolder {
 		public final URI uri;
-		
 		private CssExtension model;
+		
+		
+		public static Dummy create() {
+			final Injector injector = new org.eclipse.fx.ide.css.cssext.CssExtDslStandaloneSetupGenerated().createInjector();
+			return injector.getInstance(Dummy.class);
+		}
+		
+		Dummy dummy;
 		
 		protected ExtensionHolder(URI uri) {
 			this.uri = uri;
+			dummy = create();
 		}
 		
 		/**
@@ -67,7 +96,22 @@ public class ExtensionRegistry {
 				resource.setURI(uri);
 				resource.load(Collections.emptyMap());
 				
-				return (CssExtension) resource.getContents().get(0);
+				// XXX HACKY quick linking fix
+				final CssExtension ext = (CssExtension) resource.getContents().get(0);
+				dummy.linker.linkModel(ext, new IDiagnosticConsumer() {
+					@Override
+					public boolean hasConsumedDiagnostics(Severity severity) {
+						System.err.println(severity);
+						return false;
+					}
+					
+					@Override
+					public void consume(Diagnostic diagnostic, Severity severity) {
+						System.err.println(diagnostic + ", " + severity);
+					}
+				});
+				
+				return ext;
 			}
 			catch (IOException e) {
 				e.printStackTrace();
