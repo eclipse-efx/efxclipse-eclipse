@@ -10,12 +10,14 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.css.cssext.ui.adapter;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
@@ -115,8 +117,17 @@ public class ClasspathManager {
 				case IClasspathEntry.CPE_LIBRARY: {
 					final IPath path = e.getPath();
 					if ("jar".equals(e.getPath().getFileExtension())) {
-						List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(path.toFile().getAbsolutePath());
-						allFiles.addAll(result);
+						IFile f = workspace.getFile(path);
+						String filePath = null;
+						if (f.exists()) {
+								filePath = f.getLocation().toFile().getAbsolutePath();
+						} else if( path.toFile().exists() ) {
+							filePath = path.toFile().getAbsolutePath();
+						}
+						if( filePath != null ) {
+							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(filePath);
+							allFiles.addAll(result);	
+						}
 					}
 					else {
 						IPath binPath = path.append("bin");
