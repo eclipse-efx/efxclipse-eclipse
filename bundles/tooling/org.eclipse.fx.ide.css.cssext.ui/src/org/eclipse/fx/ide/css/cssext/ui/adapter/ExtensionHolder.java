@@ -29,16 +29,16 @@ public class ExtensionHolder {
     }
     
     private ResourceSet getResourceSet(EObject context) {
-    	System.err.println("getResourceSet()");
+//    	System.err.println("getResourceSet()");
     	ResourceSet resourceSet;
     	if (context.eResource() == null || context.eResource().getResourceSet() == null) {
-    		System.err.println(" -> creating new");
+//    		System.err.println(" -> creating new");
     		resourceSet = createResourceSet();
     	}
     	else {
     		resourceSet = context.eResource().getResourceSet();
     	}
-    	System.err.println(" -> " + System.identityHashCode(resourceSet));
+//    	System.err.println(" -> " + System.identityHashCode(resourceSet));
     	return resourceSet;
     }
     
@@ -47,25 +47,19 @@ public class ExtensionHolder {
     public ExtensionHolder(IProject project, EObject context, List<URI> extensionURIs) {
         this.extensionURIs = new ArrayList<>(extensionURIs);
         
-        URI replace = URI.createURI("archive:file:/opt/projects/efxclipse/runtime-EclipseApplication/javap/lib/p2.jar!/p2.cssext");
-        if (this.extensionURIs.contains(replace)) {
-        	this.extensionURIs.remove(replace);
-        	this.extensionURIs.add(URI.createURI("archive:platform:/resource/javap/lib/p2.jar!/p2.cssext"));
-        }
-//        
         this.project = project;
         this.context = context;
     }
     
     public List<CssExtension> getModels() {
-    	System.err.println("GET MODELS");
-    	System.err.println(" context = " + context);
-    	if (context == null) {
-    		new NullPointerException().printStackTrace();
-    	}
-    	if (context.eResource() == null) {
-    		new NullPointerException().printStackTrace();
-    	}
+//    	System.err.println("GET MODELS");
+//    	System.err.println(" context = " + context);
+//    	if (context == null) {
+//    		new NullPointerException().printStackTrace();
+//    	}
+//    	if (context.eResource() == null) {
+//    		new NullPointerException().printStackTrace();
+//    	}
     	
     	List<CssExtension> result = new ArrayList<>();
     	
