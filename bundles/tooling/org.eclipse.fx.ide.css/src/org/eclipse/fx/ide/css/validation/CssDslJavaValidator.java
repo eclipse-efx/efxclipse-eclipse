@@ -46,12 +46,13 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 	
 	@Check
 	public void checkDeclaration(css_declaration dec) {
+		System.err.println("CHECK DECL " + dec);
 		css_property property = dec.getProperty();
 		List<CssTok> tokens = dec.getValueTokens();
 		
 		URI uri = dec.eResource().getURI();
 		
-		List<Proposal> properties = ext.getPropertyProposalsForSelector(Utils.getFile(dec.eResource()),null);
+		List<Proposal> properties = ext.getPropertyProposalsForSelector(Utils.getFile(dec.eResource()),dec,null);
 				//extension.getAllProperties(uri);
 		
 		boolean known = false;
@@ -74,7 +75,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 //				selectorProps.addAll(extension.getPropertiesForSelector(uri, selector));
 //			}
 			
-			List<Proposal> selectorProps = ext.getPropertyProposalsForSelector(Utils.getFile(dec.eResource()),selectors);
+			List<Proposal> selectorProps = ext.getPropertyProposalsForSelector(Utils.getFile(dec.eResource()),dec,selectors);
 			
 			if (selectorProps.size() > 0) {
 				boolean supported = false;

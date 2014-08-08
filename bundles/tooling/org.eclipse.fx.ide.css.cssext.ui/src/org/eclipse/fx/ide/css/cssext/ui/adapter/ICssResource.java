@@ -16,6 +16,7 @@ import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
 
 public interface ICssResource {
@@ -41,7 +42,7 @@ public interface ICssResource {
 	 * returns all enabled extensions.
 	 * @return
 	 */
-	Set<CssExtension> getEnabledCssExtensions();
+	Set<CssExtension> getEnabledCssExtensions(EObject context);
 	
 	void addCustomExtension(URI uri);
 	void removeCustomExtension(URI uri);

@@ -14,15 +14,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import org.eclipse.core.internal.resources.WorkspaceRoot;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
+import org.eclipse.core.resources.IResourceRuleFactory;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
 import org.eclipse.fx.ide.css.cssext.generator.Main;
@@ -34,9 +43,33 @@ import org.eclipse.jdt.core.IJavaElementDelta;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.ltk.internal.core.refactoring.resource.ResourceModifications.CreateDescription;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.diagnostics.Diagnostic;
 import org.eclipse.xtext.diagnostics.IDiagnosticConsumer;
 import org.eclipse.xtext.diagnostics.Severity;
+import org.eclipse.xtext.linking.ILinkingService;
+import org.eclipse.xtext.linking.impl.DefaultLinkingService;
+import org.eclipse.xtext.linking.impl.IllegalNodeException;
+import org.eclipse.xtext.linking.impl.Linker;
+import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
+import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
+import org.eclipse.xtext.naming.QualifiedName;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.resource.IResourceDescription;
+import org.eclipse.xtext.resource.IResourceDescriptions;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
+import org.eclipse.xtext.resource.impl.DefaultResourceDescriptionManager;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.IScopeProvider;
+import org.eclipse.xtext.scoping.impl.AbstractGlobalScopeDelegatingScopeProvider;
+import org.eclipse.xtext.scoping.impl.IDelegatingScopeProvider;
+import org.eclipse.xtext.scoping.impl.IScopeWrapper;
+import org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider;
+import org.eclipse.xtext.ui.resource.IResourceSetProvider;
+import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.xtext.XtextLinker;
 
 import com.google.inject.Inject;
@@ -65,7 +98,9 @@ public class ExtensionRegistry {
 		public final URI uri;
 		private CssExtension model;
 		
-		
+		private static ResourceSet rs;
+		private static IResourceDescription.Manager manager;
+		private static IResourceDescriptions x;
 		public static Dummy create() {
 			final Injector injector = new org.eclipse.fx.ide.css.cssext.CssExtDslStandaloneSetupGenerated().createInjector();
 			return injector.getInstance(Dummy.class);
@@ -76,6 +111,7 @@ public class ExtensionRegistry {
 		protected ExtensionHolder(URI uri) {
 			this.uri = uri;
 			dummy = create();
+			
 		}
 		
 		/**
@@ -83,40 +119,146 @@ public class ExtensionRegistry {
 		 * @return
 		 */
 		public CssExtension getModel() {
-			if (model == null) {
-				model = loadModel();
-			}
-			return model;
+			return loadModel();
+//			if (model == null) {
+//				model = loadModel();
+//			}
+//			return model;
 		}
 		
-		private CssExtension loadModel() {
-			try {
-				final ResourceSet rs = new ResourceSetImpl();
-				Resource resource = rs.createResource(uri);
-				resource.setURI(uri);
-				resource.load(Collections.emptyMap());
-				
-				// XXX HACKY quick linking fix
-				final CssExtension ext = (CssExtension) resource.getContents().get(0);
-				dummy.linker.linkModel(ext, new IDiagnosticConsumer() {
+		public static Set<CssExtension> exts = new HashSet<>();
+		
+		private void register(IScopeProvider scopeProvider, IScopeWrapper wrap) {
+			if (scopeProvider instanceof AbstractGlobalScopeDelegatingScopeProvider) {
+				AbstractGlobalScopeDelegatingScopeProvider provider = (AbstractGlobalScopeDelegatingScopeProvider) scopeProvider;
+				provider.setWrapper(wrap);
+				System.err.println("REGISTERED WRAPPER on " + scopeProvider);
+			}
+			else if (scopeProvider instanceof IDelegatingScopeProvider) {
+				IDelegatingScopeProvider p = (IDelegatingScopeProvider) scopeProvider;
+				register(((IDelegatingScopeProvider) scopeProvider).getDelegate(), wrap);
+			}
+		}
+		
+		private void logScope(IScopeProvider scopeProvider) {
+			System.err.println(" * " + scopeProvider);
+			if (scopeProvider instanceof IDelegatingScopeProvider) {
+				IDelegatingScopeProvider p = (IDelegatingScopeProvider) scopeProvider;
+				logScope(((IDelegatingScopeProvider) scopeProvider).getDelegate());
+			}
+		}
+		
+		final IScopeWrapper wrap = new IScopeWrapper() {
+			@Override
+			public IScope wrap(final IScope scope) {
+				return new IScope() {
+					
 					@Override
-					public boolean hasConsumedDiagnostics(Severity severity) {
-						System.err.println(severity);
-						return false;
+					public IEObjectDescription getSingleElement(EObject object) {
+						System.err.println("WRAPPING FUN getSingleElement " + object);
+						// TODO Auto-generated method stub
+						return scope.getSingleElement(object);
 					}
 					
 					@Override
-					public void consume(Diagnostic diagnostic, Severity severity) {
-						System.err.println(diagnostic + ", " + severity);
+					public IEObjectDescription getSingleElement(QualifiedName name) {
+						System.err.println("WRAPPING FUN getSingleElement " + name);
+						// TODO Auto-generated method stub
+						return scope.getSingleElement(name);
 					}
-				});
+					
+					@Override
+					public Iterable<IEObjectDescription> getElements(EObject object) {
+						// TODO Auto-generated method stub
+						return scope.getElements(object);
+					}
+					
+					@Override
+					public Iterable<IEObjectDescription> getElements(QualifiedName name) {
+						// TODO Auto-generated method stub
+						return scope.getElements(name);
+					}
+					
+					@Override
+					public Iterable<IEObjectDescription> getAllElements() {
+						// TODO Auto-generated method stub
+						return scope.getAllElements();
+					}
+				};
+			}
+		};
+		
+		private void load(URI uri) {
+			System.err.println("LOADING " + uri);
+			rs.getResource(uri, true);
+			System.err.println("(re)linking all");
+			for (Resource r : rs.getResources()) {
+				System.err.println(" * " + r);
+				EcoreUtil2.resolveLazyCrossReferences(r, CancelIndicator.NullImpl);
+				for (Resource.Diagnostic d : r.getErrors()) {
+					if (d instanceof XtextLinkingDiagnostic) {
+						XtextLinkingDiagnostic x = (XtextLinkingDiagnostic) d;
+						System.err.println( "  x " + x.getMessage());
+					}
+				}
+			}
+		}
+		
+		private CssExtension loadModel() {
+			System.err.println("LOADING " + uri);
+			
+			if (rs == null) {
+				IResourceServiceProvider rsp = IResourceServiceProvider.Registry.INSTANCE.getResourceServiceProvider(uri);
+				
+				IResourceSetProvider rp = rsp.get(IResourceSetProvider.class);
+				rs = rp.get(ResourcesPlugin.getWorkspace().getRoot().getProject("javap"));
+				manager = rsp.getResourceDescriptionManager();
+//				x = rsp.get(IResourceDescriptions.class);
+//				System.err.println("RsourceDescriptions: " + x);
+				
+//				if (x != null) {
+//					IResourceDescription resourceDescription = x.getResourceDescription(jfx8Uri);
+//					System.err.println(resourceDescription);
+//				}
+//				
+//				for (IResourceDescription d : x.getAllResourceDescriptions()) {
+//					System.err.println(d);
+//				}
+			}
+			
+//				final ResourceSet rs = new ResourceSetImpl();
+				LazyLinkingResource resource = (LazyLinkingResource) rs.getResource(uri, true);
+				
+				if (resource.getContents().isEmpty()) {
+					System.err.println("COULD NOT LOAD " + uri);
+					return null;
+				}
+				final CssExtension ext = (CssExtension) resource.getContents().get(0);
+				exts.add(ext);
+				
+//				IResourceDescription resourceDescription = manager.getResourceDescription(resource);
+//				System.err.println("EXPORTS:");
+//				for (IEObjectDescription o : resourceDescription.getExportedObjects()) {
+//					System.err.println(" * " + o);
+//					
+//				}
+				
+				System.err.println("(re)linking");
+				for (Resource r : rs.getResources()) {
+					System.err.println(" * " + r);
+					
+					r.getErrors().clear();
+					EcoreUtil2.resolveLazyCrossReferences(r, CancelIndicator.NullImpl);
+					for (Resource.Diagnostic d : r.getErrors()) {
+						if (d instanceof XtextLinkingDiagnostic) {
+							XtextLinkingDiagnostic x = (XtextLinkingDiagnostic) d;
+							System.err.println( "   x " + x.getMessage());
+						}
+					}
+				}
+				
 				
 				return ext;
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-				return null;
-			}
 		}
 		
 		// TODO do we need this=?
@@ -185,6 +327,7 @@ public class ExtensionRegistry {
 		}
 		return logger;
 	}
+	
 	
 	/**
 	 * gets or creates an extension by uri

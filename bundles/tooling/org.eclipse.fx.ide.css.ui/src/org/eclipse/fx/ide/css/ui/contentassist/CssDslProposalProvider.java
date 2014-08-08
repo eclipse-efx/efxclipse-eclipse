@@ -187,7 +187,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	
 	public void complete_CssTok(css_declaration model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		System.err.println("complete_CssTok prefixTok=" + findPrefixTokens(context) + "prefixString=" + context.getPrefix());
-		final List<Proposal> proposals = cssExt.getValueProposalsForProperty(Utils.getFile(model.eResource()),findSelectors(model), model.getProperty(), findPrefixTokens(context), context.getPrefix());
+		final List<Proposal> proposals = cssExt.getValueProposalsForProperty(Utils.getFile(model.eResource()),model,findSelectors(model), model.getProperty(), findPrefixTokens(context), context.getPrefix());
 		
 		
 		
@@ -210,7 +210,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	
 	public void completeRuleset_Declarations(ruleset model, Assignment assignment, ContentAssistContext context,
 			ICompletionProposalAcceptor acceptor) {
-		final List<Proposal> proposals = cssExt.getPropertyProposalsForSelector(Utils.getFile(model.eResource()),model.getSelectors());
+		final List<Proposal> proposals = cssExt.getPropertyProposalsForSelector(Utils.getFile(model.eResource()),model,model.getSelectors());
 		filterDuplicates(model, proposals);
 		acceptProposals(proposals, context, acceptor);
 	}
@@ -223,12 +223,12 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 		
 		if (context.getPreviousModel() instanceof ruleset) {
 			ruleset ruleset = (ruleset) context.getPreviousModel();
-			final List<Proposal> proposals = cssExt.getPropertyProposalsForSelector(Utils.getFile(model.eResource()),ruleset.getSelectors());
+			final List<Proposal> proposals = cssExt.getPropertyProposalsForSelector(Utils.getFile(model.eResource()),model,ruleset.getSelectors());
 			filterDuplicates(ruleset, proposals);
 			acceptProposals(proposals, context, acceptor);
 		}
 		else {
-			final List<Proposal> proposals = cssExt.getPropertyProposalsForSelector(Utils.getFile(model.eResource()),null);
+			final List<Proposal> proposals = cssExt.getPropertyProposalsForSelector(Utils.getFile(model.eResource()),model,null);
 			acceptProposals(proposals, context, acceptor);
 		}
 	}

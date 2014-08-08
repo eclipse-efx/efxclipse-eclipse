@@ -24,6 +24,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -104,8 +105,8 @@ public class CssExtManager implements ICssExtManager {
 	 * @see org.eclipse.fx.ide.css.cssext.ui.ICssExtManager#findPropertyByName(java.lang.String)
 	 */
 	@Override
-	public PropertyDefinition findPropertyByName(IFile f, final String propertyName) {
-		List<PropertyDefinition> search = new SearchHelper(collectModels(f)).findPropertiesByFilter(new PropertyDefinitionFilter() {
+	public PropertyDefinition findPropertyByName(IFile f, EObject context, final String propertyName) {
+		List<PropertyDefinition> search = new SearchHelper(collectModels(f, context)).findPropertiesByFilter(new PropertyDefinitionFilter() {
 			
 			@Override
 			public boolean returnOnFirstHit() {
@@ -122,7 +123,7 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	@Override
-	public List<PropertyDefinition> findPropertiesBySelector(IFile f, selector cssSelector) {
+	public List<PropertyDefinition> findPropertiesBySelector(IFile f, EObject context, selector cssSelector) {
 		List<PropertyDefinition> result = new ArrayList<>();
 			// first we need to find the last selector
 			logger.debug("searching for last selector");
@@ -156,7 +157,7 @@ public class CssExtManager implements ICssExtManager {
 				
 				Queue<ElementDefinition> superElements = new LinkedList<>();
 				
-				superElements.addAll(new SearchHelper(collectModels(f)).findObjects(new SearchFilter<ElementDefinition>() {
+				superElements.addAll(new SearchHelper(collectModels(f, context)).findObjects(new SearchFilter<ElementDefinition>() {
 					@Override
 					public Class<ElementDefinition> getSearchClass() {
 						return ElementDefinition.class;
@@ -202,8 +203,8 @@ public class CssExtManager implements ICssExtManager {
 	
 	
 	@Override
-	public List<PropertyDefinition> findAllProperties(IFile f) {
-		List<PropertyDefinition> defs = new SearchHelper(collectModels(f)).findPropertiesByFilter(new PropertyDefinitionFilter() {
+	public List<PropertyDefinition> findAllProperties(IFile f, EObject context) {
+		List<PropertyDefinition> defs = new SearchHelper(collectModels(f, context)).findPropertiesByFilter(new PropertyDefinitionFilter() {
 			
 			@Override
 			public boolean returnOnFirstHit() {
@@ -219,8 +220,8 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	@Override
-	public ElementDefinition findElementByName(IFile f, final String elName) {
-		List<ElementDefinition> search = new SearchHelper(collectModels(f)).findObjects(new SearchFilter<ElementDefinition>() {
+	public ElementDefinition findElementByName(IFile f, EObject context, final String elName) {
+		List<ElementDefinition> search = new SearchHelper(collectModels(f, context)).findObjects(new SearchFilter<ElementDefinition>() {
 			
 			@Override
 			public Class<ElementDefinition> getSearchClass() {
@@ -242,8 +243,8 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	@Override
-	public ElementDefinition findElementByStyleClass(IFile f, final String styleClass) {
-		List<ElementDefinition> r = new SearchHelper(collectModels(f)).findObjects(new SearchFilter<ElementDefinition>() {
+	public ElementDefinition findElementByStyleClass(IFile f, EObject context, final String styleClass) {
+		List<ElementDefinition> r = new SearchHelper(collectModels(f, context)).findObjects(new SearchFilter<ElementDefinition>() {
 			@Override
 			public Class<ElementDefinition> getSearchClass() {
 				return ElementDefinition.class;
@@ -296,7 +297,7 @@ public class CssExtManager implements ICssExtManager {
 	}
 	
 	@Override
-	public CSSRule resolveReference(IFile f, final CSSRuleRef ref) {
+	public CSSRule resolveReference(IFile f, EObject context, final CSSRuleRef ref) {
 		final Definition definition = ref.getRef();
 		CSSRule result =  definition.getRule();
 		if (result == null) {
@@ -338,12 +339,12 @@ public class CssExtManager implements ICssExtManager {
 		extensionModelProvider.remove(p);
 	}
 	
-	private Set<CssExtension> collectModels(IFile file) {
+	private Set<CssExtension> collectModels(IFile file, EObject context) {
 		ICssResource cssFile = (ICssResource) Platform.getAdapterManager().getAdapter(file, ICssResource.class);
 		
 		if (cssFile != null) {
 			logger.debug("USING extensions from cssFile");
-			return cssFile.getEnabledCssExtensions();
+			return cssFile.getEnabledCssExtensions(context);
 		}
 		else {
 			logger.debug("defaulting to old provider");

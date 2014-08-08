@@ -161,7 +161,7 @@ public class CssHoverProvider extends DefaultEObjectHoverProvider {
 	 */
 	@Override
 	protected String getFirstLine(EObject o) {
-		String firstLine =  ext.getDocumentationHeader(Utils.getFile(o.eResource()),o);
+		String firstLine =  ext.getDocumentationHeader(Utils.getFile(o.eResource()),o,o);
 		
 		if (firstLine==null) {
 			firstLine = super.getFirstLine(o);
@@ -170,7 +170,11 @@ public class CssHoverProvider extends DefaultEObjectHoverProvider {
 	}
 	
 	protected boolean hasHover(EObject o) {
-		String firstLine = ext.getDocumentationHeader(Utils.getFile(o.eResource()),o);
+		if (o.eResource() == null) {
+			System.err.println("Cannot show doc for element without eResource: " + o);
+			return false;
+		}
+		String firstLine = ext.getDocumentationHeader(Utils.getFile(o.eResource()),o,o);
 		return firstLine != null;
 	}
 }

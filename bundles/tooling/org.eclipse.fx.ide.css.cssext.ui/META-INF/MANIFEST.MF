@@ -25,6 +25,7 @@ Require-Bundle: org.eclipse.fx.ide.css.cssext;visibility:=reexport,
  org.eclipse.core.databinding;bundle-version="1.4.1",
  org.eclipse.core.databinding.property;bundle-version="1.4.200"
 Import-Package: org.apache.log4j,
+ org.eclipse.core.filesystem,
  org.eclipse.fx.osgi.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.fx.ide.css.cssext.ui;x-internal:=true;

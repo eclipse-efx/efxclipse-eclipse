@@ -28,7 +28,7 @@ public class ExtApiDelegatingDocumentationProvider implements
 	
 	@Override
 	public String getDocumentation(EObject o) {
-		String doku = ext.getDocumentation(Utils.getFile(o.eResource()),o);
+		String doku = ext.getDocumentation(Utils.getFile(o.eResource()),o,o);
 		
 		if (doku == null) {
 			return "no docu support for this element :/";

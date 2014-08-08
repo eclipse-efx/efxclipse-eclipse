@@ -13,6 +13,7 @@ package org.eclipse.fx.ide.css.cssext;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.css.cssDsl.selector;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRule;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleRef;
@@ -23,13 +24,13 @@ import org.eclipse.fx.ide.css.extapi.Proposal;
 
 public interface ICssExtManager {
 
-	public abstract List<PropertyDefinition> findPropertiesBySelector(IFile f, selector cssSelector);
+	public abstract List<PropertyDefinition> findPropertiesBySelector(IFile f, EObject context, selector cssSelector);
 	
-	public abstract PropertyDefinition findPropertyByName(IFile f, String propertyName);
-	public abstract ElementDefinition findElementByName(IFile f, String elName);
-	public abstract List<PropertyDefinition> findAllProperties(IFile f);
-	public abstract CSSRule resolveReference(IFile f, final CSSRuleRef ref);
-	public abstract ElementDefinition findElementByStyleClass(IFile f, String styleClass);
+	public abstract PropertyDefinition findPropertyByName(IFile f, EObject context, String propertyName);
+	public abstract ElementDefinition findElementByName(IFile f, EObject context, String elName);
+	public abstract List<PropertyDefinition> findAllProperties(IFile f, EObject context);
+	public abstract CSSRule resolveReference(IFile f, EObject context, final CSSRuleRef ref);
+	public abstract ElementDefinition findElementByStyleClass(IFile f, EObject context, String styleClass);
 	
 	
 	public abstract void addCssExtProposalContributer(CssExtProposalContributor c);
