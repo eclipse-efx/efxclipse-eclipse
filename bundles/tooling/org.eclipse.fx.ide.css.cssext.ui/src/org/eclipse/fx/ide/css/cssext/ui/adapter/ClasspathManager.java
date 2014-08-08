@@ -10,21 +10,17 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.css.cssext.ui.adapter;
 
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.URIUtil;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.osgi.util.LoggerCreator;
@@ -36,8 +32,6 @@ import org.eclipse.jdt.core.IJavaElementDelta;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.core.ExternalFoldersManager;
-import org.eclipse.jdt.internal.core.ExternalPackageFragmentRoot;
 
 public class ClasspathManager {
 
@@ -113,6 +107,7 @@ public class ClasspathManager {
 			long locCount = 0;
 			IClasspathEntry[] resolvedClasspath = javaProject.getResolvedClasspath(true);
 			
+
 			allFiles.addAll(ClassPathSearchUtil.checkEntries(root, resolvedClasspath));
 		}
 		catch (JavaModelException e) {
