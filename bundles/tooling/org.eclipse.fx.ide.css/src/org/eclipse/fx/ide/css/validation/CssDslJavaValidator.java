@@ -46,7 +46,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 	
 	@Check
 	public void checkDeclaration(css_declaration dec) {
-		System.err.println("CHECK DECL " + dec);
+//		System.err.println("CHECK DECL " + dec);
 		css_property property = dec.getProperty();
 		List<CssTok> tokens = dec.getValueTokens();
 		
