@@ -21,18 +21,30 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
 import org.eclipse.fx.osgi.util.LoggerCreator;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
 import org.eclipse.xtext.parser.packrat.tokens.ParsedAction;
+import org.eclipse.xtext.resource.IResourceDescription;
+import org.eclipse.xtext.resource.IResourceDescription.Manager;
+import org.eclipse.xtext.resource.IResourceDescriptions;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.resource.XtextResourceSet;
+import org.eclipse.xtext.ui.resource.IResourceSetProvider;
+import org.eclipse.xtext.util.CancelIndicator;
 
 public abstract class ACssResource implements ICssResource {
 
@@ -93,6 +105,12 @@ public abstract class ACssResource implements ICssResource {
 	private boolean useCustom;
 	private List<URI> disabledExtensions = new ArrayList<>();
 	private List<URI> customExtensions = new ArrayList<>();
+
+	private ResourceSet rs;
+
+	private Manager manager;
+
+	private IResourceDescriptions x;
 	
 	public void save() throws CoreException {
 		this.adaptedObject.setPersistentProperty(KEY_USE_CUSTOM, Boolean.toString(useCustom));
@@ -151,6 +169,15 @@ public abstract class ACssResource implements ICssResource {
 		getLogger().debug("custom: " + customExtensions);
 	}
 	
+	protected IProject findProject() {
+		IResource res = (IResource) Platform.getAdapterManager().getAdapter(this.getAdaptedObject(), IResource.class);
+		IProject project = (IProject) Platform.getAdapterManager().getAdapter(res, IProject.class);
+		while (project == null && res.getParent() != null) {
+			res = res.getParent();
+			project = (IProject) Platform.getAdapterManager().getAdapter(res, IProject.class);
+		}
+		return project;
+	}
 	
 	
 	private ICssResource findParent() {
@@ -255,9 +282,67 @@ public abstract class ACssResource implements ICssResource {
 		return allEnabled;
 	}
 	
+	private CssExtension load(URI uri, boolean linkAll) {
+		System.err.println("LOADING " + uri);
+		Resource resource = rs.getResource(uri, true);
+		if (linkAll) {
+			System.err.println("(re)linking all");
+			for (Resource r : rs.getResources()) {
+				System.err.println(" * " + r);
+				EcoreUtil2.resolveLazyCrossReferences(r, CancelIndicator.NullImpl);
+				for (Resource.Diagnostic d : r.getErrors()) {
+					if (d instanceof XtextLinkingDiagnostic) {
+						XtextLinkingDiagnostic x = (XtextLinkingDiagnostic) d;
+						System.err.println( "  x " + x.getMessage());
+					}
+				}
+			}
+		}
+		
+		IResourceDescription desc = manager.getResourceDescription(resource);
+		System.err.println("description uri: " + desc.getURI());
+		
+		return (CssExtension) resource.getContents().get(0);
+	}
+	
+	private ExtensionHolder cachedExtensionHolder;
+	
 	@Override
-	public Set<CssExtension> getEnabledCssExtensions() {
-		return getAllEnabledExtensions().stream().map((uri)-> getRegistry().getExtension(uri).getModel()).collect(Collectors.toSet());
+	public Set<CssExtension> getEnabledCssExtensions(EObject context) {
+//		Set<CssExtension> result = new HashSet<>();
+//		URI jfx8Uri = URI.createURI("file:/opt/projects/efxclipse/git/org.eclipse.efxclipse/bundles/tooling/org.eclipse.fx.ide.css.jfx8/bin/jfx8.cssext");
+//		
+//		if (rs == null) {
+//			IResourceServiceProvider rsp = IResourceServiceProvider.Registry.INSTANCE.getResourceServiceProvider(jfx8Uri);
+//			
+//			IResourceSetProvider rp = rsp.get(IResourceSetProvider.class);
+//			rs = rp.get(ResourcesPlugin.getWorkspace().getRoot().getProject("javap"));
+//			manager = rsp.getResourceDescriptionManager();
+//			x = rsp.get(IResourceDescriptions.class);
+//			System.err.println("RsourceDescriptions: " + x);
+//			
+//			if (x != null) {
+//				IResourceDescription resourceDescription = x.getResourceDescription(jfx8Uri);
+//				System.err.println(resourceDescription);
+//			}
+//			
+//			for (IResourceDescription d : x.getAllResourceDescriptions()) {
+//				System.err.println(d);
+//			}
+//		}
+//		
+//		URI p2Uri = URI.createURI("jar:platform:/resource/javap/lib/p2.jar!/p2.cssext");
+//
+//		load(jfx8Uri, false);
+//		load(p2Uri, false);
+//		
+//		return result;
+		if (cachedExtensionHolder == null) {
+			cachedExtensionHolder = new ExtensionHolder(findProject(), context, getAllEnabledExtensions());
+		}
+		return new HashSet<>(cachedExtensionHolder.getModels());
+		
+//		return getAllEnabledExtensions().stream().map((uri)-> getRegistry().getExtension(uri).getModel()).collect(Collectors.toSet());
 	}
 	
 	public ExtensionRegistry getRegistry() {

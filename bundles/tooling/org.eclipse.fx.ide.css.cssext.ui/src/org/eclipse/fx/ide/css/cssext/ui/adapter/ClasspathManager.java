@@ -16,8 +16,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.fx.core.log.Logger;
@@ -100,64 +102,102 @@ public class ClasspathManager {
 		try  {
 			final IContainer workspace = project.getParent();
 			final IJavaProject javaProject = JavaCore.create(project);
+			final IWorkspaceRoot root = workspace.getWorkspace().getRoot();
 			
 			long locCount = 0;
+			IClasspathEntry[] resolvedClasspath = javaProject.getResolvedClasspath(true);
 			
-			for (IClasspathEntry e : javaProject.getResolvedClasspath(true)) {
-				locCount++;
-				switch (e.getEntryKind()) {
-				case IClasspathEntry.CPE_SOURCE: {
-					final IResource resource = workspace.findMember(e.getPath());
-					final List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(resource);
-					allFiles.addAll(result);
-				}
-				break;
-				case IClasspathEntry.CPE_LIBRARY: {
-					final IPath path = e.getPath();
-					if ("jar".equals(e.getPath().getFileExtension())) {
-						List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(path.toFile().getAbsolutePath());
-						allFiles.addAll(result);
-					}
-					else {
-						IPath binPath = path.append("bin");
-						if (binPath.toFile().exists()) {
-							// try bin path
-							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(binPath.toFile().getAbsolutePath());
-							allFiles.addAll(result);
-						}
-						else {
-							// try whole folder
-							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(path.toFile().getAbsolutePath());
-							allFiles.addAll(result);
-						}
-						
-					}
-				}
-				break;
-				case IClasspathEntry.CPE_PROJECT: {
-					final IPath path = e.getPath();
-					final IProject p = (IProject) project.getParent().findMember(path);
-					final IJavaProject jp = JavaCore.create(p);
-					final IResource output = project.getParent().findMember(jp.getOutputLocation());
-					final List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(output);
-					allFiles.addAll(result);
-				}
-				break;
-					
-				default: {
-					getLogger().warning("entry not handled! " + e);
-				}
-					
-				}
-				
-				
-				
-			}
-			getLogger().debug("Checked " + locCount + " entries and found " + allFiles.size() + " cssext definitions: " + allFiles);
+
+			allFiles.addAll(ClassPathSearchUtil.checkEntries(root, resolvedClasspath));
 		}
 		catch (JavaModelException e) {
 			e.printStackTrace();
 		}
+//			System.err.println("found : " + entries);
+			
+//			HashSet externalFolders = ExternalFoldersManager.getExternalFolders(resolvedClasspath);
+////			System.err.println("externalFolders " + externalFolders);
+//			for (IClasspathEntry e : resolvedClasspath) {
+////				System.err.println(e);
+//				locCount++;
+//				switch (e.getEntryKind()) {
+//				case IClasspathEntry.CPE_SOURCE: {
+//					final IResource resource = workspace.findMember(e.getPath());
+//					final List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(resource);
+//					allFiles.addAll(result);
+//				}
+//				break;
+//				case IClasspathEntry.CPE_LIBRARY: {
+//					final IPath path = e.getPath();
+//					java.net.URI lU = null;
+//					String libUri = "file://" + path.toFile().getAbsolutePath(); // = external representation
+////					System.err.println("cp path: " + path);
+//					
+//					IFolder folder = ExternalFoldersManager.getExternalFoldersManager().getFolder(path);
+////					System.err.println("external Folder: " + folder);
+//					if (folder != null) {
+////						System.err.println(" .location = " + folder.getLocation());
+////						System.err.println(" .locationURI = " + folder.getLocationURI());
+////						System.err.println(" .fullPath = " + folder.getFullPath());
+//						libUri = folder.getLocationURI().toString();
+//						//libUri = "platform://resource" + folder.getFullPath();
+//						lU = folder.getLocationURI();
+//					}
+//					
+////					System.err.println("Using libUri = " + libUri);
+//					
+//					if ("jar".equals(e.getPath().getFileExtension())) {
+//						IFile f = root.getFile(path);
+//						if (f.exists()) {
+//							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(f.getLocation().toFile().getAbsolutePath(), f.getLocationURI().toString());
+//							allFiles.addAll(result);
+//						}
+//						else {
+//							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkJar(path.toFile().getAbsolutePath(), libUri);
+//							allFiles.addAll(result);
+//						}
+//					}
+//					else {
+//						
+//						IPath binPath = path.append("bin");
+//						if (binPath.toFile().exists()) {
+//							// try bin path
+//							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(binPath.toFile().getAbsolutePath(), libUri + "/bin");
+//							allFiles.addAll(result);
+//						}
+//						else {
+//							// try whole folder
+//							List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkFolder(path.toFile().getAbsolutePath(), libUri);
+//							allFiles.addAll(result);
+//						}
+//						
+//					}
+//				}
+//				break;
+//				case IClasspathEntry.CPE_PROJECT: {
+//					final IPath path = e.getPath();
+//					final IProject p = (IProject) project.getParent().findMember(path);
+//					final IJavaProject jp = JavaCore.create(p);
+//					final IResource output = project.getParent().findMember(jp.getOutputLocation());
+//					final List<ClassPathSearchUtil.Entry> result = ClassPathSearchUtil.checkResource(output);
+//					allFiles.addAll(result);
+//				}
+//				break;
+//					
+//				default: {
+//					getLogger().warning("entry not handled! " + e);
+//				}
+//					
+//				}
+//				
+//				
+//				
+//			}
+//			getLogger().debug("Checked " + locCount + " entries and found " + allFiles.size() + " cssext definitions: " + allFiles);
+//		}
+//		catch (JavaModelException e) {
+//			e.printStackTrace();
+//		}
 		
 		List<URI> extensions = new ArrayList<>();
 		for (ClassPathSearchUtil.Entry entry : allFiles) {

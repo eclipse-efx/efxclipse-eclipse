@@ -39,16 +39,6 @@ public class CssProject extends CssFolder {
 		super(adaptedObject);
 	}
 	
-	private IProject findProject() {
-		IResource res = (IResource) Platform.getAdapterManager().getAdapter(this.getAdaptedObject(), IResource.class);
-		IProject project = (IProject) Platform.getAdapterManager().getAdapter(res, IProject.class);
-		while (project == null && res.getParent() != null) {
-			res = res.getParent();
-			project = (IProject) Platform.getAdapterManager().getAdapter(res, IProject.class);
-		}
-		return project;
-	}
-	
 	public void invalidateClasspathExtensions() {
 		ClasspathManager.getInstance().invalidateClasspath(findProject());
 	}

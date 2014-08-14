@@ -34,33 +34,32 @@ public class DefaultCssExtProvider implements CssExt {
 	}
 
 	@Override
-	public String getDocumentationHeader(IFile f, EObject obj) {
+	public String getDocumentationHeader(IFile f, EObject context, EObject obj) {
 		return docParser.getDocHead(f,obj);
 	}
 
 	@Override
-	public String getDocumentation(IFile f, EObject obj) {
+	public String getDocumentation(IFile f, EObject context, EObject obj) {
 		return docParser.getDocumentation(f,obj);
 	}
 
 	@Override
-	public List<Proposal> getPropertyProposalsForSelector(IFile f, 
-			List<selector> selectors) {
+	public List<Proposal> getPropertyProposalsForSelector(IFile f, EObject context, List<selector> selectors) {
 
 		List<Proposal> result = new ArrayList<>();
 		
 		List<PropertyDefinition> defs = new ArrayList<>();
 		if (selectors == null || selectors.isEmpty()) {
-			defs.addAll(cssExtManager.findAllProperties(f));
+			defs.addAll(cssExtManager.findAllProperties(f, context));
 		}
 		else {
 			for (selector selector: selectors) {
-				defs.addAll(cssExtManager.findPropertiesBySelector(f,selector));
+				defs.addAll(cssExtManager.findPropertiesBySelector(f, context, selector));
 			}
 		}
 		
 		if (defs.isEmpty()) {
-			defs.addAll(cssExtManager.findAllProperties(f));
+			defs.addAll(cssExtManager.findAllProperties(f, context));
 		}
 		
 		for (PropertyDefinition def : defs) {
@@ -109,12 +108,12 @@ public class DefaultCssExtProvider implements CssExt {
 	}
 	
 	@Override
-	public List<Proposal> getValueProposalsForProperty(IFile f, List<selector> selector,
+	public List<Proposal> getValueProposalsForProperty(IFile f, EObject context, List<selector> selector,
 			css_property property, List<CssTok> prefixTok, String prefixString) {
 		
 		// TODO add element
 		
-		return parser.findProposals(f, null, property.getName(), prefixTok, prefixString);
+		return parser.findProposals(f, context, null, property.getName(), prefixTok, prefixString);
 		
 	}
 	

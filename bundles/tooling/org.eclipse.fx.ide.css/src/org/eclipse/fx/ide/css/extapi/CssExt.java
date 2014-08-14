@@ -29,11 +29,11 @@ import com.google.inject.Provider;
  */
 public interface CssExt {
 
-	public List<Proposal> getPropertyProposalsForSelector(IFile f, List<selector> selector);
-	public List<Proposal> getValueProposalsForProperty(IFile f, List<selector> selector, css_property property, List<CssTok> prefixTok, String prefixString);
+	public List<Proposal> getPropertyProposalsForSelector(IFile f, EObject context, List<selector> selector);
+	public List<Proposal> getValueProposalsForProperty(IFile f, EObject context, List<selector> selector, css_property property, List<CssTok> prefixTok, String prefixString);
 	
-	public String getDocumentationHeader(IFile f, EObject obj);
-	public String getDocumentation(IFile f, EObject obj);
+	public String getDocumentationHeader(IFile f, EObject context, EObject obj);
+	public String getDocumentation(IFile f, EObject context, EObject obj);
 	
 	
 	public static class OsgiCssExtServiceProvider implements Provider<CssExt> {
