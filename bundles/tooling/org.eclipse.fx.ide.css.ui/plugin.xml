@@ -209,13 +209,13 @@
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="org.eclipse.fx.ide.css.CssDsl.compare.contentViewers"
-            class="org.eclipse.fx.ide.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            class="org.eclipse.fx.ide.css.ui.CssDslExecutableExtensionFactory:org.eclipse.compare.internal.TextViewerCreator"
             extensions="css">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="org.eclipse.fx.ide.css.CssDsl.compare.contentMergeViewers"
-            class="org.eclipse.fx.ide.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            class="org.eclipse.fx.ide.css.ui.CssDslExecutableExtensionFactory:org.eclipse.compare.internal.TextMergeViewerCreator"
             extensions="css" label="%viewer.label">
      </viewer>
   </extension>
