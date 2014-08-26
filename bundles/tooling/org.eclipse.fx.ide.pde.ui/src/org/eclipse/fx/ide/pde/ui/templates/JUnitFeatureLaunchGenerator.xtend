@@ -41,7 +41,7 @@ class JemmyFeatureLaunchGenerator implements Generator<DynamicFile> {
 <booleanAttribute key="includeOptional" value="true"/>
 <stringAttribute key="location" value="${workspace_loc}/../junit-workspace"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/my.app.sample.jemmy/src/my/app/sample/jemmy/TestSuite.java"/>
+<listEntry value="/«launch.projectName»/src/«launch.junitClassName.replace('.','/')».java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
