@@ -25,7 +25,7 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.PropertyDefinition
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleDefinition
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSType
-import java.util.Set
+import java.util.Setimport org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleConcatWithoutSpace
 
 class HTMLDocGenerator {
 	def generate(Resource resource) '''
@@ -48,9 +48,9 @@ class HTMLDocGenerator {
     <title>CSS Documentation</title>
 
     <!-- Le styles -->
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
     <style type="text/css">
       body {
@@ -389,6 +389,7 @@ class HTMLDocGenerator {
 	
 	def String translateRule(CSSRule r) {
 		var result = new StringBuilder;
+//		result.append(r.toString);
 		if (r instanceof CSSRuleOr) {
 			val iterator =(r as CSSRuleOr).getOrs().iterator();
 			while (iterator.hasNext()) {
@@ -400,6 +401,15 @@ class HTMLDocGenerator {
 		}
 		else if (r instanceof CSSRuleConcat) {
 			val iterator =( r as CSSRuleConcat).getConc().iterator();
+			while (iterator.hasNext()) {
+				result.append(translateRule(iterator.next()));
+				if (iterator.hasNext()) {
+					result.append(" ");
+				}
+			}
+		}
+		else if (r instanceof CSSRuleConcatWithoutSpace) {
+			val iterator =( r as CSSRuleConcatWithoutSpace).getConc().iterator();
 			while (iterator.hasNext()) {
 				result.append(translateRule(iterator.next()));
 				if (iterator.hasNext()) {
@@ -458,20 +468,20 @@ class HTMLDocGenerator {
 	}
 	
 	def leadout() '''
-	<script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-affix.js">
+	<script src="http://getbootstrap.com/2.3.2/assets/js/jquery.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-alert.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-modal.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-tab.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-tooltip.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-popover.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-button.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-carousel.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-typeahead.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-affix.js"></script>
 </body>
 </html>
 	'''

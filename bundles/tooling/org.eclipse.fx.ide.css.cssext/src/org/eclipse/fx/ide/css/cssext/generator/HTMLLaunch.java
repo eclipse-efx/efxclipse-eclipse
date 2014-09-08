@@ -39,7 +39,7 @@ public class HTMLLaunch {
 //		}
 		Injector injector = new org.eclipse.fx.ide.css.cssext.CssExtDslStandaloneSetupGenerated().createInjectorAndDoEMFRegistration();
 		HTMLLaunch main = injector.getInstance(HTMLLaunch.class);
-		main.runGenerator("file:///Users/tomschindl/git/e-fx-clipse/org.eclipse.fx.ide.css.jfx/OSGI-INF/jfx2.cssext");
+		main.runGenerator("file:///Users/tomschindl/git/efxclipse/bundles/tooling/org.eclipse.fx.ide.css.jfx8/src/jfx8.cssext");
 	}
 	
 	@Inject 
@@ -67,7 +67,7 @@ public class HTMLLaunch {
 		// configure and start the generator
 		String data = generator.generate(resource).toString();
 		try {
-			FileOutputStream out = new FileOutputStream(new File("/Users/tomschindl/git/e-fx-clipse/org.eclipse.fx.ide.css.jfx/jfx2.html"));
+			FileOutputStream out = new FileOutputStream(new File("/Users/tomschindl/git/efxclipse/bundles/tooling/org.eclipse.fx.ide.css.jfx8/jfx8.html"));
 			out.write(data.getBytes());
 			out.close();
 		} catch (FileNotFoundException e) {
