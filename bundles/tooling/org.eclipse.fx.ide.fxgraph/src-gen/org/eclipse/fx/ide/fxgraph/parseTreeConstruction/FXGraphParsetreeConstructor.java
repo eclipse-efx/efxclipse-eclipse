@@ -115,9 +115,10 @@ protected class ThisRootNode extends RootToken {
 			case 82: return new JvmUpperBound_Group(this, this, 82, inst);
 			case 83: return new JvmUpperBoundAnded_Group(this, this, 83, inst);
 			case 84: return new JvmLowerBound_Group(this, this, 84, inst);
-			case 85: return new JvmTypeParameter_Group(this, this, 85, inst);
-			case 86: return new XImportSection_ImportDeclarationsAssignment(this, this, 86, inst);
-			case 87: return new XImportDeclaration_Group(this, this, 87, inst);
+			case 85: return new JvmLowerBoundAnded_Group(this, this, 85, inst);
+			case 86: return new JvmTypeParameter_Group(this, this, 86, inst);
+			case 87: return new XImportSection_ImportDeclarationsAssignment(this, this, 87, inst);
+			case 88: return new XImportDeclaration_Group(this, this, 88, inst);
 			default: return null;
 		}	
 	}	
@@ -16567,11 +16568,11 @@ protected class XSwitchExpression_RightCurlyBracketKeyword_6 extends KeywordToke
 /************ begin Rule XCasePart ****************
  *
  * XCasePart:
- * 	{XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | ",");
+ * 	{XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | fallThrough?=",");
  *
  **/
 
-// {XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | ",")
+// {XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | fallThrough?=",")
 protected class XCasePart_Group extends GroupToken {
 	
 	public XCasePart_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16764,7 +16765,7 @@ protected class XCasePart_CaseAssignment_2_1 extends AssignmentToken  {
 }
 
 
-// ":" then=XExpression | ","
+// ":" then=XExpression | fallThrough?=","
 protected class XCasePart_Alternatives_3 extends AlternativesToken {
 
 	public XCasePart_Alternatives_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16780,7 +16781,7 @@ protected class XCasePart_Alternatives_3 extends AlternativesToken {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new XCasePart_Group_3_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new XCasePart_CommaKeyword_3_1(lastRuleCallOrigin, this, 1, inst);
+			case 1: return new XCasePart_FallThroughAssignment_3_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -16880,16 +16881,16 @@ protected class XCasePart_ThenAssignment_3_0_1 extends AssignmentToken  {
 }
 
 
-// ","
-protected class XCasePart_CommaKeyword_3_1 extends KeywordToken  {
+// fallThrough?=","
+protected class XCasePart_FallThroughAssignment_3_1 extends AssignmentToken  {
 	
-	public XCasePart_CommaKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public XCasePart_FallThroughAssignment_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getXCasePartAccess().getCommaKeyword_3_1();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getXCasePartAccess().getFallThroughAssignment_3_1();
 	}
 
     @Override
@@ -16900,6 +16901,18 @@ protected class XCasePart_CommaKeyword_3_1 extends KeywordToken  {
 			case 2: return new XCasePart_XCasePartAction_0(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("fallThrough",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("fallThrough");
+		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getXCasePartAccess().getFallThroughCommaKeyword_3_1_0();
+			return obj;
+		}
+		return null;
 	}
 
 }
@@ -22532,6 +22545,7 @@ protected class JvmTypeReference_Alternatives extends AlternativesToken {
     @Override
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getXFunctionTypeRefRule().getType().getClassifier())
 			return null;
@@ -22564,6 +22578,7 @@ protected class JvmTypeReference_Group_0 extends GroupToken {
     @Override
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -22593,7 +22608,8 @@ protected class JvmTypeReference_JvmParameterizedTypeReferenceParserRuleCall_0_0
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(JvmParameterizedTypeReference_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
@@ -23094,12 +23110,15 @@ protected class XFunctionTypeRef_ReturnTypeAssignment_2 extends AssignmentToken 
 /************ begin Rule JvmParameterizedTypeReference ****************
  *
  * JvmParameterizedTypeReference:
- * 	type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)*
- * 	">")?;
+ * 	type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">"
+ * 	(=> ({JvmInnerTypeReference.outer=current} ".") type=[JvmType|ValidID] ("<" arguments+=JvmArgumentTypeReference (","
+ * 	arguments+=JvmArgumentTypeReference)* ">")?)*)?;
  *
  **/
 
-// type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">")?
+// type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">" (=>
+// ({JvmInnerTypeReference.outer=current} ".") type=[JvmType|ValidID] ("<" arguments+=JvmArgumentTypeReference (","
+// arguments+=JvmArgumentTypeReference)* ">")?)*)?
 protected class JvmParameterizedTypeReference_Group extends GroupToken {
 	
 	public JvmParameterizedTypeReference_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -23122,7 +23141,8 @@ protected class JvmParameterizedTypeReference_Group extends GroupToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -23150,11 +23170,13 @@ protected class JvmParameterizedTypeReference_TypeAssignment_0 extends Assignmen
 
     @Override	
 	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier())
+			return null;
 		if((value = eObjectConsumer.getConsumable("type",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("type");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0().getType().getClassifier()) && crossRefSerializer.isValid(obj.getEObject(), grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0(), (EObject)value , null)) {
 				type = AssignmentType.CROSS_REFERENCE;
 				element = grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0(); 
 				return obj;
@@ -23165,7 +23187,9 @@ protected class JvmParameterizedTypeReference_TypeAssignment_0 extends Assignmen
 
 }
 
-// (=> "<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">")?
+// (=> "<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">" (=>
+// ({JvmInnerTypeReference.outer=current} ".") type=[JvmType|ValidID] ("<" arguments+=JvmArgumentTypeReference (","
+// arguments+=JvmArgumentTypeReference)* ">")?)*)?
 protected class JvmParameterizedTypeReference_Group_1 extends GroupToken {
 	
 	public JvmParameterizedTypeReference_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -23180,7 +23204,8 @@ protected class JvmParameterizedTypeReference_Group_1 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new JvmParameterizedTypeReference_GreaterThanSignKeyword_1_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new JvmParameterizedTypeReference_Group_1_4(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmParameterizedTypeReference_GreaterThanSignKeyword_1_3(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -23368,7 +23393,387 @@ protected class JvmParameterizedTypeReference_GreaterThanSignKeyword_1_3 extends
 		}	
 	}
 
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
 }
+
+// (=> ({JvmInnerTypeReference.outer=current} ".") type=[JvmType|ValidID] ("<" arguments+=JvmArgumentTypeReference (","
+// arguments+=JvmArgumentTypeReference)* ">")?)*
+protected class JvmParameterizedTypeReference_Group_1_4 extends GroupToken {
+	
+	public JvmParameterizedTypeReference_Group_1_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getGroup_1_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_Group_1_4_2(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmParameterizedTypeReference_TypeAssignment_1_4_1(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// => ({JvmInnerTypeReference.outer=current} ".")
+protected class JvmParameterizedTypeReference_Group_1_4_0 extends GroupToken {
+	
+	public JvmParameterizedTypeReference_Group_1_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getGroup_1_4_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_Group_1_4_0_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// {JvmInnerTypeReference.outer=current} "."
+protected class JvmParameterizedTypeReference_Group_1_4_0_0 extends GroupToken {
+	
+	public JvmParameterizedTypeReference_Group_1_4_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getGroup_1_4_0_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_FullStopKeyword_1_4_0_0_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// {JvmInnerTypeReference.outer=current}
+protected class JvmParameterizedTypeReference_JvmInnerTypeReferenceOuterAction_1_4_0_0_0 extends ActionToken  {
+
+	public JvmParameterizedTypeReference_JvmInnerTypeReferenceOuterAction_1_4_0_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_Group_1_4(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmParameterizedTypeReference_GreaterThanSignKeyword_1_3(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		Object val = eObjectConsumer.getConsumable("outer", false);
+		if(val == null) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("outer")) return null;
+		return createEObjectConsumer((EObject) val);
+	}
+}
+
+// "."
+protected class JvmParameterizedTypeReference_FullStopKeyword_1_4_0_0_1 extends KeywordToken  {
+	
+	public JvmParameterizedTypeReference_FullStopKeyword_1_4_0_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getFullStopKeyword_1_4_0_0_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_JvmInnerTypeReferenceOuterAction_1_4_0_0_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+
+// type=[JvmType|ValidID]
+protected class JvmParameterizedTypeReference_TypeAssignment_1_4_1 extends AssignmentToken  {
+	
+	public JvmParameterizedTypeReference_TypeAssignment_1_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeAssignment_1_4_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_Group_1_4_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("type",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("type");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_1_4_1_0().getType().getClassifier()) && crossRefSerializer.isValid(obj.getEObject(), grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_1_4_1_0(), (EObject)value , null)) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_1_4_1_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+// (=> "<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">")?
+protected class JvmParameterizedTypeReference_Group_1_4_2 extends GroupToken {
+	
+	public JvmParameterizedTypeReference_Group_1_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getGroup_1_4_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_GreaterThanSignKeyword_1_4_2_3(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// => "<"
+protected class JvmParameterizedTypeReference_LessThanSignKeyword_1_4_2_0 extends KeywordToken  {
+	
+	public JvmParameterizedTypeReference_LessThanSignKeyword_1_4_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getLessThanSignKeyword_1_4_2_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_TypeAssignment_1_4_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// arguments+=JvmArgumentTypeReference
+protected class JvmParameterizedTypeReference_ArgumentsAssignment_1_4_2_1 extends AssignmentToken  {
+	
+	public JvmParameterizedTypeReference_ArgumentsAssignment_1_4_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsAssignment_1_4_2_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmArgumentTypeReference_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("arguments",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("arguments");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getJvmArgumentTypeReferenceRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_4_2_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_LessThanSignKeyword_1_4_2_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+// ("," arguments+=JvmArgumentTypeReference)*
+protected class JvmParameterizedTypeReference_Group_1_4_2_2 extends GroupToken {
+	
+	public JvmParameterizedTypeReference_Group_1_4_2_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getGroup_1_4_2_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_ArgumentsAssignment_1_4_2_2_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// ","
+protected class JvmParameterizedTypeReference_CommaKeyword_1_4_2_2_0 extends KeywordToken  {
+	
+	public JvmParameterizedTypeReference_CommaKeyword_1_4_2_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_4_2_2_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_Group_1_4_2_2(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmParameterizedTypeReference_ArgumentsAssignment_1_4_2_1(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// arguments+=JvmArgumentTypeReference
+protected class JvmParameterizedTypeReference_ArgumentsAssignment_1_4_2_2_1 extends AssignmentToken  {
+	
+	public JvmParameterizedTypeReference_ArgumentsAssignment_1_4_2_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsAssignment_1_4_2_2_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmArgumentTypeReference_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("arguments",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("arguments");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getJvmArgumentTypeReferenceRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_4_2_2_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_CommaKeyword_1_4_2_2_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+// ">"
+protected class JvmParameterizedTypeReference_GreaterThanSignKeyword_1_4_2_3 extends KeywordToken  {
+	
+	public JvmParameterizedTypeReference_GreaterThanSignKeyword_1_4_2_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getJvmParameterizedTypeReferenceAccess().getGreaterThanSignKeyword_1_4_2_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmParameterizedTypeReference_Group_1_4_2_2(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmParameterizedTypeReference_ArgumentsAssignment_1_4_2_1(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
 
 
 
@@ -23406,6 +23811,7 @@ protected class JvmArgumentTypeReference_Alternatives extends AlternativesToken 
     @Override
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getJvmWildcardTypeReferenceAccess().getJvmWildcardTypeReferenceAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getXFunctionTypeRefRule().getType().getClassifier())
@@ -23438,6 +23844,7 @@ protected class JvmArgumentTypeReference_JvmTypeReferenceParserRuleCall_0 extend
     @Override
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getJvmParameterizedTypeReferenceRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getXFunctionTypeRefRule().getType().getClassifier())
 			return null;
@@ -23496,11 +23903,13 @@ protected class JvmArgumentTypeReference_JvmWildcardTypeReferenceParserRuleCall_
 /************ begin Rule JvmWildcardTypeReference ****************
  *
  * JvmWildcardTypeReference:
- * 	{JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound | constraints+=JvmLowerBound)?;
+ * 	{JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* |
+ * 	constraints+=JvmLowerBound constraints+=JvmLowerBoundAnded*)?;
  *
  **/
 
-// {JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound | constraints+=JvmLowerBound)?
+// {JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* | constraints+=JvmLowerBound
+// constraints+=JvmLowerBoundAnded*)?
 protected class JvmWildcardTypeReference_Group extends GroupToken {
 	
 	public JvmWildcardTypeReference_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -23578,7 +23987,8 @@ protected class JvmWildcardTypeReference_QuestionMarkKeyword_1 extends KeywordTo
 
 }
 
-// (constraints+=JvmUpperBound | constraints+=JvmLowerBound)?
+// (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* | constraints+=JvmLowerBound
+// constraints+=JvmLowerBoundAnded*)?
 protected class JvmWildcardTypeReference_Alternatives_2 extends AlternativesToken {
 
 	public JvmWildcardTypeReference_Alternatives_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -23593,8 +24003,31 @@ protected class JvmWildcardTypeReference_Alternatives_2 extends AlternativesToke
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new JvmWildcardTypeReference_ConstraintsAssignment_2_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new JvmWildcardTypeReference_ConstraintsAssignment_2_1(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new JvmWildcardTypeReference_Group_2_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmWildcardTypeReference_Group_2_1(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*
+protected class JvmWildcardTypeReference_Group_2_0 extends GroupToken {
+	
+	public JvmWildcardTypeReference_Group_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmWildcardTypeReferenceAccess().getGroup_2_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmWildcardTypeReference_ConstraintsAssignment_2_0_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmWildcardTypeReference_ConstraintsAssignment_2_0_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -23602,15 +24035,15 @@ protected class JvmWildcardTypeReference_Alternatives_2 extends AlternativesToke
 }
 
 // constraints+=JvmUpperBound
-protected class JvmWildcardTypeReference_ConstraintsAssignment_2_0 extends AssignmentToken  {
+protected class JvmWildcardTypeReference_ConstraintsAssignment_2_0_0 extends AssignmentToken  {
 	
-	public JvmWildcardTypeReference_ConstraintsAssignment_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public JvmWildcardTypeReference_ConstraintsAssignment_2_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsAssignment_2_0();
+		return grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsAssignment_2_0_0();
 	}
 
     @Override
@@ -23629,7 +24062,7 @@ protected class JvmWildcardTypeReference_ConstraintsAssignment_2_0 extends Assig
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getJvmUpperBoundRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0(); 
+				element = grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -23647,16 +24080,87 @@ protected class JvmWildcardTypeReference_ConstraintsAssignment_2_0 extends Assig
 	}	
 }
 
-// constraints+=JvmLowerBound
-protected class JvmWildcardTypeReference_ConstraintsAssignment_2_1 extends AssignmentToken  {
+// constraints+=JvmUpperBoundAnded*
+protected class JvmWildcardTypeReference_ConstraintsAssignment_2_0_1 extends AssignmentToken  {
 	
-	public JvmWildcardTypeReference_ConstraintsAssignment_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public JvmWildcardTypeReference_ConstraintsAssignment_2_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsAssignment_2_1();
+		return grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsAssignment_2_0_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmUpperBoundAnded_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("constraints",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("constraints");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getJvmUpperBoundAndedRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundAndedParserRuleCall_2_0_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new JvmWildcardTypeReference_ConstraintsAssignment_2_0_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new JvmWildcardTypeReference_ConstraintsAssignment_2_0_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+// constraints+=JvmLowerBound constraints+=JvmLowerBoundAnded*
+protected class JvmWildcardTypeReference_Group_2_1 extends GroupToken {
+	
+	public JvmWildcardTypeReference_Group_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmWildcardTypeReferenceAccess().getGroup_2_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmWildcardTypeReference_ConstraintsAssignment_2_1_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new JvmWildcardTypeReference_ConstraintsAssignment_2_1_0(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// constraints+=JvmLowerBound
+protected class JvmWildcardTypeReference_ConstraintsAssignment_2_1_0 extends AssignmentToken  {
+	
+	public JvmWildcardTypeReference_ConstraintsAssignment_2_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsAssignment_2_1_0();
 	}
 
     @Override
@@ -23675,7 +24179,7 @@ protected class JvmWildcardTypeReference_ConstraintsAssignment_2_1 extends Assig
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getJvmLowerBoundRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0(); 
+				element = grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -23692,6 +24196,54 @@ protected class JvmWildcardTypeReference_ConstraintsAssignment_2_1 extends Assig
 		}	
 	}	
 }
+
+// constraints+=JvmLowerBoundAnded*
+protected class JvmWildcardTypeReference_ConstraintsAssignment_2_1_1 extends AssignmentToken  {
+	
+	public JvmWildcardTypeReference_ConstraintsAssignment_2_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsAssignment_2_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmLowerBoundAnded_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("constraints",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("constraints");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getJvmLowerBoundAndedRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundAndedParserRuleCall_2_1_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new JvmWildcardTypeReference_ConstraintsAssignment_2_1_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new JvmWildcardTypeReference_ConstraintsAssignment_2_1_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
 
 
 
@@ -24017,6 +24569,113 @@ protected class JvmLowerBound_TypeReferenceAssignment_1 extends AssignmentToken 
 
 
 /************ end Rule JvmLowerBound ****************/
+
+
+/************ begin Rule JvmLowerBoundAnded ****************
+ *
+ * JvmLowerBoundAnded returns JvmLowerBound:
+ * 	"&" typeReference=JvmTypeReference;
+ *
+ **/
+
+// "&" typeReference=JvmTypeReference
+protected class JvmLowerBoundAnded_Group extends GroupToken {
+	
+	public JvmLowerBoundAnded_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getJvmLowerBoundAndedAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmLowerBoundAnded_TypeReferenceAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getJvmLowerBoundAndedRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// "&"
+protected class JvmLowerBoundAnded_AmpersandKeyword_0 extends KeywordToken  {
+	
+	public JvmLowerBoundAnded_AmpersandKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getJvmLowerBoundAndedAccess().getAmpersandKeyword_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// typeReference=JvmTypeReference
+protected class JvmLowerBoundAnded_TypeReferenceAssignment_1 extends AssignmentToken  {
+	
+	public JvmLowerBoundAnded_TypeReferenceAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getJvmLowerBoundAndedAccess().getTypeReferenceAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new JvmTypeReference_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("typeReference",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("typeReference");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getJvmTypeReferenceRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getJvmLowerBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new JvmLowerBoundAnded_AmpersandKeyword_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+/************ end Rule JvmLowerBoundAnded ****************/
 
 
 /************ begin Rule JvmTypeParameter ****************

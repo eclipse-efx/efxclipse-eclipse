@@ -24,70 +24,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_SCRIPTLITERAL", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'dynamic'", "'component'", "'controlledby'", "'styledwith'", "'['", "','", "']'", "'resourcefile'", "'extraClasspath'", "'sceneSetup'", "'{'", "'}'", "'('", "')'", "'id'", "'createdby'", "'define'", "'script'", "'preview'", "'runtime-only'", "'call'", "'#'", "':'", "'static'", "'true'", "'false'", "'-'", "'const'", "'idref'", "'include'", "'as'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'scriptvalue'", "'location'", "'rstring'", "'bind'", "'='", "'+='", "'-='", "'*='", "'/='", "'%='", "'<'", "'>'", "'>='", "'||'", "'&&'", "'=='", "'!='", "'==='", "'!=='", "'instanceof'", "'->'", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'+'", "'*'", "'**'", "'/'", "'%'", "'!'", "'++'", "'--'", "'.'", "'::'", "'?.'", "'|'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'extends'", "'extension'", "'super'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'synchronized'", "'catch'", "'?'", "'&'"
     };
-    public static final int RULE_ID=5;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=13;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int T__93=93;
-    public static final int T__19=19;
-    public static final int T__94=94;
-    public static final int T__91=91;
     public static final int RULE_HEX=7;
-    public static final int T__92=92;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__90=90;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int T__14=14;
-    public static final int RULE_DECIMAL=9;
-    public static final int T__99=99;
-    public static final int T__98=98;
-    public static final int T__97=97;
-    public static final int T__96=96;
-    public static final int T__95=95;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
-    public static final int T__85=85;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
-    public static final int T__89=89;
-    public static final int T__88=88;
-    public static final int RULE_ML_COMMENT=10;
-    public static final int RULE_STRING=4;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int T__70=70;
-    public static final int T__76=76;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
-    public static final int T__77=77;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int RULE_SCRIPTLITERAL=6;
-    public static final int T__61=61;
-    public static final int T__60=60;
+    public static final int T__50=50;
+    public static final int T__59=59;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -96,45 +35,106 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__107=107;
-    public static final int T__108=108;
-    public static final int T__109=109;
-    public static final int T__103=103;
-    public static final int T__59=59;
-    public static final int T__104=104;
-    public static final int T__105=105;
-    public static final int T__106=106;
-    public static final int T__111=111;
-    public static final int T__110=110;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=5;
     public static final int RULE_INT=8;
-    public static final int T__113=113;
-    public static final int T__112=112;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__102=102;
-    public static final int T__101=101;
-    public static final int T__100=100;
-    public static final int RULE_SL_COMMENT=11;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__66=66;
+    public static final int RULE_ML_COMMENT=10;
+    public static final int T__67=67;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__91=91;
+    public static final int T__100=100;
+    public static final int T__92=92;
+    public static final int T__93=93;
+    public static final int T__102=102;
+    public static final int T__94=94;
+    public static final int T__101=101;
+    public static final int T__90=90;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__99=99;
+    public static final int T__14=14;
+    public static final int T__95=95;
+    public static final int RULE_SCRIPTLITERAL=6;
+    public static final int T__96=96;
+    public static final int T__97=97;
+    public static final int T__98=98;
+    public static final int RULE_DECIMAL=9;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int T__70=70;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=11;
+    public static final int T__77=77;
+    public static final int T__78=78;
+    public static final int T__79=79;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__74=74;
+    public static final int T__75=75;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__111=111;
+    public static final int T__81=81;
+    public static final int T__110=110;
+    public static final int T__82=82;
+    public static final int T__113=113;
+    public static final int T__83=83;
+    public static final int T__112=112;
     public static final int RULE_WS=12;
+    public static final int RULE_ANY_OTHER=13;
+    public static final int T__88=88;
+    public static final int T__108=108;
+    public static final int T__89=89;
+    public static final int T__107=107;
+    public static final int T__109=109;
+    public static final int T__84=84;
+    public static final int T__104=104;
+    public static final int T__85=85;
+    public static final int T__103=103;
+    public static final int T__86=86;
+    public static final int T__106=106;
+    public static final int T__87=87;
+    public static final int T__105=105;
 
     // delegates
     // delegators
@@ -1881,16 +1881,6 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                 if ( (LA21_2==RULE_ID) ) {
                     switch ( input.LA(3) ) {
-                    case 31:
-                        {
-                        alt21=3;
-                        }
-                        break;
-                    case 26:
-                        {
-                        alt21=2;
-                        }
-                        break;
                     case EOF:
                     case RULE_ID:
                     case 21:
@@ -1900,6 +1890,16 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     case 74:
                         {
                         alt21=1;
+                        }
+                        break;
+                    case 26:
+                        {
+                        alt21=2;
+                        }
+                        break;
+                    case 31:
+                        {
+                        alt21=3;
                         }
                         break;
                     default:
@@ -2164,11 +2164,6 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             case 34:
                                 {
                                 switch ( input.LA(2) ) {
-                                case 36:
-                                    {
-                                    alt15=3;
-                                    }
-                                    break;
                                 case RULE_ID:
                                     {
                                     alt15=1;
@@ -2177,6 +2172,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 case 39:
                                     {
                                     alt15=2;
+                                    }
+                                    break;
+                                case 36:
+                                    {
+                                    alt15=3;
                                     }
                                     break;
                                 default:
@@ -2192,6 +2192,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             case 35:
                                 {
                                 switch ( input.LA(2) ) {
+                                case RULE_ID:
+                                    {
+                                    alt15=1;
+                                    }
+                                    break;
                                 case 39:
                                     {
                                     alt15=2;
@@ -2200,11 +2205,6 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 case 36:
                                     {
                                     alt15=3;
-                                    }
-                                    break;
-                                case RULE_ID:
-                                    {
-                                    alt15=1;
                                     }
                                     break;
                                 default:
@@ -2221,11 +2221,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 {
                                 int LA15_3 = input.LA(2);
 
-                                if ( ((LA15_3>=20 && LA15_3<=21)||(LA15_3>=26 && LA15_3<=28)||(LA15_3>=30 && LA15_3<=31)||LA15_3==61||LA15_3==85) ) {
-                                    alt15=4;
-                                }
-                                else if ( (LA15_3==38) ) {
+                                if ( (LA15_3==38) ) {
                                     alt15=1;
+                                }
+                                else if ( ((LA15_3>=20 && LA15_3<=21)||(LA15_3>=26 && LA15_3<=28)||(LA15_3>=30 && LA15_3<=31)||LA15_3==61||LA15_3==85) ) {
+                                    alt15=4;
                                 }
                                 else {
                                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -2455,11 +2455,6 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	    case 34:
                             	        {
                             	        switch ( input.LA(2) ) {
-                            	        case 39:
-                            	            {
-                            	            alt16=2;
-                            	            }
-                            	            break;
                             	        case 36:
                             	            {
                             	            alt16=3;
@@ -2468,6 +2463,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	        case RULE_ID:
                             	            {
                             	            alt16=1;
+                            	            }
+                            	            break;
+                            	        case 39:
+                            	            {
+                            	            alt16=2;
                             	            }
                             	            break;
                             	        default:
@@ -2488,14 +2488,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	            alt16=1;
                             	            }
                             	            break;
-                            	        case 36:
-                            	            {
-                            	            alt16=3;
-                            	            }
-                            	            break;
                             	        case 39:
                             	            {
                             	            alt16=2;
+                            	            }
+                            	            break;
+                            	        case 36:
+                            	            {
+                            	            alt16=3;
                             	            }
                             	            break;
                             	        default:
@@ -6255,11 +6255,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         {
                         int LA40_1 = input.LA(2);
 
-                        if ( (LA40_1==39) ) {
-                            alt40=1;
-                        }
-                        else if ( (LA40_1==36) ) {
+                        if ( (LA40_1==36) ) {
                             alt40=2;
+                        }
+                        else if ( (LA40_1==39) ) {
+                            alt40=1;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
@@ -6421,11 +6421,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	        {
                     	        int LA41_1 = input.LA(2);
 
-                    	        if ( (LA41_1==36) ) {
-                    	            alt41=2;
-                    	        }
-                    	        else if ( (LA41_1==39) ) {
+                    	        if ( (LA41_1==39) ) {
                     	            alt41=1;
+                    	        }
+                    	        else if ( (LA41_1==36) ) {
+                    	            alt41=2;
                     	        }
                     	        else {
                     	            if (state.backtracking>0) {state.failed=true; return current;}
@@ -6440,11 +6440,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	        {
                     	        int LA41_2 = input.LA(2);
 
-                    	        if ( (LA41_2==39) ) {
-                    	            alt41=1;
-                    	        }
-                    	        else if ( (LA41_2==36) ) {
+                    	        if ( (LA41_2==36) ) {
                     	            alt41=2;
+                    	        }
+                    	        else if ( (LA41_2==39) ) {
+                    	            alt41=1;
                     	        }
                     	        else {
                     	            if (state.backtracking>0) {state.failed=true; return current;}
@@ -6813,11 +6813,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         {
                         int LA45_2 = input.LA(2);
 
-                        if ( (LA45_2==36) ) {
-                            alt45=2;
-                        }
-                        else if ( (LA45_2==39) ) {
+                        if ( (LA45_2==39) ) {
                             alt45=1;
+                        }
+                        else if ( (LA45_2==36) ) {
+                            alt45=2;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
@@ -8386,11 +8386,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 {
                 int LA50_2 = input.LA(2);
 
-                if ( (LA50_2==55) ) {
-                    alt50=1;
-                }
-                else if ( (LA50_2==EOF||(LA50_2>=RULE_STRING && LA50_2<=RULE_ID)||(LA50_2>=RULE_HEX && LA50_2<=RULE_DECIMAL)||LA50_2==15||(LA50_2>=20 && LA50_2<=22)||(LA50_2>=26 && LA50_2<=29)||(LA50_2>=37 && LA50_2<=42)||LA50_2==46||(LA50_2>=56 && LA50_2<=87)||(LA50_2>=89 && LA50_2<=111)) ) {
+                if ( (LA50_2==EOF||(LA50_2>=RULE_STRING && LA50_2<=RULE_ID)||(LA50_2>=RULE_HEX && LA50_2<=RULE_DECIMAL)||LA50_2==15||(LA50_2>=20 && LA50_2<=22)||(LA50_2>=26 && LA50_2<=29)||(LA50_2>=37 && LA50_2<=42)||LA50_2==46||(LA50_2>=56 && LA50_2<=87)||(LA50_2>=89 && LA50_2<=111)) ) {
                     alt50=2;
+                }
+                else if ( (LA50_2==55) ) {
+                    alt50=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -8424,11 +8424,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 {
                 int LA50_4 = input.LA(2);
 
-                if ( (LA50_4==EOF||(LA50_4>=RULE_STRING && LA50_4<=RULE_ID)||(LA50_4>=RULE_HEX && LA50_4<=RULE_DECIMAL)||LA50_4==15||(LA50_4>=20 && LA50_4<=22)||(LA50_4>=26 && LA50_4<=29)||(LA50_4>=37 && LA50_4<=42)||LA50_4==46||(LA50_4>=56 && LA50_4<=87)||(LA50_4>=89 && LA50_4<=111)) ) {
-                    alt50=2;
-                }
-                else if ( (LA50_4==55) ) {
+                if ( (LA50_4==55) ) {
                     alt50=1;
+                }
+                else if ( (LA50_4==EOF||(LA50_4>=RULE_STRING && LA50_4<=RULE_ID)||(LA50_4>=RULE_HEX && LA50_4<=RULE_DECIMAL)||LA50_4==15||(LA50_4>=20 && LA50_4<=22)||(LA50_4>=26 && LA50_4<=29)||(LA50_4>=37 && LA50_4<=42)||LA50_4==46||(LA50_4>=56 && LA50_4<=87)||(LA50_4>=89 && LA50_4<=111)) ) {
+                    alt50=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -16781,13 +16781,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXCasePart"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5675:1: ruleXCasePart returns [EObject current=null] : ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | otherlv_6= ',' ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5675:1: ruleXCasePart returns [EObject current=null] : ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | ( (lv_fallThrough_6_0= ',' ) ) ) ) ;
     public final EObject ruleXCasePart() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
+        Token lv_fallThrough_6_0=null;
         EObject lv_typeGuard_1_0 = null;
 
         EObject lv_case_3_0 = null;
@@ -16798,11 +16798,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5678:28: ( ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | otherlv_6= ',' ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5679:1: ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | otherlv_6= ',' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5678:28: ( ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | ( (lv_fallThrough_6_0= ',' ) ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5679:1: ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | ( (lv_fallThrough_6_0= ',' ) ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5679:1: ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | otherlv_6= ',' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5679:2: () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | otherlv_6= ',' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5679:1: ( () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | ( (lv_fallThrough_6_0= ',' ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5679:2: () ( (lv_typeGuard_1_0= ruleJvmTypeReference ) )? (otherlv_2= 'case' ( (lv_case_3_0= ruleXExpression ) ) )? ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | ( (lv_fallThrough_6_0= ',' ) ) )
             {
             // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5679:2: ()
             // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5680:5: 
@@ -16921,7 +16921,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5725:4: ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | otherlv_6= ',' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5725:4: ( (otherlv_4= ':' ( (lv_then_5_0= ruleXExpression ) ) ) | ( (lv_fallThrough_6_0= ',' ) ) )
             int alt102=2;
             int LA102_0 = input.LA(1);
 
@@ -16993,14 +16993,34 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5748:7: otherlv_6= ','
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5748:6: ( (lv_fallThrough_6_0= ',' ) )
                     {
-                    otherlv_6=(Token)match(input,21,FOLLOW_21_in_ruleXCasePart13341); if (state.failed) return current;
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5748:6: ( (lv_fallThrough_6_0= ',' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5749:1: (lv_fallThrough_6_0= ',' )
+                    {
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5749:1: (lv_fallThrough_6_0= ',' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5750:3: lv_fallThrough_6_0= ','
+                    {
+                    lv_fallThrough_6_0=(Token)match(input,21,FOLLOW_21_in_ruleXCasePart13347); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_6, grammarAccess.getXCasePartAccess().getCommaKeyword_3_1());
+                              newLeafNode(lv_fallThrough_6_0, grammarAccess.getXCasePartAccess().getFallThroughCommaKeyword_3_1_0());
                           
                     }
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElement(grammarAccess.getXCasePartRule());
+                      	        }
+                             		setWithLastConsumed(current, "fallThrough", true, ",");
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
@@ -17030,7 +17050,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXForLoopExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5760:1: entryRuleXForLoopExpression returns [EObject current=null] : iv_ruleXForLoopExpression= ruleXForLoopExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5771:1: entryRuleXForLoopExpression returns [EObject current=null] : iv_ruleXForLoopExpression= ruleXForLoopExpression EOF ;
     public final EObject entryRuleXForLoopExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17038,13 +17058,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5761:2: (iv_ruleXForLoopExpression= ruleXForLoopExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5762:2: iv_ruleXForLoopExpression= ruleXForLoopExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5772:2: (iv_ruleXForLoopExpression= ruleXForLoopExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5773:2: iv_ruleXForLoopExpression= ruleXForLoopExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXForLoopExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXForLoopExpression_in_entryRuleXForLoopExpression13378);
+            pushFollow(FOLLOW_ruleXForLoopExpression_in_entryRuleXForLoopExpression13397);
             iv_ruleXForLoopExpression=ruleXForLoopExpression();
 
             state._fsp--;
@@ -17052,7 +17072,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXForLoopExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXForLoopExpression13388); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXForLoopExpression13407); if (state.failed) return current;
 
             }
 
@@ -17070,7 +17090,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXForLoopExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5769:1: ruleXForLoopExpression returns [EObject current=null] : ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5780:1: ruleXForLoopExpression returns [EObject current=null] : ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) ) ;
     public final EObject ruleXForLoopExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17088,20 +17108,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5772:28: ( ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5773:1: ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5783:28: ( ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5784:1: ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5773:1: ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5773:2: ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5784:1: ( ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5784:2: ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) ) ( (lv_forExpression_5_0= ruleXExpression ) ) otherlv_6= ')' ( (lv_eachExpression_7_0= ruleXExpression ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5773:2: ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5773:3: ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5784:2: ( ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5784:3: ( ( () 'for' '(' ( ( ruleJvmFormalParameter ) ) ':' ) )=> ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5781:5: ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5781:6: () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5792:5: ( () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5792:6: () otherlv_1= 'for' otherlv_2= '(' ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) ) otherlv_4= ':'
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5781:6: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5782:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5792:6: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5793:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -17113,30 +17133,30 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,95,FOLLOW_95_in_ruleXForLoopExpression13465); if (state.failed) return current;
+            otherlv_1=(Token)match(input,95,FOLLOW_95_in_ruleXForLoopExpression13484); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXForLoopExpressionAccess().getForKeyword_0_0_1());
                   
             }
-            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXForLoopExpression13477); if (state.failed) return current;
+            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXForLoopExpression13496); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXForLoopExpressionAccess().getLeftParenthesisKeyword_0_0_2());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5795:1: ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5796:1: (lv_declaredParam_3_0= ruleJvmFormalParameter )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5806:1: ( (lv_declaredParam_3_0= ruleJvmFormalParameter ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5807:1: (lv_declaredParam_3_0= ruleJvmFormalParameter )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5796:1: (lv_declaredParam_3_0= ruleJvmFormalParameter )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5797:3: lv_declaredParam_3_0= ruleJvmFormalParameter
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5807:1: (lv_declaredParam_3_0= ruleJvmFormalParameter )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5808:3: lv_declaredParam_3_0= ruleJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXForLoopExpressionAccess().getDeclaredParamJvmFormalParameterParserRuleCall_0_0_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression13498);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression13517);
             lv_declaredParam_3_0=ruleJvmFormalParameter();
 
             state._fsp--;
@@ -17160,7 +17180,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,38,FOLLOW_38_in_ruleXForLoopExpression13510); if (state.failed) return current;
+            otherlv_4=(Token)match(input,38,FOLLOW_38_in_ruleXForLoopExpression13529); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXForLoopExpressionAccess().getColonKeyword_0_0_4());
@@ -17172,18 +17192,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5817:3: ( (lv_forExpression_5_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5818:1: (lv_forExpression_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5828:3: ( (lv_forExpression_5_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5829:1: (lv_forExpression_5_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5818:1: (lv_forExpression_5_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5819:3: lv_forExpression_5_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5829:1: (lv_forExpression_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5830:3: lv_forExpression_5_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXForLoopExpressionAccess().getForExpressionXExpressionParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXForLoopExpression13533);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXForLoopExpression13552);
             lv_forExpression_5_0=ruleXExpression();
 
             state._fsp--;
@@ -17207,24 +17227,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,29,FOLLOW_29_in_ruleXForLoopExpression13545); if (state.failed) return current;
+            otherlv_6=(Token)match(input,29,FOLLOW_29_in_ruleXForLoopExpression13564); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getXForLoopExpressionAccess().getRightParenthesisKeyword_2());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5839:1: ( (lv_eachExpression_7_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5840:1: (lv_eachExpression_7_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5850:1: ( (lv_eachExpression_7_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5851:1: (lv_eachExpression_7_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5840:1: (lv_eachExpression_7_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5841:3: lv_eachExpression_7_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5851:1: (lv_eachExpression_7_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5852:3: lv_eachExpression_7_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXForLoopExpressionAccess().getEachExpressionXExpressionParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXForLoopExpression13566);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXForLoopExpression13585);
             lv_eachExpression_7_0=ruleXExpression();
 
             state._fsp--;
@@ -17271,7 +17291,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXBasicForLoopExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5865:1: entryRuleXBasicForLoopExpression returns [EObject current=null] : iv_ruleXBasicForLoopExpression= ruleXBasicForLoopExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5876:1: entryRuleXBasicForLoopExpression returns [EObject current=null] : iv_ruleXBasicForLoopExpression= ruleXBasicForLoopExpression EOF ;
     public final EObject entryRuleXBasicForLoopExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17279,13 +17299,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5866:2: (iv_ruleXBasicForLoopExpression= ruleXBasicForLoopExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5867:2: iv_ruleXBasicForLoopExpression= ruleXBasicForLoopExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5877:2: (iv_ruleXBasicForLoopExpression= ruleXBasicForLoopExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5878:2: iv_ruleXBasicForLoopExpression= ruleXBasicForLoopExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXBasicForLoopExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXBasicForLoopExpression_in_entryRuleXBasicForLoopExpression13602);
+            pushFollow(FOLLOW_ruleXBasicForLoopExpression_in_entryRuleXBasicForLoopExpression13621);
             iv_ruleXBasicForLoopExpression=ruleXBasicForLoopExpression();
 
             state._fsp--;
@@ -17293,7 +17313,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXBasicForLoopExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXBasicForLoopExpression13612); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXBasicForLoopExpression13631); if (state.failed) return current;
 
             }
 
@@ -17311,7 +17331,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXBasicForLoopExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5874:1: ruleXBasicForLoopExpression returns [EObject current=null] : ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5885:1: ruleXBasicForLoopExpression returns [EObject current=null] : ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) ) ;
     public final EObject ruleXBasicForLoopExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17338,14 +17358,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5877:28: ( ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5878:1: ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5888:28: ( ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5889:1: ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5878:1: ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5878:2: () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5889:1: ( () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5889:2: () otherlv_1= 'for' otherlv_2= '(' ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )? otherlv_6= ';' ( (lv_expression_7_0= ruleXExpression ) )? otherlv_8= ';' ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )? otherlv_12= ')' ( (lv_eachExpression_13_0= ruleXExpression ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5878:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5879:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5889:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5890:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -17357,19 +17377,19 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,95,FOLLOW_95_in_ruleXBasicForLoopExpression13658); if (state.failed) return current;
+            otherlv_1=(Token)match(input,95,FOLLOW_95_in_ruleXBasicForLoopExpression13677); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXBasicForLoopExpressionAccess().getForKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXBasicForLoopExpression13670); if (state.failed) return current;
+            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXBasicForLoopExpression13689); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXBasicForLoopExpressionAccess().getLeftParenthesisKeyword_2());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5892:1: ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5903:1: ( ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )* )?
             int alt104=2;
             int LA104_0 = input.LA(1);
 
@@ -17378,20 +17398,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt104) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5892:2: ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5903:2: ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )*
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5892:2: ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5893:1: (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5903:2: ( (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5904:1: (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5893:1: (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5894:3: lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5904:1: (lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5905:3: lv_initExpressions_3_0= ruleXExpressionOrVarDeclaration
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXBasicForLoopExpressionAccess().getInitExpressionsXExpressionOrVarDeclarationParserRuleCall_3_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13692);
+                    pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13711);
                     lv_initExpressions_3_0=ruleXExpressionOrVarDeclaration();
 
                     state._fsp--;
@@ -17415,7 +17435,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5910:2: (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5921:2: (otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) ) )*
                     loop103:
                     do {
                         int alt103=2;
@@ -17428,26 +17448,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         switch (alt103) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5910:4: otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5921:4: otherlv_4= ',' ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleXBasicForLoopExpression13705); if (state.failed) return current;
+                    	    otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleXBasicForLoopExpression13724); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_4, grammarAccess.getXBasicForLoopExpressionAccess().getCommaKeyword_3_1_0());
                     	          
                     	    }
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5914:1: ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5915:1: (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5925:1: ( (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5926:1: (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration )
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5915:1: (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5916:3: lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5926:1: (lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5927:3: lv_initExpressions_5_0= ruleXExpressionOrVarDeclaration
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getXBasicForLoopExpressionAccess().getInitExpressionsXExpressionOrVarDeclarationParserRuleCall_3_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13726);
+                    	    pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13745);
                     	    lv_initExpressions_5_0=ruleXExpressionOrVarDeclaration();
 
                     	    state._fsp--;
@@ -17486,13 +17506,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleXBasicForLoopExpression13742); if (state.failed) return current;
+            otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleXBasicForLoopExpression13761); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getXBasicForLoopExpressionAccess().getSemicolonKeyword_4());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5936:1: ( (lv_expression_7_0= ruleXExpression ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5947:1: ( (lv_expression_7_0= ruleXExpression ) )?
             int alt105=2;
             int LA105_0 = input.LA(1);
 
@@ -17501,17 +17521,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt105) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5937:1: (lv_expression_7_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5948:1: (lv_expression_7_0= ruleXExpression )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5937:1: (lv_expression_7_0= ruleXExpression )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5938:3: lv_expression_7_0= ruleXExpression
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5948:1: (lv_expression_7_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5949:3: lv_expression_7_0= ruleXExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXBasicForLoopExpressionAccess().getExpressionXExpressionParserRuleCall_5_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13763);
+                    pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13782);
                     lv_expression_7_0=ruleXExpression();
 
                     state._fsp--;
@@ -17538,13 +17558,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,89,FOLLOW_89_in_ruleXBasicForLoopExpression13776); if (state.failed) return current;
+            otherlv_8=(Token)match(input,89,FOLLOW_89_in_ruleXBasicForLoopExpression13795); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_8, grammarAccess.getXBasicForLoopExpressionAccess().getSemicolonKeyword_6());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5958:1: ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5969:1: ( ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )* )?
             int alt107=2;
             int LA107_0 = input.LA(1);
 
@@ -17553,20 +17573,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt107) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5958:2: ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5969:2: ( (lv_updateExpressions_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )*
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5958:2: ( (lv_updateExpressions_9_0= ruleXExpression ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5959:1: (lv_updateExpressions_9_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5969:2: ( (lv_updateExpressions_9_0= ruleXExpression ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5970:1: (lv_updateExpressions_9_0= ruleXExpression )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5959:1: (lv_updateExpressions_9_0= ruleXExpression )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5960:3: lv_updateExpressions_9_0= ruleXExpression
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5970:1: (lv_updateExpressions_9_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5971:3: lv_updateExpressions_9_0= ruleXExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXBasicForLoopExpressionAccess().getUpdateExpressionsXExpressionParserRuleCall_7_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13798);
+                    pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13817);
                     lv_updateExpressions_9_0=ruleXExpression();
 
                     state._fsp--;
@@ -17590,7 +17610,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5976:2: (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5987:2: (otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) ) )*
                     loop106:
                     do {
                         int alt106=2;
@@ -17603,26 +17623,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         switch (alt106) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5976:4: otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5987:4: otherlv_10= ',' ( (lv_updateExpressions_11_0= ruleXExpression ) )
                     	    {
-                    	    otherlv_10=(Token)match(input,21,FOLLOW_21_in_ruleXBasicForLoopExpression13811); if (state.failed) return current;
+                    	    otherlv_10=(Token)match(input,21,FOLLOW_21_in_ruleXBasicForLoopExpression13830); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_10, grammarAccess.getXBasicForLoopExpressionAccess().getCommaKeyword_7_1_0());
                     	          
                     	    }
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5980:1: ( (lv_updateExpressions_11_0= ruleXExpression ) )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5981:1: (lv_updateExpressions_11_0= ruleXExpression )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5991:1: ( (lv_updateExpressions_11_0= ruleXExpression ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5992:1: (lv_updateExpressions_11_0= ruleXExpression )
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5981:1: (lv_updateExpressions_11_0= ruleXExpression )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5982:3: lv_updateExpressions_11_0= ruleXExpression
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5992:1: (lv_updateExpressions_11_0= ruleXExpression )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5993:3: lv_updateExpressions_11_0= ruleXExpression
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getXBasicForLoopExpressionAccess().getUpdateExpressionsXExpressionParserRuleCall_7_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13832);
+                    	    pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13851);
                     	    lv_updateExpressions_11_0=ruleXExpression();
 
                     	    state._fsp--;
@@ -17661,24 +17681,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,29,FOLLOW_29_in_ruleXBasicForLoopExpression13848); if (state.failed) return current;
+            otherlv_12=(Token)match(input,29,FOLLOW_29_in_ruleXBasicForLoopExpression13867); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_12, grammarAccess.getXBasicForLoopExpressionAccess().getRightParenthesisKeyword_8());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6002:1: ( (lv_eachExpression_13_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6003:1: (lv_eachExpression_13_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6013:1: ( (lv_eachExpression_13_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6014:1: (lv_eachExpression_13_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6003:1: (lv_eachExpression_13_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6004:3: lv_eachExpression_13_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6014:1: (lv_eachExpression_13_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6015:3: lv_eachExpression_13_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXBasicForLoopExpressionAccess().getEachExpressionXExpressionParserRuleCall_9_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13869);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13888);
             lv_eachExpression_13_0=ruleXExpression();
 
             state._fsp--;
@@ -17725,7 +17745,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXWhileExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6028:1: entryRuleXWhileExpression returns [EObject current=null] : iv_ruleXWhileExpression= ruleXWhileExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6039:1: entryRuleXWhileExpression returns [EObject current=null] : iv_ruleXWhileExpression= ruleXWhileExpression EOF ;
     public final EObject entryRuleXWhileExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17733,13 +17753,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6029:2: (iv_ruleXWhileExpression= ruleXWhileExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6030:2: iv_ruleXWhileExpression= ruleXWhileExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6040:2: (iv_ruleXWhileExpression= ruleXWhileExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6041:2: iv_ruleXWhileExpression= ruleXWhileExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXWhileExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression13905);
+            pushFollow(FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression13924);
             iv_ruleXWhileExpression=ruleXWhileExpression();
 
             state._fsp--;
@@ -17747,7 +17767,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXWhileExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXWhileExpression13915); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXWhileExpression13934); if (state.failed) return current;
 
             }
 
@@ -17765,7 +17785,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXWhileExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6037:1: ruleXWhileExpression returns [EObject current=null] : ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6048:1: ruleXWhileExpression returns [EObject current=null] : ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) ) ;
     public final EObject ruleXWhileExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17780,14 +17800,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6040:28: ( ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6041:1: ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6051:28: ( ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6052:1: ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6041:1: ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6041:2: () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6052:1: ( () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6052:2: () otherlv_1= 'while' otherlv_2= '(' ( (lv_predicate_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_body_5_0= ruleXExpression ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6041:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6042:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6052:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6053:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -17799,30 +17819,30 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,96,FOLLOW_96_in_ruleXWhileExpression13961); if (state.failed) return current;
+            otherlv_1=(Token)match(input,96,FOLLOW_96_in_ruleXWhileExpression13980); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXWhileExpressionAccess().getWhileKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXWhileExpression13973); if (state.failed) return current;
+            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXWhileExpression13992); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXWhileExpressionAccess().getLeftParenthesisKeyword_2());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6055:1: ( (lv_predicate_3_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6056:1: (lv_predicate_3_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6066:1: ( (lv_predicate_3_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6067:1: (lv_predicate_3_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6056:1: (lv_predicate_3_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6057:3: lv_predicate_3_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6067:1: (lv_predicate_3_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6068:3: lv_predicate_3_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXWhileExpressionAccess().getPredicateXExpressionParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXWhileExpression13994);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXWhileExpression14013);
             lv_predicate_3_0=ruleXExpression();
 
             state._fsp--;
@@ -17846,24 +17866,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleXWhileExpression14006); if (state.failed) return current;
+            otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleXWhileExpression14025); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXWhileExpressionAccess().getRightParenthesisKeyword_4());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6077:1: ( (lv_body_5_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6078:1: (lv_body_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6088:1: ( (lv_body_5_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6089:1: (lv_body_5_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6078:1: (lv_body_5_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6079:3: lv_body_5_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6089:1: (lv_body_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6090:3: lv_body_5_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXWhileExpressionAccess().getBodyXExpressionParserRuleCall_5_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXWhileExpression14027);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXWhileExpression14046);
             lv_body_5_0=ruleXExpression();
 
             state._fsp--;
@@ -17910,7 +17930,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXDoWhileExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6103:1: entryRuleXDoWhileExpression returns [EObject current=null] : iv_ruleXDoWhileExpression= ruleXDoWhileExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6114:1: entryRuleXDoWhileExpression returns [EObject current=null] : iv_ruleXDoWhileExpression= ruleXDoWhileExpression EOF ;
     public final EObject entryRuleXDoWhileExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17918,13 +17938,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6104:2: (iv_ruleXDoWhileExpression= ruleXDoWhileExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6105:2: iv_ruleXDoWhileExpression= ruleXDoWhileExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6115:2: (iv_ruleXDoWhileExpression= ruleXDoWhileExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6116:2: iv_ruleXDoWhileExpression= ruleXDoWhileExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXDoWhileExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXDoWhileExpression_in_entryRuleXDoWhileExpression14063);
+            pushFollow(FOLLOW_ruleXDoWhileExpression_in_entryRuleXDoWhileExpression14082);
             iv_ruleXDoWhileExpression=ruleXDoWhileExpression();
 
             state._fsp--;
@@ -17932,7 +17952,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXDoWhileExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXDoWhileExpression14073); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXDoWhileExpression14092); if (state.failed) return current;
 
             }
 
@@ -17950,7 +17970,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXDoWhileExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6112:1: ruleXDoWhileExpression returns [EObject current=null] : ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6123:1: ruleXDoWhileExpression returns [EObject current=null] : ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' ) ;
     public final EObject ruleXDoWhileExpression() throws RecognitionException {
         EObject current = null;
 
@@ -17966,14 +17986,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6115:28: ( ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6116:1: ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6126:28: ( ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6127:1: ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6116:1: ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6116:2: () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6127:1: ( () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6127:2: () otherlv_1= 'do' ( (lv_body_2_0= ruleXExpression ) ) otherlv_3= 'while' otherlv_4= '(' ( (lv_predicate_5_0= ruleXExpression ) ) otherlv_6= ')'
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6116:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6117:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6127:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6128:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -17985,24 +18005,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,97,FOLLOW_97_in_ruleXDoWhileExpression14119); if (state.failed) return current;
+            otherlv_1=(Token)match(input,97,FOLLOW_97_in_ruleXDoWhileExpression14138); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXDoWhileExpressionAccess().getDoKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6126:1: ( (lv_body_2_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6127:1: (lv_body_2_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6137:1: ( (lv_body_2_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6138:1: (lv_body_2_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6127:1: (lv_body_2_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6128:3: lv_body_2_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6138:1: (lv_body_2_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6139:3: lv_body_2_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXDoWhileExpressionAccess().getBodyXExpressionParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14140);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14159);
             lv_body_2_0=ruleXExpression();
 
             state._fsp--;
@@ -18026,30 +18046,30 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,96,FOLLOW_96_in_ruleXDoWhileExpression14152); if (state.failed) return current;
+            otherlv_3=(Token)match(input,96,FOLLOW_96_in_ruleXDoWhileExpression14171); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getXDoWhileExpressionAccess().getWhileKeyword_3());
                   
             }
-            otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleXDoWhileExpression14164); if (state.failed) return current;
+            otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleXDoWhileExpression14183); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXDoWhileExpressionAccess().getLeftParenthesisKeyword_4());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6152:1: ( (lv_predicate_5_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6153:1: (lv_predicate_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6163:1: ( (lv_predicate_5_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6164:1: (lv_predicate_5_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6153:1: (lv_predicate_5_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6154:3: lv_predicate_5_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6164:1: (lv_predicate_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6165:3: lv_predicate_5_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXDoWhileExpressionAccess().getPredicateXExpressionParserRuleCall_5_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14185);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14204);
             lv_predicate_5_0=ruleXExpression();
 
             state._fsp--;
@@ -18073,7 +18093,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,29,FOLLOW_29_in_ruleXDoWhileExpression14197); if (state.failed) return current;
+            otherlv_6=(Token)match(input,29,FOLLOW_29_in_ruleXDoWhileExpression14216); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getXDoWhileExpressionAccess().getRightParenthesisKeyword_6());
@@ -18102,7 +18122,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXBlockExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6182:1: entryRuleXBlockExpression returns [EObject current=null] : iv_ruleXBlockExpression= ruleXBlockExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6193:1: entryRuleXBlockExpression returns [EObject current=null] : iv_ruleXBlockExpression= ruleXBlockExpression EOF ;
     public final EObject entryRuleXBlockExpression() throws RecognitionException {
         EObject current = null;
 
@@ -18110,13 +18130,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6183:2: (iv_ruleXBlockExpression= ruleXBlockExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6184:2: iv_ruleXBlockExpression= ruleXBlockExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6194:2: (iv_ruleXBlockExpression= ruleXBlockExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6195:2: iv_ruleXBlockExpression= ruleXBlockExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXBlockExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXBlockExpression_in_entryRuleXBlockExpression14233);
+            pushFollow(FOLLOW_ruleXBlockExpression_in_entryRuleXBlockExpression14252);
             iv_ruleXBlockExpression=ruleXBlockExpression();
 
             state._fsp--;
@@ -18124,7 +18144,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXBlockExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXBlockExpression14243); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXBlockExpression14262); if (state.failed) return current;
 
             }
 
@@ -18142,7 +18162,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXBlockExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6191:1: ruleXBlockExpression returns [EObject current=null] : ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6202:1: ruleXBlockExpression returns [EObject current=null] : ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' ) ;
     public final EObject ruleXBlockExpression() throws RecognitionException {
         EObject current = null;
 
@@ -18155,14 +18175,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6194:28: ( ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6195:1: ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6205:28: ( ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6206:1: ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6195:1: ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6195:2: () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6206:1: ( () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6206:2: () otherlv_1= '{' ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )* otherlv_4= '}'
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6195:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6196:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6206:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6207:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -18174,13 +18194,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleXBlockExpression14289); if (state.failed) return current;
+            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleXBlockExpression14308); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXBlockExpressionAccess().getLeftCurlyBracketKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6205:1: ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )*
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6216:1: ( ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )? )*
             loop109:
             do {
                 int alt109=2;
@@ -18193,20 +18213,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                 switch (alt109) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6205:2: ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )?
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6216:2: ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) ) (otherlv_3= ';' )?
             	    {
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6205:2: ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) )
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6206:1: (lv_expressions_2_0= ruleXExpressionOrVarDeclaration )
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6216:2: ( (lv_expressions_2_0= ruleXExpressionOrVarDeclaration ) )
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6217:1: (lv_expressions_2_0= ruleXExpressionOrVarDeclaration )
             	    {
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6206:1: (lv_expressions_2_0= ruleXExpressionOrVarDeclaration )
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6207:3: lv_expressions_2_0= ruleXExpressionOrVarDeclaration
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6217:1: (lv_expressions_2_0= ruleXExpressionOrVarDeclaration )
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6218:3: lv_expressions_2_0= ruleXExpressionOrVarDeclaration
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getXBlockExpressionAccess().getExpressionsXExpressionOrVarDeclarationParserRuleCall_2_0_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBlockExpression14311);
+            	    pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBlockExpression14330);
             	    lv_expressions_2_0=ruleXExpressionOrVarDeclaration();
 
             	    state._fsp--;
@@ -18230,7 +18250,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6223:2: (otherlv_3= ';' )?
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6234:2: (otherlv_3= ';' )?
             	    int alt108=2;
             	    int LA108_0 = input.LA(1);
 
@@ -18239,9 +18259,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt108) {
             	        case 1 :
-            	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6223:4: otherlv_3= ';'
+            	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6234:4: otherlv_3= ';'
             	            {
-            	            otherlv_3=(Token)match(input,89,FOLLOW_89_in_ruleXBlockExpression14324); if (state.failed) return current;
+            	            otherlv_3=(Token)match(input,89,FOLLOW_89_in_ruleXBlockExpression14343); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                  	newLeafNode(otherlv_3, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
@@ -18262,7 +18282,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,27,FOLLOW_27_in_ruleXBlockExpression14340); if (state.failed) return current;
+            otherlv_4=(Token)match(input,27,FOLLOW_27_in_ruleXBlockExpression14359); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXBlockExpressionAccess().getRightCurlyBracketKeyword_3());
@@ -18291,7 +18311,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXExpressionOrVarDeclaration"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6239:1: entryRuleXExpressionOrVarDeclaration returns [EObject current=null] : iv_ruleXExpressionOrVarDeclaration= ruleXExpressionOrVarDeclaration EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6250:1: entryRuleXExpressionOrVarDeclaration returns [EObject current=null] : iv_ruleXExpressionOrVarDeclaration= ruleXExpressionOrVarDeclaration EOF ;
     public final EObject entryRuleXExpressionOrVarDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -18299,13 +18319,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6240:2: (iv_ruleXExpressionOrVarDeclaration= ruleXExpressionOrVarDeclaration EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6241:2: iv_ruleXExpressionOrVarDeclaration= ruleXExpressionOrVarDeclaration EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6251:2: (iv_ruleXExpressionOrVarDeclaration= ruleXExpressionOrVarDeclaration EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6252:2: iv_ruleXExpressionOrVarDeclaration= ruleXExpressionOrVarDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXExpressionOrVarDeclarationRule()); 
             }
-            pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_entryRuleXExpressionOrVarDeclaration14376);
+            pushFollow(FOLLOW_ruleXExpressionOrVarDeclaration_in_entryRuleXExpressionOrVarDeclaration14395);
             iv_ruleXExpressionOrVarDeclaration=ruleXExpressionOrVarDeclaration();
 
             state._fsp--;
@@ -18313,7 +18333,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXExpressionOrVarDeclaration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpressionOrVarDeclaration14386); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXExpressionOrVarDeclaration14405); if (state.failed) return current;
 
             }
 
@@ -18331,7 +18351,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXExpressionOrVarDeclaration"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6248:1: ruleXExpressionOrVarDeclaration returns [EObject current=null] : (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6259:1: ruleXExpressionOrVarDeclaration returns [EObject current=null] : (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression ) ;
     public final EObject ruleXExpressionOrVarDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -18343,10 +18363,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6251:28: ( (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6252:1: (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6262:28: ( (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6263:1: (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6252:1: (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6263:1: (this_XVariableDeclaration_0= ruleXVariableDeclaration | this_XExpression_1= ruleXExpression )
             int alt110=2;
             int LA110_0 = input.LA(1);
 
@@ -18365,14 +18385,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt110) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6253:5: this_XVariableDeclaration_0= ruleXVariableDeclaration
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6264:5: this_XVariableDeclaration_0= ruleXVariableDeclaration
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getXExpressionOrVarDeclarationAccess().getXVariableDeclarationParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleXVariableDeclaration_in_ruleXExpressionOrVarDeclaration14433);
+                    pushFollow(FOLLOW_ruleXVariableDeclaration_in_ruleXExpressionOrVarDeclaration14452);
                     this_XVariableDeclaration_0=ruleXVariableDeclaration();
 
                     state._fsp--;
@@ -18387,14 +18407,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6263:5: this_XExpression_1= ruleXExpression
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6274:5: this_XExpression_1= ruleXExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getXExpressionOrVarDeclarationAccess().getXExpressionParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleXExpressionOrVarDeclaration14460);
+                    pushFollow(FOLLOW_ruleXExpression_in_ruleXExpressionOrVarDeclaration14479);
                     this_XExpression_1=ruleXExpression();
 
                     state._fsp--;
@@ -18431,7 +18451,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXVariableDeclaration"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6279:1: entryRuleXVariableDeclaration returns [EObject current=null] : iv_ruleXVariableDeclaration= ruleXVariableDeclaration EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6290:1: entryRuleXVariableDeclaration returns [EObject current=null] : iv_ruleXVariableDeclaration= ruleXVariableDeclaration EOF ;
     public final EObject entryRuleXVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -18439,13 +18459,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6280:2: (iv_ruleXVariableDeclaration= ruleXVariableDeclaration EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6281:2: iv_ruleXVariableDeclaration= ruleXVariableDeclaration EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6291:2: (iv_ruleXVariableDeclaration= ruleXVariableDeclaration EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6292:2: iv_ruleXVariableDeclaration= ruleXVariableDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXVariableDeclarationRule()); 
             }
-            pushFollow(FOLLOW_ruleXVariableDeclaration_in_entryRuleXVariableDeclaration14495);
+            pushFollow(FOLLOW_ruleXVariableDeclaration_in_entryRuleXVariableDeclaration14514);
             iv_ruleXVariableDeclaration=ruleXVariableDeclaration();
 
             state._fsp--;
@@ -18453,7 +18473,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXVariableDeclaration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXVariableDeclaration14505); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXVariableDeclaration14524); if (state.failed) return current;
 
             }
 
@@ -18471,7 +18491,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXVariableDeclaration"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6288:1: ruleXVariableDeclaration returns [EObject current=null] : ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6299:1: ruleXVariableDeclaration returns [EObject current=null] : ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? ) ;
     public final EObject ruleXVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -18490,14 +18510,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6291:28: ( ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6292:1: ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6302:28: ( ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6303:1: ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6292:1: ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6292:2: () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6303:1: ( () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6303:2: () ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' ) ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) ) (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )?
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6292:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6293:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6303:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6304:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -18509,7 +18529,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6298:2: ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6309:2: ( ( (lv_writeable_1_0= 'var' ) ) | otherlv_2= 'val' )
             int alt111=2;
             int LA111_0 = input.LA(1);
 
@@ -18528,15 +18548,15 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt111) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6298:3: ( (lv_writeable_1_0= 'var' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6309:3: ( (lv_writeable_1_0= 'var' ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6298:3: ( (lv_writeable_1_0= 'var' ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6299:1: (lv_writeable_1_0= 'var' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6309:3: ( (lv_writeable_1_0= 'var' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6310:1: (lv_writeable_1_0= 'var' )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6299:1: (lv_writeable_1_0= 'var' )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6300:3: lv_writeable_1_0= 'var'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6310:1: (lv_writeable_1_0= 'var' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6311:3: lv_writeable_1_0= 'var'
                     {
-                    lv_writeable_1_0=(Token)match(input,98,FOLLOW_98_in_ruleXVariableDeclaration14558); if (state.failed) return current;
+                    lv_writeable_1_0=(Token)match(input,98,FOLLOW_98_in_ruleXVariableDeclaration14577); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_writeable_1_0, grammarAccess.getXVariableDeclarationAccess().getWriteableVarKeyword_1_0_0());
@@ -18560,9 +18580,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6314:7: otherlv_2= 'val'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6325:7: otherlv_2= 'val'
                     {
-                    otherlv_2=(Token)match(input,99,FOLLOW_99_in_ruleXVariableDeclaration14589); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,99,FOLLOW_99_in_ruleXVariableDeclaration14608); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getXVariableDeclarationAccess().getValKeyword_1_1());
@@ -18574,7 +18594,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:2: ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:2: ( ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) ) | ( (lv_name_5_0= ruleValidID ) ) )
             int alt112=2;
             int LA112_0 = input.LA(1);
 
@@ -18610,26 +18630,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt112) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:3: ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:3: ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:3: ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:4: ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:3: ( ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:4: ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )=> ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6326:6: ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6326:7: ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6337:6: ( ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6337:7: ( (lv_type_3_0= ruleJvmTypeReference ) ) ( (lv_name_4_0= ruleValidID ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6326:7: ( (lv_type_3_0= ruleJvmTypeReference ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6327:1: (lv_type_3_0= ruleJvmTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6337:7: ( (lv_type_3_0= ruleJvmTypeReference ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6338:1: (lv_type_3_0= ruleJvmTypeReference )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6327:1: (lv_type_3_0= ruleJvmTypeReference )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6328:3: lv_type_3_0= ruleJvmTypeReference
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6338:1: (lv_type_3_0= ruleJvmTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6339:3: lv_type_3_0= ruleJvmTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXVariableDeclarationAccess().getTypeJvmTypeReferenceParserRuleCall_2_0_0_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXVariableDeclaration14637);
+                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXVariableDeclaration14656);
                     lv_type_3_0=ruleJvmTypeReference();
 
                     state._fsp--;
@@ -18653,18 +18673,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6344:2: ( (lv_name_4_0= ruleValidID ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6345:1: (lv_name_4_0= ruleValidID )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6355:2: ( (lv_name_4_0= ruleValidID ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6356:1: (lv_name_4_0= ruleValidID )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6345:1: (lv_name_4_0= ruleValidID )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6346:3: lv_name_4_0= ruleValidID
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6356:1: (lv_name_4_0= ruleValidID )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6357:3: lv_name_4_0= ruleValidID
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXVariableDeclarationAccess().getNameValidIDParserRuleCall_2_0_0_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleValidID_in_ruleXVariableDeclaration14658);
+                    pushFollow(FOLLOW_ruleValidID_in_ruleXVariableDeclaration14677);
                     lv_name_4_0=ruleValidID();
 
                     state._fsp--;
@@ -18698,20 +18718,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6363:6: ( (lv_name_5_0= ruleValidID ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6374:6: ( (lv_name_5_0= ruleValidID ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6363:6: ( (lv_name_5_0= ruleValidID ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6364:1: (lv_name_5_0= ruleValidID )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6374:6: ( (lv_name_5_0= ruleValidID ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6375:1: (lv_name_5_0= ruleValidID )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6364:1: (lv_name_5_0= ruleValidID )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6365:3: lv_name_5_0= ruleValidID
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6375:1: (lv_name_5_0= ruleValidID )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6376:3: lv_name_5_0= ruleValidID
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXVariableDeclarationAccess().getNameValidIDParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleValidID_in_ruleXVariableDeclaration14687);
+                    pushFollow(FOLLOW_ruleValidID_in_ruleXVariableDeclaration14706);
                     lv_name_5_0=ruleValidID();
 
                     state._fsp--;
@@ -18741,7 +18761,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6381:3: (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6392:3: (otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) ) )?
             int alt113=2;
             int LA113_0 = input.LA(1);
 
@@ -18750,26 +18770,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt113) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6381:5: otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6392:5: otherlv_6= '=' ( (lv_right_7_0= ruleXExpression ) )
                     {
-                    otherlv_6=(Token)match(input,55,FOLLOW_55_in_ruleXVariableDeclaration14701); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,55,FOLLOW_55_in_ruleXVariableDeclaration14720); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getXVariableDeclarationAccess().getEqualsSignKeyword_3_0());
                           
                     }
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6385:1: ( (lv_right_7_0= ruleXExpression ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6386:1: (lv_right_7_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6396:1: ( (lv_right_7_0= ruleXExpression ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6397:1: (lv_right_7_0= ruleXExpression )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6386:1: (lv_right_7_0= ruleXExpression )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6387:3: lv_right_7_0= ruleXExpression
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6397:1: (lv_right_7_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6398:3: lv_right_7_0= ruleXExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXVariableDeclarationAccess().getRightXExpressionParserRuleCall_3_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleXVariableDeclaration14722);
+                    pushFollow(FOLLOW_ruleXExpression_in_ruleXVariableDeclaration14741);
                     lv_right_7_0=ruleXExpression();
 
                     state._fsp--;
@@ -18822,7 +18842,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmFormalParameter"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6411:1: entryRuleJvmFormalParameter returns [EObject current=null] : iv_ruleJvmFormalParameter= ruleJvmFormalParameter EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6422:1: entryRuleJvmFormalParameter returns [EObject current=null] : iv_ruleJvmFormalParameter= ruleJvmFormalParameter EOF ;
     public final EObject entryRuleJvmFormalParameter() throws RecognitionException {
         EObject current = null;
 
@@ -18830,13 +18850,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6412:2: (iv_ruleJvmFormalParameter= ruleJvmFormalParameter EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6413:2: iv_ruleJvmFormalParameter= ruleJvmFormalParameter EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6423:2: (iv_ruleJvmFormalParameter= ruleJvmFormalParameter EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6424:2: iv_ruleJvmFormalParameter= ruleJvmFormalParameter EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmFormalParameterRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmFormalParameter_in_entryRuleJvmFormalParameter14760);
+            pushFollow(FOLLOW_ruleJvmFormalParameter_in_entryRuleJvmFormalParameter14779);
             iv_ruleJvmFormalParameter=ruleJvmFormalParameter();
 
             state._fsp--;
@@ -18844,7 +18864,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmFormalParameter; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmFormalParameter14770); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmFormalParameter14789); if (state.failed) return current;
 
             }
 
@@ -18862,7 +18882,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmFormalParameter"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6420:1: ruleJvmFormalParameter returns [EObject current=null] : ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6431:1: ruleJvmFormalParameter returns [EObject current=null] : ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) ) ;
     public final EObject ruleJvmFormalParameter() throws RecognitionException {
         EObject current = null;
 
@@ -18874,13 +18894,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6423:28: ( ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6424:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6434:28: ( ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6435:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6424:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6424:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6435:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6435:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )? ( (lv_name_1_0= ruleValidID ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6424:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6435:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )?
             int alt114=2;
             int LA114_0 = input.LA(1);
 
@@ -18896,17 +18916,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt114) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6425:1: (lv_parameterType_0_0= ruleJvmTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6436:1: (lv_parameterType_0_0= ruleJvmTypeReference )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6425:1: (lv_parameterType_0_0= ruleJvmTypeReference )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6426:3: lv_parameterType_0_0= ruleJvmTypeReference
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6436:1: (lv_parameterType_0_0= ruleJvmTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6437:3: lv_parameterType_0_0= ruleJvmTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmFormalParameterAccess().getParameterTypeJvmTypeReferenceParserRuleCall_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmFormalParameter14816);
+                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmFormalParameter14835);
                     lv_parameterType_0_0=ruleJvmTypeReference();
 
                     state._fsp--;
@@ -18933,18 +18953,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6442:3: ( (lv_name_1_0= ruleValidID ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6443:1: (lv_name_1_0= ruleValidID )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6453:3: ( (lv_name_1_0= ruleValidID ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6454:1: (lv_name_1_0= ruleValidID )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6443:1: (lv_name_1_0= ruleValidID )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6444:3: lv_name_1_0= ruleValidID
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6454:1: (lv_name_1_0= ruleValidID )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6455:3: lv_name_1_0= ruleValidID
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmFormalParameterAccess().getNameValidIDParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleJvmFormalParameter14838);
+            pushFollow(FOLLOW_ruleValidID_in_ruleJvmFormalParameter14857);
             lv_name_1_0=ruleValidID();
 
             state._fsp--;
@@ -18991,7 +19011,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFullJvmFormalParameter"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6468:1: entryRuleFullJvmFormalParameter returns [EObject current=null] : iv_ruleFullJvmFormalParameter= ruleFullJvmFormalParameter EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6479:1: entryRuleFullJvmFormalParameter returns [EObject current=null] : iv_ruleFullJvmFormalParameter= ruleFullJvmFormalParameter EOF ;
     public final EObject entryRuleFullJvmFormalParameter() throws RecognitionException {
         EObject current = null;
 
@@ -18999,13 +19019,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6469:2: (iv_ruleFullJvmFormalParameter= ruleFullJvmFormalParameter EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6470:2: iv_ruleFullJvmFormalParameter= ruleFullJvmFormalParameter EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6480:2: (iv_ruleFullJvmFormalParameter= ruleFullJvmFormalParameter EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6481:2: iv_ruleFullJvmFormalParameter= ruleFullJvmFormalParameter EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFullJvmFormalParameterRule()); 
             }
-            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_entryRuleFullJvmFormalParameter14874);
+            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_entryRuleFullJvmFormalParameter14893);
             iv_ruleFullJvmFormalParameter=ruleFullJvmFormalParameter();
 
             state._fsp--;
@@ -19013,7 +19033,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFullJvmFormalParameter; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFullJvmFormalParameter14884); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFullJvmFormalParameter14903); if (state.failed) return current;
 
             }
 
@@ -19031,7 +19051,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFullJvmFormalParameter"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6477:1: ruleFullJvmFormalParameter returns [EObject current=null] : ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6488:1: ruleFullJvmFormalParameter returns [EObject current=null] : ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) ) ;
     public final EObject ruleFullJvmFormalParameter() throws RecognitionException {
         EObject current = null;
 
@@ -19043,24 +19063,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6480:28: ( ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6481:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6491:28: ( ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6492:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6481:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6481:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6492:1: ( ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6492:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) ) ( (lv_name_1_0= ruleValidID ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6481:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6482:1: (lv_parameterType_0_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6492:2: ( (lv_parameterType_0_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6493:1: (lv_parameterType_0_0= ruleJvmTypeReference )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6482:1: (lv_parameterType_0_0= ruleJvmTypeReference )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6483:3: lv_parameterType_0_0= ruleJvmTypeReference
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6493:1: (lv_parameterType_0_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6494:3: lv_parameterType_0_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getFullJvmFormalParameterAccess().getParameterTypeJvmTypeReferenceParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleFullJvmFormalParameter14930);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleFullJvmFormalParameter14949);
             lv_parameterType_0_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -19084,18 +19104,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6499:2: ( (lv_name_1_0= ruleValidID ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6500:1: (lv_name_1_0= ruleValidID )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6510:2: ( (lv_name_1_0= ruleValidID ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6511:1: (lv_name_1_0= ruleValidID )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6500:1: (lv_name_1_0= ruleValidID )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6501:3: lv_name_1_0= ruleValidID
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6511:1: (lv_name_1_0= ruleValidID )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6512:3: lv_name_1_0= ruleValidID
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getFullJvmFormalParameterAccess().getNameValidIDParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleFullJvmFormalParameter14951);
+            pushFollow(FOLLOW_ruleValidID_in_ruleFullJvmFormalParameter14970);
             lv_name_1_0=ruleValidID();
 
             state._fsp--;
@@ -19142,7 +19162,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXFeatureCall"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6525:1: entryRuleXFeatureCall returns [EObject current=null] : iv_ruleXFeatureCall= ruleXFeatureCall EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6536:1: entryRuleXFeatureCall returns [EObject current=null] : iv_ruleXFeatureCall= ruleXFeatureCall EOF ;
     public final EObject entryRuleXFeatureCall() throws RecognitionException {
         EObject current = null;
 
@@ -19150,13 +19170,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6526:2: (iv_ruleXFeatureCall= ruleXFeatureCall EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6527:2: iv_ruleXFeatureCall= ruleXFeatureCall EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6537:2: (iv_ruleXFeatureCall= ruleXFeatureCall EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6538:2: iv_ruleXFeatureCall= ruleXFeatureCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXFeatureCallRule()); 
             }
-            pushFollow(FOLLOW_ruleXFeatureCall_in_entryRuleXFeatureCall14987);
+            pushFollow(FOLLOW_ruleXFeatureCall_in_entryRuleXFeatureCall15006);
             iv_ruleXFeatureCall=ruleXFeatureCall();
 
             state._fsp--;
@@ -19164,7 +19184,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXFeatureCall; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXFeatureCall14997); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXFeatureCall15016); if (state.failed) return current;
 
             }
 
@@ -19182,7 +19202,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXFeatureCall"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6534:1: ruleXFeatureCall returns [EObject current=null] : ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6545:1: ruleXFeatureCall returns [EObject current=null] : ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? ) ;
     public final EObject ruleXFeatureCall() throws RecognitionException {
         EObject current = null;
 
@@ -19208,14 +19228,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6537:28: ( ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6538:1: ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6548:28: ( ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6549:1: ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6538:1: ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6538:2: () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6549:1: ( () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6549:2: () (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ( ( ruleIdOrSuper ) ) ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )? ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )?
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6538:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6539:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6549:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6550:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -19227,7 +19247,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6544:2: (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6555:2: (otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
             int alt116=2;
             int LA116_0 = input.LA(1);
 
@@ -19236,26 +19256,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt116) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6544:4: otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6555:4: otherlv_1= '<' ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
                     {
-                    otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleXFeatureCall15044); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleXFeatureCall15063); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getXFeatureCallAccess().getLessThanSignKeyword_1_0());
                           
                     }
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6548:1: ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6549:1: (lv_typeArguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6559:1: ( (lv_typeArguments_2_0= ruleJvmArgumentTypeReference ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6560:1: (lv_typeArguments_2_0= ruleJvmArgumentTypeReference )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6549:1: (lv_typeArguments_2_0= ruleJvmArgumentTypeReference )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6550:3: lv_typeArguments_2_0= ruleJvmArgumentTypeReference
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6560:1: (lv_typeArguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6561:3: lv_typeArguments_2_0= ruleJvmArgumentTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15065);
+                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15084);
                     lv_typeArguments_2_0=ruleJvmArgumentTypeReference();
 
                     state._fsp--;
@@ -19279,7 +19299,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6566:2: (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6577:2: (otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) )*
                     loop115:
                     do {
                         int alt115=2;
@@ -19292,26 +19312,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         switch (alt115) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6566:4: otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6577:4: otherlv_3= ',' ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleXFeatureCall15078); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleXFeatureCall15097); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getXFeatureCallAccess().getCommaKeyword_1_2_0());
                     	          
                     	    }
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6570:1: ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6571:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6581:1: ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6582:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6571:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6572:3: lv_typeArguments_4_0= ruleJvmArgumentTypeReference
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6582:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6583:3: lv_typeArguments_4_0= ruleJvmArgumentTypeReference
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getXFeatureCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15099);
+                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15118);
                     	    lv_typeArguments_4_0=ruleJvmArgumentTypeReference();
 
                     	    state._fsp--;
@@ -19344,7 +19364,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,62,FOLLOW_62_in_ruleXFeatureCall15113); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,62,FOLLOW_62_in_ruleXFeatureCall15132); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getXFeatureCallAccess().getGreaterThanSignKeyword_1_3());
@@ -19356,11 +19376,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6592:3: ( ( ruleIdOrSuper ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6593:1: ( ruleIdOrSuper )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6603:3: ( ( ruleIdOrSuper ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6604:1: ( ruleIdOrSuper )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6593:1: ( ruleIdOrSuper )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6594:3: ruleIdOrSuper
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6604:1: ( ruleIdOrSuper )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6605:3: ruleIdOrSuper
             {
             if ( state.backtracking==0 ) {
 
@@ -19374,7 +19394,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getXFeatureCallAccess().getFeatureJvmIdentifiableElementCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall15138);
+            pushFollow(FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall15157);
             ruleIdOrSuper();
 
             state._fsp--;
@@ -19390,20 +19410,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6607:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6618:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )?
             int alt119=2;
             alt119 = dfa119.predict(input);
             switch (alt119) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6607:3: ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6618:3: ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')'
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6607:3: ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6607:4: ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6618:3: ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6618:4: ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6614:1: (lv_explicitOperationCall_7_0= '(' )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6615:3: lv_explicitOperationCall_7_0= '('
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6625:1: (lv_explicitOperationCall_7_0= '(' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6626:3: lv_explicitOperationCall_7_0= '('
                     {
-                    lv_explicitOperationCall_7_0=(Token)match(input,28,FOLLOW_28_in_ruleXFeatureCall15172); if (state.failed) return current;
+                    lv_explicitOperationCall_7_0=(Token)match(input,28,FOLLOW_28_in_ruleXFeatureCall15191); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_explicitOperationCall_7_0, grammarAccess.getXFeatureCallAccess().getExplicitOperationCallLeftParenthesisKeyword_3_0_0());
@@ -19423,25 +19443,25 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )?
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )?
                     int alt118=3;
                     alt118 = dfa118.predict(input);
                     switch (alt118) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6645:1: (lv_featureCallArguments_8_0= ruleXShortClosure )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6646:3: lv_featureCallArguments_8_0= ruleXShortClosure
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6656:1: (lv_featureCallArguments_8_0= ruleXShortClosure )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6657:3: lv_featureCallArguments_8_0= ruleXShortClosure
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXShortClosureParserRuleCall_3_1_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleXShortClosure_in_ruleXFeatureCall15257);
+                            pushFollow(FOLLOW_ruleXShortClosure_in_ruleXFeatureCall15276);
                             lv_featureCallArguments_8_0=ruleXShortClosure();
 
                             state._fsp--;
@@ -19469,23 +19489,23 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6663:6: ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6674:6: ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6663:6: ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6663:7: ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )*
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6674:6: ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6674:7: ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )*
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6663:7: ( (lv_featureCallArguments_9_0= ruleXExpression ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6664:1: (lv_featureCallArguments_9_0= ruleXExpression )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6674:7: ( (lv_featureCallArguments_9_0= ruleXExpression ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6675:1: (lv_featureCallArguments_9_0= ruleXExpression )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6664:1: (lv_featureCallArguments_9_0= ruleXExpression )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6665:3: lv_featureCallArguments_9_0= ruleXExpression
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6675:1: (lv_featureCallArguments_9_0= ruleXExpression )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6676:3: lv_featureCallArguments_9_0= ruleXExpression
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXExpressionParserRuleCall_3_1_1_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleXExpression_in_ruleXFeatureCall15285);
+                            pushFollow(FOLLOW_ruleXExpression_in_ruleXFeatureCall15304);
                             lv_featureCallArguments_9_0=ruleXExpression();
 
                             state._fsp--;
@@ -19509,7 +19529,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6681:2: (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )*
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6692:2: (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )*
                             loop117:
                             do {
                                 int alt117=2;
@@ -19522,26 +19542,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                                 switch (alt117) {
                             	case 1 :
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6681:4: otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6692:4: otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) )
                             	    {
-                            	    otherlv_10=(Token)match(input,21,FOLLOW_21_in_ruleXFeatureCall15298); if (state.failed) return current;
+                            	    otherlv_10=(Token)match(input,21,FOLLOW_21_in_ruleXFeatureCall15317); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_10, grammarAccess.getXFeatureCallAccess().getCommaKeyword_3_1_1_1_0());
                             	          
                             	    }
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6685:1: ( (lv_featureCallArguments_11_0= ruleXExpression ) )
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6686:1: (lv_featureCallArguments_11_0= ruleXExpression )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6696:1: ( (lv_featureCallArguments_11_0= ruleXExpression ) )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6697:1: (lv_featureCallArguments_11_0= ruleXExpression )
                             	    {
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6686:1: (lv_featureCallArguments_11_0= ruleXExpression )
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6687:3: lv_featureCallArguments_11_0= ruleXExpression
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6697:1: (lv_featureCallArguments_11_0= ruleXExpression )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6698:3: lv_featureCallArguments_11_0= ruleXExpression
                             	    {
                             	    if ( state.backtracking==0 ) {
                             	       
                             	      	        newCompositeNode(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXExpressionParserRuleCall_3_1_1_1_1_0()); 
                             	      	    
                             	    }
-                            	    pushFollow(FOLLOW_ruleXExpression_in_ruleXFeatureCall15319);
+                            	    pushFollow(FOLLOW_ruleXExpression_in_ruleXFeatureCall15338);
                             	    lv_featureCallArguments_11_0=ruleXExpression();
 
                             	    state._fsp--;
@@ -19583,7 +19603,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_12=(Token)match(input,29,FOLLOW_29_in_ruleXFeatureCall15336); if (state.failed) return current;
+                    otherlv_12=(Token)match(input,29,FOLLOW_29_in_ruleXFeatureCall15355); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_12, grammarAccess.getXFeatureCallAccess().getRightParenthesisKeyword_3_2());
@@ -19595,22 +19615,22 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6707:3: ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6718:3: ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )?
             int alt120=2;
             alt120 = dfa120.predict(input);
             switch (alt120) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6707:4: ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6718:4: ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6710:1: (lv_featureCallArguments_13_0= ruleXClosure )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6711:3: lv_featureCallArguments_13_0= ruleXClosure
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6721:1: (lv_featureCallArguments_13_0= ruleXClosure )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6722:3: lv_featureCallArguments_13_0= ruleXClosure
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXFeatureCallAccess().getFeatureCallArgumentsXClosureParserRuleCall_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXClosure_in_ruleXFeatureCall15371);
+                    pushFollow(FOLLOW_ruleXClosure_in_ruleXFeatureCall15390);
                     lv_featureCallArguments_13_0=ruleXClosure();
 
                     state._fsp--;
@@ -19660,7 +19680,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFeatureCallID"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6735:1: entryRuleFeatureCallID returns [String current=null] : iv_ruleFeatureCallID= ruleFeatureCallID EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6746:1: entryRuleFeatureCallID returns [String current=null] : iv_ruleFeatureCallID= ruleFeatureCallID EOF ;
     public final String entryRuleFeatureCallID() throws RecognitionException {
         String current = null;
 
@@ -19668,13 +19688,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6736:2: (iv_ruleFeatureCallID= ruleFeatureCallID EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6737:2: iv_ruleFeatureCallID= ruleFeatureCallID EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6747:2: (iv_ruleFeatureCallID= ruleFeatureCallID EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6748:2: iv_ruleFeatureCallID= ruleFeatureCallID EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFeatureCallIDRule()); 
             }
-            pushFollow(FOLLOW_ruleFeatureCallID_in_entryRuleFeatureCallID15409);
+            pushFollow(FOLLOW_ruleFeatureCallID_in_entryRuleFeatureCallID15428);
             iv_ruleFeatureCallID=ruleFeatureCallID();
 
             state._fsp--;
@@ -19682,7 +19702,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFeatureCallID.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeatureCallID15420); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeatureCallID15439); if (state.failed) return current;
 
             }
 
@@ -19700,7 +19720,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeatureCallID"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6744:1: ruleFeatureCallID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6755:1: ruleFeatureCallID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' ) ;
     public final AntlrDatatypeRuleToken ruleFeatureCallID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -19711,10 +19731,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6747:28: ( (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6748:1: (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6758:28: ( (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6759:1: (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6748:1: (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6759:1: (this_ValidID_0= ruleValidID | kw= 'extends' | kw= 'static' | kw= 'import' | kw= 'extension' )
             int alt121=5;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -19752,14 +19772,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             switch (alt121) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6749:5: this_ValidID_0= ruleValidID
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6760:5: this_ValidID_0= ruleValidID
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getFeatureCallIDAccess().getValidIDParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleValidID_in_ruleFeatureCallID15467);
+                    pushFollow(FOLLOW_ruleValidID_in_ruleFeatureCallID15486);
                     this_ValidID_0=ruleValidID();
 
                     state._fsp--;
@@ -19778,9 +19798,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6761:2: kw= 'extends'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6772:2: kw= 'extends'
                     {
-                    kw=(Token)match(input,100,FOLLOW_100_in_ruleFeatureCallID15491); if (state.failed) return current;
+                    kw=(Token)match(input,100,FOLLOW_100_in_ruleFeatureCallID15510); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19791,9 +19811,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6768:2: kw= 'static'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6779:2: kw= 'static'
                     {
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleFeatureCallID15510); if (state.failed) return current;
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleFeatureCallID15529); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19804,9 +19824,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6775:2: kw= 'import'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6786:2: kw= 'import'
                     {
-                    kw=(Token)match(input,15,FOLLOW_15_in_ruleFeatureCallID15529); if (state.failed) return current;
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleFeatureCallID15548); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19817,9 +19837,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6782:2: kw= 'extension'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6793:2: kw= 'extension'
                     {
-                    kw=(Token)match(input,101,FOLLOW_101_in_ruleFeatureCallID15548); if (state.failed) return current;
+                    kw=(Token)match(input,101,FOLLOW_101_in_ruleFeatureCallID15567); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19852,7 +19872,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdOrSuper"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6795:1: entryRuleIdOrSuper returns [String current=null] : iv_ruleIdOrSuper= ruleIdOrSuper EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6806:1: entryRuleIdOrSuper returns [String current=null] : iv_ruleIdOrSuper= ruleIdOrSuper EOF ;
     public final String entryRuleIdOrSuper() throws RecognitionException {
         String current = null;
 
@@ -19860,13 +19880,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6796:2: (iv_ruleIdOrSuper= ruleIdOrSuper EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6797:2: iv_ruleIdOrSuper= ruleIdOrSuper EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6807:2: (iv_ruleIdOrSuper= ruleIdOrSuper EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6808:2: iv_ruleIdOrSuper= ruleIdOrSuper EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getIdOrSuperRule()); 
             }
-            pushFollow(FOLLOW_ruleIdOrSuper_in_entryRuleIdOrSuper15589);
+            pushFollow(FOLLOW_ruleIdOrSuper_in_entryRuleIdOrSuper15608);
             iv_ruleIdOrSuper=ruleIdOrSuper();
 
             state._fsp--;
@@ -19874,7 +19894,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleIdOrSuper.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIdOrSuper15600); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIdOrSuper15619); if (state.failed) return current;
 
             }
 
@@ -19892,7 +19912,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdOrSuper"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6804:1: ruleIdOrSuper returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6815:1: ruleIdOrSuper returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' ) ;
     public final AntlrDatatypeRuleToken ruleIdOrSuper() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -19903,10 +19923,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6807:28: ( (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6808:1: (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6818:28: ( (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6819:1: (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6808:1: (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6819:1: (this_FeatureCallID_0= ruleFeatureCallID | kw= 'super' )
             int alt122=2;
             int LA122_0 = input.LA(1);
 
@@ -19925,14 +19945,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt122) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6809:5: this_FeatureCallID_0= ruleFeatureCallID
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6820:5: this_FeatureCallID_0= ruleFeatureCallID
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getIdOrSuperAccess().getFeatureCallIDParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleFeatureCallID_in_ruleIdOrSuper15647);
+                    pushFollow(FOLLOW_ruleFeatureCallID_in_ruleIdOrSuper15666);
                     this_FeatureCallID_0=ruleFeatureCallID();
 
                     state._fsp--;
@@ -19951,9 +19971,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6821:2: kw= 'super'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6832:2: kw= 'super'
                     {
-                    kw=(Token)match(input,102,FOLLOW_102_in_ruleIdOrSuper15671); if (state.failed) return current;
+                    kw=(Token)match(input,102,FOLLOW_102_in_ruleIdOrSuper15690); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19986,7 +20006,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXConstructorCall"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6834:1: entryRuleXConstructorCall returns [EObject current=null] : iv_ruleXConstructorCall= ruleXConstructorCall EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6845:1: entryRuleXConstructorCall returns [EObject current=null] : iv_ruleXConstructorCall= ruleXConstructorCall EOF ;
     public final EObject entryRuleXConstructorCall() throws RecognitionException {
         EObject current = null;
 
@@ -19994,13 +20014,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6835:2: (iv_ruleXConstructorCall= ruleXConstructorCall EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6836:2: iv_ruleXConstructorCall= ruleXConstructorCall EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6846:2: (iv_ruleXConstructorCall= ruleXConstructorCall EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6847:2: iv_ruleXConstructorCall= ruleXConstructorCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXConstructorCallRule()); 
             }
-            pushFollow(FOLLOW_ruleXConstructorCall_in_entryRuleXConstructorCall15711);
+            pushFollow(FOLLOW_ruleXConstructorCall_in_entryRuleXConstructorCall15730);
             iv_ruleXConstructorCall=ruleXConstructorCall();
 
             state._fsp--;
@@ -20008,7 +20028,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXConstructorCall; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXConstructorCall15721); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXConstructorCall15740); if (state.failed) return current;
 
             }
 
@@ -20026,7 +20046,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXConstructorCall"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6843:1: ruleXConstructorCall returns [EObject current=null] : ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6854:1: ruleXConstructorCall returns [EObject current=null] : ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? ) ;
     public final EObject ruleXConstructorCall() throws RecognitionException {
         EObject current = null;
 
@@ -20053,14 +20073,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6846:28: ( ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6847:1: ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6857:28: ( ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6858:1: ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6847:1: ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6847:2: () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6858:1: ( () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6858:2: () otherlv_1= 'new' ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )? ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )? ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6847:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6848:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6858:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6859:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -20072,17 +20092,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,103,FOLLOW_103_in_ruleXConstructorCall15767); if (state.failed) return current;
+            otherlv_1=(Token)match(input,103,FOLLOW_103_in_ruleXConstructorCall15786); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXConstructorCallAccess().getNewKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6857:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6858:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6868:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:1: ( ruleQualifiedName )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6858:1: ( ruleQualifiedName )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6859:3: ruleQualifiedName
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6870:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -20096,7 +20116,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getXConstructorCallAccess().getConstructorJvmConstructorCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleXConstructorCall15790);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleXConstructorCall15809);
             ruleQualifiedName();
 
             state._fsp--;
@@ -20112,17 +20132,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6872:2: ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:2: ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )?
             int alt124=2;
             alt124 = dfa124.predict(input);
             switch (alt124) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6872:3: ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:3: ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>'
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6872:3: ( ( '<' )=>otherlv_3= '<' )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6872:4: ( '<' )=>otherlv_3= '<'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:3: ( ( '<' )=>otherlv_3= '<' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:4: ( '<' )=>otherlv_3= '<'
                     {
-                    otherlv_3=(Token)match(input,61,FOLLOW_61_in_ruleXConstructorCall15811); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,61,FOLLOW_61_in_ruleXConstructorCall15830); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getXConstructorCallAccess().getLessThanSignKeyword_3_0());
@@ -20131,18 +20151,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:2: ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6878:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6888:2: ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6889:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6878:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6879:3: lv_typeArguments_4_0= ruleJvmArgumentTypeReference
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6889:1: (lv_typeArguments_4_0= ruleJvmArgumentTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6890:3: lv_typeArguments_4_0= ruleJvmArgumentTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXConstructorCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_3_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15833);
+                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15852);
                     lv_typeArguments_4_0=ruleJvmArgumentTypeReference();
 
                     state._fsp--;
@@ -20166,7 +20186,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6895:2: (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6906:2: (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )*
                     loop123:
                     do {
                         int alt123=2;
@@ -20179,26 +20199,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         switch (alt123) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6895:4: otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6906:4: otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleXConstructorCall15846); if (state.failed) return current;
+                    	    otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleXConstructorCall15865); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_5, grammarAccess.getXConstructorCallAccess().getCommaKeyword_3_2_0());
                     	          
                     	    }
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6899:1: ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6900:1: (lv_typeArguments_6_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6910:1: ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6911:1: (lv_typeArguments_6_0= ruleJvmArgumentTypeReference )
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6900:1: (lv_typeArguments_6_0= ruleJvmArgumentTypeReference )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6901:3: lv_typeArguments_6_0= ruleJvmArgumentTypeReference
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6911:1: (lv_typeArguments_6_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6912:3: lv_typeArguments_6_0= ruleJvmArgumentTypeReference
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getXConstructorCallAccess().getTypeArgumentsJvmArgumentTypeReferenceParserRuleCall_3_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15867);
+                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15886);
                     	    lv_typeArguments_6_0=ruleJvmArgumentTypeReference();
 
                     	    state._fsp--;
@@ -20231,7 +20251,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_7=(Token)match(input,62,FOLLOW_62_in_ruleXConstructorCall15881); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,62,FOLLOW_62_in_ruleXConstructorCall15900); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getXConstructorCallAccess().getGreaterThanSignKeyword_3_3());
@@ -20243,20 +20263,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:3: ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6932:3: ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?
             int alt127=2;
             alt127 = dfa127.predict(input);
             switch (alt127) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:4: ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6932:4: ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')'
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:4: ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:5: ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6932:4: ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6932:5: ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6928:1: (lv_explicitConstructorCall_8_0= '(' )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6929:3: lv_explicitConstructorCall_8_0= '('
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6939:1: (lv_explicitConstructorCall_8_0= '(' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6940:3: lv_explicitConstructorCall_8_0= '('
                     {
-                    lv_explicitConstructorCall_8_0=(Token)match(input,28,FOLLOW_28_in_ruleXConstructorCall15917); if (state.failed) return current;
+                    lv_explicitConstructorCall_8_0=(Token)match(input,28,FOLLOW_28_in_ruleXConstructorCall15936); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_explicitConstructorCall_8_0, grammarAccess.getXConstructorCallAccess().getExplicitConstructorCallLeftParenthesisKeyword_4_0_0());
@@ -20276,25 +20296,25 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )?
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )?
                     int alt126=3;
                     alt126 = dfa126.predict(input);
                     switch (alt126) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:3: ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6959:1: (lv_arguments_9_0= ruleXShortClosure )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6960:3: lv_arguments_9_0= ruleXShortClosure
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6970:1: (lv_arguments_9_0= ruleXShortClosure )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6971:3: lv_arguments_9_0= ruleXShortClosure
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXConstructorCallAccess().getArgumentsXShortClosureParserRuleCall_4_1_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleXShortClosure_in_ruleXConstructorCall16002);
+                            pushFollow(FOLLOW_ruleXShortClosure_in_ruleXConstructorCall16021);
                             lv_arguments_9_0=ruleXShortClosure();
 
                             state._fsp--;
@@ -20322,23 +20342,23 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6977:6: ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6988:6: ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6977:6: ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6977:7: ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )*
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6988:6: ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6988:7: ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )*
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6977:7: ( (lv_arguments_10_0= ruleXExpression ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6978:1: (lv_arguments_10_0= ruleXExpression )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6988:7: ( (lv_arguments_10_0= ruleXExpression ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6989:1: (lv_arguments_10_0= ruleXExpression )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6978:1: (lv_arguments_10_0= ruleXExpression )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6979:3: lv_arguments_10_0= ruleXExpression
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6989:1: (lv_arguments_10_0= ruleXExpression )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6990:3: lv_arguments_10_0= ruleXExpression
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXConstructorCallAccess().getArgumentsXExpressionParserRuleCall_4_1_1_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleXExpression_in_ruleXConstructorCall16030);
+                            pushFollow(FOLLOW_ruleXExpression_in_ruleXConstructorCall16049);
                             lv_arguments_10_0=ruleXExpression();
 
                             state._fsp--;
@@ -20362,7 +20382,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6995:2: (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )*
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7006:2: (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )*
                             loop125:
                             do {
                                 int alt125=2;
@@ -20375,26 +20395,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                                 switch (alt125) {
                             	case 1 :
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6995:4: otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7006:4: otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) )
                             	    {
-                            	    otherlv_11=(Token)match(input,21,FOLLOW_21_in_ruleXConstructorCall16043); if (state.failed) return current;
+                            	    otherlv_11=(Token)match(input,21,FOLLOW_21_in_ruleXConstructorCall16062); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_11, grammarAccess.getXConstructorCallAccess().getCommaKeyword_4_1_1_1_0());
                             	          
                             	    }
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6999:1: ( (lv_arguments_12_0= ruleXExpression ) )
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7000:1: (lv_arguments_12_0= ruleXExpression )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7010:1: ( (lv_arguments_12_0= ruleXExpression ) )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7011:1: (lv_arguments_12_0= ruleXExpression )
                             	    {
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7000:1: (lv_arguments_12_0= ruleXExpression )
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7001:3: lv_arguments_12_0= ruleXExpression
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7011:1: (lv_arguments_12_0= ruleXExpression )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7012:3: lv_arguments_12_0= ruleXExpression
                             	    {
                             	    if ( state.backtracking==0 ) {
                             	       
                             	      	        newCompositeNode(grammarAccess.getXConstructorCallAccess().getArgumentsXExpressionParserRuleCall_4_1_1_1_1_0()); 
                             	      	    
                             	    }
-                            	    pushFollow(FOLLOW_ruleXExpression_in_ruleXConstructorCall16064);
+                            	    pushFollow(FOLLOW_ruleXExpression_in_ruleXConstructorCall16083);
                             	    lv_arguments_12_0=ruleXExpression();
 
                             	    state._fsp--;
@@ -20436,7 +20456,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,29,FOLLOW_29_in_ruleXConstructorCall16081); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,29,FOLLOW_29_in_ruleXConstructorCall16100); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_13, grammarAccess.getXConstructorCallAccess().getRightParenthesisKeyword_4_2());
@@ -20448,22 +20468,22 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7021:3: ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7032:3: ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?
             int alt128=2;
             alt128 = dfa128.predict(input);
             switch (alt128) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7021:4: ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7032:4: ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7024:1: (lv_arguments_14_0= ruleXClosure )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7025:3: lv_arguments_14_0= ruleXClosure
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7035:1: (lv_arguments_14_0= ruleXClosure )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7036:3: lv_arguments_14_0= ruleXClosure
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXConstructorCallAccess().getArgumentsXClosureParserRuleCall_5_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXClosure_in_ruleXConstructorCall16116);
+                    pushFollow(FOLLOW_ruleXClosure_in_ruleXConstructorCall16135);
                     lv_arguments_14_0=ruleXClosure();
 
                     state._fsp--;
@@ -20513,7 +20533,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXBooleanLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7049:1: entryRuleXBooleanLiteral returns [EObject current=null] : iv_ruleXBooleanLiteral= ruleXBooleanLiteral EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7060:1: entryRuleXBooleanLiteral returns [EObject current=null] : iv_ruleXBooleanLiteral= ruleXBooleanLiteral EOF ;
     public final EObject entryRuleXBooleanLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20521,13 +20541,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7050:2: (iv_ruleXBooleanLiteral= ruleXBooleanLiteral EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7051:2: iv_ruleXBooleanLiteral= ruleXBooleanLiteral EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7061:2: (iv_ruleXBooleanLiteral= ruleXBooleanLiteral EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7062:2: iv_ruleXBooleanLiteral= ruleXBooleanLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXBooleanLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleXBooleanLiteral_in_entryRuleXBooleanLiteral16153);
+            pushFollow(FOLLOW_ruleXBooleanLiteral_in_entryRuleXBooleanLiteral16172);
             iv_ruleXBooleanLiteral=ruleXBooleanLiteral();
 
             state._fsp--;
@@ -20535,7 +20555,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXBooleanLiteral; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXBooleanLiteral16163); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXBooleanLiteral16182); if (state.failed) return current;
 
             }
 
@@ -20553,7 +20573,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXBooleanLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7058:1: ruleXBooleanLiteral returns [EObject current=null] : ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7069:1: ruleXBooleanLiteral returns [EObject current=null] : ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) ) ;
     public final EObject ruleXBooleanLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20563,14 +20583,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7061:28: ( ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7062:1: ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7072:28: ( ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7073:1: ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7062:1: ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7062:2: () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7073:1: ( () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7073:2: () (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7062:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7063:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7073:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7074:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -20582,7 +20602,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7068:2: (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7079:2: (otherlv_1= 'false' | ( (lv_isTrue_2_0= 'true' ) ) )
             int alt129=2;
             int LA129_0 = input.LA(1);
 
@@ -20601,9 +20621,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt129) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7068:4: otherlv_1= 'false'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7079:4: otherlv_1= 'false'
                     {
-                    otherlv_1=(Token)match(input,41,FOLLOW_41_in_ruleXBooleanLiteral16210); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,41,FOLLOW_41_in_ruleXBooleanLiteral16229); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getXBooleanLiteralAccess().getFalseKeyword_1_0());
@@ -20613,15 +20633,15 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7073:6: ( (lv_isTrue_2_0= 'true' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7084:6: ( (lv_isTrue_2_0= 'true' ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7073:6: ( (lv_isTrue_2_0= 'true' ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7074:1: (lv_isTrue_2_0= 'true' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7084:6: ( (lv_isTrue_2_0= 'true' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7085:1: (lv_isTrue_2_0= 'true' )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7074:1: (lv_isTrue_2_0= 'true' )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7075:3: lv_isTrue_2_0= 'true'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7085:1: (lv_isTrue_2_0= 'true' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7086:3: lv_isTrue_2_0= 'true'
                     {
-                    lv_isTrue_2_0=(Token)match(input,40,FOLLOW_40_in_ruleXBooleanLiteral16234); if (state.failed) return current;
+                    lv_isTrue_2_0=(Token)match(input,40,FOLLOW_40_in_ruleXBooleanLiteral16253); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_isTrue_2_0, grammarAccess.getXBooleanLiteralAccess().getIsTrueTrueKeyword_1_1_0());
@@ -20670,7 +20690,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXNullLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7096:1: entryRuleXNullLiteral returns [EObject current=null] : iv_ruleXNullLiteral= ruleXNullLiteral EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7107:1: entryRuleXNullLiteral returns [EObject current=null] : iv_ruleXNullLiteral= ruleXNullLiteral EOF ;
     public final EObject entryRuleXNullLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20678,13 +20698,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7097:2: (iv_ruleXNullLiteral= ruleXNullLiteral EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7098:2: iv_ruleXNullLiteral= ruleXNullLiteral EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7108:2: (iv_ruleXNullLiteral= ruleXNullLiteral EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7109:2: iv_ruleXNullLiteral= ruleXNullLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXNullLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleXNullLiteral_in_entryRuleXNullLiteral16284);
+            pushFollow(FOLLOW_ruleXNullLiteral_in_entryRuleXNullLiteral16303);
             iv_ruleXNullLiteral=ruleXNullLiteral();
 
             state._fsp--;
@@ -20692,7 +20712,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXNullLiteral; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXNullLiteral16294); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXNullLiteral16313); if (state.failed) return current;
 
             }
 
@@ -20710,7 +20730,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXNullLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7105:1: ruleXNullLiteral returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7116:1: ruleXNullLiteral returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
     public final EObject ruleXNullLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20719,14 +20739,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7108:28: ( ( () otherlv_1= 'null' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7109:1: ( () otherlv_1= 'null' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7119:28: ( ( () otherlv_1= 'null' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7120:1: ( () otherlv_1= 'null' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7109:1: ( () otherlv_1= 'null' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7109:2: () otherlv_1= 'null'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7120:1: ( () otherlv_1= 'null' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7120:2: () otherlv_1= 'null'
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7109:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7110:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7120:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7121:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -20738,7 +20758,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,104,FOLLOW_104_in_ruleXNullLiteral16340); if (state.failed) return current;
+            otherlv_1=(Token)match(input,104,FOLLOW_104_in_ruleXNullLiteral16359); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXNullLiteralAccess().getNullKeyword_1());
@@ -20767,7 +20787,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXNumberLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7127:1: entryRuleXNumberLiteral returns [EObject current=null] : iv_ruleXNumberLiteral= ruleXNumberLiteral EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7138:1: entryRuleXNumberLiteral returns [EObject current=null] : iv_ruleXNumberLiteral= ruleXNumberLiteral EOF ;
     public final EObject entryRuleXNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20775,13 +20795,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7128:2: (iv_ruleXNumberLiteral= ruleXNumberLiteral EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7129:2: iv_ruleXNumberLiteral= ruleXNumberLiteral EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7139:2: (iv_ruleXNumberLiteral= ruleXNumberLiteral EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7140:2: iv_ruleXNumberLiteral= ruleXNumberLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXNumberLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleXNumberLiteral_in_entryRuleXNumberLiteral16376);
+            pushFollow(FOLLOW_ruleXNumberLiteral_in_entryRuleXNumberLiteral16395);
             iv_ruleXNumberLiteral=ruleXNumberLiteral();
 
             state._fsp--;
@@ -20789,7 +20809,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXNumberLiteral; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXNumberLiteral16386); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXNumberLiteral16405); if (state.failed) return current;
 
             }
 
@@ -20807,7 +20827,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXNumberLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7136:1: ruleXNumberLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= ruleNumber ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7147:1: ruleXNumberLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= ruleNumber ) ) ) ;
     public final EObject ruleXNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20817,14 +20837,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7139:28: ( ( () ( (lv_value_1_0= ruleNumber ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7140:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7150:28: ( ( () ( (lv_value_1_0= ruleNumber ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7151:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7140:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7140:2: () ( (lv_value_1_0= ruleNumber ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7151:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7151:2: () ( (lv_value_1_0= ruleNumber ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7140:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7141:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7151:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7152:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -20836,18 +20856,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7146:2: ( (lv_value_1_0= ruleNumber ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7147:1: (lv_value_1_0= ruleNumber )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7157:2: ( (lv_value_1_0= ruleNumber ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7158:1: (lv_value_1_0= ruleNumber )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7147:1: (lv_value_1_0= ruleNumber )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7148:3: lv_value_1_0= ruleNumber
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7158:1: (lv_value_1_0= ruleNumber )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7159:3: lv_value_1_0= ruleNumber
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXNumberLiteralAccess().getValueNumberParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleNumber_in_ruleXNumberLiteral16441);
+            pushFollow(FOLLOW_ruleNumber_in_ruleXNumberLiteral16460);
             lv_value_1_0=ruleNumber();
 
             state._fsp--;
@@ -20894,7 +20914,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXStringLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7172:1: entryRuleXStringLiteral returns [EObject current=null] : iv_ruleXStringLiteral= ruleXStringLiteral EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7183:1: entryRuleXStringLiteral returns [EObject current=null] : iv_ruleXStringLiteral= ruleXStringLiteral EOF ;
     public final EObject entryRuleXStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20902,13 +20922,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7173:2: (iv_ruleXStringLiteral= ruleXStringLiteral EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7174:2: iv_ruleXStringLiteral= ruleXStringLiteral EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7184:2: (iv_ruleXStringLiteral= ruleXStringLiteral EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7185:2: iv_ruleXStringLiteral= ruleXStringLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXStringLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleXStringLiteral_in_entryRuleXStringLiteral16477);
+            pushFollow(FOLLOW_ruleXStringLiteral_in_entryRuleXStringLiteral16496);
             iv_ruleXStringLiteral=ruleXStringLiteral();
 
             state._fsp--;
@@ -20916,7 +20936,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXStringLiteral; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXStringLiteral16487); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXStringLiteral16506); if (state.failed) return current;
 
             }
 
@@ -20934,7 +20954,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXStringLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7181:1: ruleXStringLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_STRING ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7192:1: ruleXStringLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleXStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -20943,14 +20963,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7184:28: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7185:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7195:28: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7196:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7185:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7185:2: () ( (lv_value_1_0= RULE_STRING ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7196:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7196:2: () ( (lv_value_1_0= RULE_STRING ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7185:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7186:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7196:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7197:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -20962,13 +20982,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7191:2: ( (lv_value_1_0= RULE_STRING ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7192:1: (lv_value_1_0= RULE_STRING )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7202:2: ( (lv_value_1_0= RULE_STRING ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7203:1: (lv_value_1_0= RULE_STRING )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7192:1: (lv_value_1_0= RULE_STRING )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7193:3: lv_value_1_0= RULE_STRING
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7203:1: (lv_value_1_0= RULE_STRING )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7204:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleXStringLiteral16538); if (state.failed) return current;
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleXStringLiteral16557); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_1_0, grammarAccess.getXStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
@@ -21015,7 +21035,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXTypeLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7217:1: entryRuleXTypeLiteral returns [EObject current=null] : iv_ruleXTypeLiteral= ruleXTypeLiteral EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7228:1: entryRuleXTypeLiteral returns [EObject current=null] : iv_ruleXTypeLiteral= ruleXTypeLiteral EOF ;
     public final EObject entryRuleXTypeLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -21023,13 +21043,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7218:2: (iv_ruleXTypeLiteral= ruleXTypeLiteral EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7219:2: iv_ruleXTypeLiteral= ruleXTypeLiteral EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7229:2: (iv_ruleXTypeLiteral= ruleXTypeLiteral EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7230:2: iv_ruleXTypeLiteral= ruleXTypeLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXTypeLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleXTypeLiteral_in_entryRuleXTypeLiteral16579);
+            pushFollow(FOLLOW_ruleXTypeLiteral_in_entryRuleXTypeLiteral16598);
             iv_ruleXTypeLiteral=ruleXTypeLiteral();
 
             state._fsp--;
@@ -21037,7 +21057,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXTypeLiteral; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXTypeLiteral16589); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXTypeLiteral16608); if (state.failed) return current;
 
             }
 
@@ -21055,7 +21075,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXTypeLiteral"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7226:1: ruleXTypeLiteral returns [EObject current=null] : ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7237:1: ruleXTypeLiteral returns [EObject current=null] : ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' ) ;
     public final EObject ruleXTypeLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -21068,14 +21088,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7229:28: ( ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7230:1: ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7240:28: ( ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7241:1: ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7230:1: ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7230:2: () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7241:1: ( () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7241:2: () otherlv_1= 'typeof' otherlv_2= '(' ( ( ruleQualifiedName ) ) ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )* otherlv_5= ')'
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7230:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7231:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7241:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7242:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -21087,23 +21107,23 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,105,FOLLOW_105_in_ruleXTypeLiteral16635); if (state.failed) return current;
+            otherlv_1=(Token)match(input,105,FOLLOW_105_in_ruleXTypeLiteral16654); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXTypeLiteralAccess().getTypeofKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXTypeLiteral16647); if (state.failed) return current;
+            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXTypeLiteral16666); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXTypeLiteralAccess().getLeftParenthesisKeyword_2());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7244:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7245:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7255:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7256:1: ( ruleQualifiedName )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7245:1: ( ruleQualifiedName )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7246:3: ruleQualifiedName
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7256:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7257:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -21117,7 +21137,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getXTypeLiteralAccess().getTypeJvmTypeCrossReference_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleXTypeLiteral16670);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleXTypeLiteral16689);
             ruleQualifiedName();
 
             state._fsp--;
@@ -21133,7 +21153,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7259:2: ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )*
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7270:2: ( (lv_arrayDimensions_4_0= ruleArrayBrackets ) )*
             loop130:
             do {
                 int alt130=2;
@@ -21146,17 +21166,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                 switch (alt130) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7260:1: (lv_arrayDimensions_4_0= ruleArrayBrackets )
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7271:1: (lv_arrayDimensions_4_0= ruleArrayBrackets )
             	    {
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7260:1: (lv_arrayDimensions_4_0= ruleArrayBrackets )
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7261:3: lv_arrayDimensions_4_0= ruleArrayBrackets
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7271:1: (lv_arrayDimensions_4_0= ruleArrayBrackets )
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7272:3: lv_arrayDimensions_4_0= ruleArrayBrackets
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getXTypeLiteralAccess().getArrayDimensionsArrayBracketsParserRuleCall_4_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleXTypeLiteral16691);
+            	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleXTypeLiteral16710);
             	    lv_arrayDimensions_4_0=ruleArrayBrackets();
 
             	    state._fsp--;
@@ -21186,7 +21206,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,29,FOLLOW_29_in_ruleXTypeLiteral16704); if (state.failed) return current;
+            otherlv_5=(Token)match(input,29,FOLLOW_29_in_ruleXTypeLiteral16723); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getXTypeLiteralAccess().getRightParenthesisKeyword_5());
@@ -21215,7 +21235,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXThrowExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7289:1: entryRuleXThrowExpression returns [EObject current=null] : iv_ruleXThrowExpression= ruleXThrowExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7300:1: entryRuleXThrowExpression returns [EObject current=null] : iv_ruleXThrowExpression= ruleXThrowExpression EOF ;
     public final EObject entryRuleXThrowExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21223,13 +21243,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7290:2: (iv_ruleXThrowExpression= ruleXThrowExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7291:2: iv_ruleXThrowExpression= ruleXThrowExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7301:2: (iv_ruleXThrowExpression= ruleXThrowExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7302:2: iv_ruleXThrowExpression= ruleXThrowExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXThrowExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXThrowExpression_in_entryRuleXThrowExpression16740);
+            pushFollow(FOLLOW_ruleXThrowExpression_in_entryRuleXThrowExpression16759);
             iv_ruleXThrowExpression=ruleXThrowExpression();
 
             state._fsp--;
@@ -21237,7 +21257,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXThrowExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXThrowExpression16750); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXThrowExpression16769); if (state.failed) return current;
 
             }
 
@@ -21255,7 +21275,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXThrowExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7298:1: ruleXThrowExpression returns [EObject current=null] : ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7309:1: ruleXThrowExpression returns [EObject current=null] : ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) ) ;
     public final EObject ruleXThrowExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21266,14 +21286,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7301:28: ( ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7302:1: ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7312:28: ( ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7313:1: ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7302:1: ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7302:2: () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7313:1: ( () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7313:2: () otherlv_1= 'throw' ( (lv_expression_2_0= ruleXExpression ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7302:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7303:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7313:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7314:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -21285,24 +21305,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,106,FOLLOW_106_in_ruleXThrowExpression16796); if (state.failed) return current;
+            otherlv_1=(Token)match(input,106,FOLLOW_106_in_ruleXThrowExpression16815); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXThrowExpressionAccess().getThrowKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7312:1: ( (lv_expression_2_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7313:1: (lv_expression_2_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7323:1: ( (lv_expression_2_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7324:1: (lv_expression_2_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7313:1: (lv_expression_2_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7314:3: lv_expression_2_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7324:1: (lv_expression_2_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7325:3: lv_expression_2_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXThrowExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXThrowExpression16817);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXThrowExpression16836);
             lv_expression_2_0=ruleXExpression();
 
             state._fsp--;
@@ -21349,7 +21369,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXReturnExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7338:1: entryRuleXReturnExpression returns [EObject current=null] : iv_ruleXReturnExpression= ruleXReturnExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7349:1: entryRuleXReturnExpression returns [EObject current=null] : iv_ruleXReturnExpression= ruleXReturnExpression EOF ;
     public final EObject entryRuleXReturnExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21357,13 +21377,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7339:2: (iv_ruleXReturnExpression= ruleXReturnExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7340:2: iv_ruleXReturnExpression= ruleXReturnExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7350:2: (iv_ruleXReturnExpression= ruleXReturnExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7351:2: iv_ruleXReturnExpression= ruleXReturnExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXReturnExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXReturnExpression_in_entryRuleXReturnExpression16853);
+            pushFollow(FOLLOW_ruleXReturnExpression_in_entryRuleXReturnExpression16872);
             iv_ruleXReturnExpression=ruleXReturnExpression();
 
             state._fsp--;
@@ -21371,7 +21391,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXReturnExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXReturnExpression16863); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXReturnExpression16882); if (state.failed) return current;
 
             }
 
@@ -21389,7 +21409,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXReturnExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7347:1: ruleXReturnExpression returns [EObject current=null] : ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7358:1: ruleXReturnExpression returns [EObject current=null] : ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? ) ;
     public final EObject ruleXReturnExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21400,14 +21420,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7350:28: ( ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7351:1: ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7361:28: ( ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7362:1: ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7351:1: ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7351:2: () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7362:1: ( () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7362:2: () otherlv_1= 'return' ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )?
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7351:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7352:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7362:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7363:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -21419,28 +21439,28 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,107,FOLLOW_107_in_ruleXReturnExpression16909); if (state.failed) return current;
+            otherlv_1=(Token)match(input,107,FOLLOW_107_in_ruleXReturnExpression16928); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXReturnExpressionAccess().getReturnKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7361:1: ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7372:1: ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )?
             int alt131=2;
             alt131 = dfa131.predict(input);
             switch (alt131) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7361:2: ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7372:2: ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7389:1: (lv_expression_2_0= ruleXExpression )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7390:3: lv_expression_2_0= ruleXExpression
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7400:1: (lv_expression_2_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7401:3: lv_expression_2_0= ruleXExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXReturnExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleXReturnExpression17144);
+                    pushFollow(FOLLOW_ruleXExpression_in_ruleXReturnExpression17163);
                     lv_expression_2_0=ruleXExpression();
 
                     state._fsp--;
@@ -21490,7 +21510,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXTryCatchFinallyExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7414:1: entryRuleXTryCatchFinallyExpression returns [EObject current=null] : iv_ruleXTryCatchFinallyExpression= ruleXTryCatchFinallyExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7425:1: entryRuleXTryCatchFinallyExpression returns [EObject current=null] : iv_ruleXTryCatchFinallyExpression= ruleXTryCatchFinallyExpression EOF ;
     public final EObject entryRuleXTryCatchFinallyExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21498,13 +21518,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7415:2: (iv_ruleXTryCatchFinallyExpression= ruleXTryCatchFinallyExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7416:2: iv_ruleXTryCatchFinallyExpression= ruleXTryCatchFinallyExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7426:2: (iv_ruleXTryCatchFinallyExpression= ruleXTryCatchFinallyExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7427:2: iv_ruleXTryCatchFinallyExpression= ruleXTryCatchFinallyExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXTryCatchFinallyExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXTryCatchFinallyExpression_in_entryRuleXTryCatchFinallyExpression17181);
+            pushFollow(FOLLOW_ruleXTryCatchFinallyExpression_in_entryRuleXTryCatchFinallyExpression17200);
             iv_ruleXTryCatchFinallyExpression=ruleXTryCatchFinallyExpression();
 
             state._fsp--;
@@ -21512,7 +21532,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXTryCatchFinallyExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXTryCatchFinallyExpression17191); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXTryCatchFinallyExpression17210); if (state.failed) return current;
 
             }
 
@@ -21530,7 +21550,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXTryCatchFinallyExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7423:1: ruleXTryCatchFinallyExpression returns [EObject current=null] : ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7434:1: ruleXTryCatchFinallyExpression returns [EObject current=null] : ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) ) ;
     public final EObject ruleXTryCatchFinallyExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21549,14 +21569,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7426:28: ( ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7427:1: ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7437:28: ( ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7438:1: ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7427:1: ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7427:2: () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7438:1: ( () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7438:2: () otherlv_1= 'try' ( (lv_expression_2_0= ruleXExpression ) ) ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7427:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7428:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7438:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7439:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -21568,24 +21588,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,108,FOLLOW_108_in_ruleXTryCatchFinallyExpression17237); if (state.failed) return current;
+            otherlv_1=(Token)match(input,108,FOLLOW_108_in_ruleXTryCatchFinallyExpression17256); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXTryCatchFinallyExpressionAccess().getTryKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7437:1: ( (lv_expression_2_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7438:1: (lv_expression_2_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7448:1: ( (lv_expression_2_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7449:1: (lv_expression_2_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7438:1: (lv_expression_2_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7439:3: lv_expression_2_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7449:1: (lv_expression_2_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7450:3: lv_expression_2_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXTryCatchFinallyExpressionAccess().getExpressionXExpressionParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17258);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17277);
             lv_expression_2_0=ruleXExpression();
 
             state._fsp--;
@@ -21609,7 +21629,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:2: ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:2: ( ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? ) | (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) ) )
             int alt134=2;
             int LA134_0 = input.LA(1);
 
@@ -21628,12 +21648,12 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt134) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:3: ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:3: ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:3: ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:4: ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )?
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:3: ( ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )? )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:4: ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+ ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )?
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:4: ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:4: ( ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause ) )+
                     int cnt132=0;
                     loop132:
                     do {
@@ -21653,17 +21673,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         switch (alt132) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:5: ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:5: ( 'catch' )=> (lv_catchClauses_3_0= ruleXCatchClause )
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7457:1: (lv_catchClauses_3_0= ruleXCatchClause )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7458:3: lv_catchClauses_3_0= ruleXCatchClause
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7468:1: (lv_catchClauses_3_0= ruleXCatchClause )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7469:3: lv_catchClauses_3_0= ruleXCatchClause
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getXTryCatchFinallyExpressionAccess().getCatchClausesXCatchClauseParserRuleCall_3_0_0_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression17288);
+                    	    pushFollow(FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression17307);
                     	    lv_catchClauses_3_0=ruleXCatchClause();
 
                     	    state._fsp--;
@@ -21698,7 +21718,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         cnt132++;
                     } while (true);
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7474:3: ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )?
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7485:3: ( ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) ) )?
                     int alt133=2;
                     int LA133_0 = input.LA(1);
 
@@ -21711,12 +21731,12 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt133) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7474:4: ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7485:4: ( ( 'finally' )=>otherlv_4= 'finally' ) ( (lv_finallyExpression_5_0= ruleXExpression ) )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7474:4: ( ( 'finally' )=>otherlv_4= 'finally' )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7474:5: ( 'finally' )=>otherlv_4= 'finally'
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7485:4: ( ( 'finally' )=>otherlv_4= 'finally' )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7485:5: ( 'finally' )=>otherlv_4= 'finally'
                             {
-                            otherlv_4=(Token)match(input,109,FOLLOW_109_in_ruleXTryCatchFinallyExpression17310); if (state.failed) return current;
+                            otherlv_4=(Token)match(input,109,FOLLOW_109_in_ruleXTryCatchFinallyExpression17329); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_4, grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyKeyword_3_0_1_0());
@@ -21725,18 +21745,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7479:2: ( (lv_finallyExpression_5_0= ruleXExpression ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7480:1: (lv_finallyExpression_5_0= ruleXExpression )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7490:2: ( (lv_finallyExpression_5_0= ruleXExpression ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7491:1: (lv_finallyExpression_5_0= ruleXExpression )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7480:1: (lv_finallyExpression_5_0= ruleXExpression )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7481:3: lv_finallyExpression_5_0= ruleXExpression
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7491:1: (lv_finallyExpression_5_0= ruleXExpression )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7492:3: lv_finallyExpression_5_0= ruleXExpression
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionXExpressionParserRuleCall_3_0_1_1_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17332);
+                            pushFollow(FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17351);
                             lv_finallyExpression_5_0=ruleXExpression();
 
                             state._fsp--;
@@ -21773,29 +21793,29 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7498:6: (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7509:6: (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7498:6: (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7498:8: otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7509:6: (otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7509:8: otherlv_6= 'finally' ( (lv_finallyExpression_7_0= ruleXExpression ) )
                     {
-                    otherlv_6=(Token)match(input,109,FOLLOW_109_in_ruleXTryCatchFinallyExpression17354); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,109,FOLLOW_109_in_ruleXTryCatchFinallyExpression17373); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyKeyword_3_1_0());
                           
                     }
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7502:1: ( (lv_finallyExpression_7_0= ruleXExpression ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7503:1: (lv_finallyExpression_7_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7513:1: ( (lv_finallyExpression_7_0= ruleXExpression ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7514:1: (lv_finallyExpression_7_0= ruleXExpression )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7503:1: (lv_finallyExpression_7_0= ruleXExpression )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7504:3: lv_finallyExpression_7_0= ruleXExpression
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7514:1: (lv_finallyExpression_7_0= ruleXExpression )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7515:3: lv_finallyExpression_7_0= ruleXExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXTryCatchFinallyExpressionAccess().getFinallyExpressionXExpressionParserRuleCall_3_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17375);
+                    pushFollow(FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17394);
                     lv_finallyExpression_7_0=ruleXExpression();
 
                     state._fsp--;
@@ -21851,7 +21871,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXSynchronizedExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7528:1: entryRuleXSynchronizedExpression returns [EObject current=null] : iv_ruleXSynchronizedExpression= ruleXSynchronizedExpression EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7539:1: entryRuleXSynchronizedExpression returns [EObject current=null] : iv_ruleXSynchronizedExpression= ruleXSynchronizedExpression EOF ;
     public final EObject entryRuleXSynchronizedExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21859,13 +21879,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7529:2: (iv_ruleXSynchronizedExpression= ruleXSynchronizedExpression EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7530:2: iv_ruleXSynchronizedExpression= ruleXSynchronizedExpression EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7540:2: (iv_ruleXSynchronizedExpression= ruleXSynchronizedExpression EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7541:2: iv_ruleXSynchronizedExpression= ruleXSynchronizedExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXSynchronizedExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleXSynchronizedExpression_in_entryRuleXSynchronizedExpression17413);
+            pushFollow(FOLLOW_ruleXSynchronizedExpression_in_entryRuleXSynchronizedExpression17432);
             iv_ruleXSynchronizedExpression=ruleXSynchronizedExpression();
 
             state._fsp--;
@@ -21873,7 +21893,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXSynchronizedExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXSynchronizedExpression17423); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXSynchronizedExpression17442); if (state.failed) return current;
 
             }
 
@@ -21891,7 +21911,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXSynchronizedExpression"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7537:1: ruleXSynchronizedExpression returns [EObject current=null] : ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7548:1: ruleXSynchronizedExpression returns [EObject current=null] : ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) ) ;
     public final EObject ruleXSynchronizedExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21906,20 +21926,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7540:28: ( ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7541:1: ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7551:28: ( ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7552:1: ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7541:1: ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7541:2: ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7552:1: ( ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7552:2: ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) ) ( (lv_param_3_0= ruleXExpression ) ) otherlv_4= ')' ( (lv_expression_5_0= ruleXExpression ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7541:2: ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7541:3: ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7552:2: ( ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7552:3: ( ( () 'synchronized' '(' ) )=> ( () otherlv_1= 'synchronized' otherlv_2= '(' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7544:5: ( () otherlv_1= 'synchronized' otherlv_2= '(' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7544:6: () otherlv_1= 'synchronized' otherlv_2= '('
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7555:5: ( () otherlv_1= 'synchronized' otherlv_2= '(' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7555:6: () otherlv_1= 'synchronized' otherlv_2= '('
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7544:6: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7545:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7555:6: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7556:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -21931,13 +21951,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,110,FOLLOW_110_in_ruleXSynchronizedExpression17487); if (state.failed) return current;
+            otherlv_1=(Token)match(input,110,FOLLOW_110_in_ruleXSynchronizedExpression17506); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXSynchronizedExpressionAccess().getSynchronizedKeyword_0_0_1());
                   
             }
-            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXSynchronizedExpression17499); if (state.failed) return current;
+            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleXSynchronizedExpression17518); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getXSynchronizedExpressionAccess().getLeftParenthesisKeyword_0_0_2());
@@ -21949,18 +21969,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7558:3: ( (lv_param_3_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7559:1: (lv_param_3_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7569:3: ( (lv_param_3_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7570:1: (lv_param_3_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7559:1: (lv_param_3_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7560:3: lv_param_3_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7570:1: (lv_param_3_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7571:3: lv_param_3_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXSynchronizedExpressionAccess().getParamXExpressionParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17522);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17541);
             lv_param_3_0=ruleXExpression();
 
             state._fsp--;
@@ -21984,24 +22004,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleXSynchronizedExpression17534); if (state.failed) return current;
+            otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleXSynchronizedExpression17553); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXSynchronizedExpressionAccess().getRightParenthesisKeyword_2());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7580:1: ( (lv_expression_5_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7581:1: (lv_expression_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7591:1: ( (lv_expression_5_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7592:1: (lv_expression_5_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7581:1: (lv_expression_5_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7582:3: lv_expression_5_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7592:1: (lv_expression_5_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7593:3: lv_expression_5_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXSynchronizedExpressionAccess().getExpressionXExpressionParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17555);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17574);
             lv_expression_5_0=ruleXExpression();
 
             state._fsp--;
@@ -22048,7 +22068,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXCatchClause"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7606:1: entryRuleXCatchClause returns [EObject current=null] : iv_ruleXCatchClause= ruleXCatchClause EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7617:1: entryRuleXCatchClause returns [EObject current=null] : iv_ruleXCatchClause= ruleXCatchClause EOF ;
     public final EObject entryRuleXCatchClause() throws RecognitionException {
         EObject current = null;
 
@@ -22056,13 +22076,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7607:2: (iv_ruleXCatchClause= ruleXCatchClause EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7608:2: iv_ruleXCatchClause= ruleXCatchClause EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7618:2: (iv_ruleXCatchClause= ruleXCatchClause EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7619:2: iv_ruleXCatchClause= ruleXCatchClause EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXCatchClauseRule()); 
             }
-            pushFollow(FOLLOW_ruleXCatchClause_in_entryRuleXCatchClause17591);
+            pushFollow(FOLLOW_ruleXCatchClause_in_entryRuleXCatchClause17610);
             iv_ruleXCatchClause=ruleXCatchClause();
 
             state._fsp--;
@@ -22070,7 +22090,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXCatchClause; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXCatchClause17601); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXCatchClause17620); if (state.failed) return current;
 
             }
 
@@ -22088,7 +22108,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXCatchClause"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7615:1: ruleXCatchClause returns [EObject current=null] : ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7626:1: ruleXCatchClause returns [EObject current=null] : ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) ) ;
     public final EObject ruleXCatchClause() throws RecognitionException {
         EObject current = null;
 
@@ -22103,16 +22123,16 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7618:28: ( ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7619:1: ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7629:28: ( ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7630:1: ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7619:1: ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7619:2: ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7630:1: ( ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7630:2: ( ( 'catch' )=>otherlv_0= 'catch' ) otherlv_1= '(' ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) ) otherlv_3= ')' ( (lv_expression_4_0= ruleXExpression ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7619:2: ( ( 'catch' )=>otherlv_0= 'catch' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7619:3: ( 'catch' )=>otherlv_0= 'catch'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7630:2: ( ( 'catch' )=>otherlv_0= 'catch' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7630:3: ( 'catch' )=>otherlv_0= 'catch'
             {
-            otherlv_0=(Token)match(input,111,FOLLOW_111_in_ruleXCatchClause17646); if (state.failed) return current;
+            otherlv_0=(Token)match(input,111,FOLLOW_111_in_ruleXCatchClause17665); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXCatchClauseAccess().getCatchKeyword_0());
@@ -22121,24 +22141,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleXCatchClause17659); if (state.failed) return current;
+            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleXCatchClause17678); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXCatchClauseAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7628:1: ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7629:1: (lv_declaredParam_2_0= ruleFullJvmFormalParameter )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7639:1: ( (lv_declaredParam_2_0= ruleFullJvmFormalParameter ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7640:1: (lv_declaredParam_2_0= ruleFullJvmFormalParameter )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7629:1: (lv_declaredParam_2_0= ruleFullJvmFormalParameter )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7630:3: lv_declaredParam_2_0= ruleFullJvmFormalParameter
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7640:1: (lv_declaredParam_2_0= ruleFullJvmFormalParameter )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7641:3: lv_declaredParam_2_0= ruleFullJvmFormalParameter
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXCatchClauseAccess().getDeclaredParamFullJvmFormalParameterParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_ruleXCatchClause17680);
+            pushFollow(FOLLOW_ruleFullJvmFormalParameter_in_ruleXCatchClause17699);
             lv_declaredParam_2_0=ruleFullJvmFormalParameter();
 
             state._fsp--;
@@ -22162,24 +22182,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,29,FOLLOW_29_in_ruleXCatchClause17692); if (state.failed) return current;
+            otherlv_3=(Token)match(input,29,FOLLOW_29_in_ruleXCatchClause17711); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getXCatchClauseAccess().getRightParenthesisKeyword_3());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7650:1: ( (lv_expression_4_0= ruleXExpression ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7651:1: (lv_expression_4_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7661:1: ( (lv_expression_4_0= ruleXExpression ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7662:1: (lv_expression_4_0= ruleXExpression )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7651:1: (lv_expression_4_0= ruleXExpression )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7652:3: lv_expression_4_0= ruleXExpression
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7662:1: (lv_expression_4_0= ruleXExpression )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7663:3: lv_expression_4_0= ruleXExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXCatchClauseAccess().getExpressionXExpressionParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleXExpression_in_ruleXCatchClause17713);
+            pushFollow(FOLLOW_ruleXExpression_in_ruleXCatchClause17732);
             lv_expression_4_0=ruleXExpression();
 
             state._fsp--;
@@ -22226,7 +22246,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7676:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7687:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -22234,13 +22254,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7677:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7678:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7688:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7689:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName17750);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName17769);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
@@ -22248,7 +22268,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedName.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName17761); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName17780); if (state.failed) return current;
 
             }
 
@@ -22266,7 +22286,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7685:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7696:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -22279,18 +22299,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7688:28: ( (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7689:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7699:28: ( (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7700:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7689:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7690:5: this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7700:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7701:5: this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName17808);
+            pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName17827);
             this_ValidID_0=ruleValidID();
 
             state._fsp--;
@@ -22305,7 +22325,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7700:1: ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7711:1: ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
             loop135:
             do {
                 int alt135=2;
@@ -22330,12 +22350,12 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                 switch (alt135) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7700:2: ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7711:2: ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID
             	    {
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7700:2: ( ( '.' )=>kw= '.' )
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7700:3: ( '.' )=>kw= '.'
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7711:2: ( ( '.' )=>kw= '.' )
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7711:3: ( '.' )=>kw= '.'
             	    {
-            	    kw=(Token)match(input,85,FOLLOW_85_in_ruleQualifiedName17836); if (state.failed) return current;
+            	    kw=(Token)match(input,85,FOLLOW_85_in_ruleQualifiedName17855); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -22350,7 +22370,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	              newCompositeNode(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_1_1()); 
             	          
             	    }
-            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName17859);
+            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName17878);
             	    this_ValidID_2=ruleValidID();
 
             	    state._fsp--;
@@ -22397,7 +22417,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumber"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7727:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7738:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
     public final String entryRuleNumber() throws RecognitionException {
         String current = null;
 
@@ -22408,13 +22428,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
         	
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7731:2: (iv_ruleNumber= ruleNumber EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7732:2: iv_ruleNumber= ruleNumber EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7742:2: (iv_ruleNumber= ruleNumber EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7743:2: iv_ruleNumber= ruleNumber EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNumberRule()); 
             }
-            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber17913);
+            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber17932);
             iv_ruleNumber=ruleNumber();
 
             state._fsp--;
@@ -22422,7 +22442,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleNumber.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber17924); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber17943); if (state.failed) return current;
 
             }
 
@@ -22443,7 +22463,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumber"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7742:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7753:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) ;
     public final AntlrDatatypeRuleToken ruleNumber() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -22458,10 +22478,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7746:28: ( (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7747:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7757:28: ( (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7758:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7747:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7758:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
             int alt139=2;
             int LA139_0 = input.LA(1);
 
@@ -22480,9 +22500,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt139) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7747:6: this_HEX_0= RULE_HEX
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7758:6: this_HEX_0= RULE_HEX
                     {
-                    this_HEX_0=(Token)match(input,RULE_HEX,FOLLOW_RULE_HEX_in_ruleNumber17968); if (state.failed) return current;
+                    this_HEX_0=(Token)match(input,RULE_HEX,FOLLOW_RULE_HEX_in_ruleNumber17987); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_HEX_0);
@@ -22497,12 +22517,12 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7755:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7766:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7755:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7755:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7766:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7766:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7755:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7766:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL )
                     int alt136=2;
                     int LA136_0 = input.LA(1);
 
@@ -22521,9 +22541,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt136) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7755:12: this_INT_1= RULE_INT
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7766:12: this_INT_1= RULE_INT
                             {
-                            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber17996); if (state.failed) return current;
+                            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber18015); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                               		current.merge(this_INT_1);
@@ -22538,9 +22558,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7763:10: this_DECIMAL_2= RULE_DECIMAL
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7774:10: this_DECIMAL_2= RULE_DECIMAL
                             {
-                            this_DECIMAL_2=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber18022); if (state.failed) return current;
+                            this_DECIMAL_2=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber18041); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                               		current.merge(this_DECIMAL_2);
@@ -22557,7 +22577,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7770:2: (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7781:2: (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
                     int alt138=2;
                     int LA138_0 = input.LA(1);
 
@@ -22570,16 +22590,16 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt138) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7771:2: kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7782:2: kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
                             {
-                            kw=(Token)match(input,85,FOLLOW_85_in_ruleNumber18042); if (state.failed) return current;
+                            kw=(Token)match(input,85,FOLLOW_85_in_ruleNumber18061); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       current.merge(kw);
                                       newLeafNode(kw, grammarAccess.getNumberAccess().getFullStopKeyword_1_1_0()); 
                                   
                             }
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7776:1: (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7787:1: (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
                             int alt137=2;
                             int LA137_0 = input.LA(1);
 
@@ -22598,9 +22618,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             }
                             switch (alt137) {
                                 case 1 :
-                                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7776:6: this_INT_4= RULE_INT
+                                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7787:6: this_INT_4= RULE_INT
                                     {
-                                    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber18058); if (state.failed) return current;
+                                    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber18077); if (state.failed) return current;
                                     if ( state.backtracking==0 ) {
 
                                       		current.merge(this_INT_4);
@@ -22615,9 +22635,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 2 :
-                                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7784:10: this_DECIMAL_5= RULE_DECIMAL
+                                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7795:10: this_DECIMAL_5= RULE_DECIMAL
                                     {
-                                    this_DECIMAL_5=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber18084); if (state.failed) return current;
+                                    this_DECIMAL_5=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber18103); if (state.failed) return current;
                                     if ( state.backtracking==0 ) {
 
                                       		current.merge(this_DECIMAL_5);
@@ -22672,7 +22692,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7804:1: entryRuleJvmTypeReference returns [EObject current=null] : iv_ruleJvmTypeReference= ruleJvmTypeReference EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7815:1: entryRuleJvmTypeReference returns [EObject current=null] : iv_ruleJvmTypeReference= ruleJvmTypeReference EOF ;
     public final EObject entryRuleJvmTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -22680,13 +22700,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7805:2: (iv_ruleJvmTypeReference= ruleJvmTypeReference EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7806:2: iv_ruleJvmTypeReference= ruleJvmTypeReference EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7816:2: (iv_ruleJvmTypeReference= ruleJvmTypeReference EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7817:2: iv_ruleJvmTypeReference= ruleJvmTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference18139);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference18158);
             iv_ruleJvmTypeReference=ruleJvmTypeReference();
 
             state._fsp--;
@@ -22694,7 +22714,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmTypeReference18149); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmTypeReference18168); if (state.failed) return current;
 
             }
 
@@ -22712,7 +22732,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7813:1: ruleJvmTypeReference returns [EObject current=null] : ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7824:1: ruleJvmTypeReference returns [EObject current=null] : ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) ;
     public final EObject ruleJvmTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -22724,10 +22744,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7816:28: ( ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7817:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7827:28: ( ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7828:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7817:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7828:1: ( (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* ) | this_XFunctionTypeRef_3= ruleXFunctionTypeRef )
             int alt141=2;
             int LA141_0 = input.LA(1);
 
@@ -22746,17 +22766,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt141) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7817:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7828:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7817:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7818:5: this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7828:2: (this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )* )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7829:5: this_JvmParameterizedTypeReference_0= ruleJvmParameterizedTypeReference ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getJvmParameterizedTypeReferenceParserRuleCall_0_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference18197);
+                    pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference18216);
                     this_JvmParameterizedTypeReference_0=ruleJvmParameterizedTypeReference();
 
                     state._fsp--;
@@ -22767,7 +22787,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7826:1: ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7837:1: ( ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets ) )*
                     loop140:
                     do {
                         int alt140=2;
@@ -22792,13 +22812,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         switch (alt140) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7826:2: ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7837:2: ( ( () ruleArrayBrackets ) )=> ( () ruleArrayBrackets )
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7827:24: ( () ruleArrayBrackets )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7827:25: () ruleArrayBrackets
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7838:24: ( () ruleArrayBrackets )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7838:25: () ruleArrayBrackets
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7827:25: ()
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7828:5: 
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7838:25: ()
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7839:5: 
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -22815,7 +22835,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	              newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getArrayBracketsParserRuleCall_0_1_0_1()); 
                     	          
                     	    }
-                    	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference18233);
+                    	    pushFollow(FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference18252);
                     	    ruleArrayBrackets();
 
                     	    state._fsp--;
@@ -22844,14 +22864,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7843:5: this_XFunctionTypeRef_3= ruleXFunctionTypeRef
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7854:5: this_XFunctionTypeRef_3= ruleXFunctionTypeRef
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmTypeReferenceAccess().getXFunctionTypeRefParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference18264);
+                    pushFollow(FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference18283);
                     this_XFunctionTypeRef_3=ruleXFunctionTypeRef();
 
                     state._fsp--;
@@ -22888,7 +22908,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayBrackets"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7859:1: entryRuleArrayBrackets returns [String current=null] : iv_ruleArrayBrackets= ruleArrayBrackets EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7870:1: entryRuleArrayBrackets returns [String current=null] : iv_ruleArrayBrackets= ruleArrayBrackets EOF ;
     public final String entryRuleArrayBrackets() throws RecognitionException {
         String current = null;
 
@@ -22896,13 +22916,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7860:2: (iv_ruleArrayBrackets= ruleArrayBrackets EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7861:2: iv_ruleArrayBrackets= ruleArrayBrackets EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7871:2: (iv_ruleArrayBrackets= ruleArrayBrackets EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7872:2: iv_ruleArrayBrackets= ruleArrayBrackets EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getArrayBracketsRule()); 
             }
-            pushFollow(FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets18300);
+            pushFollow(FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets18319);
             iv_ruleArrayBrackets=ruleArrayBrackets();
 
             state._fsp--;
@@ -22910,7 +22930,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleArrayBrackets.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayBrackets18311); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArrayBrackets18330); if (state.failed) return current;
 
             }
 
@@ -22928,7 +22948,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayBrackets"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7868:1: ruleArrayBrackets returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' kw= ']' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7879:1: ruleArrayBrackets returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' kw= ']' ) ;
     public final AntlrDatatypeRuleToken ruleArrayBrackets() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -22937,20 +22957,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7871:28: ( (kw= '[' kw= ']' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7872:1: (kw= '[' kw= ']' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7882:28: ( (kw= '[' kw= ']' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7883:1: (kw= '[' kw= ']' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7872:1: (kw= '[' kw= ']' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7873:2: kw= '[' kw= ']'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7883:1: (kw= '[' kw= ']' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7884:2: kw= '[' kw= ']'
             {
-            kw=(Token)match(input,20,FOLLOW_20_in_ruleArrayBrackets18349); if (state.failed) return current;
+            kw=(Token)match(input,20,FOLLOW_20_in_ruleArrayBrackets18368); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
                       newLeafNode(kw, grammarAccess.getArrayBracketsAccess().getLeftSquareBracketKeyword_0()); 
                   
             }
-            kw=(Token)match(input,22,FOLLOW_22_in_ruleArrayBrackets18362); if (state.failed) return current;
+            kw=(Token)match(input,22,FOLLOW_22_in_ruleArrayBrackets18381); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
@@ -22980,7 +23000,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXFunctionTypeRef"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7892:1: entryRuleXFunctionTypeRef returns [EObject current=null] : iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7903:1: entryRuleXFunctionTypeRef returns [EObject current=null] : iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF ;
     public final EObject entryRuleXFunctionTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -22988,13 +23008,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7893:2: (iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7894:2: iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7904:2: (iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7905:2: iv_ruleXFunctionTypeRef= ruleXFunctionTypeRef EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXFunctionTypeRefRule()); 
             }
-            pushFollow(FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef18402);
+            pushFollow(FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef18421);
             iv_ruleXFunctionTypeRef=ruleXFunctionTypeRef();
 
             state._fsp--;
@@ -23002,7 +23022,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXFunctionTypeRef; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXFunctionTypeRef18412); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXFunctionTypeRef18431); if (state.failed) return current;
 
             }
 
@@ -23020,7 +23040,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXFunctionTypeRef"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7901:1: ruleXFunctionTypeRef returns [EObject current=null] : ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7912:1: ruleXFunctionTypeRef returns [EObject current=null] : ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleXFunctionTypeRef() throws RecognitionException {
         EObject current = null;
 
@@ -23038,13 +23058,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7904:28: ( ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7905:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7915:28: ( ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7916:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7905:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7905:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7916:1: ( (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7916:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )? otherlv_5= '=>' ( (lv_returnType_6_0= ruleJvmTypeReference ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7905:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7916:2: (otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')' )?
             int alt144=2;
             int LA144_0 = input.LA(1);
 
@@ -23053,15 +23073,15 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             }
             switch (alt144) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7905:4: otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7916:4: otherlv_0= '(' ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )? otherlv_4= ')'
                     {
-                    otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleXFunctionTypeRef18450); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleXFunctionTypeRef18469); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0());
                           
                     }
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7909:1: ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )?
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7920:1: ( ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )* )?
                     int alt143=2;
                     int LA143_0 = input.LA(1);
 
@@ -23070,20 +23090,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt143) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7909:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7920:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) ) (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7909:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7910:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7920:2: ( (lv_paramTypes_1_0= ruleJvmTypeReference ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7921:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7910:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7911:3: lv_paramTypes_1_0= ruleJvmTypeReference
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7921:1: (lv_paramTypes_1_0= ruleJvmTypeReference )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7922:3: lv_paramTypes_1_0= ruleJvmTypeReference
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18472);
+                            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18491);
                             lv_paramTypes_1_0=ruleJvmTypeReference();
 
                             state._fsp--;
@@ -23107,7 +23127,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7927:2: (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7938:2: (otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) ) )*
                             loop142:
                             do {
                                 int alt142=2;
@@ -23120,26 +23140,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                                 switch (alt142) {
                             	case 1 :
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7927:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7938:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
                             	    {
-                            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleXFunctionTypeRef18485); if (state.failed) return current;
+                            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleXFunctionTypeRef18504); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_2, grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_1_1_0());
                             	          
                             	    }
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7931:1: ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7932:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7942:1: ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7943:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
                             	    {
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7932:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
-                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7933:3: lv_paramTypes_3_0= ruleJvmTypeReference
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7943:1: (lv_paramTypes_3_0= ruleJvmTypeReference )
+                            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7944:3: lv_paramTypes_3_0= ruleJvmTypeReference
                             	    {
                             	    if ( state.backtracking==0 ) {
                             	       
                             	      	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_1_1_0()); 
                             	      	    
                             	    }
-                            	    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18506);
+                            	    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18525);
                             	    lv_paramTypes_3_0=ruleJvmTypeReference();
 
                             	    state._fsp--;
@@ -23178,7 +23198,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleXFunctionTypeRef18522); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleXFunctionTypeRef18541); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2());
@@ -23190,24 +23210,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,74,FOLLOW_74_in_ruleXFunctionTypeRef18536); if (state.failed) return current;
+            otherlv_5=(Token)match(input,74,FOLLOW_74_in_ruleXFunctionTypeRef18555); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getXFunctionTypeRefAccess().getEqualsSignGreaterThanSignKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7957:1: ( (lv_returnType_6_0= ruleJvmTypeReference ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7958:1: (lv_returnType_6_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7968:1: ( (lv_returnType_6_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7969:1: (lv_returnType_6_0= ruleJvmTypeReference )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7958:1: (lv_returnType_6_0= ruleJvmTypeReference )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7959:3: lv_returnType_6_0= ruleJvmTypeReference
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7969:1: (lv_returnType_6_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7970:3: lv_returnType_6_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getXFunctionTypeRefAccess().getReturnTypeJvmTypeReferenceParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18557);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18576);
             lv_returnType_6_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -23254,7 +23274,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmParameterizedTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7983:1: entryRuleJvmParameterizedTypeReference returns [EObject current=null] : iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7994:1: entryRuleJvmParameterizedTypeReference returns [EObject current=null] : iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF ;
     public final EObject entryRuleJvmParameterizedTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -23262,13 +23282,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7984:2: (iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7985:2: iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7995:2: (iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7996:2: iv_ruleJvmParameterizedTypeReference= ruleJvmParameterizedTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference18593);
+            pushFollow(FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference18612);
             iv_ruleJvmParameterizedTypeReference=ruleJvmParameterizedTypeReference();
 
             state._fsp--;
@@ -23276,7 +23296,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmParameterizedTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference18603); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference18622); if (state.failed) return current;
 
             }
 
@@ -23294,32 +23314,40 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmParameterizedTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7992:1: ruleJvmParameterizedTypeReference returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8003:1: ruleJvmParameterizedTypeReference returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )* )? ) ;
     public final EObject ruleJvmParameterizedTypeReference() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        Token otherlv_13=null;
         EObject lv_arguments_2_0 = null;
 
         EObject lv_arguments_4_0 = null;
+
+        EObject lv_arguments_10_0 = null;
+
+        EObject lv_arguments_12_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7995:28: ( ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7996:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8006:28: ( ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )* )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8007:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )* )? )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7996:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )? )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7996:2: ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8007:1: ( ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )* )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8007:2: ( ( ruleQualifiedName ) ) ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )* )?
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7996:2: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7997:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8007:2: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8008:1: ( ruleQualifiedName )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7997:1: ( ruleQualifiedName )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7998:3: ruleQualifiedName
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8008:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8009:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -23333,7 +23361,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference18651);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference18670);
             ruleQualifiedName();
 
             state._fsp--;
@@ -23349,17 +23377,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8011:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?
-            int alt146=2;
-            alt146 = dfa146.predict(input);
-            switch (alt146) {
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8022:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )* )?
+            int alt149=2;
+            alt149 = dfa149.predict(input);
+            switch (alt149) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8011:3: ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8022:3: ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )*
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8011:3: ( ( '<' )=>otherlv_1= '<' )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8011:4: ( '<' )=>otherlv_1= '<'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8022:3: ( ( '<' )=>otherlv_1= '<' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8022:4: ( '<' )=>otherlv_1= '<'
                     {
-                    otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleJvmParameterizedTypeReference18672); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleJvmParameterizedTypeReference18691); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getJvmParameterizedTypeReferenceAccess().getLessThanSignKeyword_1_0());
@@ -23368,18 +23396,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8016:2: ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8017:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8027:2: ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8028:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8017:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8018:3: lv_arguments_2_0= ruleJvmArgumentTypeReference
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8028:1: (lv_arguments_2_0= ruleJvmArgumentTypeReference )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8029:3: lv_arguments_2_0= ruleJvmArgumentTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18694);
+                    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18713);
                     lv_arguments_2_0=ruleJvmArgumentTypeReference();
 
                     state._fsp--;
@@ -23403,7 +23431,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8034:2: (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )*
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8045:2: (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )*
                     loop145:
                     do {
                         int alt145=2;
@@ -23416,26 +23444,26 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         switch (alt145) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8034:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8045:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleJvmParameterizedTypeReference18707); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleJvmParameterizedTypeReference18726); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0());
                     	          
                     	    }
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8038:1: ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8039:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8049:1: ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8050:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
                     	    {
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8039:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
-                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8040:3: lv_arguments_4_0= ruleJvmArgumentTypeReference
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8050:1: (lv_arguments_4_0= ruleJvmArgumentTypeReference )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8051:3: lv_arguments_4_0= ruleJvmArgumentTypeReference
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18728);
+                    	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18747);
                     	    lv_arguments_4_0=ruleJvmArgumentTypeReference();
 
                     	    state._fsp--;
@@ -23468,12 +23496,244 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,62,FOLLOW_62_in_ruleJvmParameterizedTypeReference18742); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,62,FOLLOW_62_in_ruleJvmParameterizedTypeReference18761); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getJvmParameterizedTypeReferenceAccess().getGreaterThanSignKeyword_1_3());
                           
                     }
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:1: ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )*
+                    loop148:
+                    do {
+                        int alt148=2;
+                        int LA148_0 = input.LA(1);
+
+                        if ( (LA148_0==85) ) {
+                            int LA148_2 = input.LA(2);
+
+                            if ( (LA148_2==RULE_ID) ) {
+                                int LA148_3 = input.LA(3);
+
+                                if ( (synpred45_InternalFXGraph()) ) {
+                                    alt148=1;
+                                }
+
+
+                            }
+
+
+                        }
+
+
+                        switch (alt148) {
+                    	case 1 :
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:2: ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )?
+                    	    {
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:2: ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:3: ( ( () '.' ) )=> ( () otherlv_7= '.' )
+                    	    {
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8073:5: ( () otherlv_7= '.' )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8073:6: () otherlv_7= '.'
+                    	    {
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8073:6: ()
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8074:5: 
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	              current = forceCreateModelElementAndSet(
+                    	                  grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0(),
+                    	                  current);
+                    	          
+                    	    }
+
+                    	    }
+
+                    	    otherlv_7=(Token)match(input,85,FOLLOW_85_in_ruleJvmParameterizedTypeReference18797); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_7, grammarAccess.getJvmParameterizedTypeReferenceAccess().getFullStopKeyword_1_4_0_0_1());
+                    	          
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8083:3: ( ( ruleValidID ) )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8084:1: ( ruleValidID )
+                    	    {
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8084:1: ( ruleValidID )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8085:3: ruleValidID
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getJvmParameterizedTypeReferenceRule());
+                    	      	        }
+                    	              
+                    	    }
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_1_4_1_0()); 
+                    	      	    
+                    	    }
+                    	    pushFollow(FOLLOW_ruleValidID_in_ruleJvmParameterizedTypeReference18822);
+                    	    ruleValidID();
+
+                    	    state._fsp--;
+                    	    if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        afterParserOrEnumRuleCall();
+                    	      	    
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8098:2: ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )?
+                    	    int alt147=2;
+                    	    alt147 = dfa147.predict(input);
+                    	    switch (alt147) {
+                    	        case 1 :
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8098:3: ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>'
+                    	            {
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8098:3: ( ( '<' )=>otherlv_9= '<' )
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8098:4: ( '<' )=>otherlv_9= '<'
+                    	            {
+                    	            otherlv_9=(Token)match(input,61,FOLLOW_61_in_ruleJvmParameterizedTypeReference18843); if (state.failed) return current;
+                    	            if ( state.backtracking==0 ) {
+
+                    	                  	newLeafNode(otherlv_9, grammarAccess.getJvmParameterizedTypeReferenceAccess().getLessThanSignKeyword_1_4_2_0());
+                    	                  
+                    	            }
+
+                    	            }
+
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8103:2: ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) )
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8104:1: (lv_arguments_10_0= ruleJvmArgumentTypeReference )
+                    	            {
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8104:1: (lv_arguments_10_0= ruleJvmArgumentTypeReference )
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8105:3: lv_arguments_10_0= ruleJvmArgumentTypeReference
+                    	            {
+                    	            if ( state.backtracking==0 ) {
+                    	               
+                    	              	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_4_2_1_0()); 
+                    	              	    
+                    	            }
+                    	            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18865);
+                    	            lv_arguments_10_0=ruleJvmArgumentTypeReference();
+
+                    	            state._fsp--;
+                    	            if (state.failed) return current;
+                    	            if ( state.backtracking==0 ) {
+
+                    	              	        if (current==null) {
+                    	              	            current = createModelElementForParent(grammarAccess.getJvmParameterizedTypeReferenceRule());
+                    	              	        }
+                    	                     		add(
+                    	                     			current, 
+                    	                     			"arguments",
+                    	                      		lv_arguments_10_0, 
+                    	                      		"JvmArgumentTypeReference");
+                    	              	        afterParserOrEnumRuleCall();
+                    	              	    
+                    	            }
+
+                    	            }
+
+
+                    	            }
+
+                    	            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8121:2: (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )*
+                    	            loop146:
+                    	            do {
+                    	                int alt146=2;
+                    	                int LA146_0 = input.LA(1);
+
+                    	                if ( (LA146_0==21) ) {
+                    	                    alt146=1;
+                    	                }
+
+
+                    	                switch (alt146) {
+                    	            	case 1 :
+                    	            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8121:4: otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) )
+                    	            	    {
+                    	            	    otherlv_11=(Token)match(input,21,FOLLOW_21_in_ruleJvmParameterizedTypeReference18878); if (state.failed) return current;
+                    	            	    if ( state.backtracking==0 ) {
+
+                    	            	          	newLeafNode(otherlv_11, grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_4_2_2_0());
+                    	            	          
+                    	            	    }
+                    	            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8125:1: ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) )
+                    	            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8126:1: (lv_arguments_12_0= ruleJvmArgumentTypeReference )
+                    	            	    {
+                    	            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8126:1: (lv_arguments_12_0= ruleJvmArgumentTypeReference )
+                    	            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8127:3: lv_arguments_12_0= ruleJvmArgumentTypeReference
+                    	            	    {
+                    	            	    if ( state.backtracking==0 ) {
+                    	            	       
+                    	            	      	        newCompositeNode(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_4_2_2_1_0()); 
+                    	            	      	    
+                    	            	    }
+                    	            	    pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18899);
+                    	            	    lv_arguments_12_0=ruleJvmArgumentTypeReference();
+
+                    	            	    state._fsp--;
+                    	            	    if (state.failed) return current;
+                    	            	    if ( state.backtracking==0 ) {
+
+                    	            	      	        if (current==null) {
+                    	            	      	            current = createModelElementForParent(grammarAccess.getJvmParameterizedTypeReferenceRule());
+                    	            	      	        }
+                    	            	             		add(
+                    	            	             			current, 
+                    	            	             			"arguments",
+                    	            	              		lv_arguments_12_0, 
+                    	            	              		"JvmArgumentTypeReference");
+                    	            	      	        afterParserOrEnumRuleCall();
+                    	            	      	    
+                    	            	    }
+
+                    	            	    }
+
+
+                    	            	    }
+
+
+                    	            	    }
+                    	            	    break;
+
+                    	            	default :
+                    	            	    break loop146;
+                    	                }
+                    	            } while (true);
+
+                    	            otherlv_13=(Token)match(input,62,FOLLOW_62_in_ruleJvmParameterizedTypeReference18913); if (state.failed) return current;
+                    	            if ( state.backtracking==0 ) {
+
+                    	                  	newLeafNode(otherlv_13, grammarAccess.getJvmParameterizedTypeReferenceAccess().getGreaterThanSignKeyword_1_4_2_3());
+                    	                  
+                    	            }
+
+                    	            }
+                    	            break;
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop148;
+                        }
+                    } while (true);
+
 
                     }
                     break;
@@ -23503,7 +23763,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmArgumentTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8068:1: entryRuleJvmArgumentTypeReference returns [EObject current=null] : iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8155:1: entryRuleJvmArgumentTypeReference returns [EObject current=null] : iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF ;
     public final EObject entryRuleJvmArgumentTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -23511,13 +23771,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8069:2: (iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8070:2: iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8156:2: (iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8157:2: iv_ruleJvmArgumentTypeReference= ruleJvmArgumentTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference18780);
+            pushFollow(FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference18955);
             iv_ruleJvmArgumentTypeReference=ruleJvmArgumentTypeReference();
 
             state._fsp--;
@@ -23525,7 +23785,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmArgumentTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference18790); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference18965); if (state.failed) return current;
 
             }
 
@@ -23543,7 +23803,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmArgumentTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8077:1: ruleJvmArgumentTypeReference returns [EObject current=null] : (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8164:1: ruleJvmArgumentTypeReference returns [EObject current=null] : (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) ;
     public final EObject ruleJvmArgumentTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -23555,36 +23815,36 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8080:28: ( (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8081:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8167:28: ( (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8168:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8081:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
-            int alt147=2;
-            int LA147_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8168:1: (this_JvmTypeReference_0= ruleJvmTypeReference | this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference )
+            int alt150=2;
+            int LA150_0 = input.LA(1);
 
-            if ( (LA147_0==RULE_ID||LA147_0==28||LA147_0==74) ) {
-                alt147=1;
+            if ( (LA150_0==RULE_ID||LA150_0==28||LA150_0==74) ) {
+                alt150=1;
             }
-            else if ( (LA147_0==112) ) {
-                alt147=2;
+            else if ( (LA150_0==112) ) {
+                alt150=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 147, 0, input);
+                    new NoViableAltException("", 150, 0, input);
 
                 throw nvae;
             }
-            switch (alt147) {
+            switch (alt150) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8082:5: this_JvmTypeReference_0= ruleJvmTypeReference
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8169:5: this_JvmTypeReference_0= ruleJvmTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceAccess().getJvmTypeReferenceParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference18837);
+                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference19012);
                     this_JvmTypeReference_0=ruleJvmTypeReference();
 
                     state._fsp--;
@@ -23599,14 +23859,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8092:5: this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8179:5: this_JvmWildcardTypeReference_1= ruleJvmWildcardTypeReference
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getJvmArgumentTypeReferenceAccess().getJvmWildcardTypeReferenceParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference18864);
+                    pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference19039);
                     this_JvmWildcardTypeReference_1=ruleJvmWildcardTypeReference();
 
                     state._fsp--;
@@ -23643,7 +23903,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmWildcardTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8108:1: entryRuleJvmWildcardTypeReference returns [EObject current=null] : iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8195:1: entryRuleJvmWildcardTypeReference returns [EObject current=null] : iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF ;
     public final EObject entryRuleJvmWildcardTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -23651,13 +23911,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8109:2: (iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8110:2: iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8196:2: (iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8197:2: iv_ruleJvmWildcardTypeReference= ruleJvmWildcardTypeReference EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference18899);
+            pushFollow(FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference19074);
             iv_ruleJvmWildcardTypeReference=ruleJvmWildcardTypeReference();
 
             state._fsp--;
@@ -23665,7 +23925,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmWildcardTypeReference; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference18909); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference19084); if (state.failed) return current;
 
             }
 
@@ -23683,7 +23943,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmWildcardTypeReference"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8117:1: ruleJvmWildcardTypeReference returns [EObject current=null] : ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8204:1: ruleJvmWildcardTypeReference returns [EObject current=null] : ( () otherlv_1= '?' ( ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* ) | ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* ) )? ) ;
     public final EObject ruleJvmWildcardTypeReference() throws RecognitionException {
         EObject current = null;
 
@@ -23692,18 +23952,22 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
         EObject lv_constraints_3_0 = null;
 
+        EObject lv_constraints_4_0 = null;
+
+        EObject lv_constraints_5_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8120:28: ( ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8121:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8207:28: ( ( () otherlv_1= '?' ( ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* ) | ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* ) )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8208:1: ( () otherlv_1= '?' ( ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* ) | ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* ) )? )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8121:1: ( () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )? )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8121:2: () otherlv_1= '?' ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8208:1: ( () otherlv_1= '?' ( ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* ) | ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* ) )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8208:2: () otherlv_1= '?' ( ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* ) | ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* ) )?
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8121:2: ()
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8122:5: 
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8208:2: ()
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8209:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -23715,38 +23979,41 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,112,FOLLOW_112_in_ruleJvmWildcardTypeReference18955); if (state.failed) return current;
+            otherlv_1=(Token)match(input,112,FOLLOW_112_in_ruleJvmWildcardTypeReference19130); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getJvmWildcardTypeReferenceAccess().getQuestionMarkKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8131:1: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) | ( (lv_constraints_3_0= ruleJvmLowerBound ) ) )?
-            int alt148=3;
-            int LA148_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8218:1: ( ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* ) | ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* ) )?
+            int alt153=3;
+            int LA153_0 = input.LA(1);
 
-            if ( (LA148_0==100) ) {
-                alt148=1;
+            if ( (LA153_0==100) ) {
+                alt153=1;
             }
-            else if ( (LA148_0==102) ) {
-                alt148=2;
+            else if ( (LA153_0==102) ) {
+                alt153=2;
             }
-            switch (alt148) {
+            switch (alt153) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8131:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8218:2: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8131:2: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8132:1: (lv_constraints_2_0= ruleJvmUpperBound )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8218:2: ( ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )* )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8218:3: ( (lv_constraints_2_0= ruleJvmUpperBound ) ) ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )*
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8132:1: (lv_constraints_2_0= ruleJvmUpperBound )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8133:3: lv_constraints_2_0= ruleJvmUpperBound
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8218:3: ( (lv_constraints_2_0= ruleJvmUpperBound ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8219:1: (lv_constraints_2_0= ruleJvmUpperBound )
+                    {
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8219:1: (lv_constraints_2_0= ruleJvmUpperBound )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8220:3: lv_constraints_2_0= ruleJvmUpperBound
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0()); 
+                      	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference18977);
+                    pushFollow(FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference19153);
                     lv_constraints_2_0=ruleJvmUpperBound();
 
                     state._fsp--;
@@ -23770,25 +24037,84 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8236:2: ( (lv_constraints_3_0= ruleJvmUpperBoundAnded ) )*
+                    loop151:
+                    do {
+                        int alt151=2;
+                        int LA151_0 = input.LA(1);
+
+                        if ( (LA151_0==113) ) {
+                            alt151=1;
+                        }
+
+
+                        switch (alt151) {
+                    	case 1 :
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8237:1: (lv_constraints_3_0= ruleJvmUpperBoundAnded )
+                    	    {
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8237:1: (lv_constraints_3_0= ruleJvmUpperBoundAnded )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8238:3: lv_constraints_3_0= ruleJvmUpperBoundAnded
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundAndedParserRuleCall_2_0_1_0()); 
+                    	      	    
+                    	    }
+                    	    pushFollow(FOLLOW_ruleJvmUpperBoundAnded_in_ruleJvmWildcardTypeReference19174);
+                    	    lv_constraints_3_0=ruleJvmUpperBoundAnded();
+
+                    	    state._fsp--;
+                    	    if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      	        if (current==null) {
+                    	      	            current = createModelElementForParent(grammarAccess.getJvmWildcardTypeReferenceRule());
+                    	      	        }
+                    	             		add(
+                    	             			current, 
+                    	             			"constraints",
+                    	              		lv_constraints_3_0, 
+                    	              		"JvmUpperBoundAnded");
+                    	      	        afterParserOrEnumRuleCall();
+                    	      	    
+                    	    }
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop151;
+                        }
+                    } while (true);
+
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8150:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8255:6: ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8150:6: ( (lv_constraints_3_0= ruleJvmLowerBound ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8151:1: (lv_constraints_3_0= ruleJvmLowerBound )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8255:6: ( ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )* )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8255:7: ( (lv_constraints_4_0= ruleJvmLowerBound ) ) ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )*
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8151:1: (lv_constraints_3_0= ruleJvmLowerBound )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8152:3: lv_constraints_3_0= ruleJvmLowerBound
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8255:7: ( (lv_constraints_4_0= ruleJvmLowerBound ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8256:1: (lv_constraints_4_0= ruleJvmLowerBound )
+                    {
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8256:1: (lv_constraints_4_0= ruleJvmLowerBound )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8257:3: lv_constraints_4_0= ruleJvmLowerBound
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0()); 
+                      	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference19004);
-                    lv_constraints_3_0=ruleJvmLowerBound();
+                    pushFollow(FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference19204);
+                    lv_constraints_4_0=ruleJvmLowerBound();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -23800,13 +24126,69 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                              		add(
                              			current, 
                              			"constraints",
-                              		lv_constraints_3_0, 
+                              		lv_constraints_4_0, 
                               		"JvmLowerBound");
                       	        afterParserOrEnumRuleCall();
                       	    
                     }
 
                     }
+
+
+                    }
+
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8273:2: ( (lv_constraints_5_0= ruleJvmLowerBoundAnded ) )*
+                    loop152:
+                    do {
+                        int alt152=2;
+                        int LA152_0 = input.LA(1);
+
+                        if ( (LA152_0==113) ) {
+                            alt152=1;
+                        }
+
+
+                        switch (alt152) {
+                    	case 1 :
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8274:1: (lv_constraints_5_0= ruleJvmLowerBoundAnded )
+                    	    {
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8274:1: (lv_constraints_5_0= ruleJvmLowerBoundAnded )
+                    	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8275:3: lv_constraints_5_0= ruleJvmLowerBoundAnded
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        newCompositeNode(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundAndedParserRuleCall_2_1_1_0()); 
+                    	      	    
+                    	    }
+                    	    pushFollow(FOLLOW_ruleJvmLowerBoundAnded_in_ruleJvmWildcardTypeReference19225);
+                    	    lv_constraints_5_0=ruleJvmLowerBoundAnded();
+
+                    	    state._fsp--;
+                    	    if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      	        if (current==null) {
+                    	      	            current = createModelElementForParent(grammarAccess.getJvmWildcardTypeReferenceRule());
+                    	      	        }
+                    	             		add(
+                    	             			current, 
+                    	             			"constraints",
+                    	              		lv_constraints_5_0, 
+                    	              		"JvmLowerBoundAnded");
+                    	      	        afterParserOrEnumRuleCall();
+                    	      	    
+                    	    }
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop152;
+                        }
+                    } while (true);
 
 
                     }
@@ -23840,7 +24222,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmUpperBound"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8176:1: entryRuleJvmUpperBound returns [EObject current=null] : iv_ruleJvmUpperBound= ruleJvmUpperBound EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8299:1: entryRuleJvmUpperBound returns [EObject current=null] : iv_ruleJvmUpperBound= ruleJvmUpperBound EOF ;
     public final EObject entryRuleJvmUpperBound() throws RecognitionException {
         EObject current = null;
 
@@ -23848,13 +24230,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8177:2: (iv_ruleJvmUpperBound= ruleJvmUpperBound EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8178:2: iv_ruleJvmUpperBound= ruleJvmUpperBound EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8300:2: (iv_ruleJvmUpperBound= ruleJvmUpperBound EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8301:2: iv_ruleJvmUpperBound= ruleJvmUpperBound EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmUpperBoundRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound19042);
+            pushFollow(FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound19265);
             iv_ruleJvmUpperBound=ruleJvmUpperBound();
 
             state._fsp--;
@@ -23862,7 +24244,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmUpperBound; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBound19052); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBound19275); if (state.failed) return current;
 
             }
 
@@ -23880,7 +24262,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmUpperBound"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8185:1: ruleJvmUpperBound returns [EObject current=null] : (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8308:1: ruleJvmUpperBound returns [EObject current=null] : (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmUpperBound() throws RecognitionException {
         EObject current = null;
 
@@ -23891,30 +24273,30 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8188:28: ( (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8189:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8311:28: ( (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8312:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8189:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8189:3: otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8312:1: (otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8312:3: otherlv_0= 'extends' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,100,FOLLOW_100_in_ruleJvmUpperBound19089); if (state.failed) return current;
+            otherlv_0=(Token)match(input,100,FOLLOW_100_in_ruleJvmUpperBound19312); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAccess().getExtendsKeyword_0());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8193:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8194:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8316:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8317:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8194:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8195:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8317:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8318:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmUpperBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound19110);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound19333);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -23961,7 +24343,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmUpperBoundAnded"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8219:1: entryRuleJvmUpperBoundAnded returns [EObject current=null] : iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8342:1: entryRuleJvmUpperBoundAnded returns [EObject current=null] : iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF ;
     public final EObject entryRuleJvmUpperBoundAnded() throws RecognitionException {
         EObject current = null;
 
@@ -23969,13 +24351,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8220:2: (iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8221:2: iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8343:2: (iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8344:2: iv_ruleJvmUpperBoundAnded= ruleJvmUpperBoundAnded EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmUpperBoundAndedRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded19146);
+            pushFollow(FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded19369);
             iv_ruleJvmUpperBoundAnded=ruleJvmUpperBoundAnded();
 
             state._fsp--;
@@ -23983,7 +24365,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmUpperBoundAnded; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded19156); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded19379); if (state.failed) return current;
 
             }
 
@@ -24001,7 +24383,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmUpperBoundAnded"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8228:1: ruleJvmUpperBoundAnded returns [EObject current=null] : (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8351:1: ruleJvmUpperBoundAnded returns [EObject current=null] : (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmUpperBoundAnded() throws RecognitionException {
         EObject current = null;
 
@@ -24012,30 +24394,30 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8231:28: ( (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8232:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8354:28: ( (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8355:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8232:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8232:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8355:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8355:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,113,FOLLOW_113_in_ruleJvmUpperBoundAnded19193); if (state.failed) return current;
+            otherlv_0=(Token)match(input,113,FOLLOW_113_in_ruleJvmUpperBoundAnded19416); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmUpperBoundAndedAccess().getAmpersandKeyword_0());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8236:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8237:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8359:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8360:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8237:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8238:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8360:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8361:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmUpperBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded19214);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded19437);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -24082,7 +24464,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJvmLowerBound"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8262:1: entryRuleJvmLowerBound returns [EObject current=null] : iv_ruleJvmLowerBound= ruleJvmLowerBound EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8385:1: entryRuleJvmLowerBound returns [EObject current=null] : iv_ruleJvmLowerBound= ruleJvmLowerBound EOF ;
     public final EObject entryRuleJvmLowerBound() throws RecognitionException {
         EObject current = null;
 
@@ -24090,13 +24472,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8263:2: (iv_ruleJvmLowerBound= ruleJvmLowerBound EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8264:2: iv_ruleJvmLowerBound= ruleJvmLowerBound EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8386:2: (iv_ruleJvmLowerBound= ruleJvmLowerBound EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8387:2: iv_ruleJvmLowerBound= ruleJvmLowerBound EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJvmLowerBoundRule()); 
             }
-            pushFollow(FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound19250);
+            pushFollow(FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound19473);
             iv_ruleJvmLowerBound=ruleJvmLowerBound();
 
             state._fsp--;
@@ -24104,7 +24486,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJvmLowerBound; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmLowerBound19260); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmLowerBound19483); if (state.failed) return current;
 
             }
 
@@ -24122,7 +24504,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJvmLowerBound"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8271:1: ruleJvmLowerBound returns [EObject current=null] : (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8394:1: ruleJvmLowerBound returns [EObject current=null] : (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
     public final EObject ruleJvmLowerBound() throws RecognitionException {
         EObject current = null;
 
@@ -24133,30 +24515,30 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8274:28: ( (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8275:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8397:28: ( (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8275:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8275:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:1: (otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:3: otherlv_0= 'super' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
             {
-            otherlv_0=(Token)match(input,102,FOLLOW_102_in_ruleJvmLowerBound19297); if (state.failed) return current;
+            otherlv_0=(Token)match(input,102,FOLLOW_102_in_ruleJvmLowerBound19520); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getJvmLowerBoundAccess().getSuperKeyword_0());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8279:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8280:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8402:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8403:1: (lv_typeReference_1_0= ruleJvmTypeReference )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8280:1: (lv_typeReference_1_0= ruleJvmTypeReference )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8281:3: lv_typeReference_1_0= ruleJvmTypeReference
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8403:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8404:3: lv_typeReference_1_0= ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getJvmLowerBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound19318);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound19541);
             lv_typeReference_1_0=ruleJvmTypeReference();
 
             state._fsp--;
@@ -24202,8 +24584,129 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleJvmLowerBound"
 
 
+    // $ANTLR start "entryRuleJvmLowerBoundAnded"
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8428:1: entryRuleJvmLowerBoundAnded returns [EObject current=null] : iv_ruleJvmLowerBoundAnded= ruleJvmLowerBoundAnded EOF ;
+    public final EObject entryRuleJvmLowerBoundAnded() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleJvmLowerBoundAnded = null;
+
+
+        try {
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8429:2: (iv_ruleJvmLowerBoundAnded= ruleJvmLowerBoundAnded EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8430:2: iv_ruleJvmLowerBoundAnded= ruleJvmLowerBoundAnded EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getJvmLowerBoundAndedRule()); 
+            }
+            pushFollow(FOLLOW_ruleJvmLowerBoundAnded_in_entryRuleJvmLowerBoundAnded19577);
+            iv_ruleJvmLowerBoundAnded=ruleJvmLowerBoundAnded();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleJvmLowerBoundAnded; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJvmLowerBoundAnded19587); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleJvmLowerBoundAnded"
+
+
+    // $ANTLR start "ruleJvmLowerBoundAnded"
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8437:1: ruleJvmLowerBoundAnded returns [EObject current=null] : (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) ;
+    public final EObject ruleJvmLowerBoundAnded() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        EObject lv_typeReference_1_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8440:28: ( (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8441:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            {
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8441:1: (otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8441:3: otherlv_0= '&' ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            {
+            otherlv_0=(Token)match(input,113,FOLLOW_113_in_ruleJvmLowerBoundAnded19624); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_0, grammarAccess.getJvmLowerBoundAndedAccess().getAmpersandKeyword_0());
+                  
+            }
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8445:1: ( (lv_typeReference_1_0= ruleJvmTypeReference ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8446:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            {
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8446:1: (lv_typeReference_1_0= ruleJvmTypeReference )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8447:3: lv_typeReference_1_0= ruleJvmTypeReference
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getJvmLowerBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
+              	    
+            }
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBoundAnded19645);
+            lv_typeReference_1_0=ruleJvmTypeReference();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getJvmLowerBoundAndedRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"typeReference",
+                      		lv_typeReference_1_0, 
+                      		"JvmTypeReference");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleJvmLowerBoundAnded"
+
+
     // $ANTLR start "entryRuleQualifiedNameWithWildcard"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8307:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8473:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
     public final String entryRuleQualifiedNameWithWildcard() throws RecognitionException {
         String current = null;
 
@@ -24211,13 +24714,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8308:2: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8309:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8474:2: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8475:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard19357);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard19684);
             iv_ruleQualifiedNameWithWildcard=ruleQualifiedNameWithWildcard();
 
             state._fsp--;
@@ -24225,7 +24728,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedNameWithWildcard.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard19368); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard19695); if (state.failed) return current;
 
             }
 
@@ -24243,7 +24746,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildcard"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8316:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8482:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameWithWildcard() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -24254,18 +24757,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8319:28: ( (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8320:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8485:28: ( (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8486:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8320:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8321:5: this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*'
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8486:1: (this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*' )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8487:5: this_QualifiedName_0= ruleQualifiedName kw= '.' kw= '*'
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard19415);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard19742);
             this_QualifiedName_0=ruleQualifiedName();
 
             state._fsp--;
@@ -24280,14 +24783,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            kw=(Token)match(input,85,FOLLOW_85_in_ruleQualifiedNameWithWildcard19433); if (state.failed) return current;
+            kw=(Token)match(input,85,FOLLOW_85_in_ruleQualifiedNameWithWildcard19760); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
                       newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopKeyword_1()); 
                   
             }
-            kw=(Token)match(input,78,FOLLOW_78_in_ruleQualifiedNameWithWildcard19446); if (state.failed) return current;
+            kw=(Token)match(input,78,FOLLOW_78_in_ruleQualifiedNameWithWildcard19773); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current.merge(kw);
@@ -24317,7 +24820,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValidID"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8351:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8517:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
     public final String entryRuleValidID() throws RecognitionException {
         String current = null;
 
@@ -24325,13 +24828,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8352:2: (iv_ruleValidID= ruleValidID EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8353:2: iv_ruleValidID= ruleValidID EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8518:2: (iv_ruleValidID= ruleValidID EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8519:2: iv_ruleValidID= ruleValidID EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getValidIDRule()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID19487);
+            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID19814);
             iv_ruleValidID=ruleValidID();
 
             state._fsp--;
@@ -24339,7 +24842,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleValidID.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID19498); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID19825); if (state.failed) return current;
 
             }
 
@@ -24357,7 +24860,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidID"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8360:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8526:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleValidID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -24366,10 +24869,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8363:28: (this_ID_0= RULE_ID )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8364:5: this_ID_0= RULE_ID
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8529:28: (this_ID_0= RULE_ID )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8530:5: this_ID_0= RULE_ID
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID19537); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID19864); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -24400,7 +24903,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXImportDeclaration"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8381:1: entryRuleXImportDeclaration returns [EObject current=null] : iv_ruleXImportDeclaration= ruleXImportDeclaration EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8547:1: entryRuleXImportDeclaration returns [EObject current=null] : iv_ruleXImportDeclaration= ruleXImportDeclaration EOF ;
     public final EObject entryRuleXImportDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -24408,13 +24911,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8382:2: (iv_ruleXImportDeclaration= ruleXImportDeclaration EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8383:2: iv_ruleXImportDeclaration= ruleXImportDeclaration EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8548:2: (iv_ruleXImportDeclaration= ruleXImportDeclaration EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8549:2: iv_ruleXImportDeclaration= ruleXImportDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXImportDeclarationRule()); 
             }
-            pushFollow(FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration19583);
+            pushFollow(FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration19910);
             iv_ruleXImportDeclaration=ruleXImportDeclaration();
 
             state._fsp--;
@@ -24422,7 +24925,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXImportDeclaration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportDeclaration19593); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXImportDeclaration19920); if (state.failed) return current;
 
             }
 
@@ -24440,7 +24943,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXImportDeclaration"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8390:1: ruleXImportDeclaration returns [EObject current=null] : (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8556:1: ruleXImportDeclaration returns [EObject current=null] : (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) ;
     public final EObject ruleXImportDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -24457,35 +24960,35 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8393:28: ( (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8394:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8559:28: ( (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? ) )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8560:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8394:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8394:3: otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )?
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8560:1: (otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )? )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8560:3: otherlv_0= 'import' ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) ) (otherlv_8= ';' )?
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleXImportDeclaration19630); if (state.failed) return current;
+            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleXImportDeclaration19957); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getXImportDeclarationAccess().getImportKeyword_0());
                   
             }
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )
-            int alt151=3;
-            alt151 = dfa151.predict(input);
-            switch (alt151) {
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8564:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )
+            int alt156=3;
+            alt156 = dfa156.predict(input);
+            switch (alt156) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8564:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:3: ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8564:2: ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8564:3: ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8398:3: ( (lv_static_1_0= 'static' ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8399:1: (lv_static_1_0= 'static' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8564:3: ( (lv_static_1_0= 'static' ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8565:1: (lv_static_1_0= 'static' )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8399:1: (lv_static_1_0= 'static' )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8400:3: lv_static_1_0= 'static'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8565:1: (lv_static_1_0= 'static' )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8566:3: lv_static_1_0= 'static'
                     {
-                    lv_static_1_0=(Token)match(input,39,FOLLOW_39_in_ruleXImportDeclaration19650); if (state.failed) return current;
+                    lv_static_1_0=(Token)match(input,39,FOLLOW_39_in_ruleXImportDeclaration19977); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_static_1_0, grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0());
@@ -24505,21 +25008,21 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8413:2: ( (lv_extension_2_0= 'extension' ) )?
-                    int alt149=2;
-                    int LA149_0 = input.LA(1);
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8579:2: ( (lv_extension_2_0= 'extension' ) )?
+                    int alt154=2;
+                    int LA154_0 = input.LA(1);
 
-                    if ( (LA149_0==101) ) {
-                        alt149=1;
+                    if ( (LA154_0==101) ) {
+                        alt154=1;
                     }
-                    switch (alt149) {
+                    switch (alt154) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8414:1: (lv_extension_2_0= 'extension' )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8580:1: (lv_extension_2_0= 'extension' )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8414:1: (lv_extension_2_0= 'extension' )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8415:3: lv_extension_2_0= 'extension'
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8580:1: (lv_extension_2_0= 'extension' )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8581:3: lv_extension_2_0= 'extension'
                             {
-                            lv_extension_2_0=(Token)match(input,101,FOLLOW_101_in_ruleXImportDeclaration19681); if (state.failed) return current;
+                            lv_extension_2_0=(Token)match(input,101,FOLLOW_101_in_ruleXImportDeclaration20008); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_extension_2_0, grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0());
@@ -24542,11 +25045,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8428:3: ( ( ruleQualifiedNameInStaticImport ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8429:1: ( ruleQualifiedNameInStaticImport )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8594:3: ( ( ruleQualifiedNameInStaticImport ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8595:1: ( ruleQualifiedNameInStaticImport )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8429:1: ( ruleQualifiedNameInStaticImport )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8430:3: ruleQualifiedNameInStaticImport
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8595:1: ( ruleQualifiedNameInStaticImport )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8596:3: ruleQualifiedNameInStaticImport
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24560,7 +25063,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_0_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedNameInStaticImport_in_ruleXImportDeclaration19718);
+                    pushFollow(FOLLOW_ruleQualifiedNameInStaticImport_in_ruleXImportDeclaration20045);
                     ruleQualifiedNameInStaticImport();
 
                     state._fsp--;
@@ -24576,34 +25079,34 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8443:2: ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) )
-                    int alt150=2;
-                    int LA150_0 = input.LA(1);
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8609:2: ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) )
+                    int alt155=2;
+                    int LA155_0 = input.LA(1);
 
-                    if ( (LA150_0==78) ) {
-                        alt150=1;
+                    if ( (LA155_0==78) ) {
+                        alt155=1;
                     }
-                    else if ( (LA150_0==RULE_ID) ) {
-                        alt150=2;
+                    else if ( (LA155_0==RULE_ID) ) {
+                        alt155=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 150, 0, input);
+                            new NoViableAltException("", 155, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt150) {
+                    switch (alt155) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8443:3: ( (lv_wildcard_4_0= '*' ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8609:3: ( (lv_wildcard_4_0= '*' ) )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8443:3: ( (lv_wildcard_4_0= '*' ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8444:1: (lv_wildcard_4_0= '*' )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8609:3: ( (lv_wildcard_4_0= '*' ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8610:1: (lv_wildcard_4_0= '*' )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8444:1: (lv_wildcard_4_0= '*' )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8445:3: lv_wildcard_4_0= '*'
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8610:1: (lv_wildcard_4_0= '*' )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8611:3: lv_wildcard_4_0= '*'
                             {
-                            lv_wildcard_4_0=(Token)match(input,78,FOLLOW_78_in_ruleXImportDeclaration19737); if (state.failed) return current;
+                            lv_wildcard_4_0=(Token)match(input,78,FOLLOW_78_in_ruleXImportDeclaration20064); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_wildcard_4_0, grammarAccess.getXImportDeclarationAccess().getWildcardAsteriskKeyword_1_0_3_0_0());
@@ -24627,20 +25130,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8459:6: ( (lv_memberName_5_0= ruleValidID ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8625:6: ( (lv_memberName_5_0= ruleValidID ) )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8459:6: ( (lv_memberName_5_0= ruleValidID ) )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8460:1: (lv_memberName_5_0= ruleValidID )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8625:6: ( (lv_memberName_5_0= ruleValidID ) )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8626:1: (lv_memberName_5_0= ruleValidID )
                             {
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8460:1: (lv_memberName_5_0= ruleValidID )
-                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8461:3: lv_memberName_5_0= ruleValidID
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8626:1: (lv_memberName_5_0= ruleValidID )
+                            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8627:3: lv_memberName_5_0= ruleValidID
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getMemberNameValidIDParserRuleCall_1_0_3_1_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleValidID_in_ruleXImportDeclaration19777);
+                            pushFollow(FOLLOW_ruleValidID_in_ruleXImportDeclaration20104);
                             lv_memberName_5_0=ruleValidID();
 
                             state._fsp--;
@@ -24677,13 +25180,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8478:6: ( ( ruleQualifiedName ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8644:6: ( ( ruleQualifiedName ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8478:6: ( ( ruleQualifiedName ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8479:1: ( ruleQualifiedName )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8644:6: ( ( ruleQualifiedName ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8645:1: ( ruleQualifiedName )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8479:1: ( ruleQualifiedName )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8480:3: ruleQualifiedName
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8645:1: ( ruleQualifiedName )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8646:3: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24697,7 +25200,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration19808);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration20135);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -24717,20 +25220,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8494:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8660:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8494:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8495:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8660:6: ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8661:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
                     {
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8495:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8496:3: lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8661:1: (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard )
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8662:3: lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getXImportDeclarationAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration19835);
+                    pushFollow(FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration20162);
                     lv_importedNamespace_7_0=ruleQualifiedNameWithWildcard();
 
                     state._fsp--;
@@ -24760,18 +25263,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8512:3: (otherlv_8= ';' )?
-            int alt152=2;
-            int LA152_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8678:3: (otherlv_8= ';' )?
+            int alt157=2;
+            int LA157_0 = input.LA(1);
 
-            if ( (LA152_0==89) ) {
-                alt152=1;
+            if ( (LA157_0==89) ) {
+                alt157=1;
             }
-            switch (alt152) {
+            switch (alt157) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8512:5: otherlv_8= ';'
+                    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8678:5: otherlv_8= ';'
                     {
-                    otherlv_8=(Token)match(input,89,FOLLOW_89_in_ruleXImportDeclaration19849); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,89,FOLLOW_89_in_ruleXImportDeclaration20176); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_8, grammarAccess.getXImportDeclarationAccess().getSemicolonKeyword_2());
@@ -24806,7 +25309,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameInStaticImport"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8524:1: entryRuleQualifiedNameInStaticImport returns [String current=null] : iv_ruleQualifiedNameInStaticImport= ruleQualifiedNameInStaticImport EOF ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8690:1: entryRuleQualifiedNameInStaticImport returns [String current=null] : iv_ruleQualifiedNameInStaticImport= ruleQualifiedNameInStaticImport EOF ;
     public final String entryRuleQualifiedNameInStaticImport() throws RecognitionException {
         String current = null;
 
@@ -24814,13 +25317,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8525:2: (iv_ruleQualifiedNameInStaticImport= ruleQualifiedNameInStaticImport EOF )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8526:2: iv_ruleQualifiedNameInStaticImport= ruleQualifiedNameInStaticImport EOF
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8691:2: (iv_ruleQualifiedNameInStaticImport= ruleQualifiedNameInStaticImport EOF )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8692:2: iv_ruleQualifiedNameInStaticImport= ruleQualifiedNameInStaticImport EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameInStaticImportRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameInStaticImport_in_entryRuleQualifiedNameInStaticImport19888);
+            pushFollow(FOLLOW_ruleQualifiedNameInStaticImport_in_entryRuleQualifiedNameInStaticImport20215);
             iv_ruleQualifiedNameInStaticImport=ruleQualifiedNameInStaticImport();
 
             state._fsp--;
@@ -24828,7 +25331,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedNameInStaticImport.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameInStaticImport19899); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameInStaticImport20226); if (state.failed) return current;
 
             }
 
@@ -24846,7 +25349,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameInStaticImport"
-    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8533:1: ruleQualifiedNameInStaticImport returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID kw= '.' )+ ;
+    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8699:1: ruleQualifiedNameInStaticImport returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID kw= '.' )+ ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameInStaticImport() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -24857,37 +25360,37 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8536:28: ( (this_ValidID_0= ruleValidID kw= '.' )+ )
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8537:1: (this_ValidID_0= ruleValidID kw= '.' )+
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8702:28: ( (this_ValidID_0= ruleValidID kw= '.' )+ )
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8703:1: (this_ValidID_0= ruleValidID kw= '.' )+
             {
-            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8537:1: (this_ValidID_0= ruleValidID kw= '.' )+
-            int cnt153=0;
-            loop153:
+            // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8703:1: (this_ValidID_0= ruleValidID kw= '.' )+
+            int cnt158=0;
+            loop158:
             do {
-                int alt153=2;
-                int LA153_0 = input.LA(1);
+                int alt158=2;
+                int LA158_0 = input.LA(1);
 
-                if ( (LA153_0==RULE_ID) ) {
-                    int LA153_2 = input.LA(2);
+                if ( (LA158_0==RULE_ID) ) {
+                    int LA158_2 = input.LA(2);
 
-                    if ( (LA153_2==85) ) {
-                        alt153=1;
+                    if ( (LA158_2==85) ) {
+                        alt158=1;
                     }
 
 
                 }
 
 
-                switch (alt153) {
+                switch (alt158) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8538:5: this_ValidID_0= ruleValidID kw= '.'
+            	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8704:5: this_ValidID_0= ruleValidID kw= '.'
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	              newCompositeNode(grammarAccess.getQualifiedNameInStaticImportAccess().getValidIDParserRuleCall_0()); 
             	          
             	    }
-            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedNameInStaticImport19946);
+            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedNameInStaticImport20273);
             	    this_ValidID_0=ruleValidID();
 
             	    state._fsp--;
@@ -24902,7 +25405,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	              afterParserOrEnumRuleCall();
             	          
             	    }
-            	    kw=(Token)match(input,85,FOLLOW_85_in_ruleQualifiedNameInStaticImport19964); if (state.failed) return current;
+            	    kw=(Token)match(input,85,FOLLOW_85_in_ruleQualifiedNameInStaticImport20291); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -24914,13 +25417,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt153 >= 1 ) break loop153;
+            	    if ( cnt158 >= 1 ) break loop158;
             	    if (state.backtracking>0) {state.failed=true; return current;}
                         EarlyExitException eee =
-                            new EarlyExitException(153, input);
+                            new EarlyExitException(158, input);
                         throw eee;
                 }
-                cnt153++;
+                cnt158++;
             } while (true);
 
 
@@ -25377,23 +25880,23 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         }
 
         // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4257:2: ( '.' | ( ( '::' ) ) )
-        int alt154=2;
-        int LA154_0 = input.LA(1);
+        int alt159=2;
+        int LA159_0 = input.LA(1);
 
-        if ( (LA154_0==85) ) {
-            alt154=1;
+        if ( (LA159_0==85) ) {
+            alt159=1;
         }
-        else if ( (LA154_0==86) ) {
-            alt154=2;
+        else if ( (LA159_0==86) ) {
+            alt159=2;
         }
         else {
             if (state.backtracking>0) {state.failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("", 154, 0, input);
+                new NoViableAltException("", 159, 0, input);
 
             throw nvae;
         }
-        switch (alt154) {
+        switch (alt159) {
             case 1 :
                 // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4257:4: '.'
                 {
@@ -25467,32 +25970,32 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         }
 
         // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4338:2: ( '.' | ( ( '?.' ) ) | ( ( '::' ) ) )
-        int alt155=3;
+        int alt160=3;
         switch ( input.LA(1) ) {
         case 85:
             {
-            alt155=1;
+            alt160=1;
             }
             break;
         case 87:
             {
-            alt155=2;
+            alt160=2;
             }
             break;
         case 86:
             {
-            alt155=3;
+            alt160=3;
             }
             break;
         default:
             if (state.backtracking>0) {state.failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("", 155, 0, input);
+                new NoViableAltException("", 160, 0, input);
 
             throw nvae;
         }
 
-        switch (alt155) {
+        switch (alt160) {
             case 1 :
                 // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4338:4: '.'
                 {
@@ -25580,13 +26083,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         }
 
         // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4480:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt157=2;
-        int LA157_0 = input.LA(1);
+        int alt162=2;
+        int LA162_0 = input.LA(1);
 
-        if ( (LA157_0==RULE_ID||LA157_0==28||LA157_0==74) ) {
-            alt157=1;
+        if ( (LA162_0==RULE_ID||LA162_0==28||LA162_0==74) ) {
+            alt162=1;
         }
-        switch (alt157) {
+        switch (alt162) {
             case 1 :
                 // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4480:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
@@ -25608,17 +26111,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
 
                 // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4484:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop156:
+                loop161:
                 do {
-                    int alt156=2;
-                    int LA156_0 = input.LA(1);
+                    int alt161=2;
+                    int LA161_0 = input.LA(1);
 
-                    if ( (LA156_0==21) ) {
-                        alt156=1;
+                    if ( (LA161_0==21) ) {
+                        alt161=1;
                     }
 
 
-                    switch (alt156) {
+                    switch (alt161) {
                 	case 1 :
                 	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:4484:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
@@ -25645,7 +26148,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop156;
+                	    break loop161;
                     }
                 } while (true);
 
@@ -25793,13 +26296,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5082:6: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) )
         {
         // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5082:6: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt159=2;
-        int LA159_0 = input.LA(1);
+        int alt164=2;
+        int LA164_0 = input.LA(1);
 
-        if ( (LA159_0==RULE_ID||LA159_0==28||LA159_0==74) ) {
-            alt159=1;
+        if ( (LA164_0==RULE_ID||LA164_0==28||LA164_0==74) ) {
+            alt164=1;
         }
-        switch (alt159) {
+        switch (alt164) {
             case 1 :
                 // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5082:7: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
@@ -25821,17 +26324,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
 
                 // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5086:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop158:
+                loop163:
                 do {
-                    int alt158=2;
-                    int LA158_0 = input.LA(1);
+                    int alt163=2;
+                    int LA163_0 = input.LA(1);
 
-                    if ( (LA158_0==21) ) {
-                        alt158=1;
+                    if ( (LA163_0==21) ) {
+                        alt163=1;
                     }
 
 
-                    switch (alt158) {
+                    switch (alt163) {
                 	case 1 :
                 	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:5086:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
@@ -25858,7 +26361,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop158;
+                	    break loop163;
                     }
                 } while (true);
 
@@ -25971,19 +26474,19 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred29_InternalFXGraph
     public final void synpred29_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:4: ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:5: ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:4: ( ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:5: ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:5: ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:6: ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:5: ( ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:6: ( ( ruleJvmTypeReference ) ) ( ( ruleValidID ) )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6318:6: ( ( ruleJvmTypeReference ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6319:1: ( ruleJvmTypeReference )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6329:6: ( ( ruleJvmTypeReference ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6330:1: ( ruleJvmTypeReference )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6319:1: ( ruleJvmTypeReference )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6320:1: ruleJvmTypeReference
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6330:1: ( ruleJvmTypeReference )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6331:1: ruleJvmTypeReference
         {
-        pushFollow(FOLLOW_ruleJvmTypeReference_in_synpred29_InternalFXGraph14607);
+        pushFollow(FOLLOW_ruleJvmTypeReference_in_synpred29_InternalFXGraph14626);
         ruleJvmTypeReference();
 
         state._fsp--;
@@ -25994,13 +26497,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
         }
 
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6322:2: ( ( ruleValidID ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6323:1: ( ruleValidID )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6333:2: ( ( ruleValidID ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6334:1: ( ruleValidID )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6323:1: ( ruleValidID )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6324:1: ruleValidID
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6334:1: ( ruleValidID )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6335:1: ruleValidID
         {
-        pushFollow(FOLLOW_ruleValidID_in_synpred29_InternalFXGraph14616);
+        pushFollow(FOLLOW_ruleValidID_in_synpred29_InternalFXGraph14635);
         ruleValidID();
 
         state._fsp--;
@@ -26021,13 +26524,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred30_InternalFXGraph
     public final void synpred30_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6607:4: ( ( '(' ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6608:1: ( '(' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6618:4: ( ( '(' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6619:1: ( '(' )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6608:1: ( '(' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6609:2: '('
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6619:1: ( '(' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6620:2: '('
         {
-        match(input,28,FOLLOW_28_in_synpred30_InternalFXGraph15154); if (state.failed) return ;
+        match(input,28,FOLLOW_28_in_synpred30_InternalFXGraph15173); if (state.failed) return ;
 
         }
 
@@ -26038,35 +26541,35 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred31_InternalFXGraph
     public final void synpred31_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:6: () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:6: () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6628:6: ()
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6629:1: 
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:6: ()
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6640:1: 
         {
         }
 
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6629:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt163=2;
-        int LA163_0 = input.LA(1);
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6640:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
+        int alt168=2;
+        int LA168_0 = input.LA(1);
 
-        if ( (LA163_0==RULE_ID||LA163_0==28||LA163_0==74) ) {
-            alt163=1;
+        if ( (LA168_0==RULE_ID||LA168_0==28||LA168_0==74) ) {
+            alt168=1;
         }
-        switch (alt163) {
+        switch (alt168) {
             case 1 :
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6629:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6640:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6629:3: ( ( ruleJvmFormalParameter ) )
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6630:1: ( ruleJvmFormalParameter )
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6640:3: ( ( ruleJvmFormalParameter ) )
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6641:1: ( ruleJvmFormalParameter )
                 {
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6630:1: ( ruleJvmFormalParameter )
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6631:1: ruleJvmFormalParameter
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6641:1: ( ruleJvmFormalParameter )
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6642:1: ruleJvmFormalParameter
                 {
-                pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15206);
+                pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15225);
                 ruleJvmFormalParameter();
 
                 state._fsp--;
@@ -26077,29 +26580,29 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                 }
 
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6633:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop162:
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6644:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
+                loop167:
                 do {
-                    int alt162=2;
-                    int LA162_0 = input.LA(1);
+                    int alt167=2;
+                    int LA167_0 = input.LA(1);
 
-                    if ( (LA162_0==21) ) {
-                        alt162=1;
+                    if ( (LA167_0==21) ) {
+                        alt167=1;
                     }
 
 
-                    switch (alt162) {
+                    switch (alt167) {
                 	case 1 :
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6633:4: ',' ( ( ruleJvmFormalParameter ) )
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6644:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,21,FOLLOW_21_in_synpred31_InternalFXGraph15213); if (state.failed) return ;
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6634:1: ( ( ruleJvmFormalParameter ) )
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6635:1: ( ruleJvmFormalParameter )
+                	    match(input,21,FOLLOW_21_in_synpred31_InternalFXGraph15232); if (state.failed) return ;
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6645:1: ( ( ruleJvmFormalParameter ) )
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6646:1: ( ruleJvmFormalParameter )
                 	    {
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6635:1: ( ruleJvmFormalParameter )
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6636:1: ruleJvmFormalParameter
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6646:1: ( ruleJvmFormalParameter )
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6647:1: ruleJvmFormalParameter
                 	    {
-                	    pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15220);
+                	    pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15239);
                 	    ruleJvmFormalParameter();
 
                 	    state._fsp--;
@@ -26115,7 +26618,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop162;
+                	    break loop167;
                     }
                 } while (true);
 
@@ -26125,13 +26628,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
         }
 
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6638:6: ( ( '|' ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:1: ( '|' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6649:6: ( ( '|' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6650:1: ( '|' )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6639:1: ( '|' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6640:2: '|'
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6650:1: ( '|' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6651:2: '|'
         {
-        match(input,88,FOLLOW_88_in_synpred31_InternalFXGraph15234); if (state.failed) return ;
+        match(input,88,FOLLOW_88_in_synpred31_InternalFXGraph15253); if (state.failed) return ;
 
         }
 
@@ -26148,18 +26651,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred32_InternalFXGraph
     public final void synpred32_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6707:4: ( ( () '[' ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6707:5: ( () '[' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6718:4: ( ( () '[' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6718:5: ( () '[' )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6707:5: ( () '[' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6707:6: () '['
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6718:5: ( () '[' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6718:6: () '['
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6707:6: ()
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6708:1: 
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6718:6: ()
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6719:1: 
         {
         }
 
-        match(input,20,FOLLOW_20_in_synpred32_InternalFXGraph15354); if (state.failed) return ;
+        match(input,20,FOLLOW_20_in_synpred32_InternalFXGraph15373); if (state.failed) return ;
 
         }
 
@@ -26170,10 +26673,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred33_InternalFXGraph
     public final void synpred33_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6872:4: ( '<' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6872:6: '<'
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:4: ( '<' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:6: '<'
         {
-        match(input,61,FOLLOW_61_in_synpred33_InternalFXGraph15803); if (state.failed) return ;
+        match(input,61,FOLLOW_61_in_synpred33_InternalFXGraph15822); if (state.failed) return ;
 
         }
     }
@@ -26181,13 +26684,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred34_InternalFXGraph
     public final void synpred34_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:5: ( ( '(' ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6922:1: ( '(' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6932:5: ( ( '(' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6933:1: ( '(' )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6922:1: ( '(' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:2: '('
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6933:1: ( '(' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6934:2: '('
         {
-        match(input,28,FOLLOW_28_in_synpred34_InternalFXGraph15899); if (state.failed) return ;
+        match(input,28,FOLLOW_28_in_synpred34_InternalFXGraph15918); if (state.failed) return ;
 
         }
 
@@ -26198,35 +26701,35 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred35_InternalFXGraph
     public final void synpred35_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:4: ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:6: () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:5: ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:6: () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6942:6: ()
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6943:1: 
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:6: ()
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6954:1: 
         {
         }
 
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6943:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
-        int alt165=2;
-        int LA165_0 = input.LA(1);
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6954:2: ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )?
+        int alt170=2;
+        int LA170_0 = input.LA(1);
 
-        if ( (LA165_0==RULE_ID||LA165_0==28||LA165_0==74) ) {
-            alt165=1;
+        if ( (LA170_0==RULE_ID||LA170_0==28||LA170_0==74) ) {
+            alt170=1;
         }
-        switch (alt165) {
+        switch (alt170) {
             case 1 :
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6943:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6954:3: ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )*
                 {
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6943:3: ( ( ruleJvmFormalParameter ) )
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6944:1: ( ruleJvmFormalParameter )
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6954:3: ( ( ruleJvmFormalParameter ) )
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6955:1: ( ruleJvmFormalParameter )
                 {
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6944:1: ( ruleJvmFormalParameter )
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6945:1: ruleJvmFormalParameter
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6955:1: ( ruleJvmFormalParameter )
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6956:1: ruleJvmFormalParameter
                 {
-                pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15951);
+                pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15970);
                 ruleJvmFormalParameter();
 
                 state._fsp--;
@@ -26237,29 +26740,29 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                 }
 
-                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6947:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
-                loop164:
+                // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6958:2: ( ',' ( ( ruleJvmFormalParameter ) ) )*
+                loop169:
                 do {
-                    int alt164=2;
-                    int LA164_0 = input.LA(1);
+                    int alt169=2;
+                    int LA169_0 = input.LA(1);
 
-                    if ( (LA164_0==21) ) {
-                        alt164=1;
+                    if ( (LA169_0==21) ) {
+                        alt169=1;
                     }
 
 
-                    switch (alt164) {
+                    switch (alt169) {
                 	case 1 :
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6947:4: ',' ( ( ruleJvmFormalParameter ) )
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6958:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,21,FOLLOW_21_in_synpred35_InternalFXGraph15958); if (state.failed) return ;
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6948:1: ( ( ruleJvmFormalParameter ) )
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6949:1: ( ruleJvmFormalParameter )
+                	    match(input,21,FOLLOW_21_in_synpred35_InternalFXGraph15977); if (state.failed) return ;
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6959:1: ( ( ruleJvmFormalParameter ) )
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6960:1: ( ruleJvmFormalParameter )
                 	    {
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6949:1: ( ruleJvmFormalParameter )
-                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6950:1: ruleJvmFormalParameter
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6960:1: ( ruleJvmFormalParameter )
+                	    // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6961:1: ruleJvmFormalParameter
                 	    {
-                	    pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15965);
+                	    pushFollow(FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15984);
                 	    ruleJvmFormalParameter();
 
                 	    state._fsp--;
@@ -26275,7 +26778,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	    break;
 
                 	default :
-                	    break loop164;
+                	    break loop169;
                     }
                 } while (true);
 
@@ -26285,13 +26788,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
         }
 
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6952:6: ( ( '|' ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:1: ( '|' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6963:6: ( ( '|' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6964:1: ( '|' )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6953:1: ( '|' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6954:2: '|'
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6964:1: ( '|' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:6965:2: '|'
         {
-        match(input,88,FOLLOW_88_in_synpred35_InternalFXGraph15979); if (state.failed) return ;
+        match(input,88,FOLLOW_88_in_synpred35_InternalFXGraph15998); if (state.failed) return ;
 
         }
 
@@ -26308,18 +26811,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred36_InternalFXGraph
     public final void synpred36_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7021:4: ( ( () '[' ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7021:5: ( () '[' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7032:4: ( ( () '[' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7032:5: ( () '[' )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7021:5: ( () '[' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7021:6: () '['
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7032:5: ( () '[' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7032:6: () '['
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7021:6: ()
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7022:1: 
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7032:6: ()
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7033:1: 
         {
         }
 
-        match(input,20,FOLLOW_20_in_synpred36_InternalFXGraph16099); if (state.failed) return ;
+        match(input,20,FOLLOW_20_in_synpred36_InternalFXGraph16118); if (state.failed) return ;
 
         }
 
@@ -26330,7 +26833,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred37_InternalFXGraph
     public final void synpred37_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7361:2: ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7372:2: ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )
         // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:
         {
         if ( (input.LA(1)>=RULE_STRING && input.LA(1)<=RULE_ID)||(input.LA(1)>=RULE_HEX && input.LA(1)<=RULE_DECIMAL)||input.LA(1)==15||input.LA(1)==20||input.LA(1)==26||input.LA(1)==28||input.LA(1)==37||(input.LA(1)>=39 && input.LA(1)<=42)||input.LA(1)==61||input.LA(1)==77||input.LA(1)==82||input.LA(1)==90||input.LA(1)==92||(input.LA(1)>=95 && input.LA(1)<=97)||(input.LA(1)>=100 && input.LA(1)<=108)||input.LA(1)==110 ) {
@@ -26350,10 +26853,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred38_InternalFXGraph
     public final void synpred38_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:5: ( 'catch' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7455:7: 'catch'
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:5: ( 'catch' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7466:7: 'catch'
         {
-        match(input,111,FOLLOW_111_in_synpred38_InternalFXGraph17272); if (state.failed) return ;
+        match(input,111,FOLLOW_111_in_synpred38_InternalFXGraph17291); if (state.failed) return ;
 
         }
     }
@@ -26361,10 +26864,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred39_InternalFXGraph
     public final void synpred39_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7474:5: ( 'finally' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7474:7: 'finally'
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7485:5: ( 'finally' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7485:7: 'finally'
         {
-        match(input,109,FOLLOW_109_in_synpred39_InternalFXGraph17302); if (state.failed) return ;
+        match(input,109,FOLLOW_109_in_synpred39_InternalFXGraph17321); if (state.failed) return ;
 
         }
     }
@@ -26372,10 +26875,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred42_InternalFXGraph
     public final void synpred42_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7700:3: ( '.' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7701:2: '.'
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7711:3: ( '.' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7712:2: '.'
         {
-        match(input,85,FOLLOW_85_in_synpred42_InternalFXGraph17827); if (state.failed) return ;
+        match(input,85,FOLLOW_85_in_synpred42_InternalFXGraph17846); if (state.failed) return ;
 
         }
     }
@@ -26383,18 +26886,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred43_InternalFXGraph
     public final void synpred43_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7826:2: ( ( () ruleArrayBrackets ) )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7826:3: ( () ruleArrayBrackets )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7837:2: ( ( () ruleArrayBrackets ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7837:3: ( () ruleArrayBrackets )
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7826:3: ( () ruleArrayBrackets )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7826:4: () ruleArrayBrackets
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7837:3: ( () ruleArrayBrackets )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7837:4: () ruleArrayBrackets
         {
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7826:4: ()
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7827:1: 
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7837:4: ()
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:7838:1: 
         {
         }
 
-        pushFollow(FOLLOW_ruleArrayBrackets_in_synpred43_InternalFXGraph18212);
+        pushFollow(FOLLOW_ruleArrayBrackets_in_synpred43_InternalFXGraph18231);
         ruleArrayBrackets();
 
         state._fsp--;
@@ -26409,22 +26912,55 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred44_InternalFXGraph
     public final void synpred44_InternalFXGraph_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8011:4: ( '<' )
-        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8011:6: '<'
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8022:4: ( '<' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8022:6: '<'
         {
-        match(input,61,FOLLOW_61_in_synpred44_InternalFXGraph18664); if (state.failed) return ;
+        match(input,61,FOLLOW_61_in_synpred44_InternalFXGraph18683); if (state.failed) return ;
 
         }
     }
     // $ANTLR end synpred44_InternalFXGraph
 
+    // $ANTLR start synpred45_InternalFXGraph
+    public final void synpred45_InternalFXGraph_fragment() throws RecognitionException {   
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:3: ( ( () '.' ) )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:4: ( () '.' )
+        {
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:4: ( () '.' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:5: () '.'
+        {
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8071:5: ()
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8072:1: 
+        {
+        }
+
+        match(input,85,FOLLOW_85_in_synpred45_InternalFXGraph18778); if (state.failed) return ;
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred45_InternalFXGraph
+
+    // $ANTLR start synpred46_InternalFXGraph
+    public final void synpred46_InternalFXGraph_fragment() throws RecognitionException {   
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8098:4: ( '<' )
+        // ../org.eclipse.fx.ide.fxgraph/src-gen/org/eclipse/fx/ide/fxgraph/parser/antlr/internal/InternalFXGraph.g:8098:6: '<'
+        {
+        match(input,61,FOLLOW_61_in_synpred46_InternalFXGraph18835); if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred46_InternalFXGraph
+
     // Delegated rules
 
-    public final boolean synpred11_InternalFXGraph() {
+    public final boolean synpred7_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred11_InternalFXGraph_fragment(); // can never throw exception
+            synpred7_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26434,11 +26970,25 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred20_InternalFXGraph() {
+    public final boolean synpred36_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred20_InternalFXGraph_fragment(); // can never throw exception
+            synpred36_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred21_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred21_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26462,11 +27012,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred16_InternalFXGraph() {
+    public final boolean synpred27_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred16_InternalFXGraph_fragment(); // can never throw exception
+            synpred27_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26476,109 +27026,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred32_InternalFXGraph() {
+    public final boolean synpred12_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred32_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred2_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred2_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred1_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred35_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred35_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred5_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred5_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred23_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred23_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred10_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred10_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred9_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred9_InternalFXGraph_fragment(); // can never throw exception
+            synpred12_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26602,11 +27054,263 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred3_InternalFXGraph() {
+    public final boolean synpred43_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred3_InternalFXGraph_fragment(); // can never throw exception
+            synpred43_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred46_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred46_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred15_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred15_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred11_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred11_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred26_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred26_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred23_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred30_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred30_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred33_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred33_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred4_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred4_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred17_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred17_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred14_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred14_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred1_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred45_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred45_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred42_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred42_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred16_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred16_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred44_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred44_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred13_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred13_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred20_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred20_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred10_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred10_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26644,53 +27348,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred37_InternalFXGraph() {
+    public final boolean synpred3_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred37_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred7_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred7_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred12_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred12_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred44_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred44_InternalFXGraph_fragment(); // can never throw exception
+            synpred3_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26714,11 +27376,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred15_InternalFXGraph() {
+    public final boolean synpred32_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred15_InternalFXGraph_fragment(); // can never throw exception
+            synpred32_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26728,165 +27390,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred25_InternalFXGraph() {
+    public final boolean synpred35_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred25_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred26_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred26_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred36_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred36_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred19_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred19_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred30_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred30_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred17_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred17_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred4_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred27_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred27_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred13_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred13_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred33_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred33_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred14_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred14_InternalFXGraph_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred42_InternalFXGraph() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred42_InternalFXGraph_fragment(); // can never throw exception
+            synpred35_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26910,11 +27418,25 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred31_InternalFXGraph() {
+    public final boolean synpred9_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred31_InternalFXGraph_fragment(); // can never throw exception
+            synpred9_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred37_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred37_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26938,11 +27460,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred43_InternalFXGraph() {
+    public final boolean synpred2_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred43_InternalFXGraph_fragment(); // can never throw exception
+            synpred2_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26952,11 +27474,53 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred21_InternalFXGraph() {
+    public final boolean synpred5_InternalFXGraph() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred21_InternalFXGraph_fragment(); // can never throw exception
+            synpred5_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred19_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred19_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred31_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred31_InternalFXGraph_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred25_InternalFXGraph() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred25_InternalFXGraph_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -26987,8 +27551,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     protected DFA126 dfa126 = new DFA126(this);
     protected DFA128 dfa128 = new DFA128(this);
     protected DFA131 dfa131 = new DFA131(this);
-    protected DFA146 dfa146 = new DFA146(this);
-    protected DFA151 dfa151 = new DFA151(this);
+    protected DFA149 dfa149 = new DFA149(this);
+    protected DFA147 dfa147 = new DFA147(this);
+    protected DFA156 dfa156 = new DFA156(this);
     static final String DFA3_eotS =
         "\6\uffff";
     static final String DFA3_eofS =
@@ -27054,11 +27619,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA49_acceptS =
         "\10\uffff\1\2\1\1";
     static final String DFA49_specialS =
-        "\1\uffff\1\5\1\3\1\4\1\0\1\2\1\6\1\1\2\uffff}>";
+        "\1\uffff\1\2\1\3\1\4\1\5\1\6\1\0\1\1\2\uffff}>";
     static final String[] DFA49_transitionS = {
-            "\2\10\1\uffff\3\10\5\uffff\1\10\4\uffff\3\10\3\uffff\4\10\7"+
-            "\uffff\6\10\3\uffff\1\10\11\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1"+
-            "\7\31\10\1\uffff\27\10",
+            "\2\10\1\uffff\3\10\5\uffff\1\10\4\uffff\3\10\3\uffff\4\10\7\uffff\6\10\3\uffff\1\10\11\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\31\10\1\uffff\27\10",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -27107,10 +27670,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA49_4 = input.LA(1);
+                        int LA49_6 = input.LA(1);
 
                          
-                        int index49_4 = input.index();
+                        int index49_6 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalFXGraph()) ) {s = 9;}
@@ -27118,7 +27681,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index49_4);
+                        input.seek(index49_6);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
@@ -27137,10 +27700,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA49_5 = input.LA(1);
+                        int LA49_1 = input.LA(1);
 
                          
-                        int index49_5 = input.index();
+                        int index49_1 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalFXGraph()) ) {s = 9;}
@@ -27148,7 +27711,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index49_5);
+                        input.seek(index49_1);
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
@@ -27182,10 +27745,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         if ( s>=0 ) return s;
                         break;
                     case 5 : 
-                        int LA49_1 = input.LA(1);
+                        int LA49_4 = input.LA(1);
 
                          
-                        int index49_1 = input.index();
+                        int index49_4 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalFXGraph()) ) {s = 9;}
@@ -27193,14 +27756,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index49_1);
+                        input.seek(index49_4);
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
-                        int LA49_6 = input.LA(1);
+                        int LA49_5 = input.LA(1);
 
                          
-                        int index49_6 = input.index();
+                        int index49_5 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1_InternalFXGraph()) ) {s = 9;}
@@ -27208,7 +27771,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index49_6);
+                        input.seek(index49_5);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -27230,11 +27793,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA59_acceptS =
         "\1\uffff\1\2\10\uffff\1\1";
     static final String DFA59_specialS =
-        "\2\uffff\1\2\1\6\1\4\1\5\1\1\1\0\1\3\1\7\1\uffff}>";
+        "\2\uffff\1\5\1\4\1\6\1\7\1\3\1\2\1\0\1\1\1\uffff}>";
     static final String[] DFA59_transitionS = {
-            "\2\1\1\uffff\3\1\5\uffff\1\1\4\uffff\3\1\3\uffff\4\1\7\uffff"+
-            "\6\1\3\uffff\1\1\11\uffff\5\1\1\2\1\3\10\1\1\4\1\5\1\6\1\7\1"+
-            "\10\1\11\13\1\1\uffff\27\1",
+            "\2\1\1\uffff\3\1\5\uffff\1\1\4\uffff\3\1\3\uffff\4\1\7\uffff\6\1\3\uffff\1\1\11\uffff\5\1\1\2\1\3\10\1\1\4\1\5\1\6\1\7\1\10\1\11\13\1\1\uffff\27\1",
             "",
             "\1\uffff",
             "\1\uffff",
@@ -27284,51 +27845,6 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA59_7 = input.LA(1);
-
-                         
-                        int index59_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index59_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA59_6 = input.LA(1);
-
-                         
-                        int index59_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index59_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA59_2 = input.LA(1);
-
-                         
-                        int index59_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index59_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA59_8 = input.LA(1);
 
                          
@@ -27343,37 +27859,52 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         input.seek(index59_8);
                         if ( s>=0 ) return s;
                         break;
+                    case 1 : 
+                        int LA59_9 = input.LA(1);
+
+                         
+                        int index59_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index59_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA59_7 = input.LA(1);
+
+                         
+                        int index59_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index59_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA59_6 = input.LA(1);
+
+                         
+                        int index59_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index59_6);
+                        if ( s>=0 ) return s;
+                        break;
                     case 4 : 
-                        int LA59_4 = input.LA(1);
-
-                         
-                        int index59_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index59_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA59_5 = input.LA(1);
-
-                         
-                        int index59_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index59_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
                         int LA59_3 = input.LA(1);
 
                          
@@ -27388,11 +27919,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         input.seek(index59_3);
                         if ( s>=0 ) return s;
                         break;
-                    case 7 : 
-                        int LA59_9 = input.LA(1);
+                    case 5 : 
+                        int LA59_2 = input.LA(1);
 
                          
-                        int index59_9 = input.index();
+                        int index59_2 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred7_InternalFXGraph()) ) {s = 10;}
@@ -27400,7 +27931,37 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index59_9);
+                        input.seek(index59_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA59_4 = input.LA(1);
+
+                         
+                        int index59_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index59_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA59_5 = input.LA(1);
+
+                         
+                        int index59_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred7_InternalFXGraph()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index59_5);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -27483,8 +28044,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA78_specialS =
         "\1\uffff\1\0\114\uffff}>";
     static final String[] DFA78_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\2\2\1\1\1\2"+
-            "\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\2\2\1\1\1\2\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
             "\1\uffff",
             "",
             "",
@@ -27636,10 +28196,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA77_specialS =
         "\1\0\1\1\1\2\41\uffff}>";
     static final String[] DFA77_transitionS = {
-            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\5\uffff\1\5\1\uffff"+
-            "\1\2\1\43\7\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff\1\3"+
-            "\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff\1\5"+
-            "\2\uffff\3\5\2\uffff\11\5\1\uffff\1\5",
+            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\5\uffff\1\5\1\uffff\1\2\1\43\7\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff\1\3\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff\11\5\1\uffff\1\5",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -27787,8 +28344,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA79_specialS =
         "\1\uffff\1\0\114\uffff}>";
     static final String[] DFA79_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\1\2\2\3\uffff\4\2\7\uffff"+
-            "\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\1\2\2\3\uffff\4\2\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
             "\1\uffff",
             "",
             "",
@@ -27936,15 +28492,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA81_maxS =
         "\1\156\26\uffff\1\0\10\uffff";
     static final String DFA81_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\6\uffff\1\6\11\uffff\1\7\1\uffff\1"+
-        "\12\1\13\1\14\1\15\1\16\1\17\1\10\1\11";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\6\uffff\1\6\11\uffff\1\7\1\uffff\1\12\1\13\1\14\1\15\1\16\1\17\1\10\1\11";
     static final String DFA81_specialS =
         "\1\0\26\uffff\1\1\10\uffff}>";
     static final String[] DFA81_transitionS = {
-            "\1\14\1\5\1\uffff\3\14\5\uffff\1\5\4\uffff\1\14\5\uffff\1\2"+
-            "\1\uffff\1\35\10\uffff\1\14\1\uffff\1\5\2\14\23\uffff\1\5\34"+
-            "\uffff\1\26\1\uffff\1\3\2\uffff\1\27\1\30\1\31\2\uffff\3\5\1"+
-            "\1\2\14\1\32\1\33\1\34\1\uffff\1\4",
+            "\1\14\1\5\1\uffff\3\14\5\uffff\1\5\4\uffff\1\14\5\uffff\1\2\1\uffff\1\35\10\uffff\1\14\1\uffff\1\5\2\14\23\uffff\1\5\34\uffff\1\26\1\uffff\1\3\2\uffff\1\27\1\30\1\31\2\uffff\3\5\1\1\2\14\1\32\1\33\1\34\1\uffff\1\4",
             "",
             "",
             "",
@@ -28089,10 +28641,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA90_specialS =
         "\1\0\1\1\1\2\43\uffff}>";
     static final String[] DFA90_transitionS = {
-            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\1\uffff\1\5\3\uffff"+
-            "\1\5\1\uffff\1\2\10\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff"+
-            "\1\3\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff"+
-            "\1\5\2\uffff\16\5\1\uffff\1\5",
+            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\1\uffff\1\5\3\uffff\1\5\1\uffff\1\2\10\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff\1\3\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\16\5\1\uffff\1\5",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -28240,10 +28789,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA97_specialS =
         "\1\uffff\1\0\41\uffff}>";
     static final String[] DFA97_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\2\5\uffff\1\2\1\uffff"+
-            "\1\1\10\uffff\1\2\1\uffff\4\2\22\uffff\1\2\14\uffff\1\2\2\uffff"+
-            "\1\2\4\uffff\1\2\7\uffff\1\2\1\uffff\1\2\2\uffff\3\2\2\uffff"+
-            "\11\2\1\uffff\1\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\2\5\uffff\1\2\1\uffff\1\1\10\uffff\1\2\1\uffff\4\2\22\uffff\1\2\14\uffff\1\2\2\uffff\1\2\4\uffff\1\2\7\uffff\1\2\1\uffff\1\2\2\uffff\3\2\2\uffff\11\2\1\uffff\1\2",
             "\1\uffff",
             "",
             "",
@@ -28352,10 +28898,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA96_specialS =
         "\1\0\1\1\1\2\37\uffff}>";
     static final String[] DFA96_transitionS = {
-            "\1\4\1\1\1\uffff\3\4\5\uffff\1\4\4\uffff\1\4\5\uffff\1\4\1\uffff"+
-            "\1\2\10\uffff\1\4\1\uffff\4\4\22\uffff\1\4\14\uffff\1\3\2\uffff"+
-            "\1\4\4\uffff\1\4\7\uffff\1\4\1\uffff\1\4\2\uffff\3\4\2\uffff"+
-            "\11\4\1\uffff\1\4",
+            "\1\4\1\1\1\uffff\3\4\5\uffff\1\4\4\uffff\1\4\5\uffff\1\4\1\uffff\1\2\10\uffff\1\4\1\uffff\4\4\22\uffff\1\4\14\uffff\1\3\2\uffff\1\4\4\uffff\1\4\7\uffff\1\4\1\uffff\1\4\2\uffff\3\4\2\uffff\11\4\1\uffff\1\4",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -28497,8 +29040,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA119_specialS =
         "\1\uffff\1\0\114\uffff}>";
     static final String[] DFA119_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\2\2\1\1\1\2"+
-            "\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\2\2\1\1\1\2\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
             "\1\uffff",
             "",
             "",
@@ -28608,7 +29150,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA119_transition;
         }
         public String getDescription() {
-            return "6607:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )?";
+            return "6618:2: ( ( ( ( '(' ) )=> (lv_explicitOperationCall_7_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )? otherlv_12= ')' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -28650,10 +29192,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA118_specialS =
         "\1\0\1\1\1\2\41\uffff}>";
     static final String[] DFA118_transitionS = {
-            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\5\uffff\1\5\1\uffff"+
-            "\1\2\1\43\7\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff\1\3"+
-            "\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff\1\5"+
-            "\2\uffff\3\5\2\uffff\11\5\1\uffff\1\5",
+            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\5\uffff\1\5\1\uffff\1\2\1\43\7\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff\1\3\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff\11\5\1\uffff\1\5",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -28721,7 +29260,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA118_transition;
         }
         public String getDescription() {
-            return "6628:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )?";
+            return "6639:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_featureCallArguments_8_0= ruleXShortClosure ) ) | ( ( (lv_featureCallArguments_9_0= ruleXExpression ) ) (otherlv_10= ',' ( (lv_featureCallArguments_11_0= ruleXExpression ) ) )* ) )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -28801,8 +29340,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA120_specialS =
         "\1\uffff\1\0\114\uffff}>";
     static final String[] DFA120_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\1\2\2\3\uffff\4\2\7\uffff"+
-            "\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\1\2\2\3\uffff\4\2\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
             "\1\uffff",
             "",
             "",
@@ -28912,7 +29450,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA120_transition;
         }
         public String getDescription() {
-            return "6707:3: ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )?";
+            return "6718:3: ( ( ( () '[' ) )=> (lv_featureCallArguments_13_0= ruleXClosure ) )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -28954,8 +29492,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA124_specialS =
         "\1\uffff\1\0\114\uffff}>";
     static final String[] DFA124_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\4\2\7\uffff"+
-            "\6\2\3\uffff\1\2\11\uffff\5\2\1\1\32\2\1\uffff\27\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\4\2\7\uffff\6\2\3\uffff\1\2\11\uffff\5\2\1\1\32\2\1\uffff\27\2",
             "\1\uffff",
             "",
             "",
@@ -29065,7 +29602,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA124_transition;
         }
         public String getDescription() {
-            return "6872:2: ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )?";
+            return "6883:2: ( ( ( '<' )=>otherlv_3= '<' ) ( (lv_typeArguments_4_0= ruleJvmArgumentTypeReference ) ) (otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) ) )* otherlv_7= '>' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -29107,8 +29644,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA127_specialS =
         "\1\uffff\1\0\114\uffff}>";
     static final String[] DFA127_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\2\2\1\1\1\2"+
-            "\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\3\2\3\uffff\2\2\1\1\1\2\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
             "\1\uffff",
             "",
             "",
@@ -29218,7 +29754,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA127_transition;
         }
         public String getDescription() {
-            return "6921:3: ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?";
+            return "6932:3: ( ( ( ( '(' ) )=> (lv_explicitConstructorCall_8_0= '(' ) ) ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )? otherlv_13= ')' )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -29260,10 +29796,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA126_specialS =
         "\1\0\1\1\1\2\41\uffff}>";
     static final String[] DFA126_transitionS = {
-            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\5\uffff\1\5\1\uffff"+
-            "\1\2\1\43\7\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff\1\3"+
-            "\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff\1\5"+
-            "\2\uffff\3\5\2\uffff\11\5\1\uffff\1\5",
+            "\1\5\1\1\1\uffff\3\5\5\uffff\1\5\4\uffff\1\5\5\uffff\1\5\1\uffff\1\2\1\43\7\uffff\1\5\1\uffff\4\5\22\uffff\1\5\14\uffff\1\3\2\uffff\1\5\4\uffff\1\5\5\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff\11\5\1\uffff\1\5",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -29331,7 +29864,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA126_transition;
         }
         public String getDescription() {
-            return "6942:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )?";
+            return "6953:2: ( ( ( ( () ( ( ( ruleJvmFormalParameter ) ) ( ',' ( ( ruleJvmFormalParameter ) ) )* )? ( ( '|' ) ) ) )=> (lv_arguments_9_0= ruleXShortClosure ) ) | ( ( (lv_arguments_10_0= ruleXExpression ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) ) )* ) )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -29411,8 +29944,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA128_specialS =
         "\1\uffff\1\0\114\uffff}>";
     static final String[] DFA128_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\1\2\2\3\uffff\4\2\7\uffff"+
-            "\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
+            "\2\2\1\uffff\3\2\5\uffff\1\2\4\uffff\1\1\2\2\3\uffff\4\2\7\uffff\6\2\3\uffff\1\2\11\uffff\40\2\1\uffff\27\2",
             "\1\uffff",
             "",
             "",
@@ -29522,7 +30054,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA128_transition;
         }
         public String getDescription() {
-            return "7021:3: ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?";
+            return "7032:3: ( ( ( () '[' ) )=> (lv_arguments_14_0= ruleXClosure ) )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -29562,15 +30094,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA131_acceptS =
         "\41\uffff\1\2\53\uffff\1\1";
     static final String DFA131_specialS =
-        "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
-        "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
-        "\1\32\1\33\1\34\1\35\1\36\1\37\55\uffff}>";
+        "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\55\uffff}>";
     static final String[] DFA131_transitionS = {
-            "\1\27\1\1\1\uffff\1\23\1\24\1\25\5\uffff\1\4\4\uffff\1\20\2"+
-            "\41\3\uffff\1\12\1\41\1\40\1\41\7\uffff\1\17\1\41\1\3\1\22\1"+
-            "\21\1\7\3\uffff\1\41\11\uffff\5\41\1\15\17\41\1\10\4\41\1\6"+
-            "\5\41\1\uffff\1\41\1\31\1\41\1\13\2\41\1\32\1\33\1\34\2\41\1"+
-            "\2\1\5\1\16\1\11\1\26\1\30\1\35\1\36\1\37\1\41\1\14\1\41",
+            "\1\27\1\1\1\uffff\1\23\1\24\1\25\5\uffff\1\4\4\uffff\1\20\2\41\3\uffff\1\12\1\41\1\40\1\41\7\uffff\1\17\1\41\1\3\1\22\1\21\1\7\3\uffff\1\41\11\uffff\5\41\1\15\17\41\1\10\4\41\1\6\5\41\1\uffff\1\41\1\31\1\41\1\13\2\41\1\32\1\33\1\34\2\41\1\2\1\5\1\16\1\11\1\26\1\30\1\35\1\36\1\37\1\41\1\14\1\41",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -29680,7 +30206,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             this.transition = DFA131_transition;
         }
         public String getDescription() {
-            return "7361:1: ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )?";
+            return "7372:1: ( ( 'extends' | 'static' | 'import' | 'extension' | '!' | '-' | '+' | 'new' | '{' | 'switch' | 'synchronized' | '<' | 'super' | '#' | '[' | 'false' | 'true' | 'null' | 'typeof' | 'if' | 'for' | 'while' | 'do' | 'throw' | 'return' | 'try' | '(' | RULE_ID | RULE_HEX | RULE_INT | RULE_DECIMAL | RULE_STRING )=> (lv_expression_2_0= ruleXExpression ) )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -30174,21 +30700,20 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             throw nvae;
         }
     }
-    static final String DFA146_eotS =
-        "\125\uffff";
-    static final String DFA146_eofS =
-        "\1\2\124\uffff";
-    static final String DFA146_minS =
-        "\1\4\1\0\123\uffff";
-    static final String DFA146_maxS =
-        "\1\157\1\0\123\uffff";
-    static final String DFA146_acceptS =
-        "\2\uffff\1\2\121\uffff\1\1";
-    static final String DFA146_specialS =
-        "\1\uffff\1\0\123\uffff}>";
-    static final String[] DFA146_transitionS = {
-            "\2\2\1\uffff\3\2\5\uffff\1\2\2\uffff\16\2\5\uffff\6\2\3\uffff"+
-            "\1\2\11\uffff\5\2\1\1\32\2\1\uffff\27\2",
+    static final String DFA149_eotS =
+        "\126\uffff";
+    static final String DFA149_eofS =
+        "\1\2\125\uffff";
+    static final String DFA149_minS =
+        "\1\4\1\0\124\uffff";
+    static final String DFA149_maxS =
+        "\1\161\1\0\124\uffff";
+    static final String DFA149_acceptS =
+        "\2\uffff\1\2\122\uffff\1\1";
+    static final String DFA149_specialS =
+        "\1\uffff\1\0\124\uffff}>";
+    static final String[] DFA149_transitionS = {
+            "\2\2\1\uffff\3\2\5\uffff\1\2\2\uffff\16\2\5\uffff\6\2\3\uffff\1\2\11\uffff\5\2\1\1\32\2\1\uffff\27\2\1\uffff\1\2",
             "\1\uffff",
             "",
             "",
@@ -30272,81 +30797,242 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
+            "",
             ""
     };
 
-    static final short[] DFA146_eot = DFA.unpackEncodedString(DFA146_eotS);
-    static final short[] DFA146_eof = DFA.unpackEncodedString(DFA146_eofS);
-    static final char[] DFA146_min = DFA.unpackEncodedStringToUnsignedChars(DFA146_minS);
-    static final char[] DFA146_max = DFA.unpackEncodedStringToUnsignedChars(DFA146_maxS);
-    static final short[] DFA146_accept = DFA.unpackEncodedString(DFA146_acceptS);
-    static final short[] DFA146_special = DFA.unpackEncodedString(DFA146_specialS);
-    static final short[][] DFA146_transition;
+    static final short[] DFA149_eot = DFA.unpackEncodedString(DFA149_eotS);
+    static final short[] DFA149_eof = DFA.unpackEncodedString(DFA149_eofS);
+    static final char[] DFA149_min = DFA.unpackEncodedStringToUnsignedChars(DFA149_minS);
+    static final char[] DFA149_max = DFA.unpackEncodedStringToUnsignedChars(DFA149_maxS);
+    static final short[] DFA149_accept = DFA.unpackEncodedString(DFA149_acceptS);
+    static final short[] DFA149_special = DFA.unpackEncodedString(DFA149_specialS);
+    static final short[][] DFA149_transition;
 
     static {
-        int numStates = DFA146_transitionS.length;
-        DFA146_transition = new short[numStates][];
+        int numStates = DFA149_transitionS.length;
+        DFA149_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA146_transition[i] = DFA.unpackEncodedString(DFA146_transitionS[i]);
+            DFA149_transition[i] = DFA.unpackEncodedString(DFA149_transitionS[i]);
         }
     }
 
-    class DFA146 extends DFA {
+    class DFA149 extends DFA {
 
-        public DFA146(BaseRecognizer recognizer) {
+        public DFA149(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 146;
-            this.eot = DFA146_eot;
-            this.eof = DFA146_eof;
-            this.min = DFA146_min;
-            this.max = DFA146_max;
-            this.accept = DFA146_accept;
-            this.special = DFA146_special;
-            this.transition = DFA146_transition;
+            this.decisionNumber = 149;
+            this.eot = DFA149_eot;
+            this.eof = DFA149_eof;
+            this.min = DFA149_min;
+            this.max = DFA149_max;
+            this.accept = DFA149_accept;
+            this.special = DFA149_special;
+            this.transition = DFA149_transition;
         }
         public String getDescription() {
-            return "8011:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' )?";
+            return "8022:2: ( ( ( '<' )=>otherlv_1= '<' ) ( (lv_arguments_2_0= ruleJvmArgumentTypeReference ) ) (otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) ) )* otherlv_5= '>' ( ( ( ( () '.' ) )=> ( () otherlv_7= '.' ) ) ( ( ruleValidID ) ) ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )? )* )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA146_1 = input.LA(1);
+                        int LA149_1 = input.LA(1);
 
                          
-                        int index146_1 = input.index();
+                        int index149_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred44_InternalFXGraph()) ) {s = 84;}
+                        if ( (synpred44_InternalFXGraph()) ) {s = 85;}
 
                         else if ( (true) ) {s = 2;}
 
                          
-                        input.seek(index146_1);
+                        input.seek(index149_1);
                         if ( s>=0 ) return s;
                         break;
             }
             if (state.backtracking>0) {state.failed=true; return -1;}
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 146, _s, input);
+                new NoViableAltException(getDescription(), 149, _s, input);
             error(nvae);
             throw nvae;
         }
     }
-    static final String DFA151_eotS =
+    static final String DFA147_eotS =
+        "\126\uffff";
+    static final String DFA147_eofS =
+        "\1\2\125\uffff";
+    static final String DFA147_minS =
+        "\1\4\1\0\124\uffff";
+    static final String DFA147_maxS =
+        "\1\161\1\0\124\uffff";
+    static final String DFA147_acceptS =
+        "\2\uffff\1\2\122\uffff\1\1";
+    static final String DFA147_specialS =
+        "\1\uffff\1\0\124\uffff}>";
+    static final String[] DFA147_transitionS = {
+            "\2\2\1\uffff\3\2\5\uffff\1\2\2\uffff\16\2\5\uffff\6\2\3\uffff\1\2\11\uffff\5\2\1\1\32\2\1\uffff\27\2\1\uffff\1\2",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA147_eot = DFA.unpackEncodedString(DFA147_eotS);
+    static final short[] DFA147_eof = DFA.unpackEncodedString(DFA147_eofS);
+    static final char[] DFA147_min = DFA.unpackEncodedStringToUnsignedChars(DFA147_minS);
+    static final char[] DFA147_max = DFA.unpackEncodedStringToUnsignedChars(DFA147_maxS);
+    static final short[] DFA147_accept = DFA.unpackEncodedString(DFA147_acceptS);
+    static final short[] DFA147_special = DFA.unpackEncodedString(DFA147_specialS);
+    static final short[][] DFA147_transition;
+
+    static {
+        int numStates = DFA147_transitionS.length;
+        DFA147_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA147_transition[i] = DFA.unpackEncodedString(DFA147_transitionS[i]);
+        }
+    }
+
+    class DFA147 extends DFA {
+
+        public DFA147(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 147;
+            this.eot = DFA147_eot;
+            this.eof = DFA147_eof;
+            this.min = DFA147_min;
+            this.max = DFA147_max;
+            this.accept = DFA147_accept;
+            this.special = DFA147_special;
+            this.transition = DFA147_transition;
+        }
+        public String getDescription() {
+            return "8098:2: ( ( ( '<' )=>otherlv_9= '<' ) ( (lv_arguments_10_0= ruleJvmArgumentTypeReference ) ) (otherlv_11= ',' ( (lv_arguments_12_0= ruleJvmArgumentTypeReference ) ) )* otherlv_13= '>' )?";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA147_1 = input.LA(1);
+
+                         
+                        int index147_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred46_InternalFXGraph()) ) {s = 85;}
+
+                        else if ( (true) ) {s = 2;}
+
+                         
+                        input.seek(index147_1);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 147, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA156_eotS =
         "\7\uffff";
-    static final String DFA151_eofS =
+    static final String DFA156_eofS =
         "\2\uffff\1\4\2\uffff\1\4\1\uffff";
-    static final String DFA151_minS =
+    static final String DFA156_minS =
         "\1\5\1\uffff\1\125\1\5\1\uffff\1\125\1\uffff";
-    static final String DFA151_maxS =
+    static final String DFA156_maxS =
         "\1\47\1\uffff\1\131\1\116\1\uffff\1\131\1\uffff";
-    static final String DFA151_acceptS =
+    static final String DFA156_acceptS =
         "\1\uffff\1\1\2\uffff\1\2\1\uffff\1\3";
-    static final String DFA151_specialS =
+    static final String DFA156_specialS =
         "\7\uffff}>";
-    static final String[] DFA151_transitionS = {
+    static final String[] DFA156_transitionS = {
             "\1\2\41\uffff\1\1",
             "",
             "\1\3\3\uffff\1\4",
@@ -30356,37 +31042,37 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA151_eot = DFA.unpackEncodedString(DFA151_eotS);
-    static final short[] DFA151_eof = DFA.unpackEncodedString(DFA151_eofS);
-    static final char[] DFA151_min = DFA.unpackEncodedStringToUnsignedChars(DFA151_minS);
-    static final char[] DFA151_max = DFA.unpackEncodedStringToUnsignedChars(DFA151_maxS);
-    static final short[] DFA151_accept = DFA.unpackEncodedString(DFA151_acceptS);
-    static final short[] DFA151_special = DFA.unpackEncodedString(DFA151_specialS);
-    static final short[][] DFA151_transition;
+    static final short[] DFA156_eot = DFA.unpackEncodedString(DFA156_eotS);
+    static final short[] DFA156_eof = DFA.unpackEncodedString(DFA156_eofS);
+    static final char[] DFA156_min = DFA.unpackEncodedStringToUnsignedChars(DFA156_minS);
+    static final char[] DFA156_max = DFA.unpackEncodedStringToUnsignedChars(DFA156_maxS);
+    static final short[] DFA156_accept = DFA.unpackEncodedString(DFA156_acceptS);
+    static final short[] DFA156_special = DFA.unpackEncodedString(DFA156_specialS);
+    static final short[][] DFA156_transition;
 
     static {
-        int numStates = DFA151_transitionS.length;
-        DFA151_transition = new short[numStates][];
+        int numStates = DFA156_transitionS.length;
+        DFA156_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA151_transition[i] = DFA.unpackEncodedString(DFA151_transitionS[i]);
+            DFA156_transition[i] = DFA.unpackEncodedString(DFA156_transitionS[i]);
         }
     }
 
-    class DFA151 extends DFA {
+    class DFA156 extends DFA {
 
-        public DFA151(BaseRecognizer recognizer) {
+        public DFA156(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 151;
-            this.eot = DFA151_eot;
-            this.eof = DFA151_eof;
-            this.min = DFA151_min;
-            this.max = DFA151_max;
-            this.accept = DFA151_accept;
-            this.special = DFA151_special;
-            this.transition = DFA151_transition;
+            this.decisionNumber = 156;
+            this.eot = DFA156_eot;
+            this.eof = DFA156_eof;
+            this.min = DFA156_min;
+            this.max = DFA156_max;
+            this.accept = DFA156_accept;
+            this.special = DFA156_special;
+            this.transition = DFA156_transition;
         }
         public String getDescription() {
-            return "8398:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )";
+            return "8564:1: ( ( ( (lv_static_1_0= 'static' ) ) ( (lv_extension_2_0= 'extension' ) )? ( ( ruleQualifiedNameInStaticImport ) ) ( ( (lv_wildcard_4_0= '*' ) ) | ( (lv_memberName_5_0= ruleValidID ) ) ) ) | ( ( ruleQualifiedName ) ) | ( (lv_importedNamespace_7_0= ruleQualifiedNameWithWildcard ) ) )";
         }
     }
  
@@ -30886,249 +31572,262 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart13285 = new BitSet(new long[]{0x0000004000200000L});
     public static final BitSet FOLLOW_38_in_ruleXCasePart13301 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart13322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleXCasePart13341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXForLoopExpression_in_entryRuleXForLoopExpression13378 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXForLoopExpression13388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleXForLoopExpression13465 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXForLoopExpression13477 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression13498 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleXForLoopExpression13510 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression13533 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleXForLoopExpression13545 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression13566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXBasicForLoopExpression_in_entryRuleXBasicForLoopExpression13602 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXBasicForLoopExpression13612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleXBasicForLoopExpression13658 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXBasicForLoopExpression13670 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FFF96042000L});
-    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13692 = new BitSet(new long[]{0x0000000000200000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_21_in_ruleXBasicForLoopExpression13705 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FFF94042000L});
-    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13726 = new BitSet(new long[]{0x0000000000200000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleXBasicForLoopExpression13742 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF396042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13763 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleXBasicForLoopExpression13776 = new BitSet(new long[]{0x200007A0341083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13798 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_21_in_ruleXBasicForLoopExpression13811 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13832 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_29_in_ruleXBasicForLoopExpression13848 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression13905 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression13915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_ruleXWhileExpression13961 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXWhileExpression13973 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression13994 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleXWhileExpression14006 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression14027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXDoWhileExpression_in_entryRuleXDoWhileExpression14063 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXDoWhileExpression14073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_ruleXDoWhileExpression14119 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14140 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_96_in_ruleXDoWhileExpression14152 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXDoWhileExpression14164 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14185 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleXDoWhileExpression14197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXBlockExpression_in_entryRuleXBlockExpression14233 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXBlockExpression14243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleXBlockExpression14289 = new BitSet(new long[]{0x200007A01C1083B0L,0x00005FFF94042000L});
-    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBlockExpression14311 = new BitSet(new long[]{0x200007A01C1083B0L,0x00005FFF96042000L});
-    public static final BitSet FOLLOW_89_in_ruleXBlockExpression14324 = new BitSet(new long[]{0x200007A01C1083B0L,0x00005FFF94042000L});
-    public static final BitSet FOLLOW_27_in_ruleXBlockExpression14340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_entryRuleXExpressionOrVarDeclaration14376 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionOrVarDeclaration14386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXVariableDeclaration_in_ruleXExpressionOrVarDeclaration14433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXExpressionOrVarDeclaration14460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXVariableDeclaration_in_entryRuleXVariableDeclaration14495 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXVariableDeclaration14505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_98_in_ruleXVariableDeclaration14558 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_99_in_ruleXVariableDeclaration14589 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXVariableDeclaration14637 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration14658 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration14687 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleXVariableDeclaration14701 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXVariableDeclaration14722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_entryRuleJvmFormalParameter14760 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmFormalParameter14770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmFormalParameter14816 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleJvmFormalParameter14838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_entryRuleFullJvmFormalParameter14874 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFullJvmFormalParameter14884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleFullJvmFormalParameter14930 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleFullJvmFormalParameter14951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXFeatureCall_in_entryRuleXFeatureCall14987 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXFeatureCall14997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleXFeatureCall15044 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15065 = new BitSet(new long[]{0x4000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleXFeatureCall15078 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15099 = new BitSet(new long[]{0x4000000000200000L});
-    public static final BitSet FOLLOW_62_in_ruleXFeatureCall15113 = new BitSet(new long[]{0x2000008000008020L,0x0000007000000000L});
-    public static final BitSet FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall15138 = new BitSet(new long[]{0x0000000010100002L});
-    public static final BitSet FOLLOW_28_in_ruleXFeatureCall15172 = new BitSet(new long[]{0x200007A0341083B0L,0x00005FF395042400L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXFeatureCall15257 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15285 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_21_in_ruleXFeatureCall15298 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15319 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_29_in_ruleXFeatureCall15336 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_ruleXFeatureCall15371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeatureCallID_in_entryRuleFeatureCallID15409 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeatureCallID15420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleFeatureCallID15467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleFeatureCallID15491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleFeatureCallID15510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleFeatureCallID15529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_101_in_ruleFeatureCallID15548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdOrSuper_in_entryRuleIdOrSuper15589 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIdOrSuper15600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeatureCallID_in_ruleIdOrSuper15647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_ruleIdOrSuper15671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXConstructorCall_in_entryRuleXConstructorCall15711 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXConstructorCall15721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_ruleXConstructorCall15767 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXConstructorCall15790 = new BitSet(new long[]{0x2000000010100002L});
-    public static final BitSet FOLLOW_61_in_ruleXConstructorCall15811 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15833 = new BitSet(new long[]{0x4000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleXConstructorCall15846 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15867 = new BitSet(new long[]{0x4000000000200000L});
-    public static final BitSet FOLLOW_62_in_ruleXConstructorCall15881 = new BitSet(new long[]{0x0000000010100002L});
-    public static final BitSet FOLLOW_28_in_ruleXConstructorCall15917 = new BitSet(new long[]{0x200007A0341083B0L,0x00005FF395042400L});
-    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXConstructorCall16002 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall16030 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_21_in_ruleXConstructorCall16043 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall16064 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_29_in_ruleXConstructorCall16081 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_ruleXClosure_in_ruleXConstructorCall16116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXBooleanLiteral_in_entryRuleXBooleanLiteral16153 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXBooleanLiteral16163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleXBooleanLiteral16210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleXBooleanLiteral16234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXNullLiteral_in_entryRuleXNullLiteral16284 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXNullLiteral16294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_104_in_ruleXNullLiteral16340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXNumberLiteral_in_entryRuleXNumberLiteral16376 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXNumberLiteral16386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_ruleXNumberLiteral16441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXStringLiteral_in_entryRuleXStringLiteral16477 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXStringLiteral16487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleXStringLiteral16538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXTypeLiteral_in_entryRuleXTypeLiteral16579 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXTypeLiteral16589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_ruleXTypeLiteral16635 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXTypeLiteral16647 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXTypeLiteral16670 = new BitSet(new long[]{0x0000000020100000L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleXTypeLiteral16691 = new BitSet(new long[]{0x0000000020100000L});
-    public static final BitSet FOLLOW_29_in_ruleXTypeLiteral16704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXThrowExpression_in_entryRuleXThrowExpression16740 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXThrowExpression16750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_ruleXThrowExpression16796 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXThrowExpression16817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXReturnExpression_in_entryRuleXReturnExpression16853 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXReturnExpression16863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_107_in_ruleXReturnExpression16909 = new BitSet(new long[]{0x200007A0141083B2L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXReturnExpression17144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXTryCatchFinallyExpression_in_entryRuleXTryCatchFinallyExpression17181 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXTryCatchFinallyExpression17191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_ruleXTryCatchFinallyExpression17237 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17258 = new BitSet(new long[]{0x0000000000000000L,0x0000A00000000000L});
-    public static final BitSet FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression17288 = new BitSet(new long[]{0x0000000000000002L,0x0000A00000000000L});
-    public static final BitSet FOLLOW_109_in_ruleXTryCatchFinallyExpression17310 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_ruleXTryCatchFinallyExpression17354 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXSynchronizedExpression_in_entryRuleXSynchronizedExpression17413 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXSynchronizedExpression17423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_ruleXSynchronizedExpression17487 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXSynchronizedExpression17499 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17522 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleXSynchronizedExpression17534 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXCatchClause_in_entryRuleXCatchClause17591 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXCatchClause17601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_ruleXCatchClause17646 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXCatchClause17659 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_ruleXCatchClause17680 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleXCatchClause17692 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXCatchClause17713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName17750 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName17761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName17808 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
-    public static final BitSet FOLLOW_85_in_ruleQualifiedName17836 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName17859 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
-    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber17913 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumber17924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_HEX_in_ruleNumber17968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber17996 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
-    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber18022 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
-    public static final BitSet FOLLOW_85_in_ruleNumber18042 = new BitSet(new long[]{0x0000000000000300L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber18058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber18084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference18139 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmTypeReference18149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference18197 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference18233 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference18264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets18300 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArrayBrackets18311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleArrayBrackets18349 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleArrayBrackets18362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef18402 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef18412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleXFunctionTypeRef18450 = new BitSet(new long[]{0x0000000030000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18472 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_21_in_ruleXFunctionTypeRef18485 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18506 = new BitSet(new long[]{0x0000000020200000L});
-    public static final BitSet FOLLOW_29_in_ruleXFunctionTypeRef18522 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_74_in_ruleXFunctionTypeRef18536 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference18593 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference18603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference18651 = new BitSet(new long[]{0x2000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleJvmParameterizedTypeReference18672 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18694 = new BitSet(new long[]{0x4000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleJvmParameterizedTypeReference18707 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18728 = new BitSet(new long[]{0x4000000000200000L});
-    public static final BitSet FOLLOW_62_in_ruleJvmParameterizedTypeReference18742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference18780 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference18790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference18837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference18864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference18899 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference18909 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_ruleJvmWildcardTypeReference18955 = new BitSet(new long[]{0x0000000000000002L,0x0000005000000000L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference18977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference19004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound19042 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound19052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleJvmUpperBound19089 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound19110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded19146 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded19156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_ruleJvmUpperBoundAnded19193 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded19214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound19250 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound19260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_ruleJvmLowerBound19297 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound19318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard19357 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard19368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard19415 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_85_in_ruleQualifiedNameWithWildcard19433 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleQualifiedNameWithWildcard19446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID19487 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValidID19498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID19537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration19583 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXImportDeclaration19593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleXImportDeclaration19630 = new BitSet(new long[]{0x0000008000000020L});
-    public static final BitSet FOLLOW_39_in_ruleXImportDeclaration19650 = new BitSet(new long[]{0x0000000000000020L,0x0000002000000000L});
-    public static final BitSet FOLLOW_101_in_ruleXImportDeclaration19681 = new BitSet(new long[]{0x0000000000000020L,0x0000002000000000L});
-    public static final BitSet FOLLOW_ruleQualifiedNameInStaticImport_in_ruleXImportDeclaration19718 = new BitSet(new long[]{0x0000000000000020L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleXImportDeclaration19737 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleXImportDeclaration19777 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration19808 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration19835 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleXImportDeclaration19849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameInStaticImport_in_entryRuleQualifiedNameInStaticImport19888 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameInStaticImport19899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedNameInStaticImport19946 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_85_in_ruleQualifiedNameInStaticImport19964 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_21_in_ruleXCasePart13347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXForLoopExpression_in_entryRuleXForLoopExpression13397 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXForLoopExpression13407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleXForLoopExpression13484 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleXForLoopExpression13496 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression13517 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleXForLoopExpression13529 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression13552 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleXForLoopExpression13564 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression13585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXBasicForLoopExpression_in_entryRuleXBasicForLoopExpression13621 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXBasicForLoopExpression13631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleXBasicForLoopExpression13677 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleXBasicForLoopExpression13689 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FFF96042000L});
+    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13711 = new BitSet(new long[]{0x0000000000200000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_21_in_ruleXBasicForLoopExpression13724 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FFF94042000L});
+    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBasicForLoopExpression13745 = new BitSet(new long[]{0x0000000000200000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleXBasicForLoopExpression13761 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF396042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13782 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleXBasicForLoopExpression13795 = new BitSet(new long[]{0x200007A0341083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13817 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_21_in_ruleXBasicForLoopExpression13830 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13851 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_29_in_ruleXBasicForLoopExpression13867 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXBasicForLoopExpression13888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression13924 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression13934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_96_in_ruleXWhileExpression13980 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleXWhileExpression13992 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression14013 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleXWhileExpression14025 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression14046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXDoWhileExpression_in_entryRuleXDoWhileExpression14082 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXDoWhileExpression14092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_97_in_ruleXDoWhileExpression14138 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14159 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_96_in_ruleXDoWhileExpression14171 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleXDoWhileExpression14183 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression14204 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleXDoWhileExpression14216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXBlockExpression_in_entryRuleXBlockExpression14252 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXBlockExpression14262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleXBlockExpression14308 = new BitSet(new long[]{0x200007A01C1083B0L,0x00005FFF94042000L});
+    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_ruleXBlockExpression14330 = new BitSet(new long[]{0x200007A01C1083B0L,0x00005FFF96042000L});
+    public static final BitSet FOLLOW_89_in_ruleXBlockExpression14343 = new BitSet(new long[]{0x200007A01C1083B0L,0x00005FFF94042000L});
+    public static final BitSet FOLLOW_27_in_ruleXBlockExpression14359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpressionOrVarDeclaration_in_entryRuleXExpressionOrVarDeclaration14395 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionOrVarDeclaration14405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXVariableDeclaration_in_ruleXExpressionOrVarDeclaration14452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXExpressionOrVarDeclaration14479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXVariableDeclaration_in_entryRuleXVariableDeclaration14514 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXVariableDeclaration14524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_ruleXVariableDeclaration14577 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_99_in_ruleXVariableDeclaration14608 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXVariableDeclaration14656 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration14677 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration14706 = new BitSet(new long[]{0x0080000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleXVariableDeclaration14720 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXVariableDeclaration14741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_entryRuleJvmFormalParameter14779 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmFormalParameter14789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmFormalParameter14835 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleJvmFormalParameter14857 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_entryRuleFullJvmFormalParameter14893 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFullJvmFormalParameter14903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleFullJvmFormalParameter14949 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleFullJvmFormalParameter14970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXFeatureCall_in_entryRuleXFeatureCall15006 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXFeatureCall15016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleXFeatureCall15063 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15084 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleXFeatureCall15097 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall15118 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_62_in_ruleXFeatureCall15132 = new BitSet(new long[]{0x2000008000008020L,0x0000007000000000L});
+    public static final BitSet FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall15157 = new BitSet(new long[]{0x0000000010100002L});
+    public static final BitSet FOLLOW_28_in_ruleXFeatureCall15191 = new BitSet(new long[]{0x200007A0341083B0L,0x00005FF395042400L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXFeatureCall15276 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15304 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_21_in_ruleXFeatureCall15317 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall15338 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_29_in_ruleXFeatureCall15355 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_ruleXFeatureCall15390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeatureCallID_in_entryRuleFeatureCallID15428 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeatureCallID15439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleFeatureCallID15486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_100_in_ruleFeatureCallID15510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleFeatureCallID15529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleFeatureCallID15548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_101_in_ruleFeatureCallID15567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdOrSuper_in_entryRuleIdOrSuper15608 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIdOrSuper15619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeatureCallID_in_ruleIdOrSuper15666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_102_in_ruleIdOrSuper15690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXConstructorCall_in_entryRuleXConstructorCall15730 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXConstructorCall15740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_103_in_ruleXConstructorCall15786 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXConstructorCall15809 = new BitSet(new long[]{0x2000000010100002L});
+    public static final BitSet FOLLOW_61_in_ruleXConstructorCall15830 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15852 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleXConstructorCall15865 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall15886 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_62_in_ruleXConstructorCall15900 = new BitSet(new long[]{0x0000000010100002L});
+    public static final BitSet FOLLOW_28_in_ruleXConstructorCall15936 = new BitSet(new long[]{0x200007A0341083B0L,0x00005FF395042400L});
+    public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXConstructorCall16021 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall16049 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_21_in_ruleXConstructorCall16062 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall16083 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_29_in_ruleXConstructorCall16100 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_ruleXClosure_in_ruleXConstructorCall16135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXBooleanLiteral_in_entryRuleXBooleanLiteral16172 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXBooleanLiteral16182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleXBooleanLiteral16229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleXBooleanLiteral16253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXNullLiteral_in_entryRuleXNullLiteral16303 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXNullLiteral16313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_104_in_ruleXNullLiteral16359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXNumberLiteral_in_entryRuleXNumberLiteral16395 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXNumberLiteral16405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleXNumberLiteral16460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXStringLiteral_in_entryRuleXStringLiteral16496 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXStringLiteral16506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleXStringLiteral16557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXTypeLiteral_in_entryRuleXTypeLiteral16598 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXTypeLiteral16608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_ruleXTypeLiteral16654 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleXTypeLiteral16666 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXTypeLiteral16689 = new BitSet(new long[]{0x0000000020100000L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleXTypeLiteral16710 = new BitSet(new long[]{0x0000000020100000L});
+    public static final BitSet FOLLOW_29_in_ruleXTypeLiteral16723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXThrowExpression_in_entryRuleXThrowExpression16759 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXThrowExpression16769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_106_in_ruleXThrowExpression16815 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXThrowExpression16836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXReturnExpression_in_entryRuleXReturnExpression16872 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXReturnExpression16882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_107_in_ruleXReturnExpression16928 = new BitSet(new long[]{0x200007A0141083B2L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXReturnExpression17163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXTryCatchFinallyExpression_in_entryRuleXTryCatchFinallyExpression17200 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXTryCatchFinallyExpression17210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_ruleXTryCatchFinallyExpression17256 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17277 = new BitSet(new long[]{0x0000000000000000L,0x0000A00000000000L});
+    public static final BitSet FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression17307 = new BitSet(new long[]{0x0000000000000002L,0x0000A00000000000L});
+    public static final BitSet FOLLOW_109_in_ruleXTryCatchFinallyExpression17329 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_ruleXTryCatchFinallyExpression17373 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression17394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXSynchronizedExpression_in_entryRuleXSynchronizedExpression17432 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXSynchronizedExpression17442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_ruleXSynchronizedExpression17506 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleXSynchronizedExpression17518 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17541 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleXSynchronizedExpression17553 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSynchronizedExpression17574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXCatchClause_in_entryRuleXCatchClause17610 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXCatchClause17620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_ruleXCatchClause17665 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleXCatchClause17678 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_ruleXCatchClause17699 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleXCatchClause17711 = new BitSet(new long[]{0x200007A0141083B0L,0x00005FF394042000L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXCatchClause17732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName17769 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName17780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName17827 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleQualifiedName17855 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName17878 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
+    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber17932 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumber17943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_HEX_in_ruleNumber17987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber18015 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
+    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber18041 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleNumber18061 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber18077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber18103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference18158 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmTypeReference18168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference18216 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_ruleJvmTypeReference18252 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference18283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_entryRuleArrayBrackets18319 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArrayBrackets18330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleArrayBrackets18368 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleArrayBrackets18381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef18421 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef18431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleXFunctionTypeRef18469 = new BitSet(new long[]{0x0000000030000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18491 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_21_in_ruleXFunctionTypeRef18504 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18525 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_29_in_ruleXFunctionTypeRef18541 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_74_in_ruleXFunctionTypeRef18555 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef18576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_entryRuleJvmParameterizedTypeReference18612 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference18622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference18670 = new BitSet(new long[]{0x2000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleJvmParameterizedTypeReference18691 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18713 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleJvmParameterizedTypeReference18726 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18747 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_62_in_ruleJvmParameterizedTypeReference18761 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleJvmParameterizedTypeReference18797 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleJvmParameterizedTypeReference18822 = new BitSet(new long[]{0x2000000000000002L,0x0000000000200000L});
+    public static final BitSet FOLLOW_61_in_ruleJvmParameterizedTypeReference18843 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18865 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleJvmParameterizedTypeReference18878 = new BitSet(new long[]{0x0000000010000020L,0x0001000000000400L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference18899 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_62_in_ruleJvmParameterizedTypeReference18913 = new BitSet(new long[]{0x0000000000000002L,0x0000000000200000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference18955 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference18965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmArgumentTypeReference19012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_ruleJvmArgumentTypeReference19039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmWildcardTypeReference_in_entryRuleJvmWildcardTypeReference19074 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmWildcardTypeReference19084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_ruleJvmWildcardTypeReference19130 = new BitSet(new long[]{0x0000000000000002L,0x0000005000000000L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_ruleJvmWildcardTypeReference19153 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_ruleJvmWildcardTypeReference19174 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_ruleJvmWildcardTypeReference19204 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleJvmLowerBoundAnded_in_ruleJvmWildcardTypeReference19225 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleJvmUpperBound_in_entryRuleJvmUpperBound19265 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBound19275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_100_in_ruleJvmUpperBound19312 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBound19333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmUpperBoundAnded_in_entryRuleJvmUpperBoundAnded19369 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmUpperBoundAnded19379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_ruleJvmUpperBoundAnded19416 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmUpperBoundAnded19437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBound_in_entryRuleJvmLowerBound19473 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBound19483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_102_in_ruleJvmLowerBound19520 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBound19541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmLowerBoundAnded_in_entryRuleJvmLowerBoundAnded19577 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJvmLowerBoundAnded19587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_ruleJvmLowerBoundAnded19624 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleJvmLowerBoundAnded19645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_entryRuleQualifiedNameWithWildcard19684 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildcard19695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildcard19742 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleQualifiedNameWithWildcard19760 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_78_in_ruleQualifiedNameWithWildcard19773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID19814 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValidID19825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID19864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXImportDeclaration_in_entryRuleXImportDeclaration19910 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXImportDeclaration19920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleXImportDeclaration19957 = new BitSet(new long[]{0x0000008000000020L});
+    public static final BitSet FOLLOW_39_in_ruleXImportDeclaration19977 = new BitSet(new long[]{0x0000000000000020L,0x0000002000000000L});
+    public static final BitSet FOLLOW_101_in_ruleXImportDeclaration20008 = new BitSet(new long[]{0x0000000000000020L,0x0000002000000000L});
+    public static final BitSet FOLLOW_ruleQualifiedNameInStaticImport_in_ruleXImportDeclaration20045 = new BitSet(new long[]{0x0000000000000020L,0x0000000000004000L});
+    public static final BitSet FOLLOW_78_in_ruleXImportDeclaration20064 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleXImportDeclaration20104 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXImportDeclaration20135 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_ruleXImportDeclaration20162 = new BitSet(new long[]{0x0000000000000002L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleXImportDeclaration20176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameInStaticImport_in_entryRuleQualifiedNameInStaticImport20215 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameInStaticImport20226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedNameInStaticImport20273 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleQualifiedNameInStaticImport20291 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_ruleOpMultiAssign_in_synpred1_InternalFXGraph6255 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpOr_in_synpred2_InternalFXGraph6778 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpAnd_in_synpred3_InternalFXGraph7037 = new BitSet(new long[]{0x0000000000000002L});
@@ -31174,26 +31873,28 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_38_in_synpred26_InternalFXGraph12890 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalFXGraph12992 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_38_in_synpred27_InternalFXGraph12998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_synpred29_InternalFXGraph14607 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_synpred29_InternalFXGraph14616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_synpred30_InternalFXGraph15154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15206 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_21_in_synpred31_InternalFXGraph15213 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15220 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_synpred31_InternalFXGraph15234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_synpred32_InternalFXGraph15354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_synpred33_InternalFXGraph15803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_synpred34_InternalFXGraph15899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15951 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_21_in_synpred35_InternalFXGraph15958 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15965 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_synpred35_InternalFXGraph15979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_synpred36_InternalFXGraph16099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_synpred37_InternalFXGraph16919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_synpred38_InternalFXGraph17272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_synpred39_InternalFXGraph17302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_synpred42_InternalFXGraph17827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrayBrackets_in_synpred43_InternalFXGraph18212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_synpred44_InternalFXGraph18664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_synpred29_InternalFXGraph14626 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_synpred29_InternalFXGraph14635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_synpred30_InternalFXGraph15173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15225 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_21_in_synpred31_InternalFXGraph15232 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred31_InternalFXGraph15239 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_synpred31_InternalFXGraph15253 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_synpred32_InternalFXGraph15373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_synpred33_InternalFXGraph15822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_synpred34_InternalFXGraph15918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15970 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_21_in_synpred35_InternalFXGraph15977 = new BitSet(new long[]{0x0000000010000020L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred35_InternalFXGraph15984 = new BitSet(new long[]{0x0000000000200000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_synpred35_InternalFXGraph15998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_synpred36_InternalFXGraph16118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_synpred37_InternalFXGraph16938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_synpred38_InternalFXGraph17291 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_synpred39_InternalFXGraph17321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_synpred42_InternalFXGraph17846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrayBrackets_in_synpred43_InternalFXGraph18231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_synpred44_InternalFXGraph18683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_synpred45_InternalFXGraph18778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_synpred46_InternalFXGraph18835 = new BitSet(new long[]{0x0000000000000002L});
 
 }

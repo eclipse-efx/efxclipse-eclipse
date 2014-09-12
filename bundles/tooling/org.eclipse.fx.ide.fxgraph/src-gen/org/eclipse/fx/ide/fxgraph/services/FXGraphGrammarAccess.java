@@ -1649,48 +1649,80 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private ModelElements pModel;
-	private PackageDeclarationElements pPackageDeclaration;
-	private ImportElements pImport;
-	private ComponentDefinitionElements pComponentDefinition;
-	private ElementElements pElement;
-	private DefineElements pDefine;
-	private ScriptElements pScript;
-	private StaticCallValuePropertyElements pStaticCallValueProperty;
-	private StaticValuePropertyElements pStaticValueProperty;
-	private PropertyElements pProperty;
-	private ValuePropertyElements pValueProperty;
-	private SingleValuePropertyElements pSingleValueProperty;
-	private MultiValuePropertyElements pMultiValueProperty;
-	private FactoryValueElementElements pFactoryValueElement;
-	private ListValueElementElements pListValueElement;
-	private ListValuePropertyElements pListValueProperty;
-	private MapValuePropertyElements pMapValueProperty;
-	private SimpleValuePropertyElements pSimpleValueProperty;
-	private ConstValuePropertyElements pConstValueProperty;
-	private ReferenceTypeElements pReferenceType;
-	private ReferenceValuePropertyElements pReferenceValueProperty;
-	private IncludeValuePropertyElements pIncludeValueProperty;
-	private CopyValuePropertyElements pCopyValueProperty;
-	private ControllerHandledValuePropertyElements pControllerHandledValueProperty;
-	private ScriptHandlerHandledValuePropertyElements pScriptHandlerHandledValueProperty;
-	private ScriptValueExpressionElements pScriptValueExpression;
-	private ScriptValueReferenceElements pScriptValueReference;
-	private LocationValuePropertyElements pLocationValueProperty;
-	private ResourceValuePropertyElements pResourceValueProperty;
-	private BindValuePropertyElements pBindValueProperty;
-	private StringValueElements pStringValue;
-	private TerminalRule tSCRIPTLITERAL;
+	private final ModelElements pModel;
+	private final PackageDeclarationElements pPackageDeclaration;
+	private final ImportElements pImport;
+	private final ComponentDefinitionElements pComponentDefinition;
+	private final ElementElements pElement;
+	private final DefineElements pDefine;
+	private final ScriptElements pScript;
+	private final StaticCallValuePropertyElements pStaticCallValueProperty;
+	private final StaticValuePropertyElements pStaticValueProperty;
+	private final PropertyElements pProperty;
+	private final ValuePropertyElements pValueProperty;
+	private final SingleValuePropertyElements pSingleValueProperty;
+	private final MultiValuePropertyElements pMultiValueProperty;
+	private final FactoryValueElementElements pFactoryValueElement;
+	private final ListValueElementElements pListValueElement;
+	private final ListValuePropertyElements pListValueProperty;
+	private final MapValuePropertyElements pMapValueProperty;
+	private final SimpleValuePropertyElements pSimpleValueProperty;
+	private final ConstValuePropertyElements pConstValueProperty;
+	private final ReferenceTypeElements pReferenceType;
+	private final ReferenceValuePropertyElements pReferenceValueProperty;
+	private final IncludeValuePropertyElements pIncludeValueProperty;
+	private final CopyValuePropertyElements pCopyValueProperty;
+	private final ControllerHandledValuePropertyElements pControllerHandledValueProperty;
+	private final ScriptHandlerHandledValuePropertyElements pScriptHandlerHandledValueProperty;
+	private final ScriptValueExpressionElements pScriptValueExpression;
+	private final ScriptValueReferenceElements pScriptValueReference;
+	private final LocationValuePropertyElements pLocationValueProperty;
+	private final ResourceValuePropertyElements pResourceValueProperty;
+	private final BindValuePropertyElements pBindValueProperty;
+	private final StringValueElements pStringValue;
+	private final TerminalRule tSCRIPTLITERAL;
 	
 	private final Grammar grammar;
 
-	private XbaseGrammarAccess gaXbase;
+	private final XbaseGrammarAccess gaXbase;
 
 	@Inject
 	public FXGraphGrammarAccess(GrammarProvider grammarProvider,
 		XbaseGrammarAccess gaXbase) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaXbase = gaXbase;
+		this.pModel = new ModelElements();
+		this.pPackageDeclaration = new PackageDeclarationElements();
+		this.pImport = new ImportElements();
+		this.pComponentDefinition = new ComponentDefinitionElements();
+		this.pElement = new ElementElements();
+		this.pDefine = new DefineElements();
+		this.pScript = new ScriptElements();
+		this.pStaticCallValueProperty = new StaticCallValuePropertyElements();
+		this.pStaticValueProperty = new StaticValuePropertyElements();
+		this.pProperty = new PropertyElements();
+		this.pValueProperty = new ValuePropertyElements();
+		this.pSingleValueProperty = new SingleValuePropertyElements();
+		this.pMultiValueProperty = new MultiValuePropertyElements();
+		this.pFactoryValueElement = new FactoryValueElementElements();
+		this.pListValueElement = new ListValueElementElements();
+		this.pListValueProperty = new ListValuePropertyElements();
+		this.pMapValueProperty = new MapValuePropertyElements();
+		this.pSimpleValueProperty = new SimpleValuePropertyElements();
+		this.pConstValueProperty = new ConstValuePropertyElements();
+		this.pReferenceType = new ReferenceTypeElements();
+		this.pReferenceValueProperty = new ReferenceValuePropertyElements();
+		this.pIncludeValueProperty = new IncludeValuePropertyElements();
+		this.pCopyValueProperty = new CopyValuePropertyElements();
+		this.pControllerHandledValueProperty = new ControllerHandledValuePropertyElements();
+		this.pScriptHandlerHandledValueProperty = new ScriptHandlerHandledValuePropertyElements();
+		this.pScriptValueExpression = new ScriptValueExpressionElements();
+		this.pScriptValueReference = new ScriptValueReferenceElements();
+		this.pLocationValueProperty = new LocationValuePropertyElements();
+		this.pResourceValueProperty = new ResourceValuePropertyElements();
+		this.pBindValueProperty = new BindValuePropertyElements();
+		this.pStringValue = new StringValueElements();
+		this.tSCRIPTLITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCRIPTLITERAL");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1723,7 +1755,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//Model:
 	//	package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition;
 	public ModelElements getModelAccess() {
-		return (pModel != null) ? pModel : (pModel = new ModelElements());
+		return pModel;
 	}
 	
 	public ParserRule getModelRule() {
@@ -1733,7 +1765,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//PackageDeclaration:
 	//	"package" name=QualifiedName;
 	public PackageDeclarationElements getPackageDeclarationAccess() {
-		return (pPackageDeclaration != null) ? pPackageDeclaration : (pPackageDeclaration = new PackageDeclarationElements());
+		return pPackageDeclaration;
 	}
 	
 	public ParserRule getPackageDeclarationRule() {
@@ -1743,7 +1775,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//Import:
 	//	"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
 	public ImportElements getImportAccess() {
-		return (pImport != null) ? pImport : (pImport = new ImportElements());
+		return pImport;
 	}
 	
 	public ParserRule getImportRule() {
@@ -1757,7 +1789,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//	previewClasspathEntries+=STRING)* "]")? & ("sceneSetup" sceneDefinition=[ComponentDefinition|QualifiedName])?) "{"
 	//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
 	public ComponentDefinitionElements getComponentDefinitionAccess() {
-		return (pComponentDefinition != null) ? pComponentDefinition : (pComponentDefinition = new ComponentDefinitionElements());
+		return pComponentDefinition;
 	}
 	
 	public ParserRule getComponentDefinitionRule() {
@@ -1771,7 +1803,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//	staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
 	//	factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}");
 	public ElementElements getElementAccess() {
-		return (pElement != null) ? pElement : (pElement = new ElementElements());
+		return pElement;
 	}
 	
 	public ParserRule getElementRule() {
@@ -1781,7 +1813,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//Define:
 	//	"define" (element=Element | includeElement=IncludeValueProperty);
 	public DefineElements getDefineAccess() {
-		return (pDefine != null) ? pDefine : (pDefine = new DefineElements());
+		return pDefine;
 	}
 	
 	public ParserRule getDefineRule() {
@@ -1791,7 +1823,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//Script:
 	//	"script" language=ID (source=STRING | sourcecode=SCRIPTLITERAL);
 	public ScriptElements getScriptAccess() {
-		return (pScript != null) ? pScript : (pScript = new ScriptElements());
+		return pScript;
 	}
 	
 	public ParserRule getScriptRule() {
@@ -1801,7 +1833,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//StaticCallValueProperty:
 	//	modifier=("preview" | "runtime-only")? "call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty;
 	public StaticCallValuePropertyElements getStaticCallValuePropertyAccess() {
-		return (pStaticCallValueProperty != null) ? pStaticCallValueProperty : (pStaticCallValueProperty = new StaticCallValuePropertyElements());
+		return pStaticCallValueProperty;
 	}
 	
 	public ParserRule getStaticCallValuePropertyRule() {
@@ -1811,7 +1843,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//StaticValueProperty:
 	//	modifier=("preview" | "runtime-only")? "static" name=ID ":" value=ValueProperty;
 	public StaticValuePropertyElements getStaticValuePropertyAccess() {
-		return (pStaticValueProperty != null) ? pStaticValueProperty : (pStaticValueProperty = new StaticValuePropertyElements());
+		return pStaticValueProperty;
 	}
 	
 	public ParserRule getStaticValuePropertyRule() {
@@ -1821,7 +1853,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//Property:
 	//	modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty;
 	public PropertyElements getPropertyAccess() {
-		return (pProperty != null) ? pProperty : (pProperty = new PropertyElements());
+		return pProperty;
 	}
 	
 	public ParserRule getPropertyRule() {
@@ -1831,7 +1863,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ValueProperty:
 	//	SingleValueProperty | MultiValueProperty;
 	public ValuePropertyElements getValuePropertyAccess() {
-		return (pValueProperty != null) ? pValueProperty : (pValueProperty = new ValuePropertyElements());
+		return pValueProperty;
 	}
 	
 	public ParserRule getValuePropertyRule() {
@@ -1843,7 +1875,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference |
 	//	LocationValueProperty | ResourceValueProperty | BindValueProperty | ConstValueProperty;
 	public SingleValuePropertyElements getSingleValuePropertyAccess() {
-		return (pSingleValueProperty != null) ? pSingleValueProperty : (pSingleValueProperty = new SingleValuePropertyElements());
+		return pSingleValueProperty;
 	}
 	
 	public ParserRule getSingleValuePropertyRule() {
@@ -1853,7 +1885,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//MultiValueProperty:
 	//	ListValueProperty | MapValueProperty;
 	public MultiValuePropertyElements getMultiValuePropertyAccess() {
-		return (pMultiValueProperty != null) ? pMultiValueProperty : (pMultiValueProperty = new MultiValuePropertyElements());
+		return pMultiValueProperty;
 	}
 	
 	public ParserRule getMultiValuePropertyRule() {
@@ -1863,7 +1895,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//FactoryValueElement:
 	//	SimpleValueProperty | Element;
 	public FactoryValueElementElements getFactoryValueElementAccess() {
-		return (pFactoryValueElement != null) ? pFactoryValueElement : (pFactoryValueElement = new FactoryValueElementElements());
+		return pFactoryValueElement;
 	}
 	
 	public ParserRule getFactoryValueElementRule() {
@@ -1873,7 +1905,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ListValueElement:
 	//	Element | ReferenceValueProperty | IncludeValueProperty | SimpleValueProperty;
 	public ListValueElementElements getListValueElementAccess() {
-		return (pListValueElement != null) ? pListValueElement : (pListValueElement = new ListValueElementElements());
+		return pListValueElement;
 	}
 	
 	public ParserRule getListValueElementRule() {
@@ -1883,7 +1915,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ListValueProperty:
 	//	"[" value+=ListValueElement ("," value+=ListValueElement)* "]";
 	public ListValuePropertyElements getListValuePropertyAccess() {
-		return (pListValueProperty != null) ? pListValueProperty : (pListValueProperty = new ListValuePropertyElements());
+		return pListValueProperty;
 	}
 	
 	public ParserRule getListValuePropertyRule() {
@@ -1893,7 +1925,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//MapValueProperty:
 	//	"{" properties+=Property ("," properties+=Property)* "}";
 	public MapValuePropertyElements getMapValuePropertyAccess() {
-		return (pMapValueProperty != null) ? pMapValueProperty : (pMapValueProperty = new MapValuePropertyElements());
+		return pMapValueProperty;
 	}
 	
 	public ParserRule getMapValuePropertyRule() {
@@ -1903,7 +1935,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//SimpleValueProperty:
 	//	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number;
 	public SimpleValuePropertyElements getSimpleValuePropertyAccess() {
-		return (pSimpleValueProperty != null) ? pSimpleValueProperty : (pSimpleValueProperty = new SimpleValuePropertyElements());
+		return pSimpleValueProperty;
 	}
 	
 	public ParserRule getSimpleValuePropertyRule() {
@@ -1913,7 +1945,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ConstValueProperty:
 	//	"const" type=JvmTypeReference "#" field=ID;
 	public ConstValuePropertyElements getConstValuePropertyAccess() {
-		return (pConstValueProperty != null) ? pConstValueProperty : (pConstValueProperty = new ConstValuePropertyElements());
+		return pConstValueProperty;
 	}
 	
 	public ParserRule getConstValuePropertyRule() {
@@ -1923,7 +1955,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ReferenceType:
 	//	Element | IncludeValueProperty;
 	public ReferenceTypeElements getReferenceTypeAccess() {
-		return (pReferenceType != null) ? pReferenceType : (pReferenceType = new ReferenceTypeElements());
+		return pReferenceType;
 	}
 	
 	public ParserRule getReferenceTypeRule() {
@@ -1935,7 +1967,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//	staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
 	//	staticCallProperties+=StaticCallValueProperty))* "}")?;
 	public ReferenceValuePropertyElements getReferenceValuePropertyAccess() {
-		return (pReferenceValueProperty != null) ? pReferenceValueProperty : (pReferenceValueProperty = new ReferenceValuePropertyElements());
+		return pReferenceValueProperty;
 	}
 	
 	public ParserRule getReferenceValuePropertyRule() {
@@ -1947,7 +1979,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//	| staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
 	//	staticCallProperties+=StaticCallValueProperty))* "}")?;
 	public IncludeValuePropertyElements getIncludeValuePropertyAccess() {
-		return (pIncludeValueProperty != null) ? pIncludeValueProperty : (pIncludeValueProperty = new IncludeValuePropertyElements());
+		return pIncludeValueProperty;
 	}
 	
 	public ParserRule getIncludeValuePropertyRule() {
@@ -1957,7 +1989,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//CopyValueProperty:
 	//	"copy" reference=[Element|ValidID];
 	public CopyValuePropertyElements getCopyValuePropertyAccess() {
-		return (pCopyValueProperty != null) ? pCopyValueProperty : (pCopyValueProperty = new CopyValuePropertyElements());
+		return pCopyValueProperty;
 	}
 	
 	public ParserRule getCopyValuePropertyRule() {
@@ -1967,7 +1999,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ControllerHandledValueProperty:
 	//	"controllermethod" methodname=ID;
 	public ControllerHandledValuePropertyElements getControllerHandledValuePropertyAccess() {
-		return (pControllerHandledValueProperty != null) ? pControllerHandledValueProperty : (pControllerHandledValueProperty = new ControllerHandledValuePropertyElements());
+		return pControllerHandledValueProperty;
 	}
 	
 	public ParserRule getControllerHandledValuePropertyRule() {
@@ -1977,7 +2009,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ScriptHandlerHandledValueProperty:
 	//	"scriptmethod" functionname=STRING;
 	public ScriptHandlerHandledValuePropertyElements getScriptHandlerHandledValuePropertyAccess() {
-		return (pScriptHandlerHandledValueProperty != null) ? pScriptHandlerHandledValueProperty : (pScriptHandlerHandledValueProperty = new ScriptHandlerHandledValuePropertyElements());
+		return pScriptHandlerHandledValueProperty;
 	}
 	
 	public ParserRule getScriptHandlerHandledValuePropertyRule() {
@@ -1987,7 +2019,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ScriptValueExpression:
 	//	"scriptexpression" sourcecode=SCRIPTLITERAL;
 	public ScriptValueExpressionElements getScriptValueExpressionAccess() {
-		return (pScriptValueExpression != null) ? pScriptValueExpression : (pScriptValueExpression = new ScriptValueExpressionElements());
+		return pScriptValueExpression;
 	}
 	
 	public ParserRule getScriptValueExpressionRule() {
@@ -1997,7 +2029,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ScriptValueReference:
 	//	"scriptvalue" reference=ID;
 	public ScriptValueReferenceElements getScriptValueReferenceAccess() {
-		return (pScriptValueReference != null) ? pScriptValueReference : (pScriptValueReference = new ScriptValueReferenceElements());
+		return pScriptValueReference;
 	}
 	
 	public ParserRule getScriptValueReferenceRule() {
@@ -2007,7 +2039,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//LocationValueProperty:
 	//	"location" value=STRING;
 	public LocationValuePropertyElements getLocationValuePropertyAccess() {
-		return (pLocationValueProperty != null) ? pLocationValueProperty : (pLocationValueProperty = new LocationValuePropertyElements());
+		return pLocationValueProperty;
 	}
 	
 	public ParserRule getLocationValuePropertyRule() {
@@ -2017,7 +2049,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ResourceValueProperty:
 	//	"rstring" value=StringValue;
 	public ResourceValuePropertyElements getResourceValuePropertyAccess() {
-		return (pResourceValueProperty != null) ? pResourceValueProperty : (pResourceValueProperty = new ResourceValuePropertyElements());
+		return pResourceValueProperty;
 	}
 	
 	public ParserRule getResourceValuePropertyRule() {
@@ -2027,7 +2059,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//BindValueProperty:
 	//	"bind" elementReference=[Element|ValidID] "#" attribute=ID;
 	public BindValuePropertyElements getBindValuePropertyAccess() {
-		return (pBindValueProperty != null) ? pBindValueProperty : (pBindValueProperty = new BindValuePropertyElements());
+		return pBindValueProperty;
 	}
 	
 	public ParserRule getBindValuePropertyRule() {
@@ -2037,7 +2069,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//StringValue:
 	//	value=STRING;
 	public StringValueElements getStringValueAccess() {
-		return (pStringValue != null) ? pStringValue : (pStringValue = new StringValueElements());
+		return pStringValue;
 	}
 	
 	public ParserRule getStringValueRule() {
@@ -2048,7 +2080,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal SCRIPTLITERAL:
 	//	"#{"->"}#";
 	public TerminalRule getSCRIPTLITERALRule() {
-		return (tSCRIPTLITERAL != null) ? tSCRIPTLITERAL : (tSCRIPTLITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCRIPTLITERAL"));
+		return tSCRIPTLITERAL;
 	} 
 
 	//XExpression:
@@ -2423,7 +2455,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XCasePart:
-	//	{XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | ",");
+	//	{XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | fallThrough?=",");
 	public XbaseGrammarAccess.XCasePartElements getXCasePartAccess() {
 		return gaXbase.getXCasePartAccess();
 	}
@@ -2755,8 +2787,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//JvmParameterizedTypeReference:
-	//	type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)*
-	//	">")?;
+	//	type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">"
+	//	(=> ({JvmInnerTypeReference.outer=current} ".") type=[JvmType|ValidID] ("<" arguments+=JvmArgumentTypeReference (","
+	//	arguments+=JvmArgumentTypeReference)* ">")?)*)?;
 	public XtypeGrammarAccess.JvmParameterizedTypeReferenceElements getJvmParameterizedTypeReferenceAccess() {
 		return gaXbase.getJvmParameterizedTypeReferenceAccess();
 	}
@@ -2776,7 +2809,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//JvmWildcardTypeReference:
-	//	{JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound | constraints+=JvmLowerBound)?;
+	//	{JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* |
+	//	constraints+=JvmLowerBound constraints+=JvmLowerBoundAnded*)?;
 	public XtypeGrammarAccess.JvmWildcardTypeReferenceElements getJvmWildcardTypeReferenceAccess() {
 		return gaXbase.getJvmWildcardTypeReferenceAccess();
 	}
@@ -2813,6 +2847,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getJvmLowerBoundRule() {
 		return getJvmLowerBoundAccess().getRule();
+	}
+
+	//JvmLowerBoundAnded returns JvmLowerBound:
+	//	"&" typeReference=JvmTypeReference;
+	public XtypeGrammarAccess.JvmLowerBoundAndedElements getJvmLowerBoundAndedAccess() {
+		return gaXbase.getJvmLowerBoundAndedAccess();
+	}
+	
+	public ParserRule getJvmLowerBoundAndedRule() {
+		return getJvmLowerBoundAndedAccess().getRule();
 	}
 
 	//JvmTypeParameter:
@@ -2884,8 +2928,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
-	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
+	//	"\"" ("\\" . / * ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') * / | !("\\" | "\""))* "\""? | "\'" ("\\" .
+	//	/ * ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') * / | !("\\" | "\'"))* "\'"?;
 	public TerminalRule getSTRINGRule() {
 		return gaXbase.getSTRINGRule();
 	} 
