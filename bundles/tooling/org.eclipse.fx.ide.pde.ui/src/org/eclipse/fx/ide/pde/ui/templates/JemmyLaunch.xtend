@@ -19,7 +19,6 @@ class JemmyLaunch implements Generator<DynamicFile> {
 			}
 			tmp = tmp.eContainer;
 		}
-		return null;
 	}
 	
 	override generate(DynamicFile file, Map<String,Object> data) {
