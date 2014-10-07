@@ -20,7 +20,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 import org.eclipse.fx.ide.css.cssDsl.charset;
+import org.eclipse.fx.ide.css.cssDsl.font_face;
 import org.eclipse.fx.ide.css.cssDsl.importExpression;
+import org.eclipse.fx.ide.css.cssDsl.keyframes;
 import org.eclipse.fx.ide.css.cssDsl.media;
 import org.eclipse.fx.ide.css.cssDsl.page;
 import org.eclipse.fx.ide.css.cssDsl.ruleset;
@@ -38,6 +40,8 @@ import org.eclipse.fx.ide.css.cssDsl.stylesheet;
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getRuleset <em>Ruleset</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getMedia <em>Media</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getPage <em>Page</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getFont_face <em>Font face</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getKeyframes <em>Keyframes</em>}</li>
  * </ul>
  * </p>
  *
@@ -94,6 +98,26 @@ public class stylesheetImpl extends MinimalEObjectImpl.Container implements styl
    * @ordered
    */
   protected EList<page> page;
+
+  /**
+   * The cached value of the '{@link #getFont_face() <em>Font face</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFont_face()
+   * @generated
+   * @ordered
+   */
+  protected EList<font_face> font_face;
+
+  /**
+   * The cached value of the '{@link #getKeyframes() <em>Keyframes</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyframes()
+   * @generated
+   * @ordered
+   */
+  protected EList<keyframes> keyframes;
 
   /**
    * <!-- begin-user-doc -->
@@ -225,6 +249,34 @@ public class stylesheetImpl extends MinimalEObjectImpl.Container implements styl
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<font_face> getFont_face()
+  {
+    if (font_face == null)
+    {
+      font_face = new EObjectContainmentEList<font_face>(font_face.class, this, CssDslPackage.STYLESHEET__FONT_FACE);
+    }
+    return font_face;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<keyframes> getKeyframes()
+  {
+    if (keyframes == null)
+    {
+      keyframes = new EObjectContainmentEList<keyframes>(keyframes.class, this, CssDslPackage.STYLESHEET__KEYFRAMES);
+    }
+    return keyframes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -240,6 +292,10 @@ public class stylesheetImpl extends MinimalEObjectImpl.Container implements styl
         return ((InternalEList<?>)getMedia()).basicRemove(otherEnd, msgs);
       case CssDslPackage.STYLESHEET__PAGE:
         return ((InternalEList<?>)getPage()).basicRemove(otherEnd, msgs);
+      case CssDslPackage.STYLESHEET__FONT_FACE:
+        return ((InternalEList<?>)getFont_face()).basicRemove(otherEnd, msgs);
+      case CssDslPackage.STYLESHEET__KEYFRAMES:
+        return ((InternalEList<?>)getKeyframes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -264,6 +320,10 @@ public class stylesheetImpl extends MinimalEObjectImpl.Container implements styl
         return getMedia();
       case CssDslPackage.STYLESHEET__PAGE:
         return getPage();
+      case CssDslPackage.STYLESHEET__FONT_FACE:
+        return getFont_face();
+      case CssDslPackage.STYLESHEET__KEYFRAMES:
+        return getKeyframes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -298,6 +358,14 @@ public class stylesheetImpl extends MinimalEObjectImpl.Container implements styl
         getPage().clear();
         getPage().addAll((Collection<? extends page>)newValue);
         return;
+      case CssDslPackage.STYLESHEET__FONT_FACE:
+        getFont_face().clear();
+        getFont_face().addAll((Collection<? extends font_face>)newValue);
+        return;
+      case CssDslPackage.STYLESHEET__KEYFRAMES:
+        getKeyframes().clear();
+        getKeyframes().addAll((Collection<? extends keyframes>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -327,6 +395,12 @@ public class stylesheetImpl extends MinimalEObjectImpl.Container implements styl
       case CssDslPackage.STYLESHEET__PAGE:
         getPage().clear();
         return;
+      case CssDslPackage.STYLESHEET__FONT_FACE:
+        getFont_face().clear();
+        return;
+      case CssDslPackage.STYLESHEET__KEYFRAMES:
+        getKeyframes().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -351,6 +425,10 @@ public class stylesheetImpl extends MinimalEObjectImpl.Container implements styl
         return media != null && !media.isEmpty();
       case CssDslPackage.STYLESHEET__PAGE:
         return page != null && !page.isEmpty();
+      case CssDslPackage.STYLESHEET__FONT_FACE:
+        return font_face != null && !font_face.isEmpty();
+      case CssDslPackage.STYLESHEET__KEYFRAMES:
+        return keyframes != null && !keyframes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

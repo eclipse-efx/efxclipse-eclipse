@@ -100,6 +100,16 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createmediaAdapter();
       }
       @Override
+      public Adapter casefont_face(font_face object)
+      {
+        return createfont_faceAdapter();
+      }
+      @Override
+      public Adapter casekeyframes(keyframes object)
+      {
+        return createkeyframesAdapter();
+      }
+      @Override
       public Adapter caseruleset(ruleset object)
       {
         return createrulesetAdapter();
@@ -322,6 +332,36 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createmediaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.css.cssDsl.font_face <em>font face</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.fx.ide.css.cssDsl.font_face
+   * @generated
+   */
+  public Adapter createfont_faceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.css.cssDsl.keyframes <em>keyframes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.fx.ide.css.cssDsl.keyframes
+   * @generated
+   */
+  public Adapter createkeyframesAdapter()
   {
     return null;
   }

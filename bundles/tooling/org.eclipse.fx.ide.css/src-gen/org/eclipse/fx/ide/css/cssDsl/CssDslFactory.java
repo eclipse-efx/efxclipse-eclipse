@@ -68,6 +68,24 @@ public interface CssDslFactory extends EFactory
   media createmedia();
 
   /**
+   * Returns a new object of class '<em>font face</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>font face</em>'.
+   * @generated
+   */
+  font_face createfont_face();
+
+  /**
+   * Returns a new object of class '<em>keyframes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>keyframes</em>'.
+   * @generated
+   */
+  keyframes createkeyframes();
+
+  /**
    * Returns a new object of class '<em>ruleset</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -24,6 +24,7 @@ import org.eclipse.fx.ide.css.cssDsl.WSTok;
 import org.eclipse.fx.ide.css.cssDsl.charset;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
+import org.eclipse.fx.ide.css.cssDsl.font_face;
 import org.eclipse.fx.ide.css.cssDsl.importExpression;
 import org.eclipse.fx.ide.css.cssDsl.media;
 import org.eclipse.fx.ide.css.cssDsl.page;
@@ -193,6 +194,16 @@ public abstract class AbstractCssDslSemanticSequencer extends AbstractDelegating
 			case CssDslPackage.CSS_PROPERTY:
 				if(context == grammarAccess.getCss_propertyRule()) {
 					sequence_css_property(context, (css_property) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.FONT_FACE:
+				if(context == grammarAccess.getFont_faceRule()) {
+					sequence_font_face(context, (font_face) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getKeyframesRule()) {
+					sequence_keyframes(context, (font_face) semanticObject); 
 					return; 
 				}
 				else break;
@@ -523,6 +534,15 @@ public abstract class AbstractCssDslSemanticSequencer extends AbstractDelegating
 	
 	/**
 	 * Constraint:
+	 *     (declarations+=css_declaration? declarations+=css_declaration*)
+	 */
+	protected void sequence_font_face(EObject context, font_face semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=CSSSTRING
 	 */
 	protected void sequence_importExpression(EObject context, importExpression semanticObject) {
@@ -534,6 +554,15 @@ public abstract class AbstractCssDslSemanticSequencer extends AbstractDelegating
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getImportExpressionAccess().getValueCSSSTRINGTerminalRuleCall_1_0_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (declarations+=css_declaration? declarations+=css_declaration*)
+	 */
+	protected void sequence_keyframes(EObject context, font_face semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -584,7 +613,7 @@ public abstract class AbstractCssDslSemanticSequencer extends AbstractDelegating
 	
 	/**
 	 * Constraint:
-	 *     (charset=charset? imports+=importExpression* (ruleset+=ruleset | media+=media | page+=page)*)
+	 *     (charset=charset? imports+=importExpression* (ruleset+=ruleset | media+=media | page+=page | font_face+=font_face | keyframes+=keyframes)*)
 	 */
 	protected void sequence_stylesheet(EObject context, stylesheet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

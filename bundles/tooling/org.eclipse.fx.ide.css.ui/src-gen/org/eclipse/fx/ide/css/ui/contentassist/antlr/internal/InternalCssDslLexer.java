@@ -12,64 +12,68 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalCssDslLexer extends Lexer {
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int RULE_INCLUDES=4;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_ONE_INT=16;
-    public static final int RULE_PERCENT=9;
-    public static final int T__60=60;
-    public static final int EOF=-1;
+    public static final int T__50=50;
+    public static final int RULE_IMPORTANT_SYM=18;
+    public static final int T__59=59;
+    public static final int RULE_CSSSTRING=6;
+    public static final int RULE_UNDERSCORE=11;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
     public static final int T__58=58;
+    public static final int RULE_PERCENT=9;
     public static final int T__51=51;
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int RULE_ONE_NON_HEX_LETTER=15;
-    public static final int T__59=59;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_UNDERSCORE=11;
-    public static final int RULE_PLUS=7;
-    public static final int RULE_ONE_HEX_LETTER=14;
+    public static final int T__60=60;
+    public static final int T__61=61;
     public static final int RULE_COMMA=8;
-    public static final int RULE_HASHMARK=13;
-    public static final int RULE_ML_COMMENT=19;
-    public static final int RULE_DASHMATCH=5;
-    public static final int T__30=30;
-    public static final int T__31=31;
     public static final int RULE_COLON=12;
-    public static final int T__32=32;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
+    public static final int RULE_HASHMARK=13;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int RULE_DASHMATCH=5;
+    public static final int T__28=28;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=19;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__20=20;
+    public static final int T__64=64;
+    public static final int RULE_INCLUDES=4;
+    public static final int T__21=21;
+    public static final int RULE_ONE_HEX_LETTER=14;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int RULE_CSSSTRING=6;
-    public static final int RULE_IMPORTANT_SYM=18;
-    public static final int RULE_WS=17;
     public static final int RULE_DASH=10;
+    public static final int RULE_ONE_INT=16;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int RULE_PLUS=7;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int RULE_ONE_NON_HEX_LETTER=15;
+    public static final int T__32=32;
+    public static final int RULE_WS=17;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -257,10 +261,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:7: ( '^=' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:9: '^='
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:7: ( '@font-face' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:9: '@font-face'
             {
-            match("^="); 
+            match("@font-face"); 
 
 
             }
@@ -278,10 +282,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:7: ( '$=' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:9: '$='
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:7: ( '@FONT-FACE' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:9: '@FONT-FACE'
             {
-            match("$="); 
+            match("@FONT-FACE"); 
 
 
             }
@@ -299,10 +303,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:7: ( '*=' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:9: '*='
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:7: ( '@keyframes' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:9: '@keyframes'
             {
-            match("*="); 
+            match("@keyframes"); 
 
 
             }
@@ -320,10 +324,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:7: ( '=' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:9: '='
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:7: ( '@KEYFRAMES' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:9: '@KEYFRAMES'
             {
-            match('='); 
+            match("@KEYFRAMES"); 
+
 
             }
 
@@ -340,10 +345,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:7: ( '*' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:9: '*'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:7: ( '^=' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:9: '^='
             {
-            match('*'); 
+            match("^="); 
+
 
             }
 
@@ -360,10 +366,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:7: ( '>' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:9: '>'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:7: ( '$=' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:9: '$='
             {
-            match('>'); 
+            match("$="); 
+
 
             }
 
@@ -380,10 +387,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:7: ( '~' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:9: '~'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:7: ( '*=' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:9: '*='
             {
-            match('~'); 
+            match("*="); 
+
 
             }
 
@@ -400,10 +408,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:7: ( '.' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:9: '.'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:7: ( '=' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:9: '='
             {
-            match('.'); 
+            match('='); 
 
             }
 
@@ -420,10 +428,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:7: ( '/' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:9: '/'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:7: ( '*' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:9: '*'
             {
-            match('/'); 
+            match('*'); 
 
             }
 
@@ -440,10 +448,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:7: ( '?' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:9: '?'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:7: ( '>' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:9: '>'
             {
-            match('?'); 
+            match('>'); 
 
             }
 
@@ -460,10 +468,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:7: ( '[' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:9: '['
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:7: ( '~' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:9: '~'
             {
-            match('['); 
+            match('~'); 
 
             }
 
@@ -480,10 +488,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:7: ( ']' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:9: ']'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:7: ( '.' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:9: '.'
             {
-            match(']'); 
+            match('.'); 
 
             }
 
@@ -500,10 +508,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:7: ( '@' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:9: '@'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:7: ( '/' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:9: '/'
             {
-            match('@'); 
+            match('/'); 
 
             }
 
@@ -520,10 +528,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:7: ( '!' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:9: '!'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:7: ( '?' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:9: '?'
             {
-            match('!'); 
+            match('?'); 
 
             }
 
@@ -540,10 +548,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:7: ( '$' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:9: '$'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:7: ( '[' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:9: '['
             {
-            match('$'); 
+            match('['); 
 
             }
 
@@ -560,10 +568,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:7: ( '&' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:9: '&'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:7: ( ']' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:9: ']'
             {
-            match('&'); 
+            match(']'); 
 
             }
 
@@ -580,10 +588,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:7: ( ';' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:9: ';'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:7: ( '@' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:9: '@'
             {
-            match(';'); 
+            match('@'); 
 
             }
 
@@ -600,11 +608,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:7: ( 'not' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:9: 'not'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:7: ( '!' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:9: '!'
             {
-            match("not"); 
-
+            match('!'); 
 
             }
 
@@ -621,11 +628,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:7: ( 'no' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:9: 'no'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:7: ( '$' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:9: '$'
             {
-            match("no"); 
-
+            match('$'); 
 
             }
 
@@ -642,11 +648,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:7: ( 'url' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:9: 'url'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:7: ( '&' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:9: '&'
             {
-            match("url"); 
-
+            match('&'); 
 
             }
 
@@ -663,11 +668,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:7: ( 'ur' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:9: 'ur'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:7: ( ';' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:9: ';'
             {
-            match("ur"); 
-
+            match(';'); 
 
             }
 
@@ -684,10 +688,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:7: ( '\\\\ ' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:9: '\\\\ '
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:7: ( 'not' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:9: 'not'
             {
-            match("\\ "); 
+            match("not"); 
 
 
             }
@@ -705,10 +709,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:7: ( '\\\\(' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:9: '\\\\('
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:7: ( 'no' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:9: 'no'
             {
-            match("\\("); 
+            match("no"); 
 
 
             }
@@ -726,10 +730,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:7: ( '\\\\)' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:9: '\\\\)'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:7: ( 'url' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:9: 'url'
             {
-            match("\\)"); 
+            match("url"); 
 
 
             }
@@ -747,10 +751,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:7: ( '\\\\\\'' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:9: '\\\\\\''
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:7: ( 'ur' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:9: 'ur'
             {
-            match("\\'"); 
+            match("ur"); 
 
 
             }
@@ -768,10 +772,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:7: ( '\\\\\"' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:9: '\\\\\"'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:7: ( '\\\\ ' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:9: '\\\\ '
             {
-            match("\\\""); 
+            match("\\ "); 
 
 
             }
@@ -789,10 +793,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:7: ( '{' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:9: '{'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:7: ( '\\\\(' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:9: '\\\\('
             {
-            match('{'); 
+            match("\\("); 
+
 
             }
 
@@ -809,10 +814,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:7: ( '}' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:9: '}'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:7: ( '\\\\)' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:9: '\\\\)'
             {
-            match('}'); 
+            match("\\)"); 
+
 
             }
 
@@ -829,10 +835,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:7: ( '|' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:9: '|'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:7: ( '\\\\\\'' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:9: '\\\\\\''
             {
-            match('|'); 
+            match("\\'"); 
+
 
             }
 
@@ -849,10 +856,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:7: ( ')' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:9: ')'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:7: ( '\\\\\"' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:9: '\\\\\"'
             {
-            match(')'); 
+            match("\\\""); 
+
 
             }
 
@@ -869,10 +877,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:7: ( '(' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:9: '('
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:7: ( '{' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:9: '{'
             {
-            match('('); 
+            match('{'); 
 
             }
 
@@ -889,11 +897,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:7: ( 'not(' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:9: 'not('
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:7: ( '}' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:9: '}'
             {
-            match("not("); 
-
+            match('}'); 
 
             }
 
@@ -910,8 +917,89 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:7: ( 'url(' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:9: 'url('
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:7: ( '|' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:9: '|'
+            {
+            match('|'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__60"
+
+    // $ANTLR start "T__61"
+    public final void mT__61() throws RecognitionException {
+        try {
+            int _type = T__61;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:52:7: ( ')' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:52:9: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__61"
+
+    // $ANTLR start "T__62"
+    public final void mT__62() throws RecognitionException {
+        try {
+            int _type = T__62;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:53:7: ( '(' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:53:9: '('
+            {
+            match('('); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__62"
+
+    // $ANTLR start "T__63"
+    public final void mT__63() throws RecognitionException {
+        try {
+            int _type = T__63;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:54:7: ( 'not(' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:54:9: 'not('
+            {
+            match("not("); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__63"
+
+    // $ANTLR start "T__64"
+    public final void mT__64() throws RecognitionException {
+        try {
+            int _type = T__64;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:55:7: ( 'url(' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:55:9: 'url('
             {
             match("url("); 
 
@@ -924,15 +1012,15 @@ public class InternalCssDslLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__60"
+    // $ANTLR end "T__64"
 
     // $ANTLR start "RULE_IMPORTANT_SYM"
     public final void mRULE_IMPORTANT_SYM() throws RecognitionException {
         try {
             int _type = RULE_IMPORTANT_SYM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7786:20: ( '!important' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7786:22: '!important'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8504:20: ( '!important' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8504:22: '!important'
             {
             match("!important"); 
 
@@ -952,8 +1040,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_ONE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7788:14: ( '0' .. '9' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7788:16: '0' .. '9'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8506:14: ( '0' .. '9' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8506:16: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -972,8 +1060,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_ONE_HEX_LETTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7790:21: ( ( 'a' .. 'f' | 'A' .. 'F' ) )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7790:23: ( 'a' .. 'f' | 'A' .. 'F' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8508:21: ( ( 'a' .. 'f' | 'A' .. 'F' ) )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8508:23: ( 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -1000,8 +1088,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_ONE_NON_HEX_LETTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7792:25: ( ( 'g' .. 'z' | 'G' .. 'Z' ) )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7792:27: ( 'g' .. 'z' | 'G' .. 'Z' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8510:25: ( ( 'g' .. 'z' | 'G' .. 'Z' ) )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8510:27: ( 'g' .. 'z' | 'G' .. 'Z' )
             {
             if ( (input.LA(1)>='G' && input.LA(1)<='Z')||(input.LA(1)>='g' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1028,8 +1116,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_UNDERSCORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7794:17: ( '_' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7794:19: '_'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8512:17: ( '_' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8512:19: '_'
             {
             match('_'); 
 
@@ -1048,8 +1136,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_DASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7796:11: ( '-' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7796:13: '-'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8514:11: ( '-' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8514:13: '-'
             {
             match('-'); 
 
@@ -1068,8 +1156,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7798:11: ( '+' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7798:13: '+'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8516:11: ( '+' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8516:13: '+'
             {
             match('+'); 
 
@@ -1088,8 +1176,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_HASHMARK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7800:15: ( '#' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7800:17: '#'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8518:15: ( '#' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8518:17: '#'
             {
             match('#'); 
 
@@ -1108,8 +1196,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7802:12: ( ',' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7802:14: ','
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8520:12: ( ',' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8520:14: ','
             {
             match(','); 
 
@@ -1128,8 +1216,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_PERCENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7804:14: ( '%' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7804:16: '%'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8522:14: ( '%' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8522:16: '%'
             {
             match('%'); 
 
@@ -1148,12 +1236,12 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7806:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7806:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8524:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8524:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7806:24: ( options {greedy=false; } : . )*
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8524:24: ( options {greedy=false; } : . )*
             loop1:
             do {
                 int alt1=2;
@@ -1178,7 +1266,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7806:52: .
+            	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8524:52: .
             	    {
             	    matchAny(); 
 
@@ -1208,10 +1296,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7808:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7808:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8526:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8526:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7808:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8526:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt2=0;
             loop2:
             do {
@@ -1265,10 +1353,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_CSSSTRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:16: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:18: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:16: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:18: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:18: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:18: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1286,10 +1374,10 @@ public class InternalCssDslLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:19: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:19: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:23: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:23: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -1305,7 +1393,7 @@ public class InternalCssDslLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:24: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:24: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||input.LA(1)=='\\'||(input.LA(1)>='a' && input.LA(1)<='f')||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1321,7 +1409,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:96: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:96: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1346,10 +1434,10 @@ public class InternalCssDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:116: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:116: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:121: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:121: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1365,7 +1453,7 @@ public class InternalCssDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:122: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:122: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||input.LA(1)=='\\'||(input.LA(1)>='a' && input.LA(1)<='f')||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1381,7 +1469,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7810:194: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8528:194: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1424,8 +1512,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_INCLUDES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7812:15: ( '~=' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7812:17: '~='
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8530:15: ( '~=' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8530:17: '~='
             {
             match("~="); 
 
@@ -1445,8 +1533,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_DASHMATCH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7814:16: ( '|=' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7814:18: '|='
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8532:16: ( '|=' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8532:18: '|='
             {
             match("|="); 
 
@@ -1466,8 +1554,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7816:12: ( ':' )
-            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:7816:14: ':'
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8534:12: ( ':' )
+            // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:8534:14: ':'
             {
             match(':'); 
 
@@ -1482,8 +1570,8 @@ public class InternalCssDslLexer extends Lexer {
     // $ANTLR end "RULE_COLON"
 
     public void mTokens() throws RecognitionException {
-        // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:8: ( T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | RULE_IMPORTANT_SYM | RULE_ONE_INT | RULE_ONE_HEX_LETTER | RULE_ONE_NON_HEX_LETTER | RULE_UNDERSCORE | RULE_DASH | RULE_PLUS | RULE_HASHMARK | RULE_COMMA | RULE_PERCENT | RULE_ML_COMMENT | RULE_WS | RULE_CSSSTRING | RULE_INCLUDES | RULE_DASHMATCH | RULE_COLON )
-        int alt6=57;
+        // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:8: ( T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | RULE_IMPORTANT_SYM | RULE_ONE_INT | RULE_ONE_HEX_LETTER | RULE_ONE_NON_HEX_LETTER | RULE_UNDERSCORE | RULE_DASH | RULE_PLUS | RULE_HASHMARK | RULE_COMMA | RULE_PERCENT | RULE_ML_COMMENT | RULE_WS | RULE_CSSSTRING | RULE_INCLUDES | RULE_DASHMATCH | RULE_COLON )
+        int alt6=61;
         alt6 = dfa6.predict(input);
         switch (alt6) {
             case 1 :
@@ -1774,112 +1862,140 @@ public class InternalCssDslLexer extends Lexer {
                 }
                 break;
             case 42 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:256: RULE_IMPORTANT_SYM
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:256: T__61
+                {
+                mT__61(); 
+
+                }
+                break;
+            case 43 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:262: T__62
+                {
+                mT__62(); 
+
+                }
+                break;
+            case 44 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:268: T__63
+                {
+                mT__63(); 
+
+                }
+                break;
+            case 45 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:274: T__64
+                {
+                mT__64(); 
+
+                }
+                break;
+            case 46 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:280: RULE_IMPORTANT_SYM
                 {
                 mRULE_IMPORTANT_SYM(); 
 
                 }
                 break;
-            case 43 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:275: RULE_ONE_INT
+            case 47 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:299: RULE_ONE_INT
                 {
                 mRULE_ONE_INT(); 
 
                 }
                 break;
-            case 44 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:288: RULE_ONE_HEX_LETTER
+            case 48 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:312: RULE_ONE_HEX_LETTER
                 {
                 mRULE_ONE_HEX_LETTER(); 
 
                 }
                 break;
-            case 45 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:308: RULE_ONE_NON_HEX_LETTER
+            case 49 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:332: RULE_ONE_NON_HEX_LETTER
                 {
                 mRULE_ONE_NON_HEX_LETTER(); 
 
                 }
                 break;
-            case 46 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:332: RULE_UNDERSCORE
+            case 50 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:356: RULE_UNDERSCORE
                 {
                 mRULE_UNDERSCORE(); 
 
                 }
                 break;
-            case 47 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:348: RULE_DASH
+            case 51 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:372: RULE_DASH
                 {
                 mRULE_DASH(); 
 
                 }
                 break;
-            case 48 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:358: RULE_PLUS
+            case 52 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:382: RULE_PLUS
                 {
                 mRULE_PLUS(); 
 
                 }
                 break;
-            case 49 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:368: RULE_HASHMARK
+            case 53 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:392: RULE_HASHMARK
                 {
                 mRULE_HASHMARK(); 
 
                 }
                 break;
-            case 50 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:382: RULE_COMMA
+            case 54 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:406: RULE_COMMA
                 {
                 mRULE_COMMA(); 
 
                 }
                 break;
-            case 51 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:393: RULE_PERCENT
+            case 55 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:417: RULE_PERCENT
                 {
                 mRULE_PERCENT(); 
 
                 }
                 break;
-            case 52 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:406: RULE_ML_COMMENT
+            case 56 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:430: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 53 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:422: RULE_WS
+            case 57 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:446: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 54 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:430: RULE_CSSSTRING
+            case 58 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:454: RULE_CSSSTRING
                 {
                 mRULE_CSSSTRING(); 
 
                 }
                 break;
-            case 55 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:445: RULE_INCLUDES
+            case 59 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:469: RULE_INCLUDES
                 {
                 mRULE_INCLUDES(); 
 
                 }
                 break;
-            case 56 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:459: RULE_DASHMATCH
+            case 60 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:483: RULE_DASHMATCH
                 {
                 mRULE_DASHMATCH(); 
 
                 }
                 break;
-            case 57 :
-                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:474: RULE_COLON
+            case 61 :
+                // ../org.eclipse.fx.ide.css.ui/src-gen/org/eclipse/fx/ide/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:498: RULE_COLON
                 {
                 mRULE_COLON(); 
 
@@ -1893,89 +2009,39 @@ public class InternalCssDslLexer extends Lexer {
 
     protected DFA6 dfa6 = new DFA6(this);
     static final String DFA6_eotS =
-        "\1\uffff\1\54\1\uffff\1\56\1\60\2\uffff\1\62\1\uffff\1\64\3\uffff"+
-        "\1\66\2\uffff\2\32\3\uffff\1\77\41\uffff\1\101\1\103\7\uffff\1\105"+
-        "\1\uffff\1\107\5\uffff";
+        "\1\uffff\1\60\1\uffff\1\62\1\64\2\uffff\1\66\1\uffff\1\70\3\uffff\1\72\2\uffff\2\32\3\uffff\1\103\45\uffff\1\105\1\107\7\uffff\1\111\1\uffff\1\113\5\uffff";
     static final String DFA6_eofS =
-        "\110\uffff";
+        "\114\uffff";
     static final String DFA6_minS =
-        "\1\11\1\103\1\uffff\2\75\2\uffff\1\75\1\uffff\1\52\3\uffff\1\151"+
-        "\2\uffff\1\157\1\162\1\40\2\uffff\1\75\41\uffff\1\164\1\154\7\uffff"+
-        "\1\50\1\uffff\1\50\5\uffff";
+        "\1\11\1\103\1\uffff\2\75\2\uffff\1\75\1\uffff\1\52\3\uffff\1\151\2\uffff\1\157\1\162\1\40\2\uffff\1\75\45\uffff\1\164\1\154\7\uffff\1\50\1\uffff\1\50\5\uffff";
     static final String DFA6_maxS =
-        "\1\176\1\160\1\uffff\2\75\2\uffff\1\75\1\uffff\1\52\3\uffff\1\151"+
-        "\2\uffff\1\157\1\162\1\51\2\uffff\1\75\41\uffff\1\164\1\154\7\uffff"+
-        "\1\50\1\uffff\1\50\5\uffff";
+        "\1\176\1\160\1\uffff\2\75\2\uffff\1\75\1\uffff\1\52\3\uffff\1\151\2\uffff\1\157\1\162\1\51\2\uffff\1\75\45\uffff\1\164\1\154\7\uffff\1\50\1\uffff\1\50\5\uffff";
     static final String DFA6_acceptS =
-        "\2\uffff\1\11\2\uffff\1\14\1\16\1\uffff\1\20\1\uffff\1\22\1\23\1"+
-        "\24\1\uffff\1\30\1\31\3\uffff\1\43\1\44\1\uffff\1\46\1\47\1\53\1"+
-        "\54\1\55\1\56\1\57\1\60\1\61\1\62\1\63\1\65\1\66\1\71\1\1\1\2\1"+
-        "\3\1\4\1\5\1\6\1\7\1\10\1\25\1\12\1\27\1\13\1\15\1\67\1\17\1\64"+
-        "\1\21\1\52\1\26\2\uffff\1\36\1\37\1\40\1\41\1\42\1\70\1\45\1\uffff"+
-        "\1\33\1\uffff\1\35\1\50\1\32\1\51\1\34";
+        "\2\uffff\1\15\2\uffff\1\20\1\22\1\uffff\1\24\1\uffff\1\26\1\27\1\30\1\uffff\1\34\1\35\3\uffff\1\47\1\50\1\uffff\1\52\1\53\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\66\1\67\1\71\1\72\1\75\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\31\1\16\1\33\1\17\1\21\1\73\1\23\1\70\1\25\1\56\1\32\2\uffff\1\42\1\43\1\44\1\45\1\46\1\74\1\51\1\uffff\1\37\1\uffff\1\41\1\54\1\36\1\55\1\40";
     static final String DFA6_specialS =
-        "\110\uffff}>";
+        "\114\uffff}>";
     static final String[] DFA6_transitionS = {
-            "\2\41\2\uffff\1\41\22\uffff\1\41\1\15\1\42\1\36\1\3\1\40\1\16"+
-            "\1\42\1\27\1\26\1\4\1\35\1\37\1\34\1\10\1\11\12\30\1\43\1\17"+
-            "\1\uffff\1\5\1\6\1\12\1\1\6\31\24\32\1\13\1\22\1\14\1\2\1\33"+
-            "\1\uffff\6\31\7\32\1\20\6\32\1\21\5\32\1\23\1\25\1\24\1\7",
-            "\1\45\5\uffff\1\47\3\uffff\1\53\2\uffff\1\51\22\uffff\1\44"+
-            "\5\uffff\1\46\3\uffff\1\52\2\uffff\1\50",
-            "",
-            "\1\55",
-            "\1\57",
-            "",
+            "\2\41\2\uffff\1\41\22\uffff\1\41\1\15\1\42\1\36\1\3\1\40\1\16\1\42\1\27\1\26\1\4\1\35\1\37\1\34\1\10\1\11\12\30\1\43\1\17\1\uffff\1\5\1\6\1\12\1\1\6\31\24\32\1\13\1\22\1\14\1\2\1\33\1\uffff\6\31\7\32\1\20\6\32\1\21\5\32\1\23\1\25\1\24\1\7",
+            "\1\45\2\uffff\1\55\2\uffff\1\47\1\uffff\1\57\1\uffff\1\53\2\uffff\1\51\22\uffff\1\44\2\uffff\1\54\2\uffff\1\46\1\uffff\1\56\1\uffff\1\52\2\uffff\1\50",
             "",
             "\1\61",
-            "",
             "\1\63",
-            "",
             "",
             "",
             "\1\65",
             "",
-            "",
             "\1\67",
-            "\1\70",
-            "\1\71\1\uffff\1\75\4\uffff\1\74\1\72\1\73",
-            "",
-            "",
-            "\1\76",
             "",
             "",
             "",
+            "\1\71",
             "",
             "",
+            "\1\73",
+            "\1\74",
+            "\1\75\1\uffff\1\101\4\uffff\1\100\1\76\1\77",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\100",
             "\1\102",
             "",
             "",
@@ -1984,9 +2050,48 @@ public class InternalCssDslLexer extends Lexer {
             "",
             "",
             "",
-            "\1\104",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\104",
             "\1\106",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\110",
+            "",
+            "\1\112",
             "",
             "",
             "",
@@ -2024,7 +2129,7 @@ public class InternalCssDslLexer extends Lexer {
             this.transition = DFA6_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | RULE_IMPORTANT_SYM | RULE_ONE_INT | RULE_ONE_HEX_LETTER | RULE_ONE_NON_HEX_LETTER | RULE_UNDERSCORE | RULE_DASH | RULE_PLUS | RULE_HASHMARK | RULE_COMMA | RULE_PERCENT | RULE_ML_COMMENT | RULE_WS | RULE_CSSSTRING | RULE_INCLUDES | RULE_DASHMATCH | RULE_COLON );";
+            return "1:1: Tokens : ( T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | RULE_IMPORTANT_SYM | RULE_ONE_INT | RULE_ONE_HEX_LETTER | RULE_ONE_NON_HEX_LETTER | RULE_UNDERSCORE | RULE_DASH | RULE_PLUS | RULE_HASHMARK | RULE_COMMA | RULE_PERCENT | RULE_ML_COMMENT | RULE_WS | RULE_CSSSTRING | RULE_INCLUDES | RULE_DASHMATCH | RULE_COLON );";
         }
     }
  

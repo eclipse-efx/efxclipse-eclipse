@@ -35,7 +35,9 @@ import org.eclipse.fx.ide.css.cssDsl.WSTok;
 import org.eclipse.fx.ide.css.cssDsl.charset;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
+import org.eclipse.fx.ide.css.cssDsl.font_face;
 import org.eclipse.fx.ide.css.cssDsl.importExpression;
+import org.eclipse.fx.ide.css.cssDsl.keyframes;
 import org.eclipse.fx.ide.css.cssDsl.media;
 import org.eclipse.fx.ide.css.cssDsl.page;
 import org.eclipse.fx.ide.css.cssDsl.ruleset;
@@ -85,6 +87,20 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass mediaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass font_faceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass keyframesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -396,6 +412,26 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getstylesheet_Font_face()
+  {
+    return (EReference)stylesheetEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getstylesheet_Keyframes()
+  {
+    return (EReference)stylesheetEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getcharset()
   {
     return charsetEClass;
@@ -489,6 +525,36 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
   public EReference getmedia_Rulesets()
   {
     return (EReference)mediaEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getfont_face()
+  {
+    return font_faceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getfont_face_Declarations()
+  {
+    return (EReference)font_faceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getkeyframes()
+  {
+    return keyframesEClass;
   }
 
   /**
@@ -1157,6 +1223,8 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEReference(stylesheetEClass, STYLESHEET__RULESET);
     createEReference(stylesheetEClass, STYLESHEET__MEDIA);
     createEReference(stylesheetEClass, STYLESHEET__PAGE);
+    createEReference(stylesheetEClass, STYLESHEET__FONT_FACE);
+    createEReference(stylesheetEClass, STYLESHEET__KEYFRAMES);
 
     charsetEClass = createEClass(CHARSET);
     createEAttribute(charsetEClass, CHARSET__CHARSET);
@@ -1171,6 +1239,11 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     mediaEClass = createEClass(MEDIA);
     createEAttribute(mediaEClass, MEDIA__MEDIALIST);
     createEReference(mediaEClass, MEDIA__RULESETS);
+
+    font_faceEClass = createEClass(FONT_FACE);
+    createEReference(font_faceEClass, FONT_FACE__DECLARATIONS);
+
+    keyframesEClass = createEClass(KEYFRAMES);
 
     rulesetEClass = createEClass(RULESET);
     createEReference(rulesetEClass, RULESET__SELECTORS);
@@ -1291,6 +1364,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    font_faceEClass.getESuperTypes().add(this.getkeyframes());
     classSelectorEClass.getESuperTypes().add(this.getCssSelector());
     idSelectorEClass.getESuperTypes().add(this.getCssSelector());
     pseudoClassOrFuncEClass.getESuperTypes().add(this.getCssSelector());
@@ -1316,6 +1390,8 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEReference(getstylesheet_Ruleset(), this.getruleset(), null, "ruleset", null, 0, -1, stylesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getstylesheet_Media(), this.getmedia(), null, "media", null, 0, -1, stylesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getstylesheet_Page(), this.getpage(), null, "page", null, 0, -1, stylesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getstylesheet_Font_face(), this.getfont_face(), null, "font_face", null, 0, -1, stylesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getstylesheet_Keyframes(), this.getkeyframes(), null, "keyframes", null, 0, -1, stylesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(charsetEClass, charset.class, "charset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getcharset_Charset(), ecorePackage.getEString(), "charset", null, 0, 1, charset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1330,6 +1406,11 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEClass(mediaEClass, media.class, "media", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getmedia_Medialist(), ecorePackage.getEString(), "medialist", null, 0, 1, media.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getmedia_Rulesets(), this.getruleset(), null, "rulesets", null, 0, -1, media.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(font_faceEClass, font_face.class, "font_face", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getfont_face_Declarations(), this.getcss_declaration(), null, "declarations", null, 0, -1, font_face.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(keyframesEClass, keyframes.class, "keyframes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(rulesetEClass, ruleset.class, "ruleset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getruleset_Selectors(), this.getselector(), null, "selectors", null, 0, -1, ruleset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

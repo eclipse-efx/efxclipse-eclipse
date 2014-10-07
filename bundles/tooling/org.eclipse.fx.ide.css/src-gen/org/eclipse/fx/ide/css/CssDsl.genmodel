@@ -4,7 +4,7 @@
     editorDirectory="/org.eclipse.fx.ide.css.editor/src" modelPluginID="org.eclipse.fx.ide.css"
     forceOverwrite="true" modelName="CssDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.fx.ide.css.edit"
-    editorPluginID="org.eclipse.fx.ide.css.editor" runtimeVersion="2.8">
+    editorPluginID="org.eclipse.fx.ide.css.editor" runtimeVersion="2.10">
   <genPackages prefix="CssDsl" basePackage="org.eclipse.fx.ide.css" disposableProviderFactory="true"
       ecorePackage="CssDsl.ecore#/">
     <genClasses ecoreClass="CssDsl.ecore#//stylesheet">
@@ -13,6 +13,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/ruleset"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/media"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/page"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/font_face"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/keyframes"/>
     </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//charset">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//charset/charset"/>
@@ -28,6 +30,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//media/medialist"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//media/rulesets"/>
     </genClasses>
+    <genClasses ecoreClass="CssDsl.ecore#//font_face">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//font_face/declarations"/>
+    </genClasses>
+    <genClasses ecoreClass="CssDsl.ecore#//keyframes"/>
     <genClasses ecoreClass="CssDsl.ecore#//ruleset">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//ruleset/selectors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//ruleset/declarations"/>

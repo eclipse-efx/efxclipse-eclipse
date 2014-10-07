@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getRuleset <em>Ruleset</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getMedia <em>Media</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getPage <em>Page</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getFont_face <em>Font face</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getKeyframes <em>Keyframes</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,5 +119,37 @@ public interface stylesheet extends EObject
    * @generated
    */
   EList<page> getPage();
+
+  /**
+   * Returns the value of the '<em><b>Font face</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.fx.ide.css.cssDsl.font_face}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Font face</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Font face</em>' containment reference list.
+   * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getstylesheet_Font_face()
+   * @model containment="true"
+   * @generated
+   */
+  EList<font_face> getFont_face();
+
+  /**
+   * Returns the value of the '<em><b>Keyframes</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.fx.ide.css.cssDsl.keyframes}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Keyframes</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Keyframes</em>' containment reference list.
+   * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getstylesheet_Keyframes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<keyframes> getKeyframes();
 
 } // stylesheet

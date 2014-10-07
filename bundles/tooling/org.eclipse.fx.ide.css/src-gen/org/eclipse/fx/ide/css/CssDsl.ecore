@@ -13,6 +13,10 @@
         eType="#//media" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="page" upperBound="-1" eType="#//page"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="font_face" upperBound="-1"
+        eType="#//font_face" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyframes" upperBound="-1"
+        eType="#//keyframes" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="charset">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="charset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -30,6 +34,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rulesets" upperBound="-1"
         eType="#//ruleset" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="font_face" eSuperTypes="#//keyframes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
+        eType="#//css_declaration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="keyframes"/>
   <eClassifiers xsi:type="ecore:EClass" name="ruleset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectors" upperBound="-1"
         eType="#//selector" containment="true"/>

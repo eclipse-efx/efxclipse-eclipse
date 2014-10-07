@@ -28,6 +28,7 @@ Export-Package: org.eclipse.fx.ide.css.ui;x-internal:=true,
  org.eclipse.fx.ide.css.ui.contentassist.antlr;x-internal:=true,
  org.eclipse.fx.ide.css.ui.extapi;x-internal:=true,
  org.eclipse.fx.ide.css.ui.hover;x-internal:=true,
- org.eclipse.fx.ide.css.ui.internal;x-internal:=true
+ org.eclipse.fx.ide.css.ui.internal;x-internal:=true,
+ org.eclipse.fx.ide.css.ui.quickfix
 Bundle-Activator: org.eclipse.fx.ide.css.ui.internal.CssDslActivator
 Eclipse-BundleShape: dir

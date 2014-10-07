@@ -22,7 +22,13 @@ public abstract class AbstractCssDslSyntacticSequencer extends AbstractSyntactic
 	protected AbstractElementAlias match_charset_CHARSETKeyword_0_1_or_CharsetKeyword_0_0;
 	protected AbstractElementAlias match_css_declaration_WSTerminalRuleCall_0_a;
 	protected AbstractElementAlias match_css_declaration_WSTerminalRuleCall_2_a;
+	protected AbstractElementAlias match_font_face_FONTFACEKeyword_1_1_or_FontFaceKeyword_1_0;
+	protected AbstractElementAlias match_font_face_SemicolonKeyword_4_0_a;
+	protected AbstractElementAlias match_font_face_SemicolonKeyword_4_0_p;
 	protected AbstractElementAlias match_importExpression_IMPORTKeyword_0_1_or_ImportKeyword_0_0;
+	protected AbstractElementAlias match_keyframes_KEYFRAMESKeyword_1_1_or_KeyframesKeyword_1_0;
+	protected AbstractElementAlias match_keyframes_SemicolonKeyword_4_0_a;
+	protected AbstractElementAlias match_keyframes_SemicolonKeyword_4_0_p;
 	protected AbstractElementAlias match_media_MEDIAKeyword_0_1_or_MediaKeyword_0_0;
 	protected AbstractElementAlias match_page_PAGEKeyword_1_1_or_PageKeyword_1_0;
 	protected AbstractElementAlias match_page_SemicolonKeyword_5_0_a;
@@ -41,7 +47,13 @@ public abstract class AbstractCssDslSyntacticSequencer extends AbstractSyntactic
 		match_charset_CHARSETKeyword_0_1_or_CharsetKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCharsetAccess().getCHARSETKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getCharsetAccess().getCharsetKeyword_0_0()));
 		match_css_declaration_WSTerminalRuleCall_0_a = new TokenAlias(true, true, grammarAccess.getCss_declarationAccess().getWSTerminalRuleCall_0());
 		match_css_declaration_WSTerminalRuleCall_2_a = new TokenAlias(true, true, grammarAccess.getCss_declarationAccess().getWSTerminalRuleCall_2());
+		match_font_face_FONTFACEKeyword_1_1_or_FontFaceKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFont_faceAccess().getFONTFACEKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getFont_faceAccess().getFontFaceKeyword_1_0()));
+		match_font_face_SemicolonKeyword_4_0_a = new TokenAlias(true, true, grammarAccess.getFont_faceAccess().getSemicolonKeyword_4_0());
+		match_font_face_SemicolonKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getFont_faceAccess().getSemicolonKeyword_4_0());
 		match_importExpression_IMPORTKeyword_0_1_or_ImportKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportExpressionAccess().getIMPORTKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getImportExpressionAccess().getImportKeyword_0_0()));
+		match_keyframes_KEYFRAMESKeyword_1_1_or_KeyframesKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getKeyframesAccess().getKEYFRAMESKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getKeyframesAccess().getKeyframesKeyword_1_0()));
+		match_keyframes_SemicolonKeyword_4_0_a = new TokenAlias(true, true, grammarAccess.getKeyframesAccess().getSemicolonKeyword_4_0());
+		match_keyframes_SemicolonKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getKeyframesAccess().getSemicolonKeyword_4_0());
 		match_media_MEDIAKeyword_0_1_or_MediaKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getMediaAccess().getMEDIAKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getMediaAccess().getMediaKeyword_0_0()));
 		match_page_PAGEKeyword_1_1_or_PageKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPageAccess().getPAGEKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getPageAccess().getPageKeyword_1_0()));
 		match_page_SemicolonKeyword_5_0_a = new TokenAlias(true, true, grammarAccess.getPageAccess().getSemicolonKeyword_5_0());
@@ -143,8 +155,20 @@ public abstract class AbstractCssDslSyntacticSequencer extends AbstractSyntactic
 				emit_css_declaration_WSTerminalRuleCall_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_css_declaration_WSTerminalRuleCall_2_a.equals(syntax))
 				emit_css_declaration_WSTerminalRuleCall_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_font_face_FONTFACEKeyword_1_1_or_FontFaceKeyword_1_0.equals(syntax))
+				emit_font_face_FONTFACEKeyword_1_1_or_FontFaceKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_font_face_SemicolonKeyword_4_0_a.equals(syntax))
+				emit_font_face_SemicolonKeyword_4_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_font_face_SemicolonKeyword_4_0_p.equals(syntax))
+				emit_font_face_SemicolonKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_importExpression_IMPORTKeyword_0_1_or_ImportKeyword_0_0.equals(syntax))
 				emit_importExpression_IMPORTKeyword_0_1_or_ImportKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_keyframes_KEYFRAMESKeyword_1_1_or_KeyframesKeyword_1_0.equals(syntax))
+				emit_keyframes_KEYFRAMESKeyword_1_1_or_KeyframesKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_keyframes_SemicolonKeyword_4_0_a.equals(syntax))
+				emit_keyframes_SemicolonKeyword_4_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_keyframes_SemicolonKeyword_4_0_p.equals(syntax))
+				emit_keyframes_SemicolonKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_media_MEDIAKeyword_0_1_or_MediaKeyword_0_0.equals(syntax))
 				emit_media_MEDIAKeyword_0_1_or_MediaKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_page_PAGEKeyword_1_1_or_PageKeyword_1_0.equals(syntax))
@@ -179,7 +203,7 @@ public abstract class AbstractCssDslSyntacticSequencer extends AbstractSyntactic
 	
 	/**
 	 * Syntax:
-	 *     '@CHARSET' | '@charset'
+	 *     '@charset' | '@CHARSET'
 	 */
 	protected void emit_charset_CHARSETKeyword_0_1_or_CharsetKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -203,7 +227,31 @@ public abstract class AbstractCssDslSyntacticSequencer extends AbstractSyntactic
 	
 	/**
 	 * Syntax:
-	 *     '@IMPORT' | '@import'
+	 *     '@font-face' | '@FONT-FACE'
+	 */
+	protected void emit_font_face_FONTFACEKeyword_1_1_or_FontFaceKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ';'*
+	 */
+	protected void emit_font_face_SemicolonKeyword_4_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ';'+
+	 */
+	protected void emit_font_face_SemicolonKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '@import' | '@IMPORT'
 	 */
 	protected void emit_importExpression_IMPORTKeyword_0_1_or_ImportKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -211,7 +259,31 @@ public abstract class AbstractCssDslSyntacticSequencer extends AbstractSyntactic
 	
 	/**
 	 * Syntax:
-	 *     '@MEDIA' | '@media'
+	 *     '@keyframes' | '@KEYFRAMES'
+	 */
+	protected void emit_keyframes_KEYFRAMESKeyword_1_1_or_KeyframesKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ';'*
+	 */
+	protected void emit_keyframes_SemicolonKeyword_4_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ';'+
+	 */
+	protected void emit_keyframes_SemicolonKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '@media' | '@MEDIA'
 	 */
 	protected void emit_media_MEDIAKeyword_0_1_or_MediaKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

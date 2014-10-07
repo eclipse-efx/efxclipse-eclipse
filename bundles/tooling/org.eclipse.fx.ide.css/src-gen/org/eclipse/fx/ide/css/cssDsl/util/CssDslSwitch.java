@@ -106,6 +106,21 @@ public class CssDslSwitch<@Nullable T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CssDslPackage.FONT_FACE:
+      {
+        font_face font_face = (font_face)theEObject;
+        T result = casefont_face(font_face);
+        if (result == null) result = casekeyframes(font_face);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CssDslPackage.KEYFRAMES:
+      {
+        keyframes keyframes = (keyframes)theEObject;
+        T result = casekeyframes(keyframes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CssDslPackage.RULESET:
       {
         ruleset ruleset = (ruleset)theEObject;
@@ -388,6 +403,38 @@ public class CssDslSwitch<@Nullable T> extends Switch<T>
    * @generated
    */
   public T casemedia(media object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>font face</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>font face</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefont_face(font_face object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>keyframes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>keyframes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casekeyframes(keyframes object)
   {
     return null;
   }

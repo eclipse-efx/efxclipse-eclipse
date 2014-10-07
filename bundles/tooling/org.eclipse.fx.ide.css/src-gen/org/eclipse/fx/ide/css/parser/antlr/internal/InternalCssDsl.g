@@ -169,6 +169,44 @@ rulestylesheet returns [EObject current=null]
 	    }
 
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStylesheetAccess().getFont_faceFont_faceParserRuleCall_2_3_0()); 
+	    }
+		lv_font_face_5_0=rulefont_face		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStylesheetRule());
+	        }
+       		add(
+       			$current, 
+       			"font_face",
+        		lv_font_face_5_0, 
+        		"font_face");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStylesheetAccess().getKeyframesKeyframesParserRuleCall_2_4_0()); 
+	    }
+		lv_keyframes_6_0=rulekeyframes		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStylesheetRule());
+	        }
+       		add(
+       			$current, 
+       			"keyframes",
+        		lv_keyframes_6_0, 
+        		"keyframes");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))*)
 ;
 
@@ -600,6 +638,174 @@ rulemedium returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     }
 
     ;
+
+
+
+
+
+// Entry rule entryRulefont_face
+entryRulefont_face returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFont_faceRule()); }
+	 iv_rulefont_face=rulefont_face 
+	 { $current=$iv_rulefont_face.current; } 
+	 EOF 
+;
+
+// Rule font_face
+rulefont_face returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getFont_faceAccess().getFont_faceAction_0(),
+            $current);
+    }
+)(	otherlv_1='@font-face' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getFont_faceAccess().getFontFaceKeyword_1_0());
+    }
+
+    |	otherlv_2='@FONT-FACE' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getFont_faceAccess().getFONTFACEKeyword_1_1());
+    }
+)	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getFont_faceAccess().getLeftCurlyBracketKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFont_faceAccess().getDeclarationsCss_declarationParserRuleCall_3_0()); 
+	    }
+		lv_declarations_4_0=rulecss_declaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFont_faceRule());
+	        }
+       		add(
+       			$current, 
+       			"declarations",
+        		lv_declarations_4_0, 
+        		"css_declaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(	otherlv_5=';' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getFont_faceAccess().getSemicolonKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFont_faceAccess().getDeclarationsCss_declarationParserRuleCall_4_1_0()); 
+	    }
+		lv_declarations_6_0=rulecss_declaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFont_faceRule());
+	        }
+       		add(
+       			$current, 
+       			"declarations",
+        		lv_declarations_6_0, 
+        		"css_declaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?)*	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getFont_faceAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulekeyframes
+entryRulekeyframes returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getKeyframesRule()); }
+	 iv_rulekeyframes=rulekeyframes 
+	 { $current=$iv_rulekeyframes.current; } 
+	 EOF 
+;
+
+// Rule keyframes
+rulekeyframes returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getKeyframesAccess().getFont_faceAction_0(),
+            $current);
+    }
+)(	otherlv_1='@keyframes' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getKeyframesAccess().getKeyframesKeyword_1_0());
+    }
+
+    |	otherlv_2='@KEYFRAMES' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getKeyframesAccess().getKEYFRAMESKeyword_1_1());
+    }
+)	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getKeyframesAccess().getLeftCurlyBracketKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKeyframesAccess().getDeclarationsCss_declarationParserRuleCall_3_0()); 
+	    }
+		lv_declarations_4_0=rulecss_declaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKeyframesRule());
+	        }
+       		add(
+       			$current, 
+       			"declarations",
+        		lv_declarations_4_0, 
+        		"css_declaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(	otherlv_5=';' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getKeyframesAccess().getSemicolonKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKeyframesAccess().getDeclarationsCss_declarationParserRuleCall_4_1_0()); 
+	    }
+		lv_declarations_6_0=rulecss_declaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKeyframesRule());
+	        }
+       		add(
+       			$current, 
+       			"declarations",
+        		lv_declarations_6_0, 
+        		"css_declaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?)*	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getKeyframesAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
 
 
 

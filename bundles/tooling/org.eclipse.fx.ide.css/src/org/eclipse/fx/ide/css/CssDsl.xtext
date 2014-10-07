@@ -15,7 +15,9 @@ stylesheet:
 	( 
 		ruleset+=ruleset |
 		media+=media |
-		page+=page
+		page+=page |
+		font_face+=font_face |
+		keyframes+=keyframes
 	)*
 ;
 
@@ -47,6 +49,17 @@ media_list:
 medium: 
 	Identifier
 ;
+
+font_face:
+	{font_face} ('@font-face'|'@FONT-FACE') 
+	'{' declarations+=css_declaration? ( ';' declarations+=css_declaration? )* '}'	
+;
+
+keyframes:
+	{font_face} ('@keyframes'|'@KEYFRAMES') 
+	'{' declarations+=css_declaration? ( ';' declarations+=css_declaration? )* '}'	
+;
+
 
 ruleset:
 	selectors+=selector ( WS* COMMA selectors+=selector )* WS* '{'

@@ -30,7 +30,7 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     try
     {
-      CssDslFactory theCssDslFactory = (CssDslFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/efxclipse/ide/css/CssDsl"); 
+      CssDslFactory theCssDslFactory = (CssDslFactory)EPackage.Registry.INSTANCE.getEFactory(CssDslPackage.eNS_URI);
       if (theCssDslFactory != null)
       {
         return theCssDslFactory;
@@ -69,6 +69,8 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.IMPORT_EXPRESSION: return createimportExpression();
       case CssDslPackage.PAGE: return createpage();
       case CssDslPackage.MEDIA: return createmedia();
+      case CssDslPackage.FONT_FACE: return createfont_face();
+      case CssDslPackage.KEYFRAMES: return createkeyframes();
       case CssDslPackage.RULESET: return createruleset();
       case CssDslPackage.SELECTOR: return createselector();
       case CssDslPackage.SIMPLE_SELECTOR_FOR_NEGATION: return createSimpleSelectorForNegation();
@@ -153,6 +155,28 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     mediaImpl media = new mediaImpl();
     return media;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public font_face createfont_face()
+  {
+    font_faceImpl font_face = new font_faceImpl();
+    return font_face;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public keyframes createkeyframes()
+  {
+    keyframesImpl keyframes = new keyframesImpl();
+    return keyframes;
   }
 
   /**
