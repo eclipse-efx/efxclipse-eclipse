@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -756,18 +757,146 @@ rulekeyframes returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getKeyframesAccess().getKEYFRAMESKeyword_1_1());
     }
-)	otherlv_3='{' 
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKeyframesAccess().getNameIdentifierParserRuleCall_2_0()); 
+	    }
+		lv_name_3_0=ruleIdentifier		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKeyframesRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_3_0, 
+        		"Identifier");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4='{' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getKeyframesAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_4, grammarAccess.getKeyframesAccess().getLeftCurlyBracketKeyword_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKeyframesAccess().getDeclarationsCss_declarationParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getKeyframesAccess().getKeyframeselectorsKeyframe_selectorParserRuleCall_4_0()); 
+	    }
+		lv_keyframeselectors_5_0=rulekeyframe_selector		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKeyframesRule());
+	        }
+       		add(
+       			$current, 
+       			"keyframeselectors",
+        		lv_keyframeselectors_5_0, 
+        		"keyframe_selector");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(	otherlv_6=';' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getKeyframesAccess().getSemicolonKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKeyframesAccess().getKeyframeselectorsKeyframe_selectorParserRuleCall_5_1_0()); 
+	    }
+		lv_keyframeselectors_7_0=rulekeyframe_selector		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKeyframesRule());
+	        }
+       		add(
+       			$current, 
+       			"keyframeselectors",
+        		lv_keyframeselectors_7_0, 
+        		"keyframe_selector");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?)*	otherlv_8='}' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getKeyframesAccess().getRightCurlyBracketKeyword_6());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulekeyframe_selector
+entryRulekeyframe_selector returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getKeyframe_selectorRule()); }
+	 iv_rulekeyframe_selector=rulekeyframe_selector 
+	 { $current=$iv_rulekeyframe_selector.current; } 
+	 EOF 
+;
+
+// Rule keyframe_selector
+rulekeyframe_selector returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKeyframe_selectorAccess().getTypeFrom_toEnumRuleCall_0_0_0()); 
+	    }
+		lv_type_0_0=rulefrom_to		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKeyframe_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_0_0, 
+        		"from_to");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKeyframe_selectorAccess().getPercentageNumParserRuleCall_0_1_0_0()); 
+	    }
+		lv_percentage_1_0=ruleNum		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKeyframe_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"percentage",
+        		lv_percentage_1_0, 
+        		"Num");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)this_PERCENT_2=RULE_PERCENT
+    { 
+    newLeafNode(this_PERCENT_2, grammarAccess.getKeyframe_selectorAccess().getPERCENTTerminalRuleCall_0_1_1()); 
+    }
+))	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getKeyframe_selectorAccess().getLeftCurlyBracketKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKeyframe_selectorAccess().getDeclarationsCss_declarationParserRuleCall_2_0()); 
 	    }
 		lv_declarations_4_0=rulecss_declaration		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKeyframesRule());
+	            $current = createModelElementForParent(grammarAccess.getKeyframe_selectorRule());
 	        }
        		add(
        			$current, 
@@ -780,16 +909,16 @@ rulekeyframes returns [EObject current=null]
 )
 )?(	otherlv_5=';' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getKeyframesAccess().getSemicolonKeyword_4_0());
+    	newLeafNode(otherlv_5, grammarAccess.getKeyframe_selectorAccess().getSemicolonKeyword_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKeyframesAccess().getDeclarationsCss_declarationParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getKeyframe_selectorAccess().getDeclarationsCss_declarationParserRuleCall_3_1_0()); 
 	    }
 		lv_declarations_6_0=rulecss_declaration		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKeyframesRule());
+	            $current = createModelElementForParent(grammarAccess.getKeyframe_selectorRule());
 	        }
        		add(
        			$current, 
@@ -802,7 +931,7 @@ rulekeyframes returns [EObject current=null]
 )
 )?)*	otherlv_7='}' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getKeyframesAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getKeyframe_selectorAccess().getRightCurlyBracketKeyword_4());
     }
 )
 ;
@@ -3458,6 +3587,25 @@ ruleHex returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     ;
 
 
+
+
+
+// Rule from_to
+rulefrom_to returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='FROM' 
+	{
+        $current = grammarAccess.getFrom_toAccess().getFROMEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getFrom_toAccess().getFROMEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='TO' 
+	{
+        $current = grammarAccess.getFrom_toAccess().getTOEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getFrom_toAccess().getTOEnumLiteralDeclaration_1()); 
+    }
+));
 
 
 

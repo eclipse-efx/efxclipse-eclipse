@@ -7,6 +7,10 @@
     editorPluginID="org.eclipse.fx.ide.css.editor" runtimeVersion="2.10">
   <genPackages prefix="CssDsl" basePackage="org.eclipse.fx.ide.css" disposableProviderFactory="true"
       ecorePackage="CssDsl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CssDsl.ecore#//from_to">
+      <genEnumLiterals ecoreEnumLiteral="CssDsl.ecore#//from_to/FROM"/>
+      <genEnumLiterals ecoreEnumLiteral="CssDsl.ecore#//from_to/TO"/>
+    </genEnums>
     <genClasses ecoreClass="CssDsl.ecore#//stylesheet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/charset"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/imports"/>
@@ -32,8 +36,15 @@
     </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//font_face">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//font_face/declarations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//font_face/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//font_face/keyframeselectors"/>
     </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//keyframes"/>
+    <genClasses ecoreClass="CssDsl.ecore#//keyframe_selector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//keyframe_selector/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//keyframe_selector/percentage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//keyframe_selector/declarations"/>
+    </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//ruleset">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//ruleset/selectors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//ruleset/declarations"/>

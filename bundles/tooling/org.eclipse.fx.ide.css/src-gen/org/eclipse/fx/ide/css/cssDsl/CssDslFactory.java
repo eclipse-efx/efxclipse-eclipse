@@ -86,6 +86,15 @@ public interface CssDslFactory extends EFactory
   keyframes createkeyframes();
 
   /**
+   * Returns a new object of class '<em>keyframe selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>keyframe selector</em>'.
+   * @generated
+   */
+  keyframe_selector createkeyframe_selector();
+
+  /**
    * Returns a new object of class '<em>ruleset</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -121,6 +121,13 @@ public class CssDslSwitch<@Nullable T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CssDslPackage.KEYFRAME_SELECTOR:
+      {
+        keyframe_selector keyframe_selector = (keyframe_selector)theEObject;
+        T result = casekeyframe_selector(keyframe_selector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CssDslPackage.RULESET:
       {
         ruleset ruleset = (ruleset)theEObject;
@@ -435,6 +442,22 @@ public class CssDslSwitch<@Nullable T> extends Switch<T>
    * @generated
    */
   public T casekeyframes(keyframes object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>keyframe selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>keyframe selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casekeyframe_selector(keyframe_selector object)
   {
     return null;
   }

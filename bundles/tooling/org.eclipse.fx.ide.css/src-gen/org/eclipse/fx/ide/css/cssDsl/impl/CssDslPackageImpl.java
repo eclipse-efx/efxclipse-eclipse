@@ -4,6 +4,7 @@ package org.eclipse.fx.ide.css.cssDsl.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -36,7 +37,9 @@ import org.eclipse.fx.ide.css.cssDsl.charset;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
 import org.eclipse.fx.ide.css.cssDsl.font_face;
+import org.eclipse.fx.ide.css.cssDsl.from_to;
 import org.eclipse.fx.ide.css.cssDsl.importExpression;
+import org.eclipse.fx.ide.css.cssDsl.keyframe_selector;
 import org.eclipse.fx.ide.css.cssDsl.keyframes;
 import org.eclipse.fx.ide.css.cssDsl.media;
 import org.eclipse.fx.ide.css.cssDsl.page;
@@ -101,6 +104,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass keyframesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass keyframe_selectorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -283,6 +293,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass funcTokEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum from_toEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -552,9 +569,69 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getfont_face_Name()
+  {
+    return (EAttribute)font_faceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getfont_face_Keyframeselectors()
+  {
+    return (EReference)font_faceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getkeyframes()
   {
     return keyframesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getkeyframe_selector()
+  {
+    return keyframe_selectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getkeyframe_selector_Type()
+  {
+    return (EAttribute)keyframe_selectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getkeyframe_selector_Percentage()
+  {
+    return (EAttribute)keyframe_selectorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getkeyframe_selector_Declarations()
+  {
+    return (EReference)keyframe_selectorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1192,6 +1269,16 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getfrom_to()
+  {
+    return from_toEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public CssDslFactory getCssDslFactory()
   {
     return (CssDslFactory)getEFactoryInstance();
@@ -1242,8 +1329,15 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     font_faceEClass = createEClass(FONT_FACE);
     createEReference(font_faceEClass, FONT_FACE__DECLARATIONS);
+    createEAttribute(font_faceEClass, FONT_FACE__NAME);
+    createEReference(font_faceEClass, FONT_FACE__KEYFRAMESELECTORS);
 
     keyframesEClass = createEClass(KEYFRAMES);
+
+    keyframe_selectorEClass = createEClass(KEYFRAME_SELECTOR);
+    createEAttribute(keyframe_selectorEClass, KEYFRAME_SELECTOR__TYPE);
+    createEAttribute(keyframe_selectorEClass, KEYFRAME_SELECTOR__PERCENTAGE);
+    createEReference(keyframe_selectorEClass, KEYFRAME_SELECTOR__DECLARATIONS);
 
     rulesetEClass = createEClass(RULESET);
     createEReference(rulesetEClass, RULESET__SELECTORS);
@@ -1333,6 +1427,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     funcTokEClass = createEClass(FUNC_TOK);
     createEReference(funcTokEClass, FUNC_TOK__NAME);
     createEReference(funcTokEClass, FUNC_TOK__PARAMS);
+
+    // Create enums
+    from_toEEnum = createEEnum(FROM_TO);
   }
 
   /**
@@ -1409,8 +1506,15 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     initEClass(font_faceEClass, font_face.class, "font_face", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getfont_face_Declarations(), this.getcss_declaration(), null, "declarations", null, 0, -1, font_face.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getfont_face_Name(), ecorePackage.getEString(), "name", null, 0, 1, font_face.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getfont_face_Keyframeselectors(), this.getkeyframe_selector(), null, "keyframeselectors", null, 0, -1, font_face.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(keyframesEClass, keyframes.class, "keyframes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(keyframe_selectorEClass, keyframe_selector.class, "keyframe_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getkeyframe_selector_Type(), this.getfrom_to(), "type", null, 0, 1, keyframe_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getkeyframe_selector_Percentage(), ecorePackage.getEDouble(), "percentage", null, 0, 1, keyframe_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getkeyframe_selector_Declarations(), this.getcss_declaration(), null, "declarations", null, 0, -1, keyframe_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rulesetEClass, ruleset.class, "ruleset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getruleset_Selectors(), this.getselector(), null, "selectors", null, 0, -1, ruleset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1500,6 +1604,11 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEClass(funcTokEClass, FuncTok.class, "FuncTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFuncTok_Name(), this.getIdentifierTok(), null, "name", null, 0, 1, FuncTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFuncTok_Params(), this.getCssTok(), null, "params", null, 0, -1, FuncTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(from_toEEnum, from_to.class, "from_to");
+    addEEnumLiteral(from_toEEnum, from_to.FROM);
+    addEEnumLiteral(from_toEEnum, from_to.TO);
 
     // Create resource
     createResource(eNS_URI);

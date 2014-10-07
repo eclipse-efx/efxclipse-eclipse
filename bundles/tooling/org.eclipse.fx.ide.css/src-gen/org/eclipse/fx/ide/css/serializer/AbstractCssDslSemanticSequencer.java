@@ -26,6 +26,7 @@ import org.eclipse.fx.ide.css.cssDsl.css_declaration;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
 import org.eclipse.fx.ide.css.cssDsl.font_face;
 import org.eclipse.fx.ide.css.cssDsl.importExpression;
+import org.eclipse.fx.ide.css.cssDsl.keyframe_selector;
 import org.eclipse.fx.ide.css.cssDsl.media;
 import org.eclipse.fx.ide.css.cssDsl.page;
 import org.eclipse.fx.ide.css.cssDsl.ruleset;
@@ -210,6 +211,12 @@ public abstract class AbstractCssDslSemanticSequencer extends AbstractDelegating
 			case CssDslPackage.IMPORT_EXPRESSION:
 				if(context == grammarAccess.getImportExpressionRule()) {
 					sequence_importExpression(context, (importExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.KEYFRAME_SELECTOR:
+				if(context == grammarAccess.getKeyframe_selectorRule()) {
+					sequence_keyframe_selector(context, (keyframe_selector) semanticObject); 
 					return; 
 				}
 				else break;
@@ -559,7 +566,16 @@ public abstract class AbstractCssDslSemanticSequencer extends AbstractDelegating
 	
 	/**
 	 * Constraint:
-	 *     (declarations+=css_declaration? declarations+=css_declaration*)
+	 *     ((type=from_to | percentage=Num) declarations+=css_declaration? declarations+=css_declaration*)
+	 */
+	protected void sequence_keyframe_selector(EObject context, keyframe_selector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=Identifier keyframeselectors+=keyframe_selector? keyframeselectors+=keyframe_selector*)
 	 */
 	protected void sequence_keyframes(EObject context, font_face semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

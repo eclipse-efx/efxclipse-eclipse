@@ -45,6 +45,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMediaAccess().getAlternatives_0(), "rule__Media__Alternatives_0");
 					put(grammarAccess.getFont_faceAccess().getAlternatives_1(), "rule__Font_face__Alternatives_1");
 					put(grammarAccess.getKeyframesAccess().getAlternatives_1(), "rule__Keyframes__Alternatives_1");
+					put(grammarAccess.getKeyframe_selectorAccess().getAlternatives_0(), "rule__Keyframe_selector__Alternatives_0");
 					put(grammarAccess.getSelectorAccess().getAlternatives_1(), "rule__Selector__Alternatives_1");
 					put(grammarAccess.getSimpleSelectorForNegationAccess().getAlternatives(), "rule__SimpleSelectorForNegation__Alternatives");
 					put(grammarAccess.getSimpleSelectorForNegationAccess().getAlternatives_0_0(), "rule__SimpleSelectorForNegation__Alternatives_0_0");
@@ -73,6 +74,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumAccess().getAlternatives_0(), "rule__Num__Alternatives_0");
 					put(grammarAccess.getNumAccess().getAlternatives_1(), "rule__Num__Alternatives_1");
 					put(grammarAccess.getHexAccess().getAlternatives_1_0(), "rule__Hex__Alternatives_1_0");
+					put(grammarAccess.getFrom_toAccess().getAlternatives(), "rule__From_to__Alternatives");
 					put(grammarAccess.getStylesheetAccess().getGroup(), "rule__Stylesheet__Group__0");
 					put(grammarAccess.getCharsetAccess().getGroup(), "rule__Charset__Group__0");
 					put(grammarAccess.getImportExpressionAccess().getGroup(), "rule__ImportExpression__Group__0");
@@ -86,7 +88,10 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFont_faceAccess().getGroup(), "rule__Font_face__Group__0");
 					put(grammarAccess.getFont_faceAccess().getGroup_4(), "rule__Font_face__Group_4__0");
 					put(grammarAccess.getKeyframesAccess().getGroup(), "rule__Keyframes__Group__0");
-					put(grammarAccess.getKeyframesAccess().getGroup_4(), "rule__Keyframes__Group_4__0");
+					put(grammarAccess.getKeyframesAccess().getGroup_5(), "rule__Keyframes__Group_5__0");
+					put(grammarAccess.getKeyframe_selectorAccess().getGroup(), "rule__Keyframe_selector__Group__0");
+					put(grammarAccess.getKeyframe_selectorAccess().getGroup_0_1(), "rule__Keyframe_selector__Group_0_1__0");
+					put(grammarAccess.getKeyframe_selectorAccess().getGroup_3(), "rule__Keyframe_selector__Group_3__0");
 					put(grammarAccess.getRulesetAccess().getGroup(), "rule__Ruleset__Group__0");
 					put(grammarAccess.getRulesetAccess().getGroup_1(), "rule__Ruleset__Group_1__0");
 					put(grammarAccess.getRulesetAccess().getGroup_4(), "rule__Ruleset__Group_4__0");
@@ -146,8 +151,13 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMediaAccess().getRulesetsAssignment_3(), "rule__Media__RulesetsAssignment_3");
 					put(grammarAccess.getFont_faceAccess().getDeclarationsAssignment_3(), "rule__Font_face__DeclarationsAssignment_3");
 					put(grammarAccess.getFont_faceAccess().getDeclarationsAssignment_4_1(), "rule__Font_face__DeclarationsAssignment_4_1");
-					put(grammarAccess.getKeyframesAccess().getDeclarationsAssignment_3(), "rule__Keyframes__DeclarationsAssignment_3");
-					put(grammarAccess.getKeyframesAccess().getDeclarationsAssignment_4_1(), "rule__Keyframes__DeclarationsAssignment_4_1");
+					put(grammarAccess.getKeyframesAccess().getNameAssignment_2(), "rule__Keyframes__NameAssignment_2");
+					put(grammarAccess.getKeyframesAccess().getKeyframeselectorsAssignment_4(), "rule__Keyframes__KeyframeselectorsAssignment_4");
+					put(grammarAccess.getKeyframesAccess().getKeyframeselectorsAssignment_5_1(), "rule__Keyframes__KeyframeselectorsAssignment_5_1");
+					put(grammarAccess.getKeyframe_selectorAccess().getTypeAssignment_0_0(), "rule__Keyframe_selector__TypeAssignment_0_0");
+					put(grammarAccess.getKeyframe_selectorAccess().getPercentageAssignment_0_1_0(), "rule__Keyframe_selector__PercentageAssignment_0_1_0");
+					put(grammarAccess.getKeyframe_selectorAccess().getDeclarationsAssignment_2(), "rule__Keyframe_selector__DeclarationsAssignment_2");
+					put(grammarAccess.getKeyframe_selectorAccess().getDeclarationsAssignment_3_1(), "rule__Keyframe_selector__DeclarationsAssignment_3_1");
 					put(grammarAccess.getRulesetAccess().getSelectorsAssignment_0(), "rule__Ruleset__SelectorsAssignment_0");
 					put(grammarAccess.getRulesetAccess().getSelectorsAssignment_1_2(), "rule__Ruleset__SelectorsAssignment_1_2");
 					put(grammarAccess.getRulesetAccess().getDeclarationsAssignment_4_0(), "rule__Ruleset__DeclarationsAssignment_4_0");

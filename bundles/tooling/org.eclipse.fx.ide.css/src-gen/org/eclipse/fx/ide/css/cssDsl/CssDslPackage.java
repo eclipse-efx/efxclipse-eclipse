@@ -4,6 +4,7 @@ package org.eclipse.fx.ide.css.cssDsl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -307,13 +308,77 @@ public interface CssDslPackage extends EPackage
   int FONT_FACE__DECLARATIONS = KEYFRAMES_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT_FACE__NAME = KEYFRAMES_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Keyframeselectors</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT_FACE__KEYFRAMESELECTORS = KEYFRAMES_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>font face</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FONT_FACE_FEATURE_COUNT = KEYFRAMES_FEATURE_COUNT + 1;
+  int FONT_FACE_FEATURE_COUNT = KEYFRAMES_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.eclipse.fx.ide.css.cssDsl.impl.keyframe_selectorImpl <em>keyframe selector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.fx.ide.css.cssDsl.impl.keyframe_selectorImpl
+   * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getkeyframe_selector()
+   * @generated
+   */
+  int KEYFRAME_SELECTOR = 7;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYFRAME_SELECTOR__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Percentage</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYFRAME_SELECTOR__PERCENTAGE = 1;
+
+  /**
+   * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYFRAME_SELECTOR__DECLARATIONS = 2;
+
+  /**
+   * The number of structural features of the '<em>keyframe selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYFRAME_SELECTOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.eclipse.fx.ide.css.cssDsl.impl.rulesetImpl <em>ruleset</em>}' class.
@@ -323,7 +388,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getruleset()
    * @generated
    */
-  int RULESET = 7;
+  int RULESET = 8;
 
   /**
    * The feature id for the '<em><b>Selectors</b></em>' containment reference list.
@@ -360,7 +425,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getselector()
    * @generated
    */
-  int SELECTOR = 8;
+  int SELECTOR = 9;
 
   /**
    * The feature id for the '<em><b>Simpleselectors</b></em>' containment reference list.
@@ -406,7 +471,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getSimpleSelectorForNegation()
    * @generated
    */
-  int SIMPLE_SELECTOR_FOR_NEGATION = 9;
+  int SIMPLE_SELECTOR_FOR_NEGATION = 10;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -452,7 +517,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getCssSelector()
    * @generated
    */
-  int CSS_SELECTOR = 10;
+  int CSS_SELECTOR = 11;
 
   /**
    * The number of structural features of the '<em>Css Selector</em>' class.
@@ -471,7 +536,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getsimple_selector()
    * @generated
    */
-  int SIMPLE_SELECTOR = 11;
+  int SIMPLE_SELECTOR = 12;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -517,7 +582,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getClassSelector()
    * @generated
    */
-  int CLASS_SELECTOR = 12;
+  int CLASS_SELECTOR = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -545,7 +610,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getElementSelector()
    * @generated
    */
-  int ELEMENT_SELECTOR = 13;
+  int ELEMENT_SELECTOR = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -573,7 +638,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getUniversalSelector()
    * @generated
    */
-  int UNIVERSAL_SELECTOR = 14;
+  int UNIVERSAL_SELECTOR = 15;
 
   /**
    * The feature id for the '<em><b>Namespace</b></em>' attribute.
@@ -601,7 +666,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getIdSelector()
    * @generated
    */
-  int ID_SELECTOR = 15;
+  int ID_SELECTOR = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -629,7 +694,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getcss_declaration()
    * @generated
    */
-  int CSS_DECLARATION = 16;
+  int CSS_DECLARATION = 17;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' containment reference.
@@ -675,7 +740,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getcss_property()
    * @generated
    */
-  int CSS_PROPERTY = 17;
+  int CSS_PROPERTY = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -703,7 +768,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getPseudoClassOrFunc()
    * @generated
    */
-  int PSEUDO_CLASS_OR_FUNC = 18;
+  int PSEUDO_CLASS_OR_FUNC = 19;
 
   /**
    * The number of structural features of the '<em>Pseudo Class Or Func</em>' class.
@@ -722,7 +787,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getPseudoClass()
    * @generated
    */
-  int PSEUDO_CLASS = 19;
+  int PSEUDO_CLASS = 20;
 
   /**
    * The number of structural features of the '<em>Pseudo Class</em>' class.
@@ -741,7 +806,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getPseudoClassName()
    * @generated
    */
-  int PSEUDO_CLASS_NAME = 20;
+  int PSEUDO_CLASS_NAME = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -769,7 +834,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getPseudoClassFunction()
    * @generated
    */
-  int PSEUDO_CLASS_FUNCTION = 21;
+  int PSEUDO_CLASS_FUNCTION = 22;
 
   /**
    * The feature id for the '<em><b>Not</b></em>' attribute.
@@ -824,7 +889,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getCssTok()
    * @generated
    */
-  int CSS_TOK = 22;
+  int CSS_TOK = 23;
 
   /**
    * The number of structural features of the '<em>Css Tok</em>' class.
@@ -843,7 +908,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getURLType()
    * @generated
    */
-  int URL_TYPE = 23;
+  int URL_TYPE = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -889,7 +954,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getAttributeSelector()
    * @generated
    */
-  int ATTRIBUTE_SELECTOR = 24;
+  int ATTRIBUTE_SELECTOR = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -935,7 +1000,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getSymbolTok()
    * @generated
    */
-  int SYMBOL_TOK = 25;
+  int SYMBOL_TOK = 26;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -963,7 +1028,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getWSTok()
    * @generated
    */
-  int WS_TOK = 26;
+  int WS_TOK = 27;
 
   /**
    * The number of structural features of the '<em>WS Tok</em>' class.
@@ -982,7 +1047,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getStringTok()
    * @generated
    */
-  int STRING_TOK = 27;
+  int STRING_TOK = 28;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1010,7 +1075,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getNumberTok()
    * @generated
    */
-  int NUMBER_TOK = 28;
+  int NUMBER_TOK = 29;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1038,7 +1103,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getUrlTok()
    * @generated
    */
-  int URL_TOK = 29;
+  int URL_TOK = 30;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' containment reference.
@@ -1066,7 +1131,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getColorTok()
    * @generated
    */
-  int COLOR_TOK = 30;
+  int COLOR_TOK = 31;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1094,7 +1159,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getIdentifierTok()
    * @generated
    */
-  int IDENTIFIER_TOK = 31;
+  int IDENTIFIER_TOK = 32;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1122,7 +1187,7 @@ public interface CssDslPackage extends EPackage
    * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getFuncTok()
    * @generated
    */
-  int FUNC_TOK = 32;
+  int FUNC_TOK = 33;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -1150,6 +1215,16 @@ public interface CssDslPackage extends EPackage
    * @ordered
    */
   int FUNC_TOK_FEATURE_COUNT = CSS_TOK_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.eclipse.fx.ide.css.cssDsl.from_to <em>from to</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.fx.ide.css.cssDsl.from_to
+   * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getfrom_to()
+   * @generated
+   */
+  int FROM_TO = 34;
 
 
   /**
@@ -1367,6 +1442,28 @@ public interface CssDslPackage extends EPackage
   EReference getfont_face_Declarations();
 
   /**
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.css.cssDsl.font_face#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.eclipse.fx.ide.css.cssDsl.font_face#getName()
+   * @see #getfont_face()
+   * @generated
+   */
+  EAttribute getfont_face_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.css.cssDsl.font_face#getKeyframeselectors <em>Keyframeselectors</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Keyframeselectors</em>'.
+   * @see org.eclipse.fx.ide.css.cssDsl.font_face#getKeyframeselectors()
+   * @see #getfont_face()
+   * @generated
+   */
+  EReference getfont_face_Keyframeselectors();
+
+  /**
    * Returns the meta object for class '{@link org.eclipse.fx.ide.css.cssDsl.keyframes <em>keyframes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1375,6 +1472,49 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EClass getkeyframes();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector <em>keyframe selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>keyframe selector</em>'.
+   * @see org.eclipse.fx.ide.css.cssDsl.keyframe_selector
+   * @generated
+   */
+  EClass getkeyframe_selector();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getType()
+   * @see #getkeyframe_selector()
+   * @generated
+   */
+  EAttribute getkeyframe_selector_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getPercentage <em>Percentage</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Percentage</em>'.
+   * @see org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getPercentage()
+   * @see #getkeyframe_selector()
+   * @generated
+   */
+  EAttribute getkeyframe_selector_Percentage();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getDeclarations <em>Declarations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Declarations</em>'.
+   * @see org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getDeclarations()
+   * @see #getkeyframe_selector()
+   * @generated
+   */
+  EReference getkeyframe_selector_Declarations();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.fx.ide.css.cssDsl.ruleset <em>ruleset</em>}'.
@@ -2044,6 +2184,16 @@ public interface CssDslPackage extends EPackage
   EReference getFuncTok_Params();
 
   /**
+   * Returns the meta object for enum '{@link org.eclipse.fx.ide.css.cssDsl.from_to <em>from to</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>from to</em>'.
+   * @see org.eclipse.fx.ide.css.cssDsl.from_to
+   * @generated
+   */
+  EEnum getfrom_to();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2239,6 +2389,22 @@ public interface CssDslPackage extends EPackage
     EReference FONT_FACE__DECLARATIONS = eINSTANCE.getfont_face_Declarations();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FONT_FACE__NAME = eINSTANCE.getfont_face_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Keyframeselectors</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FONT_FACE__KEYFRAMESELECTORS = eINSTANCE.getfont_face_Keyframeselectors();
+
+    /**
      * The meta object literal for the '{@link org.eclipse.fx.ide.css.cssDsl.impl.keyframesImpl <em>keyframes</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2247,6 +2413,40 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EClass KEYFRAMES = eINSTANCE.getkeyframes();
+
+    /**
+     * The meta object literal for the '{@link org.eclipse.fx.ide.css.cssDsl.impl.keyframe_selectorImpl <em>keyframe selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.fx.ide.css.cssDsl.impl.keyframe_selectorImpl
+     * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getkeyframe_selector()
+     * @generated
+     */
+    EClass KEYFRAME_SELECTOR = eINSTANCE.getkeyframe_selector();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute KEYFRAME_SELECTOR__TYPE = eINSTANCE.getkeyframe_selector_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Percentage</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute KEYFRAME_SELECTOR__PERCENTAGE = eINSTANCE.getkeyframe_selector_Percentage();
+
+    /**
+     * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KEYFRAME_SELECTOR__DECLARATIONS = eINSTANCE.getkeyframe_selector_Declarations();
 
     /**
      * The meta object literal for the '{@link org.eclipse.fx.ide.css.cssDsl.impl.rulesetImpl <em>ruleset</em>}' class.
@@ -2803,6 +3003,16 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference FUNC_TOK__PARAMS = eINSTANCE.getFuncTok_Params();
+
+    /**
+     * The meta object literal for the '{@link org.eclipse.fx.ide.css.cssDsl.from_to <em>from to</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.fx.ide.css.cssDsl.from_to
+     * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getfrom_to()
+     * @generated
+     */
+    EEnum FROM_TO = eINSTANCE.getfrom_to();
 
   }
 

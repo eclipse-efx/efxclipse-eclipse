@@ -56,8 +56,18 @@ font_face:
 ;
 
 keyframes:
-	{font_face} ('@keyframes'|'@KEYFRAMES') 
-	'{' declarations+=css_declaration? ( ';' declarations+=css_declaration? )* '}'	
+	{font_face} ('@keyframes'|'@KEYFRAMES') name=Identifier
+	'{' keyframeselectors+=keyframe_selector? ( ';' keyframeselectors+=keyframe_selector? )* '}'	
+;
+
+keyframe_selector:
+	(type=from_to | (percentage=Num PERCENT)) '{'
+		declarations+=css_declaration? ( ';' declarations+=css_declaration? )*
+	'}'
+;
+
+enum from_to:
+	FROM | TO
 ;
 
 

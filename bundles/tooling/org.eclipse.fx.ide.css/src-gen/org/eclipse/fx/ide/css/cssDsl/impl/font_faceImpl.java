@@ -4,6 +4,7 @@ package org.eclipse.fx.ide.css.cssDsl.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,12 +12,15 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
 import org.eclipse.fx.ide.css.cssDsl.font_face;
+import org.eclipse.fx.ide.css.cssDsl.keyframe_selector;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,8 @@ import org.eclipse.fx.ide.css.cssDsl.font_face;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.font_faceImpl#getDeclarations <em>Declarations</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.font_faceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.font_faceImpl#getKeyframeselectors <em>Keyframeselectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +48,36 @@ public class font_faceImpl extends keyframesImpl implements font_face
    * @ordered
    */
   protected EList<css_declaration> declarations;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getKeyframeselectors() <em>Keyframeselectors</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKeyframeselectors()
+   * @generated
+   * @ordered
+   */
+  protected EList<keyframe_selector> keyframeselectors;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,6 +119,43 @@ public class font_faceImpl extends keyframesImpl implements font_face
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.FONT_FACE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<keyframe_selector> getKeyframeselectors()
+  {
+    if (keyframeselectors == null)
+    {
+      keyframeselectors = new EObjectContainmentEList<keyframe_selector>(keyframe_selector.class, this, CssDslPackage.FONT_FACE__KEYFRAMESELECTORS);
+    }
+    return keyframeselectors;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -90,6 +163,8 @@ public class font_faceImpl extends keyframesImpl implements font_face
     {
       case CssDslPackage.FONT_FACE__DECLARATIONS:
         return ((InternalEList<?>)getDeclarations()).basicRemove(otherEnd, msgs);
+      case CssDslPackage.FONT_FACE__KEYFRAMESELECTORS:
+        return ((InternalEList<?>)getKeyframeselectors()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,6 +181,10 @@ public class font_faceImpl extends keyframesImpl implements font_face
     {
       case CssDslPackage.FONT_FACE__DECLARATIONS:
         return getDeclarations();
+      case CssDslPackage.FONT_FACE__NAME:
+        return getName();
+      case CssDslPackage.FONT_FACE__KEYFRAMESELECTORS:
+        return getKeyframeselectors();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,6 +204,13 @@ public class font_faceImpl extends keyframesImpl implements font_face
         getDeclarations().clear();
         getDeclarations().addAll((Collection<? extends css_declaration>)newValue);
         return;
+      case CssDslPackage.FONT_FACE__NAME:
+        setName((String)newValue);
+        return;
+      case CssDslPackage.FONT_FACE__KEYFRAMESELECTORS:
+        getKeyframeselectors().clear();
+        getKeyframeselectors().addAll((Collection<? extends keyframe_selector>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -142,6 +228,12 @@ public class font_faceImpl extends keyframesImpl implements font_face
       case CssDslPackage.FONT_FACE__DECLARATIONS:
         getDeclarations().clear();
         return;
+      case CssDslPackage.FONT_FACE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case CssDslPackage.FONT_FACE__KEYFRAMESELECTORS:
+        getKeyframeselectors().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -158,8 +250,29 @@ public class font_faceImpl extends keyframesImpl implements font_face
     {
       case CssDslPackage.FONT_FACE__DECLARATIONS:
         return declarations != null && !declarations.isEmpty();
+      case CssDslPackage.FONT_FACE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CssDslPackage.FONT_FACE__KEYFRAMESELECTORS:
+        return keyframeselectors != null && !keyframeselectors.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //font_faceImpl

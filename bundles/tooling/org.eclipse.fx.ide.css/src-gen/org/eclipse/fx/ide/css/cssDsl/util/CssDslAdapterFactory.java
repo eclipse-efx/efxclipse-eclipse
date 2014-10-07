@@ -110,6 +110,11 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createkeyframesAdapter();
       }
       @Override
+      public Adapter casekeyframe_selector(keyframe_selector object)
+      {
+        return createkeyframe_selectorAdapter();
+      }
+      @Override
       public Adapter caseruleset(ruleset object)
       {
         return createrulesetAdapter();
@@ -362,6 +367,21 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createkeyframesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector <em>keyframe selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.fx.ide.css.cssDsl.keyframe_selector
+   * @generated
+   */
+  public Adapter createkeyframe_selectorAdapter()
   {
     return null;
   }
