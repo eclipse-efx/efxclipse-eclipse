@@ -12,35 +12,35 @@ class RootPomGenerator implements Generator<DynamicFile> {
 		val groupId = file.variables.findFirst([e| e.key.equals("groupId")]).defaultValue;
 		val artifactId	= file.variables.findFirst([e| e.key.equals("artifactId")]).defaultValue;
 		val version    = file.variables.findFirst([e| e.key.equals("baseVersion")]).defaultValue.toPomVersion;
-		
+
 		val name = file.variables.findFirst([e| e.key.equals("name")]).defaultValue;
-		
+
 		val modules = new ArrayList<String>();
 		file.variables.findFirst([e|e.key.equals("modules")]).defaultValue.split(";")._forEach
 		[
 			modules.add(it)
 		]
-		
+
 		if( data.get("JemmyTest") == Boolean::FALSE ) {
 			modules.removeAllElements([e|e.contains("jemmy")])
 		}
-			
+
 		val repos = new ArrayList<Repository>();
 		file.variables.findFirst([e|e.key.equals("repos")]).defaultValue.split(";").map [
 			new Repository(it.substring(0,it.indexOf('@')),it.substring(it.indexOf('@')+1,it.length))
 		]._forEach [
 			repos.add(it)
 		];
-		
+
 		val pomdata = new RootPomData(
 					name,
-					groupId, 
-					artifactId, 
-					null, null, null, null,toPomVersion(version),"0.18.0","4.8.1","1.8.4","4.2","0.9.0","2.2.0-SNAPSHOT",modules,repos); //FIXME Versions based on release!!!
-			
+					groupId,
+					artifactId,
+					null, null, null, null,toPomVersion(version),"0.21.0","4.11","1.8.4","4.2","1.0.0","2.2.0-SNAPSHOT",modules,repos); //FIXME Versions based on release!!!
+
 		return new ByteArrayInputStream(generate(pomdata).toString.bytes);
 	}
-	
+
 	def generate(RootPomData data) '''<?xml version="1.0" encoding="UTF-8"?>
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
@@ -136,7 +136,7 @@ class RootPomGenerator implements Generator<DynamicFile> {
 							<extraClasspathElement>
 								<groupId>javafx</groupId>
 								<artifactId>javafx.mvn</artifactId>
-								<version>«data.javaFXArtifactVersion»</version> 
+								<version>«data.javaFXArtifactVersion»</version>
 							</extraClasspathElement>
 						</extraClasspathElements>
 					</configuration>
