@@ -11,6 +11,7 @@
 package org.eclipse.fx.ide.fxml.editors;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
@@ -116,7 +117,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			return super.isCandidateMatchingPrefix(n, p);
 		}
 	};
-	
+
 	static final PrefixMatcher CLASS_ATTRIBUTE_MATCHER = new PrefixMatcher() {
 		@Override
 		public boolean isCandidateMatchingPrefix(String name, String prefix) {
@@ -151,7 +152,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 	private static final int PRIORITY_LOWER_1 = 100;
 
 	private ValueOfContributionCollector valueOfCollector;
-	
+
 	/**
 	 * Create a new instance
 	 */
@@ -159,7 +160,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		ServiceReference<ValueOfContributionCollector> ref = Activator.getContext().getServiceReference(ValueOfContributionCollector.class);
 		this.valueOfCollector = Activator.getContext().getService(ref);
 	}
-	
+
 	@Override
 	public void sessionStarted() {
 		//nothing
@@ -187,20 +188,20 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 				existingAttributes.add(e.getAttributes().item(i).getNodeName());
 			}
 		}
-		
+
 		if( "fx:root".equals(typeName) ) { //$NON-NLS-1$
 			typeName = parent.getAttributes().getNamedItem("type").getNodeValue(); //$NON-NLS-1$
 		}
-		
+
 		if( ! existingAttributes.contains("fx:id") ) { //$NON-NLS-1$
 			FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, "fx:id=\"\"", new StyledString("fx:id").append(" - FXML built-in", StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.CLASS_KEY), DEFAULT_PRIORITY+10, MATCHER); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			if( cp != null ) {
 				contentAssistRequest.addProposal(cp);
 			}
 		}
-		
+
 		if (typeName != null) {
-			
+
 			if (Character.isLowerCase(typeName.charAt(0)) || typeName.contains(".")) { //$NON-NLS-1$
 				// no proposal for static elements and attribute definitions
 				return;
@@ -209,7 +210,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			IType type = findType(typeName, contentAssistRequest, context);
 			if (type != null) {
 				IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
-				
+
 				if( fxClass.getValueOf() != null ) {
 					FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, "fx:value=\"\"", new StyledString("fx:valueOf").append(" - " + fxClass.getSimpleName(), StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.FIELD_KEY), DEFAULT_PRIORITY+10, MATCHER); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 					if (cp != null) {
@@ -219,16 +220,16 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 						contentAssistRequest.addProposal(cp);
 					}
 				}
-				
+
 				for (IFXProperty property : fxClass.getAllProperties().values()) {
 					if( ! existingAttributes.contains(property.getName()) ) {
-						createAttributeNameProposal(contentAssistRequest, context, property);	
+						createAttributeNameProposal(contentAssistRequest, context, property);
 					}
 				}
 
 				if (parent.getParentNode() != null) {
 					Node n = null;
-					
+
 					if (Character.isUpperCase(parent.getParentNode().getNodeName().charAt(0)) || "fx:root".equals(parent.getParentNode().getNodeName())) { //$NON-NLS-1$
 						n = parent.getParentNode();
 					} else if (parent.getParentNode().getParentNode() != null) {
@@ -236,21 +237,21 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 							n = parent.getParentNode().getParentNode();
 						}
 					}
-					
+
 					if (n != null) {
 						IType containerType;
 						if( "fx:root".equals(n.getNodeName()) ) { //$NON-NLS-1$
 							containerType = Util.findType(n.getAttributes().getNamedItem("type").getNodeValue(), parent.getOwnerDocument()); //$NON-NLS-1$
 						} else {
-							containerType = Util.findType(n.getNodeName(), parent.getOwnerDocument());	
+							containerType = Util.findType(n.getNodeName(), parent.getOwnerDocument());
 						}
-						
+
 						if (containerType != null) {
 							IFXClass fxclass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), containerType);
 							if (fxclass != null) {
 								for (IFXProperty property : fxclass.getAllStaticProperties().values()) {
 									if( ! existingAttributes.contains(property.getFXClass().getSimpleName() + "." +property.getName()) ) { //$NON-NLS-1$
-										createAttributeNameProposal(contentAssistRequest, context, property);	
+										createAttributeNameProposal(contentAssistRequest, context, property);
 									}
 								}
 							}
@@ -259,8 +260,8 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 						if( ! existingAttributes.contains("fx:controller") ) { //$NON-NLS-1$
 							FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, "fx:controller=\"\"", new StyledString("fx:controller").append(" - FXML built-in", StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.CLASS_KEY), DEFAULT_PRIORITY+10, MATCHER); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 							if( cp != null ) {
-								contentAssistRequest.addProposal(cp);	
-							}	
+								contentAssistRequest.addProposal(cp);
+							}
 						}
 					}
 				}
@@ -278,6 +279,16 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 				createEventHandlerPropnameProposals(contentAssistRequest, context, (IFXEventHandlerProperty) fxProperty);
 			} else if (fxProperty instanceof IFXObjectProperty) {
 				createObjectPropnameProposals(contentAssistRequest, context, (IFXObjectProperty) fxProperty);
+			}
+		} else if( fxProperty instanceof IFXCollectionProperty ) {
+			IFXCollectionProperty cp = (IFXCollectionProperty) fxProperty;
+			if( fxProperty.getFXClass().getValueOf() != null ) {
+				createListPropertyPropnameProposal(contentAssistRequest, context, (IFXCollectionProperty) fxProperty);
+			} else {
+				List<String> types = Arrays.asList("String","int","long","double","float");   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+				if( types.contains(cp.getElementType().getElementName()) ) {
+					createListPropertyPropnameProposal(contentAssistRequest, context, (IFXCollectionProperty) fxProperty);
+				}
 			}
 		}
 	}
@@ -490,10 +501,10 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 					// e.printStackTrace();
 					// }
 				} else {
-					
+
 					if (parent.getParentNode() != null) {
 						Node n = null;
-						
+
 						if( "fx:root".equals(parent.getNodeName()) ) { //$NON-NLS-1$
 							n = parent;
 						} else if (Character.isUpperCase(parent.getParentNode().getNodeName().charAt(0)) || "fx:root".equals(parent.getParentNode().getNodeName())) { //$NON-NLS-1$
@@ -509,9 +520,9 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 							if( "fx:root".equals(n.getNodeName()) ) { //$NON-NLS-1$
 								type = Util.findType(n.getAttributes().getNamedItem("type").getNodeValue(), parent.getOwnerDocument()); //$NON-NLS-1$
 							} else {
-								type = Util.findType(n.getNodeName(), parent.getOwnerDocument());	
+								type = Util.findType(n.getNodeName(), parent.getOwnerDocument());
 							}
-							
+
 							if (type != null) {
 								IFXClass fxclass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
 								if (fxclass != null) {
@@ -545,11 +556,11 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 						}
 					}
 					IType type;
-					
+
 					if( "fx:root".equals(parent.getNodeName()) ) { //$NON-NLS-1$
 						type = Util.findType(parent.getAttributes().getNamedItem("type").getNodeValue(), parent.getOwnerDocument()); //$NON-NLS-1$
 					} else {
-						type = Util.findType(parent.getNodeName(), parent.getOwnerDocument());	
+						type = Util.findType(parent.getNodeName(), parent.getOwnerDocument());
 					}
 
 					if (type != null) {
@@ -563,13 +574,13 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 				}
 
 				IType type;
-				
+
 				if( "fx:root".equals(parent.getNodeName()) ) { //$NON-NLS-1$
 					type = Util.findType(parent.getAttributes().getNamedItem("type").getNodeValue(), parent.getOwnerDocument()); //$NON-NLS-1$
 				} else {
-					type = Util.findType(parent.getNodeName(), parent.getOwnerDocument());	
+					type = Util.findType(parent.getNodeName(), parent.getOwnerDocument());
 				}
-				
+
 				if (type != null) {
 					IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
 					if (fxClass != null) {
@@ -597,7 +608,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		} else {
 			type = findType(elementType.getNodeName(), contentAssistRequest, context);
 		}
-		
+
 		if (type != null) {
 			IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
 			if (fxClass != null) {
@@ -635,6 +646,22 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			contentAssistRequest.addProposal(cp);
 		}
 	}
+
+	private static void createListPropertyPropnameProposal(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXCollectionProperty prop) {
+		StyledString s = new StyledString(prop.getName() + " : " + prop.getCollectionAsString()); //$NON-NLS-1$
+		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER); //$NON-NLS-1$
+
+		String propValue = prop.getName() + "=\"\""; //$NON-NLS-1$
+
+		FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, propValue, s, IconKeys.getIcon(IconKeys.FIELD_KEY), DEFAULT_PRIORITY, MATCHER);
+		if (cp != null) {
+			cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+			cp.setHover(new HoverImpl(prop.getJavaElement()));
+
+			contentAssistRequest.addProposal(cp);
+		}
+	}
+
 
 	private static void createObjectPropertyElementProposal(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXObjectProperty prop) {
 		StyledString s = new StyledString(prop.getName() + " : " + prop.getElementTypeAsString(false)); //$NON-NLS-1$
@@ -758,7 +785,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		proposal.setMatcher(MATCHER);
 		contentAssistRequest.addProposal(proposal);
 
-		
+
 		IJavaProject jproject = findProject(contentAssistRequest);
 		try {
 			IType superType = jproject.findType("javafx.scene.Parent"); //$NON-NLS-1$
@@ -786,30 +813,30 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			}
 
 			if (attribute != null) {
-				if (Util.isFXMLNamespace(attribute.getNamespaceURI())) { 
+				if (Util.isFXMLNamespace(attribute.getNamespaceURI())) {
 					if("constant".equals(attribute.getLocalName())) { //$NON-NLS-1$
 						IType type = findType(n.getNodeName(), contentAssistRequest, context);
 						if (type != null) {
 							try {
 								List<IField> fields = new ArrayList<IField>();
 								collectStaticFields(fields, type);
-								
+
 								for( IField f : fields ) {
 									StyledString s = new StyledString(f.getElementName() + " : " + Signature.getSimpleName(Signature.toString(f.getTypeSignature()))); //$NON-NLS-1$
 									String owner = ((IType)f.getAncestor(IJavaElement.TYPE)).getElementName();
 									s.append(" - " + Signature.getSimpleName(owner), StyledString.QUALIFIER_STYLER); //$NON-NLS-1$
-									
+
 									FXMLCompletionProposal cp = createProposal(
-											contentAssistRequest, 
+											contentAssistRequest,
 											context, "\"" + f.getElementName(),  //$NON-NLS-1$
-											s, 
+											s,
 											IconKeys.getIcon(IconKeys.CLASS_KEY), CLASS_ATTRIBUTE_MATCHER);
-									
+
 									if( cp != null ) {
 										contentAssistRequest.addProposal(cp);
-									}									
+									}
 								}
-								
+
 							} catch (JavaModelException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -827,7 +854,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 								typeName = contentAssistRequest.getMatchString().toCharArray();
 							}
 						}
-						
+
 						IJavaSearchScope searchScope = SearchEngine.createJavaSearchScope(new IJavaElement[] { jproject });
 						SearchEngine searchEngine = new SearchEngine();
 						try {
@@ -837,13 +864,13 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 									String sPackageName = new String(packageName);
 									StyledString s = new StyledString(new String(simpleTypeName));
 									s.append(" - " + sPackageName, StyledString.QUALIFIER_STYLER); //$NON-NLS-1$
-									
+
 									FXMLCompletionProposal cp = createProposal(
-											contentAssistRequest, 
+											contentAssistRequest,
 											context, "\"" + sPackageName + "." + new String(simpleTypeName),  //$NON-NLS-1$ //$NON-NLS-2$
-											s, 
+											s,
 											IconKeys.getIcon(IconKeys.CLASS_KEY), CLASS_ATTRIBUTE_MATCHER);
-									
+
 									if( cp != null ) {
 										contentAssistRequest.addProposal(cp);
 									}
@@ -885,13 +912,13 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 													img = IconKeys.getIcon(IconKeys.METHOD_PRIVATE_KEY);
 													break;
 												}
-												
+
 												FXMLCompletionProposal cp = createProposal(
-														contentAssistRequest, 
-														context, 
+														contentAssistRequest,
+														context,
 														"\""+f.getName(),  //$NON-NLS-1$
 														s, img, CLASS_ATTRIBUTE_MATCHER);
-												
+
 												if( cp != null ) {
 													contentAssistRequest.addProposal(cp);
 												}
@@ -940,7 +967,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			}
 		}
 	}
-	
+
 	private void collectStaticFields(List<IField> fields, IType type) throws JavaModelException {
 		//FIXME Don't we have to check if the field is assignable???
 		for( IField f : type.getFields() ) {
@@ -948,12 +975,12 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 				fields.add(f);
 			}
 		}
-		
+
 		String s = type.getSuperclassName();
-		
+
 		if( s != null) {
 			String fqn = org.eclipse.fx.ide.model.internal.utils.Util.getFQNType(type, Signature.getTypeErasure(s));
-			collectStaticFields(fields, type.getJavaProject().findType(fqn));		
+			collectStaticFields(fields, type.getJavaProject().findType(fqn));
 		}
 	}
 
@@ -1075,10 +1102,10 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 						}
 						contentAssistRequest.addProposal(cp);
 					}
-					
+
 				}
 			}
-			
+
 		}
 	}
 
