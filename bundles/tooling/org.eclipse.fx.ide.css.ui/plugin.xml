@@ -13,6 +13,9 @@
               icon="icons/page_white_swoosh.png"
               id="org.eclipse.fx.ide.css.CssDsl"
               name="%editor.name">
+           <contentTypeBinding
+                 contentTypeId="org.eclipse.fx.ide.css.ui.fxcontenttype">
+           </contentTypeBinding>
         </editor>
     </extension>
     <extension
@@ -291,6 +294,16 @@
            id="org.eclipse.fx.ide.css.ui.removeNature"
            name="Remove CSSEditor Nature">
      </command>
+  </extension>
+  <extension
+        point="org.eclipse.core.contenttype.contentTypes">
+     <content-type
+           describer="org.eclipse.fx.ide.css.ui.internal.FXCSSContentDescriber"
+           file-extensions="css"
+           id="org.eclipse.fx.ide.css.ui.fxcontenttype"
+           name="FX Content Type"
+           priority="high">
+     </content-type>
   </extension>
 
 </plugin>

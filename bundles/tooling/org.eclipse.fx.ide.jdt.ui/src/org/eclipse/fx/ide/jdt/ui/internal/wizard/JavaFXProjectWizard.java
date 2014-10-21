@@ -69,7 +69,7 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 	private NewJavaFXProjectWizardPageThree fThirdPage;
 
 	private IConfigurationElement fConfigElement;
-	
+
 	private ProjectData projectData;
 
 	public JavaFXProjectWizard() {
@@ -98,8 +98,8 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 
 		if (fSecondPage == null)
 			fSecondPage= new NewJavaFXProjectWizardPageTwo(fFirstPage);
-		addPage(fSecondPage); 
-		
+		addPage(fSecondPage);
+
 		if( fThirdPage == null )
 			fThirdPage = new NewJavaFXProjectWizardPageThree(projectData);
 		addPage(fThirdPage);
@@ -128,24 +128,24 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 			if (workingSets.length > 0) {
 				PlatformUI.getWorkbench().getWorkingSetManager().addToWorkingSets(newElement, workingSets);
 			}
-			
+
 			try {
 				IJavaProject p = (IJavaProject) newElement;
 				IClasspathEntry[] current = p.getRawClasspath();
-				
+
 				int i = current.length+1;
 				if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.MOBILE) ) {
 					i += 1;
 				}
-				
+
 				IClasspathEntry[] currentFX = new IClasspathEntry[i];
 				System.arraycopy(current, 0, currentFX, 0, current.length);
-				currentFX[current.length] = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH); 
-				
+				currentFX[current.length] = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH);
+
 				if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.MOBILE) ) {
 					currentFX[current.length+1] = JavaCore.newContainerEntry(JavaFXCore.MOBILE_CONTAINER_PATH);
 				}
-				
+
 				p.setRawClasspath(currentFX, new NullProgressMonitor());
 			} catch (JavaModelException e1) {
 				// TODO Auto-generated catch block
@@ -158,13 +158,13 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 				task.setBuildDirectory( "${project}/build" );
 				task.setDeploy( AntTasksFactory.eINSTANCE.createDeploy() );
 				task.getDeploy().setApplication( ParametersFactory.eINSTANCE.createApplication() );
-				task.getDeploy().getApplication().setName( fFirstPage.getProjectName() );				
+				task.getDeploy().getApplication().setName( fFirstPage.getProjectName() );
 				task.getDeploy().setInfo( ParametersFactory.eINSTANCE.createInfo() );
 				task.setSignjar( AntTasksFactory.eINSTANCE.createSignJar() );
-				
+
 				final XMIResource resource= new XMIResourceImpl();
 				resource.getContents().add( task );
-				
+
 				WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
 					@Override
 					public void execute( IProgressMonitor monitor ) {
@@ -219,42 +219,42 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 					e.printStackTrace();
 				}
 			}
-			
+
 			try {
 				IJavaProject p = fSecondPage.getJavaProject();
 				IPackageFragment f = p.getPackageFragments()[0];
 				IPath path = f.getPath();
-				
+
 				for( String s : projectData.packageName.split("\\.") ) {
 					path = path.append(s);
 					p.getProject().getWorkspace().getRoot().getFolder(path).create(true, true, null);
 				}
-				
+
 				{
 					IFile cssFile = p.getProject().getWorkspace().getRoot().getFile(path.append("application.css"));
-					ByteArrayInputStream in = new ByteArrayInputStream("".getBytes());
+					ByteArrayInputStream in = new ByteArrayInputStream("/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */".getBytes());
 					cssFile.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
-					in.close();						
+					in.close();
 				}
-				
+
 				if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.DESKTOP) ) {
 					IFile mainClass = p.getProject().getWorkspace().getRoot().getFile(path.append("Main.java"));
 					ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectMainClassTemplate().generate(projectData).toString().getBytes());
 					mainClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
-					in.close();						
+					in.close();
 				} else if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.MOBILE) ) {
 					IFile mainClass = p.getProject().getWorkspace().getRoot().getFile(path.append("Main.java"));
 					ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectMainMobileClassTemplate().generate(projectData).toString().getBytes());
 					mainClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
 					in.close();
 				}
-				
+
 				if( ! projectData.declarativeUiType.equals("None") ) {
 					if( ! projectData.declarativeUiController.trim().isEmpty() ) {
 						IFile ctrlClass = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiController+".java"));
 						ByteArrayInputStream in = new ByteArrayInputStream(new FXProjectCtrlClassTemplate().generate(projectData).toString().getBytes());
 						ctrlClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
-						in.close();	
+						in.close();
 					}
 					IFile declarativeUi = p.getProject().getWorkspace().getRoot().getFile(path.append(projectData.declarativeUiName+"."+(projectData.declarativeUiType.endsWith("FXML")?"fxml":"fxgraph")));
 					ByteArrayInputStream in = new ByteArrayInputStream(
@@ -265,12 +265,12 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 					declarativeUi.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
 					in.close();
 				}
-				
+
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			BasicNewProjectResourceWizard.updatePerspective(fConfigElement);
 			selectAndReveal(fSecondPage.getJavaProject().getProject());
 
@@ -329,7 +329,7 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 	public IJavaElement getCreatedElement() {
 		return fSecondPage.getJavaProject();
 	}
-	
+
 	public static class ProjectData {
 		public String mainApp = "Desktop";
 		public String packageName = "application";
