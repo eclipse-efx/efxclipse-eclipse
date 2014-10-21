@@ -34,6 +34,7 @@ class FXMLSaxHandler extends DefaultHandler {
 	private boolean valueOfType = false;
 	
 	private static String FXML_NAMESPACE = "http://javafx.com/fxml"
+	private static String FXML_NAMESPACE_1 = "http://javafx.com/fxml/1"
 
 	@Inject
 	new(IJvmTypeProvider.Factory jdtTypeProviderFactory)
@@ -75,8 +76,22 @@ class FXMLSaxHandler extends DefaultHandler {
 		}
 	}
 	
+	def String getFXAttributeValue(Attributes attributes, String name) {
+		var v = attributes.getValue(FXML_NAMESPACE,name);
+		
+		if( v == null ) {
+			v = attributes.getValue(FXML_NAMESPACE_1,name);
+		}
+		
+		return v;
+	}
+	
+	def boolean isFXNamedSpace(String uri) {
+		return uri == FXML_NAMESPACE || uri == FXML_NAMESPACE_1;
+	}
+	
 	override startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-		if( uri != FXML_NAMESPACE && localName.contains('.') ) {
+		if( ! uri.isFXNamedSpace && localName.contains('.') ) {
 			// A static property
 			val e = stack.peek as Element
 			val prop = FXGraphFactory.eINSTANCE.createStaticCallValueProperty
@@ -89,7 +104,7 @@ class FXMLSaxHandler extends DefaultHandler {
 			
 			e.staticCallProperties.add(prop);
 			stack.push(prop)			
-		} else if( uri != FXML_NAMESPACE && Character.isLowerCase(localName.charAt(0)) ) {
+		} else if( ! uri.isFXNamedSpace && Character.isLowerCase(localName.charAt(0)) ) {
 			// A property
 			val e = stack.peek as Element
 			val prop = FXGraphFactory.eINSTANCE.createProperty
@@ -106,11 +121,11 @@ class FXMLSaxHandler extends DefaultHandler {
 			
 			stack.push(prop)
 		} else {
-			if( attributes.getValue(FXML_NAMESPACE,"value") != null ) {
+			if( attributes.getFXAttributeValue("value") != null ) {
 				val p = stack.peek as Property;
 				val lp = p.value as ListValueProperty
 				val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
-				vp.setStringValue(attributes.getValue(FXML_NAMESPACE,"value"));
+				vp.setStringValue(attributes.getFXAttributeValue("value"));
 				lp.value += vp;
 				valueOfType = true;
 				return;
@@ -119,7 +134,7 @@ class FXMLSaxHandler extends DefaultHandler {
 			// An element
 			val e = FXGraphFactory.eINSTANCE.createElement
 			
-			val isDynRoot = localName == 'root' && uri == FXML_NAMESPACE 
+			val isDynRoot = localName == 'root' && uri.isFXNamedSpace 
 			val t = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference();
 			if( isDynRoot ) {
 				model.componentDef.dynamicRoot = true;
@@ -131,7 +146,7 @@ class FXMLSaxHandler extends DefaultHandler {
 			
 			var i = 0;
 			while( i < attributes.length ) {
-				if( FXML_NAMESPACE.equals(attributes.getURI(i)) ) {
+				if( attributes.getURI(i).isFXNamedSpace ) {
 					if( "id".equals(attributes.getLocalName(i)) ) {
 						e.name = attributes.getValue(i)
 						idMap.put(e.name,e);
