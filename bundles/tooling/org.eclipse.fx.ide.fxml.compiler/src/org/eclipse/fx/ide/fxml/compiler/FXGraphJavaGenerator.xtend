@@ -197,8 +197,8 @@ class FXGraphJavaGenerator {
 				«ELSE»
 					«name»Builder.«p.name»(«(p.value as SimpleValueProperty).simpleAttributeValue»);
 				«ENDIF»
-			«ELSEIF p.value instanceof ResourceValueProperty»
-				«name»Builder.«p.name»(baseURL + "/«(p.value as ResourceValueProperty).value.value»");
+			«ELSEIF p.value instanceof LocationValueProperty»
+				«name»Builder.«p.name»(baseURL + "/«(p.value as LocationValueProperty).value»");
 				«enableResourceUrl()»
 			«ENDIF»
 		«ENDFOR»
@@ -305,6 +305,10 @@ class FXGraphJavaGenerator {
 								«ELSE»
 									«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).simpleAttributeValue»);
 								«ENDIF»
+							«ELSEIF l instanceof ResourceValueProperty»
+								«name».get«p.name.toFirstUpper»().add(resourceBundle.getString("«(l as ResourceValueProperty).value.value»"));
+							«ELSEIF l instanceof LocationValueProperty»
+								«name».get«p.name.toFirstUpper»().add(baseURL + "/«(l as LocationValueProperty).value»");
 							«ENDIF»
 						}
 					«ENDFOR»
