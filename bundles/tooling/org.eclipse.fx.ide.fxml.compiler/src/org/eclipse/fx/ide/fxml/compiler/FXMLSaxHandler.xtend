@@ -24,15 +24,15 @@ class FXMLSaxHandler extends DefaultHandler {
 	public Model model;
 
 	Stack<Object> stack = new Stack;
-	
+
 	private final IJvmTypeProvider provider;
-	
+
 	private final Map<String,String> simpleToFqn
 	private final List<String> globalImports
 	private IFXMLFile file;
 	private Map<String,Element> idMap = new HashMap
 	private boolean valueOfType = false;
-	
+
 	private static String FXML_NAMESPACE = "http://javafx.com/fxml"
 	private static String FXML_NAMESPACE_1 = "http://javafx.com/fxml/1"
 
@@ -44,7 +44,7 @@ class FXMLSaxHandler extends DefaultHandler {
 		this.simpleToFqn = new HashMap
 		this.globalImports.add("java.lang");
 	}
-	
+
 	def setFile(IFXMLFile file) {
 		this.file = file;
 	}
@@ -54,12 +54,12 @@ class FXMLSaxHandler extends DefaultHandler {
 		val pack = FXGraphFactory.eINSTANCE.createPackageDeclaration
 		pack.name = file?.packagename
 		model.package = pack
-		
+
 		val componentDef = FXGraphFactory.eINSTANCE.createComponentDefinition
 		componentDef.name = file?.name.substring(0,file?.name.indexOf('.'))
 		model.componentDef = componentDef
 	}
-	
+
 	override processingInstruction(String target, String data) throws SAXException {
 		if ("import" == target) {
 			val i = FXGraphFactory.eINSTANCE.createImport
@@ -75,50 +75,50 @@ class FXMLSaxHandler extends DefaultHandler {
 			}
 		}
 	}
-	
+
 	def String getFXAttributeValue(Attributes attributes, String name) {
 		var v = attributes.getValue(FXML_NAMESPACE,name);
-		
+
 		if( v == null ) {
 			v = attributes.getValue(FXML_NAMESPACE_1,name);
 		}
-		
+
 		return v;
 	}
-	
+
 	def boolean isFXNamedSpace(String uri) {
 		return uri == FXML_NAMESPACE || uri == FXML_NAMESPACE_1;
 	}
-	
+
 	override startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		if( ! uri.isFXNamedSpace && localName.contains('.') ) {
 			// A static property
 			val e = stack.peek as Element
 			val prop = FXGraphFactory.eINSTANCE.createStaticCallValueProperty
 			prop.name = localName.substring(localName.indexOf('.')+1)
-			
+
 			val t = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference()
 			t.type = provider.findTypeByName(ReflectionHelper.getFqnType(localName.substring(0,localName.indexOf('.')),simpleToFqn,globalImports))
-			
+
 			prop.type = t
-			
+
 			e.staticCallProperties.add(prop);
-			stack.push(prop)			
+			stack.push(prop)
 		} else if( ! uri.isFXNamedSpace && Character.isLowerCase(localName.charAt(0)) ) {
 			// A property
 			val e = stack.peek as Element
 			val prop = FXGraphFactory.eINSTANCE.createProperty
 			prop.name = localName
-			
-			val vt = ReflectionHelper.getValueType(e.type.type,localName) 
-			
+
+			val vt = ReflectionHelper.getValueType(e.type.type,localName)
+
 			if( vt == ValueType.LIST ) {
 				val lp = FXGraphFactory.eINSTANCE.createListValueProperty
 				prop.setValue(lp)
 			}
-			
+
 			e.properties += prop
-			
+
 			stack.push(prop)
 		} else {
 			if( attributes.getFXAttributeValue("value") != null ) {
@@ -130,11 +130,11 @@ class FXMLSaxHandler extends DefaultHandler {
 				valueOfType = true;
 				return;
 			}
-			
+
 			// An element
 			val e = FXGraphFactory.eINSTANCE.createElement
-			
-			val isDynRoot = localName == 'root' && uri.isFXNamedSpace 
+
+			val isDynRoot = localName == 'root' && uri.isFXNamedSpace
 			val t = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference();
 			if( isDynRoot ) {
 				model.componentDef.dynamicRoot = true;
@@ -143,7 +143,7 @@ class FXMLSaxHandler extends DefaultHandler {
 				t.type = provider.findTypeByName(ReflectionHelper.getFqnType(localName,simpleToFqn,globalImports))
 			}
 			e.setType(t);
-			
+
 			var i = 0;
 			while( i < attributes.length ) {
 				if( attributes.getURI(i).isFXNamedSpace ) {
@@ -162,7 +162,7 @@ class FXMLSaxHandler extends DefaultHandler {
 							val sv = FXGraphFactory.eINSTANCE.createStringValue;
 							sv.value = attributes.getValue(i).substring(1)
 							vp.setValue(sv);
-							
+
 							val pp = FXGraphFactory.eINSTANCE.createProperty
 							pp.name = attributes.getLocalName(i)
 							pp.value = vp
@@ -170,7 +170,7 @@ class FXMLSaxHandler extends DefaultHandler {
 						} else if( attributes.getValue(i).startsWith("@") ) {
 							val vp = FXGraphFactory.eINSTANCE.createLocationValueProperty()
 							vp.value = attributes.getValue(i).substring(1);
-							
+
 							val pp = FXGraphFactory.eINSTANCE.createProperty
 							pp.name = attributes.getLocalName(i)
 							pp.value = vp
@@ -178,7 +178,7 @@ class FXMLSaxHandler extends DefaultHandler {
 						} else if(attributes.getValue(i).startsWith("$")) {
 							val v = attributes.getValue(i).substring(1);
 							var Element ref = idMap.get(v)
-							
+
 							if( ref != null ) {
 								val vp = FXGraphFactory.eINSTANCE.createReferenceValueProperty
 								vp.setReference(ref as Element);
@@ -201,27 +201,31 @@ class FXMLSaxHandler extends DefaultHandler {
 								val pp = FXGraphFactory.eINSTANCE.createProperty
 								pp.name = attributes.getLocalName(i)
 								pp.value = vp
-								e.properties += pp			
+								e.properties += pp
 //							} else if( "javafx.scene.shape.TriangleMesh" == t.type.qualifiedName ) {
-//								
+//
 							} else {
 								val vt = ReflectionHelper.getValueType(t.type,attributes.getLocalName(i))
-						
+
 								if( vt == ValueType.EVENT_CLASS ) {
 									val vp = FXGraphFactory.eINSTANCE.createControllerHandledValueProperty
 									vp.setMethodname(attributes.getValue(i).substring(1))
-									
+
 									val pp = FXGraphFactory.eINSTANCE.createProperty
 									pp.name = attributes.getLocalName(i)
 									pp.value = vp
 									e.properties += pp
-									
+
 								} else if( vt == ValueType.LIST ) {
 									val vp = FXGraphFactory.eINSTANCE.createListValueProperty
-									val lv = FXGraphFactory.eINSTANCE.createSimpleValueProperty
-									lv.stringValue = attributes.getValue(i)
-									vp.value += lv
-									
+
+									attributes.getValue(i).split(",").forEach[v |
+										val lv = FXGraphFactory.eINSTANCE.createSimpleValueProperty
+										lv.stringValue = v
+										vp.value += lv
+									]
+
+
 									val pp = FXGraphFactory.eINSTANCE.createProperty
 									pp.name = attributes.getLocalName(i)
 									pp.value = vp
@@ -235,19 +239,19 @@ class FXMLSaxHandler extends DefaultHandler {
 									} else {
 										vp.stringValue = attributes.getValue(i)
 									}
-									
+
 									val pp = FXGraphFactory.eINSTANCE.createProperty
 									pp.name = attributes.getLocalName(i)
 									pp.value = vp
 									e.properties += pp
-								}										
+								}
 							}
 						}
 					} else {
 						if( attributes.getValue(i).startsWith("$") ) {
 							val v = attributes.getValue(i).substring(1);
 							var Element ref = idMap.get(v)
-							
+
 							if(ref != null) {
 								val vp = FXGraphFactory.eINSTANCE.createReferenceValueProperty
 								vp.setReference(ref as Element);
@@ -259,12 +263,12 @@ class FXMLSaxHandler extends DefaultHandler {
 								pp.setType(ttype)
 								pp.name = attributes.getLocalName(i).substring(attributes.getLocalName(i).indexOf('.')+1)
 								pp.value = vp
-								e.staticCallProperties += pp	
+								e.staticCallProperties += pp
 							}
 						} else {
 							val idx = attributes.getLocalName(i).indexOf('.')
 							val type = provider.findTypeByName(ReflectionHelper.getFqnType(attributes.getLocalName(i).substring(0,idx),simpleToFqn,globalImports))
-							
+
 							val vt = ReflectionHelper.getStaticValueType(type,attributes.getLocalName(i).substring(idx+1))
 							val vp = FXGraphFactory.eINSTANCE.createSimpleValueProperty
 							if( vt == ValueType.BOOLEAN ) {
@@ -274,29 +278,29 @@ class FXMLSaxHandler extends DefaultHandler {
 							} else {
 								vp.stringValue = attributes.getValue(i)
 							}
-							
+
 							val pp = FXGraphFactory.eINSTANCE.createStaticCallValueProperty
 							val ttype = TypesFactory.eINSTANCE.createJvmParameterizedTypeReference()
 							ttype.type = type
 							pp.setType(ttype)
 							pp.name = attributes.getLocalName(i).substring(attributes.getLocalName(i).indexOf('.')+1)
 							pp.value = vp
-							e.staticCallProperties += pp	
+							e.staticCallProperties += pp
 						}
-					}					
+					}
 				}
-				
+
 				i = i +1;
 			}
-			
+
 			if( model.componentDef.rootNode == null ) {
 				model.componentDef.rootNode = e
 			}
-		
+
 			stack.push(e)
 		}
 	}
-	
+
 	override endElement(String uri, String localName, String qName) throws SAXException {
 		if( valueOfType ) {
 			valueOfType = false;

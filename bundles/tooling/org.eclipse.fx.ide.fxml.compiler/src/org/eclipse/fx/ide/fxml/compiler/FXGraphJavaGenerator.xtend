@@ -14,6 +14,8 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ResourceValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceValueProperty
 import org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty
+import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement
+import java.util.List
 
 class FXGraphJavaGenerator {
 	int varIndex = 0;
@@ -21,7 +23,7 @@ class FXGraphJavaGenerator {
 	Model model;
 	boolean fieldReflection
 	boolean resourceUrl
-	
+
 	new(Model model) {
 		this.model = model;
 		registerImport("java.net.URL");
@@ -32,31 +34,31 @@ class FXGraphJavaGenerator {
 		registerImport("java.util.ResourceBundle");
 		registerImport("javafx.util.Callback");
 	}
-	
+
 	def getVarIndex() {
 		varIndex = varIndex + 1;
 		return varIndex;
 	}
-	
+
 	def generate() '''
 	package «model.package.name»;
-	
+
 	«var content = generateElementDef("root", model.componentDef.rootNode, model.componentDef.dynamicRoot)»
-	
+
 	«FOR i : model.imports»
 	import «i.importedNamespace»;
 	«ENDFOR»
-	
+
 	«FOR i : extraImports»
 	import «i»;
 	«ENDFOR»
-	
+
 	@SuppressWarnings("all")
 	public class «model.componentDef.name» extends FXMLDocument<«model.componentDef.rootNode.type.simpleName»> {
 		private Map<String,Object> namespaceMap = new HashMap<>();
 		«IF hasController() »
 			«model.componentDef.controller.qualifiedName» _c;
-			
+
 			public 	«model.componentDef.controller.qualifiedName» getController() {
 				return _c;
 			}
@@ -65,12 +67,12 @@ class FXGraphJavaGenerator {
 				return null;
 			}
 		«ENDIF»
-		
+
 		public «model.componentDef.rootNode.type.simpleName» load(LoadData<«model.componentDef.rootNode.type.simpleName»> loadData) {
 			final URL location = loadData.location;
 			final ResourceBundle resourceBundle = loadData.bundle;
 			final Callback<Class<?>, Object> controllerFactory = loadData.controllerFactory;
-	
+
 			«IF hasController() »
 				if( controllerFactory != null ) {
 					_c = («model.componentDef.controller.qualifiedName»)controllerFactory.call(«model.componentDef.controller.qualifiedName».class);
@@ -91,14 +93,14 @@ class FXGraphJavaGenerator {
 			«ENDIF»
 			return root;
 		}
-	
+
 		«IF resourceUrl»
 			private static String createBaseURL(URL url) {
 				String externalForm = url.toExternalForm();
 				return externalForm.substring(0,externalForm.lastIndexOf('/'));
 			}
 		«ENDIF»
-	
+
 		«IF fieldReflection»
 			private static void setFieldReflective(Class<?> owner, String n, Object c, Object v) {
 				try {
@@ -112,24 +114,24 @@ class FXGraphJavaGenerator {
 		«ENDIF»
 	}
 	'''
-	
+
 	def hasController() {
 		return model.componentDef.controller != null
 	}
-	
+
 	def void enableFieldReflection(String name) {
 		fieldReflection = true;
 		registerImport("java.lang.reflect.*")
 	}
-	
+
 	def void registerImport(String name) {
 		extraImports.add(name)
 	}
-	
+
 	def void enableResourceUrl() {
 		resourceUrl = true;
 	}
-	
+
 	def controllerFieldAccess(String name, Element element) '''
 	«IF model.componentDef.controller.hasField(model.package.name,element.name)»
 		«IF model.componentDef.controller.hasAccessibleField(model.package.name,element.name)»
@@ -141,7 +143,7 @@ class FXGraphJavaGenerator {
 		«ENDIF»
 	«ENDIF»
 	'''
-	
+
 	def eventBindingAccess(String name, String propertyName, String methodName, Element element) '''
 		«registerImport("javafx.event.EventHandler")»
 		«name».set«propertyName.toFirstUpper»(new EventHandler<«element.type.eventType(propertyName)»>() {
@@ -150,7 +152,7 @@ class FXGraphJavaGenerator {
 			}
 		});
 	'''
-	
+
 //	def CharSequence generateElementDef(ComponentDefinition componentDef) '''
 //		«IF componentDef.dynamicRoot»
 //			«componentDef.rootNode.type.simpleName» root = loadData.rootNode;
@@ -162,7 +164,7 @@ class FXGraphJavaGenerator {
 	def CharSequence generateElementDef(String name, Element element) {
 		generateElementDef(name,element,false);
 	}
-	
+
 	def CharSequence generateElementDef(String name, Element element, boolean dynRoot) '''
 	«IF ! dynRoot && element.type.needsBuilder»
 		«IF "javafx.scene.image.Image" == element.type.qualifiedName»
@@ -242,24 +244,71 @@ class FXGraphJavaGenerator {
 					«staticCallProperties(varName,p.value as Element)»
 				}
 			«ELSEIF p.value instanceof ListValueProperty»
-				«FOR l : (p.value as ListValueProperty).value»
-					{
-					«val i = getVarIndex»
-					«val varName = 'e_'+i»
-						«IF l instanceof Element»
-							«generateElementDef(varName,l as Element)»
-							«IF "java.net.URL" == (l as Element).type.qualifiedName»
-								«name».get«p.name.toFirstUpper»().add(«varName».toExternalForm());
+				«IF (p.value as ListValueProperty).value.onlyPrimitive»
+					«val lt = ReflectionHelper.listType(element.type, p.name)»
+					«name».get«p.name.toFirstUpper»().setAll(
+						«FOR l : (p.value as ListValueProperty).value»
+							«val sl = l as SimpleValueProperty»
+							«IF sl.stringValue != null»
+								«IF "java.lang.String" == lt»
+									«IF (p.value as ListValueProperty).value.head != sl», «ENDIF»«sl.simpleAttributeValue»
+								«ELSEIF "java.lang.Double" == lt
+										|| "java.lang.Integer" == lt || "java.lang.Long" == lt
+										|| "java.lang.Float" == lt»
+									«IF "java.lang.Double" == lt»
+										«IF (p.value as ListValueProperty).value.head != sl», «ENDIF»«sl.stringValue»d
+									«ELSEIF "java.lang.Float" == lt»
+										«IF (p.value as ListValueProperty).value.head != sl», «ENDIF»«sl.stringValue»f
+									«ELSE»
+										«IF (p.value as ListValueProperty).value.head != sl», «ENDIF»«sl.stringValue»
+									«ENDIF»
+								«ELSE»
+									«IF (p.value as ListValueProperty).value.head != sl», «ENDIF»«lt».valueOf(«sl.simpleAttributeValue»)
+								«ENDIF»
 							«ELSE»
-								«name».get«p.name.toFirstUpper»().add(«varName»);
+								«IF (p.value as ListValueProperty).value.head != sl», «ENDIF»«sl.simpleAttributeValue»
 							«ENDIF»
-							«staticProperties(varName,l as Element)»
-							«staticCallProperties(varName,l as Element)»
-						«ELSEIF l instanceof SimpleValueProperty»
-							«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).simpleAttributeValue»);
-						«ENDIF»
-					}
-				«ENDFOR»
+						«ENDFOR»
+					);
+				«ELSE»
+					«FOR l : (p.value as ListValueProperty).value»
+						{
+						«val i = getVarIndex»
+						«val varName = 'e_'+i»
+							«IF l instanceof Element»
+								«generateElementDef(varName,l as Element)»
+								«IF "java.net.URL" == (l as Element).type.qualifiedName»
+									«name».get«p.name.toFirstUpper»().add(«varName».toExternalForm());
+								«ELSE»
+									«name».get«p.name.toFirstUpper»().add(«varName»);
+								«ENDIF»
+								«staticProperties(varName,l as Element)»
+								«staticCallProperties(varName,l as Element)»
+							«ELSEIF l instanceof SimpleValueProperty»
+								«IF (l as SimpleValueProperty).stringValue != null»
+									«val lt = ReflectionHelper.listType(element.type, p.name)»
+									«IF "java.lang.String" == lt»
+										«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).simpleAttributeValue»);
+									«ELSEIF "java.lang.Double" == lt
+											|| "java.lang.Integer" == lt || "java.lang.Long" == lt
+											|| "java.lang.Float" == lt»
+										«IF "java.lang.Double" == lt»
+											«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).stringValue»d);
+										«ELSEIF "java.lang.Float" == lt»
+											«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).stringValue»f);
+										«ELSE»
+											«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).stringValue»);
+										«ENDIF»
+									«ELSE»
+										«name».get«p.name.toFirstUpper»().add(«lt».valueOf(«(l as SimpleValueProperty).simpleAttributeValue»));
+									«ENDIF»
+								«ELSE»
+									«name».get«p.name.toFirstUpper»().add(«(l as SimpleValueProperty).simpleAttributeValue»);
+								«ENDIF»
+							«ENDIF»
+						}
+					«ENDFOR»
+				«ENDIF»
 			«ELSEIF p.value instanceof LocationValueProperty»
 				«name».set«p.name.toFirstUpper»(baseURL + "/«(p.value as LocationValueProperty).value»");
 				«enableResourceUrl()»
@@ -292,7 +341,7 @@ class FXGraphJavaGenerator {
 		namespaceMap.put("«element.name»",«name»);
 	«ENDIF»
 	'''
-	
+
 	def staticCallProperties(String name, Element element) '''
 	«FOR prop : element.staticCallProperties»
 		«val type = prop.type»
@@ -318,8 +367,8 @@ class FXGraphJavaGenerator {
 		«ENDIF»
 	«ENDFOR»
 	'''
-	
-	
+
+
 	def staticProperties(String name, Element element) '''
 	«FOR prop : element.staticProperties»
 		«val type = prop.type»
@@ -343,7 +392,7 @@ class FXGraphJavaGenerator {
 		«ENDIF»
 	«ENDFOR»
 	'''
-	
+
 	def simpleAttributeValue(SimpleValueProperty value) {
 		if( value.stringValue != null ) {
 			return '"' + value.stringValue + '"';
@@ -354,7 +403,7 @@ class FXGraphJavaGenerator {
 				if( value.number == "-Infinity" ) {
 					return "Double.NEGATIVE_INFINITY";
 				} else {
-					return "-" + value.number;	
+					return "-" + value.number;
 				}
 			} else {
 				if( value.number == "-Infinity" ) {
@@ -364,11 +413,11 @@ class FXGraphJavaGenerator {
 				} else {
 					return value.number;
 				}
-				
+
 			}
 		}
 	}
-	
+
 	def type(StaticValueProperty prop) {
 		var el = prop.eContainer
 		while( el.eContainer != null ) {
@@ -378,5 +427,9 @@ class FXGraphJavaGenerator {
 			}
 			el = el.eContainer;
 		}
+	}
+
+	def onlyPrimitive(List<ListValueElement> list) {
+		return list.findFirst[e| !(e instanceof SimpleValueProperty)] == null
 	}
 }
