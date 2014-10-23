@@ -19,23 +19,23 @@
 
 		<unzip dest="repack">
 			<fileset dir="${xtext-prefix}">
-				<include name="org.eclipse.xtend.lib_2.7.1*.jar"/>
-				<include name="org.eclipse.xtext.xbase.lib_2.7.1*.jar"/>
+				<include name="org.eclipse.xtend.lib_2.7.2*.jar"/>
+				<include name="org.eclipse.xtext.xbase.lib_2.7.2*.jar"/>
 				<include name="org.eclipse.emf.mwe2.runtime_2.7.0*.jar"/>
 				<include name="org.eclipse.emf.mwe.utils_1.3.4*.jar"/>
-				<include name="org.eclipse.xtext_2.7.1*.jar"/>
-				<include name="org.eclipse.xtext.util_2.7.1*.jar"/>
-				<include name="org.eclipse.xtext.common.types_2.7.1*.jar"/>
-				<include name="org.eclipse.xtext.common.types.ui_2.7.1*.jar"/>
-				<include name="org.eclipse.xtext.xbase_2.7.1*.jar"/>
+				<include name="org.eclipse.xtext_2.7.2*.jar"/>
+				<include name="org.eclipse.xtext.util_2.7.2*.jar"/>
+				<include name="org.eclipse.xtext.common.types_2.7.2*.jar"/>
+				<include name="org.eclipse.xtext.common.types.ui_2.7.2*.jar"/>
+				<include name="org.eclipse.xtext.xbase_2.7.2*.jar"/>
 			</fileset>
 			<fileset dir="${emf-prefix}">
-				<include name="org.eclipse.emf.ecore.xmi_2.10.0*.jar"/>
-				<include name="org.eclipse.emf.ecore_2.10.0*.jar"/>
-				<include name="org.eclipse.emf.common_2.10.0*.jar"/>
+				<include name="org.eclipse.emf.ecore.xmi_2.10.1*.jar"/>
+				<include name="org.eclipse.emf.ecore_2.10.1*.jar"/>
+				<include name="org.eclipse.emf.common_2.10.1*.jar"/>
 			</fileset>
 			<fileset dir="${platform-prefix}">
-				<include name="org.eclipse.jdt.annotation_1.1.0*.jar"/>
+				<include name="org.eclipse.jdt.annotation_2.0.0*.jar"/>
 				<include name="org.eclipse.core.runtime_3.10.0*.jar"/>
 				<include name="org.eclipse.jdt.core_3.10.0*.jar"/>
 				<include name="org.eclipse.equinox.common_3.6.200*.jar"/>
