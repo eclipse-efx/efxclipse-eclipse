@@ -11,11 +11,11 @@
 
 	<groupId>org.eclipse.fx.ide</groupId>
 	<artifactId>releng</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
-		<tycho-version>0.21.0-SNAPSHOT</tycho-version>
-		<tycho-extras.version>0.21.0-SNAPSHOT</tycho-extras.version>
+		<tycho-version>0.21.0</tycho-version>
+		<tycho-extras.version>0.21.0</tycho-extras.version>
 		<cbi-plugins.version>1.0.5</cbi-plugins.version>
 		<junit-version>4.8.1</junit-version>
 		<mockito-version>1.8.4</mockito-version>
@@ -28,12 +28,12 @@
 	</properties>
 
 	<modules>
-		
+
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.core</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.jdt.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.java6</module>
-		
+
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.model</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.rrobot.dsl</module>
@@ -43,17 +43,17 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.pde.core</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.mobile.sim.device</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.preview</module>
-				
+
 		<!-- CSS Tooling -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.jfx2</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.jfx8</module>
-		
+
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext.ui</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.css.cssext.proposals</module>
-		
+
 		<!-- FXGraph / FXML -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.model</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxgraph</module>
@@ -61,10 +61,10 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.converter</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml.compiler</module>
-		
+
 		<!-- Mobile -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.mobile.sim.launch</module>
-		
+
 		<module>../tooling/org.eclipse.fx.ide.basic.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.rrobot.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.css.feature</module>
@@ -73,7 +73,7 @@
 		<module>../tooling/org.eclipse.fx.ide.converter.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.mobile.feature</module>
-		
+
 		<module>../tooling/org.eclipse.fx.ide.feature</module>
 		<module>../org.eclipse.fx.ide.updatesite</module>
 	</modules>
@@ -141,7 +141,7 @@
  					</execution>
  				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
@@ -217,7 +217,7 @@
 				                <systemPath>${java.home}/lib/jfxswt.jar</systemPath>
 				                <scope>system</scope>
 				            </extraClasspathElement>
-        				</extraClasspathElements> 
+        				</extraClasspathElements>
 					</configuration>
 				</plugin>
 				<plugin>

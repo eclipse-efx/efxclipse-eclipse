@@ -50,8 +50,8 @@
 				<include name="org.apache.commons.logging_1.1.1*.jar"/>
 			</fileset>
 			<fileset dir="${efx-prefix}">
-				<include name="org.eclipse.fx.ide.fxgraph_1.0.0*.jar"/>
-				<include name="org.eclipse.fx.ide.fxml.compiler_1.0.0*.jar"/>
+				<include name="org.eclipse.fx.ide.fxgraph_1.1.0*.jar"/>
+				<include name="org.eclipse.fx.ide.fxml.compiler_1.1.0*.jar"/>
 			</fileset>
 		</unzip>
 		<delete dir="repack/META-INF" />
@@ -71,7 +71,7 @@
 		<delete file="repack/about_org.eclipse.xtext.xbase.lib.html" />
 		<delete file="repack/about.html" />
 
-		<jar destfile="target/org.eclipse.fx.fxml.compiler_1.0.0-SNAPSHOT.jar">
+		<jar destfile="target/org.eclipse.fx.fxml.compiler_1.1.0-SNAPSHOT.jar">
 			<fileset dir="repack">
 				<include name="**/*"/>
 			</fileset>
@@ -86,7 +86,7 @@
 		<mkdir dir="${root-prefix}/efxclipse/compiler-nightly"/>
 		<copy todir="${root-prefix}/efxclipse/compiler-nightly/">
 			<fileset dir="target">
-				<include name="org.eclipse.fx.fxml.compiler_1.0.0-SNAPSHOT.jar"/>
+				<include name="org.eclipse.fx.fxml.compiler_1.1.0-SNAPSHOT.jar"/>
 			</fileset>
 		</copy>
 		<delete dir="repack" />
