@@ -159,7 +159,9 @@ class RootPomGenerator implements Generator<DynamicFile> {
 				<artifactId>tycho-packaging-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<archiveSite>true</archiveSite>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
 				</configuration>
 			</plugin>
 			</plugins>
