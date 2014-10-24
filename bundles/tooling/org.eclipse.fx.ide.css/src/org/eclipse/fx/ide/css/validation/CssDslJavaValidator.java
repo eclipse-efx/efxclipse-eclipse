@@ -10,9 +10,15 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.css.validation;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
@@ -23,6 +29,15 @@ import org.eclipse.fx.ide.css.cssDsl.selector;
 import org.eclipse.fx.ide.css.extapi.CssExt;
 import org.eclipse.fx.ide.css.extapi.Proposal;
 import org.eclipse.fx.ide.css.util.Utils;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.pde.internal.core.PDECore;
+import org.eclipse.pde.internal.core.project.PDEProject;
+import org.eclipse.xtext.nodemodel.BidiTreeIterator;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.validation.Check;
 
 import com.google.inject.Inject;
@@ -63,15 +78,64 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 	public void checkProperty(css_property property) {
 	}
 
+	@SuppressWarnings("restriction")
 	@Check
 	public void checkDeclaration(css_declaration dec) {
 //		System.err.println("CHECK DECL " + dec);
 		css_property property = dec.getProperty();
-		List<CssTok> tokens = dec.getValueTokens();
 
-		URI uri = dec.eResource().getURI();
+		// Only validate files who are:
+		// * in a plug-in project
+		//   - when css is part of build.properties bin.includes
+		//   - when css is part of the source-folder
+		IFile file = Utils.getFile(dec.eResource());
 
-		List<Proposal> properties = ext.getPropertyProposalsForSelector(Utils.getFile(dec.eResource()),dec,null);
+		//TODO We should add a service possibility to contribute these lookups
+		boolean validate = false;
+
+		try {
+			if( file.getProject().hasNature("org.eclipse.pde.PluginNature") ) { //$NON-NLS-1$
+				// validate = true;
+				IFile properties = PDEProject.getBuildProperties(file.getProject());
+				Properties p = new Properties();
+				try( InputStream in = properties.getContents() ) {
+					p.load(in);
+					String includes = p.getProperty("bin.includes"); //$NON-NLS-1$
+					if( includes != null ) {
+						IPath path = file.getProjectRelativePath();
+						for( String s : includes.split(",") ) { //$NON-NLS-1$
+							if( path.toString().startsWith(s.trim()) ) {
+								validate = true;
+								break;
+							}
+						}
+					}
+				} catch(IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+			if( ! validate && file.getProject().hasNature("org.eclipse.jdt.core.javanature") ) { //$NON-NLS-1$
+				IJavaProject jp = JavaCore.create(file.getProject());
+				for( IPackageFragmentRoot r : jp.getPackageFragmentRoots() ) {
+					if( r.getKind() == IPackageFragmentRoot.K_SOURCE ) {
+						if( file.getProjectRelativePath().toString().startsWith(r.getPath().removeFirstSegments(1).toString()) ) {
+							validate = true;
+							break;
+						}
+					}
+				}
+			}
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		if( ! validate ) {
+			return;
+		}
+
+		List<Proposal> properties = ext.getPropertyProposalsForSelector(file,dec,null);
 				//extension.getAllProperties(uri);
 
 		boolean known = false;
@@ -83,8 +147,11 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 		}
 
 		if (!known) {
-			if( ! PREDEFINED_VAR_PROPS.contains(property.getName()) ) {
-				warning("Unknown property: \""+property.getName()+"\"", CssDslPackage.Literals.CSS_DECLARATION__PROPERTY);
+			ICompositeNode node = NodeModelUtils.getNode(dec.getProperty());
+
+			boolean suppress = node.getText().contains("@SuppressWarning");
+			if( ! suppress && ! PREDEFINED_VAR_PROPS.contains(property.getName()) ) {
+				warning("Unknown property: \""+property.getName()+"\"", property, CssDslPackage.Literals.CSS_PROPERTY__NAME);
 			}
 		}
 		else {
@@ -108,6 +175,10 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 				}
 
 				if (!supported) {
+					ICompositeNode node = NodeModelUtils.getNode(dec.getProperty());
+
+					boolean suppress = node.getText().contains("@SuppressWarning"); //$NON-NLS-1$
+
 					if( ! PREDEFINED_VAR_PROPS.contains(property.getName()) ) {
 						warning("\""+property.getName()+"\" is not supported by the given selectors", CssDslPackage.Literals.CSS_DECLARATION__PROPERTY);
 					}
