@@ -1,0 +1,87 @@
+grammar org.eclipse.fx.ide.l10n.NLSDsl with org.eclipse.xtext.common.Terminals
+
+generate nLSDsl "http://www.eclipse.org/fx/ide/l10n/NLSDsl"
+
+NLS:
+	package=PackageDeclaration? '{'
+		bundleList+=NLSBundle+
+	'}'
+;
+
+PackageDeclaration:
+	'package' name=QualifiedName
+;
+
+NLSBundle:
+	'bundle' name=ID 'default' lang=ID '{'
+		formatterList+=NLSFormatter*
+		messageEntryList+=MessageEntry+
+	'}'
+;
+
+NLSFormatter:
+	'formatter' name=ID classRef=QualifiedName
+;
+
+MessageEntry:
+	name=ID ('(' paramList+=MessageParam ( ',' paramList+=MessageParam )* ')')? ':' ('{' messageList+=Message (',' messageList+=Message )* '}' | '['entryRef=[MessageEntry|QualifiedName] ']')
+;
+
+MessageParam:
+	predefined=PredefinedTypes var=ID
+;
+
+Message:
+	name=ID ':' (message=RichString /*| '[' messageRef=[Message|QualifiedName] ']'*/ )
+;
+
+RichString:
+	(
+	  expressions+=RichStringLiteral |
+	  expressions+=RichStringLiteralStart expressions+=RichVarPart?
+	  	(expressions+=RichStringLiteralInbetween expressions+=RichVarPart?)*
+	  expressions+=RichStringLiteralEnd
+	)
+;
+
+RichStringLiteral:
+	value=RICH_TEXT
+;
+
+RichStringLiteralStart:
+	value=RICH_TEXT_START
+;
+
+RichStringLiteralEnd:
+	value=RICH_TEXT_END
+;
+
+RichStringLiteralInbetween:
+	value=RICH_TEXT_INBETWEEN
+;
+
+RichVarPart:
+	key=ID (
+		format=STRING (formatterClass=[NLSFormatter|QualifiedName])?
+	)?
+;
+
+ValidID:
+	ID;
+
+QualifiedName:
+  ValidID (=>'.' ValidID)*;
+
+enum PredefinedTypes :
+	ANY | NUMBER | DATE
+;
+
+terminal RICH_TEXT : "'''" IN_RICH_STRING* ("'''"| ("'" "'"?)? EOF);
+terminal RICH_TEXT_START : "'''" IN_RICH_STRING* ("'" "'"?)? '«';
+terminal RICH_TEXT_END : '»' IN_RICH_STRING* ("'''"| ("'" "'"?)? EOF) ;
+terminal RICH_TEXT_INBETWEEN : '»' IN_RICH_STRING* ("'" "'"?)? '«';
+
+terminal fragment IN_RICH_STRING :
+	  "''" !('«'|"'")
+	| "'" !('«'|"'")
+	| !('«'|"'");

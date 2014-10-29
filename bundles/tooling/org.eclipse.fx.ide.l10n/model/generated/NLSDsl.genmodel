@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.fx.ide.l10n/src-gen" editDirectory="/org.eclipse.fx.ide.l10n.edit/src"
+    editorDirectory="/org.eclipse.fx.ide.l10n.editor/src" modelPluginID="org.eclipse.fx.ide.l10n"
+    forceOverwrite="true" modelName="NLSDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.fx.ide.l10n.edit"
+    editorPluginID="org.eclipse.fx.ide.l10n.editor" runtimeVersion="2.10">
+  <genPackages prefix="NLSDsl" basePackage="org.eclipse.fx.ide.l10n" disposableProviderFactory="true"
+      fileExtensions="l10n" ecorePackage="NLSDsl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="NLSDsl.ecore#//PredefinedTypes">
+      <genEnumLiterals ecoreEnumLiteral="NLSDsl.ecore#//PredefinedTypes/ANY"/>
+      <genEnumLiterals ecoreEnumLiteral="NLSDsl.ecore#//PredefinedTypes/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="NLSDsl.ecore#//PredefinedTypes/DATE"/>
+    </genEnums>
+    <genClasses ecoreClass="NLSDsl.ecore#//NLS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLS/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLS/bundleList"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//PackageDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//PackageDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//NLSBundle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//NLSBundle/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//NLSBundle/lang"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLSBundle/formatterList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLSBundle/messageEntryList"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//NLSFormatter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//NLSFormatter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//NLSFormatter/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//MessageEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//MessageEntry/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//MessageEntry/paramList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//MessageEntry/messageList"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//MessageEntry/entryRef"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//MessageParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//MessageParam/predefined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//MessageParam/var"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//Message/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//Message/message"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//RichString">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//RichString/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//RichStringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//RichStringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//RichStringLiteralStart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//RichStringLiteralStart/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//RichStringLiteralEnd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//RichStringLiteralEnd/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//RichStringLiteralInbetween">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//RichStringLiteralInbetween/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NLSDsl.ecore#//RichVarPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//RichVarPart/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//RichVarPart/format"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//RichVarPart/formatterClass"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
