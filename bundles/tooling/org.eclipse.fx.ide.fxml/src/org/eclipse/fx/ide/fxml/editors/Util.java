@@ -35,7 +35,7 @@ import org.w3c.dom.ProcessingInstruction;
 public class Util {
 	private static final String FXML_NAMESPACE = "http://javafx.com/fxml";
 	private static final String FXML_NAMESPACE_1 = "http://javafx.com/fxml/1";
-	
+
 	/**
 	 * Check if the namespace in FXML
 	 * @param value the namespace value
@@ -44,7 +44,7 @@ public class Util {
 	public static final boolean isFXMLNamespace(String value) {
 		return FXML_NAMESPACE.equals(value) || FXML_NAMESPACE_1.equals(value);
 	}
-	
+
 	public static Attr getFXMLAttribute(Element e, String localName) {
 		Attr attribute = e.getAttributeNodeNS(FXML_NAMESPACE, localName);
 		if( attribute == null ) {
@@ -52,7 +52,7 @@ public class Util {
 		}
 		return attribute;
 	}
-	
+
 	static IJavaProject findProject(Document xmlDoc) {
 		String baseLocation = ((IDOMNode) xmlDoc).getModel().getBaseLocation();
 		IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(baseLocation));
@@ -61,7 +61,7 @@ public class Util {
 
 	/**
 	 * Get all imported types
-	 * 
+	 *
 	 * @param xmlDoc
 	 *            the document
 	 * @return list of imports
@@ -83,7 +83,7 @@ public class Util {
 		return imports;
 	}
 
-	static IType findType(String name, Document xmlDoc) {
+	public static IType findType(String name, Document xmlDoc) {
 		IJavaProject jpProject = findProject(xmlDoc);
 
 		if (name.contains(".")) { //$NON-NLS-1$

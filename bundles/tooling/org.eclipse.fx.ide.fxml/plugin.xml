@@ -111,4 +111,33 @@
          <managedMarker markerType="org.eclipse.jdt.apt.core.compile.problem"/>
       </compilationParticipant>
    </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:sourcePopupMenuId?after=sourceBegin">
+         <command
+               commandId="org.eclipse.fx.ide.fxml.generatecontroller"
+               label="Generate Controller"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeEditor">
+                  <instanceof
+                        value="org.eclipse.fx.ide.fxml.editors.FXMLEditor">
+                  </instanceof>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.eclipse.fx.ide.fxml.command.GenerateController"
+            id="org.eclipse.fx.ide.fxml.generatecontroller"
+            name="Generate a controller">
+      </command>
+   </extension>
 </plugin>
