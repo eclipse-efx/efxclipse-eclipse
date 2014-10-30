@@ -68,20 +68,20 @@ class NLSDslGenerator implements IGenerator {
 	 * Do not modify - Auto generated from «root.eResource.URI.lastSegment»
 	 */
 	@org.eclipse.e4.core.di.annotations.Creatable
-	public class «nls.name»Registry extends org.eclipse.fx.core.di.text.AbstractMessageRegistry<«nls.name»> {
+	public class «nls.name»Registry extends org.eclipse.fx.core.text.AbstractTextRegistry<«nls.name»> {
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-number"] != null»
 		@javax.inject.Inject
-		private org.eclipse.fx.core.di.text.NumberFormatter _number;
+		private org.eclipse.fx.core.text.NumberFormatter _number;
 		«ENDIF»
 
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-date"] != null»
 		@javax.inject.Inject
-		private org.eclipse.fx.core.di.text.DateFormatter _date;
+		private org.eclipse.fx.core.text.DateFormatter _date;
 		«ENDIF»
 
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-temporal"] != null»
 		@javax.inject.Inject
-		private org.eclipse.fx.core.di.text.TemporalAccessorFormatter _temporal;
+		private org.eclipse.fx.core.text.TemporalAccessorFormatter _temporal;
 		«ENDIF»
 
 		«FOR f : nls.formatterList»
