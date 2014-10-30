@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_RICH_TEXT", "RULE_RICH_TEXT_START", "RULE_RICH_TEXT_END", "RULE_RICH_TEXT_INBETWEEN", "RULE_STRING", "RULE_IN_RICH_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ANY'", "'NUMBER'", "'DATE'", "'{'", "'}'", "'package'", "'bundle'", "'default'", "'formatter'", "':'", "'('", "')'", "','", "'['", "']'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_RICH_TEXT", "RULE_RICH_TEXT_START", "RULE_RICH_TEXT_END", "RULE_RICH_TEXT_INBETWEEN", "RULE_STRING", "RULE_IN_RICH_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ANY'", "'NUMBER'", "'DATE'", "'TEMPORAL'", "'{'", "'}'", "'package'", "'bundle'", "'default'", "'formatter'", "':'", "'('", "')'", "','", "'['", "']'", "'.'"
     };
     public static final int RULE_STRING=9;
     public static final int RULE_SL_COMMENT=13;
@@ -35,6 +35,7 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_RICH_TEXT=5;
     public static final int RULE_ID=4;
     public static final int RULE_WS=14;
@@ -1419,10 +1420,10 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==19) ) {
+            if ( (LA1_0==20) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==29) ) {
+            else if ( (LA1_0==30) ) {
                 alt1=2;
             }
             else {
@@ -1609,14 +1610,14 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredefinedTypes__Alternatives"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:544:1: rule__PredefinedTypes__Alternatives : ( ( ( 'ANY' ) ) | ( ( 'NUMBER' ) ) | ( ( 'DATE' ) ) );
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:544:1: rule__PredefinedTypes__Alternatives : ( ( ( 'ANY' ) ) | ( ( 'NUMBER' ) ) | ( ( 'DATE' ) ) | ( ( 'TEMPORAL' ) ) );
     public final void rule__PredefinedTypes__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:548:1: ( ( ( 'ANY' ) ) | ( ( 'NUMBER' ) ) | ( ( 'DATE' ) ) )
-            int alt3=3;
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:548:1: ( ( ( 'ANY' ) ) | ( ( 'NUMBER' ) ) | ( ( 'DATE' ) ) | ( ( 'TEMPORAL' ) ) )
+            int alt3=4;
             switch ( input.LA(1) ) {
             case 16:
                 {
@@ -1631,6 +1632,11 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
             case 18:
                 {
                 alt3=3;
+                }
+                break;
+            case 19:
+                {
+                alt3=4;
                 }
                 break;
             default:
@@ -1717,6 +1723,31 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
                     }
                     break;
+                case 4 :
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:570:6: ( ( 'TEMPORAL' ) )
+                    {
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:570:6: ( ( 'TEMPORAL' ) )
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:571:1: ( 'TEMPORAL' )
+                    {
+                    if ( state.backtracking==0 ) {
+                       before(grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3()); 
+                    }
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:572:1: ( 'TEMPORAL' )
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:572:3: 'TEMPORAL'
+                    {
+                    match(input,19,FOLLOW_19_in_rule__PredefinedTypes__Alternatives1177); if (state.failed) return ;
+
+                    }
+
+                    if ( state.backtracking==0 ) {
+                       after(grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3()); 
+                    }
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -1735,21 +1766,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:577:1: rule__NLS__Group__0 : rule__NLS__Group__0__Impl rule__NLS__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:584:1: rule__NLS__Group__0 : rule__NLS__Group__0__Impl rule__NLS__Group__1 ;
     public final void rule__NLS__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:581:1: ( rule__NLS__Group__0__Impl rule__NLS__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:582:2: rule__NLS__Group__0__Impl rule__NLS__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:588:1: ( rule__NLS__Group__0__Impl rule__NLS__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:589:2: rule__NLS__Group__0__Impl rule__NLS__Group__1
             {
-            pushFollow(FOLLOW_rule__NLS__Group__0__Impl_in_rule__NLS__Group__01189);
+            pushFollow(FOLLOW_rule__NLS__Group__0__Impl_in_rule__NLS__Group__01210);
             rule__NLS__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLS__Group__1_in_rule__NLS__Group__01192);
+            pushFollow(FOLLOW_rule__NLS__Group__1_in_rule__NLS__Group__01213);
             rule__NLS__Group__1();
 
             state._fsp--;
@@ -1773,33 +1804,33 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:589:1: rule__NLS__Group__0__Impl : ( ( rule__NLS__PackageAssignment_0 )? ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:596:1: rule__NLS__Group__0__Impl : ( ( rule__NLS__PackageAssignment_0 )? ) ;
     public final void rule__NLS__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:593:1: ( ( ( rule__NLS__PackageAssignment_0 )? ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:594:1: ( ( rule__NLS__PackageAssignment_0 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:600:1: ( ( ( rule__NLS__PackageAssignment_0 )? ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:601:1: ( ( rule__NLS__PackageAssignment_0 )? )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:594:1: ( ( rule__NLS__PackageAssignment_0 )? )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:595:1: ( rule__NLS__PackageAssignment_0 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:601:1: ( ( rule__NLS__PackageAssignment_0 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:602:1: ( rule__NLS__PackageAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSAccess().getPackageAssignment_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:596:1: ( rule__NLS__PackageAssignment_0 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:603:1: ( rule__NLS__PackageAssignment_0 )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==21) ) {
+            if ( (LA4_0==22) ) {
                 alt4=1;
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:596:2: rule__NLS__PackageAssignment_0
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:603:2: rule__NLS__PackageAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__NLS__PackageAssignment_0_in_rule__NLS__Group__0__Impl1219);
+                    pushFollow(FOLLOW_rule__NLS__PackageAssignment_0_in_rule__NLS__Group__0__Impl1240);
                     rule__NLS__PackageAssignment_0();
 
                     state._fsp--;
@@ -1835,21 +1866,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:606:1: rule__NLS__Group__1 : rule__NLS__Group__1__Impl rule__NLS__Group__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:613:1: rule__NLS__Group__1 : rule__NLS__Group__1__Impl rule__NLS__Group__2 ;
     public final void rule__NLS__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:610:1: ( rule__NLS__Group__1__Impl rule__NLS__Group__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:611:2: rule__NLS__Group__1__Impl rule__NLS__Group__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:617:1: ( rule__NLS__Group__1__Impl rule__NLS__Group__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:618:2: rule__NLS__Group__1__Impl rule__NLS__Group__2
             {
-            pushFollow(FOLLOW_rule__NLS__Group__1__Impl_in_rule__NLS__Group__11250);
+            pushFollow(FOLLOW_rule__NLS__Group__1__Impl_in_rule__NLS__Group__11271);
             rule__NLS__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLS__Group__2_in_rule__NLS__Group__11253);
+            pushFollow(FOLLOW_rule__NLS__Group__2_in_rule__NLS__Group__11274);
             rule__NLS__Group__2();
 
             state._fsp--;
@@ -1873,22 +1904,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:618:1: rule__NLS__Group__1__Impl : ( '{' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:625:1: rule__NLS__Group__1__Impl : ( '{' ) ;
     public final void rule__NLS__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:622:1: ( ( '{' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:623:1: ( '{' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:629:1: ( ( '{' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:630:1: ( '{' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:623:1: ( '{' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:624:1: '{'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:630:1: ( '{' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:631:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSAccess().getLeftCurlyBracketKeyword_1()); 
             }
-            match(input,19,FOLLOW_19_in_rule__NLS__Group__1__Impl1281); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__NLS__Group__1__Impl1302); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSAccess().getLeftCurlyBracketKeyword_1()); 
             }
@@ -1914,21 +1945,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:637:1: rule__NLS__Group__2 : rule__NLS__Group__2__Impl rule__NLS__Group__3 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:644:1: rule__NLS__Group__2 : rule__NLS__Group__2__Impl rule__NLS__Group__3 ;
     public final void rule__NLS__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:641:1: ( rule__NLS__Group__2__Impl rule__NLS__Group__3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:642:2: rule__NLS__Group__2__Impl rule__NLS__Group__3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:648:1: ( rule__NLS__Group__2__Impl rule__NLS__Group__3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:649:2: rule__NLS__Group__2__Impl rule__NLS__Group__3
             {
-            pushFollow(FOLLOW_rule__NLS__Group__2__Impl_in_rule__NLS__Group__21312);
+            pushFollow(FOLLOW_rule__NLS__Group__2__Impl_in_rule__NLS__Group__21333);
             rule__NLS__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLS__Group__3_in_rule__NLS__Group__21315);
+            pushFollow(FOLLOW_rule__NLS__Group__3_in_rule__NLS__Group__21336);
             rule__NLS__Group__3();
 
             state._fsp--;
@@ -1952,28 +1983,28 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:649:1: rule__NLS__Group__2__Impl : ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:656:1: rule__NLS__Group__2__Impl : ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) ) ;
     public final void rule__NLS__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:653:1: ( ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:654:1: ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:660:1: ( ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:661:1: ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:654:1: ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:655:1: ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:661:1: ( ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:662:1: ( ( rule__NLS__BundleListAssignment_2 ) ) ( ( rule__NLS__BundleListAssignment_2 )* )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:655:1: ( ( rule__NLS__BundleListAssignment_2 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:656:1: ( rule__NLS__BundleListAssignment_2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:662:1: ( ( rule__NLS__BundleListAssignment_2 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:663:1: ( rule__NLS__BundleListAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSAccess().getBundleListAssignment_2()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:657:1: ( rule__NLS__BundleListAssignment_2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:657:2: rule__NLS__BundleListAssignment_2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:664:1: ( rule__NLS__BundleListAssignment_2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:664:2: rule__NLS__BundleListAssignment_2
             {
-            pushFollow(FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1344);
+            pushFollow(FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1365);
             rule__NLS__BundleListAssignment_2();
 
             state._fsp--;
@@ -1987,28 +2018,28 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:660:1: ( ( rule__NLS__BundleListAssignment_2 )* )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:661:1: ( rule__NLS__BundleListAssignment_2 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:667:1: ( ( rule__NLS__BundleListAssignment_2 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:668:1: ( rule__NLS__BundleListAssignment_2 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSAccess().getBundleListAssignment_2()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:662:1: ( rule__NLS__BundleListAssignment_2 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:669:1: ( rule__NLS__BundleListAssignment_2 )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==22) ) {
+                if ( (LA5_0==23) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:662:2: rule__NLS__BundleListAssignment_2
+            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:669:2: rule__NLS__BundleListAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1356);
+            	    pushFollow(FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1377);
             	    rule__NLS__BundleListAssignment_2();
 
             	    state._fsp--;
@@ -2050,16 +2081,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:673:1: rule__NLS__Group__3 : rule__NLS__Group__3__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:680:1: rule__NLS__Group__3 : rule__NLS__Group__3__Impl ;
     public final void rule__NLS__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:677:1: ( rule__NLS__Group__3__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:678:2: rule__NLS__Group__3__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:684:1: ( rule__NLS__Group__3__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:685:2: rule__NLS__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__NLS__Group__3__Impl_in_rule__NLS__Group__31389);
+            pushFollow(FOLLOW_rule__NLS__Group__3__Impl_in_rule__NLS__Group__31410);
             rule__NLS__Group__3__Impl();
 
             state._fsp--;
@@ -2083,22 +2114,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__Group__3__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:684:1: rule__NLS__Group__3__Impl : ( '}' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:691:1: rule__NLS__Group__3__Impl : ( '}' ) ;
     public final void rule__NLS__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:688:1: ( ( '}' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:689:1: ( '}' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:695:1: ( ( '}' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:696:1: ( '}' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:689:1: ( '}' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:690:1: '}'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:696:1: ( '}' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:697:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSAccess().getRightCurlyBracketKeyword_3()); 
             }
-            match(input,20,FOLLOW_20_in_rule__NLS__Group__3__Impl1417); if (state.failed) return ;
+            match(input,21,FOLLOW_21_in_rule__NLS__Group__3__Impl1438); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSAccess().getRightCurlyBracketKeyword_3()); 
             }
@@ -2124,21 +2155,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDeclaration__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:711:1: rule__PackageDeclaration__Group__0 : rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:718:1: rule__PackageDeclaration__Group__0 : rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1 ;
     public final void rule__PackageDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:715:1: ( rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:716:2: rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:722:1: ( rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:723:2: rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1
             {
-            pushFollow(FOLLOW_rule__PackageDeclaration__Group__0__Impl_in_rule__PackageDeclaration__Group__01456);
+            pushFollow(FOLLOW_rule__PackageDeclaration__Group__0__Impl_in_rule__PackageDeclaration__Group__01477);
             rule__PackageDeclaration__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PackageDeclaration__Group__1_in_rule__PackageDeclaration__Group__01459);
+            pushFollow(FOLLOW_rule__PackageDeclaration__Group__1_in_rule__PackageDeclaration__Group__01480);
             rule__PackageDeclaration__Group__1();
 
             state._fsp--;
@@ -2162,22 +2193,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDeclaration__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:723:1: rule__PackageDeclaration__Group__0__Impl : ( 'package' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:730:1: rule__PackageDeclaration__Group__0__Impl : ( 'package' ) ;
     public final void rule__PackageDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:727:1: ( ( 'package' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:728:1: ( 'package' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:734:1: ( ( 'package' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:735:1: ( 'package' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:728:1: ( 'package' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:729:1: 'package'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:735:1: ( 'package' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:736:1: 'package'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPackageDeclarationAccess().getPackageKeyword_0()); 
             }
-            match(input,21,FOLLOW_21_in_rule__PackageDeclaration__Group__0__Impl1487); if (state.failed) return ;
+            match(input,22,FOLLOW_22_in_rule__PackageDeclaration__Group__0__Impl1508); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPackageDeclarationAccess().getPackageKeyword_0()); 
             }
@@ -2203,16 +2234,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDeclaration__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:742:1: rule__PackageDeclaration__Group__1 : rule__PackageDeclaration__Group__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:749:1: rule__PackageDeclaration__Group__1 : rule__PackageDeclaration__Group__1__Impl ;
     public final void rule__PackageDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:746:1: ( rule__PackageDeclaration__Group__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:747:2: rule__PackageDeclaration__Group__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:753:1: ( rule__PackageDeclaration__Group__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:754:2: rule__PackageDeclaration__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PackageDeclaration__Group__1__Impl_in_rule__PackageDeclaration__Group__11518);
+            pushFollow(FOLLOW_rule__PackageDeclaration__Group__1__Impl_in_rule__PackageDeclaration__Group__11539);
             rule__PackageDeclaration__Group__1__Impl();
 
             state._fsp--;
@@ -2236,25 +2267,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDeclaration__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:753:1: rule__PackageDeclaration__Group__1__Impl : ( ( rule__PackageDeclaration__NameAssignment_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:760:1: rule__PackageDeclaration__Group__1__Impl : ( ( rule__PackageDeclaration__NameAssignment_1 ) ) ;
     public final void rule__PackageDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:757:1: ( ( ( rule__PackageDeclaration__NameAssignment_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:758:1: ( ( rule__PackageDeclaration__NameAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:764:1: ( ( ( rule__PackageDeclaration__NameAssignment_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:765:1: ( ( rule__PackageDeclaration__NameAssignment_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:758:1: ( ( rule__PackageDeclaration__NameAssignment_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:759:1: ( rule__PackageDeclaration__NameAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:765:1: ( ( rule__PackageDeclaration__NameAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:766:1: ( rule__PackageDeclaration__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:760:1: ( rule__PackageDeclaration__NameAssignment_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:760:2: rule__PackageDeclaration__NameAssignment_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:767:1: ( rule__PackageDeclaration__NameAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:767:2: rule__PackageDeclaration__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__PackageDeclaration__NameAssignment_1_in_rule__PackageDeclaration__Group__1__Impl1545);
+            pushFollow(FOLLOW_rule__PackageDeclaration__NameAssignment_1_in_rule__PackageDeclaration__Group__1__Impl1566);
             rule__PackageDeclaration__NameAssignment_1();
 
             state._fsp--;
@@ -2287,21 +2318,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:774:1: rule__NLSBundle__Group__0 : rule__NLSBundle__Group__0__Impl rule__NLSBundle__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:781:1: rule__NLSBundle__Group__0 : rule__NLSBundle__Group__0__Impl rule__NLSBundle__Group__1 ;
     public final void rule__NLSBundle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:778:1: ( rule__NLSBundle__Group__0__Impl rule__NLSBundle__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:779:2: rule__NLSBundle__Group__0__Impl rule__NLSBundle__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:785:1: ( rule__NLSBundle__Group__0__Impl rule__NLSBundle__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:786:2: rule__NLSBundle__Group__0__Impl rule__NLSBundle__Group__1
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__0__Impl_in_rule__NLSBundle__Group__01579);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__0__Impl_in_rule__NLSBundle__Group__01600);
             rule__NLSBundle__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSBundle__Group__1_in_rule__NLSBundle__Group__01582);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__1_in_rule__NLSBundle__Group__01603);
             rule__NLSBundle__Group__1();
 
             state._fsp--;
@@ -2325,22 +2356,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:786:1: rule__NLSBundle__Group__0__Impl : ( 'bundle' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:793:1: rule__NLSBundle__Group__0__Impl : ( 'bundle' ) ;
     public final void rule__NLSBundle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:790:1: ( ( 'bundle' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:791:1: ( 'bundle' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:797:1: ( ( 'bundle' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:798:1: ( 'bundle' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:791:1: ( 'bundle' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:792:1: 'bundle'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:798:1: ( 'bundle' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:799:1: 'bundle'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getBundleKeyword_0()); 
             }
-            match(input,22,FOLLOW_22_in_rule__NLSBundle__Group__0__Impl1610); if (state.failed) return ;
+            match(input,23,FOLLOW_23_in_rule__NLSBundle__Group__0__Impl1631); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSBundleAccess().getBundleKeyword_0()); 
             }
@@ -2366,21 +2397,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:805:1: rule__NLSBundle__Group__1 : rule__NLSBundle__Group__1__Impl rule__NLSBundle__Group__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:812:1: rule__NLSBundle__Group__1 : rule__NLSBundle__Group__1__Impl rule__NLSBundle__Group__2 ;
     public final void rule__NLSBundle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:809:1: ( rule__NLSBundle__Group__1__Impl rule__NLSBundle__Group__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:810:2: rule__NLSBundle__Group__1__Impl rule__NLSBundle__Group__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:816:1: ( rule__NLSBundle__Group__1__Impl rule__NLSBundle__Group__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:817:2: rule__NLSBundle__Group__1__Impl rule__NLSBundle__Group__2
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__1__Impl_in_rule__NLSBundle__Group__11641);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__1__Impl_in_rule__NLSBundle__Group__11662);
             rule__NLSBundle__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSBundle__Group__2_in_rule__NLSBundle__Group__11644);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__2_in_rule__NLSBundle__Group__11665);
             rule__NLSBundle__Group__2();
 
             state._fsp--;
@@ -2404,25 +2435,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:817:1: rule__NLSBundle__Group__1__Impl : ( ( rule__NLSBundle__NameAssignment_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:824:1: rule__NLSBundle__Group__1__Impl : ( ( rule__NLSBundle__NameAssignment_1 ) ) ;
     public final void rule__NLSBundle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:821:1: ( ( ( rule__NLSBundle__NameAssignment_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:822:1: ( ( rule__NLSBundle__NameAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:828:1: ( ( ( rule__NLSBundle__NameAssignment_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:829:1: ( ( rule__NLSBundle__NameAssignment_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:822:1: ( ( rule__NLSBundle__NameAssignment_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:823:1: ( rule__NLSBundle__NameAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:829:1: ( ( rule__NLSBundle__NameAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:830:1: ( rule__NLSBundle__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getNameAssignment_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:824:1: ( rule__NLSBundle__NameAssignment_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:824:2: rule__NLSBundle__NameAssignment_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:831:1: ( rule__NLSBundle__NameAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:831:2: rule__NLSBundle__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__NLSBundle__NameAssignment_1_in_rule__NLSBundle__Group__1__Impl1671);
+            pushFollow(FOLLOW_rule__NLSBundle__NameAssignment_1_in_rule__NLSBundle__Group__1__Impl1692);
             rule__NLSBundle__NameAssignment_1();
 
             state._fsp--;
@@ -2455,21 +2486,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:834:1: rule__NLSBundle__Group__2 : rule__NLSBundle__Group__2__Impl rule__NLSBundle__Group__3 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:841:1: rule__NLSBundle__Group__2 : rule__NLSBundle__Group__2__Impl rule__NLSBundle__Group__3 ;
     public final void rule__NLSBundle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:838:1: ( rule__NLSBundle__Group__2__Impl rule__NLSBundle__Group__3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:839:2: rule__NLSBundle__Group__2__Impl rule__NLSBundle__Group__3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:845:1: ( rule__NLSBundle__Group__2__Impl rule__NLSBundle__Group__3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:846:2: rule__NLSBundle__Group__2__Impl rule__NLSBundle__Group__3
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__2__Impl_in_rule__NLSBundle__Group__21701);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__2__Impl_in_rule__NLSBundle__Group__21722);
             rule__NLSBundle__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSBundle__Group__3_in_rule__NLSBundle__Group__21704);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__3_in_rule__NLSBundle__Group__21725);
             rule__NLSBundle__Group__3();
 
             state._fsp--;
@@ -2493,22 +2524,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:846:1: rule__NLSBundle__Group__2__Impl : ( 'default' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:853:1: rule__NLSBundle__Group__2__Impl : ( 'default' ) ;
     public final void rule__NLSBundle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:850:1: ( ( 'default' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:851:1: ( 'default' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:857:1: ( ( 'default' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:858:1: ( 'default' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:851:1: ( 'default' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:852:1: 'default'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:858:1: ( 'default' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:859:1: 'default'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getDefaultKeyword_2()); 
             }
-            match(input,23,FOLLOW_23_in_rule__NLSBundle__Group__2__Impl1732); if (state.failed) return ;
+            match(input,24,FOLLOW_24_in_rule__NLSBundle__Group__2__Impl1753); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSBundleAccess().getDefaultKeyword_2()); 
             }
@@ -2534,21 +2565,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:865:1: rule__NLSBundle__Group__3 : rule__NLSBundle__Group__3__Impl rule__NLSBundle__Group__4 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:872:1: rule__NLSBundle__Group__3 : rule__NLSBundle__Group__3__Impl rule__NLSBundle__Group__4 ;
     public final void rule__NLSBundle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:869:1: ( rule__NLSBundle__Group__3__Impl rule__NLSBundle__Group__4 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:870:2: rule__NLSBundle__Group__3__Impl rule__NLSBundle__Group__4
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:876:1: ( rule__NLSBundle__Group__3__Impl rule__NLSBundle__Group__4 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:877:2: rule__NLSBundle__Group__3__Impl rule__NLSBundle__Group__4
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__3__Impl_in_rule__NLSBundle__Group__31763);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__3__Impl_in_rule__NLSBundle__Group__31784);
             rule__NLSBundle__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSBundle__Group__4_in_rule__NLSBundle__Group__31766);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__4_in_rule__NLSBundle__Group__31787);
             rule__NLSBundle__Group__4();
 
             state._fsp--;
@@ -2572,25 +2603,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__3__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:877:1: rule__NLSBundle__Group__3__Impl : ( ( rule__NLSBundle__LangAssignment_3 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:884:1: rule__NLSBundle__Group__3__Impl : ( ( rule__NLSBundle__LangAssignment_3 ) ) ;
     public final void rule__NLSBundle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:881:1: ( ( ( rule__NLSBundle__LangAssignment_3 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:882:1: ( ( rule__NLSBundle__LangAssignment_3 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:888:1: ( ( ( rule__NLSBundle__LangAssignment_3 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:889:1: ( ( rule__NLSBundle__LangAssignment_3 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:882:1: ( ( rule__NLSBundle__LangAssignment_3 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:883:1: ( rule__NLSBundle__LangAssignment_3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:889:1: ( ( rule__NLSBundle__LangAssignment_3 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:890:1: ( rule__NLSBundle__LangAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getLangAssignment_3()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:884:1: ( rule__NLSBundle__LangAssignment_3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:884:2: rule__NLSBundle__LangAssignment_3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:891:1: ( rule__NLSBundle__LangAssignment_3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:891:2: rule__NLSBundle__LangAssignment_3
             {
-            pushFollow(FOLLOW_rule__NLSBundle__LangAssignment_3_in_rule__NLSBundle__Group__3__Impl1793);
+            pushFollow(FOLLOW_rule__NLSBundle__LangAssignment_3_in_rule__NLSBundle__Group__3__Impl1814);
             rule__NLSBundle__LangAssignment_3();
 
             state._fsp--;
@@ -2623,21 +2654,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__4"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:894:1: rule__NLSBundle__Group__4 : rule__NLSBundle__Group__4__Impl rule__NLSBundle__Group__5 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:901:1: rule__NLSBundle__Group__4 : rule__NLSBundle__Group__4__Impl rule__NLSBundle__Group__5 ;
     public final void rule__NLSBundle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:898:1: ( rule__NLSBundle__Group__4__Impl rule__NLSBundle__Group__5 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:899:2: rule__NLSBundle__Group__4__Impl rule__NLSBundle__Group__5
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:905:1: ( rule__NLSBundle__Group__4__Impl rule__NLSBundle__Group__5 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:906:2: rule__NLSBundle__Group__4__Impl rule__NLSBundle__Group__5
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__4__Impl_in_rule__NLSBundle__Group__41823);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__4__Impl_in_rule__NLSBundle__Group__41844);
             rule__NLSBundle__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSBundle__Group__5_in_rule__NLSBundle__Group__41826);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__5_in_rule__NLSBundle__Group__41847);
             rule__NLSBundle__Group__5();
 
             state._fsp--;
@@ -2661,22 +2692,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__4__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:906:1: rule__NLSBundle__Group__4__Impl : ( '{' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:913:1: rule__NLSBundle__Group__4__Impl : ( '{' ) ;
     public final void rule__NLSBundle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:910:1: ( ( '{' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:911:1: ( '{' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:917:1: ( ( '{' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:918:1: ( '{' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:911:1: ( '{' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:912:1: '{'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:918:1: ( '{' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:919:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getLeftCurlyBracketKeyword_4()); 
             }
-            match(input,19,FOLLOW_19_in_rule__NLSBundle__Group__4__Impl1854); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__NLSBundle__Group__4__Impl1875); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSBundleAccess().getLeftCurlyBracketKeyword_4()); 
             }
@@ -2702,21 +2733,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__5"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:925:1: rule__NLSBundle__Group__5 : rule__NLSBundle__Group__5__Impl rule__NLSBundle__Group__6 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:932:1: rule__NLSBundle__Group__5 : rule__NLSBundle__Group__5__Impl rule__NLSBundle__Group__6 ;
     public final void rule__NLSBundle__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:929:1: ( rule__NLSBundle__Group__5__Impl rule__NLSBundle__Group__6 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:930:2: rule__NLSBundle__Group__5__Impl rule__NLSBundle__Group__6
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:936:1: ( rule__NLSBundle__Group__5__Impl rule__NLSBundle__Group__6 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:937:2: rule__NLSBundle__Group__5__Impl rule__NLSBundle__Group__6
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__5__Impl_in_rule__NLSBundle__Group__51885);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__5__Impl_in_rule__NLSBundle__Group__51906);
             rule__NLSBundle__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSBundle__Group__6_in_rule__NLSBundle__Group__51888);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__6_in_rule__NLSBundle__Group__51909);
             rule__NLSBundle__Group__6();
 
             state._fsp--;
@@ -2740,37 +2771,37 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__5__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:937:1: rule__NLSBundle__Group__5__Impl : ( ( rule__NLSBundle__FormatterListAssignment_5 )* ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:944:1: rule__NLSBundle__Group__5__Impl : ( ( rule__NLSBundle__FormatterListAssignment_5 )* ) ;
     public final void rule__NLSBundle__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:941:1: ( ( ( rule__NLSBundle__FormatterListAssignment_5 )* ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:942:1: ( ( rule__NLSBundle__FormatterListAssignment_5 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:948:1: ( ( ( rule__NLSBundle__FormatterListAssignment_5 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:949:1: ( ( rule__NLSBundle__FormatterListAssignment_5 )* )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:942:1: ( ( rule__NLSBundle__FormatterListAssignment_5 )* )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:943:1: ( rule__NLSBundle__FormatterListAssignment_5 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:949:1: ( ( rule__NLSBundle__FormatterListAssignment_5 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:950:1: ( rule__NLSBundle__FormatterListAssignment_5 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getFormatterListAssignment_5()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:944:1: ( rule__NLSBundle__FormatterListAssignment_5 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:951:1: ( rule__NLSBundle__FormatterListAssignment_5 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==24) ) {
+                if ( (LA6_0==25) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:944:2: rule__NLSBundle__FormatterListAssignment_5
+            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:951:2: rule__NLSBundle__FormatterListAssignment_5
             	    {
-            	    pushFollow(FOLLOW_rule__NLSBundle__FormatterListAssignment_5_in_rule__NLSBundle__Group__5__Impl1915);
+            	    pushFollow(FOLLOW_rule__NLSBundle__FormatterListAssignment_5_in_rule__NLSBundle__Group__5__Impl1936);
             	    rule__NLSBundle__FormatterListAssignment_5();
 
             	    state._fsp--;
@@ -2809,21 +2840,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__6"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:954:1: rule__NLSBundle__Group__6 : rule__NLSBundle__Group__6__Impl rule__NLSBundle__Group__7 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:961:1: rule__NLSBundle__Group__6 : rule__NLSBundle__Group__6__Impl rule__NLSBundle__Group__7 ;
     public final void rule__NLSBundle__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:958:1: ( rule__NLSBundle__Group__6__Impl rule__NLSBundle__Group__7 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:959:2: rule__NLSBundle__Group__6__Impl rule__NLSBundle__Group__7
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:965:1: ( rule__NLSBundle__Group__6__Impl rule__NLSBundle__Group__7 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:966:2: rule__NLSBundle__Group__6__Impl rule__NLSBundle__Group__7
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__6__Impl_in_rule__NLSBundle__Group__61946);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__6__Impl_in_rule__NLSBundle__Group__61967);
             rule__NLSBundle__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSBundle__Group__7_in_rule__NLSBundle__Group__61949);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__7_in_rule__NLSBundle__Group__61970);
             rule__NLSBundle__Group__7();
 
             state._fsp--;
@@ -2847,28 +2878,28 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__6__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:966:1: rule__NLSBundle__Group__6__Impl : ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:973:1: rule__NLSBundle__Group__6__Impl : ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) ) ;
     public final void rule__NLSBundle__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:970:1: ( ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:971:1: ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:977:1: ( ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:978:1: ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:971:1: ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:972:1: ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:978:1: ( ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:979:1: ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) ) ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:972:1: ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:973:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:979:1: ( ( rule__NLSBundle__MessageEntryListAssignment_6 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:980:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getMessageEntryListAssignment_6()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:974:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:974:2: rule__NLSBundle__MessageEntryListAssignment_6
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:981:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:981:2: rule__NLSBundle__MessageEntryListAssignment_6
             {
-            pushFollow(FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl1978);
+            pushFollow(FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl1999);
             rule__NLSBundle__MessageEntryListAssignment_6();
 
             state._fsp--;
@@ -2882,13 +2913,13 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:977:1: ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:978:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:984:1: ( ( rule__NLSBundle__MessageEntryListAssignment_6 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:985:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getMessageEntryListAssignment_6()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:979:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:986:1: ( rule__NLSBundle__MessageEntryListAssignment_6 )*
             loop7:
             do {
                 int alt7=2;
@@ -2901,9 +2932,9 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:979:2: rule__NLSBundle__MessageEntryListAssignment_6
+            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:986:2: rule__NLSBundle__MessageEntryListAssignment_6
             	    {
-            	    pushFollow(FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl1990);
+            	    pushFollow(FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl2011);
             	    rule__NLSBundle__MessageEntryListAssignment_6();
 
             	    state._fsp--;
@@ -2945,16 +2976,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__7"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:990:1: rule__NLSBundle__Group__7 : rule__NLSBundle__Group__7__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:997:1: rule__NLSBundle__Group__7 : rule__NLSBundle__Group__7__Impl ;
     public final void rule__NLSBundle__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:994:1: ( rule__NLSBundle__Group__7__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:995:2: rule__NLSBundle__Group__7__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1001:1: ( rule__NLSBundle__Group__7__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1002:2: rule__NLSBundle__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__NLSBundle__Group__7__Impl_in_rule__NLSBundle__Group__72023);
+            pushFollow(FOLLOW_rule__NLSBundle__Group__7__Impl_in_rule__NLSBundle__Group__72044);
             rule__NLSBundle__Group__7__Impl();
 
             state._fsp--;
@@ -2978,22 +3009,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__Group__7__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1001:1: rule__NLSBundle__Group__7__Impl : ( '}' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1008:1: rule__NLSBundle__Group__7__Impl : ( '}' ) ;
     public final void rule__NLSBundle__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1005:1: ( ( '}' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1006:1: ( '}' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1012:1: ( ( '}' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1013:1: ( '}' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1006:1: ( '}' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1007:1: '}'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1013:1: ( '}' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1014:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getRightCurlyBracketKeyword_7()); 
             }
-            match(input,20,FOLLOW_20_in_rule__NLSBundle__Group__7__Impl2051); if (state.failed) return ;
+            match(input,21,FOLLOW_21_in_rule__NLSBundle__Group__7__Impl2072); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSBundleAccess().getRightCurlyBracketKeyword_7()); 
             }
@@ -3019,21 +3050,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1036:1: rule__NLSFormatter__Group__0 : rule__NLSFormatter__Group__0__Impl rule__NLSFormatter__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1043:1: rule__NLSFormatter__Group__0 : rule__NLSFormatter__Group__0__Impl rule__NLSFormatter__Group__1 ;
     public final void rule__NLSFormatter__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1040:1: ( rule__NLSFormatter__Group__0__Impl rule__NLSFormatter__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1041:2: rule__NLSFormatter__Group__0__Impl rule__NLSFormatter__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1047:1: ( rule__NLSFormatter__Group__0__Impl rule__NLSFormatter__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1048:2: rule__NLSFormatter__Group__0__Impl rule__NLSFormatter__Group__1
             {
-            pushFollow(FOLLOW_rule__NLSFormatter__Group__0__Impl_in_rule__NLSFormatter__Group__02098);
+            pushFollow(FOLLOW_rule__NLSFormatter__Group__0__Impl_in_rule__NLSFormatter__Group__02119);
             rule__NLSFormatter__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSFormatter__Group__1_in_rule__NLSFormatter__Group__02101);
+            pushFollow(FOLLOW_rule__NLSFormatter__Group__1_in_rule__NLSFormatter__Group__02122);
             rule__NLSFormatter__Group__1();
 
             state._fsp--;
@@ -3057,22 +3088,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1048:1: rule__NLSFormatter__Group__0__Impl : ( 'formatter' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1055:1: rule__NLSFormatter__Group__0__Impl : ( 'formatter' ) ;
     public final void rule__NLSFormatter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1052:1: ( ( 'formatter' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1053:1: ( 'formatter' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1059:1: ( ( 'formatter' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1060:1: ( 'formatter' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1053:1: ( 'formatter' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1054:1: 'formatter'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1060:1: ( 'formatter' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1061:1: 'formatter'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSFormatterAccess().getFormatterKeyword_0()); 
             }
-            match(input,24,FOLLOW_24_in_rule__NLSFormatter__Group__0__Impl2129); if (state.failed) return ;
+            match(input,25,FOLLOW_25_in_rule__NLSFormatter__Group__0__Impl2150); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSFormatterAccess().getFormatterKeyword_0()); 
             }
@@ -3098,21 +3129,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1067:1: rule__NLSFormatter__Group__1 : rule__NLSFormatter__Group__1__Impl rule__NLSFormatter__Group__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1074:1: rule__NLSFormatter__Group__1 : rule__NLSFormatter__Group__1__Impl rule__NLSFormatter__Group__2 ;
     public final void rule__NLSFormatter__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1071:1: ( rule__NLSFormatter__Group__1__Impl rule__NLSFormatter__Group__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1072:2: rule__NLSFormatter__Group__1__Impl rule__NLSFormatter__Group__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1078:1: ( rule__NLSFormatter__Group__1__Impl rule__NLSFormatter__Group__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1079:2: rule__NLSFormatter__Group__1__Impl rule__NLSFormatter__Group__2
             {
-            pushFollow(FOLLOW_rule__NLSFormatter__Group__1__Impl_in_rule__NLSFormatter__Group__12160);
+            pushFollow(FOLLOW_rule__NLSFormatter__Group__1__Impl_in_rule__NLSFormatter__Group__12181);
             rule__NLSFormatter__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__NLSFormatter__Group__2_in_rule__NLSFormatter__Group__12163);
+            pushFollow(FOLLOW_rule__NLSFormatter__Group__2_in_rule__NLSFormatter__Group__12184);
             rule__NLSFormatter__Group__2();
 
             state._fsp--;
@@ -3136,25 +3167,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1079:1: rule__NLSFormatter__Group__1__Impl : ( ( rule__NLSFormatter__NameAssignment_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1086:1: rule__NLSFormatter__Group__1__Impl : ( ( rule__NLSFormatter__NameAssignment_1 ) ) ;
     public final void rule__NLSFormatter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1083:1: ( ( ( rule__NLSFormatter__NameAssignment_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1084:1: ( ( rule__NLSFormatter__NameAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1090:1: ( ( ( rule__NLSFormatter__NameAssignment_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1091:1: ( ( rule__NLSFormatter__NameAssignment_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1084:1: ( ( rule__NLSFormatter__NameAssignment_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1085:1: ( rule__NLSFormatter__NameAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1091:1: ( ( rule__NLSFormatter__NameAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1092:1: ( rule__NLSFormatter__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSFormatterAccess().getNameAssignment_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1086:1: ( rule__NLSFormatter__NameAssignment_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1086:2: rule__NLSFormatter__NameAssignment_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1093:1: ( rule__NLSFormatter__NameAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1093:2: rule__NLSFormatter__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__NLSFormatter__NameAssignment_1_in_rule__NLSFormatter__Group__1__Impl2190);
+            pushFollow(FOLLOW_rule__NLSFormatter__NameAssignment_1_in_rule__NLSFormatter__Group__1__Impl2211);
             rule__NLSFormatter__NameAssignment_1();
 
             state._fsp--;
@@ -3187,16 +3218,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__Group__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1096:1: rule__NLSFormatter__Group__2 : rule__NLSFormatter__Group__2__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1103:1: rule__NLSFormatter__Group__2 : rule__NLSFormatter__Group__2__Impl ;
     public final void rule__NLSFormatter__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1100:1: ( rule__NLSFormatter__Group__2__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1101:2: rule__NLSFormatter__Group__2__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1107:1: ( rule__NLSFormatter__Group__2__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1108:2: rule__NLSFormatter__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__NLSFormatter__Group__2__Impl_in_rule__NLSFormatter__Group__22220);
+            pushFollow(FOLLOW_rule__NLSFormatter__Group__2__Impl_in_rule__NLSFormatter__Group__22241);
             rule__NLSFormatter__Group__2__Impl();
 
             state._fsp--;
@@ -3220,25 +3251,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__Group__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1107:1: rule__NLSFormatter__Group__2__Impl : ( ( rule__NLSFormatter__ClassRefAssignment_2 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1114:1: rule__NLSFormatter__Group__2__Impl : ( ( rule__NLSFormatter__ClassRefAssignment_2 ) ) ;
     public final void rule__NLSFormatter__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1111:1: ( ( ( rule__NLSFormatter__ClassRefAssignment_2 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1112:1: ( ( rule__NLSFormatter__ClassRefAssignment_2 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1118:1: ( ( ( rule__NLSFormatter__ClassRefAssignment_2 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1119:1: ( ( rule__NLSFormatter__ClassRefAssignment_2 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1112:1: ( ( rule__NLSFormatter__ClassRefAssignment_2 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1113:1: ( rule__NLSFormatter__ClassRefAssignment_2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1119:1: ( ( rule__NLSFormatter__ClassRefAssignment_2 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1120:1: ( rule__NLSFormatter__ClassRefAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSFormatterAccess().getClassRefAssignment_2()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1114:1: ( rule__NLSFormatter__ClassRefAssignment_2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1114:2: rule__NLSFormatter__ClassRefAssignment_2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1121:1: ( rule__NLSFormatter__ClassRefAssignment_2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1121:2: rule__NLSFormatter__ClassRefAssignment_2
             {
-            pushFollow(FOLLOW_rule__NLSFormatter__ClassRefAssignment_2_in_rule__NLSFormatter__Group__2__Impl2247);
+            pushFollow(FOLLOW_rule__NLSFormatter__ClassRefAssignment_2_in_rule__NLSFormatter__Group__2__Impl2268);
             rule__NLSFormatter__ClassRefAssignment_2();
 
             state._fsp--;
@@ -3271,21 +3302,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1130:1: rule__MessageEntry__Group__0 : rule__MessageEntry__Group__0__Impl rule__MessageEntry__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1137:1: rule__MessageEntry__Group__0 : rule__MessageEntry__Group__0__Impl rule__MessageEntry__Group__1 ;
     public final void rule__MessageEntry__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1134:1: ( rule__MessageEntry__Group__0__Impl rule__MessageEntry__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1135:2: rule__MessageEntry__Group__0__Impl rule__MessageEntry__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1141:1: ( rule__MessageEntry__Group__0__Impl rule__MessageEntry__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1142:2: rule__MessageEntry__Group__0__Impl rule__MessageEntry__Group__1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group__0__Impl_in_rule__MessageEntry__Group__02283);
+            pushFollow(FOLLOW_rule__MessageEntry__Group__0__Impl_in_rule__MessageEntry__Group__02304);
             rule__MessageEntry__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group__1_in_rule__MessageEntry__Group__02286);
+            pushFollow(FOLLOW_rule__MessageEntry__Group__1_in_rule__MessageEntry__Group__02307);
             rule__MessageEntry__Group__1();
 
             state._fsp--;
@@ -3309,25 +3340,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1142:1: rule__MessageEntry__Group__0__Impl : ( ( rule__MessageEntry__NameAssignment_0 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1149:1: rule__MessageEntry__Group__0__Impl : ( ( rule__MessageEntry__NameAssignment_0 ) ) ;
     public final void rule__MessageEntry__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1146:1: ( ( ( rule__MessageEntry__NameAssignment_0 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1147:1: ( ( rule__MessageEntry__NameAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1153:1: ( ( ( rule__MessageEntry__NameAssignment_0 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1154:1: ( ( rule__MessageEntry__NameAssignment_0 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1147:1: ( ( rule__MessageEntry__NameAssignment_0 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1148:1: ( rule__MessageEntry__NameAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1154:1: ( ( rule__MessageEntry__NameAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1155:1: ( rule__MessageEntry__NameAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getNameAssignment_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1149:1: ( rule__MessageEntry__NameAssignment_0 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1149:2: rule__MessageEntry__NameAssignment_0
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1156:1: ( rule__MessageEntry__NameAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1156:2: rule__MessageEntry__NameAssignment_0
             {
-            pushFollow(FOLLOW_rule__MessageEntry__NameAssignment_0_in_rule__MessageEntry__Group__0__Impl2313);
+            pushFollow(FOLLOW_rule__MessageEntry__NameAssignment_0_in_rule__MessageEntry__Group__0__Impl2334);
             rule__MessageEntry__NameAssignment_0();
 
             state._fsp--;
@@ -3360,21 +3391,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1159:1: rule__MessageEntry__Group__1 : rule__MessageEntry__Group__1__Impl rule__MessageEntry__Group__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1166:1: rule__MessageEntry__Group__1 : rule__MessageEntry__Group__1__Impl rule__MessageEntry__Group__2 ;
     public final void rule__MessageEntry__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1163:1: ( rule__MessageEntry__Group__1__Impl rule__MessageEntry__Group__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1164:2: rule__MessageEntry__Group__1__Impl rule__MessageEntry__Group__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1170:1: ( rule__MessageEntry__Group__1__Impl rule__MessageEntry__Group__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1171:2: rule__MessageEntry__Group__1__Impl rule__MessageEntry__Group__2
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group__1__Impl_in_rule__MessageEntry__Group__12343);
+            pushFollow(FOLLOW_rule__MessageEntry__Group__1__Impl_in_rule__MessageEntry__Group__12364);
             rule__MessageEntry__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group__2_in_rule__MessageEntry__Group__12346);
+            pushFollow(FOLLOW_rule__MessageEntry__Group__2_in_rule__MessageEntry__Group__12367);
             rule__MessageEntry__Group__2();
 
             state._fsp--;
@@ -3398,33 +3429,33 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1171:1: rule__MessageEntry__Group__1__Impl : ( ( rule__MessageEntry__Group_1__0 )? ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1178:1: rule__MessageEntry__Group__1__Impl : ( ( rule__MessageEntry__Group_1__0 )? ) ;
     public final void rule__MessageEntry__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1175:1: ( ( ( rule__MessageEntry__Group_1__0 )? ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1176:1: ( ( rule__MessageEntry__Group_1__0 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1182:1: ( ( ( rule__MessageEntry__Group_1__0 )? ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1183:1: ( ( rule__MessageEntry__Group_1__0 )? )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1176:1: ( ( rule__MessageEntry__Group_1__0 )? )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1177:1: ( rule__MessageEntry__Group_1__0 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1183:1: ( ( rule__MessageEntry__Group_1__0 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1184:1: ( rule__MessageEntry__Group_1__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getGroup_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1178:1: ( rule__MessageEntry__Group_1__0 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1185:1: ( rule__MessageEntry__Group_1__0 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==26) ) {
+            if ( (LA8_0==27) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1178:2: rule__MessageEntry__Group_1__0
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1185:2: rule__MessageEntry__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__MessageEntry__Group_1__0_in_rule__MessageEntry__Group__1__Impl2373);
+                    pushFollow(FOLLOW_rule__MessageEntry__Group_1__0_in_rule__MessageEntry__Group__1__Impl2394);
                     rule__MessageEntry__Group_1__0();
 
                     state._fsp--;
@@ -3460,21 +3491,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1188:1: rule__MessageEntry__Group__2 : rule__MessageEntry__Group__2__Impl rule__MessageEntry__Group__3 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1195:1: rule__MessageEntry__Group__2 : rule__MessageEntry__Group__2__Impl rule__MessageEntry__Group__3 ;
     public final void rule__MessageEntry__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1192:1: ( rule__MessageEntry__Group__2__Impl rule__MessageEntry__Group__3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1193:2: rule__MessageEntry__Group__2__Impl rule__MessageEntry__Group__3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1199:1: ( rule__MessageEntry__Group__2__Impl rule__MessageEntry__Group__3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1200:2: rule__MessageEntry__Group__2__Impl rule__MessageEntry__Group__3
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group__2__Impl_in_rule__MessageEntry__Group__22404);
+            pushFollow(FOLLOW_rule__MessageEntry__Group__2__Impl_in_rule__MessageEntry__Group__22425);
             rule__MessageEntry__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group__3_in_rule__MessageEntry__Group__22407);
+            pushFollow(FOLLOW_rule__MessageEntry__Group__3_in_rule__MessageEntry__Group__22428);
             rule__MessageEntry__Group__3();
 
             state._fsp--;
@@ -3498,22 +3529,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1200:1: rule__MessageEntry__Group__2__Impl : ( ':' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1207:1: rule__MessageEntry__Group__2__Impl : ( ':' ) ;
     public final void rule__MessageEntry__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1204:1: ( ( ':' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1205:1: ( ':' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1211:1: ( ( ':' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1212:1: ( ':' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1205:1: ( ':' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1206:1: ':'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1212:1: ( ':' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1213:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getColonKeyword_2()); 
             }
-            match(input,25,FOLLOW_25_in_rule__MessageEntry__Group__2__Impl2435); if (state.failed) return ;
+            match(input,26,FOLLOW_26_in_rule__MessageEntry__Group__2__Impl2456); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getColonKeyword_2()); 
             }
@@ -3539,16 +3570,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1219:1: rule__MessageEntry__Group__3 : rule__MessageEntry__Group__3__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1226:1: rule__MessageEntry__Group__3 : rule__MessageEntry__Group__3__Impl ;
     public final void rule__MessageEntry__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1223:1: ( rule__MessageEntry__Group__3__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1224:2: rule__MessageEntry__Group__3__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1230:1: ( rule__MessageEntry__Group__3__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1231:2: rule__MessageEntry__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group__3__Impl_in_rule__MessageEntry__Group__32466);
+            pushFollow(FOLLOW_rule__MessageEntry__Group__3__Impl_in_rule__MessageEntry__Group__32487);
             rule__MessageEntry__Group__3__Impl();
 
             state._fsp--;
@@ -3572,25 +3603,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group__3__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1230:1: rule__MessageEntry__Group__3__Impl : ( ( rule__MessageEntry__Alternatives_3 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1237:1: rule__MessageEntry__Group__3__Impl : ( ( rule__MessageEntry__Alternatives_3 ) ) ;
     public final void rule__MessageEntry__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1234:1: ( ( ( rule__MessageEntry__Alternatives_3 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1235:1: ( ( rule__MessageEntry__Alternatives_3 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1241:1: ( ( ( rule__MessageEntry__Alternatives_3 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1242:1: ( ( rule__MessageEntry__Alternatives_3 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1235:1: ( ( rule__MessageEntry__Alternatives_3 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1236:1: ( rule__MessageEntry__Alternatives_3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1242:1: ( ( rule__MessageEntry__Alternatives_3 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1243:1: ( rule__MessageEntry__Alternatives_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getAlternatives_3()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1237:1: ( rule__MessageEntry__Alternatives_3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1237:2: rule__MessageEntry__Alternatives_3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1244:1: ( rule__MessageEntry__Alternatives_3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1244:2: rule__MessageEntry__Alternatives_3
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Alternatives_3_in_rule__MessageEntry__Group__3__Impl2493);
+            pushFollow(FOLLOW_rule__MessageEntry__Alternatives_3_in_rule__MessageEntry__Group__3__Impl2514);
             rule__MessageEntry__Alternatives_3();
 
             state._fsp--;
@@ -3623,21 +3654,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1255:1: rule__MessageEntry__Group_1__0 : rule__MessageEntry__Group_1__0__Impl rule__MessageEntry__Group_1__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1262:1: rule__MessageEntry__Group_1__0 : rule__MessageEntry__Group_1__0__Impl rule__MessageEntry__Group_1__1 ;
     public final void rule__MessageEntry__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1259:1: ( rule__MessageEntry__Group_1__0__Impl rule__MessageEntry__Group_1__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1260:2: rule__MessageEntry__Group_1__0__Impl rule__MessageEntry__Group_1__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1266:1: ( rule__MessageEntry__Group_1__0__Impl rule__MessageEntry__Group_1__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1267:2: rule__MessageEntry__Group_1__0__Impl rule__MessageEntry__Group_1__1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1__0__Impl_in_rule__MessageEntry__Group_1__02531);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1__0__Impl_in_rule__MessageEntry__Group_1__02552);
             rule__MessageEntry__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1__1_in_rule__MessageEntry__Group_1__02534);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1__1_in_rule__MessageEntry__Group_1__02555);
             rule__MessageEntry__Group_1__1();
 
             state._fsp--;
@@ -3661,22 +3692,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1267:1: rule__MessageEntry__Group_1__0__Impl : ( '(' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1274:1: rule__MessageEntry__Group_1__0__Impl : ( '(' ) ;
     public final void rule__MessageEntry__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1271:1: ( ( '(' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1272:1: ( '(' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1278:1: ( ( '(' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1279:1: ( '(' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1272:1: ( '(' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1273:1: '('
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1279:1: ( '(' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1280:1: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getLeftParenthesisKeyword_1_0()); 
             }
-            match(input,26,FOLLOW_26_in_rule__MessageEntry__Group_1__0__Impl2562); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__MessageEntry__Group_1__0__Impl2583); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getLeftParenthesisKeyword_1_0()); 
             }
@@ -3702,21 +3733,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1286:1: rule__MessageEntry__Group_1__1 : rule__MessageEntry__Group_1__1__Impl rule__MessageEntry__Group_1__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1293:1: rule__MessageEntry__Group_1__1 : rule__MessageEntry__Group_1__1__Impl rule__MessageEntry__Group_1__2 ;
     public final void rule__MessageEntry__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1290:1: ( rule__MessageEntry__Group_1__1__Impl rule__MessageEntry__Group_1__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1291:2: rule__MessageEntry__Group_1__1__Impl rule__MessageEntry__Group_1__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1297:1: ( rule__MessageEntry__Group_1__1__Impl rule__MessageEntry__Group_1__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1298:2: rule__MessageEntry__Group_1__1__Impl rule__MessageEntry__Group_1__2
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1__1__Impl_in_rule__MessageEntry__Group_1__12593);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1__1__Impl_in_rule__MessageEntry__Group_1__12614);
             rule__MessageEntry__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1__2_in_rule__MessageEntry__Group_1__12596);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1__2_in_rule__MessageEntry__Group_1__12617);
             rule__MessageEntry__Group_1__2();
 
             state._fsp--;
@@ -3740,25 +3771,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1298:1: rule__MessageEntry__Group_1__1__Impl : ( ( rule__MessageEntry__ParamListAssignment_1_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1305:1: rule__MessageEntry__Group_1__1__Impl : ( ( rule__MessageEntry__ParamListAssignment_1_1 ) ) ;
     public final void rule__MessageEntry__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1302:1: ( ( ( rule__MessageEntry__ParamListAssignment_1_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1303:1: ( ( rule__MessageEntry__ParamListAssignment_1_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1309:1: ( ( ( rule__MessageEntry__ParamListAssignment_1_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1310:1: ( ( rule__MessageEntry__ParamListAssignment_1_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1303:1: ( ( rule__MessageEntry__ParamListAssignment_1_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1304:1: ( rule__MessageEntry__ParamListAssignment_1_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1310:1: ( ( rule__MessageEntry__ParamListAssignment_1_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1311:1: ( rule__MessageEntry__ParamListAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getParamListAssignment_1_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1305:1: ( rule__MessageEntry__ParamListAssignment_1_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1305:2: rule__MessageEntry__ParamListAssignment_1_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1312:1: ( rule__MessageEntry__ParamListAssignment_1_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1312:2: rule__MessageEntry__ParamListAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__ParamListAssignment_1_1_in_rule__MessageEntry__Group_1__1__Impl2623);
+            pushFollow(FOLLOW_rule__MessageEntry__ParamListAssignment_1_1_in_rule__MessageEntry__Group_1__1__Impl2644);
             rule__MessageEntry__ParamListAssignment_1_1();
 
             state._fsp--;
@@ -3791,21 +3822,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1315:1: rule__MessageEntry__Group_1__2 : rule__MessageEntry__Group_1__2__Impl rule__MessageEntry__Group_1__3 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1322:1: rule__MessageEntry__Group_1__2 : rule__MessageEntry__Group_1__2__Impl rule__MessageEntry__Group_1__3 ;
     public final void rule__MessageEntry__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1319:1: ( rule__MessageEntry__Group_1__2__Impl rule__MessageEntry__Group_1__3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1320:2: rule__MessageEntry__Group_1__2__Impl rule__MessageEntry__Group_1__3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1326:1: ( rule__MessageEntry__Group_1__2__Impl rule__MessageEntry__Group_1__3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1327:2: rule__MessageEntry__Group_1__2__Impl rule__MessageEntry__Group_1__3
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1__2__Impl_in_rule__MessageEntry__Group_1__22653);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1__2__Impl_in_rule__MessageEntry__Group_1__22674);
             rule__MessageEntry__Group_1__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1__3_in_rule__MessageEntry__Group_1__22656);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1__3_in_rule__MessageEntry__Group_1__22677);
             rule__MessageEntry__Group_1__3();
 
             state._fsp--;
@@ -3829,37 +3860,37 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1327:1: rule__MessageEntry__Group_1__2__Impl : ( ( rule__MessageEntry__Group_1_2__0 )* ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1334:1: rule__MessageEntry__Group_1__2__Impl : ( ( rule__MessageEntry__Group_1_2__0 )* ) ;
     public final void rule__MessageEntry__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1331:1: ( ( ( rule__MessageEntry__Group_1_2__0 )* ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1332:1: ( ( rule__MessageEntry__Group_1_2__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1338:1: ( ( ( rule__MessageEntry__Group_1_2__0 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1339:1: ( ( rule__MessageEntry__Group_1_2__0 )* )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1332:1: ( ( rule__MessageEntry__Group_1_2__0 )* )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1333:1: ( rule__MessageEntry__Group_1_2__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1339:1: ( ( rule__MessageEntry__Group_1_2__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1340:1: ( rule__MessageEntry__Group_1_2__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getGroup_1_2()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1334:1: ( rule__MessageEntry__Group_1_2__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1341:1: ( rule__MessageEntry__Group_1_2__0 )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==28) ) {
+                if ( (LA9_0==29) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1334:2: rule__MessageEntry__Group_1_2__0
+            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1341:2: rule__MessageEntry__Group_1_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__0_in_rule__MessageEntry__Group_1__2__Impl2683);
+            	    pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__0_in_rule__MessageEntry__Group_1__2__Impl2704);
             	    rule__MessageEntry__Group_1_2__0();
 
             	    state._fsp--;
@@ -3898,16 +3929,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1344:1: rule__MessageEntry__Group_1__3 : rule__MessageEntry__Group_1__3__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1351:1: rule__MessageEntry__Group_1__3 : rule__MessageEntry__Group_1__3__Impl ;
     public final void rule__MessageEntry__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1348:1: ( rule__MessageEntry__Group_1__3__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1349:2: rule__MessageEntry__Group_1__3__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1355:1: ( rule__MessageEntry__Group_1__3__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1356:2: rule__MessageEntry__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1__3__Impl_in_rule__MessageEntry__Group_1__32714);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1__3__Impl_in_rule__MessageEntry__Group_1__32735);
             rule__MessageEntry__Group_1__3__Impl();
 
             state._fsp--;
@@ -3931,22 +3962,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1__3__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1355:1: rule__MessageEntry__Group_1__3__Impl : ( ')' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1362:1: rule__MessageEntry__Group_1__3__Impl : ( ')' ) ;
     public final void rule__MessageEntry__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1359:1: ( ( ')' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1360:1: ( ')' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1366:1: ( ( ')' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1367:1: ( ')' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1360:1: ( ')' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1361:1: ')'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1367:1: ( ')' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1368:1: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getRightParenthesisKeyword_1_3()); 
             }
-            match(input,27,FOLLOW_27_in_rule__MessageEntry__Group_1__3__Impl2742); if (state.failed) return ;
+            match(input,28,FOLLOW_28_in_rule__MessageEntry__Group_1__3__Impl2763); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getRightParenthesisKeyword_1_3()); 
             }
@@ -3972,21 +4003,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1_2__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1382:1: rule__MessageEntry__Group_1_2__0 : rule__MessageEntry__Group_1_2__0__Impl rule__MessageEntry__Group_1_2__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1389:1: rule__MessageEntry__Group_1_2__0 : rule__MessageEntry__Group_1_2__0__Impl rule__MessageEntry__Group_1_2__1 ;
     public final void rule__MessageEntry__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1386:1: ( rule__MessageEntry__Group_1_2__0__Impl rule__MessageEntry__Group_1_2__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1387:2: rule__MessageEntry__Group_1_2__0__Impl rule__MessageEntry__Group_1_2__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1393:1: ( rule__MessageEntry__Group_1_2__0__Impl rule__MessageEntry__Group_1_2__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1394:2: rule__MessageEntry__Group_1_2__0__Impl rule__MessageEntry__Group_1_2__1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__0__Impl_in_rule__MessageEntry__Group_1_2__02781);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__0__Impl_in_rule__MessageEntry__Group_1_2__02802);
             rule__MessageEntry__Group_1_2__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__1_in_rule__MessageEntry__Group_1_2__02784);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__1_in_rule__MessageEntry__Group_1_2__02805);
             rule__MessageEntry__Group_1_2__1();
 
             state._fsp--;
@@ -4010,22 +4041,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1_2__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1394:1: rule__MessageEntry__Group_1_2__0__Impl : ( ',' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1401:1: rule__MessageEntry__Group_1_2__0__Impl : ( ',' ) ;
     public final void rule__MessageEntry__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1398:1: ( ( ',' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1399:1: ( ',' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1405:1: ( ( ',' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1406:1: ( ',' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1399:1: ( ',' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1400:1: ','
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1406:1: ( ',' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1407:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getCommaKeyword_1_2_0()); 
             }
-            match(input,28,FOLLOW_28_in_rule__MessageEntry__Group_1_2__0__Impl2812); if (state.failed) return ;
+            match(input,29,FOLLOW_29_in_rule__MessageEntry__Group_1_2__0__Impl2833); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getCommaKeyword_1_2_0()); 
             }
@@ -4051,16 +4082,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1_2__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1413:1: rule__MessageEntry__Group_1_2__1 : rule__MessageEntry__Group_1_2__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1420:1: rule__MessageEntry__Group_1_2__1 : rule__MessageEntry__Group_1_2__1__Impl ;
     public final void rule__MessageEntry__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1417:1: ( rule__MessageEntry__Group_1_2__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1418:2: rule__MessageEntry__Group_1_2__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1424:1: ( rule__MessageEntry__Group_1_2__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1425:2: rule__MessageEntry__Group_1_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__1__Impl_in_rule__MessageEntry__Group_1_2__12843);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_1_2__1__Impl_in_rule__MessageEntry__Group_1_2__12864);
             rule__MessageEntry__Group_1_2__1__Impl();
 
             state._fsp--;
@@ -4084,25 +4115,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_1_2__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1424:1: rule__MessageEntry__Group_1_2__1__Impl : ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1431:1: rule__MessageEntry__Group_1_2__1__Impl : ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) ) ;
     public final void rule__MessageEntry__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1428:1: ( ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1429:1: ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1435:1: ( ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1436:1: ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1429:1: ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1430:1: ( rule__MessageEntry__ParamListAssignment_1_2_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1436:1: ( ( rule__MessageEntry__ParamListAssignment_1_2_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1437:1: ( rule__MessageEntry__ParamListAssignment_1_2_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getParamListAssignment_1_2_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1431:1: ( rule__MessageEntry__ParamListAssignment_1_2_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1431:2: rule__MessageEntry__ParamListAssignment_1_2_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1438:1: ( rule__MessageEntry__ParamListAssignment_1_2_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1438:2: rule__MessageEntry__ParamListAssignment_1_2_1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__ParamListAssignment_1_2_1_in_rule__MessageEntry__Group_1_2__1__Impl2870);
+            pushFollow(FOLLOW_rule__MessageEntry__ParamListAssignment_1_2_1_in_rule__MessageEntry__Group_1_2__1__Impl2891);
             rule__MessageEntry__ParamListAssignment_1_2_1();
 
             state._fsp--;
@@ -4135,21 +4166,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1445:1: rule__MessageEntry__Group_3_0__0 : rule__MessageEntry__Group_3_0__0__Impl rule__MessageEntry__Group_3_0__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1452:1: rule__MessageEntry__Group_3_0__0 : rule__MessageEntry__Group_3_0__0__Impl rule__MessageEntry__Group_3_0__1 ;
     public final void rule__MessageEntry__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1449:1: ( rule__MessageEntry__Group_3_0__0__Impl rule__MessageEntry__Group_3_0__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1450:2: rule__MessageEntry__Group_3_0__0__Impl rule__MessageEntry__Group_3_0__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1456:1: ( rule__MessageEntry__Group_3_0__0__Impl rule__MessageEntry__Group_3_0__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1457:2: rule__MessageEntry__Group_3_0__0__Impl rule__MessageEntry__Group_3_0__1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__0__Impl_in_rule__MessageEntry__Group_3_0__02904);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__0__Impl_in_rule__MessageEntry__Group_3_0__02925);
             rule__MessageEntry__Group_3_0__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__1_in_rule__MessageEntry__Group_3_0__02907);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__1_in_rule__MessageEntry__Group_3_0__02928);
             rule__MessageEntry__Group_3_0__1();
 
             state._fsp--;
@@ -4173,22 +4204,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1457:1: rule__MessageEntry__Group_3_0__0__Impl : ( '{' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1464:1: rule__MessageEntry__Group_3_0__0__Impl : ( '{' ) ;
     public final void rule__MessageEntry__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1461:1: ( ( '{' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1462:1: ( '{' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1468:1: ( ( '{' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1469:1: ( '{' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1462:1: ( '{' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1463:1: '{'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1469:1: ( '{' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1470:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getLeftCurlyBracketKeyword_3_0_0()); 
             }
-            match(input,19,FOLLOW_19_in_rule__MessageEntry__Group_3_0__0__Impl2935); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__MessageEntry__Group_3_0__0__Impl2956); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getLeftCurlyBracketKeyword_3_0_0()); 
             }
@@ -4214,21 +4245,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1476:1: rule__MessageEntry__Group_3_0__1 : rule__MessageEntry__Group_3_0__1__Impl rule__MessageEntry__Group_3_0__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1483:1: rule__MessageEntry__Group_3_0__1 : rule__MessageEntry__Group_3_0__1__Impl rule__MessageEntry__Group_3_0__2 ;
     public final void rule__MessageEntry__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1480:1: ( rule__MessageEntry__Group_3_0__1__Impl rule__MessageEntry__Group_3_0__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1481:2: rule__MessageEntry__Group_3_0__1__Impl rule__MessageEntry__Group_3_0__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1487:1: ( rule__MessageEntry__Group_3_0__1__Impl rule__MessageEntry__Group_3_0__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1488:2: rule__MessageEntry__Group_3_0__1__Impl rule__MessageEntry__Group_3_0__2
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__1__Impl_in_rule__MessageEntry__Group_3_0__12966);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__1__Impl_in_rule__MessageEntry__Group_3_0__12987);
             rule__MessageEntry__Group_3_0__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__2_in_rule__MessageEntry__Group_3_0__12969);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__2_in_rule__MessageEntry__Group_3_0__12990);
             rule__MessageEntry__Group_3_0__2();
 
             state._fsp--;
@@ -4252,25 +4283,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1488:1: rule__MessageEntry__Group_3_0__1__Impl : ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1495:1: rule__MessageEntry__Group_3_0__1__Impl : ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) ) ;
     public final void rule__MessageEntry__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1492:1: ( ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1493:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1499:1: ( ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1500:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1493:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1494:1: ( rule__MessageEntry__MessageListAssignment_3_0_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1500:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1501:1: ( rule__MessageEntry__MessageListAssignment_3_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getMessageListAssignment_3_0_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1495:1: ( rule__MessageEntry__MessageListAssignment_3_0_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1495:2: rule__MessageEntry__MessageListAssignment_3_0_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1502:1: ( rule__MessageEntry__MessageListAssignment_3_0_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1502:2: rule__MessageEntry__MessageListAssignment_3_0_1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_1_in_rule__MessageEntry__Group_3_0__1__Impl2996);
+            pushFollow(FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_1_in_rule__MessageEntry__Group_3_0__1__Impl3017);
             rule__MessageEntry__MessageListAssignment_3_0_1();
 
             state._fsp--;
@@ -4303,21 +4334,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1505:1: rule__MessageEntry__Group_3_0__2 : rule__MessageEntry__Group_3_0__2__Impl rule__MessageEntry__Group_3_0__3 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1512:1: rule__MessageEntry__Group_3_0__2 : rule__MessageEntry__Group_3_0__2__Impl rule__MessageEntry__Group_3_0__3 ;
     public final void rule__MessageEntry__Group_3_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1509:1: ( rule__MessageEntry__Group_3_0__2__Impl rule__MessageEntry__Group_3_0__3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1510:2: rule__MessageEntry__Group_3_0__2__Impl rule__MessageEntry__Group_3_0__3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1516:1: ( rule__MessageEntry__Group_3_0__2__Impl rule__MessageEntry__Group_3_0__3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1517:2: rule__MessageEntry__Group_3_0__2__Impl rule__MessageEntry__Group_3_0__3
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__2__Impl_in_rule__MessageEntry__Group_3_0__23026);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__2__Impl_in_rule__MessageEntry__Group_3_0__23047);
             rule__MessageEntry__Group_3_0__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__3_in_rule__MessageEntry__Group_3_0__23029);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__3_in_rule__MessageEntry__Group_3_0__23050);
             rule__MessageEntry__Group_3_0__3();
 
             state._fsp--;
@@ -4341,37 +4372,37 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1517:1: rule__MessageEntry__Group_3_0__2__Impl : ( ( rule__MessageEntry__Group_3_0_2__0 )* ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1524:1: rule__MessageEntry__Group_3_0__2__Impl : ( ( rule__MessageEntry__Group_3_0_2__0 )* ) ;
     public final void rule__MessageEntry__Group_3_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1521:1: ( ( ( rule__MessageEntry__Group_3_0_2__0 )* ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1522:1: ( ( rule__MessageEntry__Group_3_0_2__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1528:1: ( ( ( rule__MessageEntry__Group_3_0_2__0 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1529:1: ( ( rule__MessageEntry__Group_3_0_2__0 )* )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1522:1: ( ( rule__MessageEntry__Group_3_0_2__0 )* )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1523:1: ( rule__MessageEntry__Group_3_0_2__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1529:1: ( ( rule__MessageEntry__Group_3_0_2__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1530:1: ( rule__MessageEntry__Group_3_0_2__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getGroup_3_0_2()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1524:1: ( rule__MessageEntry__Group_3_0_2__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1531:1: ( rule__MessageEntry__Group_3_0_2__0 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==28) ) {
+                if ( (LA10_0==29) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1524:2: rule__MessageEntry__Group_3_0_2__0
+            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1531:2: rule__MessageEntry__Group_3_0_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__0_in_rule__MessageEntry__Group_3_0__2__Impl3056);
+            	    pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__0_in_rule__MessageEntry__Group_3_0__2__Impl3077);
             	    rule__MessageEntry__Group_3_0_2__0();
 
             	    state._fsp--;
@@ -4410,16 +4441,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1534:1: rule__MessageEntry__Group_3_0__3 : rule__MessageEntry__Group_3_0__3__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1541:1: rule__MessageEntry__Group_3_0__3 : rule__MessageEntry__Group_3_0__3__Impl ;
     public final void rule__MessageEntry__Group_3_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1538:1: ( rule__MessageEntry__Group_3_0__3__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1539:2: rule__MessageEntry__Group_3_0__3__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1545:1: ( rule__MessageEntry__Group_3_0__3__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1546:2: rule__MessageEntry__Group_3_0__3__Impl
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__3__Impl_in_rule__MessageEntry__Group_3_0__33087);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0__3__Impl_in_rule__MessageEntry__Group_3_0__33108);
             rule__MessageEntry__Group_3_0__3__Impl();
 
             state._fsp--;
@@ -4443,22 +4474,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0__3__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1545:1: rule__MessageEntry__Group_3_0__3__Impl : ( '}' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1552:1: rule__MessageEntry__Group_3_0__3__Impl : ( '}' ) ;
     public final void rule__MessageEntry__Group_3_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1549:1: ( ( '}' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1550:1: ( '}' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1556:1: ( ( '}' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1557:1: ( '}' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1550:1: ( '}' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1551:1: '}'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1557:1: ( '}' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1558:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getRightCurlyBracketKeyword_3_0_3()); 
             }
-            match(input,20,FOLLOW_20_in_rule__MessageEntry__Group_3_0__3__Impl3115); if (state.failed) return ;
+            match(input,21,FOLLOW_21_in_rule__MessageEntry__Group_3_0__3__Impl3136); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getRightCurlyBracketKeyword_3_0_3()); 
             }
@@ -4484,21 +4515,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0_2__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1572:1: rule__MessageEntry__Group_3_0_2__0 : rule__MessageEntry__Group_3_0_2__0__Impl rule__MessageEntry__Group_3_0_2__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1579:1: rule__MessageEntry__Group_3_0_2__0 : rule__MessageEntry__Group_3_0_2__0__Impl rule__MessageEntry__Group_3_0_2__1 ;
     public final void rule__MessageEntry__Group_3_0_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1576:1: ( rule__MessageEntry__Group_3_0_2__0__Impl rule__MessageEntry__Group_3_0_2__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1577:2: rule__MessageEntry__Group_3_0_2__0__Impl rule__MessageEntry__Group_3_0_2__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1583:1: ( rule__MessageEntry__Group_3_0_2__0__Impl rule__MessageEntry__Group_3_0_2__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1584:2: rule__MessageEntry__Group_3_0_2__0__Impl rule__MessageEntry__Group_3_0_2__1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__0__Impl_in_rule__MessageEntry__Group_3_0_2__03154);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__0__Impl_in_rule__MessageEntry__Group_3_0_2__03175);
             rule__MessageEntry__Group_3_0_2__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__1_in_rule__MessageEntry__Group_3_0_2__03157);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__1_in_rule__MessageEntry__Group_3_0_2__03178);
             rule__MessageEntry__Group_3_0_2__1();
 
             state._fsp--;
@@ -4522,22 +4553,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0_2__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1584:1: rule__MessageEntry__Group_3_0_2__0__Impl : ( ',' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1591:1: rule__MessageEntry__Group_3_0_2__0__Impl : ( ',' ) ;
     public final void rule__MessageEntry__Group_3_0_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1588:1: ( ( ',' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1589:1: ( ',' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1595:1: ( ( ',' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1596:1: ( ',' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1589:1: ( ',' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1590:1: ','
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1596:1: ( ',' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1597:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getCommaKeyword_3_0_2_0()); 
             }
-            match(input,28,FOLLOW_28_in_rule__MessageEntry__Group_3_0_2__0__Impl3185); if (state.failed) return ;
+            match(input,29,FOLLOW_29_in_rule__MessageEntry__Group_3_0_2__0__Impl3206); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getCommaKeyword_3_0_2_0()); 
             }
@@ -4563,16 +4594,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0_2__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1603:1: rule__MessageEntry__Group_3_0_2__1 : rule__MessageEntry__Group_3_0_2__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1610:1: rule__MessageEntry__Group_3_0_2__1 : rule__MessageEntry__Group_3_0_2__1__Impl ;
     public final void rule__MessageEntry__Group_3_0_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1607:1: ( rule__MessageEntry__Group_3_0_2__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1608:2: rule__MessageEntry__Group_3_0_2__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1614:1: ( rule__MessageEntry__Group_3_0_2__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1615:2: rule__MessageEntry__Group_3_0_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__1__Impl_in_rule__MessageEntry__Group_3_0_2__13216);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_0_2__1__Impl_in_rule__MessageEntry__Group_3_0_2__13237);
             rule__MessageEntry__Group_3_0_2__1__Impl();
 
             state._fsp--;
@@ -4596,25 +4627,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_0_2__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1614:1: rule__MessageEntry__Group_3_0_2__1__Impl : ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1621:1: rule__MessageEntry__Group_3_0_2__1__Impl : ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) ) ;
     public final void rule__MessageEntry__Group_3_0_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1618:1: ( ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1619:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1625:1: ( ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1626:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1619:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1620:1: ( rule__MessageEntry__MessageListAssignment_3_0_2_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1626:1: ( ( rule__MessageEntry__MessageListAssignment_3_0_2_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1627:1: ( rule__MessageEntry__MessageListAssignment_3_0_2_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getMessageListAssignment_3_0_2_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1621:1: ( rule__MessageEntry__MessageListAssignment_3_0_2_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1621:2: rule__MessageEntry__MessageListAssignment_3_0_2_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1628:1: ( rule__MessageEntry__MessageListAssignment_3_0_2_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1628:2: rule__MessageEntry__MessageListAssignment_3_0_2_1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_2_1_in_rule__MessageEntry__Group_3_0_2__1__Impl3243);
+            pushFollow(FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_2_1_in_rule__MessageEntry__Group_3_0_2__1__Impl3264);
             rule__MessageEntry__MessageListAssignment_3_0_2_1();
 
             state._fsp--;
@@ -4647,21 +4678,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_1__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1635:1: rule__MessageEntry__Group_3_1__0 : rule__MessageEntry__Group_3_1__0__Impl rule__MessageEntry__Group_3_1__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1642:1: rule__MessageEntry__Group_3_1__0 : rule__MessageEntry__Group_3_1__0__Impl rule__MessageEntry__Group_3_1__1 ;
     public final void rule__MessageEntry__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1639:1: ( rule__MessageEntry__Group_3_1__0__Impl rule__MessageEntry__Group_3_1__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1640:2: rule__MessageEntry__Group_3_1__0__Impl rule__MessageEntry__Group_3_1__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1646:1: ( rule__MessageEntry__Group_3_1__0__Impl rule__MessageEntry__Group_3_1__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1647:2: rule__MessageEntry__Group_3_1__0__Impl rule__MessageEntry__Group_3_1__1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__0__Impl_in_rule__MessageEntry__Group_3_1__03277);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__0__Impl_in_rule__MessageEntry__Group_3_1__03298);
             rule__MessageEntry__Group_3_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__1_in_rule__MessageEntry__Group_3_1__03280);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__1_in_rule__MessageEntry__Group_3_1__03301);
             rule__MessageEntry__Group_3_1__1();
 
             state._fsp--;
@@ -4685,22 +4716,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_1__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1647:1: rule__MessageEntry__Group_3_1__0__Impl : ( '[' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1654:1: rule__MessageEntry__Group_3_1__0__Impl : ( '[' ) ;
     public final void rule__MessageEntry__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1651:1: ( ( '[' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1652:1: ( '[' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1658:1: ( ( '[' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1659:1: ( '[' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1652:1: ( '[' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1653:1: '['
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1659:1: ( '[' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1660:1: '['
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getLeftSquareBracketKeyword_3_1_0()); 
             }
-            match(input,29,FOLLOW_29_in_rule__MessageEntry__Group_3_1__0__Impl3308); if (state.failed) return ;
+            match(input,30,FOLLOW_30_in_rule__MessageEntry__Group_3_1__0__Impl3329); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getLeftSquareBracketKeyword_3_1_0()); 
             }
@@ -4726,21 +4757,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_1__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1666:1: rule__MessageEntry__Group_3_1__1 : rule__MessageEntry__Group_3_1__1__Impl rule__MessageEntry__Group_3_1__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1673:1: rule__MessageEntry__Group_3_1__1 : rule__MessageEntry__Group_3_1__1__Impl rule__MessageEntry__Group_3_1__2 ;
     public final void rule__MessageEntry__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1670:1: ( rule__MessageEntry__Group_3_1__1__Impl rule__MessageEntry__Group_3_1__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1671:2: rule__MessageEntry__Group_3_1__1__Impl rule__MessageEntry__Group_3_1__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1677:1: ( rule__MessageEntry__Group_3_1__1__Impl rule__MessageEntry__Group_3_1__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1678:2: rule__MessageEntry__Group_3_1__1__Impl rule__MessageEntry__Group_3_1__2
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__1__Impl_in_rule__MessageEntry__Group_3_1__13339);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__1__Impl_in_rule__MessageEntry__Group_3_1__13360);
             rule__MessageEntry__Group_3_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__2_in_rule__MessageEntry__Group_3_1__13342);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__2_in_rule__MessageEntry__Group_3_1__13363);
             rule__MessageEntry__Group_3_1__2();
 
             state._fsp--;
@@ -4764,25 +4795,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_1__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1678:1: rule__MessageEntry__Group_3_1__1__Impl : ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1685:1: rule__MessageEntry__Group_3_1__1__Impl : ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) ) ;
     public final void rule__MessageEntry__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1682:1: ( ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1683:1: ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1689:1: ( ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1690:1: ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1683:1: ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1684:1: ( rule__MessageEntry__EntryRefAssignment_3_1_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1690:1: ( ( rule__MessageEntry__EntryRefAssignment_3_1_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1691:1: ( rule__MessageEntry__EntryRefAssignment_3_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getEntryRefAssignment_3_1_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1685:1: ( rule__MessageEntry__EntryRefAssignment_3_1_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1685:2: rule__MessageEntry__EntryRefAssignment_3_1_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1692:1: ( rule__MessageEntry__EntryRefAssignment_3_1_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1692:2: rule__MessageEntry__EntryRefAssignment_3_1_1
             {
-            pushFollow(FOLLOW_rule__MessageEntry__EntryRefAssignment_3_1_1_in_rule__MessageEntry__Group_3_1__1__Impl3369);
+            pushFollow(FOLLOW_rule__MessageEntry__EntryRefAssignment_3_1_1_in_rule__MessageEntry__Group_3_1__1__Impl3390);
             rule__MessageEntry__EntryRefAssignment_3_1_1();
 
             state._fsp--;
@@ -4815,16 +4846,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_1__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1695:1: rule__MessageEntry__Group_3_1__2 : rule__MessageEntry__Group_3_1__2__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1702:1: rule__MessageEntry__Group_3_1__2 : rule__MessageEntry__Group_3_1__2__Impl ;
     public final void rule__MessageEntry__Group_3_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1699:1: ( rule__MessageEntry__Group_3_1__2__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1700:2: rule__MessageEntry__Group_3_1__2__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1706:1: ( rule__MessageEntry__Group_3_1__2__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1707:2: rule__MessageEntry__Group_3_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__2__Impl_in_rule__MessageEntry__Group_3_1__23399);
+            pushFollow(FOLLOW_rule__MessageEntry__Group_3_1__2__Impl_in_rule__MessageEntry__Group_3_1__23420);
             rule__MessageEntry__Group_3_1__2__Impl();
 
             state._fsp--;
@@ -4848,22 +4879,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__Group_3_1__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1706:1: rule__MessageEntry__Group_3_1__2__Impl : ( ']' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1713:1: rule__MessageEntry__Group_3_1__2__Impl : ( ']' ) ;
     public final void rule__MessageEntry__Group_3_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1710:1: ( ( ']' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1711:1: ( ']' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1717:1: ( ( ']' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1718:1: ( ']' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1711:1: ( ']' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1712:1: ']'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1718:1: ( ']' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1719:1: ']'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getRightSquareBracketKeyword_3_1_2()); 
             }
-            match(input,30,FOLLOW_30_in_rule__MessageEntry__Group_3_1__2__Impl3427); if (state.failed) return ;
+            match(input,31,FOLLOW_31_in_rule__MessageEntry__Group_3_1__2__Impl3448); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getRightSquareBracketKeyword_3_1_2()); 
             }
@@ -4889,21 +4920,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageParam__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1731:1: rule__MessageParam__Group__0 : rule__MessageParam__Group__0__Impl rule__MessageParam__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1738:1: rule__MessageParam__Group__0 : rule__MessageParam__Group__0__Impl rule__MessageParam__Group__1 ;
     public final void rule__MessageParam__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1735:1: ( rule__MessageParam__Group__0__Impl rule__MessageParam__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1736:2: rule__MessageParam__Group__0__Impl rule__MessageParam__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1742:1: ( rule__MessageParam__Group__0__Impl rule__MessageParam__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1743:2: rule__MessageParam__Group__0__Impl rule__MessageParam__Group__1
             {
-            pushFollow(FOLLOW_rule__MessageParam__Group__0__Impl_in_rule__MessageParam__Group__03464);
+            pushFollow(FOLLOW_rule__MessageParam__Group__0__Impl_in_rule__MessageParam__Group__03485);
             rule__MessageParam__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__MessageParam__Group__1_in_rule__MessageParam__Group__03467);
+            pushFollow(FOLLOW_rule__MessageParam__Group__1_in_rule__MessageParam__Group__03488);
             rule__MessageParam__Group__1();
 
             state._fsp--;
@@ -4927,25 +4958,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageParam__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1743:1: rule__MessageParam__Group__0__Impl : ( ( rule__MessageParam__PredefinedAssignment_0 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1750:1: rule__MessageParam__Group__0__Impl : ( ( rule__MessageParam__PredefinedAssignment_0 ) ) ;
     public final void rule__MessageParam__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1747:1: ( ( ( rule__MessageParam__PredefinedAssignment_0 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1748:1: ( ( rule__MessageParam__PredefinedAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1754:1: ( ( ( rule__MessageParam__PredefinedAssignment_0 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1755:1: ( ( rule__MessageParam__PredefinedAssignment_0 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1748:1: ( ( rule__MessageParam__PredefinedAssignment_0 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1749:1: ( rule__MessageParam__PredefinedAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1755:1: ( ( rule__MessageParam__PredefinedAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1756:1: ( rule__MessageParam__PredefinedAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageParamAccess().getPredefinedAssignment_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1750:1: ( rule__MessageParam__PredefinedAssignment_0 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1750:2: rule__MessageParam__PredefinedAssignment_0
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1757:1: ( rule__MessageParam__PredefinedAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1757:2: rule__MessageParam__PredefinedAssignment_0
             {
-            pushFollow(FOLLOW_rule__MessageParam__PredefinedAssignment_0_in_rule__MessageParam__Group__0__Impl3494);
+            pushFollow(FOLLOW_rule__MessageParam__PredefinedAssignment_0_in_rule__MessageParam__Group__0__Impl3515);
             rule__MessageParam__PredefinedAssignment_0();
 
             state._fsp--;
@@ -4978,16 +5009,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageParam__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1760:1: rule__MessageParam__Group__1 : rule__MessageParam__Group__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1767:1: rule__MessageParam__Group__1 : rule__MessageParam__Group__1__Impl ;
     public final void rule__MessageParam__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1764:1: ( rule__MessageParam__Group__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1765:2: rule__MessageParam__Group__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1771:1: ( rule__MessageParam__Group__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1772:2: rule__MessageParam__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__MessageParam__Group__1__Impl_in_rule__MessageParam__Group__13524);
+            pushFollow(FOLLOW_rule__MessageParam__Group__1__Impl_in_rule__MessageParam__Group__13545);
             rule__MessageParam__Group__1__Impl();
 
             state._fsp--;
@@ -5011,25 +5042,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageParam__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1771:1: rule__MessageParam__Group__1__Impl : ( ( rule__MessageParam__VarAssignment_1 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1778:1: rule__MessageParam__Group__1__Impl : ( ( rule__MessageParam__VarAssignment_1 ) ) ;
     public final void rule__MessageParam__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1775:1: ( ( ( rule__MessageParam__VarAssignment_1 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1776:1: ( ( rule__MessageParam__VarAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1782:1: ( ( ( rule__MessageParam__VarAssignment_1 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1783:1: ( ( rule__MessageParam__VarAssignment_1 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1776:1: ( ( rule__MessageParam__VarAssignment_1 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1777:1: ( rule__MessageParam__VarAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1783:1: ( ( rule__MessageParam__VarAssignment_1 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1784:1: ( rule__MessageParam__VarAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageParamAccess().getVarAssignment_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1778:1: ( rule__MessageParam__VarAssignment_1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1778:2: rule__MessageParam__VarAssignment_1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1785:1: ( rule__MessageParam__VarAssignment_1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1785:2: rule__MessageParam__VarAssignment_1
             {
-            pushFollow(FOLLOW_rule__MessageParam__VarAssignment_1_in_rule__MessageParam__Group__1__Impl3551);
+            pushFollow(FOLLOW_rule__MessageParam__VarAssignment_1_in_rule__MessageParam__Group__1__Impl3572);
             rule__MessageParam__VarAssignment_1();
 
             state._fsp--;
@@ -5062,21 +5093,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1792:1: rule__Message__Group__0 : rule__Message__Group__0__Impl rule__Message__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1799:1: rule__Message__Group__0 : rule__Message__Group__0__Impl rule__Message__Group__1 ;
     public final void rule__Message__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1796:1: ( rule__Message__Group__0__Impl rule__Message__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1797:2: rule__Message__Group__0__Impl rule__Message__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1803:1: ( rule__Message__Group__0__Impl rule__Message__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1804:2: rule__Message__Group__0__Impl rule__Message__Group__1
             {
-            pushFollow(FOLLOW_rule__Message__Group__0__Impl_in_rule__Message__Group__03585);
+            pushFollow(FOLLOW_rule__Message__Group__0__Impl_in_rule__Message__Group__03606);
             rule__Message__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Message__Group__1_in_rule__Message__Group__03588);
+            pushFollow(FOLLOW_rule__Message__Group__1_in_rule__Message__Group__03609);
             rule__Message__Group__1();
 
             state._fsp--;
@@ -5100,25 +5131,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1804:1: rule__Message__Group__0__Impl : ( ( rule__Message__NameAssignment_0 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1811:1: rule__Message__Group__0__Impl : ( ( rule__Message__NameAssignment_0 ) ) ;
     public final void rule__Message__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1808:1: ( ( ( rule__Message__NameAssignment_0 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1809:1: ( ( rule__Message__NameAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1815:1: ( ( ( rule__Message__NameAssignment_0 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1816:1: ( ( rule__Message__NameAssignment_0 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1809:1: ( ( rule__Message__NameAssignment_0 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1810:1: ( rule__Message__NameAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1816:1: ( ( rule__Message__NameAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1817:1: ( rule__Message__NameAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageAccess().getNameAssignment_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1811:1: ( rule__Message__NameAssignment_0 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1811:2: rule__Message__NameAssignment_0
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1818:1: ( rule__Message__NameAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1818:2: rule__Message__NameAssignment_0
             {
-            pushFollow(FOLLOW_rule__Message__NameAssignment_0_in_rule__Message__Group__0__Impl3615);
+            pushFollow(FOLLOW_rule__Message__NameAssignment_0_in_rule__Message__Group__0__Impl3636);
             rule__Message__NameAssignment_0();
 
             state._fsp--;
@@ -5151,21 +5182,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1821:1: rule__Message__Group__1 : rule__Message__Group__1__Impl rule__Message__Group__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1828:1: rule__Message__Group__1 : rule__Message__Group__1__Impl rule__Message__Group__2 ;
     public final void rule__Message__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1825:1: ( rule__Message__Group__1__Impl rule__Message__Group__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1826:2: rule__Message__Group__1__Impl rule__Message__Group__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1832:1: ( rule__Message__Group__1__Impl rule__Message__Group__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1833:2: rule__Message__Group__1__Impl rule__Message__Group__2
             {
-            pushFollow(FOLLOW_rule__Message__Group__1__Impl_in_rule__Message__Group__13645);
+            pushFollow(FOLLOW_rule__Message__Group__1__Impl_in_rule__Message__Group__13666);
             rule__Message__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Message__Group__2_in_rule__Message__Group__13648);
+            pushFollow(FOLLOW_rule__Message__Group__2_in_rule__Message__Group__13669);
             rule__Message__Group__2();
 
             state._fsp--;
@@ -5189,22 +5220,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1833:1: rule__Message__Group__1__Impl : ( ':' ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1840:1: rule__Message__Group__1__Impl : ( ':' ) ;
     public final void rule__Message__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1837:1: ( ( ':' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1838:1: ( ':' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1844:1: ( ( ':' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1845:1: ( ':' )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1838:1: ( ':' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1839:1: ':'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1845:1: ( ':' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1846:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageAccess().getColonKeyword_1()); 
             }
-            match(input,25,FOLLOW_25_in_rule__Message__Group__1__Impl3676); if (state.failed) return ;
+            match(input,26,FOLLOW_26_in_rule__Message__Group__1__Impl3697); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageAccess().getColonKeyword_1()); 
             }
@@ -5230,16 +5261,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__Group__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1852:1: rule__Message__Group__2 : rule__Message__Group__2__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1859:1: rule__Message__Group__2 : rule__Message__Group__2__Impl ;
     public final void rule__Message__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1856:1: ( rule__Message__Group__2__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1857:2: rule__Message__Group__2__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1863:1: ( rule__Message__Group__2__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1864:2: rule__Message__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Message__Group__2__Impl_in_rule__Message__Group__23707);
+            pushFollow(FOLLOW_rule__Message__Group__2__Impl_in_rule__Message__Group__23728);
             rule__Message__Group__2__Impl();
 
             state._fsp--;
@@ -5263,25 +5294,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__Group__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1863:1: rule__Message__Group__2__Impl : ( ( rule__Message__MessageAssignment_2 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1870:1: rule__Message__Group__2__Impl : ( ( rule__Message__MessageAssignment_2 ) ) ;
     public final void rule__Message__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1867:1: ( ( ( rule__Message__MessageAssignment_2 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1868:1: ( ( rule__Message__MessageAssignment_2 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1874:1: ( ( ( rule__Message__MessageAssignment_2 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1875:1: ( ( rule__Message__MessageAssignment_2 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1868:1: ( ( rule__Message__MessageAssignment_2 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1869:1: ( rule__Message__MessageAssignment_2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1875:1: ( ( rule__Message__MessageAssignment_2 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1876:1: ( rule__Message__MessageAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageAccess().getMessageAssignment_2()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1870:1: ( rule__Message__MessageAssignment_2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1870:2: rule__Message__MessageAssignment_2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1877:1: ( rule__Message__MessageAssignment_2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1877:2: rule__Message__MessageAssignment_2
             {
-            pushFollow(FOLLOW_rule__Message__MessageAssignment_2_in_rule__Message__Group__2__Impl3734);
+            pushFollow(FOLLOW_rule__Message__MessageAssignment_2_in_rule__Message__Group__2__Impl3755);
             rule__Message__MessageAssignment_2();
 
             state._fsp--;
@@ -5314,21 +5345,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1886:1: rule__RichString__Group_1__0 : rule__RichString__Group_1__0__Impl rule__RichString__Group_1__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1893:1: rule__RichString__Group_1__0 : rule__RichString__Group_1__0__Impl rule__RichString__Group_1__1 ;
     public final void rule__RichString__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1890:1: ( rule__RichString__Group_1__0__Impl rule__RichString__Group_1__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1891:2: rule__RichString__Group_1__0__Impl rule__RichString__Group_1__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1897:1: ( rule__RichString__Group_1__0__Impl rule__RichString__Group_1__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1898:2: rule__RichString__Group_1__0__Impl rule__RichString__Group_1__1
             {
-            pushFollow(FOLLOW_rule__RichString__Group_1__0__Impl_in_rule__RichString__Group_1__03770);
+            pushFollow(FOLLOW_rule__RichString__Group_1__0__Impl_in_rule__RichString__Group_1__03791);
             rule__RichString__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__RichString__Group_1__1_in_rule__RichString__Group_1__03773);
+            pushFollow(FOLLOW_rule__RichString__Group_1__1_in_rule__RichString__Group_1__03794);
             rule__RichString__Group_1__1();
 
             state._fsp--;
@@ -5352,25 +5383,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1898:1: rule__RichString__Group_1__0__Impl : ( ( rule__RichString__ExpressionsAssignment_1_0 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1905:1: rule__RichString__Group_1__0__Impl : ( ( rule__RichString__ExpressionsAssignment_1_0 ) ) ;
     public final void rule__RichString__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1902:1: ( ( ( rule__RichString__ExpressionsAssignment_1_0 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1903:1: ( ( rule__RichString__ExpressionsAssignment_1_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1909:1: ( ( ( rule__RichString__ExpressionsAssignment_1_0 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1910:1: ( ( rule__RichString__ExpressionsAssignment_1_0 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1903:1: ( ( rule__RichString__ExpressionsAssignment_1_0 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1904:1: ( rule__RichString__ExpressionsAssignment_1_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1910:1: ( ( rule__RichString__ExpressionsAssignment_1_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1911:1: ( rule__RichString__ExpressionsAssignment_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsAssignment_1_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1905:1: ( rule__RichString__ExpressionsAssignment_1_0 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1905:2: rule__RichString__ExpressionsAssignment_1_0
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1912:1: ( rule__RichString__ExpressionsAssignment_1_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1912:2: rule__RichString__ExpressionsAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_0_in_rule__RichString__Group_1__0__Impl3800);
+            pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_0_in_rule__RichString__Group_1__0__Impl3821);
             rule__RichString__ExpressionsAssignment_1_0();
 
             state._fsp--;
@@ -5403,21 +5434,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1915:1: rule__RichString__Group_1__1 : rule__RichString__Group_1__1__Impl rule__RichString__Group_1__2 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1922:1: rule__RichString__Group_1__1 : rule__RichString__Group_1__1__Impl rule__RichString__Group_1__2 ;
     public final void rule__RichString__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1919:1: ( rule__RichString__Group_1__1__Impl rule__RichString__Group_1__2 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1920:2: rule__RichString__Group_1__1__Impl rule__RichString__Group_1__2
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1926:1: ( rule__RichString__Group_1__1__Impl rule__RichString__Group_1__2 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1927:2: rule__RichString__Group_1__1__Impl rule__RichString__Group_1__2
             {
-            pushFollow(FOLLOW_rule__RichString__Group_1__1__Impl_in_rule__RichString__Group_1__13830);
+            pushFollow(FOLLOW_rule__RichString__Group_1__1__Impl_in_rule__RichString__Group_1__13851);
             rule__RichString__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__RichString__Group_1__2_in_rule__RichString__Group_1__13833);
+            pushFollow(FOLLOW_rule__RichString__Group_1__2_in_rule__RichString__Group_1__13854);
             rule__RichString__Group_1__2();
 
             state._fsp--;
@@ -5441,22 +5472,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1927:1: rule__RichString__Group_1__1__Impl : ( ( rule__RichString__ExpressionsAssignment_1_1 )? ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1934:1: rule__RichString__Group_1__1__Impl : ( ( rule__RichString__ExpressionsAssignment_1_1 )? ) ;
     public final void rule__RichString__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1931:1: ( ( ( rule__RichString__ExpressionsAssignment_1_1 )? ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1932:1: ( ( rule__RichString__ExpressionsAssignment_1_1 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1938:1: ( ( ( rule__RichString__ExpressionsAssignment_1_1 )? ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1939:1: ( ( rule__RichString__ExpressionsAssignment_1_1 )? )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1932:1: ( ( rule__RichString__ExpressionsAssignment_1_1 )? )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1933:1: ( rule__RichString__ExpressionsAssignment_1_1 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1939:1: ( ( rule__RichString__ExpressionsAssignment_1_1 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1940:1: ( rule__RichString__ExpressionsAssignment_1_1 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsAssignment_1_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1934:1: ( rule__RichString__ExpressionsAssignment_1_1 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1941:1: ( rule__RichString__ExpressionsAssignment_1_1 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -5465,9 +5496,9 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1934:2: rule__RichString__ExpressionsAssignment_1_1
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1941:2: rule__RichString__ExpressionsAssignment_1_1
                     {
-                    pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_1_in_rule__RichString__Group_1__1__Impl3860);
+                    pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_1_in_rule__RichString__Group_1__1__Impl3881);
                     rule__RichString__ExpressionsAssignment_1_1();
 
                     state._fsp--;
@@ -5503,21 +5534,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1944:1: rule__RichString__Group_1__2 : rule__RichString__Group_1__2__Impl rule__RichString__Group_1__3 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1951:1: rule__RichString__Group_1__2 : rule__RichString__Group_1__2__Impl rule__RichString__Group_1__3 ;
     public final void rule__RichString__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1948:1: ( rule__RichString__Group_1__2__Impl rule__RichString__Group_1__3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1949:2: rule__RichString__Group_1__2__Impl rule__RichString__Group_1__3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1955:1: ( rule__RichString__Group_1__2__Impl rule__RichString__Group_1__3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1956:2: rule__RichString__Group_1__2__Impl rule__RichString__Group_1__3
             {
-            pushFollow(FOLLOW_rule__RichString__Group_1__2__Impl_in_rule__RichString__Group_1__23891);
+            pushFollow(FOLLOW_rule__RichString__Group_1__2__Impl_in_rule__RichString__Group_1__23912);
             rule__RichString__Group_1__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__RichString__Group_1__3_in_rule__RichString__Group_1__23894);
+            pushFollow(FOLLOW_rule__RichString__Group_1__3_in_rule__RichString__Group_1__23915);
             rule__RichString__Group_1__3();
 
             state._fsp--;
@@ -5541,22 +5572,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__2__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1956:1: rule__RichString__Group_1__2__Impl : ( ( rule__RichString__Group_1_2__0 )* ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1963:1: rule__RichString__Group_1__2__Impl : ( ( rule__RichString__Group_1_2__0 )* ) ;
     public final void rule__RichString__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1960:1: ( ( ( rule__RichString__Group_1_2__0 )* ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1961:1: ( ( rule__RichString__Group_1_2__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1967:1: ( ( ( rule__RichString__Group_1_2__0 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1968:1: ( ( rule__RichString__Group_1_2__0 )* )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1961:1: ( ( rule__RichString__Group_1_2__0 )* )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1962:1: ( rule__RichString__Group_1_2__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1968:1: ( ( rule__RichString__Group_1_2__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1969:1: ( rule__RichString__Group_1_2__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getGroup_1_2()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1963:1: ( rule__RichString__Group_1_2__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1970:1: ( rule__RichString__Group_1_2__0 )*
             loop12:
             do {
                 int alt12=2;
@@ -5569,9 +5600,9 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1963:2: rule__RichString__Group_1_2__0
+            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1970:2: rule__RichString__Group_1_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__RichString__Group_1_2__0_in_rule__RichString__Group_1__2__Impl3921);
+            	    pushFollow(FOLLOW_rule__RichString__Group_1_2__0_in_rule__RichString__Group_1__2__Impl3942);
             	    rule__RichString__Group_1_2__0();
 
             	    state._fsp--;
@@ -5610,16 +5641,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1973:1: rule__RichString__Group_1__3 : rule__RichString__Group_1__3__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1980:1: rule__RichString__Group_1__3 : rule__RichString__Group_1__3__Impl ;
     public final void rule__RichString__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1977:1: ( rule__RichString__Group_1__3__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1978:2: rule__RichString__Group_1__3__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1984:1: ( rule__RichString__Group_1__3__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1985:2: rule__RichString__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__RichString__Group_1__3__Impl_in_rule__RichString__Group_1__33952);
+            pushFollow(FOLLOW_rule__RichString__Group_1__3__Impl_in_rule__RichString__Group_1__33973);
             rule__RichString__Group_1__3__Impl();
 
             state._fsp--;
@@ -5643,25 +5674,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1__3__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1984:1: rule__RichString__Group_1__3__Impl : ( ( rule__RichString__ExpressionsAssignment_1_3 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1991:1: rule__RichString__Group_1__3__Impl : ( ( rule__RichString__ExpressionsAssignment_1_3 ) ) ;
     public final void rule__RichString__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1988:1: ( ( ( rule__RichString__ExpressionsAssignment_1_3 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1989:1: ( ( rule__RichString__ExpressionsAssignment_1_3 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1995:1: ( ( ( rule__RichString__ExpressionsAssignment_1_3 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1996:1: ( ( rule__RichString__ExpressionsAssignment_1_3 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1989:1: ( ( rule__RichString__ExpressionsAssignment_1_3 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1990:1: ( rule__RichString__ExpressionsAssignment_1_3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1996:1: ( ( rule__RichString__ExpressionsAssignment_1_3 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1997:1: ( rule__RichString__ExpressionsAssignment_1_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsAssignment_1_3()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1991:1: ( rule__RichString__ExpressionsAssignment_1_3 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1991:2: rule__RichString__ExpressionsAssignment_1_3
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1998:1: ( rule__RichString__ExpressionsAssignment_1_3 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:1998:2: rule__RichString__ExpressionsAssignment_1_3
             {
-            pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_3_in_rule__RichString__Group_1__3__Impl3979);
+            pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_3_in_rule__RichString__Group_1__3__Impl4000);
             rule__RichString__ExpressionsAssignment_1_3();
 
             state._fsp--;
@@ -5694,21 +5725,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1_2__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2009:1: rule__RichString__Group_1_2__0 : rule__RichString__Group_1_2__0__Impl rule__RichString__Group_1_2__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2016:1: rule__RichString__Group_1_2__0 : rule__RichString__Group_1_2__0__Impl rule__RichString__Group_1_2__1 ;
     public final void rule__RichString__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2013:1: ( rule__RichString__Group_1_2__0__Impl rule__RichString__Group_1_2__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2014:2: rule__RichString__Group_1_2__0__Impl rule__RichString__Group_1_2__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2020:1: ( rule__RichString__Group_1_2__0__Impl rule__RichString__Group_1_2__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2021:2: rule__RichString__Group_1_2__0__Impl rule__RichString__Group_1_2__1
             {
-            pushFollow(FOLLOW_rule__RichString__Group_1_2__0__Impl_in_rule__RichString__Group_1_2__04017);
+            pushFollow(FOLLOW_rule__RichString__Group_1_2__0__Impl_in_rule__RichString__Group_1_2__04038);
             rule__RichString__Group_1_2__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__RichString__Group_1_2__1_in_rule__RichString__Group_1_2__04020);
+            pushFollow(FOLLOW_rule__RichString__Group_1_2__1_in_rule__RichString__Group_1_2__04041);
             rule__RichString__Group_1_2__1();
 
             state._fsp--;
@@ -5732,25 +5763,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1_2__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2021:1: rule__RichString__Group_1_2__0__Impl : ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2028:1: rule__RichString__Group_1_2__0__Impl : ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) ) ;
     public final void rule__RichString__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2025:1: ( ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2026:1: ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2032:1: ( ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2033:1: ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2026:1: ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2027:1: ( rule__RichString__ExpressionsAssignment_1_2_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2033:1: ( ( rule__RichString__ExpressionsAssignment_1_2_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2034:1: ( rule__RichString__ExpressionsAssignment_1_2_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsAssignment_1_2_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2028:1: ( rule__RichString__ExpressionsAssignment_1_2_0 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2028:2: rule__RichString__ExpressionsAssignment_1_2_0
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2035:1: ( rule__RichString__ExpressionsAssignment_1_2_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2035:2: rule__RichString__ExpressionsAssignment_1_2_0
             {
-            pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_2_0_in_rule__RichString__Group_1_2__0__Impl4047);
+            pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_2_0_in_rule__RichString__Group_1_2__0__Impl4068);
             rule__RichString__ExpressionsAssignment_1_2_0();
 
             state._fsp--;
@@ -5783,16 +5814,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1_2__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2038:1: rule__RichString__Group_1_2__1 : rule__RichString__Group_1_2__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2045:1: rule__RichString__Group_1_2__1 : rule__RichString__Group_1_2__1__Impl ;
     public final void rule__RichString__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2042:1: ( rule__RichString__Group_1_2__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2043:2: rule__RichString__Group_1_2__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2049:1: ( rule__RichString__Group_1_2__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2050:2: rule__RichString__Group_1_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__RichString__Group_1_2__1__Impl_in_rule__RichString__Group_1_2__14077);
+            pushFollow(FOLLOW_rule__RichString__Group_1_2__1__Impl_in_rule__RichString__Group_1_2__14098);
             rule__RichString__Group_1_2__1__Impl();
 
             state._fsp--;
@@ -5816,22 +5847,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__Group_1_2__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2049:1: rule__RichString__Group_1_2__1__Impl : ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2056:1: rule__RichString__Group_1_2__1__Impl : ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? ) ;
     public final void rule__RichString__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2053:1: ( ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2054:1: ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2060:1: ( ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2061:1: ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2054:1: ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2055:1: ( rule__RichString__ExpressionsAssignment_1_2_1 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2061:1: ( ( rule__RichString__ExpressionsAssignment_1_2_1 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2062:1: ( rule__RichString__ExpressionsAssignment_1_2_1 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsAssignment_1_2_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2056:1: ( rule__RichString__ExpressionsAssignment_1_2_1 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2063:1: ( rule__RichString__ExpressionsAssignment_1_2_1 )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -5840,9 +5871,9 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2056:2: rule__RichString__ExpressionsAssignment_1_2_1
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2063:2: rule__RichString__ExpressionsAssignment_1_2_1
                     {
-                    pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_2_1_in_rule__RichString__Group_1_2__1__Impl4104);
+                    pushFollow(FOLLOW_rule__RichString__ExpressionsAssignment_1_2_1_in_rule__RichString__Group_1_2__1__Impl4125);
                     rule__RichString__ExpressionsAssignment_1_2_1();
 
                     state._fsp--;
@@ -5878,21 +5909,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2070:1: rule__RichVarPart__Group__0 : rule__RichVarPart__Group__0__Impl rule__RichVarPart__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2077:1: rule__RichVarPart__Group__0 : rule__RichVarPart__Group__0__Impl rule__RichVarPart__Group__1 ;
     public final void rule__RichVarPart__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2074:1: ( rule__RichVarPart__Group__0__Impl rule__RichVarPart__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2075:2: rule__RichVarPart__Group__0__Impl rule__RichVarPart__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2081:1: ( rule__RichVarPart__Group__0__Impl rule__RichVarPart__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2082:2: rule__RichVarPart__Group__0__Impl rule__RichVarPart__Group__1
             {
-            pushFollow(FOLLOW_rule__RichVarPart__Group__0__Impl_in_rule__RichVarPart__Group__04139);
+            pushFollow(FOLLOW_rule__RichVarPart__Group__0__Impl_in_rule__RichVarPart__Group__04160);
             rule__RichVarPart__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__RichVarPart__Group__1_in_rule__RichVarPart__Group__04142);
+            pushFollow(FOLLOW_rule__RichVarPart__Group__1_in_rule__RichVarPart__Group__04163);
             rule__RichVarPart__Group__1();
 
             state._fsp--;
@@ -5916,25 +5947,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2082:1: rule__RichVarPart__Group__0__Impl : ( ( rule__RichVarPart__KeyAssignment_0 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2089:1: rule__RichVarPart__Group__0__Impl : ( ( rule__RichVarPart__KeyAssignment_0 ) ) ;
     public final void rule__RichVarPart__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2086:1: ( ( ( rule__RichVarPart__KeyAssignment_0 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2087:1: ( ( rule__RichVarPart__KeyAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2093:1: ( ( ( rule__RichVarPart__KeyAssignment_0 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2094:1: ( ( rule__RichVarPart__KeyAssignment_0 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2087:1: ( ( rule__RichVarPart__KeyAssignment_0 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2088:1: ( rule__RichVarPart__KeyAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2094:1: ( ( rule__RichVarPart__KeyAssignment_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2095:1: ( rule__RichVarPart__KeyAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getKeyAssignment_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2089:1: ( rule__RichVarPart__KeyAssignment_0 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2089:2: rule__RichVarPart__KeyAssignment_0
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2096:1: ( rule__RichVarPart__KeyAssignment_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2096:2: rule__RichVarPart__KeyAssignment_0
             {
-            pushFollow(FOLLOW_rule__RichVarPart__KeyAssignment_0_in_rule__RichVarPart__Group__0__Impl4169);
+            pushFollow(FOLLOW_rule__RichVarPart__KeyAssignment_0_in_rule__RichVarPart__Group__0__Impl4190);
             rule__RichVarPart__KeyAssignment_0();
 
             state._fsp--;
@@ -5967,16 +5998,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2099:1: rule__RichVarPart__Group__1 : rule__RichVarPart__Group__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2106:1: rule__RichVarPart__Group__1 : rule__RichVarPart__Group__1__Impl ;
     public final void rule__RichVarPart__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2103:1: ( rule__RichVarPart__Group__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2104:2: rule__RichVarPart__Group__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2110:1: ( rule__RichVarPart__Group__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2111:2: rule__RichVarPart__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__RichVarPart__Group__1__Impl_in_rule__RichVarPart__Group__14199);
+            pushFollow(FOLLOW_rule__RichVarPart__Group__1__Impl_in_rule__RichVarPart__Group__14220);
             rule__RichVarPart__Group__1__Impl();
 
             state._fsp--;
@@ -6000,22 +6031,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2110:1: rule__RichVarPart__Group__1__Impl : ( ( rule__RichVarPart__Group_1__0 )? ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2117:1: rule__RichVarPart__Group__1__Impl : ( ( rule__RichVarPart__Group_1__0 )? ) ;
     public final void rule__RichVarPart__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2114:1: ( ( ( rule__RichVarPart__Group_1__0 )? ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2115:1: ( ( rule__RichVarPart__Group_1__0 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2121:1: ( ( ( rule__RichVarPart__Group_1__0 )? ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2122:1: ( ( rule__RichVarPart__Group_1__0 )? )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2115:1: ( ( rule__RichVarPart__Group_1__0 )? )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2116:1: ( rule__RichVarPart__Group_1__0 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2122:1: ( ( rule__RichVarPart__Group_1__0 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2123:1: ( rule__RichVarPart__Group_1__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getGroup_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2117:1: ( rule__RichVarPart__Group_1__0 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2124:1: ( rule__RichVarPart__Group_1__0 )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -6024,9 +6055,9 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2117:2: rule__RichVarPart__Group_1__0
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2124:2: rule__RichVarPart__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__RichVarPart__Group_1__0_in_rule__RichVarPart__Group__1__Impl4226);
+                    pushFollow(FOLLOW_rule__RichVarPart__Group_1__0_in_rule__RichVarPart__Group__1__Impl4247);
                     rule__RichVarPart__Group_1__0();
 
                     state._fsp--;
@@ -6062,21 +6093,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group_1__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2131:1: rule__RichVarPart__Group_1__0 : rule__RichVarPart__Group_1__0__Impl rule__RichVarPart__Group_1__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2138:1: rule__RichVarPart__Group_1__0 : rule__RichVarPart__Group_1__0__Impl rule__RichVarPart__Group_1__1 ;
     public final void rule__RichVarPart__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2135:1: ( rule__RichVarPart__Group_1__0__Impl rule__RichVarPart__Group_1__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2136:2: rule__RichVarPart__Group_1__0__Impl rule__RichVarPart__Group_1__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2142:1: ( rule__RichVarPart__Group_1__0__Impl rule__RichVarPart__Group_1__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2143:2: rule__RichVarPart__Group_1__0__Impl rule__RichVarPart__Group_1__1
             {
-            pushFollow(FOLLOW_rule__RichVarPart__Group_1__0__Impl_in_rule__RichVarPart__Group_1__04261);
+            pushFollow(FOLLOW_rule__RichVarPart__Group_1__0__Impl_in_rule__RichVarPart__Group_1__04282);
             rule__RichVarPart__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__RichVarPart__Group_1__1_in_rule__RichVarPart__Group_1__04264);
+            pushFollow(FOLLOW_rule__RichVarPart__Group_1__1_in_rule__RichVarPart__Group_1__04285);
             rule__RichVarPart__Group_1__1();
 
             state._fsp--;
@@ -6100,25 +6131,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group_1__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2143:1: rule__RichVarPart__Group_1__0__Impl : ( ( rule__RichVarPart__FormatAssignment_1_0 ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2150:1: rule__RichVarPart__Group_1__0__Impl : ( ( rule__RichVarPart__FormatAssignment_1_0 ) ) ;
     public final void rule__RichVarPart__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2147:1: ( ( ( rule__RichVarPart__FormatAssignment_1_0 ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2148:1: ( ( rule__RichVarPart__FormatAssignment_1_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2154:1: ( ( ( rule__RichVarPart__FormatAssignment_1_0 ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2155:1: ( ( rule__RichVarPart__FormatAssignment_1_0 ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2148:1: ( ( rule__RichVarPart__FormatAssignment_1_0 ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2149:1: ( rule__RichVarPart__FormatAssignment_1_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2155:1: ( ( rule__RichVarPart__FormatAssignment_1_0 ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2156:1: ( rule__RichVarPart__FormatAssignment_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getFormatAssignment_1_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2150:1: ( rule__RichVarPart__FormatAssignment_1_0 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2150:2: rule__RichVarPart__FormatAssignment_1_0
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2157:1: ( rule__RichVarPart__FormatAssignment_1_0 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2157:2: rule__RichVarPart__FormatAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__RichVarPart__FormatAssignment_1_0_in_rule__RichVarPart__Group_1__0__Impl4291);
+            pushFollow(FOLLOW_rule__RichVarPart__FormatAssignment_1_0_in_rule__RichVarPart__Group_1__0__Impl4312);
             rule__RichVarPart__FormatAssignment_1_0();
 
             state._fsp--;
@@ -6151,16 +6182,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group_1__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2160:1: rule__RichVarPart__Group_1__1 : rule__RichVarPart__Group_1__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2167:1: rule__RichVarPart__Group_1__1 : rule__RichVarPart__Group_1__1__Impl ;
     public final void rule__RichVarPart__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2164:1: ( rule__RichVarPart__Group_1__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2165:2: rule__RichVarPart__Group_1__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2171:1: ( rule__RichVarPart__Group_1__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2172:2: rule__RichVarPart__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__RichVarPart__Group_1__1__Impl_in_rule__RichVarPart__Group_1__14321);
+            pushFollow(FOLLOW_rule__RichVarPart__Group_1__1__Impl_in_rule__RichVarPart__Group_1__14342);
             rule__RichVarPart__Group_1__1__Impl();
 
             state._fsp--;
@@ -6184,22 +6215,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__Group_1__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2171:1: rule__RichVarPart__Group_1__1__Impl : ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2178:1: rule__RichVarPart__Group_1__1__Impl : ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? ) ;
     public final void rule__RichVarPart__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2175:1: ( ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2176:1: ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2182:1: ( ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2183:1: ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2176:1: ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2177:1: ( rule__RichVarPart__FormatterClassAssignment_1_1 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2183:1: ( ( rule__RichVarPart__FormatterClassAssignment_1_1 )? )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2184:1: ( rule__RichVarPart__FormatterClassAssignment_1_1 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getFormatterClassAssignment_1_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2178:1: ( rule__RichVarPart__FormatterClassAssignment_1_1 )?
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2185:1: ( rule__RichVarPart__FormatterClassAssignment_1_1 )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -6208,9 +6239,9 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2178:2: rule__RichVarPart__FormatterClassAssignment_1_1
+                    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2185:2: rule__RichVarPart__FormatterClassAssignment_1_1
                     {
-                    pushFollow(FOLLOW_rule__RichVarPart__FormatterClassAssignment_1_1_in_rule__RichVarPart__Group_1__1__Impl4348);
+                    pushFollow(FOLLOW_rule__RichVarPart__FormatterClassAssignment_1_1_in_rule__RichVarPart__Group_1__1__Impl4369);
                     rule__RichVarPart__FormatterClassAssignment_1_1();
 
                     state._fsp--;
@@ -6246,21 +6277,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2192:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2199:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2196:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2197:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2203:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2204:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04383);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04404);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04386);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04407);
             rule__QualifiedName__Group__1();
 
             state._fsp--;
@@ -6284,22 +6315,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2204:1: rule__QualifiedName__Group__0__Impl : ( ruleValidID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2211:1: rule__QualifiedName__Group__0__Impl : ( ruleValidID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2208:1: ( ( ruleValidID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2209:1: ( ruleValidID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2215:1: ( ( ruleValidID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2216:1: ( ruleValidID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2209:1: ( ruleValidID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2210:1: ruleValidID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2216:1: ( ruleValidID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2217:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_0()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__QualifiedName__Group__0__Impl4413);
+            pushFollow(FOLLOW_ruleValidID_in_rule__QualifiedName__Group__0__Impl4434);
             ruleValidID();
 
             state._fsp--;
@@ -6329,16 +6360,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2221:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2228:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2225:1: ( rule__QualifiedName__Group__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2226:2: rule__QualifiedName__Group__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2232:1: ( rule__QualifiedName__Group__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2233:2: rule__QualifiedName__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14442);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14463);
             rule__QualifiedName__Group__1__Impl();
 
             state._fsp--;
@@ -6362,37 +6393,37 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2232:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2239:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2236:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2237:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2243:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2244:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2237:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2238:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2244:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2245:1: ( rule__QualifiedName__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2239:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2246:1: ( rule__QualifiedName__Group_1__0 )*
             loop16:
             do {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==31) ) {
+                if ( (LA16_0==32) ) {
                     alt16=1;
                 }
 
 
                 switch (alt16) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2239:2: rule__QualifiedName__Group_1__0
+            	    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2246:2: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4469);
+            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4490);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -6431,21 +6462,21 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2253:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2260:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2257:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2258:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2264:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2265:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04504);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04525);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04507);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04528);
             rule__QualifiedName__Group_1__1();
 
             state._fsp--;
@@ -6469,25 +6500,25 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2265:1: rule__QualifiedName__Group_1__0__Impl : ( ( '.' ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2272:1: rule__QualifiedName__Group_1__0__Impl : ( ( '.' ) ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2269:1: ( ( ( '.' ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2270:1: ( ( '.' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2276:1: ( ( ( '.' ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2277:1: ( ( '.' ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2270:1: ( ( '.' ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2271:1: ( '.' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2277:1: ( ( '.' ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2278:1: ( '.' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2272:1: ( '.' )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2273:2: '.'
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2279:1: ( '.' )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2280:2: '.'
             {
-            match(input,31,FOLLOW_31_in_rule__QualifiedName__Group_1__0__Impl4536); if (state.failed) return ;
+            match(input,32,FOLLOW_32_in_rule__QualifiedName__Group_1__0__Impl4557); if (state.failed) return ;
 
             }
 
@@ -6516,16 +6547,16 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2284:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2291:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2288:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2289:2: rule__QualifiedName__Group_1__1__Impl
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2295:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2296:2: rule__QualifiedName__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14568);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14589);
             rule__QualifiedName__Group_1__1__Impl();
 
             state._fsp--;
@@ -6549,22 +6580,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2295:1: rule__QualifiedName__Group_1__1__Impl : ( ruleValidID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2302:1: rule__QualifiedName__Group_1__1__Impl : ( ruleValidID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2299:1: ( ( ruleValidID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2300:1: ( ruleValidID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2306:1: ( ( ruleValidID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2307:1: ( ruleValidID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2300:1: ( ruleValidID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2301:1: ruleValidID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2307:1: ( ruleValidID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2308:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_1_1()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_rule__QualifiedName__Group_1__1__Impl4595);
+            pushFollow(FOLLOW_ruleValidID_in_rule__QualifiedName__Group_1__1__Impl4616);
             ruleValidID();
 
             state._fsp--;
@@ -6594,22 +6625,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__PackageAssignment_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2317:1: rule__NLS__PackageAssignment_0 : ( rulePackageDeclaration ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2324:1: rule__NLS__PackageAssignment_0 : ( rulePackageDeclaration ) ;
     public final void rule__NLS__PackageAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2321:1: ( ( rulePackageDeclaration ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2322:1: ( rulePackageDeclaration )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2328:1: ( ( rulePackageDeclaration ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2329:1: ( rulePackageDeclaration )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2322:1: ( rulePackageDeclaration )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2323:1: rulePackageDeclaration
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2329:1: ( rulePackageDeclaration )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2330:1: rulePackageDeclaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSAccess().getPackagePackageDeclarationParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_rulePackageDeclaration_in_rule__NLS__PackageAssignment_04633);
+            pushFollow(FOLLOW_rulePackageDeclaration_in_rule__NLS__PackageAssignment_04654);
             rulePackageDeclaration();
 
             state._fsp--;
@@ -6639,22 +6670,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLS__BundleListAssignment_2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2332:1: rule__NLS__BundleListAssignment_2 : ( ruleNLSBundle ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2339:1: rule__NLS__BundleListAssignment_2 : ( ruleNLSBundle ) ;
     public final void rule__NLS__BundleListAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2336:1: ( ( ruleNLSBundle ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2337:1: ( ruleNLSBundle )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2343:1: ( ( ruleNLSBundle ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2344:1: ( ruleNLSBundle )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2337:1: ( ruleNLSBundle )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2338:1: ruleNLSBundle
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2344:1: ( ruleNLSBundle )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2345:1: ruleNLSBundle
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSAccess().getBundleListNLSBundleParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleNLSBundle_in_rule__NLS__BundleListAssignment_24664);
+            pushFollow(FOLLOW_ruleNLSBundle_in_rule__NLS__BundleListAssignment_24685);
             ruleNLSBundle();
 
             state._fsp--;
@@ -6684,22 +6715,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PackageDeclaration__NameAssignment_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2347:1: rule__PackageDeclaration__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2354:1: rule__PackageDeclaration__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__PackageDeclaration__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2351:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2352:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2358:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2359:1: ( ruleQualifiedName )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2352:1: ( ruleQualifiedName )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2353:1: ruleQualifiedName
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2359:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2360:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_14695);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_14716);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6729,22 +6760,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__NameAssignment_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2362:1: rule__NLSBundle__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2369:1: rule__NLSBundle__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__NLSBundle__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2366:1: ( ( RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2367:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2373:1: ( ( RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2374:1: ( RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2367:1: ( RULE_ID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2368:1: RULE_ID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2374:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2375:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__NLSBundle__NameAssignment_14726); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__NLSBundle__NameAssignment_14747); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSBundleAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -6770,22 +6801,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__LangAssignment_3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2377:1: rule__NLSBundle__LangAssignment_3 : ( RULE_ID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2384:1: rule__NLSBundle__LangAssignment_3 : ( RULE_ID ) ;
     public final void rule__NLSBundle__LangAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2381:1: ( ( RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2382:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2388:1: ( ( RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2389:1: ( RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2382:1: ( RULE_ID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2383:1: RULE_ID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2389:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2390:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getLangIDTerminalRuleCall_3_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__NLSBundle__LangAssignment_34757); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__NLSBundle__LangAssignment_34778); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSBundleAccess().getLangIDTerminalRuleCall_3_0()); 
             }
@@ -6811,22 +6842,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__FormatterListAssignment_5"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2392:1: rule__NLSBundle__FormatterListAssignment_5 : ( ruleNLSFormatter ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2399:1: rule__NLSBundle__FormatterListAssignment_5 : ( ruleNLSFormatter ) ;
     public final void rule__NLSBundle__FormatterListAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2396:1: ( ( ruleNLSFormatter ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2397:1: ( ruleNLSFormatter )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2403:1: ( ( ruleNLSFormatter ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2404:1: ( ruleNLSFormatter )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2397:1: ( ruleNLSFormatter )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2398:1: ruleNLSFormatter
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2404:1: ( ruleNLSFormatter )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2405:1: ruleNLSFormatter
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getFormatterListNLSFormatterParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_ruleNLSFormatter_in_rule__NLSBundle__FormatterListAssignment_54788);
+            pushFollow(FOLLOW_ruleNLSFormatter_in_rule__NLSBundle__FormatterListAssignment_54809);
             ruleNLSFormatter();
 
             state._fsp--;
@@ -6856,22 +6887,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSBundle__MessageEntryListAssignment_6"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2407:1: rule__NLSBundle__MessageEntryListAssignment_6 : ( ruleMessageEntry ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2414:1: rule__NLSBundle__MessageEntryListAssignment_6 : ( ruleMessageEntry ) ;
     public final void rule__NLSBundle__MessageEntryListAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2411:1: ( ( ruleMessageEntry ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2412:1: ( ruleMessageEntry )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2418:1: ( ( ruleMessageEntry ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2419:1: ( ruleMessageEntry )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2412:1: ( ruleMessageEntry )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2413:1: ruleMessageEntry
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2419:1: ( ruleMessageEntry )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2420:1: ruleMessageEntry
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSBundleAccess().getMessageEntryListMessageEntryParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleMessageEntry_in_rule__NLSBundle__MessageEntryListAssignment_64819);
+            pushFollow(FOLLOW_ruleMessageEntry_in_rule__NLSBundle__MessageEntryListAssignment_64840);
             ruleMessageEntry();
 
             state._fsp--;
@@ -6901,22 +6932,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__NameAssignment_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2422:1: rule__NLSFormatter__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2429:1: rule__NLSFormatter__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__NLSFormatter__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2426:1: ( ( RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2427:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2433:1: ( ( RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2434:1: ( RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2427:1: ( RULE_ID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2428:1: RULE_ID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2434:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2435:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSFormatterAccess().getNameIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__NLSFormatter__NameAssignment_14850); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__NLSFormatter__NameAssignment_14871); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNLSFormatterAccess().getNameIDTerminalRuleCall_1_0()); 
             }
@@ -6942,22 +6973,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NLSFormatter__ClassRefAssignment_2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2437:1: rule__NLSFormatter__ClassRefAssignment_2 : ( ruleQualifiedName ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2444:1: rule__NLSFormatter__ClassRefAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__NLSFormatter__ClassRefAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2441:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2442:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2448:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2449:1: ( ruleQualifiedName )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2442:1: ( ruleQualifiedName )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2443:1: ruleQualifiedName
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2449:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2450:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNLSFormatterAccess().getClassRefQualifiedNameParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__NLSFormatter__ClassRefAssignment_24881);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__NLSFormatter__ClassRefAssignment_24902);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6987,22 +7018,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__NameAssignment_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2452:1: rule__MessageEntry__NameAssignment_0 : ( RULE_ID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2459:1: rule__MessageEntry__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__MessageEntry__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2456:1: ( ( RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2457:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2463:1: ( ( RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2464:1: ( RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2457:1: ( RULE_ID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2458:1: RULE_ID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2464:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2465:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getNameIDTerminalRuleCall_0_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MessageEntry__NameAssignment_04912); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MessageEntry__NameAssignment_04933); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageEntryAccess().getNameIDTerminalRuleCall_0_0()); 
             }
@@ -7028,22 +7059,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__ParamListAssignment_1_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2467:1: rule__MessageEntry__ParamListAssignment_1_1 : ( ruleMessageParam ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2474:1: rule__MessageEntry__ParamListAssignment_1_1 : ( ruleMessageParam ) ;
     public final void rule__MessageEntry__ParamListAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2471:1: ( ( ruleMessageParam ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2472:1: ( ruleMessageParam )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2478:1: ( ( ruleMessageParam ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2479:1: ( ruleMessageParam )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2472:1: ( ruleMessageParam )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2473:1: ruleMessageParam
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2479:1: ( ruleMessageParam )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2480:1: ruleMessageParam
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getParamListMessageParamParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_14943);
+            pushFollow(FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_14964);
             ruleMessageParam();
 
             state._fsp--;
@@ -7073,22 +7104,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__ParamListAssignment_1_2_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2482:1: rule__MessageEntry__ParamListAssignment_1_2_1 : ( ruleMessageParam ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2489:1: rule__MessageEntry__ParamListAssignment_1_2_1 : ( ruleMessageParam ) ;
     public final void rule__MessageEntry__ParamListAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2486:1: ( ( ruleMessageParam ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2487:1: ( ruleMessageParam )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2493:1: ( ( ruleMessageParam ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2494:1: ( ruleMessageParam )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2487:1: ( ruleMessageParam )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2488:1: ruleMessageParam
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2494:1: ( ruleMessageParam )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2495:1: ruleMessageParam
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getParamListMessageParamParserRuleCall_1_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_2_14974);
+            pushFollow(FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_2_14995);
             ruleMessageParam();
 
             state._fsp--;
@@ -7118,22 +7149,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__MessageListAssignment_3_0_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2497:1: rule__MessageEntry__MessageListAssignment_3_0_1 : ( ruleMessage ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2504:1: rule__MessageEntry__MessageListAssignment_3_0_1 : ( ruleMessage ) ;
     public final void rule__MessageEntry__MessageListAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2501:1: ( ( ruleMessage ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2502:1: ( ruleMessage )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2508:1: ( ( ruleMessage ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2509:1: ( ruleMessage )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2502:1: ( ruleMessage )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2503:1: ruleMessage
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2509:1: ( ruleMessage )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2510:1: ruleMessage
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getMessageListMessageParserRuleCall_3_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_15005);
+            pushFollow(FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_15026);
             ruleMessage();
 
             state._fsp--;
@@ -7163,22 +7194,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__MessageListAssignment_3_0_2_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2512:1: rule__MessageEntry__MessageListAssignment_3_0_2_1 : ( ruleMessage ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2519:1: rule__MessageEntry__MessageListAssignment_3_0_2_1 : ( ruleMessage ) ;
     public final void rule__MessageEntry__MessageListAssignment_3_0_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2516:1: ( ( ruleMessage ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2517:1: ( ruleMessage )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2523:1: ( ( ruleMessage ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2524:1: ( ruleMessage )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2517:1: ( ruleMessage )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2518:1: ruleMessage
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2524:1: ( ruleMessage )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2525:1: ruleMessage
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getMessageListMessageParserRuleCall_3_0_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_2_15036);
+            pushFollow(FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_2_15057);
             ruleMessage();
 
             state._fsp--;
@@ -7208,28 +7239,28 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageEntry__EntryRefAssignment_3_1_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2527:1: rule__MessageEntry__EntryRefAssignment_3_1_1 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2534:1: rule__MessageEntry__EntryRefAssignment_3_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__MessageEntry__EntryRefAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2531:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2532:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2538:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2539:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2532:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2533:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2539:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2540:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getEntryRefMessageEntryCrossReference_3_1_1_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2534:1: ( ruleQualifiedName )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2535:1: ruleQualifiedName
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2541:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2542:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageEntryAccess().getEntryRefMessageEntryQualifiedNameParserRuleCall_3_1_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__MessageEntry__EntryRefAssignment_3_1_15071);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__MessageEntry__EntryRefAssignment_3_1_15092);
             ruleQualifiedName();
 
             state._fsp--;
@@ -7265,22 +7296,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageParam__PredefinedAssignment_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2546:1: rule__MessageParam__PredefinedAssignment_0 : ( rulePredefinedTypes ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2553:1: rule__MessageParam__PredefinedAssignment_0 : ( rulePredefinedTypes ) ;
     public final void rule__MessageParam__PredefinedAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2550:1: ( ( rulePredefinedTypes ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2551:1: ( rulePredefinedTypes )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2557:1: ( ( rulePredefinedTypes ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2558:1: ( rulePredefinedTypes )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2551:1: ( rulePredefinedTypes )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2552:1: rulePredefinedTypes
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2558:1: ( rulePredefinedTypes )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2559:1: rulePredefinedTypes
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageParamAccess().getPredefinedPredefinedTypesEnumRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_rulePredefinedTypes_in_rule__MessageParam__PredefinedAssignment_05106);
+            pushFollow(FOLLOW_rulePredefinedTypes_in_rule__MessageParam__PredefinedAssignment_05127);
             rulePredefinedTypes();
 
             state._fsp--;
@@ -7310,22 +7341,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageParam__VarAssignment_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2561:1: rule__MessageParam__VarAssignment_1 : ( RULE_ID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2568:1: rule__MessageParam__VarAssignment_1 : ( RULE_ID ) ;
     public final void rule__MessageParam__VarAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2565:1: ( ( RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2566:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2572:1: ( ( RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2573:1: ( RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2566:1: ( RULE_ID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2567:1: RULE_ID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2573:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2574:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageParamAccess().getVarIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MessageParam__VarAssignment_15137); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MessageParam__VarAssignment_15158); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageParamAccess().getVarIDTerminalRuleCall_1_0()); 
             }
@@ -7351,22 +7382,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__NameAssignment_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2576:1: rule__Message__NameAssignment_0 : ( RULE_ID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2583:1: rule__Message__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Message__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2580:1: ( ( RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2581:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2587:1: ( ( RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2588:1: ( RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2581:1: ( RULE_ID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2582:1: RULE_ID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2588:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2589:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageAccess().getNameIDTerminalRuleCall_0_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Message__NameAssignment_05168); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Message__NameAssignment_05189); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getMessageAccess().getNameIDTerminalRuleCall_0_0()); 
             }
@@ -7392,22 +7423,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Message__MessageAssignment_2"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2591:1: rule__Message__MessageAssignment_2 : ( ruleRichString ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2598:1: rule__Message__MessageAssignment_2 : ( ruleRichString ) ;
     public final void rule__Message__MessageAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2595:1: ( ( ruleRichString ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2596:1: ( ruleRichString )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2602:1: ( ( ruleRichString ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2603:1: ( ruleRichString )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2596:1: ( ruleRichString )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2597:1: ruleRichString
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2603:1: ( ruleRichString )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2604:1: ruleRichString
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMessageAccess().getMessageRichStringParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleRichString_in_rule__Message__MessageAssignment_25199);
+            pushFollow(FOLLOW_ruleRichString_in_rule__Message__MessageAssignment_25220);
             ruleRichString();
 
             state._fsp--;
@@ -7437,22 +7468,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__ExpressionsAssignment_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2606:1: rule__RichString__ExpressionsAssignment_0 : ( ruleRichStringLiteral ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2613:1: rule__RichString__ExpressionsAssignment_0 : ( ruleRichStringLiteral ) ;
     public final void rule__RichString__ExpressionsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2610:1: ( ( ruleRichStringLiteral ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2611:1: ( ruleRichStringLiteral )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2617:1: ( ( ruleRichStringLiteral ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2618:1: ( ruleRichStringLiteral )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2611:1: ( ruleRichStringLiteral )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2612:1: ruleRichStringLiteral
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2618:1: ( ruleRichStringLiteral )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2619:1: ruleRichStringLiteral
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteral_in_rule__RichString__ExpressionsAssignment_05230);
+            pushFollow(FOLLOW_ruleRichStringLiteral_in_rule__RichString__ExpressionsAssignment_05251);
             ruleRichStringLiteral();
 
             state._fsp--;
@@ -7482,22 +7513,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__ExpressionsAssignment_1_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2621:1: rule__RichString__ExpressionsAssignment_1_0 : ( ruleRichStringLiteralStart ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2628:1: rule__RichString__ExpressionsAssignment_1_0 : ( ruleRichStringLiteralStart ) ;
     public final void rule__RichString__ExpressionsAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2625:1: ( ( ruleRichStringLiteralStart ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2626:1: ( ruleRichStringLiteralStart )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2632:1: ( ( ruleRichStringLiteralStart ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2633:1: ( ruleRichStringLiteralStart )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2626:1: ( ruleRichStringLiteralStart )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2627:1: ruleRichStringLiteralStart
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2633:1: ( ruleRichStringLiteralStart )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2634:1: ruleRichStringLiteralStart
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralStartParserRuleCall_1_0_0()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteralStart_in_rule__RichString__ExpressionsAssignment_1_05261);
+            pushFollow(FOLLOW_ruleRichStringLiteralStart_in_rule__RichString__ExpressionsAssignment_1_05282);
             ruleRichStringLiteralStart();
 
             state._fsp--;
@@ -7527,22 +7558,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__ExpressionsAssignment_1_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2636:1: rule__RichString__ExpressionsAssignment_1_1 : ( ruleRichVarPart ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2643:1: rule__RichString__ExpressionsAssignment_1_1 : ( ruleRichVarPart ) ;
     public final void rule__RichString__ExpressionsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2640:1: ( ( ruleRichVarPart ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2641:1: ( ruleRichVarPart )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2647:1: ( ( ruleRichVarPart ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2648:1: ( ruleRichVarPart )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2641:1: ( ruleRichVarPart )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2642:1: ruleRichVarPart
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2648:1: ( ruleRichVarPart )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2649:1: ruleRichVarPart
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsRichVarPartParserRuleCall_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_15292);
+            pushFollow(FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_15313);
             ruleRichVarPart();
 
             state._fsp--;
@@ -7572,22 +7603,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__ExpressionsAssignment_1_2_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2651:1: rule__RichString__ExpressionsAssignment_1_2_0 : ( ruleRichStringLiteralInbetween ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2658:1: rule__RichString__ExpressionsAssignment_1_2_0 : ( ruleRichStringLiteralInbetween ) ;
     public final void rule__RichString__ExpressionsAssignment_1_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2655:1: ( ( ruleRichStringLiteralInbetween ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2656:1: ( ruleRichStringLiteralInbetween )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2662:1: ( ( ruleRichStringLiteralInbetween ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2663:1: ( ruleRichStringLiteralInbetween )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2656:1: ( ruleRichStringLiteralInbetween )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2657:1: ruleRichStringLiteralInbetween
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2663:1: ( ruleRichStringLiteralInbetween )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2664:1: ruleRichStringLiteralInbetween
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralInbetweenParserRuleCall_1_2_0_0()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteralInbetween_in_rule__RichString__ExpressionsAssignment_1_2_05323);
+            pushFollow(FOLLOW_ruleRichStringLiteralInbetween_in_rule__RichString__ExpressionsAssignment_1_2_05344);
             ruleRichStringLiteralInbetween();
 
             state._fsp--;
@@ -7617,22 +7648,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__ExpressionsAssignment_1_2_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2666:1: rule__RichString__ExpressionsAssignment_1_2_1 : ( ruleRichVarPart ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2673:1: rule__RichString__ExpressionsAssignment_1_2_1 : ( ruleRichVarPart ) ;
     public final void rule__RichString__ExpressionsAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2670:1: ( ( ruleRichVarPart ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2671:1: ( ruleRichVarPart )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2677:1: ( ( ruleRichVarPart ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2678:1: ( ruleRichVarPart )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2671:1: ( ruleRichVarPart )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2672:1: ruleRichVarPart
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2678:1: ( ruleRichVarPart )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2679:1: ruleRichVarPart
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsRichVarPartParserRuleCall_1_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_2_15354);
+            pushFollow(FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_2_15375);
             ruleRichVarPart();
 
             state._fsp--;
@@ -7662,22 +7693,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichString__ExpressionsAssignment_1_3"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2681:1: rule__RichString__ExpressionsAssignment_1_3 : ( ruleRichStringLiteralEnd ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2688:1: rule__RichString__ExpressionsAssignment_1_3 : ( ruleRichStringLiteralEnd ) ;
     public final void rule__RichString__ExpressionsAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2685:1: ( ( ruleRichStringLiteralEnd ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2686:1: ( ruleRichStringLiteralEnd )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2692:1: ( ( ruleRichStringLiteralEnd ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2693:1: ( ruleRichStringLiteralEnd )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2686:1: ( ruleRichStringLiteralEnd )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2687:1: ruleRichStringLiteralEnd
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2693:1: ( ruleRichStringLiteralEnd )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2694:1: ruleRichStringLiteralEnd
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralEndParserRuleCall_1_3_0()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteralEnd_in_rule__RichString__ExpressionsAssignment_1_35385);
+            pushFollow(FOLLOW_ruleRichStringLiteralEnd_in_rule__RichString__ExpressionsAssignment_1_35406);
             ruleRichStringLiteralEnd();
 
             state._fsp--;
@@ -7707,22 +7738,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichStringLiteral__ValueAssignment"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2696:1: rule__RichStringLiteral__ValueAssignment : ( RULE_RICH_TEXT ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2703:1: rule__RichStringLiteral__ValueAssignment : ( RULE_RICH_TEXT ) ;
     public final void rule__RichStringLiteral__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2700:1: ( ( RULE_RICH_TEXT ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2701:1: ( RULE_RICH_TEXT )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2707:1: ( ( RULE_RICH_TEXT ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2708:1: ( RULE_RICH_TEXT )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2701:1: ( RULE_RICH_TEXT )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2702:1: RULE_RICH_TEXT
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2708:1: ( RULE_RICH_TEXT )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2709:1: RULE_RICH_TEXT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringLiteralAccess().getValueRICH_TEXTTerminalRuleCall_0()); 
             }
-            match(input,RULE_RICH_TEXT,FOLLOW_RULE_RICH_TEXT_in_rule__RichStringLiteral__ValueAssignment5416); if (state.failed) return ;
+            match(input,RULE_RICH_TEXT,FOLLOW_RULE_RICH_TEXT_in_rule__RichStringLiteral__ValueAssignment5437); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRichStringLiteralAccess().getValueRICH_TEXTTerminalRuleCall_0()); 
             }
@@ -7748,22 +7779,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichStringLiteralStart__ValueAssignment"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2711:1: rule__RichStringLiteralStart__ValueAssignment : ( RULE_RICH_TEXT_START ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2718:1: rule__RichStringLiteralStart__ValueAssignment : ( RULE_RICH_TEXT_START ) ;
     public final void rule__RichStringLiteralStart__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2715:1: ( ( RULE_RICH_TEXT_START ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2716:1: ( RULE_RICH_TEXT_START )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2722:1: ( ( RULE_RICH_TEXT_START ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2723:1: ( RULE_RICH_TEXT_START )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2716:1: ( RULE_RICH_TEXT_START )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2717:1: RULE_RICH_TEXT_START
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2723:1: ( RULE_RICH_TEXT_START )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2724:1: RULE_RICH_TEXT_START
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringLiteralStartAccess().getValueRICH_TEXT_STARTTerminalRuleCall_0()); 
             }
-            match(input,RULE_RICH_TEXT_START,FOLLOW_RULE_RICH_TEXT_START_in_rule__RichStringLiteralStart__ValueAssignment5447); if (state.failed) return ;
+            match(input,RULE_RICH_TEXT_START,FOLLOW_RULE_RICH_TEXT_START_in_rule__RichStringLiteralStart__ValueAssignment5468); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRichStringLiteralStartAccess().getValueRICH_TEXT_STARTTerminalRuleCall_0()); 
             }
@@ -7789,22 +7820,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichStringLiteralEnd__ValueAssignment"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2726:1: rule__RichStringLiteralEnd__ValueAssignment : ( RULE_RICH_TEXT_END ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2733:1: rule__RichStringLiteralEnd__ValueAssignment : ( RULE_RICH_TEXT_END ) ;
     public final void rule__RichStringLiteralEnd__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2730:1: ( ( RULE_RICH_TEXT_END ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2731:1: ( RULE_RICH_TEXT_END )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2737:1: ( ( RULE_RICH_TEXT_END ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2738:1: ( RULE_RICH_TEXT_END )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2731:1: ( RULE_RICH_TEXT_END )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2732:1: RULE_RICH_TEXT_END
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2738:1: ( RULE_RICH_TEXT_END )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2739:1: RULE_RICH_TEXT_END
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringLiteralEndAccess().getValueRICH_TEXT_ENDTerminalRuleCall_0()); 
             }
-            match(input,RULE_RICH_TEXT_END,FOLLOW_RULE_RICH_TEXT_END_in_rule__RichStringLiteralEnd__ValueAssignment5478); if (state.failed) return ;
+            match(input,RULE_RICH_TEXT_END,FOLLOW_RULE_RICH_TEXT_END_in_rule__RichStringLiteralEnd__ValueAssignment5499); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRichStringLiteralEndAccess().getValueRICH_TEXT_ENDTerminalRuleCall_0()); 
             }
@@ -7830,22 +7861,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichStringLiteralInbetween__ValueAssignment"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2741:1: rule__RichStringLiteralInbetween__ValueAssignment : ( RULE_RICH_TEXT_INBETWEEN ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2748:1: rule__RichStringLiteralInbetween__ValueAssignment : ( RULE_RICH_TEXT_INBETWEEN ) ;
     public final void rule__RichStringLiteralInbetween__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2745:1: ( ( RULE_RICH_TEXT_INBETWEEN ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2746:1: ( RULE_RICH_TEXT_INBETWEEN )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2752:1: ( ( RULE_RICH_TEXT_INBETWEEN ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2753:1: ( RULE_RICH_TEXT_INBETWEEN )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2746:1: ( RULE_RICH_TEXT_INBETWEEN )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2747:1: RULE_RICH_TEXT_INBETWEEN
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2753:1: ( RULE_RICH_TEXT_INBETWEEN )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2754:1: RULE_RICH_TEXT_INBETWEEN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichStringLiteralInbetweenAccess().getValueRICH_TEXT_INBETWEENTerminalRuleCall_0()); 
             }
-            match(input,RULE_RICH_TEXT_INBETWEEN,FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_rule__RichStringLiteralInbetween__ValueAssignment5509); if (state.failed) return ;
+            match(input,RULE_RICH_TEXT_INBETWEEN,FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_rule__RichStringLiteralInbetween__ValueAssignment5530); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRichStringLiteralInbetweenAccess().getValueRICH_TEXT_INBETWEENTerminalRuleCall_0()); 
             }
@@ -7871,22 +7902,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__KeyAssignment_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2756:1: rule__RichVarPart__KeyAssignment_0 : ( RULE_ID ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2763:1: rule__RichVarPart__KeyAssignment_0 : ( RULE_ID ) ;
     public final void rule__RichVarPart__KeyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2760:1: ( ( RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2761:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2767:1: ( ( RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2768:1: ( RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2761:1: ( RULE_ID )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2762:1: RULE_ID
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2768:1: ( RULE_ID )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2769:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getKeyIDTerminalRuleCall_0_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RichVarPart__KeyAssignment_05540); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RichVarPart__KeyAssignment_05561); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRichVarPartAccess().getKeyIDTerminalRuleCall_0_0()); 
             }
@@ -7912,22 +7943,22 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__FormatAssignment_1_0"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2771:1: rule__RichVarPart__FormatAssignment_1_0 : ( RULE_STRING ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2778:1: rule__RichVarPart__FormatAssignment_1_0 : ( RULE_STRING ) ;
     public final void rule__RichVarPart__FormatAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2775:1: ( ( RULE_STRING ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2776:1: ( RULE_STRING )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2782:1: ( ( RULE_STRING ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2783:1: ( RULE_STRING )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2776:1: ( RULE_STRING )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2777:1: RULE_STRING
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2783:1: ( RULE_STRING )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2784:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getFormatSTRINGTerminalRuleCall_1_0_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__RichVarPart__FormatAssignment_1_05571); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__RichVarPart__FormatAssignment_1_05592); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getRichVarPartAccess().getFormatSTRINGTerminalRuleCall_1_0_0()); 
             }
@@ -7953,28 +7984,28 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RichVarPart__FormatterClassAssignment_1_1"
-    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2786:1: rule__RichVarPart__FormatterClassAssignment_1_1 : ( ( ruleQualifiedName ) ) ;
+    // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2793:1: rule__RichVarPart__FormatterClassAssignment_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__RichVarPart__FormatterClassAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2790:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2791:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2797:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2798:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2791:1: ( ( ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2792:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2798:1: ( ( ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2799:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getFormatterClassNLSFormatterCrossReference_1_1_0()); 
             }
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2793:1: ( ruleQualifiedName )
-            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2794:1: ruleQualifiedName
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2800:1: ( ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n.ui/src-gen/org/eclipse/fx/ide/l10n/ui/contentassist/antlr/internal/InternalNLSDsl.g:2801:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRichVarPartAccess().getFormatterClassNLSFormatterQualifiedNameParserRuleCall_1_1_0_1()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__RichVarPart__FormatterClassAssignment_1_15606);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__RichVarPart__FormatterClassAssignment_1_15627);
             ruleQualifiedName();
 
             state._fsp--;
@@ -8066,186 +8097,187 @@ public class InternalNLSDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_16_in_rule__PredefinedTypes__Alternatives1114 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_rule__PredefinedTypes__Alternatives1135 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_rule__PredefinedTypes__Alternatives1156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLS__Group__0__Impl_in_rule__NLS__Group__01189 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__NLS__Group__1_in_rule__NLS__Group__01192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLS__PackageAssignment_0_in_rule__NLS__Group__0__Impl1219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLS__Group__1__Impl_in_rule__NLS__Group__11250 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__NLS__Group__2_in_rule__NLS__Group__11253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__NLS__Group__1__Impl1281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLS__Group__2__Impl_in_rule__NLS__Group__21312 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__NLS__Group__3_in_rule__NLS__Group__21315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1344 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1356 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_rule__NLS__Group__3__Impl_in_rule__NLS__Group__31389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__NLS__Group__3__Impl1417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__0__Impl_in_rule__PackageDeclaration__Group__01456 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__1_in_rule__PackageDeclaration__Group__01459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__PackageDeclaration__Group__0__Impl1487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__1__Impl_in_rule__PackageDeclaration__Group__11518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PackageDeclaration__NameAssignment_1_in_rule__PackageDeclaration__Group__1__Impl1545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__0__Impl_in_rule__NLSBundle__Group__01579 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__1_in_rule__NLSBundle__Group__01582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__NLSBundle__Group__0__Impl1610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__1__Impl_in_rule__NLSBundle__Group__11641 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__2_in_rule__NLSBundle__Group__11644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__NameAssignment_1_in_rule__NLSBundle__Group__1__Impl1671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__2__Impl_in_rule__NLSBundle__Group__21701 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__3_in_rule__NLSBundle__Group__21704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__NLSBundle__Group__2__Impl1732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__3__Impl_in_rule__NLSBundle__Group__31763 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__4_in_rule__NLSBundle__Group__31766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__LangAssignment_3_in_rule__NLSBundle__Group__3__Impl1793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__4__Impl_in_rule__NLSBundle__Group__41823 = new BitSet(new long[]{0x0000000001000010L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__5_in_rule__NLSBundle__Group__41826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__NLSBundle__Group__4__Impl1854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__5__Impl_in_rule__NLSBundle__Group__51885 = new BitSet(new long[]{0x0000000001000010L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__6_in_rule__NLSBundle__Group__51888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__FormatterListAssignment_5_in_rule__NLSBundle__Group__5__Impl1915 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__6__Impl_in_rule__NLSBundle__Group__61946 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__7_in_rule__NLSBundle__Group__61949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl1978 = new BitSet(new long[]{0x0000000001000012L});
-    public static final BitSet FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl1990 = new BitSet(new long[]{0x0000000001000012L});
-    public static final BitSet FOLLOW_rule__NLSBundle__Group__7__Impl_in_rule__NLSBundle__Group__72023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__NLSBundle__Group__7__Impl2051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSFormatter__Group__0__Impl_in_rule__NLSFormatter__Group__02098 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NLSFormatter__Group__1_in_rule__NLSFormatter__Group__02101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__NLSFormatter__Group__0__Impl2129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSFormatter__Group__1__Impl_in_rule__NLSFormatter__Group__12160 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NLSFormatter__Group__2_in_rule__NLSFormatter__Group__12163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSFormatter__NameAssignment_1_in_rule__NLSFormatter__Group__1__Impl2190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSFormatter__Group__2__Impl_in_rule__NLSFormatter__Group__22220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NLSFormatter__ClassRefAssignment_2_in_rule__NLSFormatter__Group__2__Impl2247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group__0__Impl_in_rule__MessageEntry__Group__02283 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group__1_in_rule__MessageEntry__Group__02286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__NameAssignment_0_in_rule__MessageEntry__Group__0__Impl2313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group__1__Impl_in_rule__MessageEntry__Group__12343 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group__2_in_rule__MessageEntry__Group__12346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__0_in_rule__MessageEntry__Group__1__Impl2373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group__2__Impl_in_rule__MessageEntry__Group__22404 = new BitSet(new long[]{0x0000000020080000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group__3_in_rule__MessageEntry__Group__22407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__MessageEntry__Group__2__Impl2435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group__3__Impl_in_rule__MessageEntry__Group__32466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Alternatives_3_in_rule__MessageEntry__Group__3__Impl2493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__0__Impl_in_rule__MessageEntry__Group_1__02531 = new BitSet(new long[]{0x0000000000070000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__1_in_rule__MessageEntry__Group_1__02534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__MessageEntry__Group_1__0__Impl2562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__1__Impl_in_rule__MessageEntry__Group_1__12593 = new BitSet(new long[]{0x0000000018000000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__2_in_rule__MessageEntry__Group_1__12596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__ParamListAssignment_1_1_in_rule__MessageEntry__Group_1__1__Impl2623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__2__Impl_in_rule__MessageEntry__Group_1__22653 = new BitSet(new long[]{0x0000000018000000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__3_in_rule__MessageEntry__Group_1__22656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__0_in_rule__MessageEntry__Group_1__2__Impl2683 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__3__Impl_in_rule__MessageEntry__Group_1__32714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__MessageEntry__Group_1__3__Impl2742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__0__Impl_in_rule__MessageEntry__Group_1_2__02781 = new BitSet(new long[]{0x0000000000070000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__1_in_rule__MessageEntry__Group_1_2__02784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__MessageEntry__Group_1_2__0__Impl2812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__1__Impl_in_rule__MessageEntry__Group_1_2__12843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__ParamListAssignment_1_2_1_in_rule__MessageEntry__Group_1_2__1__Impl2870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__0__Impl_in_rule__MessageEntry__Group_3_0__02904 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__1_in_rule__MessageEntry__Group_3_0__02907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__MessageEntry__Group_3_0__0__Impl2935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__1__Impl_in_rule__MessageEntry__Group_3_0__12966 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__2_in_rule__MessageEntry__Group_3_0__12969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_1_in_rule__MessageEntry__Group_3_0__1__Impl2996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__2__Impl_in_rule__MessageEntry__Group_3_0__23026 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__3_in_rule__MessageEntry__Group_3_0__23029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__0_in_rule__MessageEntry__Group_3_0__2__Impl3056 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__3__Impl_in_rule__MessageEntry__Group_3_0__33087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__MessageEntry__Group_3_0__3__Impl3115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__0__Impl_in_rule__MessageEntry__Group_3_0_2__03154 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__1_in_rule__MessageEntry__Group_3_0_2__03157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__MessageEntry__Group_3_0_2__0__Impl3185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__1__Impl_in_rule__MessageEntry__Group_3_0_2__13216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_2_1_in_rule__MessageEntry__Group_3_0_2__1__Impl3243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__0__Impl_in_rule__MessageEntry__Group_3_1__03277 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__1_in_rule__MessageEntry__Group_3_1__03280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__MessageEntry__Group_3_1__0__Impl3308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__1__Impl_in_rule__MessageEntry__Group_3_1__13339 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__2_in_rule__MessageEntry__Group_3_1__13342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__EntryRefAssignment_3_1_1_in_rule__MessageEntry__Group_3_1__1__Impl3369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__2__Impl_in_rule__MessageEntry__Group_3_1__23399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__MessageEntry__Group_3_1__2__Impl3427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageParam__Group__0__Impl_in_rule__MessageParam__Group__03464 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MessageParam__Group__1_in_rule__MessageParam__Group__03467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageParam__PredefinedAssignment_0_in_rule__MessageParam__Group__0__Impl3494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageParam__Group__1__Impl_in_rule__MessageParam__Group__13524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageParam__VarAssignment_1_in_rule__MessageParam__Group__1__Impl3551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Message__Group__0__Impl_in_rule__Message__Group__03585 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Message__Group__1_in_rule__Message__Group__03588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Message__NameAssignment_0_in_rule__Message__Group__0__Impl3615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Message__Group__1__Impl_in_rule__Message__Group__13645 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Message__Group__2_in_rule__Message__Group__13648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Message__Group__1__Impl3676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Message__Group__2__Impl_in_rule__Message__Group__23707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Message__MessageAssignment_2_in_rule__Message__Group__2__Impl3734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1__0__Impl_in_rule__RichString__Group_1__03770 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1__1_in_rule__RichString__Group_1__03773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_0_in_rule__RichString__Group_1__0__Impl3800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1__1__Impl_in_rule__RichString__Group_1__13830 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1__2_in_rule__RichString__Group_1__13833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_1_in_rule__RichString__Group_1__1__Impl3860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1__2__Impl_in_rule__RichString__Group_1__23891 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1__3_in_rule__RichString__Group_1__23894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1_2__0_in_rule__RichString__Group_1__2__Impl3921 = new BitSet(new long[]{0x0000000000000102L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1__3__Impl_in_rule__RichString__Group_1__33952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_3_in_rule__RichString__Group_1__3__Impl3979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1_2__0__Impl_in_rule__RichString__Group_1_2__04017 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1_2__1_in_rule__RichString__Group_1_2__04020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_2_0_in_rule__RichString__Group_1_2__0__Impl4047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__Group_1_2__1__Impl_in_rule__RichString__Group_1_2__14077 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_2_1_in_rule__RichString__Group_1_2__1__Impl4104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__Group__0__Impl_in_rule__RichVarPart__Group__04139 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__RichVarPart__Group__1_in_rule__RichVarPart__Group__04142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__KeyAssignment_0_in_rule__RichVarPart__Group__0__Impl4169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__Group__1__Impl_in_rule__RichVarPart__Group__14199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__0_in_rule__RichVarPart__Group__1__Impl4226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__0__Impl_in_rule__RichVarPart__Group_1__04261 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__1_in_rule__RichVarPart__Group_1__04264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__FormatAssignment_1_0_in_rule__RichVarPart__Group_1__0__Impl4291 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__1__Impl_in_rule__RichVarPart__Group_1__14321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RichVarPart__FormatterClassAssignment_1_1_in_rule__RichVarPart__Group_1__1__Impl4348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04383 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__QualifiedName__Group__0__Impl4413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4469 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04504 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__QualifiedName__Group_1__0__Impl4536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_rule__QualifiedName__Group_1__1__Impl4595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePackageDeclaration_in_rule__NLS__PackageAssignment_04633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNLSBundle_in_rule__NLS__BundleListAssignment_24664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_14695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__NLSBundle__NameAssignment_14726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__NLSBundle__LangAssignment_34757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNLSFormatter_in_rule__NLSBundle__FormatterListAssignment_54788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessageEntry_in_rule__NLSBundle__MessageEntryListAssignment_64819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__NLSFormatter__NameAssignment_14850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__NLSFormatter__ClassRefAssignment_24881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MessageEntry__NameAssignment_04912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_14943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_2_14974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_15005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_2_15036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__MessageEntry__EntryRefAssignment_3_1_15071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredefinedTypes_in_rule__MessageParam__PredefinedAssignment_05106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MessageParam__VarAssignment_15137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Message__NameAssignment_05168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichString_in_rule__Message__MessageAssignment_25199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteral_in_rule__RichString__ExpressionsAssignment_05230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralStart_in_rule__RichString__ExpressionsAssignment_1_05261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_15292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralInbetween_in_rule__RichString__ExpressionsAssignment_1_2_05323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_2_15354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralEnd_in_rule__RichString__ExpressionsAssignment_1_35385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_in_rule__RichStringLiteral__ValueAssignment5416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_START_in_rule__RichStringLiteralStart__ValueAssignment5447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_END_in_rule__RichStringLiteralEnd__ValueAssignment5478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_rule__RichStringLiteralInbetween__ValueAssignment5509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__RichVarPart__KeyAssignment_05540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__RichVarPart__FormatAssignment_1_05571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__RichVarPart__FormatterClassAssignment_1_15606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__PredefinedTypes__Alternatives1177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLS__Group__0__Impl_in_rule__NLS__Group__01210 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__NLS__Group__1_in_rule__NLS__Group__01213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLS__PackageAssignment_0_in_rule__NLS__Group__0__Impl1240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLS__Group__1__Impl_in_rule__NLS__Group__11271 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__NLS__Group__2_in_rule__NLS__Group__11274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__NLS__Group__1__Impl1302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLS__Group__2__Impl_in_rule__NLS__Group__21333 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__NLS__Group__3_in_rule__NLS__Group__21336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1365 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_rule__NLS__BundleListAssignment_2_in_rule__NLS__Group__2__Impl1377 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_rule__NLS__Group__3__Impl_in_rule__NLS__Group__31410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__NLS__Group__3__Impl1438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__0__Impl_in_rule__PackageDeclaration__Group__01477 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__1_in_rule__PackageDeclaration__Group__01480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__PackageDeclaration__Group__0__Impl1508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__1__Impl_in_rule__PackageDeclaration__Group__11539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PackageDeclaration__NameAssignment_1_in_rule__PackageDeclaration__Group__1__Impl1566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__0__Impl_in_rule__NLSBundle__Group__01600 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__1_in_rule__NLSBundle__Group__01603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__NLSBundle__Group__0__Impl1631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__1__Impl_in_rule__NLSBundle__Group__11662 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__2_in_rule__NLSBundle__Group__11665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__NameAssignment_1_in_rule__NLSBundle__Group__1__Impl1692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__2__Impl_in_rule__NLSBundle__Group__21722 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__3_in_rule__NLSBundle__Group__21725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__NLSBundle__Group__2__Impl1753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__3__Impl_in_rule__NLSBundle__Group__31784 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__4_in_rule__NLSBundle__Group__31787 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__LangAssignment_3_in_rule__NLSBundle__Group__3__Impl1814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__4__Impl_in_rule__NLSBundle__Group__41844 = new BitSet(new long[]{0x0000000002000010L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__5_in_rule__NLSBundle__Group__41847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__NLSBundle__Group__4__Impl1875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__5__Impl_in_rule__NLSBundle__Group__51906 = new BitSet(new long[]{0x0000000002000010L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__6_in_rule__NLSBundle__Group__51909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__FormatterListAssignment_5_in_rule__NLSBundle__Group__5__Impl1936 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__6__Impl_in_rule__NLSBundle__Group__61967 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__7_in_rule__NLSBundle__Group__61970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl1999 = new BitSet(new long[]{0x0000000002000012L});
+    public static final BitSet FOLLOW_rule__NLSBundle__MessageEntryListAssignment_6_in_rule__NLSBundle__Group__6__Impl2011 = new BitSet(new long[]{0x0000000002000012L});
+    public static final BitSet FOLLOW_rule__NLSBundle__Group__7__Impl_in_rule__NLSBundle__Group__72044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__NLSBundle__Group__7__Impl2072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSFormatter__Group__0__Impl_in_rule__NLSFormatter__Group__02119 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NLSFormatter__Group__1_in_rule__NLSFormatter__Group__02122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__NLSFormatter__Group__0__Impl2150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSFormatter__Group__1__Impl_in_rule__NLSFormatter__Group__12181 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NLSFormatter__Group__2_in_rule__NLSFormatter__Group__12184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSFormatter__NameAssignment_1_in_rule__NLSFormatter__Group__1__Impl2211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSFormatter__Group__2__Impl_in_rule__NLSFormatter__Group__22241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NLSFormatter__ClassRefAssignment_2_in_rule__NLSFormatter__Group__2__Impl2268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group__0__Impl_in_rule__MessageEntry__Group__02304 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group__1_in_rule__MessageEntry__Group__02307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__NameAssignment_0_in_rule__MessageEntry__Group__0__Impl2334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group__1__Impl_in_rule__MessageEntry__Group__12364 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group__2_in_rule__MessageEntry__Group__12367 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__0_in_rule__MessageEntry__Group__1__Impl2394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group__2__Impl_in_rule__MessageEntry__Group__22425 = new BitSet(new long[]{0x0000000040100000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group__3_in_rule__MessageEntry__Group__22428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__MessageEntry__Group__2__Impl2456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group__3__Impl_in_rule__MessageEntry__Group__32487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Alternatives_3_in_rule__MessageEntry__Group__3__Impl2514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__0__Impl_in_rule__MessageEntry__Group_1__02552 = new BitSet(new long[]{0x00000000000F0000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__1_in_rule__MessageEntry__Group_1__02555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__MessageEntry__Group_1__0__Impl2583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__1__Impl_in_rule__MessageEntry__Group_1__12614 = new BitSet(new long[]{0x0000000030000000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__2_in_rule__MessageEntry__Group_1__12617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__ParamListAssignment_1_1_in_rule__MessageEntry__Group_1__1__Impl2644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__2__Impl_in_rule__MessageEntry__Group_1__22674 = new BitSet(new long[]{0x0000000030000000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__3_in_rule__MessageEntry__Group_1__22677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__0_in_rule__MessageEntry__Group_1__2__Impl2704 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1__3__Impl_in_rule__MessageEntry__Group_1__32735 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__MessageEntry__Group_1__3__Impl2763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__0__Impl_in_rule__MessageEntry__Group_1_2__02802 = new BitSet(new long[]{0x00000000000F0000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__1_in_rule__MessageEntry__Group_1_2__02805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__MessageEntry__Group_1_2__0__Impl2833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_1_2__1__Impl_in_rule__MessageEntry__Group_1_2__12864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__ParamListAssignment_1_2_1_in_rule__MessageEntry__Group_1_2__1__Impl2891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__0__Impl_in_rule__MessageEntry__Group_3_0__02925 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__1_in_rule__MessageEntry__Group_3_0__02928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__MessageEntry__Group_3_0__0__Impl2956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__1__Impl_in_rule__MessageEntry__Group_3_0__12987 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__2_in_rule__MessageEntry__Group_3_0__12990 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_1_in_rule__MessageEntry__Group_3_0__1__Impl3017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__2__Impl_in_rule__MessageEntry__Group_3_0__23047 = new BitSet(new long[]{0x0000000020200000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__3_in_rule__MessageEntry__Group_3_0__23050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__0_in_rule__MessageEntry__Group_3_0__2__Impl3077 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0__3__Impl_in_rule__MessageEntry__Group_3_0__33108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__MessageEntry__Group_3_0__3__Impl3136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__0__Impl_in_rule__MessageEntry__Group_3_0_2__03175 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__1_in_rule__MessageEntry__Group_3_0_2__03178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__MessageEntry__Group_3_0_2__0__Impl3206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_0_2__1__Impl_in_rule__MessageEntry__Group_3_0_2__13237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__MessageListAssignment_3_0_2_1_in_rule__MessageEntry__Group_3_0_2__1__Impl3264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__0__Impl_in_rule__MessageEntry__Group_3_1__03298 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__1_in_rule__MessageEntry__Group_3_1__03301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__MessageEntry__Group_3_1__0__Impl3329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__1__Impl_in_rule__MessageEntry__Group_3_1__13360 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__2_in_rule__MessageEntry__Group_3_1__13363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__EntryRefAssignment_3_1_1_in_rule__MessageEntry__Group_3_1__1__Impl3390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageEntry__Group_3_1__2__Impl_in_rule__MessageEntry__Group_3_1__23420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__MessageEntry__Group_3_1__2__Impl3448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageParam__Group__0__Impl_in_rule__MessageParam__Group__03485 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MessageParam__Group__1_in_rule__MessageParam__Group__03488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageParam__PredefinedAssignment_0_in_rule__MessageParam__Group__0__Impl3515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageParam__Group__1__Impl_in_rule__MessageParam__Group__13545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageParam__VarAssignment_1_in_rule__MessageParam__Group__1__Impl3572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Message__Group__0__Impl_in_rule__Message__Group__03606 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__Message__Group__1_in_rule__Message__Group__03609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Message__NameAssignment_0_in_rule__Message__Group__0__Impl3636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Message__Group__1__Impl_in_rule__Message__Group__13666 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__Message__Group__2_in_rule__Message__Group__13669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Message__Group__1__Impl3697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Message__Group__2__Impl_in_rule__Message__Group__23728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Message__MessageAssignment_2_in_rule__Message__Group__2__Impl3755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1__0__Impl_in_rule__RichString__Group_1__03791 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1__1_in_rule__RichString__Group_1__03794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_0_in_rule__RichString__Group_1__0__Impl3821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1__1__Impl_in_rule__RichString__Group_1__13851 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1__2_in_rule__RichString__Group_1__13854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_1_in_rule__RichString__Group_1__1__Impl3881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1__2__Impl_in_rule__RichString__Group_1__23912 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1__3_in_rule__RichString__Group_1__23915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1_2__0_in_rule__RichString__Group_1__2__Impl3942 = new BitSet(new long[]{0x0000000000000102L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1__3__Impl_in_rule__RichString__Group_1__33973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_3_in_rule__RichString__Group_1__3__Impl4000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1_2__0__Impl_in_rule__RichString__Group_1_2__04038 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1_2__1_in_rule__RichString__Group_1_2__04041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_2_0_in_rule__RichString__Group_1_2__0__Impl4068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__Group_1_2__1__Impl_in_rule__RichString__Group_1_2__14098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichString__ExpressionsAssignment_1_2_1_in_rule__RichString__Group_1_2__1__Impl4125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__Group__0__Impl_in_rule__RichVarPart__Group__04160 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__RichVarPart__Group__1_in_rule__RichVarPart__Group__04163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__KeyAssignment_0_in_rule__RichVarPart__Group__0__Impl4190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__Group__1__Impl_in_rule__RichVarPart__Group__14220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__0_in_rule__RichVarPart__Group__1__Impl4247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__0__Impl_in_rule__RichVarPart__Group_1__04282 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__1_in_rule__RichVarPart__Group_1__04285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__FormatAssignment_1_0_in_rule__RichVarPart__Group_1__0__Impl4312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__Group_1__1__Impl_in_rule__RichVarPart__Group_1__14342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RichVarPart__FormatterClassAssignment_1_1_in_rule__RichVarPart__Group_1__1__Impl4369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04404 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__QualifiedName__Group__0__Impl4434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4490 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04525 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__QualifiedName__Group_1__0__Impl4557 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14589 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_rule__QualifiedName__Group_1__1__Impl4616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePackageDeclaration_in_rule__NLS__PackageAssignment_04654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNLSBundle_in_rule__NLS__BundleListAssignment_24685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_14716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__NLSBundle__NameAssignment_14747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__NLSBundle__LangAssignment_34778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNLSFormatter_in_rule__NLSBundle__FormatterListAssignment_54809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessageEntry_in_rule__NLSBundle__MessageEntryListAssignment_64840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__NLSFormatter__NameAssignment_14871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__NLSFormatter__ClassRefAssignment_24902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MessageEntry__NameAssignment_04933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_14964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessageParam_in_rule__MessageEntry__ParamListAssignment_1_2_14995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_15026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessage_in_rule__MessageEntry__MessageListAssignment_3_0_2_15057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__MessageEntry__EntryRefAssignment_3_1_15092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredefinedTypes_in_rule__MessageParam__PredefinedAssignment_05127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MessageParam__VarAssignment_15158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Message__NameAssignment_05189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichString_in_rule__Message__MessageAssignment_25220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteral_in_rule__RichString__ExpressionsAssignment_05251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralStart_in_rule__RichString__ExpressionsAssignment_1_05282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_15313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralInbetween_in_rule__RichString__ExpressionsAssignment_1_2_05344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichVarPart_in_rule__RichString__ExpressionsAssignment_1_2_15375 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralEnd_in_rule__RichString__ExpressionsAssignment_1_35406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_in_rule__RichStringLiteral__ValueAssignment5437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_START_in_rule__RichStringLiteralStart__ValueAssignment5468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_END_in_rule__RichStringLiteralEnd__ValueAssignment5499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_rule__RichStringLiteralInbetween__ValueAssignment5530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__RichVarPart__KeyAssignment_05561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__RichVarPart__FormatAssignment_1_05592 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__RichVarPart__FormatterClassAssignment_1_15627 = new BitSet(new long[]{0x0000000000000002L});
 
 }

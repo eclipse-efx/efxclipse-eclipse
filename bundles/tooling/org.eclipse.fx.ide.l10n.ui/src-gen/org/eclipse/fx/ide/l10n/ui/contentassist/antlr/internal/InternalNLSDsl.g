@@ -567,6 +567,13 @@ rule__PredefinedTypes__Alternatives
 { after(grammarAccess.getPredefinedTypesAccess().getDATEEnumLiteralDeclaration_2()); }
 )
 
+    |(
+{ before(grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3()); }
+(	'TEMPORAL' 
+)
+{ after(grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
