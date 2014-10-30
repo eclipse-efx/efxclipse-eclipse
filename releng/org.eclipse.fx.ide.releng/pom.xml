@@ -62,6 +62,10 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.converter</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.fxml.compiler</module>
 
+		<!-- l10n -->
+		<module>../../bundles/tooling/org.eclipse.fx.ide.l10n</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.l10n.ui</module>
+
 		<!-- Mobile -->
 		<module>../../bundles/tooling/org.eclipse.fx.ide.ui.mobile.sim.launch</module>
 
@@ -73,6 +77,7 @@
 		<module>../tooling/org.eclipse.fx.ide.converter.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.pde.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.mobile.feature</module>
+		<module>../tooling/org.eclipse.fx.ide.l10n.feature</module>
 
 		<module>../tooling/org.eclipse.fx.ide.feature</module>
 		<module>../org.eclipse.fx.ide.updatesite</module>
