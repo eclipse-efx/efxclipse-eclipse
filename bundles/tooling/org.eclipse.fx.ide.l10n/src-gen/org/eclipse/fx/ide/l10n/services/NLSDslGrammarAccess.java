@@ -184,30 +184,29 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cParamListAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
 		private final RuleCall cParamListMessageParamParserRuleCall_1_2_1_0 = (RuleCall)cParamListAssignment_1_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3_0_0 = (Keyword)cGroup_3_0.eContents().get(0);
-		private final Assignment cMessageListAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cMessageListMessageParserRuleCall_3_0_1_0 = (RuleCall)cMessageListAssignment_3_0_1.eContents().get(0);
-		private final Group cGroup_3_0_2 = (Group)cGroup_3_0.eContents().get(2);
-		private final Keyword cCommaKeyword_3_0_2_0 = (Keyword)cGroup_3_0_2.eContents().get(0);
-		private final Assignment cMessageListAssignment_3_0_2_1 = (Assignment)cGroup_3_0_2.eContents().get(1);
-		private final RuleCall cMessageListMessageParserRuleCall_3_0_2_1_0 = (RuleCall)cMessageListAssignment_3_0_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_0_3 = (Keyword)cGroup_3_0.eContents().get(3);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cEntryRefAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final CrossReference cEntryRefMessageEntryCrossReference_3_1_1_0 = (CrossReference)cEntryRefAssignment_3_1_1.eContents().get(0);
-		private final RuleCall cEntryRefMessageEntryQualifiedNameParserRuleCall_3_1_1_0_1 = (RuleCall)cEntryRefMessageEntryCrossReference_3_1_1_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+		private final Assignment cMessageListAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final RuleCall cMessageListMessageParserRuleCall_2_0_1_0 = (RuleCall)cMessageListAssignment_2_0_1.eContents().get(0);
+		private final Group cGroup_2_0_2 = (Group)cGroup_2_0.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0_2_0 = (Keyword)cGroup_2_0_2.eContents().get(0);
+		private final Assignment cMessageListAssignment_2_0_2_1 = (Assignment)cGroup_2_0_2.eContents().get(1);
+		private final RuleCall cMessageListMessageParserRuleCall_2_0_2_1_0 = (RuleCall)cMessageListAssignment_2_0_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_0_3 = (Keyword)cGroup_2_0.eContents().get(3);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cEntryRefAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final CrossReference cEntryRefMessageEntryCrossReference_2_1_1_0 = (CrossReference)cEntryRefAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cEntryRefMessageEntryQualifiedNameParserRuleCall_2_1_1_0_1 = (RuleCall)cEntryRefMessageEntryCrossReference_2_1_1_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_2_1_2 = (Keyword)cGroup_2_1.eContents().get(2);
 		
 		//MessageEntry:
-		//	name=ID ("(" paramList+=MessageParam ("," paramList+=MessageParam)* ")")? ":" ("{" messageList+=Message (","
+		//	name=ID ("(" paramList+=MessageParam ("," paramList+=MessageParam)* ")")? ("{" messageList+=Message (","
 		//	messageList+=Message)* "}" | "[" entryRef=[MessageEntry|QualifiedName] "]");
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ("(" paramList+=MessageParam ("," paramList+=MessageParam)* ")")? ":" ("{" messageList+=Message (","
+		//name=ID ("(" paramList+=MessageParam ("," paramList+=MessageParam)* ")")? ("{" messageList+=Message (","
 		//messageList+=Message)* "}" | "[" entryRef=[MessageEntry|QualifiedName] "]")
 		public Group getGroup() { return cGroup; }
 
@@ -244,56 +243,53 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
 
-		//":"
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-
 		//"{" messageList+=Message ("," messageList+=Message)* "}" | "[" entryRef=[MessageEntry|QualifiedName] "]"
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
 		//"{" messageList+=Message ("," messageList+=Message)* "}"
-		public Group getGroup_3_0() { return cGroup_3_0; }
+		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3_0_0() { return cLeftCurlyBracketKeyword_3_0_0; }
+		public Keyword getLeftCurlyBracketKeyword_2_0_0() { return cLeftCurlyBracketKeyword_2_0_0; }
 
 		//messageList+=Message
-		public Assignment getMessageListAssignment_3_0_1() { return cMessageListAssignment_3_0_1; }
+		public Assignment getMessageListAssignment_2_0_1() { return cMessageListAssignment_2_0_1; }
 
 		//Message
-		public RuleCall getMessageListMessageParserRuleCall_3_0_1_0() { return cMessageListMessageParserRuleCall_3_0_1_0; }
+		public RuleCall getMessageListMessageParserRuleCall_2_0_1_0() { return cMessageListMessageParserRuleCall_2_0_1_0; }
 
 		//("," messageList+=Message)*
-		public Group getGroup_3_0_2() { return cGroup_3_0_2; }
+		public Group getGroup_2_0_2() { return cGroup_2_0_2; }
 
 		//","
-		public Keyword getCommaKeyword_3_0_2_0() { return cCommaKeyword_3_0_2_0; }
+		public Keyword getCommaKeyword_2_0_2_0() { return cCommaKeyword_2_0_2_0; }
 
 		//messageList+=Message
-		public Assignment getMessageListAssignment_3_0_2_1() { return cMessageListAssignment_3_0_2_1; }
+		public Assignment getMessageListAssignment_2_0_2_1() { return cMessageListAssignment_2_0_2_1; }
 
 		//Message
-		public RuleCall getMessageListMessageParserRuleCall_3_0_2_1_0() { return cMessageListMessageParserRuleCall_3_0_2_1_0; }
+		public RuleCall getMessageListMessageParserRuleCall_2_0_2_1_0() { return cMessageListMessageParserRuleCall_2_0_2_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3_0_3() { return cRightCurlyBracketKeyword_3_0_3; }
+		public Keyword getRightCurlyBracketKeyword_2_0_3() { return cRightCurlyBracketKeyword_2_0_3; }
 
 		//"[" entryRef=[MessageEntry|QualifiedName] "]"
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//"["
-		public Keyword getLeftSquareBracketKeyword_3_1_0() { return cLeftSquareBracketKeyword_3_1_0; }
+		public Keyword getLeftSquareBracketKeyword_2_1_0() { return cLeftSquareBracketKeyword_2_1_0; }
 
 		//entryRef=[MessageEntry|QualifiedName]
-		public Assignment getEntryRefAssignment_3_1_1() { return cEntryRefAssignment_3_1_1; }
+		public Assignment getEntryRefAssignment_2_1_1() { return cEntryRefAssignment_2_1_1; }
 
 		//[MessageEntry|QualifiedName]
-		public CrossReference getEntryRefMessageEntryCrossReference_3_1_1_0() { return cEntryRefMessageEntryCrossReference_3_1_1_0; }
+		public CrossReference getEntryRefMessageEntryCrossReference_2_1_1_0() { return cEntryRefMessageEntryCrossReference_2_1_1_0; }
 
 		//QualifiedName
-		public RuleCall getEntryRefMessageEntryQualifiedNameParserRuleCall_3_1_1_0_1() { return cEntryRefMessageEntryQualifiedNameParserRuleCall_3_1_1_0_1; }
+		public RuleCall getEntryRefMessageEntryQualifiedNameParserRuleCall_2_1_1_0_1() { return cEntryRefMessageEntryQualifiedNameParserRuleCall_2_1_1_0_1; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_3_1_2() { return cRightSquareBracketKeyword_3_1_2; }
+		public Keyword getRightSquareBracketKeyword_2_1_2() { return cRightSquareBracketKeyword_2_1_2; }
 	}
 
 	public class MessageParamElements extends AbstractParserRuleElementFinder {
@@ -742,7 +738,7 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageEntry:
-	//	name=ID ("(" paramList+=MessageParam ("," paramList+=MessageParam)* ")")? ":" ("{" messageList+=Message (","
+	//	name=ID ("(" paramList+=MessageParam ("," paramList+=MessageParam)* ")")? ("{" messageList+=Message (","
 	//	messageList+=Message)* "}" | "[" entryRef=[MessageEntry|QualifiedName] "]");
 	public MessageEntryElements getMessageEntryAccess() {
 		return pMessageEntry;

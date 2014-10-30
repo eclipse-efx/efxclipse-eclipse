@@ -24,7 +24,7 @@ NLSFormatter:
 ;
 
 MessageEntry:
-	name=ID ('(' paramList+=MessageParam ( ',' paramList+=MessageParam )* ')')? ':' ('{' messageList+=Message (',' messageList+=Message )* '}' | '['entryRef=[MessageEntry|QualifiedName] ']')
+	name=ID ('(' paramList+=MessageParam ( ',' paramList+=MessageParam )* ')')? ('{' messageList+=Message (',' messageList+=Message )* '}' | '['entryRef=[MessageEntry|QualifiedName] ']')
 ;
 
 MessageParam:

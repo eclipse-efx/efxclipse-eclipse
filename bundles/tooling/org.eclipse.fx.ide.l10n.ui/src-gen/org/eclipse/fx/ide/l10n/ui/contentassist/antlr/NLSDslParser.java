@@ -37,7 +37,7 @@ public class NLSDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getMessageEntryAccess().getAlternatives_3(), "rule__MessageEntry__Alternatives_3");
+					put(grammarAccess.getMessageEntryAccess().getAlternatives_2(), "rule__MessageEntry__Alternatives_2");
 					put(grammarAccess.getRichStringAccess().getAlternatives(), "rule__RichString__Alternatives");
 					put(grammarAccess.getPredefinedTypesAccess().getAlternatives(), "rule__PredefinedTypes__Alternatives");
 					put(grammarAccess.getNLSAccess().getGroup(), "rule__NLS__Group__0");
@@ -47,9 +47,9 @@ public class NLSDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMessageEntryAccess().getGroup(), "rule__MessageEntry__Group__0");
 					put(grammarAccess.getMessageEntryAccess().getGroup_1(), "rule__MessageEntry__Group_1__0");
 					put(grammarAccess.getMessageEntryAccess().getGroup_1_2(), "rule__MessageEntry__Group_1_2__0");
-					put(grammarAccess.getMessageEntryAccess().getGroup_3_0(), "rule__MessageEntry__Group_3_0__0");
-					put(grammarAccess.getMessageEntryAccess().getGroup_3_0_2(), "rule__MessageEntry__Group_3_0_2__0");
-					put(grammarAccess.getMessageEntryAccess().getGroup_3_1(), "rule__MessageEntry__Group_3_1__0");
+					put(grammarAccess.getMessageEntryAccess().getGroup_2_0(), "rule__MessageEntry__Group_2_0__0");
+					put(grammarAccess.getMessageEntryAccess().getGroup_2_0_2(), "rule__MessageEntry__Group_2_0_2__0");
+					put(grammarAccess.getMessageEntryAccess().getGroup_2_1(), "rule__MessageEntry__Group_2_1__0");
 					put(grammarAccess.getMessageParamAccess().getGroup(), "rule__MessageParam__Group__0");
 					put(grammarAccess.getMessageAccess().getGroup(), "rule__Message__Group__0");
 					put(grammarAccess.getRichStringAccess().getGroup_1(), "rule__RichString__Group_1__0");
@@ -70,9 +70,9 @@ public class NLSDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMessageEntryAccess().getNameAssignment_0(), "rule__MessageEntry__NameAssignment_0");
 					put(grammarAccess.getMessageEntryAccess().getParamListAssignment_1_1(), "rule__MessageEntry__ParamListAssignment_1_1");
 					put(grammarAccess.getMessageEntryAccess().getParamListAssignment_1_2_1(), "rule__MessageEntry__ParamListAssignment_1_2_1");
-					put(grammarAccess.getMessageEntryAccess().getMessageListAssignment_3_0_1(), "rule__MessageEntry__MessageListAssignment_3_0_1");
-					put(grammarAccess.getMessageEntryAccess().getMessageListAssignment_3_0_2_1(), "rule__MessageEntry__MessageListAssignment_3_0_2_1");
-					put(grammarAccess.getMessageEntryAccess().getEntryRefAssignment_3_1_1(), "rule__MessageEntry__EntryRefAssignment_3_1_1");
+					put(grammarAccess.getMessageEntryAccess().getMessageListAssignment_2_0_1(), "rule__MessageEntry__MessageListAssignment_2_0_1");
+					put(grammarAccess.getMessageEntryAccess().getMessageListAssignment_2_0_2_1(), "rule__MessageEntry__MessageListAssignment_2_0_2_1");
+					put(grammarAccess.getMessageEntryAccess().getEntryRefAssignment_2_1_1(), "rule__MessageEntry__EntryRefAssignment_2_1_1");
 					put(grammarAccess.getMessageParamAccess().getPredefinedAssignment_0(), "rule__MessageParam__PredefinedAssignment_0");
 					put(grammarAccess.getMessageParamAccess().getVarAssignment_1(), "rule__MessageParam__VarAssignment_1");
 					put(grammarAccess.getMessageAccess().getNameAssignment_0(), "rule__Message__NameAssignment_0");
