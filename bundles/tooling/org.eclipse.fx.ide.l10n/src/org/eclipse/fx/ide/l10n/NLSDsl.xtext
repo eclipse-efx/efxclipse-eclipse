@@ -73,7 +73,7 @@ QualifiedName:
   ValidID (=>'.' ValidID)*;
 
 enum PredefinedTypes :
-	ANY | NUMBER | DATE
+	ANY | NUMBER | DATE | TEMPORAL
 ;
 
 terminal RICH_TEXT : "'''" IN_RICH_STRING* ("'''"| ("'" "'"?)? EOF);

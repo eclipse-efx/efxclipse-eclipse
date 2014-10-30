@@ -11,6 +11,7 @@
       <genEnumLiterals ecoreEnumLiteral="NLSDsl.ecore#//PredefinedTypes/ANY"/>
       <genEnumLiterals ecoreEnumLiteral="NLSDsl.ecore#//PredefinedTypes/NUMBER"/>
       <genEnumLiterals ecoreEnumLiteral="NLSDsl.ecore#//PredefinedTypes/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="NLSDsl.ecore#//PredefinedTypes/TEMPORAL"/>
     </genEnums>
     <genClasses ecoreClass="NLSDsl.ecore#//NLS">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLS/package"/>

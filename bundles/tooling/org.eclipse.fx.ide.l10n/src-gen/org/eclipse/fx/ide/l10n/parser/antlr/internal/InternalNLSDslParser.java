@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalNLSDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_RICH_TEXT", "RULE_RICH_TEXT_START", "RULE_RICH_TEXT_END", "RULE_RICH_TEXT_INBETWEEN", "RULE_STRING", "RULE_IN_RICH_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'package'", "'bundle'", "'default'", "'formatter'", "'('", "','", "')'", "':'", "'['", "']'", "'.'", "'ANY'", "'NUMBER'", "'DATE'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_RICH_TEXT", "RULE_RICH_TEXT_START", "RULE_RICH_TEXT_END", "RULE_RICH_TEXT_INBETWEEN", "RULE_STRING", "RULE_IN_RICH_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'package'", "'bundle'", "'default'", "'formatter'", "'('", "','", "')'", "':'", "'['", "']'", "'.'", "'ANY'", "'NUMBER'", "'DATE'", "'TEMPORAL'"
     };
     public static final int RULE_STRING=9;
     public static final int RULE_SL_COMMENT=13;
@@ -35,6 +35,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_RICH_TEXT=5;
     public static final int RULE_ID=4;
     public static final int RULE_WS=14;
@@ -2839,21 +2840,22 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePredefinedTypes"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1064:1: rulePredefinedTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1064:1: rulePredefinedTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) ) ;
     public final Enumerator rulePredefinedTypes() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
         Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
 
          enterRule(); 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1066:28: ( ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1067:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1066:28: ( ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1067:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1067:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) )
-            int alt16=3;
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1067:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) )
+            int alt16=4;
             switch ( input.LA(1) ) {
             case 29:
                 {
@@ -2868,6 +2870,11 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             case 31:
                 {
                 alt16=3;
+                }
+                break;
+            case 32:
+                {
+                alt16=4;
                 }
                 break;
             default:
@@ -2928,6 +2935,25 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                               current = grammarAccess.getPredefinedTypesAccess().getDATEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                               newLeafNode(enumLiteral_2, grammarAccess.getPredefinedTypesAccess().getDATEEnumLiteralDeclaration_2()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1085:6: (enumLiteral_3= 'TEMPORAL' )
+                    {
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1085:6: (enumLiteral_3= 'TEMPORAL' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1085:8: enumLiteral_3= 'TEMPORAL'
+                    {
+                    enumLiteral_3=(Token)match(input,32,FOLLOW_32_in_rulePredefinedTypes2253); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_3, grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3()); 
                           
                     }
 
@@ -3016,9 +3042,9 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleMessageEntry_in_entryRuleMessageEntry651 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMessageEntry661 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleMessageEntry703 = new BitSet(new long[]{0x0000000002400000L});
-    public static final BitSet FOLLOW_22_in_ruleMessageEntry721 = new BitSet(new long[]{0x00000000E0000000L});
+    public static final BitSet FOLLOW_22_in_ruleMessageEntry721 = new BitSet(new long[]{0x00000001E0000000L});
     public static final BitSet FOLLOW_ruleMessageParam_in_ruleMessageEntry742 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_23_in_ruleMessageEntry755 = new BitSet(new long[]{0x00000000E0000000L});
+    public static final BitSet FOLLOW_23_in_ruleMessageEntry755 = new BitSet(new long[]{0x00000001E0000000L});
     public static final BitSet FOLLOW_ruleMessageParam_in_ruleMessageEntry776 = new BitSet(new long[]{0x0000000001800000L});
     public static final BitSet FOLLOW_24_in_ruleMessageEntry790 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_25_in_ruleMessageEntry804 = new BitSet(new long[]{0x0000000004010000L});
@@ -3075,6 +3101,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_29_in_rulePredefinedTypes2202 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_30_in_rulePredefinedTypes2219 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_rulePredefinedTypes2236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rulePredefinedTypes2253 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_28_in_synpred1_InternalNLSDsl2109 = new BitSet(new long[]{0x0000000000000002L});
 
 }

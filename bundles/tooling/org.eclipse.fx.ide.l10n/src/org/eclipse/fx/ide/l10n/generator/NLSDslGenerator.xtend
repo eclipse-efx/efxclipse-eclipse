@@ -51,6 +51,9 @@ class NLSDslGenerator implements IGenerator {
 	def genClass(NLSBundle nls, NLS root) '''
 	package «root.package.name»;
 
+	/*
+	 * Do not modify - Auto generated from «root.eResource.URI.lastSegment»
+	 */
 	public class «nls.name» {
 		«FOR me : nls.messageEntryList.filter[m|m.entryRef == null]»
 			public String «me.name»;
@@ -61,31 +64,28 @@ class NLSDslGenerator implements IGenerator {
 	def genRegistryClass(NLSBundle nls, NLS root) '''
 	package «root.package.name»;
 
-	import org.eclipse.fx.core.di.text.AbstractMessageRegistry;
-	import org.eclipse.fx.core.text.Formatter;
-
-	import org.eclipse.e4.core.di.annotations.Creatable;
-
-	import java.util.function.Supplier;
-
-	import javax.inject.Inject;
-
-	import org.eclipse.e4.core.services.nls.Translation;
-
-	@Creatable
-	public class «nls.name»Registry extends AbstractMessageRegistry<«nls.name»> {
+	/*
+	 * Do not modify - Auto generated from «root.eResource.URI.lastSegment»
+	 */
+	@org.eclipse.e4.core.di.annotations.Creatable
+	public class «nls.name»Registry extends org.eclipse.fx.core.di.text.AbstractMessageRegistry<«nls.name»> {
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-number"] != null»
-		@Inject
+		@javax.inject.Inject
 		private org.eclipse.fx.core.di.text.NumberFormatter _number;
 		«ENDIF»
 
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-date"] != null»
-		@Inject
+		@javax.inject.Inject
 		private org.eclipse.fx.core.di.text.DateFormatter _date;
 		«ENDIF»
 
+		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-temporal"] != null»
+		@javax.inject.Inject
+		private org.eclipse.fx.core.di.text.TemporalAccessorFormatter _temporal;
+		«ENDIF»
+
 		«FOR f : nls.formatterList»
-		@Inject
+		@javax.inject.Inject
 		private «f.classRef» cust_«f.name»;
 		«ENDFOR»
 
@@ -93,12 +93,12 @@ class NLSDslGenerator implements IGenerator {
 			s.add(e.entryRef.findNLSBundle)
 			return s
 		])»
-		@Inject
+		@javax.inject.Inject
 		private «(b.eContainer as NLS).package.name».«b.name»Registry bundle_«b.name»;
 		«ENDFOR»
 
-		@Inject
-		public void updateMessages(@Translation «nls.name» messages) {
+		@javax.inject.Inject
+		public void updateMessages(@org.eclipse.e4.core.services.nls.Translation «nls.name» messages) {
 			super.updateMessages(messages);
 		}
 
@@ -121,7 +121,7 @@ class NLSDslGenerator implements IGenerator {
 							dataMap.put("«p.^var»",«p.^var»);
 						«ENDFOR»
 						«IF me.messageList.head.message.expressions.filter(typeof(RichVarPart)).findFirst[p|p.format!= null] != null»
-							java.util.Map<String,Formatter<?>> formatterMap = new java.util.HashMap<>();
+							java.util.Map<String,org.eclipse.fx.core.text.Formatter<?>> formatterMap = new java.util.HashMap<>();
 							«FOR o : me.messageList.head.message.expressions.filter(typeof(RichVarPart)).filter[p|p.format != null].map[findFormatter].fold(new HashSet,[ s,p |
 								s.add(p)
 								return s
@@ -132,6 +132,8 @@ class NLSDslGenerator implements IGenerator {
 								formatterMap.put("«o»",_date);
 								«ELSEIF o == "-number"»
 								formatterMap.put("«o»",_number);
+								«ELSEIF o == "-temporal"»
+								formatterMap.put("«o»",_temporal);
 								«ELSE»
 								formatterMap.put("«o»",cust_«o»);
 								«ENDIF»
@@ -143,7 +145,7 @@ class NLSDslGenerator implements IGenerator {
 					«ENDIF»
 				}
 
-				public Supplier<String> «me.name»_supplier(«me.paramList.map[p|p.predefined.toSourceString + " " + p.^var].join(", ")») {
+				public java.util.function.Supplier<String> «me.name»_supplier(«me.paramList.map[p|p.predefined.toSourceString + " " + p.^var].join(", ")») {
 					return () -> «me.name»(«me.paramList.map[p|p.^var].join(", ")»);
 				}
 			«ENDIF»
@@ -152,21 +154,22 @@ class NLSDslGenerator implements IGenerator {
 	}
 	'''
 
-//	def formattedValue(MessageParam p) {
-//
-//	}
-
 	def toSourceString(PredefinedTypes t) {
 		if( t == PredefinedTypes::ANY ) {
 			return "Object"
 		} else if( t == PredefinedTypes::DATE ) {
 			return "java.util.Date"
+		} else if( t == PredefinedTypes::TEMPORAL ) {
+			return "java.time.temporal.TemporalAccessor";
 		} else {
 			return "Number"
 		}
 	}
 
 	def genPropertyFile(NLSBundle nls, String lang) '''
+	#
+	# Do not modify - Auto generated from «nls.eResource.URI.lastSegment»
+	#
 	«FOR e : nls.messageEntryList.filter[m|m.messageList.findFirst[mm|mm.name == lang] != null]»
 		«e.name» = «e.messageList.findFirst[m|m.name == lang].message.toText»
 	«ENDFOR»
@@ -196,6 +199,7 @@ class NLSDslGenerator implements IGenerator {
 			switch(p.findMessageEntry.paramList.findFirst[param|param.^var == p.key].predefined) {
 				case DATE: return "-date"
 				case NUMBER: return "-number"
+				case TEMPORAL: return "-temporal"
 				default: return "-default"
 			}
 		}

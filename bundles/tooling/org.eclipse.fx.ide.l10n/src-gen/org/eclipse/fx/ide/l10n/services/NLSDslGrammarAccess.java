@@ -585,12 +585,14 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNUMBERNUMBERKeyword_1_0 = (Keyword)cNUMBEREnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cDATEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cDATEDATEKeyword_2_0 = (Keyword)cDATEEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cTEMPORALEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cTEMPORALTEMPORALKeyword_3_0 = (Keyword)cTEMPORALEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum PredefinedTypes:
-		//	ANY | NUMBER | DATE;
+		//	ANY | NUMBER | DATE | TEMPORAL;
 		public EnumRule getRule() { return rule; }
 
-		//ANY | NUMBER | DATE
+		//ANY | NUMBER | DATE | TEMPORAL
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ANY
@@ -610,6 +612,12 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"DATE"
 		public Keyword getDATEDATEKeyword_2_0() { return cDATEDATEKeyword_2_0; }
+
+		//TEMPORAL
+		public EnumLiteralDeclaration getTEMPORALEnumLiteralDeclaration_3() { return cTEMPORALEnumLiteralDeclaration_3; }
+
+		//"TEMPORAL"
+		public Keyword getTEMPORALTEMPORALKeyword_3_0() { return cTEMPORALTEMPORALKeyword_3_0; }
 	}
 	
 	private final NLSElements pNLS;
@@ -846,7 +854,7 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum PredefinedTypes:
-	//	ANY | NUMBER | DATE;
+	//	ANY | NUMBER | DATE | TEMPORAL;
 	public PredefinedTypesElements getPredefinedTypesAccess() {
 		return unknownRulePredefinedTypes;
 	}

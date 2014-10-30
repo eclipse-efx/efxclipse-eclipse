@@ -1081,6 +1081,12 @@ rulePredefinedTypes returns [Enumerator current=null]
         $current = grammarAccess.getPredefinedTypesAccess().getDATEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_2, grammarAccess.getPredefinedTypesAccess().getDATEEnumLiteralDeclaration_2()); 
     }
+)
+    |(	enumLiteral_3='TEMPORAL' 
+	{
+        $current = grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3()); 
+    }
 ));
 
 

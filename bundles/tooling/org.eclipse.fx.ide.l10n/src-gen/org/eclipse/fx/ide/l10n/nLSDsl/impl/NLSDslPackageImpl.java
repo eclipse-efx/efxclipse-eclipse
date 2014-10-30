@@ -757,6 +757,7 @@ public class NLSDslPackageImpl extends EPackageImpl implements NLSDslPackage
     addEEnumLiteral(predefinedTypesEEnum, PredefinedTypes.ANY);
     addEEnumLiteral(predefinedTypesEEnum, PredefinedTypes.NUMBER);
     addEEnumLiteral(predefinedTypesEEnum, PredefinedTypes.DATE);
+    addEEnumLiteral(predefinedTypesEEnum, PredefinedTypes.TEMPORAL);
 
     // Create resource
     createResource(eNS_URI);

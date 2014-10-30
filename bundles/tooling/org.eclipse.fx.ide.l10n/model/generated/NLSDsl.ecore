@@ -64,5 +64,6 @@
     <eLiterals name="ANY" literal="ANY"/>
     <eLiterals name="NUMBER" value="1" literal="NUMBER"/>
     <eLiterals name="DATE" value="2" literal="DATE"/>
+    <eLiterals name="TEMPORAL" value="3" literal="TEMPORAL"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -47,7 +47,17 @@ public enum PredefinedTypes implements Enumerator
    * @generated
    * @ordered
    */
-  DATE(2, "DATE", "DATE");
+  DATE(2, "DATE", "DATE"),
+
+  /**
+   * The '<em><b>TEMPORAL</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TEMPORAL_VALUE
+   * @generated
+   * @ordered
+   */
+  TEMPORAL(3, "TEMPORAL", "TEMPORAL");
 
   /**
    * The '<em><b>ANY</b></em>' literal value.
@@ -95,6 +105,21 @@ public enum PredefinedTypes implements Enumerator
   public static final int DATE_VALUE = 2;
 
   /**
+   * The '<em><b>TEMPORAL</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>TEMPORAL</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #TEMPORAL
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int TEMPORAL_VALUE = 3;
+
+  /**
    * An array of all the '<em><b>Predefined Types</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -106,6 +131,7 @@ public enum PredefinedTypes implements Enumerator
       ANY,
       NUMBER,
       DATE,
+      TEMPORAL,
     };
 
   /**
@@ -167,6 +193,7 @@ public enum PredefinedTypes implements Enumerator
       case ANY_VALUE: return ANY;
       case NUMBER_VALUE: return NUMBER;
       case DATE_VALUE: return DATE;
+      case TEMPORAL_VALUE: return TEMPORAL;
     }
     return null;
   }
