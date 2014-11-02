@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<name>e(fx)clipse - IDE - Features - l10n</name>
 	<groupId>org.eclipse.fx.ide</groupId>
-	<artifactId>org.eclipse.fx.ide.fxml.feature</artifactId>
+	<artifactId>org.eclipse.fx.ide.l10n.feature</artifactId>
 	<packaging>eclipse-feature</packaging>
 
 	<parent>
