@@ -22,8 +22,13 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
+import org.eclipse.fx.ide.css.cssDsl.IdentifierTok;
+import org.eclipse.fx.ide.css.cssDsl.SymbolTok;
+import org.eclipse.fx.ide.css.cssDsl.UrlTok;
+import org.eclipse.fx.ide.css.cssDsl.WSTok;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
+import org.eclipse.fx.ide.css.cssDsl.font_face;
 import org.eclipse.fx.ide.css.cssDsl.ruleset;
 import org.eclipse.fx.ide.css.cssDsl.selector;
 import org.eclipse.fx.ide.css.extapi.CssExt;
@@ -73,6 +78,13 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 //		}
 //	}
 
+	private boolean filterWS(CssTok t) {
+		return !(t instanceof WSTok);
+	}
+
+	private boolean filterSymbol(CssTok t) {
+		return !(t instanceof SymbolTok);
+	}
 
 	@Check
 	public void checkProperty(css_property property) {
@@ -134,6 +146,42 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 		if( ! validate ) {
 			return;
 		}
+
+		if( dec.eContainer() instanceof font_face ) {
+			if( "font-family".equals(property.getName()) ) {
+				if( dec.getValueTokens().stream().filter(this::filterWS).count() != 1 ) {
+					error("Font family has to define a name", dec, CssDslPackage.Literals.CSS_DECLARATION__VALUE_TOKENS);
+				} else {
+					if( ! (dec.getValueTokens().stream().filter(this::filterWS).findFirst().get() instanceof IdentifierTok) ) {
+						CssTok tok = dec.getValueTokens().stream().filter(this::filterWS).findFirst().get();
+						error("Invalid font family name", dec, CssDslPackage.Literals.CSS_DECLARATION__VALUE_TOKENS, dec.getValueTokens().indexOf(tok));
+					}
+				}
+			} else if( "src".equals(property.getName()) ) {
+				if( dec.getValueTokens().stream().filter(this::filterWS).count() == 0 ) {
+					error("At least one URL is required", dec, CssDslPackage.Literals.CSS_DECLARATION__VALUE_TOKENS);
+				} else {
+					dec.getValueTokens().stream().filter(this::filterWS).filter(this::filterSymbol).filter((t) -> !(t instanceof UrlTok)).forEach((t) ->
+						{
+							error("Only url-values are allowed", dec, CssDslPackage.Literals.CSS_DECLARATION__VALUE_TOKENS,dec.getValueTokens().indexOf(t));
+						}
+					);
+				}
+			} else if( "font-stretch".equals(property.getName()) ) {
+
+			} else if( "font-style".equals(property.getName()) ) {
+
+			} else if( "font-weight".equals(property.getName()) ) {
+
+			} else if( "unicode-range".equals(property.getName()) ) {
+
+			} else {
+				warning("Unknown property: \""+property.getName()+"\"", property, CssDslPackage.Literals.CSS_PROPERTY__NAME);
+			}
+
+			return;
+		}
+
 
 		List<Proposal> properties = ext.getPropertyProposalsForSelector(file,dec,null);
 				//extension.getAllProperties(uri);
