@@ -27,7 +27,13 @@ public class FXCSSContentDescriber implements ITextContentDescriber {
 	@Override
 	public int describe(Reader contents, IContentDescription description) throws IOException {
 		BufferedReader reader = new BufferedReader(contents);
-		if( reader.readLine().contains("JavaFX CSS") ) { //$NON-NLS-1$
+
+		String l = reader.readLine();
+		if( l == null ) {
+			return INVALID;
+		}
+
+		if( l.contains("JavaFX CSS") ) { //$NON-NLS-1$
 			return VALID;
 		}
 
