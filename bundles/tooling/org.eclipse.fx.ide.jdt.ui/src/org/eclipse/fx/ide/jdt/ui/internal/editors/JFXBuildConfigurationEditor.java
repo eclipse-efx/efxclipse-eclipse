@@ -12,15 +12,7 @@
 package org.eclipse.fx.ide.jdt.ui.internal.editors;
 
 import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage.Literals.*;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.APPLICATION__MAINCLASS;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.APPLICATION__NAME;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.APPLICATION__PRELOADERCLASS;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.APPLICATION__TOOLKIT;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.APPLICATION__VERSION;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.INFO__VENDOR;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.INFO__TITLE;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.TEMPLATE__FILE;
-import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.TEMPLATE__TO_FILE;
+import static org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage.Literals.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -171,6 +163,7 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.eclipse.ui.forms.events.IHyperlinkListener;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormText;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -184,7 +177,7 @@ import org.eclipse.ui.part.MultiPageEditorPart;
 
 
 /**
- * 
+ *
  * @author martin
  */
 @SuppressWarnings( "restriction" )
@@ -193,7 +186,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 */
-	private AdapterFactoryEditingDomain editingDomain;
+	AdapterFactoryEditingDomain editingDomain;
 	/**
 	 * This is the one adapter factory used for providing views of the model.
 	 */
@@ -201,23 +194,23 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	/**
 	 * This keeps track of the active content viewer, which may be either one of the viewers in the pages or the content outline viewer.
 	 */
-	private Viewer currentViewer;
+	Viewer currentViewer;
 	/**
 	 * Controls whether the problem indication should be updated.
 	 */
-	private boolean updateProblemIndication = true;
+	boolean updateProblemIndication = true;
 	/**
 	 * Resources that have been removed since last activation.
 	 */
-	private Collection<Resource> removedResources = new ArrayList<Resource>();
+	Collection<Resource> removedResources = new ArrayList<Resource>();
 	/**
 	 * Resources that have been changed since last activation.
 	 */
-	private Collection<Resource> changedResources = new ArrayList<Resource>();
+	Collection<Resource> changedResources = new ArrayList<Resource>();
 	/**
 	 * Resources that have been saved.
 	 */
-	private Collection<Resource> savedResources = new ArrayList<Resource>();
+	Collection<Resource> savedResources = new ArrayList<Resource>();
 	/**
 	 * Properties from old build file.
 	 */
@@ -230,7 +223,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	/**
 	 * Map to store the diagnostic associated with a resource.
 	 */
-	private Map<Resource, Diagnostic> resourceToDiagnosticMap = new LinkedHashMap<Resource, Diagnostic>();
+	Map<Resource, Diagnostic> resourceToDiagnosticMap = new LinkedHashMap<Resource, Diagnostic>();
 
 	private FormToolkit toolkit;
 
@@ -240,42 +233,47 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * This listens to which ever viewer is active. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ISelectionChangedListener selectionChangedListener;
 
+	/**
+	 * Create an editor instance
+	 */
 	public JFXBuildConfigurationEditor() {
 		super();
 		initializeEditingDomain();
-		ResourcesPlugin.getWorkspace().addResourceChangeListener( resourceChangeListener );
+		ResourcesPlugin.getWorkspace().addResourceChangeListener( this.resourceChangeListener );
 	}
 
 	/**
 	 * This listens for workspace changes. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
+		@Override
 		public void resourceChanged( IResourceChangeEvent event ) {
 			IResourceDelta delta = event.getDelta();
 			try {
 				class ResourceDeltaVisitor implements IResourceDeltaVisitor {
-					protected ResourceSet resourceSet = editingDomain.getResourceSet();
+					protected ResourceSet resourceSet = JFXBuildConfigurationEditor.this.editingDomain.getResourceSet();
 					protected Collection<Resource> changedResources = new ArrayList<Resource>();
 					protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
+					@Override
 					public boolean visit( IResourceDelta delta ) {
 						if ( delta.getResource().getType() == IResource.FILE ) {
 							if ( delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED
 									&& delta.getFlags() != IResourceDelta.MARKERS ) {
-								Resource resource = resourceSet.getResource( URI.createPlatformResourceURI( delta.getFullPath().toString(), true ), false );
+								Resource resource = this.resourceSet.getResource( URI.createPlatformResourceURI( delta.getFullPath().toString(), true ), false );
 								if ( resource != null ) {
 									if ( delta.getKind() == IResourceDelta.REMOVED ) {
-										removedResources.add( resource );
+										this.removedResources.add( resource );
 									}
-									else if ( !savedResources.remove( resource ) ) {
-										changedResources.add( resource );
+									else if ( !JFXBuildConfigurationEditor.this.savedResources.remove( resource ) ) {
+										this.changedResources.add( resource );
 									}
 								}
 							}
@@ -285,11 +283,11 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					}
 
 					public Collection<Resource> getChangedResources() {
-						return changedResources;
+						return this.changedResources;
 					}
 
 					public Collection<Resource> getRemovedResources() {
-						return removedResources;
+						return this.removedResources;
 					}
 				}
 
@@ -298,8 +296,9 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 				if ( !visitor.getRemovedResources().isEmpty() ) {
 					getSite().getShell().getDisplay().asyncExec( new Runnable() {
+						@Override
 						public void run() {
-							removedResources.addAll( visitor.getRemovedResources() );
+							JFXBuildConfigurationEditor.this.removedResources.addAll( visitor.getRemovedResources() );
 							if ( !isDirty() ) {
 								getSite().getPage().closeEditor( JFXBuildConfigurationEditor.this, false );
 							}
@@ -311,7 +310,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					getSite().getShell().getDisplay().asyncExec( new Runnable() {
 						@Override
 						public void run() {
-							changedResources.addAll( visitor.getChangedResources() );
+							JFXBuildConfigurationEditor.this.changedResources.addAll( visitor.getChangedResources() );
 							if ( getSite().getPage().getActiveEditor() == JFXBuildConfigurationEditor.this ) {
 								handleActivate();
 							}
@@ -328,26 +327,26 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	/**
 	 * Handles activation of the editor or it's associated views.
 	 */
-	private void handleActivate() {
-		if ( editingDomain.getResourceToReadOnlyMap() != null ) {
-			editingDomain.getResourceToReadOnlyMap().clear();
+	void handleActivate() {
+		if ( this.editingDomain.getResourceToReadOnlyMap() != null ) {
+			this.editingDomain.getResourceToReadOnlyMap().clear();
 		}
 
-		if ( !removedResources.isEmpty() ) {
+		if ( !this.removedResources.isEmpty() ) {
 			if ( handleDirtyConflict() ) {
 				getSite().getPage().closeEditor( JFXBuildConfigurationEditor.this, false );
 			}
 			else {
-				removedResources.clear();
-				changedResources.clear();
-				savedResources.clear();
+				this.removedResources.clear();
+				this.changedResources.clear();
+				this.savedResources.clear();
 			}
 		}
-		else if ( !changedResources.isEmpty() ) {
-			changedResources.removeAll( savedResources );
+		else if ( !this.changedResources.isEmpty() ) {
+			this.changedResources.removeAll( this.savedResources );
 			handleChangedResources();
-			changedResources.clear();
-			savedResources.clear();
+			this.changedResources.clear();
+			this.savedResources.clear();
 		}
 	}
 
@@ -363,29 +362,29 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	 * Handles what to do with changed resources on activation.
 	 */
 	private void handleChangedResources() {
-		if ( !changedResources.isEmpty() && ( !isDirty() || handleDirtyConflict() ) ) {
+		if ( !this.changedResources.isEmpty() && ( !isDirty() || handleDirtyConflict() ) ) {
 			if ( isDirty() ) {
-				changedResources.addAll( editingDomain.getResourceSet().getResources() );
+				this.changedResources.addAll( this.editingDomain.getResourceSet().getResources() );
 			}
-			editingDomain.getCommandStack().flush();
+			this.editingDomain.getCommandStack().flush();
 
-			updateProblemIndication = false;
-			for ( Resource resource : changedResources ) {
+			this.updateProblemIndication = false;
+			for ( Resource resource : this.changedResources ) {
 				if ( resource.isLoaded() ) {
 					resource.unload();
 					try {
 						resource.load( Collections.EMPTY_MAP );
-						bean.setValue( getTask() );
-						dbc.updateTargets();
+						this.bean.setValue( getTask() );
+						this.dbc.updateTargets();
 					}
 					catch ( IOException exception ) {
-						if ( !resourceToDiagnosticMap.containsKey( resource ) ) {
-							resourceToDiagnosticMap.put( resource, analyzeResourceProblems( resource, exception ) );
+						if ( !this.resourceToDiagnosticMap.containsKey( resource ) ) {
+							this.resourceToDiagnosticMap.put( resource, analyzeResourceProblems( resource, exception ) );
 						}
 					}
 				}
 			}
-			updateProblemIndication = true;
+			this.updateProblemIndication = true;
 			updateProblemIndication();
 		}
 	}
@@ -396,12 +395,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	private void initializeEditingDomain() {
 		// Create an adapter factory that yields item providers.
 		//
-		adapterFactory = new ComposedAdapterFactory( ComposedAdapterFactory.Descriptor.Registry.INSTANCE );
+		this.adapterFactory = new ComposedAdapterFactory( ComposedAdapterFactory.Descriptor.Registry.INSTANCE );
 
-		adapterFactory.addAdapterFactory( new ResourceItemProviderAdapterFactory() );
+		this.adapterFactory.addAdapterFactory( new ResourceItemProviderAdapterFactory() );
 		// adapterFactory.addAdapterFactory( new AntTasksItemProviderAdapterFactory() );
 		// adapterFactory.addAdapterFactory( new ParametersItemProviderAdapterFactory() );
-		adapterFactory.addAdapterFactory( new ReflectiveItemProviderAdapterFactory() );
+		this.adapterFactory.addAdapterFactory( new ReflectiveItemProviderAdapterFactory() );
 
 		// Create the command stack that will notify this editor as commands are executed.
 		//
@@ -410,8 +409,11 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
 		//
 		commandStack.addCommandStackListener( new CommandStackListener() {
+			@SuppressWarnings("synthetic-access")
+			@Override
 			public void commandStackChanged( final EventObject event ) {
 				getContainer().getDisplay().asyncExec( new Runnable() {
+					@Override
 					public void run() {
 						firePropertyChange( IEditorPart.PROP_DIRTY );
 
@@ -428,23 +430,21 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 		// Create the editing domain with a special command stack.
 		//
-		editingDomain = new AdapterFactoryEditingDomain( adapterFactory, commandStack, new HashMap<Resource, Boolean>() );
+		this.editingDomain = new AdapterFactoryEditingDomain( this.adapterFactory, commandStack, new HashMap<Resource, Boolean>() );
 	}
 
-	/**
-	 * This sets the selection into whichever viewer is active.
-	 */
-	public void setSelectionToViewer( Collection<?> collection ) {
+	private void setSelectionToViewer( Collection<?> collection ) {
 		final Collection<?> theSelection = collection;
 		// Make sure it's okay.
 		//
 		if ( theSelection != null && !theSelection.isEmpty() ) {
 			Runnable runnable = new Runnable() {
+				@Override
 				public void run() {
 					// Try to select the items in the current content viewer of the editor.
 					//
-					if ( currentViewer != null ) {
-						currentViewer.setSelection( new StructuredSelection( theSelection.toArray() ), true );
+					if ( JFXBuildConfigurationEditor.this.currentViewer != null ) {
+						JFXBuildConfigurationEditor.this.currentViewer.setSelection( new StructuredSelection( theSelection.toArray() ), true );
 					}
 				}
 			};
@@ -457,7 +457,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	 */
 	@Override
 	public boolean isDirty() {
-		return ( (BasicCommandStack) editingDomain.getCommandStack() ).isSaveNeeded();
+		return ( (BasicCommandStack) this.editingDomain.getCommandStack() ).isSaveNeeded();
 	}
 
 	/**
@@ -480,17 +480,17 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				// Save the resources to the file system.
 				//
 				boolean first = true;
-				for ( Resource resource : editingDomain.getResourceSet().getResources() ) {
-					if ( ( first || !resource.getContents().isEmpty() || isPersisted( resource ) ) && !editingDomain.isReadOnly( resource ) ) {
+				for ( Resource resource : JFXBuildConfigurationEditor.this.editingDomain.getResourceSet().getResources() ) {
+					if ( ( first || !resource.getContents().isEmpty() || isPersisted( resource ) ) && !JFXBuildConfigurationEditor.this.editingDomain.isReadOnly( resource ) ) {
 						try {
 							long timeStamp = resource.getTimeStamp();
 							resource.save( saveOptions );
 							if ( resource.getTimeStamp() != timeStamp ) {
-								savedResources.add( resource );
+								JFXBuildConfigurationEditor.this.savedResources.add( resource );
 							}
 						}
 						catch ( Exception exception ) {
-							resourceToDiagnosticMap.put( resource, analyzeResourceProblems( resource, exception ) );
+							JFXBuildConfigurationEditor.this.resourceToDiagnosticMap.put( resource, analyzeResourceProblems( resource, exception ) );
 						}
 						first = false;
 					}
@@ -498,7 +498,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 			}
 		};
 
-		updateProblemIndication = false;
+		this.updateProblemIndication = false;
 		try {
 			// This runs the options, and shows progress.
 			//
@@ -506,24 +506,24 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 			// Refresh the necessary state.
 			//
-			( (BasicCommandStack) editingDomain.getCommandStack() ).saveIsDone();
+			( (BasicCommandStack) this.editingDomain.getCommandStack() ).saveIsDone();
 			firePropertyChange( IEditorPart.PROP_DIRTY );
 		}
 		catch ( Exception e ) {
 			// TODO
 			e.printStackTrace();
 		}
-		updateProblemIndication = true;
+		this.updateProblemIndication = true;
 		updateProblemIndication();
 	}
 
 	/**
 	 * Updates the problems indication with the information described in the specified diagnostic. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 */
-	private void updateProblemIndication() {
-		if ( updateProblemIndication ) {
-			BasicDiagnostic diagnostic = new BasicDiagnostic( Diagnostic.OK, JavaFXUIPlugin.PLUGIN_ID, 0, null, new Object[] { editingDomain.getResourceSet() } );
-			for ( Diagnostic childDiagnostic : resourceToDiagnosticMap.values() ) {
+	void updateProblemIndication() {
+		if ( this.updateProblemIndication ) {
+			BasicDiagnostic diagnostic = new BasicDiagnostic( Diagnostic.OK, JavaFXUIPlugin.PLUGIN_ID, 0, null, new Object[] { this.editingDomain.getResourceSet() } );
+			for ( Diagnostic childDiagnostic : this.resourceToDiagnosticMap.values() ) {
 				if ( childDiagnostic.getSeverity() != Diagnostic.OK ) {
 					diagnostic.add( childDiagnostic );
 				}
@@ -539,7 +539,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 			else if ( diagnostic.getSeverity() != Diagnostic.OK ) {
 				ProblemEditorPart problemEditorPart = new ProblemEditorPart();
 				problemEditorPart.setDiagnostic( diagnostic );
-				problemEditorPart.setMarkerHelper( markerHelper );
+				problemEditorPart.setMarkerHelper( this.markerHelper );
 				try {
 					addPage( ++lastEditorPage, problemEditorPart, getEditorInput() );
 					setPageText( lastEditorPage, problemEditorPart.getPartName() );
@@ -552,11 +552,11 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				}
 			}
 
-			if ( markerHelper.hasMarkers( editingDomain.getResourceSet() ) ) {
-				markerHelper.deleteMarkers( editingDomain.getResourceSet() );
+			if ( this.markerHelper.hasMarkers( this.editingDomain.getResourceSet() ) ) {
+				this.markerHelper.deleteMarkers( this.editingDomain.getResourceSet() );
 				if ( diagnostic.getSeverity() != Diagnostic.OK ) {
 					try {
-						markerHelper.createMarkers( diagnostic );
+						this.markerHelper.createMarkers( diagnostic );
 					}
 					catch ( CoreException e ) {
 						// TODO
@@ -567,37 +567,26 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		}
 	}
 
-	/**
-	 * Returns a diagnostic describing the errors and warnings listed in the resource and the specified exception (if any). <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private Diagnostic analyzeResourceProblems( Resource resource, Exception exception ) {
+	static Diagnostic analyzeResourceProblems( Resource resource, Exception exception ) {
 		if ( !resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty() ) {
-			BasicDiagnostic basicDiagnostic = new BasicDiagnostic( Diagnostic.ERROR, JavaFXUIPlugin.PLUGIN_ID, 0, "_UI_CreateModelError_message",
+			BasicDiagnostic basicDiagnostic = new BasicDiagnostic( Diagnostic.ERROR, JavaFXUIPlugin.PLUGIN_ID, 0, "_UI_CreateModelError_message", //$NON-NLS-1$
 					new Object[] { exception == null ? (Object) resource : exception } );
 			basicDiagnostic.merge( EcoreUtil.computeDiagnostic( resource, true ) );
 			return basicDiagnostic;
 		}
 		else if ( exception != null ) {
-			return new BasicDiagnostic( Diagnostic.ERROR, JavaFXUIPlugin.PLUGIN_ID, 0, "_UI_CreateModelError_message", new Object[] { exception } );
+			return new BasicDiagnostic( Diagnostic.ERROR, JavaFXUIPlugin.PLUGIN_ID, 0, "_UI_CreateModelError_message", new Object[] { exception } ); //$NON-NLS-1$
 		}
 		else {
 			return Diagnostic.OK_INSTANCE;
 		}
 	}
 
-	private boolean isPersisted( Resource resource ) {
+	boolean isPersisted( Resource resource ) {
 		boolean result = false;
-		try {
-			InputStream stream = editingDomain.getResourceSet().getURIConverter().createInputStream( resource.getURI() );
-			if ( stream != null ) {
-				result = true;
-				stream.close();
-			}
-		}
-		catch ( IOException e ) {
+		try (InputStream stream = this.editingDomain.getResourceSet().getURIConverter().createInputStream( resource.getURI() ) ) {
+					result = true;
+		} catch ( IOException e ) {
 			// Ignore
 		}
 		return result;
@@ -605,7 +594,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * This always returns true because it is not currently supported. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -615,7 +604,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * This also changes the editor's input. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -632,7 +621,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	}
 
 	private void doSaveAs( URI uri, IEditorInput editorInput ) {
-		( editingDomain.getResourceSet().getResources().get( 0 ) ).setURI( uri );
+		( this.editingDomain.getResourceSet().getResources().get( 0 ) ).setURI( uri );
 		setInputWithNotify( editorInput );
 		setPartName( editorInput.getName() );
 		IProgressMonitor progressMonitor = getActionBars().getStatusLineManager() != null ? getActionBars().getStatusLineManager().getProgressMonitor()
@@ -650,8 +639,8 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	@Override
 	public void dispose() {
-		ResourcesPlugin.getWorkspace().removeResourceChangeListener( resourceChangeListener );
-		dbc.dispose();
+		ResourcesPlugin.getWorkspace().removeResourceChangeListener( this.resourceChangeListener );
+		this.dbc.dispose();
 		super.dispose();
 	}
 
@@ -660,7 +649,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		createModel();
 
 		// Only creates the other pages if there is something that can be edited
-		if ( !editingDomain.getResourceSet().getResources().isEmpty() ) {
+		if ( !this.editingDomain.getResourceSet().getResources().isEmpty() ) {
 			AntTask task = getTask();
 			createPageOverview( task );
 			createPageDeploy( task );
@@ -668,36 +657,32 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		}
 
 		getSite().getShell().getDisplay().asyncExec( new Runnable() {
+			@SuppressWarnings("synthetic-access")
+			@Override
 			public void run() {
 				setActivePage( 0 );
 			}
 		} );
 	}
 
-	private AntTask getTask() {
+	AntTask getTask() {
 		AntTask task;
 		try {
-			task = (AntTask) editingDomain.getResourceSet().getResources().get( 0 ).getContents().get( 0 );
+			task = (AntTask) this.editingDomain.getResourceSet().getResources().get( 0 ).getContents().get( 0 );
 		}
 		catch ( Exception e ) {
-			if ( !properties.isEmpty() ) {
-				task = PropertiesToModelTransformer.transform( properties );
-				editingDomain.getResourceSet().getResources().get( 0 ).getContents().add( 0, task );
+			if ( !this.properties.isEmpty() ) {
+				task = PropertiesToModelTransformer.transform( this.properties );
+				this.editingDomain.getResourceSet().getResources().get( 0 ).getContents().add( 0, task );
 				doSave( new NullProgressMonitor() );
 			}
 			else {
-				throw new UnsupportedOperationException( "Could not read file" );
+				throw new UnsupportedOperationException( "Could not read file" ); //$NON-NLS-1$
 			}
 		}
 		return task;
 	}
 
-	/**
-	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	private void createModel() {
 		// Initialize the model, this is important for the class loader.
 		AntTasksPackage.eINSTANCE.eClass();
@@ -709,18 +694,18 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		try {
 			// Load the resource through the editing domain.
 			//
-			resource = editingDomain.getResourceSet().getResource( resourceURI, true );
+			resource = this.editingDomain.getResourceSet().getResource( resourceURI, true );
 		}
 		catch ( Exception e ) {
 			exception = e;
-			resource = editingDomain.getResourceSet().getResource( resourceURI, false );
+			resource = this.editingDomain.getResourceSet().getResource( resourceURI, false );
 		}
 
 		Diagnostic diagnostic = analyzeResourceProblems( resource, exception );
 		if ( diagnostic.getSeverity() != Diagnostic.OK ) {
-			resourceToDiagnosticMap.put( resource, diagnostic );
+			this.resourceToDiagnosticMap.put( resource, diagnostic );
 		}
-		editingDomain.getResourceSet().eAdapters().add( problemIndicationAdapter );
+		this.editingDomain.getResourceSet().eAdapters().add( this.problemIndicationAdapter );
 	}
 
 	private EContentAdapter problemIndicationAdapter = new EContentAdapter() {
@@ -734,14 +719,15 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					Resource resource = (Resource) notification.getNotifier();
 					Diagnostic diagnostic = analyzeResourceProblems( resource, null );
 					if ( diagnostic.getSeverity() != Diagnostic.OK ) {
-						resourceToDiagnosticMap.put( resource, diagnostic );
+						JFXBuildConfigurationEditor.this.resourceToDiagnosticMap.put( resource, diagnostic );
 					}
 					else {
-						resourceToDiagnosticMap.remove( resource );
+						JFXBuildConfigurationEditor.this.resourceToDiagnosticMap.remove( resource );
 					}
 
-					if ( updateProblemIndication ) {
+					if ( JFXBuildConfigurationEditor.this.updateProblemIndication ) {
 						getSite().getShell().getDisplay().asyncExec( new Runnable() {
+							@Override
 							public void run() {
 								updateProblemIndication();
 							}
@@ -774,7 +760,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		super.init( site, editorInput );
 		try {
 			IFileEditorInput i = (IFileEditorInput) editorInput;
-			properties.load( i.getFile().getContents() );
+			this.properties.load( i.getFile().getContents() );
 			setPartName( editorInput.getName() );
 		}
 		catch ( IOException e ) {
@@ -791,42 +777,42 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		Composite composite = new Composite( getContainer(), SWT.NONE );
 		FillLayout layout = new FillLayout();
 		composite.setLayout( layout );
-		PlatformUI.getWorkbench().getHelpSystem().setHelp( composite, JavaFXUIPlugin.PLUGIN_ID + ".JFXBuildConfigurationEditor_overview" );
+		PlatformUI.getWorkbench().getHelpSystem().setHelp( composite, JavaFXUIPlugin.PLUGIN_ID + ".JFXBuildConfigurationEditor_overview" ); //$NON-NLS-1$
 
-		bean.setValue( task );
+		this.bean.setValue( task );
 
-		toolkit = new FormToolkit( composite.getDisplay() );
+		this.toolkit = new FormToolkit( composite.getDisplay() );
 
-		final Form form = toolkit.createForm( composite );
+		final Form form = this.toolkit.createForm( composite );
 		form.setText( "FX Build Configuration" );
 		form.setImage( getTitleImage() );
 		form.getBody().setLayout( new FillLayout() );
-		toolkit.decorateFormHeading( form );
+		this.toolkit.decorateFormHeading( form );
 
 		initToolbar( form );
 
-		ScrolledForm scrolledForm = toolkit.createScrolledForm( form.getBody() );
+		ScrolledForm scrolledForm = this.toolkit.createScrolledForm( form.getBody() );
 		scrolledForm.getBody().setLayout( new GridLayout( 2, false ) );
 		Composite sectionParent = scrolledForm.getBody();
 
-		dbc = new DataBindingContext();
+		this.dbc = new DataBindingContext();
 		IWidgetValueProperty textModify = WidgetProperties.text( SWT.Modify );
 		IWidgetValueProperty selChange = WidgetProperties.selection();
 
 		{
-			Section section = toolkit.createSection( sectionParent, Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED );
+			Section section = this.toolkit.createSection( sectionParent, Section.DESCRIPTION | ExpandableComposite.TITLE_BAR | ExpandableComposite.TWISTIE | ExpandableComposite.EXPANDED );
 			section.setText( "Build && Package Properties" );
 			section.setDescription( "The following properties are needed to build the JavaFX-Application" );
 			section.setLayoutData( new GridData( GridData.FILL_HORIZONTAL ) );
 
-			Composite sectionClient = toolkit.createComposite( section );
+			Composite sectionClient = this.toolkit.createComposite( section );
 			sectionClient.setLayout( new GridLayout( 4, false ) );
 
 			{
-				toolkit.createLabel( sectionClient, "Build Directory*:" );
-				final Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Build Directory*:" );
+				final Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER ); //$NON-NLS-1$
 				t.setLayoutData( new GridData( GridData.FILL_HORIZONTAL ) );
-				toolkit.createButton( sectionClient, "Filesystem ...", SWT.PUSH ).addSelectionListener( new SelectionAdapter() {
+				this.toolkit.createButton( sectionClient, "Filesystem ...", SWT.PUSH ).addSelectionListener( new SelectionAdapter() {
 					@Override
 					public void widgetSelected( final SelectionEvent e ) {
 						String dir = handleBuildFilesystemDirectorySelection( t.getShell() );
@@ -835,7 +821,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 						}
 					}
 				} );
-				toolkit.createButton( sectionClient, "Workspace ...", SWT.PUSH ).addSelectionListener( new SelectionAdapter() {
+				this.toolkit.createButton( sectionClient, "Workspace ...", SWT.PUSH ).addSelectionListener( new SelectionAdapter() {
 					@Override
 					public void widgetSelected( final SelectionEvent e ) {
 						String dir = handleBuildWorkbenchDirectorySelection( t.getShell() );
@@ -844,41 +830,41 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 						}
 					}
 				} );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, ANT_TASK__BUILD_DIRECTORY );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, ANT_TASK__BUILD_DIRECTORY );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Vendor name*:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Vendor name*:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER ); //$NON-NLS-1$
 				t.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 3, 1 ) );
 				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__INFO, INFO__VENDOR ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( this.bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Application title*:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Application title*:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER ); //$NON-NLS-1$
 				t.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 3, 1 ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain,
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain,
 						FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__INFO, INFO__TITLE ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( this.bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Application version*:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Application version*:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER ); //$NON-NLS-1$
 				t.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 3, 1 ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain,
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain,
 						FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__APPLICATION, APPLICATION__VERSION ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( this.bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Application class*:" );
-				final Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Application class*:" );
+				final Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER ); //$NON-NLS-1$
 				t.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 2, 1 ) );
-				Button b = toolkit.createButton( sectionClient, "Browse ...", SWT.PUSH );
+				Button b = this.toolkit.createButton( sectionClient, "Browse ...", SWT.PUSH );
 				b.addSelectionListener( new SelectionAdapter() {
 					@Override
 					public void widgetSelected( SelectionEvent e ) {
@@ -889,16 +875,16 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					}
 				} );
 				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, false, false ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain,
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain,
 						FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__APPLICATION, APPLICATION__MAINCLASS ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( this.bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Preloader class:" );
-				final Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Preloader class:" );
+				final Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER ); //$NON-NLS-1$
 				t.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 2, 1 ) );
-				Button b = toolkit.createButton( sectionClient, "Browse ...", SWT.PUSH );
+				Button b = this.toolkit.createButton( sectionClient, "Browse ...", SWT.PUSH );
 				b.addSelectionListener( new SelectionAdapter() {
 					@Override
 					public void widgetSelected( SelectionEvent e ) {
@@ -909,16 +895,16 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					}
 				} );
 				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, false, false ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain,
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain,
 						FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__APPLICATION, APPLICATION__PRELOADERCLASS ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( this.bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Splash:" );
-				final Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Splash:" );
+				final Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER ); //$NON-NLS-1$
 				t.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 2, 1 ) );
-				Button b = toolkit.createButton( sectionClient, "Browse ...", SWT.PUSH );
+				Button b = this.toolkit.createButton( sectionClient, "Browse ...", SWT.PUSH );
 				b.addSelectionListener( new SelectionAdapter() {
 					@Override
 					public void widgetSelected( SelectionEvent e ) {
@@ -929,14 +915,14 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					}
 				} );
 				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, false, false ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__SPLASH_IMAGE ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__SPLASH_IMAGE ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( this.bean ) );
 			}
-			
+
 			{
-				toolkit.createLabel( sectionClient, "Manifest-Attributes:" )
+				this.toolkit.createLabel( sectionClient, "Manifest-Attributes:" )
 						.setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
-				Composite container = toolkit.createComposite( sectionClient );
+				Composite container = this.toolkit.createComposite( sectionClient );
 				GridLayout gl = new GridLayout( 2, false );
 				gl.marginBottom = gl.marginHeight = gl.marginLeft = gl.marginRight = gl.marginTop = gl.marginWidth = 0;
 				container.setLayout( gl );
@@ -944,8 +930,8 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				gdContainer.horizontalSpan = 2;
 				container.setLayoutData( gdContainer );
 
-				Composite tableContainer = toolkit.createComposite( container );
-				Table t = toolkit.createTable( tableContainer, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER );
+				Composite tableContainer = this.toolkit.createComposite( container );
+				Table t = this.toolkit.createTable( tableContainer, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER );
 				t.setHeaderVisible( true );
 				t.setLinesVisible( true );
 
@@ -986,12 +972,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				tableContainer.setLayout( tablelayout );
 				v.setInput( task.getManifestEntries() );
 
-				Composite buttonComp = toolkit.createComposite( sectionClient );
+				Composite buttonComp = this.toolkit.createComposite( sectionClient );
 				buttonComp.setLayoutData( new GridData( GridData.BEGINNING, GridData.END, false, false ) );
 				buttonComp.setLayout( new GridLayout() );
 
 				{
-					Button b = toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
+					Button b = this.toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.BEGINNING, false, false ) );
 					b.addSelectionListener( new SelectionAdapter() {
 						@Override
@@ -1023,41 +1009,41 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 					} );
 				}
 				{
-					toolkit.createLabel( sectionClient, "Toolkit Type:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
+					this.toolkit.createLabel( sectionClient, "Toolkit Type:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
 					ComboViewer c = new ComboViewer( sectionClient );
 					c.getCombo().setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 3, 1 ) );
 					c.setContentProvider( new ArrayContentProvider() );
 					c.setInput( ApplicationToolkitType.VALUES );
-					IEMFValueProperty prop = EMFEditProperties.value( editingDomain,
+					IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain,
 							FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__APPLICATION, APPLICATION__TOOLKIT ) );
-					dbc.bindValue( selChange.observe( c.getCombo() ), prop.observeDetail( bean ) );
+					this.dbc.bindValue( selChange.observe( c.getCombo() ), prop.observeDetail( this.bean ) );
 				}
 				{
-					toolkit.createLabel( sectionClient, "Packaging Format:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
+					this.toolkit.createLabel( sectionClient, "Packaging Format:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
 					ComboViewer c = new ComboViewer( sectionClient );
 					c.getCombo().setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 3, 1 ) );
 					c.setContentProvider( new ArrayContentProvider() );
 					c.setInput( PackagingFormat.VALUES );
-					IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PACKAGING_FORMAT ) );
-					dbc.bindValue( selChange.observe( c.getCombo() ), prop.observeDetail( bean ) );
+					IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PACKAGING_FORMAT ) );
+					this.dbc.bindValue( selChange.observe( c.getCombo() ), prop.observeDetail( this.bean ) );
 				}
 				{
-					Button b = toolkit.createButton( sectionClient, "automatic Proxy Resolution", SWT.CHECK );
+					Button b = this.toolkit.createButton( sectionClient, "automatic Proxy Resolution", SWT.CHECK );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 4, 1 ) );
-					IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PROXY_RESOLUTION ) );
-					dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
+					IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PROXY_RESOLUTION ) );
+					this.dbc.bindValue( selChange.observe( b ), prop.observeDetail( this.bean ) );
 				}
 				{
-					Button b = toolkit.createButton( sectionClient, "Convert CSS into binary form", SWT.CHECK );
+					Button b = this.toolkit.createButton( sectionClient, "Convert CSS into binary form", SWT.CHECK );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 4, 1 ) );
-					IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__CSS_TO_BIN ) );
-					dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
+					IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__CSS_TO_BIN ) );
+					this.dbc.bindValue( selChange.observe( b ), prop.observeDetail( this.bean ) );
 				}
 				{
-					Button b = toolkit.createButton( sectionClient, "Enable verbose build mode (Not recommended)", SWT.CHECK );
+					Button b = this.toolkit.createButton( sectionClient, "Enable verbose build mode (Not recommended)", SWT.CHECK );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, 4, 1 ) );
-					IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__VERBOSE ) );
-					dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
+					IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__VERBOSE ) );
+					this.dbc.bindValue( selChange.observe( b ), prop.observeDetail( this.bean ) );
 				}
 			}
 
@@ -1065,15 +1051,15 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		}
 
 		{
-			Section section = toolkit.createSection( sectionParent, Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED );
+			Section section = this.toolkit.createSection( sectionParent, Section.DESCRIPTION | ExpandableComposite.TITLE_BAR | ExpandableComposite.TWISTIE | ExpandableComposite.EXPANDED );
 			section.setText( "Building & Exporting" );
 			section.setLayoutData( new GridData( GridData.FILL, GridData.FILL, false, true, 1, 2 ) );
 
-			Composite sectionClient = toolkit.createComposite( section );
+			Composite sectionClient = this.toolkit.createComposite( section );
 			sectionClient.setLayout( new GridLayout( 1, false ) );
 
 			{
-				FormText text = toolkit.createFormText( sectionClient, false );
+				FormText text = this.toolkit.createFormText( sectionClient, false );
 				text.setText(
 						"<p>To generate build instructions and export the project: <li style=\"bullet\" bindent=\"1\">Generate <a href=\"generateAnt\">ant build.xml</a> only</li><li style=\"bullet\" bindent=\"2\">Generate <a href=\"generateAndRun\">ant build.xml and run</a></li>&#160;</p>",
 						true, false );
@@ -1081,17 +1067,18 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 					@Override
 					public void linkExited( final HyperlinkEvent e ) {
-
+						// nothing
 					}
 
 					@Override
 					public void linkEntered( HyperlinkEvent e ) {
+						// nothing
 					}
 
 					@Override
 					public void linkActivated( HyperlinkEvent e ) {
 						try {
-							if ( "generateAndRun".equals( e.getHref() ) ) {
+							if ( "generateAndRun".equals( e.getHref() ) ) { //$NON-NLS-1$
 								executeExport();
 							}
 							else {
@@ -1123,17 +1110,17 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		final WritableValue bean = new WritableValue();
 		bean.setValue( task );
 
-		toolkit = new FormToolkit( composite.getDisplay() );
+		this.toolkit = new FormToolkit( composite.getDisplay() );
 
-		final Form form = toolkit.createForm( composite );
+		final Form form = this.toolkit.createForm( composite );
 		form.setText( "FX Build Configuration" );
 		form.setImage( getTitleImage() );
 		form.getBody().setLayout( new FillLayout() );
-		toolkit.decorateFormHeading( form );
+		this.toolkit.decorateFormHeading( form );
 
 		initToolbar( form );
 
-		ScrolledForm scrolledForm = toolkit.createScrolledForm( form.getBody() );
+		ScrolledForm scrolledForm = this.toolkit.createScrolledForm( form.getBody() );
 		scrolledForm.getBody().setLayout( new GridLayout( 2, false ) );
 		Composite sectionParent = scrolledForm.getBody();
 
@@ -1141,90 +1128,90 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		IWidgetValueProperty selChange = WidgetProperties.selection();
 
 		{
-			Section section = toolkit.createSection( sectionParent, Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED );
+			Section section = this.toolkit.createSection( sectionParent, Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED );
 			section.setText( "Deploy Properties" );
 			section.setDescription( "The following properties are needed to create a Java Webstart Deployment" );
 			section.setLayoutData( new GridData( GridData.FILL_HORIZONTAL ) );
 
-			Composite sectionClient = toolkit.createComposite( section );
+			Composite sectionClient = this.toolkit.createComposite( section );
 			final int COLUMN_COUNT = 3;
 			sectionClient.setLayout( new GridLayout( COLUMN_COUNT, false ) );
 
 			{
-				toolkit.createLabel( sectionClient, "Applet Width*:" );
+				this.toolkit.createLabel( sectionClient, "Applet Width*:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER );
+				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
+				gd.horizontalSpan = COLUMN_COUNT - 1;
+				t.setLayoutData( gd );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__WIDTH ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+			}
+
+			{
+				this.toolkit.createLabel( sectionClient, "Applet Height*:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER );
+				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
+				gd.horizontalSpan = COLUMN_COUNT - 1;
+				t.setLayoutData( gd );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__HEIGHT ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+			}
+
+			{
+				Button b = this.toolkit.createButton( sectionClient, "Embed JNLP", SWT.CHECK );
+				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__EMBEDJNLP ) );
+				this.dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
+			}
+
+			{
+				Button b = this.toolkit.createButton( sectionClient, "Treat files as extensions", SWT.CHECK );
+				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__EXTENSION ) );
+				this.dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
+			}
+
+			{
+				Button b = this.toolkit.createButton( sectionClient, "Include deployment toolkit", SWT.CHECK );
+				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__INCLUDE_DT ) );
+				this.dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
+			}
+
+			{
+				Button b = this.toolkit.createButton( sectionClient, "Offline allowed", SWT.CHECK );
+				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__OFFLINE_ALLOWED ) );
+				this.dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
+			}
+
+			{
+				this.toolkit.createLabel( sectionClient, "Placeholder Ref.*:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER );
+				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
+				gd.horizontalSpan = COLUMN_COUNT - 1;
+				t.setLayoutData( gd );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PLACEHOLDERREF ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+			}
+
+			{
+				this.toolkit.createLabel( sectionClient, "Placeholder ID*:" );
 				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
 				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
 				gd.horizontalSpan = COLUMN_COUNT - 1;
 				t.setLayoutData( gd );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__WIDTH ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PLACEHOLDERID ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Applet Height*:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
-				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
-				gd.horizontalSpan = COLUMN_COUNT - 1;
-				t.setLayoutData( gd );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__HEIGHT ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
-			}
-
-			{
-				Button b = toolkit.createButton( sectionClient, "Embed JNLP", SWT.CHECK );
-				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__EMBEDJNLP ) );
-				dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
-			}
-
-			{
-				Button b = toolkit.createButton( sectionClient, "Treat files as extensions", SWT.CHECK );
-				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__EXTENSION ) );
-				dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
-			}
-
-			{
-				Button b = toolkit.createButton( sectionClient, "Include deployment toolkit", SWT.CHECK );
-				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__INCLUDE_DT ) );
-				dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
-			}
-
-			{
-				Button b = toolkit.createButton( sectionClient, "Offline allowed", SWT.CHECK );
-				b.setLayoutData( new GridData( GridData.FILL, GridData.CENTER, true, false, COLUMN_COUNT, 1 ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__OFFLINE_ALLOWED ) );
-				dbc.bindValue( selChange.observe( b ), prop.observeDetail( bean ) );
-			}
-
-			{
-				toolkit.createLabel( sectionClient, "Placeholder Ref.*:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
-				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
-				gd.horizontalSpan = COLUMN_COUNT - 1;
-				t.setLayoutData( gd );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PLACEHOLDERREF ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
-			}
-
-			{
-				toolkit.createLabel( sectionClient, "Placeholder ID*:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
-				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
-				gd.horizontalSpan = COLUMN_COUNT - 1;
-				t.setLayoutData( gd );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__PLACEHOLDERID ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
-			}
-
-			{
-				toolkit.createLabel( sectionClient, "HTML Template:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "HTML Template:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER );
 				t.setLayoutData( new GridData( GridData.FILL_HORIZONTAL ) );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__TEMPLATE, TEMPLATE__FILE ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
-				Button b = toolkit.createButton( sectionClient, "Workspace ...", SWT.NONE );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__TEMPLATE, TEMPLATE__FILE ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				Button b = this.toolkit.createButton( sectionClient, "Workspace ...", SWT.NONE );
 				b.addSelectionListener( new SelectionAdapter() {
 					@Override
 					public void widgetSelected( final SelectionEvent e ) {
@@ -1243,7 +1230,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 							}
 						};
 
-						if ( d.open() == ResourceSelectionDialog.OK ) {
+						if ( d.open() == Window.OK ) {
 							Object[] rv = d.getResult();
 							if ( rv.length == 1 ) {
 								IFile f = (IFile) rv[0];
@@ -1251,7 +1238,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 								String template = null;
 								if ( j instanceof IPackageFragment ) {
 									IPackageFragment p = (IPackageFragment) j;
-									template = p.getElementName().replace( '.', '/' ) + "/" + f.getName();
+									template = p.getElementName().replace( '.', '/' ) + "/" + f.getName(); //$NON-NLS-1$
 								}
 								else if ( j instanceof IPackageFragmentRoot ) {
 									IPackageFragmentRoot p = (IPackageFragmentRoot) j;
@@ -1263,13 +1250,13 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 								}
 								if ( template != null ) {
 									if ( getTask().getDeploy().getTemplate() == null ) {
-										Command cmd = new SetCommand( editingDomain, getTask().getDeploy(), DEPLOY__TEMPLATE, ParametersFactory.eINSTANCE
+										Command cmd = new SetCommand( JFXBuildConfigurationEditor.this.editingDomain, getTask().getDeploy(), DEPLOY__TEMPLATE, ParametersFactory.eINSTANCE
 												.createTemplate() );
 										if ( cmd.canExecute() ) {
 											cmd.execute();
 										}
 									}
-									Command cmd = new SetCommand( editingDomain, getTask().getDeploy().getTemplate(), TEMPLATE__FILE, template );
+									Command cmd = new SetCommand( JFXBuildConfigurationEditor.this.editingDomain, getTask().getDeploy().getTemplate(), TEMPLATE__FILE, template );
 									if ( cmd.canExecute() ) {
 										cmd.execute();
 									}
@@ -1281,18 +1268,18 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Template Output File:" );
-				Text t = toolkit.createText( sectionClient, "", SWT.BORDER );
+				this.toolkit.createLabel( sectionClient, "Template Output File:" );
+				Text t = this.toolkit.createText( sectionClient, "", SWT.BORDER );
 				GridData gd = new GridData( GridData.FILL_HORIZONTAL );
 				gd.horizontalSpan = COLUMN_COUNT - 1;
 				t.setLayoutData( gd );
-				IEMFValueProperty prop = EMFEditProperties.value( editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__TEMPLATE, TEMPLATE__TO_FILE ) );
-				dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
+				IEMFValueProperty prop = EMFEditProperties.value( this.editingDomain, FeaturePath.fromList( ANT_TASK__DEPLOY, DEPLOY__TEMPLATE, TEMPLATE__TO_FILE ) );
+				this.dbc.bindValue( textModify.observeDelayed( DELAY, t ), prop.observeDetail( bean ) );
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Webstart Splash:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
-				Composite container = toolkit.createComposite( sectionClient );
+				this.toolkit.createLabel( sectionClient, "Webstart Splash:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
+				Composite container = this.toolkit.createComposite( sectionClient );
 				GridLayout gl = new GridLayout( 2, false );
 				gl.marginBottom = gl.marginHeight = gl.marginLeft = gl.marginRight = gl.marginTop = gl.marginWidth = 0;
 				container.setLayout( gl );
@@ -1300,8 +1287,8 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				gdContainer.horizontalSpan = COLUMN_COUNT - 1;
 				container.setLayoutData( gdContainer );
 
-				Composite tableContainer = toolkit.createComposite( container );
-				Table t = toolkit.createTable( tableContainer, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER );
+				Composite tableContainer = this.toolkit.createComposite( container );
+				Table t = this.toolkit.createTable( tableContainer, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER );
 				t.setHeaderVisible( true );
 				t.setLinesVisible( true );
 
@@ -1343,12 +1330,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				tableContainer.setLayout( tablelayout );
 				v.setInput( task.getDeploy().getInfo().getSplash() );
 
-				Composite buttonComp = toolkit.createComposite( container );
+				Composite buttonComp = this.toolkit.createComposite( container );
 				buttonComp.setLayoutData( new GridData( GridData.BEGINNING, GridData.END, false, false ) );
 				buttonComp.setLayout( new GridLayout() );
 
 				{
-					Button b = toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
+					Button b = this.toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.BEGINNING, false, false ) );
 					b.addSelectionListener( new SelectionAdapter() {
 						@Override
@@ -1471,12 +1458,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				tableContainer.setLayout( tablelayout );
 				v.setInput( task.getDeploy().getInfo().getIcon() );
 
-				Composite buttonComp = toolkit.createComposite( container );
+				Composite buttonComp = this.toolkit.createComposite( container );
 				buttonComp.setLayoutData( new GridData( GridData.BEGINNING, GridData.END, false, false ) );
 				buttonComp.setLayout( new GridLayout() );
 
 				{
-					Button b = toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
+					Button b = this.toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.BEGINNING, false, false ) );
 					b.addSelectionListener( new SelectionAdapter() {
 						@Override
@@ -1491,7 +1478,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				}
 
 				{
-					Button b = toolkit.createButton( buttonComp, "Remove", SWT.PUSH );
+					Button b = this.toolkit.createButton( buttonComp, "Remove", SWT.PUSH );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.BEGINNING, false, false ) );
 					b.addSelectionListener( new SelectionAdapter() {
 						@Override
@@ -1511,7 +1498,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Additional META-INF files:" ).setLayoutData(
+				this.toolkit.createLabel( sectionClient, "Additional META-INF files:" ).setLayoutData(
 						new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
 				Composite container = toolkit.createComposite( sectionClient );
 				GridLayout gl = new GridLayout( 2, false );
@@ -1564,12 +1551,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 				tableContainer.setLayout( tablelayout );
 				v.setInput( task.getFiles() );
 
-				Composite buttonComp = toolkit.createComposite( container );
+				Composite buttonComp = this.toolkit.createComposite( container );
 				buttonComp.setLayoutData( new GridData( GridData.BEGINNING, GridData.END, false, false ) );
 				buttonComp.setLayout( new GridLayout() );
 
 				{
-					Button b = toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
+					Button b = this.toolkit.createButton( buttonComp, "Add ...", SWT.PUSH );
 					b.setLayoutData( new GridData( GridData.FILL, GridData.BEGINNING, false, false ) );
 					b.addSelectionListener( new SelectionAdapter() {
 						@Override
@@ -1603,7 +1590,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 			}
 
 			{
-				toolkit.createLabel( sectionClient, "Fonts:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
+				this.toolkit.createLabel( sectionClient, "Fonts:" ).setLayoutData( new GridData( GridData.BEGINNING, GridData.BEGINNING, false, false ) );
 				Composite container = toolkit.createComposite( sectionClient );
 				GridLayout gl = new GridLayout( 2, false );
 				gl.marginBottom = gl.marginHeight = gl.marginLeft = gl.marginRight = gl.marginTop = gl.marginWidth = 0;
@@ -1734,12 +1721,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleRemoveMetaInfFile.
-	 * 
+	 *
 	 * @param value
 	 *            the value to delete
 	 * @return true if value was deleted, and false otherwise.
 	 */
-	private boolean handleRemoveMetaInfFile( final KeyValuePair value ) {
+	boolean handleRemoveMetaInfFile( final KeyValuePair value ) {
 		if ( MessageDialog.openConfirm( getSite().getShell(), "Confirm delete", "Would really like to remove the selected META-INF file" ) ) {
 			RemoveCommand cmd = new RemoveCommand( editingDomain, getTask().getFiles(), value );
 			if ( cmd.canExecute() ) {
@@ -1752,7 +1739,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleRemoveFont.
-	 * 
+	 *
 	 * @param value
 	 *            the value to delete
 	 * @return true if value was deleted, and false otherwise.
@@ -1770,12 +1757,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleAddService.
-	 * 
+	 *
 	 * @return the return code
-	 * 
+	 *
 	 * @see TitleAreaDialog#open()
 	 */
-	private boolean handleAddMetaInfFile() {
+	boolean handleAddMetaInfFile() {
 		AddMetaInfFileDialog d = new AddMetaInfFileDialog( getSite().getShell(), editingDomain, getTask(), ( (IFileEditorInput) getEditorInput() ).getFile()
 				.getProject().getWorkspace().getRoot() );
 		return d.open() == TitleAreaDialog.OK;
@@ -1783,9 +1770,9 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleAddFont.
-	 * 
+	 *
 	 * @return the return code
-	 * 
+	 *
 	 * @see TitleAreaDialog#open()
 	 */
 	private boolean handleAddFont() {
@@ -1894,12 +1881,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleRemoveManifestAttr.
-	 * 
+	 *
 	 * @param value
 	 *            the value to delete
 	 * @return true if value was deleted, and false otherwise.
 	 */
-	private boolean handleRemoveManifestAttr( final Param value ) {
+	boolean handleRemoveManifestAttr( final Param value ) {
 		if ( MessageDialog.openConfirm( getSite().getShell(), "Confirm delete", "Would really like to remove the selected attribute" ) ) {
 			RemoveCommand cmd = new RemoveCommand( editingDomain, getTask().getManifestEntries(), value );
 			if ( cmd.canExecute() ) {
@@ -1912,17 +1899,17 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleAddManifestAttr.
-	 * 
+	 *
 	 * @return the return code
-	 * 
+	 *
 	 * @see TitleAreaDialog#open()
 	 */
-	private boolean handleAddManifestAttr( Shell shell ) {
+	boolean handleAddManifestAttr( Shell shell ) {
 		AddManifestAttributeDialog d = new AddManifestAttributeDialog( getSite().getShell(), editingDomain, getTask() );
 		return d.open() == TitleAreaDialog.OK;
 	}
 
-	private String handleSplashImage( Shell shell ) {
+	String handleSplashImage( Shell shell ) {
 		FilteredResourcesSelectionDialog d = new FilteredResourcesSelectionDialog( shell, false,
 				( (IFileEditorInput) getEditorInput() ).getFile().getProject(), IResource.FILE ) {
 			@Override
@@ -1956,12 +1943,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleRemoveIcon.
-	 * 
+	 *
 	 * @param value
 	 *            the value to delete
 	 * @return true if value was deleted, and false otherwise.
 	 */
-	private boolean handleRemoveIcon( final Icon value ) {
+	boolean handleRemoveIcon( final Icon value ) {
 		if ( MessageDialog.openConfirm( getSite().getShell(), "Confirm delete", "Would really like to remove the selected icon" ) ) {
 			RemoveCommand cmd = new RemoveCommand( editingDomain, getTask().getDeploy().getInfo().getIcon(), value );
 			if ( cmd.canExecute() ) {
@@ -1974,36 +1961,36 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * handleAddIcon.
-	 * 
+	 *
 	 * @return the return code
-	 * 
+	 *
 	 * @see TitleAreaDialog#open()
 	 */
-	private boolean handleAddIcon() {
+	boolean handleAddIcon() {
 		AddIconDialog d = new AddIconDialog( getSite().getShell(), editingDomain, getTask() );
 		return d.open() == TitleAreaDialog.OK;
 	}
 
 	/**
 	 * handleAddSplash.
-	 * 
+	 *
 	 * @return the return code
-	 * 
+	 *
 	 * @see TitleAreaDialog#open()
 	 */
-	private boolean handleAddSplash() {
+	boolean handleAddSplash() {
 		AddSplashDialog d = new AddSplashDialog( getSite().getShell(), editingDomain, getTask() );
 		return d.open() == TitleAreaDialog.OK;
 	}
 
 	/**
 	 * handleRemoveSplash.
-	 * 
+	 *
 	 * @param value
 	 *            the value to delete
 	 * @return true if value was deleted, and false otherwise.
 	 */
-	private boolean handleRemoveSplash( final Splash value ) {
+	boolean handleRemoveSplash( final Splash value ) {
 		if ( MessageDialog.openConfirm( getSite().getShell(), "Confirm delete", "Would really like to remove the selected splash" ) ) {
 			RemoveCommand cmd = new RemoveCommand( editingDomain, getTask().getDeploy().getInfo().getSplash(), value );
 			if ( cmd.canExecute() ) {
@@ -2014,12 +2001,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		return false;
 	}
 
-	private String handleBuildFilesystemDirectorySelection( final Shell parent ) {
+	String handleBuildFilesystemDirectorySelection( final Shell parent ) {
 		DirectoryDialog dialog = new DirectoryDialog( parent );
 		return dialog.open();
 	}
 
-	private String handleBuildWorkbenchDirectorySelection( final Shell parent ) {
+	String handleBuildWorkbenchDirectorySelection( final Shell parent ) {
 		ILabelProvider lp = new WorkbenchLabelProvider();
 		ITreeContentProvider cp = new WorkbenchContentProvider();
 
@@ -2043,7 +2030,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		return null;
 	}
 
-	private String handleRootclassSelection( Shell parent ) {
+	String handleRootclassSelection( Shell parent ) {
 		IFileEditorInput i = (IFileEditorInput) getEditorInput();
 		IJavaProject project = JavaCore.create( i.getFile().getProject() );
 		if ( project == null ) {
@@ -2073,7 +2060,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		return null;
 	}
 
-	private String handlePreloaderclassSelection( Shell parent ) {
+	String handlePreloaderclassSelection( Shell parent ) {
 		IFileEditorInput i = (IFileEditorInput) getEditorInput();
 		IJavaProject project = JavaCore.create( i.getFile().getProject() );
 		if ( project == null ) {
@@ -2204,7 +2191,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 	/**
 	 * If there is more than one page in the multi-page editor part, this shows the tabs at the bottom. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private void showTabs() {
@@ -2222,7 +2209,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	 * @throws Exception
 	 *             exception
 	 */
-	private void executeExport() throws Exception {
+	void executeExport() throws Exception {
 		if ( validateAndShowErrors() ) {
 			IHandlerService hs = (IHandlerService) PlatformUI.getWorkbench().getService( IHandlerService.class );
 			hs.executeCommand( "org.eclipse.fx.ide.jdt.ui.export", null );
@@ -2233,7 +2220,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	 * @throws Exception
 	 *             exception
 	 */
-	private void executeGenerateAnt() throws Exception {
+	void executeGenerateAnt() throws Exception {
 		if ( validateAndShowErrors() ) {
 			IHandlerService hs = (IHandlerService) PlatformUI.getWorkbench().getService( IHandlerService.class );
 			hs.executeCommand( "org.eclipse.fx.ide.jdt.ui.generateAnt", null );
@@ -2295,7 +2282,7 @@ class GenericMapCellLabelProvider extends ObservableMapCellLabelProvider {
 
 	/**
 	 * Create a new label provider
-	 * 
+	 *
 	 * @param messagePattern
 	 *            the message pattern
 	 * @param attributeMaps
