@@ -28,7 +28,6 @@ public interface keyframe_selector extends EObject
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * The literals are from the enumeration {@link org.eclipse.fx.ide.css.cssDsl.from_to}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -36,24 +35,22 @@ public interface keyframe_selector extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
-   * @see org.eclipse.fx.ide.css.cssDsl.from_to
-   * @see #setType(from_to)
+   * @see #setType(String)
    * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getkeyframe_selector_Type()
    * @model
    * @generated
    */
-  from_to getType();
+  String getType();
 
   /**
    * Sets the value of the '{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
-   * @see org.eclipse.fx.ide.css.cssDsl.from_to
    * @see #getType()
    * @generated
    */
-  void setType(from_to value);
+  void setType(String value);
 
   /**
    * Returns the value of the '<em><b>Percentage</b></em>' attribute.

@@ -4,7 +4,6 @@ package org.eclipse.fx.ide.css.cssDsl.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -37,7 +36,6 @@ import org.eclipse.fx.ide.css.cssDsl.charset;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
 import org.eclipse.fx.ide.css.cssDsl.css_property;
 import org.eclipse.fx.ide.css.cssDsl.font_face;
-import org.eclipse.fx.ide.css.cssDsl.from_to;
 import org.eclipse.fx.ide.css.cssDsl.importExpression;
 import org.eclipse.fx.ide.css.cssDsl.keyframe_selector;
 import org.eclipse.fx.ide.css.cssDsl.keyframes;
@@ -293,13 +291,6 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass funcTokEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum from_toEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1269,16 +1260,6 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EEnum getfrom_to()
-  {
-    return from_toEEnum;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public CssDslFactory getCssDslFactory()
   {
     return (CssDslFactory)getEFactoryInstance();
@@ -1427,9 +1408,6 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     funcTokEClass = createEClass(FUNC_TOK);
     createEReference(funcTokEClass, FUNC_TOK__NAME);
     createEReference(funcTokEClass, FUNC_TOK__PARAMS);
-
-    // Create enums
-    from_toEEnum = createEEnum(FROM_TO);
   }
 
   /**
@@ -1512,7 +1490,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEClass(keyframesEClass, keyframes.class, "keyframes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(keyframe_selectorEClass, keyframe_selector.class, "keyframe_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getkeyframe_selector_Type(), this.getfrom_to(), "type", null, 0, 1, keyframe_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getkeyframe_selector_Type(), ecorePackage.getEString(), "type", null, 0, 1, keyframe_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getkeyframe_selector_Percentage(), ecorePackage.getEDouble(), "percentage", null, 0, 1, keyframe_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getkeyframe_selector_Declarations(), this.getcss_declaration(), null, "declarations", null, 0, -1, keyframe_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1604,11 +1582,6 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEClass(funcTokEClass, FuncTok.class, "FuncTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFuncTok_Name(), this.getIdentifierTok(), null, "name", null, 0, 1, FuncTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFuncTok_Params(), this.getCssTok(), null, "params", null, 0, -1, FuncTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(from_toEEnum, from_to.class, "from_to");
-    addEEnumLiteral(from_toEEnum, from_to.FROM);
-    addEEnumLiteral(from_toEEnum, from_to.TO);
 
     // Create resource
     createResource(eNS_URI);

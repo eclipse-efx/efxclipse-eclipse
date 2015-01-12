@@ -24,7 +24,6 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -847,9 +846,9 @@ rulekeyframe_selector returns [EObject current=null]
 (((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKeyframe_selectorAccess().getTypeFrom_toEnumRuleCall_0_0_0()); 
+	        newCompositeNode(grammarAccess.getKeyframe_selectorAccess().getTypeIdentifierParserRuleCall_0_0_0()); 
 	    }
-		lv_type_0_0=rulefrom_to		{
+		lv_type_0_0=ruleIdentifier		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getKeyframe_selectorRule());
 	        }
@@ -857,7 +856,7 @@ rulekeyframe_selector returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_0_0, 
-        		"from_to");
+        		"Identifier");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3587,25 +3586,6 @@ ruleHex returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     ;
 
 
-
-
-
-// Rule from_to
-rulefrom_to returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-((	enumLiteral_0='FROM' 
-	{
-        $current = grammarAccess.getFrom_toAccess().getFROMEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getFrom_toAccess().getFROMEnumLiteralDeclaration_0()); 
-    }
-)
-    |(	enumLiteral_1='TO' 
-	{
-        $current = grammarAccess.getFrom_toAccess().getTOEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getFrom_toAccess().getTOEnumLiteralDeclaration_1()); 
-    }
-));
 
 
 

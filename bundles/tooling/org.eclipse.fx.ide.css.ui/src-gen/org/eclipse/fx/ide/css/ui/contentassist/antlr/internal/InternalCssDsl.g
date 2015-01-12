@@ -1474,25 +1474,6 @@ finally {
 
 
 
-// Rule from_to
-rulefrom_to
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getFrom_toAccess().getAlternatives()); }
-(rule__From_to__Alternatives)
-{ after(grammarAccess.getFrom_toAccess().getAlternatives()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 rule__Stylesheet__Alternatives_2
     @init {
 		int stackSize = keepStackSize();
@@ -2665,30 +2646,6 @@ rule__Hex__Alternatives_1_0
 { before(grammarAccess.getHexAccess().getONE_HEX_LETTERTerminalRuleCall_1_0_1()); }
 	RULE_ONE_HEX_LETTER
 { after(grammarAccess.getHexAccess().getONE_HEX_LETTERTerminalRuleCall_1_0_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__From_to__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getFrom_toAccess().getFROMEnumLiteralDeclaration_0()); }
-(	'FROM' 
-)
-{ after(grammarAccess.getFrom_toAccess().getFROMEnumLiteralDeclaration_0()); }
-)
-
-    |(
-{ before(grammarAccess.getFrom_toAccess().getTOEnumLiteralDeclaration_1()); }
-(	'TO' 
-)
-{ after(grammarAccess.getFrom_toAccess().getTOEnumLiteralDeclaration_1()); }
 )
 
 ;
@@ -8309,8 +8266,8 @@ rule__Keyframe_selector__TypeAssignment_0_0
     }
 :
 (
-{ before(grammarAccess.getKeyframe_selectorAccess().getTypeFrom_toEnumRuleCall_0_0_0()); }
-	rulefrom_to{ after(grammarAccess.getKeyframe_selectorAccess().getTypeFrom_toEnumRuleCall_0_0_0()); }
+{ before(grammarAccess.getKeyframe_selectorAccess().getTypeIdentifierParserRuleCall_0_0_0()); }
+	ruleIdentifier{ after(grammarAccess.getKeyframe_selectorAccess().getTypeIdentifierParserRuleCall_0_0_0()); }
 )
 
 ;

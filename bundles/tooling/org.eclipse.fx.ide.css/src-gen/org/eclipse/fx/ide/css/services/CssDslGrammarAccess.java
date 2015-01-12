@@ -497,7 +497,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Assignment cTypeAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
-		private final RuleCall cTypeFrom_toEnumRuleCall_0_0_0 = (RuleCall)cTypeAssignment_0_0.eContents().get(0);
+		private final RuleCall cTypeIdentifierParserRuleCall_0_0_0 = (RuleCall)cTypeAssignment_0_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
 		private final Assignment cPercentageAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
 		private final RuleCall cPercentageNumParserRuleCall_0_1_0_0 = (RuleCall)cPercentageAssignment_0_1_0.eContents().get(0);
@@ -512,20 +512,21 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//keyframe_selector:
-		//	(type=from_to | percentage=Num PERCENT) "{" declarations+=css_declaration? (";" declarations+=css_declaration?)* "}";
+		//	(type=Identifier | percentage=Num PERCENT) "{" declarations+=css_declaration? (";" declarations+=css_declaration?)*
+		//	"}";
 		public ParserRule getRule() { return rule; }
 
-		//(type=from_to | percentage=Num PERCENT) "{" declarations+=css_declaration? (";" declarations+=css_declaration?)* "}"
+		//(type=Identifier | percentage=Num PERCENT) "{" declarations+=css_declaration? (";" declarations+=css_declaration?)* "}"
 		public Group getGroup() { return cGroup; }
 
-		//type=from_to | percentage=Num PERCENT
+		//type=Identifier | percentage=Num PERCENT
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//type=from_to
+		//type=Identifier
 		public Assignment getTypeAssignment_0_0() { return cTypeAssignment_0_0; }
 
-		//from_to
-		public RuleCall getTypeFrom_toEnumRuleCall_0_0_0() { return cTypeFrom_toEnumRuleCall_0_0_0; }
+		//Identifier
+		public RuleCall getTypeIdentifierParserRuleCall_0_0_0() { return cTypeIdentifierParserRuleCall_0_0_0; }
 
 		//percentage=Num PERCENT
 		public Group getGroup_0_1() { return cGroup_0_1; }
@@ -2066,34 +2067,6 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	public class From_toElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "from_to");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cFROMEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cFROMFROMKeyword_0_0 = (Keyword)cFROMEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cTOEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cTOTOKeyword_1_0 = (Keyword)cTOEnumLiteralDeclaration_1.eContents().get(0);
-		
-		//enum from_to:
-		//	FROM | TO;
-		public EnumRule getRule() { return rule; }
-
-		//FROM | TO
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//FROM
-		public EnumLiteralDeclaration getFROMEnumLiteralDeclaration_0() { return cFROMEnumLiteralDeclaration_0; }
-
-		//"FROM"
-		public Keyword getFROMFROMKeyword_0_0() { return cFROMFROMKeyword_0_0; }
-
-		//TO
-		public EnumLiteralDeclaration getTOEnumLiteralDeclaration_1() { return cTOEnumLiteralDeclaration_1; }
-
-		//"TO"
-		public Keyword getTOTOKeyword_1_0() { return cTOTOKeyword_1_0; }
-	}
-	
 	private final StylesheetElements pStylesheet;
 	private final CharsetElements pCharset;
 	private final ImportExpressionElements pImportExpression;
@@ -2105,7 +2078,6 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final Font_faceElements pFont_face;
 	private final KeyframesElements pKeyframes;
 	private final Keyframe_selectorElements pKeyframe_selector;
-	private final From_toElements unknownRuleFrom_to;
 	private final RulesetElements pRuleset;
 	private final SelectorElements pSelector;
 	private final SimpleSelectorForNegationElements pSimpleSelectorForNegation;
@@ -2177,7 +2149,6 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFont_face = new Font_faceElements();
 		this.pKeyframes = new KeyframesElements();
 		this.pKeyframe_selector = new Keyframe_selectorElements();
-		this.unknownRuleFrom_to = new From_toElements();
 		this.pRuleset = new RulesetElements();
 		this.pSelector = new SelectorElements();
 		this.pSimpleSelectorForNegation = new SimpleSelectorForNegationElements();
@@ -2362,23 +2333,14 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//keyframe_selector:
-	//	(type=from_to | percentage=Num PERCENT) "{" declarations+=css_declaration? (";" declarations+=css_declaration?)* "}";
+	//	(type=Identifier | percentage=Num PERCENT) "{" declarations+=css_declaration? (";" declarations+=css_declaration?)*
+	//	"}";
 	public Keyframe_selectorElements getKeyframe_selectorAccess() {
 		return pKeyframe_selector;
 	}
 	
 	public ParserRule getKeyframe_selectorRule() {
 		return getKeyframe_selectorAccess().getRule();
-	}
-
-	//enum from_to:
-	//	FROM | TO;
-	public From_toElements getFrom_toAccess() {
-		return unknownRuleFrom_to;
-	}
-	
-	public EnumRule getFrom_toRule() {
-		return getFrom_toAccess().getRule();
 	}
 
 	//ruleset:

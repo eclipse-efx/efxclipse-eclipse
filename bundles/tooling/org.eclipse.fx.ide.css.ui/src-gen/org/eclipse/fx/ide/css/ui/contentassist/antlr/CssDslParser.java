@@ -74,7 +74,6 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumAccess().getAlternatives_0(), "rule__Num__Alternatives_0");
 					put(grammarAccess.getNumAccess().getAlternatives_1(), "rule__Num__Alternatives_1");
 					put(grammarAccess.getHexAccess().getAlternatives_1_0(), "rule__Hex__Alternatives_1_0");
-					put(grammarAccess.getFrom_toAccess().getAlternatives(), "rule__From_to__Alternatives");
 					put(grammarAccess.getStylesheetAccess().getGroup(), "rule__Stylesheet__Group__0");
 					put(grammarAccess.getCharsetAccess().getGroup(), "rule__Charset__Group__0");
 					put(grammarAccess.getImportExpressionAccess().getGroup(), "rule__ImportExpression__Group__0");

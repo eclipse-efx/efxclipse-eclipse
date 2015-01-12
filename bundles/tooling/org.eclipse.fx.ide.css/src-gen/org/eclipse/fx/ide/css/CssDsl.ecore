@@ -43,14 +43,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="keyframes"/>
   <eClassifiers xsi:type="ecore:EClass" name="keyframe_selector">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//from_to"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
         eType="#//css_declaration" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="from_to">
-    <eLiterals name="FROM" literal="FROM"/>
-    <eLiterals name="TO" value="1" literal="TO"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ruleset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectors" upperBound="-1"

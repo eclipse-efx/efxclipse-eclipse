@@ -2,7 +2,7 @@ grammar org.eclipse.fx.ide.css.CssDsl hidden(WS, ML_COMMENT)
 
 /*
  * TODOS:
- * - add more CSS grammer like import 
+ * - add more CSS grammer like import
  */
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
@@ -12,7 +12,7 @@ generate cssDsl "http://www.eclipse.org/efxclipse/ide/css/CssDsl"
 stylesheet:
 	charset=charset?
 	imports+=importExpression*
-	( 
+	(
 		ruleset+=ruleset |
 		media+=media |
 		page+=page |
@@ -31,43 +31,39 @@ importExpression:
 
 page:
 	{page} ('@page'|'@PAGE') pseudoPage=pseudo_page?
-    '{' declarations+=css_declaration? ( ';' declarations+=css_declaration? )* '}'	
+    '{' declarations+=css_declaration? ( ';' declarations+=css_declaration? )* '}'
 ;
 
-pseudo_page: 
+pseudo_page:
 	COLON Identifier
 ;
 
-media: 
+media:
 	('@media'|'@MEDIA') medialist=media_list '{' rulesets+=ruleset* '}'
 ;
 
-media_list: 
+media_list:
 	medium ( COMMA medium)*
 ;
 
-medium: 
+medium:
 	Identifier
 ;
 
 font_face:
-	{font_face} ('@font-face'|'@FONT-FACE') 
-	'{' declarations+=css_declaration? ( ';' declarations+=css_declaration? )* '}'	
+	{font_face} ('@font-face'|'@FONT-FACE')
+	'{' declarations+=css_declaration? ( ';' declarations+=css_declaration? )* '}'
 ;
 
 keyframes:
 	{font_face} ('@keyframes'|'@KEYFRAMES') name=Identifier
-	'{' keyframeselectors+=keyframe_selector? ( ';' keyframeselectors+=keyframe_selector? )* '}'	
+	'{' keyframeselectors+=keyframe_selector? ( ';' keyframeselectors+=keyframe_selector? )* '}'
 ;
 
 keyframe_selector:
-	(type=from_to | (percentage=Num PERCENT)) '{'
+	(type=Identifier | (percentage=Num PERCENT)) '{'
 		declarations+=css_declaration? ( ';' declarations+=css_declaration? )*
 	'}'
-;
-
-enum from_to:
-	FROM | TO
 ;
 
 
@@ -164,18 +160,18 @@ NotFunctionCall hidden():
 ;
 
 combinator
-  : 
+  :
   (
   	  PLUS
   	| '>'
   	| '~'
   )
 ;
-  
+
 operator
   : '/' | COMMA
   ;
-  
+
 unary_operator
   : DASH | PLUS
   ;
@@ -188,7 +184,7 @@ WSTok returns CssTok:
 	{WSTok} WS
 ;
 
-StringTok returns CssTok: 
+StringTok returns CssTok:
 	{StringTok} value=CSSSTRING
 ;
 
@@ -196,9 +192,9 @@ StringTok returns CssTok:
 
 NumberTok returns CssTok hidden():
 	{NumberTok} val=Num
-	
+
 //	{NumberTok} DASH? ( ONE_INT+ | ONE_INT* '.' => ONE_INT+)
-	
+
 //	{NumberTok} val=Integer | Real
 	//sign=DASH? ( ival=Integer | dval=Real)
 ;
@@ -251,8 +247,8 @@ ValidURL returns ecore::EString hidden():
 	CSSSTRING |
 	( ValidURLSymbol |
 	  KeywordHack |
-	  ONE_HEX_LETTER | 
-	  ONE_NON_HEX_LETTER | 
+	  ONE_HEX_LETTER |
+	  ONE_NON_HEX_LETTER |
 	  ONE_INT |
 	  '\\ ' |
 	  '\\(' |
@@ -327,11 +323,11 @@ terminal WS			: (' '|'\t'|'\r'|'\n')+;
 
 
 
-terminal CSSSTRING	: 
+terminal CSSSTRING	:
 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'0'..'9'|'a'..'f'|'A'..'F'|'\\') | !('\\'|'"') )* '"' |
 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'0'..'9'|'a'..'f'|'A'..'F'|'\\') | !('\\'|"'") )* "'";
 
-			
+
 terminal INCLUDES: "~=";
 terminal DASHMATCH: "|=";
 

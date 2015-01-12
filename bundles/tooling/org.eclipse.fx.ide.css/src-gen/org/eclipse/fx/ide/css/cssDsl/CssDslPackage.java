@@ -4,7 +4,6 @@ package org.eclipse.fx.ide.css.cssDsl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -1216,16 +1215,6 @@ public interface CssDslPackage extends EPackage
    */
   int FUNC_TOK_FEATURE_COUNT = CSS_TOK_FEATURE_COUNT + 2;
 
-  /**
-   * The meta object id for the '{@link org.eclipse.fx.ide.css.cssDsl.from_to <em>from to</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.eclipse.fx.ide.css.cssDsl.from_to
-   * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getfrom_to()
-   * @generated
-   */
-  int FROM_TO = 34;
-
 
   /**
    * Returns the meta object for class '{@link org.eclipse.fx.ide.css.cssDsl.stylesheet <em>stylesheet</em>}'.
@@ -2184,16 +2173,6 @@ public interface CssDslPackage extends EPackage
   EReference getFuncTok_Params();
 
   /**
-   * Returns the meta object for enum '{@link org.eclipse.fx.ide.css.cssDsl.from_to <em>from to</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>from to</em>'.
-   * @see org.eclipse.fx.ide.css.cssDsl.from_to
-   * @generated
-   */
-  EEnum getfrom_to();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3003,16 +2982,6 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference FUNC_TOK__PARAMS = eINSTANCE.getFuncTok_Params();
-
-    /**
-     * The meta object literal for the '{@link org.eclipse.fx.ide.css.cssDsl.from_to <em>from to</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.eclipse.fx.ide.css.cssDsl.from_to
-     * @see org.eclipse.fx.ide.css.cssDsl.impl.CssDslPackageImpl#getfrom_to()
-     * @generated
-     */
-    EEnum FROM_TO = eINSTANCE.getfrom_to();
 
   }
 

@@ -7,10 +7,6 @@
     editorPluginID="org.eclipse.fx.ide.css.editor" runtimeVersion="2.10">
   <genPackages prefix="CssDsl" basePackage="org.eclipse.fx.ide.css" disposableProviderFactory="true"
       ecorePackage="CssDsl.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CssDsl.ecore#//from_to">
-      <genEnumLiterals ecoreEnumLiteral="CssDsl.ecore#//from_to/FROM"/>
-      <genEnumLiterals ecoreEnumLiteral="CssDsl.ecore#//from_to/TO"/>
-    </genEnums>
     <genClasses ecoreClass="CssDsl.ecore#//stylesheet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/charset"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//stylesheet/imports"/>

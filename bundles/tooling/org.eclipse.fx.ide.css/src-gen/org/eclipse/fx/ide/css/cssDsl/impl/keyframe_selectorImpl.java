@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
-import org.eclipse.fx.ide.css.cssDsl.from_to;
 import org.eclipse.fx.ide.css.cssDsl.keyframe_selector;
 
 /**
@@ -48,7 +47,7 @@ public class keyframe_selectorImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected static final from_to TYPE_EDEFAULT = from_to.FROM;
+  protected static final String TYPE_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -58,7 +57,7 @@ public class keyframe_selectorImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected from_to type = TYPE_EDEFAULT;
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getPercentage() <em>Percentage</em>}' attribute.
@@ -116,7 +115,7 @@ public class keyframe_selectorImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public from_to getType()
+  public String getType()
   {
     return type;
   }
@@ -126,10 +125,10 @@ public class keyframe_selectorImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(from_to newType)
+  public void setType(String newType)
   {
-    from_to oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
+    String oldType = type;
+    type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.KEYFRAME_SELECTOR__TYPE, oldType, type));
   }
@@ -219,7 +218,7 @@ public class keyframe_selectorImpl extends MinimalEObjectImpl.Container implemen
     switch (featureID)
     {
       case CssDslPackage.KEYFRAME_SELECTOR__TYPE:
-        setType((from_to)newValue);
+        setType((String)newValue);
         return;
       case CssDslPackage.KEYFRAME_SELECTOR__PERCENTAGE:
         setPercentage((Double)newValue);
@@ -266,7 +265,7 @@ public class keyframe_selectorImpl extends MinimalEObjectImpl.Container implemen
     switch (featureID)
     {
       case CssDslPackage.KEYFRAME_SELECTOR__TYPE:
-        return type != TYPE_EDEFAULT;
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case CssDslPackage.KEYFRAME_SELECTOR__PERCENTAGE:
         return percentage != PERCENTAGE_EDEFAULT;
       case CssDslPackage.KEYFRAME_SELECTOR__DECLARATIONS:

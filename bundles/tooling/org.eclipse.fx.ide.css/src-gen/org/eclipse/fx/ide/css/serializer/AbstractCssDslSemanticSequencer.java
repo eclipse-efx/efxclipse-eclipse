@@ -566,7 +566,7 @@ public abstract class AbstractCssDslSemanticSequencer extends AbstractDelegating
 	
 	/**
 	 * Constraint:
-	 *     ((type=from_to | percentage=Num) declarations+=css_declaration? declarations+=css_declaration*)
+	 *     ((type=Identifier | percentage=Num) declarations+=css_declaration? declarations+=css_declaration*)
 	 */
 	protected void sequence_keyframe_selector(EObject context, keyframe_selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
