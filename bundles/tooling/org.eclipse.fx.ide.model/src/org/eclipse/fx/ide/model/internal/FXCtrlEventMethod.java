@@ -22,33 +22,32 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.osgi.service.log.LogService;
 
-
 public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 	private FXCtrlClass clazz;
 	private IMethod method;
 	private String erasedFQNType;
-	
+
 	public FXCtrlEventMethod(FXCtrlClass clazz, IMethod method, String erasedFQNType) {
 		this.clazz = clazz;
 		this.method = method;
 		this.erasedFQNType = erasedFQNType;
 	}
-	
+
 	@Override
 	public IJavaElement getJavaElement() {
 		return method;
 	}
-	
+
 	@Override
 	public String getName() {
 		return method.getElementName();
 	}
-	
+
 	@Override
 	public boolean hasArgument() {
 		return erasedFQNType != null;
 	}
-	
+
 	public IType getArgumentType() {
 		try {
 			return clazz.getJavaProject().findType(erasedFQNType);
@@ -58,31 +57,31 @@ public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 		}
 		return null;
 	}
-	
+
 	@Override
 	public Visibility getVisibility() {
 		try {
 			int flags = method.getFlags();
-			
-			if( Flags.isPublic(flags) ) {
+
+			if (Flags.isPublic(flags)) {
 				return Visibility.PUBLIC;
-			} else if( Flags.isPackageDefault(flags) ) {
+			} else if (Flags.isPackageDefault(flags)) {
 				return Visibility.PACKAGE;
-			} else if( Flags.isProtected(flags) ) {
+			} else if (Flags.isProtected(flags)) {
 				return Visibility.PROTECTED;
 			} else {
 				return Visibility.PRIVATE;
 			}
-		} catch(JavaModelException e ) {
-			FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve visibility for method '"+method+"'", e);
+		} catch (JavaModelException e) {
+			FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve visibility for method '" + method + "'", e);
 		}
-		
+
 		return Visibility.PRIVATE;
 	}
-	
+
 	public static boolean isEventMethod(IJavaProject jp, String erasedFQNType) throws JavaModelException {
 		String checkType = erasedFQNType;
-		
+
 		do {
 			if ("javafx.event.Event".equals(checkType)) {
 				return true;
@@ -94,8 +93,8 @@ public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 			if (checkType != null) {
 				checkType = Util.getFQNType(t, checkType);
 			}
-		} while(checkType != null);
-		
+		} while (checkType != null);
+
 		return false;
 	}
 }

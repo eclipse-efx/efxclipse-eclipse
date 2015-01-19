@@ -11,8 +11,5 @@
 package org.eclipse.fx.ide.model;
 
 public enum Visibility {
-	PUBLIC,
-	PACKAGE,
-	PROTECTED,
-	PRIVATE
+	PUBLIC, PACKAGE, PROTECTED, PRIVATE
 }

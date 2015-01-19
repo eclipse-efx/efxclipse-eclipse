@@ -16,8 +16,12 @@ import org.eclipse.jdt.core.IType;
 
 public interface IFXCtrlClass {
 	public IType getType();
+
 	public String getSimpleName();
+
 	public String getFQN();
-	public Map<String,IFXCtrlEventMethod> getAllEventMethods();
-	public Map<String,IFXCtrlField> getAllFields();
+
+	public Map<String, IFXCtrlEventMethod> getAllEventMethods();
+
+	public Map<String, IFXCtrlField> getAllFields();
 }

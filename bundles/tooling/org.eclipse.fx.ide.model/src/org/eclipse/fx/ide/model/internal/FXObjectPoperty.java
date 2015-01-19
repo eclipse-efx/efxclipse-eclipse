@@ -18,7 +18,6 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 
-
 public class FXObjectPoperty extends FXProperty implements IFXObjectProperty {
 	private String erasedFQNType;
 	private IType type;
@@ -43,17 +42,17 @@ public class FXObjectPoperty extends FXProperty implements IFXObjectProperty {
 
 	@Override
 	public boolean hasValueOf() {
-		if( valueOf == null ) {
-			valueOf = Boolean.valueOf(getValueOfMethod() != null );
+		if (valueOf == null) {
+			valueOf = Boolean.valueOf(getValueOfMethod() != null);
 		}
 		return valueOf.booleanValue();
 	}
 
 	public IMethod getValueOfMethod() {
-		if( ! valueOfMethodResolved ) {
+		if (!valueOfMethodResolved) {
 			try {
-				for( IMethod m : getElementType().getMethods() ) {
-					if( Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && "valueOf".equals(m.getElementName()) ) {
+				for (IMethod m : getElementType().getMethods()) {
+					if (Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && "valueOf".equals(m.getElementName())) {
 						valueOfMethod = m;
 					}
 				}
@@ -61,13 +60,13 @@ public class FXObjectPoperty extends FXProperty implements IFXObjectProperty {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			valueOfMethodResolved = true;
 		}
-		
+
 		return valueOfMethod;
 	}
-	
+
 	@Override
 	public IType getElementType() {
 		if (type == null) {
@@ -78,7 +77,7 @@ public class FXObjectPoperty extends FXProperty implements IFXObjectProperty {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return type;
 	}
 }

@@ -20,28 +20,27 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.osgi.service.log.LogService;
 
-
 public class FXCtrlField implements IFXCtrlField {
 	private FXCtrlClass clazz;
 	private IField field;
 	private String erasedTypeSig;
-	
+
 	public FXCtrlField(FXCtrlClass clazz, IField field, String erasedTypeSig) {
 		this.clazz = clazz;
 		this.field = field;
 		this.erasedTypeSig = erasedTypeSig;
 	}
-	
+
 	@Override
 	public IJavaElement getJavaElement() {
 		return field;
 	}
-	
+
 	@Override
 	public String getName() {
 		return field.getElementName();
 	}
-	
+
 	public IType getType() {
 		try {
 			return clazz.getJavaProject().findType(erasedTypeSig);
@@ -51,24 +50,24 @@ public class FXCtrlField implements IFXCtrlField {
 		}
 		return null;
 	}
-	
+
 	public Visibility getVisibility() {
 		try {
 			int flags = field.getFlags();
-			
-			if( Flags.isPublic(flags) ) {
+
+			if (Flags.isPublic(flags)) {
 				return Visibility.PUBLIC;
-			} else if( Flags.isPackageDefault(flags) ) {
+			} else if (Flags.isPackageDefault(flags)) {
 				return Visibility.PACKAGE;
-			} else if( Flags.isProtected(flags) ) {
+			} else if (Flags.isProtected(flags)) {
 				return Visibility.PROTECTED;
 			} else {
 				return Visibility.PRIVATE;
 			}
-		} catch(JavaModelException e ) {
-			FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve visibility for field '"+field+"'", e);
+		} catch (JavaModelException e) {
+			FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve visibility for field '" + field + "'", e);
 		}
-		
+
 		return Visibility.PRIVATE;
 	}
 }

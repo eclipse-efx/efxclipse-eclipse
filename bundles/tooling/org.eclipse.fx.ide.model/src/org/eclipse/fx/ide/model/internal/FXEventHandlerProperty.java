@@ -19,10 +19,9 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 
-
 public class FXEventHandlerProperty extends FXProperty implements IFXEventHandlerProperty {
 	private IType eventType;
-	
+
 	public FXEventHandlerProperty(FXClass fxClass, String name, IJavaElement javaElement, boolean isStatic) {
 		super(fxClass, name, javaElement, isStatic);
 	}
@@ -45,42 +44,42 @@ public class FXEventHandlerProperty extends FXProperty implements IFXEventHandle
 		} while (checkType != null);
 		return false;
 	}
-	
+
 	public IType getEventType() {
-		if( eventType == null ) {
+		if (eventType == null) {
 			try {
 				IMethod m = (IMethod) getJavaElement();
 				String signature;
-				
-				if( isSetable() ) {
+
+				if (isSetable()) {
 					signature = m.getParameterTypes()[0];
 				} else {
 					signature = m.getReturnType();
 				}
-				
+
 				IType t = (IType) m.getParent();
-				String fqnType = Util.toFQN(t,signature);
+				String fqnType = Util.toFQN(t, signature);
 				eventType = getFXClass().getJavaProject().findType(fqnType);
-			} catch(JavaModelException e) {
+			} catch (JavaModelException e) {
 				// TODO Auto-generated method stub
 				e.printStackTrace();
 			}
 		}
-		
+
 		return eventType;
 	}
-	
+
 	@Override
 	public String getEventTypeAsString(boolean fqn) {
 		IType t = getEventType();
-		if( t == null) {
+		if (t == null) {
 			return "?";
 		}
 		return fqn ? t.getFullyQualifiedName() : t.getElementName();
 	}
-	
+
 	@Override
 	public String toString() {
-		return "FXEventHandlerProperty("+getName()+")";
+		return "FXEventHandlerProperty(" + getName() + ")";
 	}
 }

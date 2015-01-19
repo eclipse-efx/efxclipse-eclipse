@@ -19,35 +19,33 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.compiler.CompilationParticipant;
 import org.eclipse.jdt.core.compiler.ReconcileContext;
 
-
 public class ModelUpdater extends CompilationParticipant {
 
 	public ModelUpdater() {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	@Override
 	public boolean isActive(IJavaProject project) {
 		return true;
 	}
-	
+
 	@Override
 	public void reconcile(ReconcileContext context) {
 		IJavaElementDelta delta = context.getDelta();
-		if( delta != null ) {
-			if( delta.getElement() instanceof ICompilationUnit ) {
-				
+		if (delta != null) {
+			if (delta.getElement() instanceof ICompilationUnit) {
+
 				ICompilationUnit u = (ICompilationUnit) delta.getElement();
 				try {
-					for( IType t : u.getTypes() ) {
+					for (IType t : u.getTypes()) {
 						FXPlugin.getClassmodel().clearCache(t);
 					}
 				} catch (JavaModelException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}			
+			}
 		}
 		super.reconcile(context);
 	}

@@ -17,7 +17,6 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 
-
 public class FXMapProperty extends FXProperty implements IFXMapProperty {
 
 	public FXMapProperty(FXClass fxClass, String name, IJavaElement javaElement, boolean isStatic) {
@@ -42,9 +41,9 @@ public class FXMapProperty extends FXProperty implements IFXMapProperty {
 		} while (checkType != null);
 		return false;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "FXMapProperty("+getName()+")";
+		return "FXMapProperty(" + getName() + ")";
 	}
 }

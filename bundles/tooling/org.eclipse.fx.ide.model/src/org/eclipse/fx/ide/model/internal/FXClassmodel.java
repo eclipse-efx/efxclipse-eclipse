@@ -19,34 +19,33 @@ import org.eclipse.fx.ide.model.IFXCtrlClass;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
 
-
 public class FXClassmodel implements IFXClassmodel {
 	private Map<String, FXClass> fxClassCache = new HashMap<String, FXClass>();
 	private Map<String, FXCtrlClass> fxCtrlClassCache = new HashMap<String, FXCtrlClass>();
-	
+
 	public IFXClass findClass(IJavaProject javaProject, IType type) {
 		IFXClass rv = fxClassCache.get(type.getFullyQualifiedName());
-		
-		if( rv == null ) {
+
+		if (rv == null) {
 			FXClass c = new FXClass(javaProject, type);
 			fxClassCache.put(c.getFQN(), c);
 			rv = c;
 		}
 		return rv;
 	}
-	
+
 	@Override
 	public IFXCtrlClass findCtrlClass(IJavaProject javaProject, IType type) {
 		IFXCtrlClass rv = fxCtrlClassCache.get(type.getFullyQualifiedName());
-		
-		if( rv == null ) {
+
+		if (rv == null) {
 			FXCtrlClass c = new FXCtrlClass(javaProject, type);
 			fxCtrlClassCache.put(c.getFQN(), c);
 			rv = c;
 		}
 		return rv;
 	}
-	
+
 	@Override
 	public void clearCache(IType type) {
 		String fqn = type.getFullyQualifiedName();

@@ -12,12 +12,15 @@ package org.eclipse.fx.ide.model;
 
 import org.eclipse.jdt.core.IJavaElement;
 
-
 public interface IFXProperty {
 	public String getName();
+
 	public IJavaElement getJavaElement();
+
 	public boolean isSetable();
+
 	public IFXClass getFXClass();
+
 	public boolean isStatic();
-//	public IStatus validateValue(IJavaProject jp, Object value);
+	// public IStatus validateValue(IJavaProject jp, Object value);
 }

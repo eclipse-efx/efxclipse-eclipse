@@ -13,10 +13,9 @@ package org.eclipse.fx.ide.model.internal;
 import org.eclipse.fx.ide.model.IFXPrimitiveProperty;
 import org.eclipse.jdt.core.IMethod;
 
-
 public class FXPrimitiveProperty extends FXProperty implements IFXPrimitiveProperty {
 	private final Type type;
-	
+
 	public FXPrimitiveProperty(FXClass fxClass, String name, IMethod javaElement, Type type, boolean isStatic) {
 		super(fxClass, name, javaElement, isStatic);
 		this.type = type;
@@ -26,13 +25,13 @@ public class FXPrimitiveProperty extends FXProperty implements IFXPrimitivePrope
 	public Type getType() {
 		return type;
 	}
-	
+
 	public static boolean isPrimitive(String genericTypeValue) {
 		return Type.parseType(genericTypeValue) != null;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "FXPrimitiveProperty("+getName()+")";
+		return "FXPrimitiveProperty(" + getName() + ")";
 	}
 }

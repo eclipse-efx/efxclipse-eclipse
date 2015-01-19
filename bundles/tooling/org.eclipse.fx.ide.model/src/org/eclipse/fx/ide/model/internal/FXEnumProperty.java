@@ -17,11 +17,10 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 
-
 public class FXEnumProperty extends FXProperty implements IFXEnumProperty {
 	private String enumTypeAsString;
 	private IType enumType;
-	
+
 	public FXEnumProperty(FXClass fxClass, String name, IJavaElement javaElement, String erasedFQNType, boolean isStatic) {
 		super(fxClass, name, javaElement, isStatic);
 		this.enumTypeAsString = erasedFQNType;
@@ -30,20 +29,20 @@ public class FXEnumProperty extends FXProperty implements IFXEnumProperty {
 	public static boolean isEnum(IJavaProject jp, String erasedFQNType) throws JavaModelException {
 		return jp.findType(erasedFQNType).isEnum();
 	}
-	
+
 	@Override
 	public String toString() {
-		return "FXEnumProperty("+getName()+")";
+		return "FXEnumProperty(" + getName() + ")";
 	}
 
 	@Override
 	public String getEnumTypeAsString(boolean fqn) {
 		return fqn ? enumTypeAsString : Signature.getSimpleName(enumTypeAsString);
 	}
-	
+
 	@Override
 	public IType getEnumType() {
-		if( enumType == null ) {
+		if (enumType == null) {
 			try {
 				enumType = getFXClass().getJavaProject().findType(enumTypeAsString);
 			} catch (JavaModelException e) {
@@ -51,7 +50,7 @@ public class FXEnumProperty extends FXProperty implements IFXEnumProperty {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return enumType;
 	}
 }

@@ -15,7 +15,10 @@ import org.eclipse.jdt.core.IType;
 
 public interface IFXCtrlField {
 	public IJavaElement getJavaElement();
+
 	public String getName();
+
 	public IType getType();
+
 	public Visibility getVisibility();
 }

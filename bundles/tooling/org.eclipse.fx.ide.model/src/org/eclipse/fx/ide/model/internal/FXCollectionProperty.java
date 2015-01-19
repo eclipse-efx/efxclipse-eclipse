@@ -18,12 +18,11 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 
-
 public class FXCollectionProperty extends FXProperty implements IFXCollectionProperty {
 	private String collectionTypeAsString;
 	private String genericType;
 	private IType elementType;
-	
+
 	public FXCollectionProperty(FXClass fxClass, String name, IMethod javaElement, String erasedFQNType, String genericType, boolean isStatic) {
 		super(fxClass, name, javaElement, isStatic);
 		this.collectionTypeAsString = erasedFQNType;
@@ -48,63 +47,63 @@ public class FXCollectionProperty extends FXProperty implements IFXCollectionPro
 		} while (checkType != null);
 		return false;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "FXCollectionProperty("+getName()+")";
+		return "FXCollectionProperty(" + getName() + ")";
 	}
 
 	public String getCollectionTypeAsString(boolean fqn) {
 		return fqn ? collectionTypeAsString : Signature.getSimpleName(collectionTypeAsString);
 	}
-	
+
 	@Override
 	public String getCollectionAsString() {
 		return Signature.getSimpleName(genericType);
 	}
-	
+
 	@Override
 	public IType getElementType() {
-		if( elementType == null ) {
+		if (elementType == null) {
 			try {
 				IMethod m = (IMethod) getJavaElement();
 				String signature;
-				
-				if( isSetable() ) {
+
+				if (isSetable()) {
 					signature = m.getParameterTypes()[0];
 				} else {
 					signature = m.getReturnType();
 				}
-				
-				//TODO if the value is a generic parameter we need to resolve it
-				//using the class' generic parameter
+
+				// TODO if the value is a generic parameter we need to resolve
+				// it
+				// using the class' generic parameter
 				String genericType = Signature.toString(signature);
-				
+
 				String eType;
-				if( genericType.contains("extends") ) {
-					eType = genericType.substring(genericType.indexOf("extends")+"extends".length(), genericType.indexOf('>'));
-				} else if( genericType.contains("super") ) {
-					eType = genericType.substring(genericType.indexOf("super")+"super".length(), genericType.indexOf('>'));
+				if (genericType.contains("extends")) {
+					eType = genericType.substring(genericType.indexOf("extends") + "extends".length(), genericType.indexOf('>'));
+				} else if (genericType.contains("super")) {
+					eType = genericType.substring(genericType.indexOf("super") + "super".length(), genericType.indexOf('>'));
 				} else {
-					eType = genericType.substring(genericType.indexOf('<')+1, genericType.lastIndexOf('>'));
+					eType = genericType.substring(genericType.indexOf('<') + 1, genericType.lastIndexOf('>'));
 					eType = Signature.getTypeErasure(eType);
 				}
-				
-				
+
 				eType = eType.trim();
-				
+
 				IType t = (IType) m.getParent();
-				String fqnType = Util.getFQNType(t,eType);
-				if( fqnType == null ) {
+				String fqnType = Util.getFQNType(t, eType);
+				if (fqnType == null) {
 					return null;
 				}
 				elementType = getFXClass().getJavaProject().findType(fqnType);
-			} catch(JavaModelException e) {
+			} catch (JavaModelException e) {
 				// TODO Auto-generated method stub
 				e.printStackTrace();
 			}
 		}
-		
+
 		return elementType;
 	}
 }
