@@ -1,12 +1,12 @@
 package javafx {
-	
+
 	boolean = true | false;
 	string = @STRING;
-	
+
 	/**
 	 * No whitespace is allowed between the number and units if provided.
 	 * Sizes can either be a percentage or a length with units. If units are not specified then specified the 'px' is assumed. Some units are relative and others absolute.
-	 * 
+	 *
 	 * Relative
 	 * <ul>
 	 * <li>px: pixels, relative to the viewing device</li>
@@ -25,15 +25,15 @@ package javafx {
 	 * These are a percentage of some length, they are context sensitive so what they are relative to depends on where they are specified. Each property that supports a percentage should specify if percentage is supported and if it is what it is relative to.
 	 */
 	length = @NUM ~ [ px | mm | cm | in | pt | pc | em | ex ]?;
-	
+
 	size = <length> | <percentage>;
-	
+
 	/**
 	 * No whitespace is allowed between the number and the percent symbol.
 	 * These are a percentage of some length, typically to the width or height of a node.
 	 */
 	percentage = @NUM ~ %;
-	
+
 	/**
 	 * No whitespace is allowed between the number and units.
 	 * An angle is a <number> with one of the following units.
@@ -45,23 +45,23 @@ package javafx {
 	 * </ul>
 	 */
 	angle = @NUM ~ [ deg | rad | grad | turn ];
-	
+
 	/**
 	 * A point is an {x,y} coordinate.
 	 */
 	point = [ [ <length> <length> ] | [ <percentage> | <percentage> ] ];
-	
+
 	/**
 	 * Stops are per W3C color-stop syntax.
 	 * In a series of <color-stop>, stop distance values must all be <percentage> or <length>. Furthermore, if <length> values are used, then the distance value for first and last stop in the series must be specified. This restriction may be removed in a future release.
-	 * 
+	 *
 	 * "red, white 70%, blue" is valid since the distance for red and blue is assumed to be 0% and 100%, respectively.
 	 * "red 10, white, blue 90" is valid. Because distance for red and blue is 10 and 90, respectively, the distance for white can be calculated.
 	 * "red, white 70, blue" is not valid since distance units do not agree.
 	 * "red, white, blue" is valid. The stops are distributed evenly between 0% and 100%.
 	 */
 	color-stop = [ <color> [ <percentage> | <length>]? ];
-	
+
 	/**
 	 * <address> can be an absolute URI, for example:
 	 * url(http://example.com)
@@ -70,13 +70,13 @@ package javafx {
 	 * or it can be relative to the location of the CSS file.
 	 */
 	uri = @URL;
-	
+
 	/**
 	 * JavaFX CSS currently supports the DropShadow and InnerShadow effects from the JavaFX platform. See the class documentation in javafx.scene.effect for further details about the semantics of the various effect parameters.
 	 */
 	effect = <effect-dropshadow> | <effect-innershadow>;
 	blur-type = [ gaussian | one-pass-box | three-pass-box | two-pass-box ];
-	/** 
+	/**
 	 * A high-level effect that renders a shadow of the given content behind the content.
 	 * TODO params
 	 */
@@ -87,7 +87,7 @@ package javafx {
 	 * TODO params
 	 */
 	effect-innershadow = innershadow( <blur-type>, <color>, @NUM, @NUM, @NUM, @NUM);
-	
+
 	/**
 	 * The string name of the font family. An actual font family name available on the system can be used, or one of the following generic family names can be used:
 	 */
@@ -108,13 +108,13 @@ package javafx {
 	 * This font shorthand property can be used in place of the above properties. It uses the following syntax:
 	 */
 	font = [ <font-style> || <font-weight> ]? <font-size> <font-family>;
-	
+
 	/**
 	 * @named-color
 	 */
 	color = <named-color> | <looked-up-color> | <rgb-color> | <hsb-color> | <color-function>;
-	
-	
+
+
 	/**
 	 * CSS supports a bunch of named constant colors. Named colors can be specified with just their unquoted name for example:<br />
 	 * <code>
@@ -122,9 +122,9 @@ package javafx {
      * &nbsp;&nbsp;&nbsp;&nbsp;-fx-background-color: red;<br />
      * }
 	 * </code><br />
-	 * 
+	 *
 	 * The named colors that are available in CSS are:
-	 * 
+	 *
 	 * <table summary="property table" class="html4colortable">
      * <tbody>
      *   <tr>
@@ -686,19 +686,19 @@ package javafx {
 					turquoise 		| violet 			| wheat 				| white 			|
 					whitesmoke 		| yellow 			| yellowgreen 			| transparent
 					;
-					
+
 //	annotated-named-color-1 = 	/** @color #123456 */ aliceblue |
 //								/** @color #123456 */ antiquewhite;
-//								
+//
 //	annotated-named-color-2 =	@Color(#123456) aliceblue |
 //								@Color(#123456) antiquewhite;
-//								
+//
 //	annotated-named-color-3 =	@Alias(#123456) aliceblue |
 //								@Alias(#123456) antiquewhite;
-//								
+//
 //	annotated-named-color-4 =	@Color @Alias(#123456) aliceblue |
 //								@Color @Alias(#123456) antiquewhite
-												
+
 	/**
 	 * <p>
 	 * With looked-up colors you can refer to any other color property that is set on the current node or any of its parents. This is a very powerful feature, as it allows a generic palette of colors to be specified on the scene then used thoughout the application. If you want to change one of those palette colors you can do so at any level in the scene tree and it will affect that node and all its decendents. Looked-up colors are not looked up until they are applied, so they are live and react to any style changes that might occur, such as replacing a palette color at runtime with the "style" property on a node.
@@ -718,38 +718,38 @@ package javafx {
 	 * </p>
 	 */
 	looked-up-color = reference_to_other_color_property; // TODO howto implement?!
-	
+
 	/**
 	 * The format of an RGB value in hexadecimal notation is a ‘#’ immediately followed by either three or six hexadecimal characters. The three-digit RGB notation (#rgb) is converted into six-digit form (#rrggbb) by replicating digits, not by adding zeros. For example, #fb0 expands to #ffbb00. This ensures that white (#ffffff) can be specified with the short notation (#fff) and removes any dependencies on the color depth of the display.
 	 */
 	hashcolor = $#[0123456789ABCDEFabcdef]{6}$ | $#[0123456789ABCDEFabcdef]{3}$;
-	
+
 	/**
 	 * The RGB color model is used in numerical color specifications.
 	 */
 	rgb-color = /** lala */<hashcolor> | /** dada */<rgb> | <rgba>;
-	
+
 	/**
 	 * The format of an RGB value in the functional notation is ‘rgb(’ followed by a comma-separated list of three numerical values (either three decimal integer values or three percentage values) followed by ‘)’. The integer value 255 corresponds to 100%, and to F or FF in the hexadecimal notation: rgb(255,255,255) = rgb(100%,100%,100%) = #FFF. White space characters are allowed around the numerical values.
 	 */
 	rgb = rgb(/** didi */@INT(0->255), @INT(0->255), @INT(0->255) | <percentage>, <percentage>, <percentage>);
-	
+
 	/**
 	 * <p>
 	 * This is an extension of the RGB color model to include an ‘alpha’ value that specifies the opacity of a color. This is accomplished via a functional syntax of the form rgba(...) form that takes a fourth parameter which is the alpha value. The alpha value must be a number in the range 0.0 (representing completely transparent) and 1.0 (completely opaque). As with the rgb() function, the red, green, and blue values may be decimal integers or percentages. The following examples all specify the same color:
 	 * </p>
-	 * <code>.label { -fx-text-fill: rgb(255,0,0) }</code><br /> 
-     * <code>.label { -fx-text-fill: rgba(255,0,0,1)}</code><br /> 
-     * <code>.label { -fx-text-fill: rgb(100%,0%,0%) }</code><br /> 
+	 * <code>.label { -fx-text-fill: rgb(255,0,0) }</code><br />
+     * <code>.label { -fx-text-fill: rgba(255,0,0,1)}</code><br />
+     * <code>.label { -fx-text-fill: rgb(100%,0%,0%) }</code><br />
      * <code>.label { -fx-text-fill: rgba(100%,0%,0%,1) }</code>
 	 */
 	rgba = rgba(@INT(0->255), @INT(0->255), @INT(0->255), @NUM(.0->1.0) | <percentage>, <percentage>, <percentage>, @NUM(.0->1.0));
-	
+
 	/**
 	 * Colors can be specified using the HSB (sometimes called HSV) color model
 	 */
 	hsb-color = <hsb> | <hsba>;
-	
+
 	/**
 	 * The first number is hue, a number in the range 0 to 360 degrees. The second number is saturation, a percentage in the range 0% to 100%. The third number is brightness, also a percentage in the range 0% to 100%.
 	 */
@@ -765,12 +765,12 @@ package javafx {
 	 * JavaFX supports some color computation functions. These compute new colors from input colors at the time the color style is applied. This enables a color theme to be specified using a single base color and to have variant colors computed from that base color. There are two color functions: derive() and ladder().
 	 */
 	color-function = <ladder> | <derive>;
-	
+
 	/**
-	 * The ladder function interpolates between colors. The effect is as if a gradient is created using the stops provided, and then the brightness of the provided <color> is used to index a color value within that gradient. At 0% brightness, the color at the 0.0 end of the gradient is used; at 100% brightness, the color at the 1.0 end of the gradient is used; and at 50% brightness, the color at 0.5, the midway point of the gradient, is used. Note that no gradient is actually rendered. This is merely an interpolation function that results in a single color. 
+	 * The ladder function interpolates between colors. The effect is as if a gradient is created using the stops provided, and then the brightness of the provided <color> is used to index a color value within that gradient. At 0% brightness, the color at the 0.0 end of the gradient is used; at 100% brightness, the color at the 1.0 end of the gradient is used; and at 50% brightness, the color at 0.5, the midway point of the gradient, is used. Note that no gradient is actually rendered. This is merely an interpolation function that results in a single color.
 	 */
 	ladder = ladder(<color>, <color-stop> [, <color-stop>]+);
-	
+
 	/**
 	 * The derive function takes a color and computes a brighter or darker version of that color. The second parameter is the brightness offset, ranging from -100% to 100%. Positive percentages indicate brighter colors and negative percentages indicate darker colors. A value of -100% means completely black, 0% means no change in brightness, and 100% means completely white.
 	 */
@@ -781,7 +781,7 @@ package javafx {
 	 */
 	paint = <color> | <linear-gradient> | <radial-gradient>;
 	side-or-corner = [left | right] || [top | bottom];
-	
+
 	/**
 	 * <p>
 	 * Linear gradient creates a gradient going though all the stop colors along the line between the "from" <point> and the "to" <point>. If the points are percentages, then they are relative to the size of the area being filled. Percentage and length sizes can not be mixed in a single gradient function.
@@ -834,14 +834,14 @@ package javafx {
 	 * <code>radial-gradient(focus-angle 45deg, focus-distance 20%, center 25% 25%, radius 50%, reflect, gray, darkgray 75%, dimgray)</code>
 	 */
 	radial-gradient = radial-gradient([ focus-angle <angle>, ]? [ focus-distance <percentage>, ]? [ center <point>, ]? radius [ <length> | <percentage> ] [ [ repeat | reflect ], ]? <color-stop>[, <color-stop>]+);
-	
+
 	alignment = [ top-left | top-center | top-right | center-left | center | center-right bottom-left | bottom-center | bottom-right | baseline-left | baseline-center | baseline-right ];
-	
+
 	package scene {
 		blend-mode = [ add | blue | color-burn | color-dodge | darken | difference | exclusion | green | hard-light | lighten | multiply | overlay | red | screen | soft-light | src-atop | src-in | src-out | src-over ];
 		cursor = [ null | crosshair | default | hand | move | e-resize | h-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | v-resize | text | wait ] | <uri>;
 		visibility = [ visible | hidden | collapse | inherit ];
-		
+
 		/**
 		 * Base class for scene graph nodes. A scene graph is a set of tree data structures
  		 * where every item has zero or one parent, and each item is either
@@ -865,7 +865,7 @@ package javafx {
 			 */
 			-fx-focus-traversable <boolean> default: null;
 			/**
-			 * Opacity can be thought of conceptually as a postprocessing operation. Conceptually, after the node (including its descendants) is rendered into an RGBA offscreen image, the opacity setting specifies how to blend the offscreen rendering into the current composite rendering. 
+			 * Opacity can be thought of conceptually as a postprocessing operation. Conceptually, after the node (including its descendants) is rendered into an RGBA offscreen image, the opacity setting specifies how to blend the offscreen rendering into the current composite rendering.
 			 */
 			-fx-opacity @NUM(.0->1.0) default: 1.0;
 			/**
@@ -903,7 +903,7 @@ package javafx {
 			 */
 			-fx-translate-z @NUM default: 0;
 			visibility <visibility> default: visible;
-			
+
 			/**
 			 * applies when the disabled variable is true
 			 */
@@ -935,7 +935,7 @@ package javafx {
 		 */
 		Group extends Parent {
 		}
-		
+
 		package image {
 			/**
 			 * The ImageView is a Node used for painting images loaded with Image class.
@@ -951,18 +951,18 @@ package javafx {
 			bg-position = [ [ [ <size> | left | center | right ] [ <size> | top | center | bottom ]? ] | [ [ center | [ left | right ] <size>? ] || [ center | [ top | bottom ] <size>? ] ] ];
 			repeat-style = repeat-x | repeat-y | [repeat | space | round | stretch | no-repeat] [repeat | space | round | stretch | no-repeat]?; // NOTE: rewritten from  <repeat-style> = repeat-x | repeat-y | [repeat | space | round | stretch | no-repeat]{1,2} since we do not support {} yet
 			bg-size = [ <size> | auto ] [ <size> | auto ]? | cover | contain | stretch; // Note: rewritten from = [ <size> | auto ]{1,2} | cover | contain | stretch since we do not support {} yet
-			
+
 			border-style = <dash-style> [phase @NUM]? [centered | inside | outside]? [line-join [miter @NUM | bevel | round]]? [line-cap [square | butt | round]]?;
 			dash-style = [ none | solid | dotted | dashed | <segments> ];
 			segments = segments( @NUM, @NUM [, @NUM]*);
-			
+
 			//TODO REMOVE if attribute references are available
-			
+
 			/**
 			 * <p>
 			 * A Region is a Node (extending from Parent) with backgrounds and borders that are styleable via CSS. A Region is typically a rounded rectangle, though this can be modified through CSS to be an arbitrary shape. Regions can contain other Region objects (sub-regions) or they can contain sub-controls. All Regions have the same set of CSS properties as described below.
 			 * </p>
-			 * <p> 
+			 * <p>
 			 * Each Region consists of several layers, painted from bottom to top, in this order:
 			 * <ol>
     		 * <li>background fills</li>
@@ -973,201 +973,201 @@ package javafx {
     		 * </ol>
     		 * </p>
     		 * <p>
-    		 * The background and border mechanisms are patterned after the CSS 3 draft backgrounds and borders module. 
+    		 * The background and border mechanisms are patterned after the CSS 3 draft backgrounds and borders module.
     		 * See [4] for a detailed description.
     		 * </p>
     		 * <p>
-    		 * Background fills are specified with the properties -fx-background-color, -fx-background-radius 
-    		 * and -fx-background-insets. The -fx-background-color property is a series of one or more 
-    		 * comma-separated <paint> values. The number of values in the series determines the number of 
-    		 * background rectangles that are painted. Background rectangles are painted in the order specified 
-    		 * using the given <paint> value. Each background rectangle can have different radii and insets. 
-    		 * The -fx-background-radius and -fx-background-insets properties are series of comma-separated 
-    		 * values (or sets of values). The radius and insets values used for a particular background are 
-    		 * the found in the corresponding position in the -fx-background-radius and -fx-background-insets 
-    		 * series. For example, suppose a series of three values is given for the -fx-background-color property. 
-    		 * A series of three values should also be specified for the -fx-background-radius and -fx-background-insets 
-    		 * properties. The first background will be painted using the first radius value and first insets value, 
+    		 * Background fills are specified with the properties -fx-background-color, -fx-background-radius
+    		 * and -fx-background-insets. The -fx-background-color property is a series of one or more
+    		 * comma-separated <paint> values. The number of values in the series determines the number of
+    		 * background rectangles that are painted. Background rectangles are painted in the order specified
+    		 * using the given <paint> value. Each background rectangle can have different radii and insets.
+    		 * The -fx-background-radius and -fx-background-insets properties are series of comma-separated
+    		 * values (or sets of values). The radius and insets values used for a particular background are
+    		 * the found in the corresponding position in the -fx-background-radius and -fx-background-insets
+    		 * series. For example, suppose a series of three values is given for the -fx-background-color property.
+    		 * A series of three values should also be specified for the -fx-background-radius and -fx-background-insets
+    		 * properties. The first background will be painted using the first radius value and first insets value,
     		 * the second background will be painted with the second radius value and second insets value, and so forth.
     		 * </p>
     		 * <p>
-    		 * Note also that properties such as -fx-background-radius and -fx-background-insets can contain a series 
-    		 * of values or sets of four values. A set of values is separated by whitespace, whereas the values or 
-    		 * sets-of-values in a series are separated by commas. For -fx-background-radius, a single value indicates 
-    		 * that the value should be used for the radius of all four corners of the background rectangle. A set of 
-    		 * four values indicates that different radius values are to be used for the top-left, top-right, 
-    		 * bottom-right, and bottom-left corners, in that order. Similarly, the -fx-background-insets property 
-    		 * can also contain a series of values or sets of values. A set of four values for -fx-background-insets 
-    		 * indicates that different insets are to be used for the top, right, bottom, and left edges of the rectangle, 
+    		 * Note also that properties such as -fx-background-radius and -fx-background-insets can contain a series
+    		 * of values or sets of four values. A set of values is separated by whitespace, whereas the values or
+    		 * sets-of-values in a series are separated by commas. For -fx-background-radius, a single value indicates
+    		 * that the value should be used for the radius of all four corners of the background rectangle. A set of
+    		 * four values indicates that different radius values are to be used for the top-left, top-right,
+    		 * bottom-right, and bottom-left corners, in that order. Similarly, the -fx-background-insets property
+    		 * can also contain a series of values or sets of values. A set of four values for -fx-background-insets
+    		 * indicates that different insets are to be used for the top, right, bottom, and left edges of the rectangle,
     		 * in that order.
     		 * </p>
     		 * <p>
-    		 * Background images are specified with the properties -fx-background-image, -fx-background-repeat, 
-    		 * -fx-background-position and -fx-background-size. The number of images in the series of -fx-background-image 
-    		 * values determines the number of background images that are painted. The -fx-background-repeat, 
-    		 * -fx-background-position, and -fx-background-size properties each can contain a series of values. 
-    		 * For each item in the -fx-background-image series, the corresponding items in the -fx-background-repeat, 
+    		 * Background images are specified with the properties -fx-background-image, -fx-background-repeat,
+    		 * -fx-background-position and -fx-background-size. The number of images in the series of -fx-background-image
+    		 * values determines the number of background images that are painted. The -fx-background-repeat,
+    		 * -fx-background-position, and -fx-background-size properties each can contain a series of values.
+    		 * For each item in the -fx-background-image series, the corresponding items in the -fx-background-repeat,
     		 * -fx-background-position, and -fx-background-size properties are applied to that background image.
     		 * </p>
     		 * <p>
-    		 * Stroked borders are specified with the properties -fx-border-color, -fx-border-style, -fx-border-width, 
-    		 * -fx-border-radius and -fx-border-insets. Each property contains a series of items. The number of items 
-    		 * in the-fx- border-color property determines the number of borders that are painted. Each border in 
-    		 * the series is painted using information from the corresponding series item of the -fx-border-style, 
+    		 * Stroked borders are specified with the properties -fx-border-color, -fx-border-style, -fx-border-width,
+    		 * -fx-border-radius and -fx-border-insets. Each property contains a series of items. The number of items
+    		 * in the-fx- border-color property determines the number of borders that are painted. Each border in
+    		 * the series is painted using information from the corresponding series item of the -fx-border-style,
     		 * -fx-border-width, -fx-border-radius, and -fx-border-insets properties.
     		 * </p>
     		 * <p>
-    		 * Image borders are specified with the properties -fx-border-image-source, -fx-border-image-repeat, 
-    		 * -fx-border-image-slice, -fx-border-image-width and -fx-border-image-insets. Each property contains 
-    		 * a series of items. The number of items in the -fx-border-image-source property determines the number 
-    		 * of images that are painted. Each image in the series is painted using information from the corresponding 
-    		 * series items of the -fx-border-image-repeat, -fx-border-image-slice, -fx-border-image-width, and 
+    		 * Image borders are specified with the properties -fx-border-image-source, -fx-border-image-repeat,
+    		 * -fx-border-image-slice, -fx-border-image-width and -fx-border-image-insets. Each property contains
+    		 * a series of items. The number of items in the -fx-border-image-source property determines the number
+    		 * of images that are painted. Each image in the series is painted using information from the corresponding
+    		 * series items of the -fx-border-image-repeat, -fx-border-image-slice, -fx-border-image-width, and
     		 * -fx-border-image-insets properties.
     		 * </p>
     		 * <p>
-    		 * The region's contents are a sequence of nodes, like any other container. The contents are set 
+    		 * The region's contents are a sequence of nodes, like any other container. The contents are set
     		 * programmatically and cannot be set via CSS.
     		 * </p>
 			 */
 			Region extends Parent {
-				
+
 				// BACKGROUND FILLS (see CSS Backgrounds and Borders Module Level 3: Backgrounds)
-				/** 
+				/**
 				 * A series of paint values separated by commas.
 				 */
 				-fx-background-color <paint> [, <paint>]* default: null;
 				/**
-				 * A series of size values or sets of four size values, separated by commas. A single size 
-				 * value means all insets are the same. Otherwise, the four values for each inset are given in 
-				 * the order top, right, bottom, left. Each comma-separated value or set of values in the 
+				 * A series of size values or sets of four size values, separated by commas. A single size
+				 * value means all insets are the same. Otherwise, the four values for each inset are given in
+				 * the order top, right, bottom, left. Each comma-separated value or set of values in the
 				 * series applies to the corresponding background color.
 				 */
 				-fx-background-insets [<size> | <size> <size> <size> <size>] [ , [ <size> | <size> <size> <size> <size>] ]* default: null;
 				// BACKGROUND IMAGES (see CSS Backgrounds and Borders Module Level 3: Background Image)
-				
+
 				/**
-				 * A series of radius values or sets of four radius values, separated by commas. A single 
-				 * radius value means the radius of all four corners is the same. Otherwise, the four values 
-				 * in the set determine the radii of the top-left, top-right, bottom-right, and bottom-left corners, 
-				 * in that order. Each comma-separated value or set of values in the series applies to the 
+				 * A series of radius values or sets of four radius values, separated by commas. A single
+				 * radius value means the radius of all four corners is the same. Otherwise, the four values
+				 * in the set determine the radii of the top-left, top-right, bottom-right, and bottom-left corners,
+				 * in that order. Each comma-separated value or set of values in the series applies to the
 				 * corresponding background color.
 				 */
 				-fx-background-radius [<size> | <size> <size> <size> <size>] [ , [ <size> | <size> <size> <size> <size>] ]* default: null;
-				
+
 				/**
 				 * A series of image URIs separated by commas.
 				 */
 				-fx-background-image <uri> [ , <uri> ]* default: null;
 				/**
-				 * A series of <bg-position> values separated by commas. Each bg-position item in the series 
+				 * A series of <bg-position> values separated by commas. Each bg-position item in the series
 				 * applies to the corresponding image in the background-image series.
 				 */
 				-fx-background-position <bg-position> [ , <bg-position> ]* default: null;
 				/**
-				 * A series of <repeat-style> values separated by commas. Each repeat-style item in the series 
+				 * A series of <repeat-style> values separated by commas. Each repeat-style item in the series
 				 * applies to the corresponding image in the background-image series.
 				 */
 				-fx-background-repeat <repeat-style> [ , <repeat-style> ]* default: null;
 				/**
-				 * A series of <bg-size> values separated by commas. Each bg-size item in the series 
+				 * A series of <bg-size> values separated by commas. Each bg-size item in the series
 				 * applies to the corresponding image in the background-image series.
 				 */
 				-fx-background-size <bg-size> [ , <bg-size> ]*;
 				// STROKED BORDERS (see CSS Backgrounds and Borders Module Level 3: Borders)
 				/**
-				 * A series of paint values or sets of four paint values, separated by commas. For each item in 
-				 * the series, if a single paint value is specified, then that paint is used as the border for 
-				 * all sides of the region; and if a set of four paints is specified, they are used for the top, 
-				 * right, bottom, and left borders of the region, in that order. If the border is not rectangular, 
+				 * A series of paint values or sets of four paint values, separated by commas. For each item in
+				 * the series, if a single paint value is specified, then that paint is used as the border for
+				 * all sides of the region; and if a set of four paints is specified, they are used for the top,
+				 * right, bottom, and left borders of the region, in that order. If the border is not rectangular,
 				 * only the first paint value in the set is used.
 				 */
 				-fx-border-color [<paint> | <paint> <paint> <paint> <paint>] [ , [<paint> | <paint> <paint> <paint> <paint>] ]*;
 				/**
-				 * A series of inset or sets of four inset values, separated by commas. For each item in the series, 
-				 * a single inset value means that all insets are the same; and if a set of four inset values is 
-				 * specified, they are used for the top, right, bottom, and left edges of the region, in that order. 
+				 * A series of inset or sets of four inset values, separated by commas. For each item in the series,
+				 * a single inset value means that all insets are the same; and if a set of four inset values is
+				 * specified, they are used for the top, right, bottom, and left edges of the region, in that order.
 				 * Each item in the series of insets applies to the corresponding item in the series of border colors.
 				 */
 				-fx-border-insets [<size> | <size> <size> <size> <size>] [ , [ <size> | <size> <size> <size> <size>] ]*;
 				/**
-				 * A series of radius or sets of four radius values, separated by commas. For each item in the series, 
-				 * a single radius value means that all corner radii are the same; and if a set of four radius values 
-				 * is specified, they are used as the radii of the top-left, top-right, bottom-right, and bottom-left 
-				 * corners, in that order. Each item in the series of radii applies to the corresponding item in the 
+				 * A series of radius or sets of four radius values, separated by commas. For each item in the series,
+				 * a single radius value means that all corner radii are the same; and if a set of four radius values
+				 * is specified, they are used as the radii of the top-left, top-right, bottom-right, and bottom-left
+				 * corners, in that order. Each item in the series of radii applies to the corresponding item in the
 				 * series of border colors.
 				 */
 				-fx-border-radius [<size> | <size> <size> <size> <size>] [ , [ <size> | <size> <size> <size> <size>] ]*;
 				/**
-				 * A series of border style values, separated by commas. Each item in the series applies to the 
+				 * A series of border style values, separated by commas. Each item in the series applies to the
 				 * corresponding item in the series of border colors.
-				 * The segments dash-style defines a sequence representing the lengths of the dash segments. 
-				 * Alternate entries in the sequence represent the lengths of the opaque and transparent segments of 
+				 * The segments dash-style defines a sequence representing the lengths of the dash segments.
+				 * Alternate entries in the sequence represent the lengths of the opaque and transparent segments of
 				 * the dashes. This corresponds to the strokeDashArray variable of Shape.
-				 * The optional phase parameter defines the point in the dashing pattern that will correspond to the 
+				 * The optional phase parameter defines the point in the dashing pattern that will correspond to the
 				 * beginning of the stroke. This corresponds to the strokeDashOffset variable of Shape.
 				 */
 				-fx-border-style <border-style> [ , <border-style> ]*;
 				/**
-				 * A series of width or sets of four width values, separated by commas. For each item in the series, 
-				 * a single width value means that all border widths are the same; and if a set of four width values 
-				 * is specified, they are used for the top, right, bottom, and left border widths, in that order. 
-				 * If the border is not rectangular, only the first width value is used. Each item in the series 
+				 * A series of width or sets of four width values, separated by commas. For each item in the series,
+				 * a single width value means that all border widths are the same; and if a set of four width values
+				 * is specified, they are used for the top, right, bottom, and left border widths, in that order.
+				 * If the border is not rectangular, only the first width value is used. Each item in the series
 				 * of widths applies to the corresponding item in the series of border colors.
 				 */
 				-fx-border-width [<size> | <size> <size> <size> <size>] [ , [ <size> | <size> <size> <size> <size>] ]*;
 				// BORDER IMAGES (see CSS Backgrounds and Borders Module Level 3: Border Images)
-				/** 
+				/**
 				 * A series of image URIs, separated by commas.
 				 */
 				-fx-border-image-source <uri> [ , <uri>]*;
 				/**
-				 * A series of inset or sets of four inset values, separated by commas. For each item in the series, 
-				 * a single inset value means that all insets are the same; and if a set of four inset values is specified, 
-				 * they are used for the top, right, bottom, and left edges of the region, in that order. Each item in the 
-				 * series of insets applies to the corresponding image in the series of border images. 
+				 * A series of inset or sets of four inset values, separated by commas. For each item in the series,
+				 * a single inset value means that all insets are the same; and if a set of four inset values is specified,
+				 * they are used for the top, right, bottom, and left edges of the region, in that order. Each item in the
+				 * series of insets applies to the corresponding image in the series of border images.
 				 */
 				-fx-border-image-insets [<size> | <size> <size> <size> <size>] [ , [ <size> | <size> <size> <size> <size> ] ]*;
 				/**
-				 * A series of repeat-style values, separated by commas. Each item in the series applies to the corresponding image in the series 
+				 * A series of repeat-style values, separated by commas. Each item in the series applies to the corresponding image in the series
 				 * of border images.
 				 */
 				-fx-border-image-repeat <repeat-style> [ , <repeat-style> ]*;
 				/**
-				 * A series of image slice values or sets of four values, separated by commas. Each item in the series applies to the corresponding 
-				 * image in the series of border images. For each item in the series, if four values are given, they specify the size of the top, right, 
-				 * bottom, and left slices. This effectively divides the image into nine regions: an upper left corner, a top edge, an upper right corner, 
-				 * a right edge, a lower right corner, a bottom edge, a lower left corner, a left edge and a middle. If one value is specified, this value 
-				 * is used for the slice values for all four edges. If 'fill' is present, the middle slice is preserved, otherwise it is discarded. 
+				 * A series of image slice values or sets of four values, separated by commas. Each item in the series applies to the corresponding
+				 * image in the series of border images. For each item in the series, if four values are given, they specify the size of the top, right,
+				 * bottom, and left slices. This effectively divides the image into nine regions: an upper left corner, a top edge, an upper right corner,
+				 * a right edge, a lower right corner, a bottom edge, a lower left corner, a left edge and a middle. If one value is specified, this value
+				 * is used for the slice values for all four edges. If 'fill' is present, the middle slice is preserved, otherwise it is discarded.
 				 * Percentage values may be used here, in which case the values are considered proportional to the source image.
 				 */
 				-fx-border-image-slice [<size> | <size> <size> <size> <size> ] fill? [ , [ <size> | <size><size> <size> <size> <size> ] fill? ]*;
 				/**
-				 * A series of width or sets of four width values, separated by commas. For each item in the series, a single width 
-				 * value means that all border widths are the same; and if a set of four width values is specified, they are used 
-				 * for the top, right, bottom, and left border widths, in that order. If the border is not rectangular, only the 
-				 * first width value is used. Each item in the series of widths applies to the corresponding item in the series of border 
+				 * A series of width or sets of four width values, separated by commas. For each item in the series, a single width
+				 * value means that all border widths are the same; and if a set of four width values is specified, they are used
+				 * for the top, right, bottom, and left border widths, in that order. If the border is not rectangular, only the
+				 * first width value is used. Each item in the series of widths applies to the corresponding item in the series of border
 				 * images. Percentage values may be used here, in which case the values are considered proportional to the border image area.
 				 */
 				-fx-border-image-width [<size> | <size> <size> <size> <size>] [ , [ <size> | <size> <size> <size> <size>] ]*;
 				//Other
 				/**
-				 * A sets of four padding values, separated by commas. For each item in the series, a single padding value means that all 
-				 * padding are the same; and if a set of four padding values is specified, they are used for the top, right, bottom, and left 
+				 * A sets of four padding values, separated by commas. For each item in the series, a single padding value means that all
+				 * padding are the same; and if a set of four padding values is specified, they are used for the top, right, bottom, and left
 				 * edges of the region, in that order.
 				 */
 				-fx-padding <size> | <size> <size> <size> <size>;
 				/**
-				 * If true means the shape centered within the region's width and height, otherwise the shape is positioned at its source 
+				 * If true means the shape centered within the region's width and height, otherwise the shape is positioned at its source
 				 * position. Has no effect if a shape string is not specified.
 				 */
 				-fx-position-shape <boolean> default: true;
 				/**
-				 * If true means the shape is scaled to fit the size of the region, otherwise the shape is at its source size, and its position 
+				 * If true means the shape is scaled to fit the size of the region, otherwise the shape is at its source size, and its position
 				 * depends on the value of the position-shape property. Has no effect if a shape string is not specified.
 				 */
 				-fx-scale-shape <boolean> default: true;
 				/**
-				 * An SVG path string. By specifying a shape here the region takes on that shape instead of a rectangle or rounded rectangle. 
+				 * An SVG path string. By specifying a shape here the region takes on that shape instead of a rectangle or rounded rectangle.
 				 * The syntax of this path string is specified in
 				 */
 				-fx-shape <string>;
@@ -1176,23 +1176,23 @@ package javafx {
 				 */
 				-fx-snap-to-pixel <boolean> default: true;
 				/**
-				 * This property is set by specifying -fx-background-color, optionally -fx-background-insets, and optionally -fx-background-radius. 
-				 * In order to set the background fill to null, specify the style "-fx-background-color: null;". There is no shorthand notation for 
+				 * This property is set by specifying -fx-background-color, optionally -fx-background-insets, and optionally -fx-background-radius.
+				 * In order to set the background fill to null, specify the style "-fx-background-color: null;". There is no shorthand notation for
 				 * -fx-background-fills at this time.
-				 */ 
+				 */
 				-fx-background-fills <-fx-background-color> [ <-fx-background-insets> || <-fx-background-radius> ] default: null;
 				/**
-				 * This property is set by specifying -fx-background-image, optionally -fx-background-position, optionally -fx-background-repeat, 
+				 * This property is set by specifying -fx-background-image, optionally -fx-background-position, optionally -fx-background-repeat,
 				 * and optionally -fx-background-size. There is no shorthand notation for -fx-background-images at this time.
 				 */
 				-fx-background-images <-fx-background-image> [ <-fx-background-position> || <-fx-background-repeat> || <-fx-background-size> ] default: null;
 				/**
-				 * This property is set by specifying -fx-border-color with the optional -fx-border-insets, -fx-border-radius, -fx-border-style and 
+				 * This property is set by specifying -fx-border-color with the optional -fx-border-insets, -fx-border-radius, -fx-border-style and
 				 * -fx-border-width. There is no shorthand notation for -fx-stroke-borders at this time.
 				 */
 				-fx-stroke-borders <-fx-border-color> [ <-fx-border-insets> || <-fx-border-radius> || <-fx-border-style> || <-fx-border-width> ] default: null;
 				/**
-				 * This property set by specifying -fx-border-image-source with the optional -fx-border-image-insets, -fx-border-image-repeat, 
+				 * This property set by specifying -fx-border-image-source with the optional -fx-border-image-insets, -fx-border-image-repeat,
 				 * -fx-border-image-slice and -fx-border-image-width. There is no shorthand notation for -fx-image-borders at this time.
 				 */
 				-fx-image-borders <-fx-border-image-source> [ <-fx-border-image-insets> || <-fx-border-image-repeat> || <-fx-border-image-slice> || <-fx-border-image-width> ] default: null;
@@ -1226,7 +1226,7 @@ package javafx {
  			 * so that users of the subclass can freely add/remove children.
 			 */
 			Pane extends Region {
-				
+
 			}
 			/**
 			 * AnchorPane allows the edges of child nodes to be anchored to an offset from
@@ -1234,13 +1234,13 @@ package javafx {
  			 * offsets will be measured from the inside edge of those insets.
 			 */
 			AnchorPane extends Pane {
-				
+
 			}
 			/**
 			 * BorderPane lays out children in top, left, right, bottom, and center positions.
 			 */
 			BorderPane extends Pane {
-				
+
 			}
 			/**
 			 * FlowPane lays out its children in a flow that wraps at the flowpane's boundary.
@@ -1478,7 +1478,7 @@ package javafx {
 				/**
 				 * Defines the decoration applied where path segments meet.
      			 * The value must have one of the following values:
-     			 * MITER, BEVEL and ROUND. 
+     			 * MITER, BEVEL and ROUND.
 				 */
 				-fx-stroke-line-join [ miter | bevel | round ]  default: miter;
 				/**
@@ -1499,14 +1499,14 @@ package javafx {
  			 * or ROUND).
 			 */
 			Arc extends Shape {
-				
+
 			}
 			/**
 			 * The Circle class creates a new circle
  			 * with the specified radius and center location measured in pixels
 			 */
 			Circle extends Shape {
-				
+
 			}
 			/**
 			 * The CubiCurve class defines a cubic B&eacute;zier parametric curve segment
@@ -1516,29 +1516,29 @@ package javafx {
  			 * as B&eacute;zier control points.
 			 */
 			CubicCurve extends Shape {
-				
+
 			}
 			/**
 			 * The Ellipse class creates a new ellipse
  			 * with the specified size and location in pixels
 			 */
 			Ellipse extends Shape {
-				
+
 			}
 			/**
 			 * This Line represents a line segment in (x,y)
- 			 * coordinate space. 
+ 			 * coordinate space.
 			 */
 			Line extends Shape {
-				
+
 			}
 			/**
 			 * The Path class represents a simple shape
  			 * and provides facilities required for basic construction
- 			 * and management of a geometric path. 
+ 			 * and management of a geometric path.
 			 */
 			Path extends Shape {
-				
+
 			}
 			/**
 			 * Creates a polygon, defined by an array of x,y coordinates. The Polygon
@@ -1546,7 +1546,7 @@ package javafx {
  			 * is not automatically closed.
 			 */
 			Polygon extends Shape {
-				
+
 			}
 			/**
 			 * The Quadcurve class defines a quadratic B&eacute;zier parametric curve
@@ -1556,7 +1556,7 @@ package javafx {
  			 * as B&eacute;zier control point.
 			 */
 			QuadCurve extends Shape {
-				
+
 			}
 			/**
 			 * The Rectangle class defines a rectangle
@@ -1581,7 +1581,7 @@ package javafx {
  			 * parsing SVG path data from a String.
 			 */
 			SVGPath extends Shape {
-				
+
 			}
 		}
 		package text {
@@ -1671,9 +1671,9 @@ package javafx {
 		}
 		package web {
 			/**
-			 * WebView is a Node that manages a WebEngine and displays its content. The associated WebEngine is 
-			 * created automatically at construction time and cannot be changed afterwards. WebView handles 
-			 * mouse and some keyboard events, and manages scrolling automatically, so there's no need to put it 
+			 * WebView is a Node that manages a WebEngine and displays its content. The associated WebEngine is
+			 * created automatically at construction time and cannot be changed afterwards. WebView handles
+			 * mouse and some keyboard events, and manages scrolling automatically, so there's no need to put it
 			 * into a ScrollPane.
 			 */
 			WebView extends Parent styleclass web-view {
@@ -1770,7 +1770,7 @@ package javafx {
 				-fx-font-size <font-size> default: null;  		/* INHERITED */
 				-fx-font-style <font-style> default: null;  	/* INHERITED */
 				-fx-font-weight <font-weight> default: null;  	/* INHERITED */
-        		
+
         		/**
         		 * Whether all text should be underlined.
         		 */
@@ -1847,7 +1847,7 @@ package javafx {
  			 * to select one or more values (depending on the implementation). This base
  			 * class makes no assumptions about what happens when the show() and
  			 * hide() methods are called, however commonly this results in either
- 			 * a popup or dialog appearing that allows for the user to provide the 
+ 			 * a popup or dialog appearing that allows for the user to provide the
  			 * required information.
         	 */
         	ComboBoxBase extends Control styleclass combo-box-base {
@@ -1893,9 +1893,9 @@ package javafx {
         	 * The Cell API is used for virtualized controls such as ListView,
  			 * TreeView, and TableView.
  			 * </p>
- 			 * A Cell is a Labeled Control, and is used to render a single 
- 			 * "row" inside  a ListView, TreeView or TableView. Cells are also used for each 
- 			 * individual 'cell' inside a TableView (i.e. each row/column intersection). See 
+ 			 * A Cell is a Labeled Control, and is used to render a single
+ 			 * "row" inside  a ListView, TreeView or TableView. Cells are also used for each
+ 			 * individual 'cell' inside a TableView (i.e. each row/column intersection). See
  			 * the JavaDoc for each control separately for more detail.
         	 */
         	Cell extends Labeled styleclass cell {
@@ -1915,7 +1915,7 @@ package javafx {
         		 * applies when the selected variable is true
         		 */
         		:selected
-        		
+
         		substructure Desktop {
         			Labeled styleclass text
         		}
@@ -1929,9 +1929,9 @@ package javafx {
  			 *  <li><em>undefined</em>: indeterminate == true</li>
  			 * </ul>
         	 */
-        	CheckBox extends ButtonBase 
+        	CheckBox extends ButtonBase
         		styleclass check-box {
-        		
+
         		/**
         		 * applies when the selected variable is true
         		 */
@@ -1944,13 +1944,13 @@ package javafx {
         		 * applies when the indeterminate variable is true
         		 */
         		:indeterminated
-				
+
 				substructure Desktop {
 					layout.Region styleclass box {
 						layout.Region styleclass mark
 					}
 				}
-				
+
         	}
         	/**
         	 * A MenuItem that can be toggled between selected and unselected states.
@@ -1977,7 +1977,7 @@ package javafx {
         		}
         	}
         	/**
-        	 * ColorPicker control allows the user to select a color from either a standard 
+        	 * ColorPicker control allows the user to select a color from either a standard
  			 * palette of colors with a simple one click selection OR define their own custom color.
         	 */
         	ColorPicker extends ComboBoxBase styleclass color-picker {
@@ -1993,7 +1993,7 @@ package javafx {
         	 * An implementation of the ComboBoxBase abstract class for the most common
  			 * form of ComboBox, where a popup list is shown to users providing them with
  			 * a choice that they may select from. For more information around the general
- 			 * concepts and API of ComboBox, refer to the ComboBoxBase class 
+ 			 * concepts and API of ComboBox, refer to the ComboBoxBase class
  			 * documentation.
         	 */
         	ComboBox styleclass combo-box  {
@@ -2021,7 +2021,7 @@ package javafx {
         		 * applies when the visited variable is true
         		 */
         		:visited
-        		
+
         		substructure Desktop {
         			Label styleclass label
         		}
@@ -2030,11 +2030,11 @@ package javafx {
         	 * An implementation of Cell which contains an index property which maps
  			 * into the data model underlying the visualization. Despite this,
  			 * IndexedCell should not be instantiated directly in a cell factory
- 			 * (refer to Cell for more details on what a cell factory is). 
+ 			 * (refer to Cell for more details on what a cell factory is).
  			 * Instead of creating IndexedCell directly, you should
  			 * instead make use of the control-specific cell implementations (for example,
- 			 * ListCell, TreeCell) TableRow and TableCell). 
- 			 * For more information about using and customizing cells, refer to the 
+ 			 * ListCell, TreeCell) TableRow and TableCell).
+ 			 * For more information about using and customizing cells, refer to the
  			 * {@link Cell} API documentation.
         	 */
         	IndexedCell extends Cell styleclass indexed-cell {
@@ -2055,23 +2055,23 @@ package javafx {
  			 * the Control listed as the target of the <code>labelFor</code> property.
         	 */
         	Label extends Labeled styleclass label {
-        		
+
         	}
         	/**
-        	 * The Cell type used within ListView instances. In addition 
- 			 * to the API defined on Cell and IndexedCell, the ListCell is more 
- 			 * tightly bound to a ListView, allowing for better support of editing events, 
+        	 * The Cell type used within ListView instances. In addition
+ 			 * to the API defined on Cell and IndexedCell, the ListCell is more
+ 			 * tightly bound to a ListView, allowing for better support of editing events,
  			 * etc.
         	 */
         	ListCell extends IndexedCell styleclass list-cell {
-				
+
         	}
         	/**
         	 *  A ListView displays a horizontal or vertical list of items from which the
  			 * user may select, or with which the user may interact. A ListView is able to
  			 * have its generic type set to represent the type of data in the backing model.
  			 * Doing this has the benefit of making various methods in the ListView, as well
- 			 * as the supporting classes (mentioned below), type-safe. In addition, making 
+ 			 * as the supporting classes (mentioned below), type-safe. In addition, making
  			 * use of the generic supports substantially simplifies development of applications
  			 * making use of ListView, as all modern IDEs are able to auto-complete far
  			 * more successfully with the additional type information.
@@ -2102,7 +2102,7 @@ package javafx {
         		/**
         		 * applies if this Menu is showing
         		 */
-        		:showing	
+        		:showing
         	}
         	/**
         	 * A MenuBar control traditionally is placed at the very top of the user
@@ -2117,7 +2117,7 @@ package javafx {
         			layout.HBox styleclass container {
         				MenuButton styleclass menu
         			}
-        		} 
+        		}
         	}
         	/**
         	 * MenuButton is a button which, when clicked or pressed, will show a
@@ -2170,11 +2170,11 @@ package javafx {
         		 */
         		-fx-page-information-visible <boolean> default: true;
         		/**
-        		 * page alignment 
+        		 * page alignment
         		 */
         		-fx-page-information-alignment [top | bottom | left | right] default: true;
         		-fx-arrow-button-gap <size> default: 4;
-        		
+
         		substructure Desktop {
         			layout.StackPane styleclass page
         			layout.StackPane styleclass pagination-control {
@@ -2194,13 +2194,13 @@ package javafx {
         	 * Text field that masks entered characters.
         	 */
         	PasswordField extends TextField styleclass password-field {
-        		  
+
         	}
         	/**
         	 * An extension of PopupWindow
         	 */
         	PopupControl extends Control {
-        		
+
         	}
         	/**
         	 * A specialization of the ProgressIndicator which is represented as a
@@ -2237,14 +2237,14 @@ package javafx {
         		 * applies if the indeterminate variable is true
         		 */
         		:indetermindate
-        		
+
         		substructure Desktop {
         			layout.StackPane styleclass indicator
         			layout.StackPane styleclass progress
         			text.Text styleclass percentage
         			layout.StackPane styleclass tick
         		}
-        		
+
         	}
         	/**
         	 * RadioButtons create a series of items where only one item can be
@@ -2274,7 +2274,7 @@ package javafx {
         	}
         	/**
         	 * Either a horizontal or vertical bar with increment and decrement buttons and
- 		     * a "thumb" with which the user can interact. 
+ 		     * a "thumb" with which the user can interact.
         	 */
         	ScrollBar extends Control styleclass scroll-bar {
         		/**
@@ -2299,7 +2299,7 @@ package javafx {
         		 * applies if this ScrollBar is horizontal
         		 */
         		:horizontal
-        		
+
         		substructure Desktop {
         			layout.StackPane styleclass decrement-button {
         				layout.StackPane styleclass decrement-arrow
@@ -2393,7 +2393,7 @@ package javafx {
         		/**
         		 * applies if this Separator is vertical
         		 */
-        		:vertical 
+        		:vertical
         		substructure Desktop {
         			layout.Region styleclass line
         		}
@@ -2407,7 +2407,7 @@ package javafx {
         	 */
         	Slider extends Control styleclass slider {
         		/**
-        		 * The orientation 
+        		 * The orientation
         		 */
         		-fx-orientation [ horizontal | vertical ] default: horizontal;
         		/**
@@ -2426,7 +2426,7 @@ package javafx {
         		 * The number of minor ticks to place between any two major ticks.
         		 */
         		-fx-minor-tick-count @NUM default: 3;
-        		
+
 				/**
 				 * Indicates whether the value of the Slider should always
      			 * be aligned with the tick marks. This is honored even if the tick marks
@@ -2446,7 +2446,7 @@ package javafx {
 				 * applies if this Slider is vertical
 				 */
 				:vertical
-				
+
         		substructure Desktop {
         			charts.NumberAxis styleclass axis
         			layout.Region styleclass track
@@ -2458,7 +2458,7 @@ package javafx {
  			 * the concept of selecting a MenuItem from a menu
         	 */
         	SplitMenuButton extends ButtonBase styleclass split-menu-button {
-        		
+
         	}
         	/**
         	 * A control that has two or more sides, each separated by a divider, which can be
@@ -2478,7 +2478,7 @@ package javafx {
         		 * applies if this Slider is vertical
         		 */
         		:vertical
-        		
+
         		substructure Desktop {
         			layout.StackPane styleclass split-pane-divider {
         				layout.StackPane styleclass vertical-grabber
@@ -2515,6 +2515,14 @@ package javafx {
      			 * of the tab.  By default the min equals to the max.
         		 */
         		-fx-tab-max-height @INT default: DOUBLE_MAX;
+        		/**
+        		 * Animation when the tab is added
+        		 */
+        		-fx-open-tab-animation [ none | grow ] default: none;
+        		/**
+        		 * Animation when the tab is removed
+        		 */
+        		-fx-close-tab-animation [ none | grow ] default: none;
         		/**
         		 * applies if the side is top
         		 */
@@ -2554,7 +2562,7 @@ package javafx {
         	Tab {}
         	/**
         	 * The TableView control is designed to visualize an unlimited number of rows
- 			 * of data, broken out into columns. 
+ 			 * of data, broken out into columns.
         	 */
         	TableView extends Control styleclass table-view {
         		/**
@@ -2569,18 +2577,18 @@ package javafx {
         		 * applies if this TableView's selection model is row selection
         		 */
         		:row-selection
-        		
+
         		substructure Desktop {
         			layout.Region styleclass column-resize-line
         			layout.Region styleclass column-overlay
         			layout.StackPane styleclass placeholder
         			layout.StackPane styleclass column-header-background {
         				layout.Region styleclass nested-column-header {
-        					layout.Region styleclass column-header	
+        					layout.Region styleclass column-header
         				}
         				layout.Region styleclass filler
         				layout.StackPane styleclass show-hide-columns-button {
-        					layout.StackPane styleclass show-hide-column-image	
+        					layout.StackPane styleclass show-hide-column-image
         				}
         				layout.StackPane styleclass column-drag-header {
         					Label styleclass label
@@ -2590,7 +2598,7 @@ package javafx {
         	}
         	/**
         	 * Text input component that allows a user to enter multiple lines of
- 			 * plain text. 
+ 			 * plain text.
         	 */
         	TextArea extends TextInputControl styleclass text-area {
         		-fx-pref-column-count @INT default:40;
@@ -2621,15 +2629,15 @@ package javafx {
         	}
         	/**
         	 * Text input component that allows a user to enter a single line of
- 			 * unformatted text. 
+ 			 * unformatted text.
         	 */
         	TextField extends TextInputControl styleclass text-field {
         		/**
         		 * Specifies how the text should be aligned when there is empty
      			 * space within the TextField.
         		 */
-        		-fx-alignment [ 
-        			top-left | top-center | top-right | center-left | 
+        		-fx-alignment [
+        			top-left | top-center | top-right | center-left |
         			center | center-right | bottom-left | bottom-center | bottom-right | baseline-left | baseline-center | baseline-right
         		] default: center-left;
         		-fx-pref-column-count @INT default: 12;
@@ -2658,7 +2666,7 @@ package javafx {
         			layout.HBox styleclass title {
         				Label styleclass text
         				layout.StackPane styleclass arrow-button {
-        					layout.StackPane styleclass arrow	
+        					layout.StackPane styleclass arrow
         				}
         			}
         			layout.StackPane styleclass content
@@ -2666,7 +2674,7 @@ package javafx {
         	}
         	/**
         	 * A ToggleButton is a specialized control which has the ability to be
- 			 * selected. 
+ 			 * selected.
         	 */
         	ToggleButton extends ButtonBase styleclass toggle-button {
         		/**
@@ -2676,7 +2684,7 @@ package javafx {
         	}
         	/**
         	 * A ToolBar is a control which displays items horizontally
- 			 * or vertically. 
+ 			 * or vertically.
         	 */
         	ToolBar extends Control styleclass tool-bar {
         		/**
@@ -2748,7 +2756,7 @@ package javafx {
         		}
         	}
         	/**
-        	 * The Cell type used with the TreeView control. 
+        	 * The Cell type used with the TreeView control.
         	 */
         	TreeCell extends IndexedCell styleclass tree-cell {
         		/**
@@ -2765,12 +2773,12 @@ package javafx {
         		:collapsed
         	}
         	/**
-        	 * The TreeView control provides a view on to a tree root (of type 
+        	 * The TreeView control provides a view on to a tree root (of type
  			 * TreeItem).
         	 */
         	TreeView extends Control styleclass tree-view {
-        		
-        	}			
+
+        	}
 		}
 		package charts {
 			/**
@@ -2778,7 +2786,7 @@ package javafx {
  			 * the 0 line on the Y axis.
 			 */
 	    	AreaChart extends XYChart {
-	    		
+
 	    	}
 	    	/**
 	    	 * A chart that plots bars indicating data values for a category. The bars can be vertical or horizontal depending on
@@ -2799,7 +2807,7 @@ package javafx {
  			 * the radius of the bubble it should be a java.lang.Number.
 	    	 */
 	    	BubbleChart extends XYChart {
-	    		
+
 	    	}
 	    	/**
 	    	 * Base class for all charts. It has 3 parts the title, legend and chartContent. The chart content is populated by the
@@ -2822,7 +2830,7 @@ package javafx {
 	    	/**
 	    	 * Line Chart plots a line connecting the data points in a series. The data points
  			 * themselves can be represented by symbols optionally. Line charts are usually used
- 			 * to view data trends over time or category. 
+ 			 * to view data trends over time or category.
 	    	 */
 	    	LineChart extends XYChart {
 	    		/**
@@ -2834,7 +2842,7 @@ package javafx {
 	    	 * Chart type that plots symbols for the data points in a series.
 	    	 */
 	    	ScatterChart extends XYChart {
-	    		
+
 	    	}
 	    	/**
 	    	 * Displays a PieChart. The chart content is populated by pie slices based on
@@ -2857,15 +2865,15 @@ package javafx {
 	    		 * The angle to start the first pie slice at
 	    		 */
 	    		-fx-start-angle @NUM default: 0;
-	    		
+
 	    		substructure Desktop {
-	    			/** Where <i> is the index of the data and <j> is the series’ color index. 
+	    			/** Where <i> is the index of the data and <j> is the series’ color index.
 	    			 * If the data value is negative, the "negative" style class is added.
 	    			 */
 	    			Node styleclass chart-pie data[i] default-color[j]
 	    			shape.Path styleclass chart-pie-label-line
 	    			text.Text styleclass chart-pie-label
-	    			
+
 	    			// TODO find out what a LegendItem is -> seems that it is missing from oracles css docs
 	    			// /** Each item in the legend has the style class "pie-legend-symbol" plus the style class of the corresponding data item */
 	    			// LegendItem styleclass pie-legend-symbol
@@ -2878,7 +2886,7 @@ package javafx {
 	    	 */
 	    	XYChart extends Chart {
 	    		/**
-	    		 *  If true then alternative vertical columns will have fills 
+	    		 *  If true then alternative vertical columns will have fills
 	    		 */
 	    		-fx-alternative-column-fill-visible <boolean> default: true;
 	    		/**
@@ -2903,7 +2911,7 @@ package javafx {
      			 * will be drawn at the zero point
 	    		 */
 	    		-fx-vertical-zero-line-visible <boolean> default: true;
-	    		
+
 	    		substructure Desktop {
 	    			Group styleclass plot-content
 	    			layout.Region styleclass chart-plot-background
@@ -2922,37 +2930,37 @@ package javafx {
 	    		/**
 	    		 * The side of the plot which this axis is being drawn on
 	    		 */
-	    		-fx-side 	[top|left|right|bottom] default: null;	
+	    		-fx-side 	[top|left|right|bottom] default: null;
 	    		/**
-	    		 * The length of tick mark lines 
-	    		 */ 
-				-fx-tick-length <size> default: 8; 	 
+	    		 * The length of tick mark lines
+	    		 */
+				-fx-tick-length <size> default: 8;
 				/**
-				 * The font for all tick labels 
+				 * The font for all tick labels
 				 */
 				-fx-tick-label-font <font> default: 8;
 				-fx-tick-label-font-family <font-family> default: system; 	/* INHERITED */
 				-fx-tick-label-font-size <font-size> default: 8;  			/* INHERITED */
 				-fx-tick-label-font-style <font-style> default: null;  		/* INHERITED */
 				-fx-tick-label-font-weight <font-weight> default: null;  	/* INHERITED */
-				
+
 				/**
-				 * The fill for all tick labels 
+				 * The fill for all tick labels
 				 */
-				-fx-tick-label-fill <paint> default: 8; 	
+				-fx-tick-label-fill <paint> default: 8;
 				/**
 				 * The gap between tick labels and the tick mark lines
-				 */ 
-				-fx-tick-label-gap <size> default: 8; 	 
+				 */
+				-fx-tick-label-gap <size> default: 8;
 				/**
 				 * true if tick marks should be displayed
 				 */
-				-fx-tick-mark-visible <boolean> default: true; 	 
+				-fx-tick-mark-visible <boolean> default: true;
 				/**
 				 * true if tick mark labels should be displayed
 				 */
-				-fx-tick-labels-visible <boolean> default: true; 	
-				
+				-fx-tick-labels-visible <boolean> default: true;
+
 				substructure Desktop {
 					text.Text styleclass axis-label
 					shape.Path styleclass axis-tick-mark
@@ -2966,17 +2974,17 @@ package javafx {
 	    		/**
 	    		 * The length of minor tick mark lines. Set to 0 to not display minor tick marks.
 	    		 */
-	    		-fx-minor-tick-length <size> default: 5; 	
+	    		-fx-minor-tick-length <size> default: 5;
 	    		/**
 	    		 * The number of minor tick divisions to be displayed between each major tick mark.
      			 * The number of actual minor tick marks will be one less than this.
-	    		 */ 
-				-fx-minor-tick-count <size> default: 5; 
+	    		 */
+				-fx-minor-tick-count <size> default: 5;
 				/**
-				 * true if minor tick marks should be displayed 
-				 */	 
-				-fx-minor-tick-visible <boolean> default: true; 	 
-				
+				 * true if minor tick marks should be displayed
+				 */
+				-fx-minor-tick-visible <boolean> default: true;
+
 				substructure Desktop {
 					shape.Path styleclass axis-minor-tick-mark
 				}
@@ -2992,7 +3000,7 @@ package javafx {
 	    		-fx-tick-unit @NUM default: 5;
 	    	}
 	    	/**
-	    	 * A axis implementation that will works on string categories where each 
+	    	 * A axis implementation that will works on string categories where each
  			 * value as a unique category(tick mark) along the axis.
 	    	 */
 	    	CategoryAxis extends Axis styleclass axis {
@@ -3013,7 +3021,7 @@ package javafx {
 	    	 * A chart legend that displays a list of items with symbols in a box
 	    	 */
 	    	Legend extends layout.Region styleclass chart-legend {
-	    			
+
 	    		substructure Desktop {
 	    			control.Label styleclass chart-legend-item
 	    			Node styleclass chart-legend-item-symbol
