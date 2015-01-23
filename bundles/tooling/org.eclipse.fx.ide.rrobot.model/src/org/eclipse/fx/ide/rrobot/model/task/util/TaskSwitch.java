@@ -2,28 +2,10 @@
  */
 package org.eclipse.fx.ide.rrobot.model.task.util;
 
-import org.eclipse.fx.ide.rrobot.model.task.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.fx.ide.rrobot.model.task.BooleanExpression;
-import org.eclipse.fx.ide.rrobot.model.task.CompilationUnit;
-import org.eclipse.fx.ide.rrobot.model.task.DataFile;
-import org.eclipse.fx.ide.rrobot.model.task.DynamicFile;
-import org.eclipse.fx.ide.rrobot.model.task.ExcludeableElementMixin;
-import org.eclipse.fx.ide.rrobot.model.task.File;
-import org.eclipse.fx.ide.rrobot.model.task.Folder;
-import org.eclipse.fx.ide.rrobot.model.task.InlineBooleanExpression;
-import org.eclipse.fx.ide.rrobot.model.task.JDTProject;
-import org.eclipse.fx.ide.rrobot.model.task.Project;
-import org.eclipse.fx.ide.rrobot.model.task.ReferencingBooleanExpression;
-import org.eclipse.fx.ide.rrobot.model.task.RobotTask;
-import org.eclipse.fx.ide.rrobot.model.task.SourceFragment;
-import org.eclipse.fx.ide.rrobot.model.task.TaskPackage;
-import org.eclipse.fx.ide.rrobot.model.task.TemplatedFile;
-import org.eclipse.fx.ide.rrobot.model.task.URLFile;
-import org.eclipse.fx.ide.rrobot.model.task.Variable;
-import org.eclipse.fx.ide.rrobot.model.task.Resource;
+import org.eclipse.fx.ide.rrobot.model.task.*;
 import org.eclipse.jdt.annotation.Nullable;
 
 /**

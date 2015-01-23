@@ -181,6 +181,14 @@ public class BundleAdapterFactory extends AdapterFactoryImpl {
 				return createProductStartConfigAdapter();
 			}
 			@Override
+			public Adapter caseComponentDefinitionFile(ComponentDefinitionFile object) {
+				return createComponentDefinitionFileAdapter();
+			}
+			@Override
+			public Adapter caseComponentReference(ComponentReference object) {
+				return createComponentReferenceAdapter();
+			}
+			@Override
 			public Adapter caseProject(Project object) {
 				return createProjectAdapter();
 			}
@@ -515,6 +523,34 @@ public class BundleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProductStartConfigAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile <em>Component Definition File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile
+	 * @generated
+	 */
+	public Adapter createComponentDefinitionFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference <em>Component Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference
+	 * @generated
+	 */
+	public Adapter createComponentReferenceAdapter() {
 		return null;
 	}
 

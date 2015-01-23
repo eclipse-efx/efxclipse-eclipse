@@ -2,37 +2,15 @@
  */
 package org.eclipse.fx.ide.rrobot.model.bundle.util;
 
-import org.eclipse.fx.ide.rrobot.model.bundle.*;
-import org.eclipse.fx.ide.rrobot.model.task.Resource;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.fx.ide.rrobot.model.bundle.Attribute;
-import org.eclipse.fx.ide.rrobot.model.bundle.BuildProperties;
-import org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage;
-import org.eclipse.fx.ide.rrobot.model.bundle.BundleProject;
-import org.eclipse.fx.ide.rrobot.model.bundle.Element;
-import org.eclipse.fx.ide.rrobot.model.bundle.ExportedPackage;
-import org.eclipse.fx.ide.rrobot.model.bundle.Extension;
-import org.eclipse.fx.ide.rrobot.model.bundle.FeatureFile;
-import org.eclipse.fx.ide.rrobot.model.bundle.FeaturePlugin;
-import org.eclipse.fx.ide.rrobot.model.bundle.FeatureProject;
-import org.eclipse.fx.ide.rrobot.model.bundle.ImportedPackage;
-import org.eclipse.fx.ide.rrobot.model.bundle.IncludedFeature;
-import org.eclipse.fx.ide.rrobot.model.bundle.LinkedString;
-import org.eclipse.fx.ide.rrobot.model.bundle.ManifestFile;
-import org.eclipse.fx.ide.rrobot.model.bundle.PluginXMLFile;
-import org.eclipse.fx.ide.rrobot.model.bundle.ProductFeature;
-import org.eclipse.fx.ide.rrobot.model.bundle.ProductFile;
-import org.eclipse.fx.ide.rrobot.model.bundle.ProductFileFeaturebase;
-import org.eclipse.fx.ide.rrobot.model.bundle.ProductPlugin;
-import org.eclipse.fx.ide.rrobot.model.bundle.ProductStartConfig;
-import org.eclipse.fx.ide.rrobot.model.bundle.RequiredBundle;
-import org.eclipse.fx.ide.rrobot.model.bundle.RequiredFeature;
+import org.eclipse.fx.ide.rrobot.model.bundle.*;
 import org.eclipse.fx.ide.rrobot.model.task.ExcludeableElementMixin;
 import org.eclipse.fx.ide.rrobot.model.task.File;
 import org.eclipse.fx.ide.rrobot.model.task.JDTProject;
 import org.eclipse.fx.ide.rrobot.model.task.Project;
+import org.eclipse.fx.ide.rrobot.model.task.Resource;
 import org.eclipse.fx.ide.rrobot.model.task.TemplatedFile;
 import org.eclipse.jdt.annotation.Nullable;
 
@@ -254,6 +232,22 @@ public class BundleSwitch<@Nullable T> extends Switch<T> {
 				ProductStartConfig productStartConfig = (ProductStartConfig)theEObject;
 				T result = caseProductStartConfig(productStartConfig);
 				if (result == null) result = caseExcludeableElementMixin(productStartConfig);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BundlePackage.COMPONENT_DEFINITION_FILE: {
+				ComponentDefinitionFile componentDefinitionFile = (ComponentDefinitionFile)theEObject;
+				T result = caseComponentDefinitionFile(componentDefinitionFile);
+				if (result == null) result = caseTemplatedFile(componentDefinitionFile);
+				if (result == null) result = caseFile(componentDefinitionFile);
+				if (result == null) result = caseResource(componentDefinitionFile);
+				if (result == null) result = caseExcludeableElementMixin(componentDefinitionFile);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BundlePackage.COMPONENT_REFERENCE: {
+				ComponentReference componentReference = (ComponentReference)theEObject;
+				T result = caseComponentReference(componentReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -573,6 +567,36 @@ public class BundleSwitch<@Nullable T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProductStartConfig(ProductStartConfig object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Definition File</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Definition File</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentDefinitionFile(ComponentDefinitionFile object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentReference(ComponentReference object) {
 		return null;
 	}
 

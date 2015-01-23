@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 BestSolution.at and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Tom Schindl<tom.schindl@bestsolution.at> - initial API and implementation
+ *******************************************************************************/
 package org.eclipse.fx.ide.pde.ui.e4.project.template
 
 import org.eclipse.emf.ecore.util.EcoreUtil
@@ -7,25 +17,25 @@ import java.util.Map
 import java.io.ByteArrayInputStream
 
 class ApplicationE4XMI implements Generator<DynamicFile> {
-	
+
 	override generate(DynamicFile file, Map<String,Object> data) {
 		return new ByteArrayInputStream(generateContent(EcoreUtil::generateUUID).toString.bytes);
 	}
-	
+
 	def generateContent(String rootContext) '''
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application 
-	xmi:version="2.0" 
-	xmlns:xmi="http://www.omg.org/XMI" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" 
-	xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" 
-	xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" 
-	xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" 
-	xmi:id="«EcoreUtil::generateUUID»" 
-	elementId="org.eclipse.e4.application" 
+<application:Application
+	xmi:version="2.0"
+	xmlns:xmi="http://www.omg.org/XMI"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced"
+	xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application"
+	xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic"
+	xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu"
+	xmi:id="«EcoreUtil::generateUUID»"
+	elementId="org.eclipse.e4.application"
 	bindingContexts="«rootContext»">
-	
+
 	<rootContext xmi:id="«rootContext»" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
 		<children xmi:id="«EcoreUtil::generateUUID»" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
 		<children xmi:id="«EcoreUtil::generateUUID»" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>

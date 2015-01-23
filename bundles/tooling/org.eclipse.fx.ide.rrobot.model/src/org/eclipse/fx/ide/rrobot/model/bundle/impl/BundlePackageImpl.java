@@ -14,6 +14,9 @@ import org.eclipse.fx.ide.rrobot.model.bundle.BuildProperties;
 import org.eclipse.fx.ide.rrobot.model.bundle.BundleFactory;
 import org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage;
 import org.eclipse.fx.ide.rrobot.model.bundle.BundleProject;
+import org.eclipse.fx.ide.rrobot.model.bundle.Cardinality;
+import org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile;
+import org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference;
 import org.eclipse.fx.ide.rrobot.model.bundle.Element;
 import org.eclipse.fx.ide.rrobot.model.bundle.ExportedPackage;
 import org.eclipse.fx.ide.rrobot.model.bundle.Extension;
@@ -25,6 +28,7 @@ import org.eclipse.fx.ide.rrobot.model.bundle.IncludedFeature;
 import org.eclipse.fx.ide.rrobot.model.bundle.LinkedString;
 import org.eclipse.fx.ide.rrobot.model.bundle.ManifestFile;
 import org.eclipse.fx.ide.rrobot.model.bundle.PluginXMLFile;
+import org.eclipse.fx.ide.rrobot.model.bundle.Policy;
 import org.eclipse.fx.ide.rrobot.model.bundle.ProductFeature;
 import org.eclipse.fx.ide.rrobot.model.bundle.ProductFile;
 import org.eclipse.fx.ide.rrobot.model.bundle.ProductFileFeaturebase;
@@ -197,7 +201,35 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass componentDefinitionFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum matchRuleEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum cardinalityEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum policyEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,7 +266,7 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link BundlePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -266,7 +298,7 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 		// Mark meta-data to indicate it can't be changed
 		theBundlePackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(BundlePackage.eNS_URI, theBundlePackage);
 		return theBundlePackage;
@@ -1150,8 +1182,134 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getComponentDefinitionFile() {
+		return componentDefinitionFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentDefinitionFile_Id() {
+		return (EAttribute)componentDefinitionFileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentDefinitionFile_ComponentClass() {
+		return (EAttribute)componentDefinitionFileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentDefinitionFile_ServiceInterfaceList() {
+		return (EAttribute)componentDefinitionFileEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentDefinitionFile_ReferenceList() {
+		return (EReference)componentDefinitionFileEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getComponentReference() {
+		return componentReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentReference_Bind() {
+		return (EAttribute)componentReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentReference_Unbind() {
+		return (EAttribute)componentReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentReference_Cardinality() {
+		return (EAttribute)componentReferenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentReference_Name() {
+		return (EAttribute)componentReferenceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentReference_TypeName() {
+		return (EAttribute)componentReferenceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentReference_Policy() {
+		return (EAttribute)componentReferenceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getMatchRule() {
 		return matchRuleEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getCardinality() {
+		return cardinalityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getPolicy() {
+		return policyEEnum;
 	}
 
 	/**
@@ -1309,8 +1467,24 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 		createEAttribute(productStartConfigEClass, PRODUCT_START_CONFIG__AUTO_START);
 		createEAttribute(productStartConfigEClass, PRODUCT_START_CONFIG__START_LEVEL);
 
+		componentDefinitionFileEClass = createEClass(COMPONENT_DEFINITION_FILE);
+		createEAttribute(componentDefinitionFileEClass, COMPONENT_DEFINITION_FILE__ID);
+		createEAttribute(componentDefinitionFileEClass, COMPONENT_DEFINITION_FILE__COMPONENT_CLASS);
+		createEAttribute(componentDefinitionFileEClass, COMPONENT_DEFINITION_FILE__SERVICE_INTERFACE_LIST);
+		createEReference(componentDefinitionFileEClass, COMPONENT_DEFINITION_FILE__REFERENCE_LIST);
+
+		componentReferenceEClass = createEClass(COMPONENT_REFERENCE);
+		createEAttribute(componentReferenceEClass, COMPONENT_REFERENCE__BIND);
+		createEAttribute(componentReferenceEClass, COMPONENT_REFERENCE__UNBIND);
+		createEAttribute(componentReferenceEClass, COMPONENT_REFERENCE__CARDINALITY);
+		createEAttribute(componentReferenceEClass, COMPONENT_REFERENCE__NAME);
+		createEAttribute(componentReferenceEClass, COMPONENT_REFERENCE__TYPE_NAME);
+		createEAttribute(componentReferenceEClass, COMPONENT_REFERENCE__POLICY);
+
 		// Create enums
 		matchRuleEEnum = createEEnum(MATCH_RULE);
+		cardinalityEEnum = createEEnum(CARDINALITY);
+		policyEEnum = createEEnum(POLICY);
 
 		// Create data types
 		versionEDataType = createEDataType(VERSION);
@@ -1365,6 +1539,7 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 		productPluginEClass.getESuperTypes().add(theTaskPackage.getExcludeableElementMixin());
 		productFeatureEClass.getESuperTypes().add(theTaskPackage.getExcludeableElementMixin());
 		productStartConfigEClass.getESuperTypes().add(theTaskPackage.getExcludeableElementMixin());
+		componentDefinitionFileEClass.getESuperTypes().add(theTaskPackage.getTemplatedFile());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(bundleProjectEClass, BundleProject.class, "BundleProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1485,6 +1660,20 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 		initEAttribute(getProductStartConfig_AutoStart(), ecorePackage.getEBoolean(), "autoStart", null, 0, 1, ProductStartConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProductStartConfig_StartLevel(), ecorePackage.getEInt(), "startLevel", null, 0, 1, ProductStartConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(componentDefinitionFileEClass, ComponentDefinitionFile.class, "ComponentDefinitionFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentDefinitionFile_Id(), ecorePackage.getEString(), "id", null, 0, 1, ComponentDefinitionFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentDefinitionFile_ComponentClass(), ecorePackage.getEString(), "componentClass", null, 0, 1, ComponentDefinitionFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentDefinitionFile_ServiceInterfaceList(), ecorePackage.getEString(), "serviceInterfaceList", null, 0, -1, ComponentDefinitionFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentDefinitionFile_ReferenceList(), this.getComponentReference(), null, "referenceList", null, 0, -1, ComponentDefinitionFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentReferenceEClass, ComponentReference.class, "ComponentReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentReference_Bind(), ecorePackage.getEString(), "bind", null, 0, 1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentReference_Unbind(), ecorePackage.getEString(), "unbind", null, 0, 1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentReference_Cardinality(), this.getCardinality(), "cardinality", null, 0, 1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentReference_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentReference_Policy(), this.getPolicy(), "policy", null, 0, 1, ComponentReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(matchRuleEEnum, MatchRule.class, "MatchRule");
 		addEEnumLiteral(matchRuleEEnum, MatchRule.NONE);
@@ -1492,6 +1681,16 @@ public class BundlePackageImpl extends EPackageImpl implements BundlePackage {
 		addEEnumLiteral(matchRuleEEnum, MatchRule.COMPATIBLE);
 		addEEnumLiteral(matchRuleEEnum, MatchRule.PERFECT);
 		addEEnumLiteral(matchRuleEEnum, MatchRule.GREATER_OR_EQUAL);
+
+		initEEnum(cardinalityEEnum, Cardinality.class, "Cardinality");
+		addEEnumLiteral(cardinalityEEnum, Cardinality.SINGLE_OPTIONAL);
+		addEEnumLiteral(cardinalityEEnum, Cardinality.SINGLE_REQUIRED);
+		addEEnumLiteral(cardinalityEEnum, Cardinality.MULTI_OPTIONAL);
+		addEEnumLiteral(cardinalityEEnum, Cardinality.MULTI_REQUIRED);
+
+		initEEnum(policyEEnum, Policy.class, "Policy");
+		addEEnumLiteral(policyEEnum, Policy.DYNAMIC);
+		addEEnumLiteral(policyEEnum, Policy.STATIC);
 
 		// Initialize data types
 		initEDataType(versionEDataType, Version.class, "Version", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

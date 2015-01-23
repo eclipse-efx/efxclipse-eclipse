@@ -44,7 +44,7 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory {
 	 */
 	public static TaskFactory init() {
 		try {
-			TaskFactory theTaskFactory = (TaskFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.efxclipse.org/rrobot/task/1.0"); 
+			TaskFactory theTaskFactory = (TaskFactory)EPackage.Registry.INSTANCE.getEFactory(TaskPackage.eNS_URI);
 			if (theTaskFactory != null) {
 				return theTaskFactory;
 			}

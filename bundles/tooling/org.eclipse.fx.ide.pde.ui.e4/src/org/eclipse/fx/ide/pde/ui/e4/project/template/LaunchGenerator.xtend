@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 BestSolution.at and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Tom Schindl<tom.schindl@bestsolution.at> - initial API and implementation
+ *******************************************************************************/
 package org.eclipse.fx.ide.pde.ui.e4.project.template
 
 import org.eclipse.fx.ide.rrobot.model.task.Generator
@@ -11,7 +21,7 @@ import java.io.ByteArrayInputStream
 import org.eclipse.emf.ecore.EObject
 
 class LaunchGenerator implements Generator<DynamicFile> {
-	
+
 	def findRoot(EObject file) {
 		var tmp = file;
 		while( true ) {
@@ -21,17 +31,17 @@ class LaunchGenerator implements Generator<DynamicFile> {
 			tmp = tmp.eContainer;
 		}
 	}
-	
+
 	override generate(DynamicFile file, Map<String,Object> data) {
 		val robotTask = findRoot(file) as RobotTask;
 		val launchDef = new E4LaunchDef();
 		val plugin = robotTask.projects.findFirst([e | e instanceof FeatureProject]) as FeatureProject;
 		val bundleProject = robotTask.projects.findFirst([e | e instanceof BundleProject]) as BundleProject;
-		
+
 		val symbolicName = bundleProject.manifest.symbolicname;
-		
+
 		launchDef.setProjectName(bundleProject.name);
-		
+
 		if( plugin != null ) {
 			for( fp : plugin.feature.plugins ) {
 				if(symbolicName.equals(fp.getId())) {
@@ -47,16 +57,16 @@ class LaunchGenerator implements Generator<DynamicFile> {
 				} else if("org.eclipse.osgi".equals(fp.getId())) {
 					launchDef.getTargetPlugins().add(new PluginLaunchDef(fp.getId(),"-1","true"));
 				} else {
-					launchDef.getTargetPlugins().add(new PluginLaunchDef(fp.getId()));	
+					launchDef.getTargetPlugins().add(new PluginLaunchDef(fp.getId()));
 				}
 			}
-			
+
 			launchDef.getWorkbenchPlugins().add(new PluginLaunchDef(symbolicName));
-			
+
 		}
 		return new ByteArrayInputStream(generate(launchDef).toString.bytes);
 	}
-	
+
 	def generate(E4LaunchDef launch) '''
 	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 	<launchConfiguration type="org.eclipse.pde.ui.RuntimeWorkbench">

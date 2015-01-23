@@ -1539,6 +1539,161 @@ public interface BundlePackage extends EPackage {
 	int PRODUCT_START_CONFIG_FEATURE_COUNT = TaskPackage.EXCLUDEABLE_ELEMENT_MIXIN_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentDefinitionFileImpl <em>Component Definition File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentDefinitionFileImpl
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getComponentDefinitionFile()
+	 * @generated
+	 */
+	int COMPONENT_DEFINITION_FILE = 21;
+
+	/**
+	 * The feature id for the '<em><b>Exclude Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE__EXCLUDE_EXPRESSION = TaskPackage.TEMPLATED_FILE__EXCLUDE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE__NAME = TaskPackage.TEMPLATED_FILE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Generator Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE__GENERATOR_TYPE = TaskPackage.TEMPLATED_FILE__GENERATOR_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE__ID = TaskPackage.TEMPLATED_FILE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Component Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE__COMPONENT_CLASS = TaskPackage.TEMPLATED_FILE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Service Interface List</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE__SERVICE_INTERFACE_LIST = TaskPackage.TEMPLATED_FILE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Reference List</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE__REFERENCE_LIST = TaskPackage.TEMPLATED_FILE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Component Definition File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_DEFINITION_FILE_FEATURE_COUNT = TaskPackage.TEMPLATED_FILE_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentReferenceImpl <em>Component Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentReferenceImpl
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getComponentReference()
+	 * @generated
+	 */
+	int COMPONENT_REFERENCE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Bind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REFERENCE__BIND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Unbind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REFERENCE__UNBIND = 1;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REFERENCE__CARDINALITY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REFERENCE__NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REFERENCE__TYPE_NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Policy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REFERENCE__POLICY = 5;
+
+	/**
+	 * The number of structural features of the '<em>Component Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_REFERENCE_FEATURE_COUNT = 6;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.MatchRule <em>Match Rule</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1546,7 +1701,27 @@ public interface BundlePackage extends EPackage {
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getMatchRule()
 	 * @generated
 	 */
-	int MATCH_RULE = 21;
+	int MATCH_RULE = 23;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.Cardinality <em>Cardinality</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.Cardinality
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getCardinality()
+	 * @generated
+	 */
+	int CARDINALITY = 24;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.Policy <em>Policy</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.Policy
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getPolicy()
+	 * @generated
+	 */
+	int POLICY = 25;
 
 	/**
 	 * The meta object id for the '<em>Version</em>' data type.
@@ -1556,7 +1731,7 @@ public interface BundlePackage extends EPackage {
 	 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getVersion()
 	 * @generated
 	 */
-	int VERSION = 22;
+	int VERSION = 26;
 
 
 	/**
@@ -2606,6 +2781,136 @@ public interface BundlePackage extends EPackage {
 	EAttribute getProductStartConfig_StartLevel();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile <em>Component Definition File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Definition File</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile
+	 * @generated
+	 */
+	EClass getComponentDefinitionFile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getId()
+	 * @see #getComponentDefinitionFile()
+	 * @generated
+	 */
+	EAttribute getComponentDefinitionFile_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getComponentClass <em>Component Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Component Class</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getComponentClass()
+	 * @see #getComponentDefinitionFile()
+	 * @generated
+	 */
+	EAttribute getComponentDefinitionFile_ComponentClass();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getServiceInterfaceList <em>Service Interface List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Service Interface List</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getServiceInterfaceList()
+	 * @see #getComponentDefinitionFile()
+	 * @generated
+	 */
+	EAttribute getComponentDefinitionFile_ServiceInterfaceList();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getReferenceList <em>Reference List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Reference List</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentDefinitionFile#getReferenceList()
+	 * @see #getComponentDefinitionFile()
+	 * @generated
+	 */
+	EReference getComponentDefinitionFile_ReferenceList();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference <em>Component Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Reference</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference
+	 * @generated
+	 */
+	EClass getComponentReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getBind <em>Bind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Bind</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getBind()
+	 * @see #getComponentReference()
+	 * @generated
+	 */
+	EAttribute getComponentReference_Bind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getUnbind <em>Unbind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unbind</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getUnbind()
+	 * @see #getComponentReference()
+	 * @generated
+	 */
+	EAttribute getComponentReference_Unbind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getCardinality <em>Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cardinality</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getCardinality()
+	 * @see #getComponentReference()
+	 * @generated
+	 */
+	EAttribute getComponentReference_Cardinality();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getName()
+	 * @see #getComponentReference()
+	 * @generated
+	 */
+	EAttribute getComponentReference_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getTypeName <em>Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Name</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getTypeName()
+	 * @see #getComponentReference()
+	 * @generated
+	 */
+	EAttribute getComponentReference_TypeName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getPolicy <em>Policy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Policy</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.ComponentReference#getPolicy()
+	 * @see #getComponentReference()
+	 * @generated
+	 */
+	EAttribute getComponentReference_Policy();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.fx.ide.rrobot.model.bundle.MatchRule <em>Match Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2614,6 +2919,26 @@ public interface BundlePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getMatchRule();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.fx.ide.rrobot.model.bundle.Cardinality <em>Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Cardinality</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.Cardinality
+	 * @generated
+	 */
+	EEnum getCardinality();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.fx.ide.rrobot.model.bundle.Policy <em>Policy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Policy</em>'.
+	 * @see org.eclipse.fx.ide.rrobot.model.bundle.Policy
+	 * @generated
+	 */
+	EEnum getPolicy();
 
 	/**
 	 * Returns the meta object for data type '{@link org.osgi.framework.Version <em>Version</em>}'.
@@ -3467,6 +3792,106 @@ public interface BundlePackage extends EPackage {
 		EAttribute PRODUCT_START_CONFIG__START_LEVEL = eINSTANCE.getProductStartConfig_StartLevel();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentDefinitionFileImpl <em>Component Definition File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentDefinitionFileImpl
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getComponentDefinitionFile()
+		 * @generated
+		 */
+		EClass COMPONENT_DEFINITION_FILE = eINSTANCE.getComponentDefinitionFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_DEFINITION_FILE__ID = eINSTANCE.getComponentDefinitionFile_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_DEFINITION_FILE__COMPONENT_CLASS = eINSTANCE.getComponentDefinitionFile_ComponentClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Interface List</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_DEFINITION_FILE__SERVICE_INTERFACE_LIST = eINSTANCE.getComponentDefinitionFile_ServiceInterfaceList();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference List</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_DEFINITION_FILE__REFERENCE_LIST = eINSTANCE.getComponentDefinitionFile_ReferenceList();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentReferenceImpl <em>Component Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.ComponentReferenceImpl
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getComponentReference()
+		 * @generated
+		 */
+		EClass COMPONENT_REFERENCE = eINSTANCE.getComponentReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Bind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_REFERENCE__BIND = eINSTANCE.getComponentReference_Bind();
+
+		/**
+		 * The meta object literal for the '<em><b>Unbind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_REFERENCE__UNBIND = eINSTANCE.getComponentReference_Unbind();
+
+		/**
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_REFERENCE__CARDINALITY = eINSTANCE.getComponentReference_Cardinality();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_REFERENCE__NAME = eINSTANCE.getComponentReference_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_REFERENCE__TYPE_NAME = eINSTANCE.getComponentReference_TypeName();
+
+		/**
+		 * The meta object literal for the '<em><b>Policy</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_REFERENCE__POLICY = eINSTANCE.getComponentReference_Policy();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.MatchRule <em>Match Rule</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3475,6 +3900,26 @@ public interface BundlePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum MATCH_RULE = eINSTANCE.getMatchRule();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.Cardinality <em>Cardinality</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.Cardinality
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getCardinality()
+		 * @generated
+		 */
+		EEnum CARDINALITY = eINSTANCE.getCardinality();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.fx.ide.rrobot.model.bundle.Policy <em>Policy</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.Policy
+		 * @see org.eclipse.fx.ide.rrobot.model.bundle.impl.BundlePackageImpl#getPolicy()
+		 * @generated
+		 */
+		EEnum POLICY = eINSTANCE.getPolicy();
 
 		/**
 		 * The meta object literal for the '<em>Version</em>' data type.

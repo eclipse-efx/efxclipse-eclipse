@@ -15,10 +15,10 @@ RobotTask returns task::RobotTask:
 
 Variable returns task::Variable:
 	description=SL_DOC
-	type=Type key=STRING ('default' defaultValue=STRING)? 
+	type=Type key=STRING ('default' defaultValue=STRING)?
 ;
 
-enum Type returns task::Type: 
+enum Type returns task::Type:
 	BOOLEAN | DOUBLE | INT | STRING
 ;
 
@@ -28,7 +28,7 @@ GenericProject returns task::Project:
 ;
 
 Resource returns task::Resource:
-	Folder | TemplatedFile | DataFile | URLFile | DynamicFile | ManifestFile | ProductFileFeaturebase | PluginXMLFile;
+	Folder | TemplatedFile | DataFile | URLFile | DynamicFile | ManifestFile | ProductFileFeaturebase | PluginXMLFile | ComponentDefinitionFile;
 
 Project returns task::Project:
 	{task::Project}
@@ -71,19 +71,56 @@ URLFile returns task::URLFile:
 	name=EString uri=EString
 	('excluded-if' excludeExpression=BooleanExpression)?;
 
-DynamicFile returns task::DynamicFile: 
+DynamicFile returns task::DynamicFile:
 	{task::DynamicFile}
-	'DynamicFile' name=EString 'generated-from' executionURI=STRING 'by' type=STRING 
+	'DynamicFile' name=EString 'generated-from' executionURI=STRING 'by' type=STRING
 	('{' variables+=Variable (',' variables+=Variable)* '}')?
-	('excluded-if' excludeExpression=BooleanExpression)? 
+	('excluded-if' excludeExpression=BooleanExpression)?
 ;
 
-BooleanExpression returns task::BooleanExpression: 
+ComponentDefinitionFile returns bundle::ComponentDefinitionFile:
+	{bundle::ComponentDefinitionFile}
+	'ComponentDefinition' name=EString '{'
+		(
+			'name' '=' id=EString
+			&
+			'class' '=' componentClass=EString
+		)
+		'services' '=' '{' serviceInterfaceList+=EString (',' serviceInterfaceList+=EString)* '}'
+		'references' '=' '{' referenceList+=ComponentReference (',' referenceList+=ComponentReference)* '}'
+	'}'
+;
+
+ComponentReference returns bundle::ComponentReference:
+	{bundle::ComponentReference}
+	name=ID '{'
+		(
+			'bind' '=' bind=ID
+			&
+			'unbind' '=' unbind=ID
+			&
+			'class' '=' typeName=EString
+			&
+			'cardinality' '=' cardinality=Cardinality
+			&
+			'policy' '=' policy=Policy
+		)
+	'}'
+;
+
+enum Cardinality returns bundle::Cardinality:
+	SINGLE_OPTIONAL | SINGLE_REQUIRED | MULTI_OPTIONAL | MULTI_REQUIRED
+;
+enum Policy returns bundle::Policy:
+	DYNAMIC | STATIC
+;
+
+BooleanExpression returns task::BooleanExpression:
 	ReferencingBooleanExpression | InlineBooleanExpression
 ;
 
 ReferencingBooleanExpression returns task::ReferencingBooleanExpression:
-	executionURI=STRING 'by' type=STRING 
+	executionURI=STRING 'by' type=STRING
 ;
 
 InlineBooleanExpression returns task::InlineBooleanExpression:
@@ -113,11 +150,11 @@ BundleProject returns bundle::BundleProject:
 	('excluded-if' excludeExpression=BooleanExpression)?
 ;
 
-SourceFragment returns task::SourceFragment: 
-	'fragment' name=EString folder=[task::Folder|STRING] 
+SourceFragment returns task::SourceFragment:
+	'fragment' name=EString folder=[task::Folder|STRING]
 ;
 
-CompilationUnit returns task::CompilationUnit: 
+CompilationUnit returns task::CompilationUnit:
 	packagename=STRING 'in' sourcefragment=[task::SourceFragment|STRING] '{' file=(TemplatedFile | DataFile | URLFile | DynamicFile) '}'
 	('excluded-if' excludeExpression=BooleanExpression)?
 ;
@@ -152,7 +189,7 @@ ManifestFile returns bundle::ManifestFile:
 PluginXMLFile returns bundle::PluginXMLFile:
 	{bundle::PluginXMLFile}
 	'PluginXMLFile' '{'
-		('extensions' '=' '{'extensions+=Extension ( ',' extensions+=Extension )* '}')?		
+		('extensions' '=' '{'extensions+=Extension ( ',' extensions+=Extension )* '}')?
 	'}'
 ;
 
@@ -177,11 +214,11 @@ ProductFileFeaturebase returns bundle::ProductFileFeaturebase:
 			&
 			'version' '=' version=STRING
 		)
-		('startconfigurations' '=' '{' 
-			startconfigurations+=ProductStartConfig ( ',' startconfigurations+=ProductStartConfig )* 
+		('startconfigurations' '=' '{'
+			startconfigurations+=ProductStartConfig ( ',' startconfigurations+=ProductStartConfig )*
 		'}')?
-		('features' '=' '{' 
-			features+=ProductFeature ( ',' features+=ProductFeature )* 
+		('features' '=' '{'
+			features+=ProductFeature ( ',' features+=ProductFeature )*
 		'}')?
 	'}'
 ;
@@ -252,7 +289,7 @@ Element returns bundle::Element:
 
 Attribute returns bundle::Attribute:
 	{bundle::Attribute}
-	'{'name=STRING ',' value=STRING'}'	
+	'{'name=STRING ',' value=STRING'}'
 ;
 
 RequiredBundle returns bundle::RequiredBundle:
@@ -313,9 +350,9 @@ enum MatchRule returns bundle::MatchRule:
 
 terminal SL_DOC:
 	'##' !('\n'|'\r')* ('\r'? '\n')?;
-	
+
 terminal INLINE_SCRIPT:
-	'/#' -> '#/' 
+	'/#' -> '#/'
 ;
 
 terminal SIGNED_INT returns ecore::EInt:

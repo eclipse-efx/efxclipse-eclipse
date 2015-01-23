@@ -52,7 +52,7 @@ public class BundleFactoryImpl extends EFactoryImpl implements BundleFactory {
 	 */
 	public static BundleFactory init() {
 		try {
-			BundleFactory theBundleFactory = (BundleFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.efxclipse.org/rrobot/task/bundle/1.0"); 
+			BundleFactory theBundleFactory = (BundleFactory)EPackage.Registry.INSTANCE.getEFactory(BundlePackage.eNS_URI);
 			if (theBundleFactory != null) {
 				return theBundleFactory;
 			}
@@ -101,6 +101,8 @@ public class BundleFactoryImpl extends EFactoryImpl implements BundleFactory {
 			case BundlePackage.PRODUCT_PLUGIN: return createProductPlugin();
 			case BundlePackage.PRODUCT_FEATURE: return createProductFeature();
 			case BundlePackage.PRODUCT_START_CONFIG: return createProductStartConfig();
+			case BundlePackage.COMPONENT_DEFINITION_FILE: return createComponentDefinitionFile();
+			case BundlePackage.COMPONENT_REFERENCE: return createComponentReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -116,6 +118,10 @@ public class BundleFactoryImpl extends EFactoryImpl implements BundleFactory {
 		switch (eDataType.getClassifierID()) {
 			case BundlePackage.MATCH_RULE:
 				return createMatchRuleFromString(eDataType, initialValue);
+			case BundlePackage.CARDINALITY:
+				return createCardinalityFromString(eDataType, initialValue);
+			case BundlePackage.POLICY:
+				return createPolicyFromString(eDataType, initialValue);
 			case BundlePackage.VERSION:
 				return createVersionFromString(eDataType, initialValue);
 			default:
@@ -133,6 +139,10 @@ public class BundleFactoryImpl extends EFactoryImpl implements BundleFactory {
 		switch (eDataType.getClassifierID()) {
 			case BundlePackage.MATCH_RULE:
 				return convertMatchRuleToString(eDataType, instanceValue);
+			case BundlePackage.CARDINALITY:
+				return convertCardinalityToString(eDataType, instanceValue);
+			case BundlePackage.POLICY:
+				return convertPolicyToString(eDataType, instanceValue);
 			case BundlePackage.VERSION:
 				return convertVersionToString(eDataType, instanceValue);
 			default:
@@ -345,6 +355,26 @@ public class BundleFactoryImpl extends EFactoryImpl implements BundleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentDefinitionFile createComponentDefinitionFile() {
+		ComponentDefinitionFileImpl componentDefinitionFile = new ComponentDefinitionFileImpl();
+		return componentDefinitionFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentReference createComponentReference() {
+		ComponentReferenceImpl componentReference = new ComponentReferenceImpl();
+		return componentReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MatchRule createMatchRuleFromString(EDataType eDataType, String initialValue) {
 		MatchRule result = MatchRule.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -357,6 +387,46 @@ public class BundleFactoryImpl extends EFactoryImpl implements BundleFactory {
 	 * @generated
 	 */
 	public String convertMatchRuleToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cardinality createCardinalityFromString(EDataType eDataType, String initialValue) {
+		Cardinality result = Cardinality.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCardinalityToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Policy createPolicyFromString(EDataType eDataType, String initialValue) {
+		Policy result = Policy.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPolicyToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

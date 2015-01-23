@@ -14,8 +14,8 @@ Require-Bundle: org.eclipse.equinox.common;bundle-version="3.6.0",
  org.eclipse.pde.core;bundle-version="3.7.0",
  org.eclipse.core.runtime;bundle-version="3.7.0"
 Bundle-ActivationPolicy: lazy
-Service-Component: OSGI-INF/manifestgen.xml,OSGI-INF/pluginxmlgen.xml,OSGI-INF/buildpropgen.xml,OSGI-INF/def_projecthandler.xml,OSGI-INF/bundle_projecthandler.xml,OSGI-INF/rrobot.xml,OSGI-INF/feature_projecthandler.xml,OSGI-INF/featurexmlgen.xml,OSGI-INF/productgen.xml,OSGI-INF/java-exec.xml,
- OSGI-INF/js-boolean-exec.xml.xml
+Service-Component: OSGI-INF/manifestgen.xml,OSGI-INF/pluginxmlgen.xml,OSGI-INF/buildpropgen.xml,OSGI-INF/def_projecthandler.xml,OSGI-INF/bundle_projecthandler.xml,OSGI-INF/rrobot.xml,OSGI-INF/feature_projecthandler.xml,OSGI-INF/featurexmlgen.xml,OSGI-INF/productgen.xml,OSGI-INF/java-exec.xml,OSGI-INF/js-boolean-exec.xml.xml,
+ OSGI-INF/componentgen.xml
 Export-Package: org.eclipse.fx.ide.rrobot;x-internal:=true
 Import-Package: org.apache.commons.lang.text;version="2.6.0"
 
