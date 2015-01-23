@@ -64,13 +64,15 @@ RobotTask {
 					"org.eclipse.core.databinding.property",
 					"org.eclipse.e4.ui.workbench",
 					"org.eclipse.e4.ui.services",
-					"org.eclipse.equinox.app"
+					"org.eclipse.equinox.app",
+					"org.eclipse.fx.ui.services"
 				}
 			}
 			build = BuildProperties {
 				binIncludes = {
 					"css",
-					"icons"
+					"icons",
+					"OSGI-INF"
 				}
 			}
 			pluginxml = PluginXMLFile {
@@ -105,16 +107,6 @@ RobotTask {
 								}
 							}
 						}
-					},
-					"org.eclipse.fx.ui.theme" {
-						elements = {
-							"theme" {
-								attributes = {
-									{ "id"				, "theme.default" 	},
-									{ "basestylesheet" 	, "css/default.css"	}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -126,6 +118,31 @@ RobotTask {
 						## root package
 						STRING "rootPackage" default "${BundleProject_bundleId}"
 					},
+				// Add a service
+				Folder "OSGI-INF" {
+					children = {
+						Folder "services" {
+							children = {
+								ComponentDefinition "theme-default.xml" {
+									name = "${BundleProject_bundleId}.themes.default"
+									class = "${BundleProject_bundleId}.themes.DefaultTheme"
+									services = {
+										"org.eclipse.fx.ui.services.theme.Theme"
+									}
+									references = {
+										Stylesheet {
+											bind = registerStylesheet
+											unbind = unregisterStylesheet
+											cardinality = MULTI_OPTIONAL
+											class = "org.eclipse.fx.ui.services.theme.Stylesheet"
+											policy = DYNAMIC
+										}
+									}
+								}
+							}
+						}
+					}
+				},
 				Folder "css" {
 					children = {
 						Folder "images" {
@@ -211,6 +228,9 @@ RobotTask {
 				"${BundleProject_bundleId}.parts" in "default-src" {
 					DynamicFile "MediaPart.java" 
 						generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.media.tpl.parts.MediaPartTpl" by "java"
+				},
+				"${BundleProject_bundleId}.themes" in "default-src" {
+					DynamicFile "DefaultTheme.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.ThemeClassGenerator" by "java"
 				}
 			}
 		},

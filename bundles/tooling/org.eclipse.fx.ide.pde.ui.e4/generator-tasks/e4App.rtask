@@ -79,7 +79,8 @@ RobotTask {
 					"org.eclipse.core.databinding.observable",
 					"org.eclipse.core.databinding.property",
 					"org.eclipse.e4.ui.workbench",
-					"org.eclipse.e4.ui.services"
+					"org.eclipse.e4.ui.services",
+					"org.eclipse.fx.ui.services"
 				}
 			}
 			// Add a plugin xml file which uses some extension points
@@ -115,16 +116,6 @@ RobotTask {
 								}
 							}
 						}
-					},
-					"org.eclipse.fx.ui.theme" {
-						elements = {
-							"theme" {
-								attributes = {
-									{ "id"				, "theme.default" 	},
-									{ "basestylesheet" 	, "css/default.css"	}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -132,10 +123,36 @@ RobotTask {
 			build = BuildProperties {
 				binIncludes = {
 					"css",
-					"Application.e4xmi"
+					"Application.e4xmi",
+					"OSGI-INF"
 				}
 			}
 			resources = {
+				// Add a service
+				Folder "OSGI-INF" {
+					children = {
+						Folder "services" {
+							children = {
+								ComponentDefinition "theme-default.xml" {
+									name = "${BundleProject_bundleId}.themes.default"
+									class = "${BundleProject_bundleId}.themes.DefaultTheme"
+									services = {
+										"org.eclipse.fx.ui.services.theme.Theme"
+									}
+									references = {
+										Stylesheet {
+											bind = registerStylesheet
+											unbind = unregisterStylesheet
+											cardinality = MULTI_OPTIONAL
+											class = "org.eclipse.fx.ui.services.theme.Stylesheet"
+											policy = DYNAMIC
+										}
+									}
+								}
+							}
+						}
+					}
+				},
 				// Add a folder of name 'css'
 				Folder "css" {
 					children = {
@@ -174,6 +191,11 @@ RobotTask {
 			}
 			rootfragments = {
 				fragment "default-src" "src"
+			}
+			compilation-units = {
+				"${BundleProject_bundleId}.themes" in "default-src" {
+					DynamicFile "DefaultTheme.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.ThemeClassGenerator" by "java"
+				}
 			}
 		},
 		FeatureProject "${BundleProject_projectName}.feature" {
