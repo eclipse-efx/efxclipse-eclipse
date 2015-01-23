@@ -19,6 +19,9 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 
+/**
+ * Utility methods
+ */
 public class Util {
 	@SuppressWarnings("unchecked")
 	public static <@Nullable R> R getAnnotationMemberValue(IAnnotation annotation, String name) throws JavaModelException {
@@ -30,6 +33,15 @@ public class Util {
 		return null;
 	}
 
+	/**
+	 * Check the value in the state mask
+	 *
+	 * @param state
+	 *            the state
+	 * @param mask
+	 *            the mask
+	 * @return <code>true</code> if the state is in the mask
+	 */
 	public static boolean checkStatemask(int state, int mask) {
 		return (state & mask) != 0;
 	}
@@ -78,6 +90,7 @@ public class Util {
 		}
 
 		// FIXME Is there a better way?
+		// We need to let JDT do the job see how the generate getter/setter stuff for javafx is done
 		if (eType.contains("super")) {
 			eType = eType.substring(eType.indexOf("super") + "super".length()).trim();
 		} else if (eType.contains("extends")) {
