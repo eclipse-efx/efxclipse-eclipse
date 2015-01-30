@@ -114,9 +114,19 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
-		<pluginRepository>
+		<!--  pluginRepository>
       		<id>eclipse</id>
       		<url>${eclipse-repo.url}</url>
+      		<releases>
+        		<enabled>true</enabled>
+      		</releases>
+      		<snapshots>
+        		<enabled>true</enabled>
+      		</snapshots>
+    	</pluginRepository-->
+		<pluginRepository>
+      		<id>eclipse-cbi-releases</id>
+      		<url>https://repo.eclipse.org/content/groups/cbi/</url>
       		<releases>
         		<enabled>true</enabled>
       		</releases>
@@ -200,18 +210,6 @@
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-compiler-plugin</artifactId>
 					<version>${tycho-version}</version>
-					<!--  dependencies>
-						<dependency>
-          					<groupId>org.eclipse.tycho</groupId>
-          					<artifactId>org.eclipse.jdt.core</artifactId>
-          					<version>3.10.0.v20140512-1116</version>
-        				</dependency>
-        				<dependency>
-          					<groupId>org.eclipse.tycho</groupId>
-          					<artifactId>org.eclipse.jdt.compiler.apt</artifactId>
-          					<version>1.1.0.v20140509-1235</version>
-        				</dependency>
-					</dependencies -->
 					<configuration>
 						<encoding>UTF-8</encoding>
 						<extraClasspathElements>
