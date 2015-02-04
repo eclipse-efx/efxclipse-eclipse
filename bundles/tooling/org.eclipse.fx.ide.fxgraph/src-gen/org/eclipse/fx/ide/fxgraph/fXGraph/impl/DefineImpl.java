@@ -21,12 +21,13 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty;
  * An implementation of the model object '<em><b>Define</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.DefineImpl#getElement <em>Element</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.DefineImpl#getIncludeElement <em>Include Element</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

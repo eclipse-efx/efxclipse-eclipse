@@ -11,11 +11,11 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getType <em>Type</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ConstValueProperty#getField <em>Field</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getConstValueProperty()
  * @model

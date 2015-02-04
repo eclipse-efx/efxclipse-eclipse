@@ -18,11 +18,12 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
  * An implementation of the model object '<em><b>Copy Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.CopyValuePropertyImpl#getReference <em>Reference</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

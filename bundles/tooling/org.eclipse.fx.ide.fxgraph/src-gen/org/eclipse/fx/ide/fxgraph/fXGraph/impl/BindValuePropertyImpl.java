@@ -18,12 +18,13 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage;
  * An implementation of the model object '<em><b>Bind Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.BindValuePropertyImpl#getElementReference <em>Element Reference</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.BindValuePropertyImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

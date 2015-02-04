@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.android.AndroidPackage;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.android.impl.AndroidPackageImpl;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.AntTasksPackageImpl;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Application;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ApplicationToolkitType;
@@ -239,14 +241,17 @@ public class ParametersPackageImpl extends EPackageImpl implements ParametersPac
 
 		// Obtain or create and register interdependencies
 		AntTasksPackageImpl theAntTasksPackage = (AntTasksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AntTasksPackage.eNS_URI) instanceof AntTasksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AntTasksPackage.eNS_URI) : AntTasksPackage.eINSTANCE);
+		AndroidPackageImpl theAndroidPackage = (AndroidPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AndroidPackage.eNS_URI) instanceof AndroidPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AndroidPackage.eNS_URI) : AndroidPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theParametersPackage.createPackageContents();
 		theAntTasksPackage.createPackageContents();
+		theAndroidPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theParametersPackage.initializePackageContents();
 		theAntTasksPackage.initializePackageContents();
+		theAndroidPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theParametersPackage.freeze();

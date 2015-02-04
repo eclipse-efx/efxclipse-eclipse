@@ -11,13 +11,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getSource <em>Source</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getStaticProperties <em>Static Properties</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.IncludeValueProperty#getStaticCallProperties <em>Static Call Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getIncludeValueProperty()
  * @model

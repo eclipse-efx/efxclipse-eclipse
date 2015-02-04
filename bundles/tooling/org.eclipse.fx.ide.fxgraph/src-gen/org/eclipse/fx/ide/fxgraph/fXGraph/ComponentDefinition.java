@@ -15,6 +15,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#isDynamicRoot <em>Dynamic Root</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getName <em>Name</em>}</li>
@@ -27,7 +28,6 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition()
  * @model

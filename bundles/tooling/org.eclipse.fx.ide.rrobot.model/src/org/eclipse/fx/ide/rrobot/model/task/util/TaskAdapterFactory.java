@@ -24,8 +24,8 @@ import org.eclipse.fx.ide.rrobot.model.task.TaskPackage;
 import org.eclipse.fx.ide.rrobot.model.task.TemplatedFile;
 import org.eclipse.fx.ide.rrobot.model.task.URLFile;
 import org.eclipse.fx.ide.rrobot.model.task.Variable;
-
 import org.eclipse.fx.ide.rrobot.model.task.Resource;
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,8 +81,8 @@ public class TaskAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TaskSwitch<Adapter> modelSwitch =
-		new TaskSwitch<Adapter>() {
+	protected TaskSwitch<@Nullable Adapter> modelSwitch =
+		new TaskSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseRobotTask(RobotTask object) {
 				return createRobotTaskAdapter();

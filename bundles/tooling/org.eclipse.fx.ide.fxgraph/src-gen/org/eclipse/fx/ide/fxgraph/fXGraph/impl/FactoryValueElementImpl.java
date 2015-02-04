@@ -14,7 +14,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.FactoryValueElement;
  * An implementation of the model object '<em><b>Factory Value Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * </p>
  *
  * @generated
  */

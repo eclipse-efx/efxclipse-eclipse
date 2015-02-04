@@ -32,7 +32,9 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * An implementation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ElementImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ElementImpl#getValue <em>Value</em>}</li>
@@ -44,7 +46,6 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ElementImpl#getFactory <em>Factory</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ElementImpl#getValues <em>Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

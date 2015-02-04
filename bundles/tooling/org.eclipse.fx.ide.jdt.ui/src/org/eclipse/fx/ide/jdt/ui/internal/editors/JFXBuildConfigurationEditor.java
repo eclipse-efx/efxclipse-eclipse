@@ -354,7 +354,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	 * Shows a dialog that asks if conflicting changes should be discarded.
 	 */
 	private boolean handleDirtyConflict() {
-		return MessageDialog.openQuestion( getSite().getShell(), "File Conflict",
+		return MessageDialog.openQuestion( getSite().getShell(), Messages.JFXBuildConfigurationEditor_FileConflict,
 				"There are unsaved changes that conflict with changes made outside the editor.  Do you wish to discard this editor's changes?" );
 	}
 

@@ -22,14 +22,15 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * An implementation of the model object '<em><b>Static Call Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

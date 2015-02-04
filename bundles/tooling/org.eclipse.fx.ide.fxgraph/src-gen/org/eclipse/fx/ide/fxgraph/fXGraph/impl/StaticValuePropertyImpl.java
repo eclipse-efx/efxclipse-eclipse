@@ -20,13 +20,14 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
  * An implementation of the model object '<em><b>Static Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.StaticValuePropertyImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.StaticValuePropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.StaticValuePropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -23,11 +23,12 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueProperty;
  * An implementation of the model object '<em><b>List Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ListValuePropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -2,11 +2,21 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="******************************************************************************&#xA;Copyright (c) 2012 BestSolution.at and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Martin Bluehweis&lt;martin.bluehweis@bestsolution.at> - initial API and implementation&#xA;******************************************************************************"
     modelDirectory="/org.eclipse.fx.ide.jdt.ui/src" modelPluginID="org.eclipse.fx.ide.jdt.ui"
-    modelName="JavaFXAntTask" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    modelName="JavaFXAntTask" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
     copyrightFields="false" language="">
   <foreignModel>JavaFXAntTask.ecore</foreignModel>
   <genPackages prefix="AntTasks" basePackage="org.eclipse.fx.ide.jdt.ui.internal.editors.model"
       disposableProviderFactory="true" ecorePackage="JavaFXAntTask.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JavaFXAntTask.ecore#//PackagingFormat">
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/none"/>
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/all"/>
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/image"/>
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/exe"/>
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/msi"/>
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/dmg"/>
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/rpm"/>
+      <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//PackagingFormat/deb"/>
+    </genEnums>
     <genClasses ecoreClass="JavaFXAntTask.ecore#//AntTask">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/deploy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/jar"/>
@@ -14,6 +24,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//AntTask/buildDirectory"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/manifestEntries"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//AntTask/cssToBin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/files"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//AntTask/fonts"/>
     </genClasses>
     <genClasses ecoreClass="JavaFXAntTask.ecore#//Deploy">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/embedjnlp"/>
@@ -32,8 +44,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/template"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/callbacks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/info"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/nativePackage"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/splashImage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/packagingFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/verbose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//Deploy/proxyResolution"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Deploy/android"/>
     </genClasses>
     <genClasses ecoreClass="JavaFXAntTask.ecore#//Jar">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaFXAntTask.ecore#//Jar/platform"/>
@@ -66,6 +81,10 @@
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="JavaFXAntTask.ecore#//parameters/SplashMode">
         <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/SplashMode/any"/>
         <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/SplashMode/webstart"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="JavaFXAntTask.ecore#//parameters/ApplicationToolkitType">
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/ApplicationToolkitType/fx"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//parameters/ApplicationToolkitType/swing"/>
       </genEnums>
       <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/FileSet">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/FileSet/arch"/>
@@ -148,6 +167,171 @@
       <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/Splash">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Splash/href"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/Splash/mode"/>
+      </genClasses>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//parameters/KeyValuePair">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/KeyValuePair/key"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//parameters/KeyValuePair/value"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Android" disposableProviderFactory="true" ecorePackage="JavaFXAntTask.ecore#//android">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="JavaFXAntTask.ecore#//android/Permission">
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_CHECKIN_PROPERTIES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_COARSE_LOCATION"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_FINE_LOCATION"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_LOCATION_EXTRA_COMMANDS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_MOCK_LOCATION"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_NETWORK_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_SURFACE_FLINGER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCESS_WIFI_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ACCOUNT_MANAGER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/ADD_VOICEMAIL"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/AUTHENTICATE_ACCOUNTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BATTERY_STATS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_ACCESSIBILITY_SERVICE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_APPWIDGET"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_DEVICE_ADMIN"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_DREAM_SERVICE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_INPUT_METHOD"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_NFC_SERVICE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_NOTIFICATION_LISTENER_SERVICE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_PRINT_SERVICE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_REMOTEVIEWS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_TEXT_SERVICE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_TV_INPUT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_VOICE_INTERACTION"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_VPN_SERVICE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BIND_WALLPAPER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BLUETOOTH"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BLUETOOTH_ADMIN"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BLUETOOTH_PRIVILEGED"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BODY_SENSORS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BRICK"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BROADCAST_PACKAGE_REMOVED"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BROADCAST_SMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BROADCAST_STICKY"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/BROADCAST_WAP_PUSH"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CALL_PHONE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CALL_PRIVILEGED"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CAMERA"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CAPTURE_AUDIO_OUTPUT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CAPTURE_SECURE_VIDEO_OUTPUT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CAPTURE_VIDEO_OUTPUT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CHANGE_COMPONENT_ENABLED_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CHANGE_CONFIGURATION"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CHANGE_NETWORK_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CHANGE_WIFI_MULTICAST_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CHANGE_WIFI_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CLEAR_APP_CACHE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CLEAR_APP_USER_DATA"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/CONTROL_LOCATION_UPDATES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/DELETE_CACHE_FILES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/DELETE_PACKAGES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/DEVICE_POWER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/DIAGNOSTIC"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/DISABLE_KEYGUARD"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/DUMP"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/EXPAND_STATUS_BAR"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/FACTORY_TEST"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/FLASHLIGHT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/FORCE_BACK"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/GET_ACCOUNTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/GET_PACKAGE_SIZE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/GET_TASKS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/GET_TOP_ACTIVITY_INFO"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/GLOBAL_SEARCH"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/HARDWARE_TEST"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/INJECT_EVENTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/INSTALL_LOCATION_PROVIDER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/INSTALL_PACKAGES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/INSTALL_SHORTCUT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/INTERNAL_SYSTEM_WINDOW"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/INTERNET"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/KILL_BACKGROUND_PROCESSES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/LOCATION_HARDWARE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MANAGE_ACCOUNTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MANAGE_APP_TOKENS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MANAGE_DOCUMENTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MASTER_CLEAR"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MEDIA_CONTENT_CONTROL"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MODIFY_AUDIO_SETTINGS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MODIFY_PHONE_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MOUNT_FORMAT_FILESYSTEMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/NFC"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/PERSISTENT_ACTIVITY"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/PROCESS_OUTGOING_CALLS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_CALENDAR"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_CALL_LOG"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_CONTACTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_EXTERNAL_STORAGE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_FRAME_BUFFER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_HISTORY_BOOKMARKS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_INPUT_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_LOGS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_PHONE_STATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_PROFILE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_SMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_SOCIAL_STREAM"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_SYNC_SETTINGS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_SYNC_STATS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_USER_DICTIONARY"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/READ_VOICEMAIL"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/REBOOT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/RECEIVE_BOOT_COMPLETED"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/RECEIVE_MMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/RECEIVE_SMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/RECEIVE_WAP_PUSH"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/RECORD_AUDIO"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/REORDER_TASKS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/RESTART_PACKAGES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SEND_RESPOND_VIA_MESSAGE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SEND_SMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_ACTIVITY_WATCHER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_ALARM"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_ALWAYS_FINISH"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_ANIMATION_SCALE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_DEBUG_APP"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_ORIENTATION"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_POINTER_SPEED"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_PREFERRED_APPLICATIONS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_PROCESS_LIMIT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_TIME"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_TIME_ZONE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_WALLPAPER"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SET_WALLPAPER_HINTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SIGNAL_PERSISTENT_PROCESSES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/STATUS_BAR"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SUBSCRIBED_FEEDS_READ"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SUBSCRIBED_FEEDS_WRITE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/SYSTEM_ALERT_WINDOW"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/TRANSMIT_IR"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/UNINSTALL_SHORTCUT"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/UPDATE_DEVICE_STATS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/USE_CREDENTIALS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/USE_SIP"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/VIBRATE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WAKE_LOCK"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_APN_SETTINGS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_CALENDAR"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_CALL_LOG"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_CONTACTS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_EXTERNAL_STORAGE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_GSERVICES"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_HISTORY_BOOKMARKS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_PROFILE"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_SECURE_SETTINGS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_SETTINGS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_SMS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_SOCIAL_STREAM"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_SYNC_SETTINGS"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_USER_DICTIONARY"/>
+        <genEnumLiterals ecoreEnumLiteral="JavaFXAntTask.ecore#//android/Permission/WRITE_VOICEMAIL"/>
+      </genEnums>
+      <genClasses ecoreClass="JavaFXAntTask.ecore#//android/AndroidExport">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//android/AndroidExport/androidsdk"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//android/AndroidExport/dalviksdk"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//android/AndroidExport/activityLabel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaFXAntTask.ecore#//android/AndroidExport/persmissionList"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

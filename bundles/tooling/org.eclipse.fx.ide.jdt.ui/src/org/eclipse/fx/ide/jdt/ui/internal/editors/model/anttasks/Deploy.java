@@ -14,6 +14,7 @@ package org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.android.AndroidExport;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Application;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Callback;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Info;
@@ -51,6 +52,7 @@ import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Temp
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#getPackagingFormat <em>Packaging Format</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#isVerbose <em>Verbose</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#isProxyResolution <em>Proxy Resolution</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#getAndroid <em>Android</em>}</li>
  * </ul>
  * </p>
  *
@@ -574,5 +576,31 @@ public interface Deploy extends EObject {
 	 * @generated
 	 */
 	void setProxyResolution(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Android</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Android</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Android</em>' reference.
+	 * @see #setAndroid(AndroidExport)
+	 * @see org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage#getDeploy_Android()
+	 * @model
+	 * @generated
+	 */
+	AndroidExport getAndroid();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#getAndroid <em>Android</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Android</em>' reference.
+	 * @see #getAndroid()
+	 * @generated
+	 */
+	void setAndroid(AndroidExport value);
 
 } // Deploy

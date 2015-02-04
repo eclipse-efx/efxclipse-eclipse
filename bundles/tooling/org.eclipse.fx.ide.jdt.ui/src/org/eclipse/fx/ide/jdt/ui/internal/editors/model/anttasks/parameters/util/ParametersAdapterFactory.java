@@ -17,23 +17,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.*;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Application;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Argument;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Callback;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.FileSet;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.HtmlParam;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Icon;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Info;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.JVmArg;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.KeyValuePair;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Param;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersPackage;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Permissions;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Platform;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Preferences;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Property;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Splash;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Template;
+import org.eclipse.jdt.annotation.Nullable;
 
 
 /**
@@ -90,8 +74,8 @@ public class ParametersAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParametersSwitch<Adapter> modelSwitch =
-		new ParametersSwitch<Adapter>() {
+	protected ParametersSwitch<@Nullable Adapter> modelSwitch =
+		new ParametersSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseFileSet(FileSet object) {
 				return createFileSetAdapter();

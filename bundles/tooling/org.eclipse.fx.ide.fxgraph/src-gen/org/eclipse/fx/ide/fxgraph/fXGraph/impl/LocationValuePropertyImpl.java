@@ -16,11 +16,12 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.LocationValueProperty;
  * An implementation of the model object '<em><b>Location Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.LocationValuePropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -20,12 +20,13 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * An implementation of the model object '<em><b>Const Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ConstValuePropertyImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ConstValuePropertyImpl#getField <em>Field</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -3,14 +3,10 @@
 package org.eclipse.fx.ide.rrobot.model.bundle.util;
 
 import org.eclipse.fx.ide.rrobot.model.bundle.*;
-
 import org.eclipse.fx.ide.rrobot.model.task.Resource;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.rrobot.model.bundle.Attribute;
 import org.eclipse.fx.ide.rrobot.model.bundle.BuildProperties;
@@ -39,6 +35,7 @@ import org.eclipse.fx.ide.rrobot.model.task.File;
 import org.eclipse.fx.ide.rrobot.model.task.JDTProject;
 import org.eclipse.fx.ide.rrobot.model.task.Project;
 import org.eclipse.fx.ide.rrobot.model.task.TemplatedFile;
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,8 +91,8 @@ public class BundleAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BundleSwitch<Adapter> modelSwitch =
-		new BundleSwitch<Adapter>() {
+	protected BundleSwitch<@Nullable Adapter> modelSwitch =
+		new BundleSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseBundleProject(BundleProject object) {
 				return createBundleProjectAdapter();

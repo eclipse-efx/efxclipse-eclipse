@@ -12,7 +12,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.SingleValueProperty;
  * An implementation of the model object '<em><b>Single Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * </p>
  *
  * @generated
  */

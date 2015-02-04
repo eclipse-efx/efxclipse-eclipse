@@ -10,10 +10,10 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getControllerHandledValueProperty()
  * @model

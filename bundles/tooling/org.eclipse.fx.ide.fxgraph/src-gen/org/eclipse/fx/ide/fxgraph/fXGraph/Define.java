@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getElement <em>Element</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getDefine()
  * @model

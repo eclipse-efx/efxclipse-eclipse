@@ -29,13 +29,14 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.PackageDeclaration;
  * An implementation of the model object '<em><b>Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ModelImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ModelImpl#getComponentDef <em>Component Def</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

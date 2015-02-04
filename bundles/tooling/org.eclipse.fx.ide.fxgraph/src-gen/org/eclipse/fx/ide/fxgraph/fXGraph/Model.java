@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getPackage <em>Package</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getImports <em>Imports</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Model#getComponentDef <em>Component Def</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getModel()
  * @model

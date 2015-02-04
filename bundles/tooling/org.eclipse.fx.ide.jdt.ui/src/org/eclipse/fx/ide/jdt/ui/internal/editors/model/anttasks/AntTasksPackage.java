@@ -348,13 +348,22 @@ public interface AntTasksPackage extends EPackage {
 	int DEPLOY__PROXY_RESOLUTION = 19;
 
 	/**
+	 * The feature id for the '<em><b>Android</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOY__ANDROID = 20;
+
+	/**
 	 * The number of structural features of the '<em>Deploy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY_FEATURE_COUNT = 20;
+	int DEPLOY_FEATURE_COUNT = 21;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.JarImpl <em>Jar</em>}' class.
@@ -816,6 +825,17 @@ public interface AntTasksPackage extends EPackage {
 	EAttribute getDeploy_ProxyResolution();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#getAndroid <em>Android</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Android</em>'.
+	 * @see org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy#getAndroid()
+	 * @see #getDeploy()
+	 * @generated
+	 */
+	EReference getDeploy_Android();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Jar <em>Jar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1209,6 +1229,14 @@ public interface AntTasksPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEPLOY__PROXY_RESOLUTION = eINSTANCE.getDeploy_ProxyResolution();
+
+		/**
+		 * The meta object literal for the '<em><b>Android</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOY__ANDROID = eINSTANCE.getDeploy_Android();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.JarImpl <em>Jar</em>}' class.

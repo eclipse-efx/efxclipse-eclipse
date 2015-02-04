@@ -10,10 +10,10 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScriptValueExpression()
  * @model

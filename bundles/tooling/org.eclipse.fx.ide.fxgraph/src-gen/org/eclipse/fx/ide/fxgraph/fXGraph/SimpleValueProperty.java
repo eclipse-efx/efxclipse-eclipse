@@ -10,13 +10,13 @@ package org.eclipse.fx.ide.fxgraph.fXGraph;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getStringValue <em>String Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#isNegative <em>Negative</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty#getNumber <em>Number</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getSimpleValueProperty()
  * @model

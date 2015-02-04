@@ -28,14 +28,15 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty;
  * An implementation of the model object '<em><b>Include Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.IncludeValuePropertyImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.IncludeValuePropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.IncludeValuePropertyImpl#getStaticProperties <em>Static Properties</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.IncludeValuePropertyImpl#getStaticCallProperties <em>Static Call Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

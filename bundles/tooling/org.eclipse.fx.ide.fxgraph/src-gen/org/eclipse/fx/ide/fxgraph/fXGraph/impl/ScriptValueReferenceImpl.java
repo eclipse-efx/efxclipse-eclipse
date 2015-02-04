@@ -16,11 +16,12 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueReference;
  * An implementation of the model object '<em><b>Script Value Reference</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ScriptValueReferenceImpl#getReference <em>Reference</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

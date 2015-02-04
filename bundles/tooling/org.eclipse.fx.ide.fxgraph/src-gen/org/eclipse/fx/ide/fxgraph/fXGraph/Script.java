@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script#getSource <em>Source</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.Script#getSourcecode <em>Sourcecode</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getScript()
  * @model

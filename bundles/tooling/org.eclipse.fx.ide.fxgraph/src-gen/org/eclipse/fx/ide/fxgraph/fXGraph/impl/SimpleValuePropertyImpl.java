@@ -16,14 +16,15 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.SimpleValueProperty;
  * An implementation of the model object '<em><b>Simple Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getStringValue <em>String Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getBooleanValue <em>Boolean Value</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#isNegative <em>Negative</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.SimpleValuePropertyImpl#getNumber <em>Number</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -4,12 +4,10 @@ package org.eclipse.fx.ide.css.cssDsl.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.fx.ide.css.cssDsl.*;
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,8 +69,8 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CssDslSwitch<Adapter> modelSwitch =
-    new CssDslSwitch<Adapter>()
+  protected CssDslSwitch<@Nullable Adapter> modelSwitch =
+    new CssDslSwitch<@Nullable Adapter>()
     {
       @Override
       public Adapter casestylesheet(stylesheet object)

@@ -23,11 +23,12 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.Property;
  * An implementation of the model object '<em><b>Map Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.MapValuePropertyImpl#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

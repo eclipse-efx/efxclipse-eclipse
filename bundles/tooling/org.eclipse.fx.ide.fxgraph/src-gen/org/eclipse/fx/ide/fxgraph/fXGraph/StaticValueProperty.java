@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.fxgraph.fXGraph.FXGraphPackage#getStaticValueProperty()
  * @model

@@ -17,13 +17,14 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.Script;
  * An implementation of the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ScriptImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ScriptImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ScriptImpl#getSourcecode <em>Sourcecode</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy;
+import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.android.AndroidExport;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Application;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Callback;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Info;
@@ -61,6 +62,7 @@ import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Temp
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#getPackagingFormat <em>Packaging Format</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#isVerbose <em>Verbose</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#isProxyResolution <em>Proxy Resolution</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.impl.DeployImpl#getAndroid <em>Android</em>}</li>
  * </ul>
  * </p>
  *
@@ -396,6 +398,16 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 	 * @ordered
 	 */
 	protected boolean proxyResolution = PROXY_RESOLUTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAndroid() <em>Android</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAndroid()
+	 * @generated
+	 * @ordered
+	 */
+	protected AndroidExport android;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -964,6 +976,44 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AndroidExport getAndroid() {
+		if (android != null && android.eIsProxy()) {
+			InternalEObject oldAndroid = (InternalEObject)android;
+			android = (AndroidExport)eResolveProxy(oldAndroid);
+			if (android != oldAndroid) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AntTasksPackage.DEPLOY__ANDROID, oldAndroid, android));
+			}
+		}
+		return android;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AndroidExport basicGetAndroid() {
+		return android;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAndroid(AndroidExport newAndroid) {
+		AndroidExport oldAndroid = android;
+		android = newAndroid;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AntTasksPackage.DEPLOY__ANDROID, oldAndroid, android));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -1033,6 +1083,9 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 				return isVerbose();
 			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
 				return isProxyResolution();
+			case AntTasksPackage.DEPLOY__ANDROID:
+				if (resolve) return getAndroid();
+				return basicGetAndroid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1107,6 +1160,9 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
 				setProxyResolution((Boolean)newValue);
 				return;
+			case AntTasksPackage.DEPLOY__ANDROID:
+				setAndroid((AndroidExport)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1179,6 +1235,9 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
 				setProxyResolution(PROXY_RESOLUTION_EDEFAULT);
 				return;
+			case AntTasksPackage.DEPLOY__ANDROID:
+				setAndroid((AndroidExport)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1231,6 +1290,8 @@ public class DeployImpl extends EObjectImpl implements Deploy {
 				return verbose != VERBOSE_EDEFAULT;
 			case AntTasksPackage.DEPLOY__PROXY_RESOLUTION:
 				return proxyResolution != PROXY_RESOLUTION_EDEFAULT;
+			case AntTasksPackage.DEPLOY__ANDROID:
+				return android != null;
 		}
 		return super.eIsSet(featureID);
 	}

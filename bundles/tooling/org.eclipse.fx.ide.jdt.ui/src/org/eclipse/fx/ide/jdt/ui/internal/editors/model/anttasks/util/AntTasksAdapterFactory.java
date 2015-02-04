@@ -17,11 +17,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.*;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksPackage;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Deploy;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.Jar;
-import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.SignJar;
+import org.eclipse.jdt.annotation.Nullable;
 
 
 /**
@@ -78,8 +74,8 @@ public class AntTasksAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AntTasksSwitch<Adapter> modelSwitch =
-		new AntTasksSwitch<Adapter>() {
+	protected AntTasksSwitch<@Nullable Adapter> modelSwitch =
+		new AntTasksSwitch<@Nullable Adapter>() {
 			@Override
 			public Adapter caseAntTask(AntTask object) {
 				return createAntTaskAdapter();

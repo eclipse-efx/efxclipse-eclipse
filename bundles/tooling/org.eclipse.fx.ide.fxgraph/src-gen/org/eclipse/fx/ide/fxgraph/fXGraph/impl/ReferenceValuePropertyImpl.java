@@ -28,13 +28,14 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.StaticValueProperty;
  * An implementation of the model object '<em><b>Reference Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl#getStaticProperties <em>Static Properties</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl#getStaticCallProperties <em>Static Call Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

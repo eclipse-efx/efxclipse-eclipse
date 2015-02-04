@@ -32,7 +32,9 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * An implementation of the model object '<em><b>Component Definition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ComponentDefinitionImpl#isDynamicRoot <em>Dynamic Root</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getName <em>Name</em>}</li>
@@ -45,7 +47,6 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getDefines <em>Defines</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getRootNode <em>Root Node</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
