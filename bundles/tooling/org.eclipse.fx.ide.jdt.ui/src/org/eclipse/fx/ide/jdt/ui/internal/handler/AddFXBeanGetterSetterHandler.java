@@ -50,10 +50,12 @@ import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
 import org.eclipse.jdt.internal.corext.refactoring.util.RefactoringASTParser;
 import org.eclipse.jdt.internal.corext.util.CodeFormatterUtil;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
+import org.eclipse.jdt.internal.ui.actions.ActionMessages;
 import org.eclipse.jdt.internal.ui.actions.SelectionConverter;
 import org.eclipse.jdt.internal.ui.javaeditor.ASTProvider;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
 import org.eclipse.jdt.ui.JavaElementLabelProvider;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.text.ITextSelection;
@@ -102,13 +104,30 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			}
 		} else if( selection instanceof IStructuredSelection ) {
 			List list = ((IStructuredSelection) selection).toList();
+			IStructuredSelection selected= (IStructuredSelection) selection;
+			Object firstelement = selected.getFirstElement();
+			try {
+				if (firstelement instanceof IType) {
+					type = (IType) firstelement;
+				} else if (firstelement instanceof ICompilationUnit) {
+					type = ((ICompilationUnit) firstelement).findPrimaryType();
+				}
+				else if(firstelement instanceof IField){
+					type=((IField)firstelement).getDeclaringType();
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		if( type != null ) {
 			GetterSetterDialog dialog = new GetterSetterDialog(s, type);
 			dialog.open();
 		}
-		
+        else {
+			MessageDialog.openInformation(s, ActionMessages.AddGetterSetterAction_error_title, ActionMessages.AddGetterSetterAction_not_applicable);
+		}
 		return null;
 	}
 
