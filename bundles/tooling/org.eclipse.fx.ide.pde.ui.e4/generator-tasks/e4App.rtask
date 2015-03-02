@@ -274,8 +274,10 @@ RobotTask {
 					"org.eclipse.equinox.launcher",
 					"org.eclipse.equinox.preferences",
 					"org.eclipse.equinox.registry",
+					"org.eclipse.equinox.simpleconfigurator",
 					"org.eclipse.equinox.util",
 					"org.eclipse.osgi",
+					"org.eclipse.osgi.compatibility.state",
 					"org.eclipse.osgi.services",
 					// We need conditionals here
 					"org.eclipse.equinox.console",
@@ -319,10 +321,12 @@ RobotTask {
 					programArgs = "-nosplash"
 					vmArgs = "-Dosgi.framework.extensions=org.eclipse.fx.osgi"
 					startconfigurations = {
-						"org.eclipse.core.runtime" 		autostarted at  0,
-						"org.eclipse.equinox.common" 	autostarted at  2,
-						"org.eclipse.equinox.ds" 		autostarted at  1,
-						"org.eclipse.osgi" 				autostarted at -1
+						"org.eclipse.core.runtime" 					autostarted at  0,
+						"org.eclipse.equinox.common" 				autostarted at  2,
+						"org.eclipse.equinox.event"					autostarted at  2,
+						"org.eclipse.equinox.simpleconfigurator" 	autostarted at 	1,
+						"org.eclipse.equinox.ds" 					autostarted at  2,
+						"org.eclipse.osgi" 							autostarted at -1
 					}
 					features = {
 						"${BundleProject_bundleId}.feature" "${BundleProject_bundleVersion}"
