@@ -103,7 +103,6 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				e.printStackTrace();
 			}
 		} else if( selection instanceof IStructuredSelection ) {
-			List list = ((IStructuredSelection) selection).toList();
 			IStructuredSelection selected= (IStructuredSelection) selection;
 			Object firstelement = selected.getFirstElement();
 			try {
