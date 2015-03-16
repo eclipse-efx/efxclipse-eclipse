@@ -213,77 +213,7 @@ RobotTask {
 				}
 				vendor = "${BundleProject_bundleVendor}"
 				plugins = {
-					"${BundleProject_bundleId}",
-					"org.eclipse.fx.ui.keybindings",
-					"org.eclipse.fx.ui.keybindings.e4",
-					"org.eclipse.fx.ui.keybindings.generic",
-					"org.eclipse.fx.core.databinding",
-					"org.eclipse.fx.ui.databinding",
-					"org.eclipse.fx.core",
-					"org.eclipse.fx.core.fxml",
-					"org.eclipse.fx.ui.di",
-					"org.eclipse.fx.ui.dialogs",
-					"org.eclipse.fx.javafx",
-					fragment "org.eclipse.fx.osgi",
-					"org.eclipse.fx.osgi.util",
-					"org.eclipse.fx.ui.panes",
-					"org.eclipse.fx.ui.controls",
-					"org.eclipse.fx.ui.services",
-					"org.eclipse.fx.ui.theme",
-					"org.eclipse.fx.ui.workbench.base",
-					"org.eclipse.fx.ui.workbench.fx",
-					"org.eclipse.fx.ui.workbench.renderers.base",
-					"org.eclipse.fx.ui.workbench.renderers.fx",
-					"org.eclipse.fx.ui.workbench.services",
-					"com.ibm.icu",
-					// TODO NEED TO SUPPORT CONDITIONALS HERE "com.ibm.icu.base",
-					"javax.annotation",
-					"javax.inject",
-					"javax.xml",
-					"org.apache.commons.logging",
-					"org.apache.commons.lang",
-					"org.eclipse.core.commands",
-					"org.eclipse.core.contenttype",
-					"org.eclipse.core.databinding",
-					"org.eclipse.core.databinding.observable",
-					"org.eclipse.core.databinding.property",
-					"org.eclipse.core.expressions",
-					"org.eclipse.core.filesystem",
-					"org.eclipse.core.jobs",
-					"org.eclipse.core.resources",
-					"org.eclipse.core.runtime",
-					"org.eclipse.e4.core.commands",
-					"org.eclipse.e4.core.contexts",
-					"org.eclipse.e4.core.di",
-					"org.eclipse.e4.core.di.extensions",
-					"org.eclipse.e4.core.services",
-					"org.eclipse.e4.ui.di",
-					"org.eclipse.e4.ui.model.workbench",
-					"org.eclipse.e4.ui.services",
-					"org.eclipse.e4.ui.workbench",
-					"org.eclipse.emf.common",
-					"org.eclipse.emf.databinding",
-					"org.eclipse.emf.ecore",
-					"org.eclipse.emf.ecore.change",
-					"org.eclipse.emf.ecore.xmi",
-					"org.eclipse.equinox.app",
-					"org.eclipse.equinox.common",
-					"org.eclipse.equinox.concurrent",
-					"org.eclipse.equinox.ds",
-					"org.eclipse.equinox.event",
-					"org.eclipse.equinox.launcher",
-					"org.eclipse.equinox.preferences",
-					"org.eclipse.equinox.registry",
-					"org.eclipse.equinox.simpleconfigurator",
-					"org.eclipse.equinox.util",
-					"org.eclipse.osgi",
-					"org.eclipse.osgi.compatibility.state",
-					"org.eclipse.osgi.services",
-					// We need conditionals here
-					"org.eclipse.equinox.console",
-					"org.apache.felix.gogo.command",
-					"org.apache.felix.gogo.runtime",
-					"org.apache.felix.gogo.shell"
+					"${BundleProject_bundleId}"
 				}
 			}
 			resources = {
@@ -329,7 +259,8 @@ RobotTask {
 						"org.eclipse.osgi" 							autostarted at -1
 					}
 					features = {
-						"${BundleProject_bundleId}.feature" "${BundleProject_bundleVersion}"
+						"${BundleProject_bundleId}.feature",
+						"org.eclipse.fx.runtime.e4fx.feature"
 					}
 				},
 				DynamicFile "${BundleProject_bundleId}.product.product.launch"
@@ -339,7 +270,7 @@ RobotTask {
 						## Project name
 						STRING "projectName" default "${BundleProject_bundleId}.product",
 						## Launch feature
-						STRING "feature" default "${BundleProject_projectName}.feature"
+						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature"
 					},
 				DynamicFile "pom.xml"
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.ProductPomGenerator"

@@ -10,7 +10,7 @@ class FeatureLaunchGenerator implements Generator<DynamicFile> {
 		val launchDef = new OSGiLaunchDef();
 		
 		launchDef.setProjectName(file.variables.findFirst([e| e.key.equals("projectName")]).defaultValue);
-		launchDef.features.add(new LaunchFeature(file.variables.findFirst([e| e.key.equals("feature")]).defaultValue));
+		launchDef.features.addAll(file.variables.findFirst([e| e.key.equals("feature")]).defaultValue.split(",").map[new LaunchFeature(it.trim)]);
 		
 		return new ByteArrayInputStream(generate(launchDef).toString.bytes);
 	}

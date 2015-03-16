@@ -29,7 +29,7 @@ class ProductGenerator implements Generator<ProductFile> {
 	«IF file instanceof ProductFileFeaturebase»
 	<features>
 		«FOR pf : (file as ProductFileFeaturebase).features»
-		<feature id="«pf.id»" version="«pf.version»"/>
+		<feature id="«pf.id»" «IF pf.version != null»version="«pf.version»"«ENDIF»/>
 		«ENDFOR»
 	</features>
 	«ENDIF»
