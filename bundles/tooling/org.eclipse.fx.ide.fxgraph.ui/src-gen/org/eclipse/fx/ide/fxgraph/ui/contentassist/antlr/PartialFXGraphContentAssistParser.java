@@ -7,19 +7,19 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.eclipse.xtext.AbstractRule;
-import org.eclipse.xtext.ide.editor.partialEditing.IPartialEditingContentAssistParser;
-import org.eclipse.xtext.ide.editor.contentassist.antlr.FollowElement;
-import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.eclipse.xtext.ui.codetemplates.ui.partialEditing.IPartialContentAssistParser;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
 
-/**
- * @author Sebastian Zarnekow - Initial contribution and API
+/*
+ * Template CodetemplatesGeneratorFragment.xpt
  */
-@SuppressWarnings("restriction")
-public class PartialFXGraphContentAssistParser extends FXGraphParser implements IPartialEditingContentAssistParser {
+public class PartialFXGraphContentAssistParser extends FXGraphParser implements IPartialContentAssistParser {
 
 	private AbstractRule rule;
 
+	@Override
 	public void initializeFor(AbstractRule rule) {
 		this.rule = rule;
 	}
