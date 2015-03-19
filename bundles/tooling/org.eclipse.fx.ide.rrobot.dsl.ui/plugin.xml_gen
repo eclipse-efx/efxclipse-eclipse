@@ -299,6 +299,12 @@
             extensions="rtask">
     </provider>
   </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="rtask"
+            type="text">
+    </fileTypes>
+  </extension>
     <!-- quickfix marker resolution generator for org.eclipse.fx.ide.rrobot.dsl.RTask -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">

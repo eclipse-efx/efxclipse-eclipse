@@ -4,14 +4,13 @@
  */
 package org.eclipse.fx.ide.rrobot.dsl.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Manual modifications go to {org.eclipse.fx.ide.rrobot.dsl.ui.RTaskUiModule}
  */
 @SuppressWarnings("all")
-public abstract class AbstractRTaskUiModule extends DefaultUiModule {
+public abstract class AbstractRTaskUiModule extends org.eclipse.xtext.ui.DefaultUiModule {
 	
 	public AbstractRTaskUiModule(AbstractUIPlugin plugin) {
 		super(plugin);

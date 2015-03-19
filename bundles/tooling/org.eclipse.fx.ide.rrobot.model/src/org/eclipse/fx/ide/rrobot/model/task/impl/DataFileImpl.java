@@ -7,11 +7,12 @@ import java.io.InputStream;
 import java.util.Map;
 
 
+
+
+import org.apache.commons.lang.text.StrSubstitutor;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.fx.ide.rrobot.model.task.DataFile;
 import org.eclipse.fx.ide.rrobot.model.task.TaskPackage;
@@ -166,7 +167,7 @@ public class DataFileImpl extends FileImpl implements DataFile {
 	
 	@Override
 	public InputStream getContent(IProgressMonitor progressMonitor, Map<String, Object> data) {
-		return new ByteArrayInputStream(getContent());
+		return new ByteArrayInputStream(StrSubstitutor.replace(new String(getContent()), data).getBytes());
 	}
 
 } //DataFileImpl

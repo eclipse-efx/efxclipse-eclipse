@@ -55,7 +55,8 @@ TemplatedFile returns task::TemplatedFile:
 	name=EString
 	'{'
 		('generatorType' '=' generatorType=EString)?
-	'}';
+	'}'
+	('excluded-if' excludeExpression=BooleanExpression)?;
 
 DataFile returns task::DataFile:
 	{task::DataFile}
@@ -63,7 +64,8 @@ DataFile returns task::DataFile:
 	name=EString
 	'{'
 		('content' '=' content=EByteArray)?
-	'}';
+	'}'
+	('excluded-if' excludeExpression=BooleanExpression)?;
 
 URLFile returns task::URLFile:
 	{task::URLFile}
