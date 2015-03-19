@@ -26,7 +26,7 @@ RobotTask {
 		## p2 update
 		BOOLEAN "p2Update" default "false",
 		## p2 location
-		STRING "p2Location" default "http://p2.my.comp/updatesite"
+		STRING "p2Location" default "http$${#58}//p2.my.comp/updatesite"
 	}
 	projects = {
 		// Create an Bundle Project (this will add the PDE-Nature and the required builders to it!)
@@ -286,6 +286,11 @@ RobotTask {
 						## Launch feature
 						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature, org.eclipse.fx.runtime.e4fx.p2.feature"
 					} excluded-if "javascript" /# !p2Update; #/,
+				DataFile "p2.inf" {
+					content = "instructions.configure=\
+  addRepository(type:0,location:${p2Location});\
+  addRepository(type:1,location:${p2Location});"
+				} excluded-if "javascript" /# !p2Update; #/,
 				DynamicFile "pom.xml"
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.ProductPomGenerator"
 					by "java"

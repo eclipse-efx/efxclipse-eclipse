@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Text;
 
 class GeneratorConfigurationPage extends WizardPage {
 	private AppBundleProjectData data;
-	private Button jemmyButton;
+//	private Button jemmyButton;
 	private Button tychoButton;
 	private Button nativePackaging;
 	private Text productName;
@@ -44,6 +44,8 @@ class GeneratorConfigurationPage extends WizardPage {
 			setPageComplete(validate());
 		}
 	};
+	private Button p2Update;
+	private Text p2UpdateSite;
 	
 	
 	public GeneratorConfigurationPage(AppBundleProjectData data, String pageName, String title) {
@@ -54,14 +56,16 @@ class GeneratorConfigurationPage extends WizardPage {
 	
 	protected boolean validate() {
 		setErrorMessage(null);
-		
+		p2UpdateSite.setEnabled(p2Update.getSelection());
 		if( productName.getText().trim().isEmpty() ) {
 			setErrorMessage("You need to enter a product name");
 			return false;
 		}
 		
 		data.setProductName(productName.getText());
-		data.setJemmyTest(jemmyButton.getSelection());
+//		data.setJemmyTest(jemmyButton.getSelection());
+		data.setP2Update(p2Update.getSelection());
+		data.setUpdateSite(p2UpdateSite.getText());
 		data.setTychoIntegration(tychoButton.getSelection());
 		data.setNativeExport(nativePackaging.getSelection());
 		
@@ -84,11 +88,24 @@ class GeneratorConfigurationPage extends WizardPage {
 			productName.setMessage("Enter a product name");
 		}
 		
+//		{
+//			createLabel(group, "Jemmy Unittest stubs:");
+//			jemmyButton = createCheckbox(group, listener);
+//			jemmyButton.setSelection(data.isJemmyTest());
+//			jemmyButton.setEnabled(data.isJemmyTest());
+//		}
+		
 		{
-			createLabel(group, "Jemmy Unittest stubs:");
-			jemmyButton = createCheckbox(group, listener);
-			jemmyButton.setSelection(data.isJemmyTest());
-			jemmyButton.setEnabled(data.isJemmyTest());
+			createLabel(group, "Enable p2 updates");
+			p2Update = createCheckbox(group, listener);
+			p2Update.setSelection(data.isP2Update());
+		}
+		
+		{
+			createLabel(group, "p2 Update-URL");
+			p2UpdateSite = createText(group, propertiesListener, 1);
+			p2UpdateSite.setText(data.getUpdateSite());
+			p2UpdateSite.setEnabled(data.isP2Update());
 		}
 		
 		{

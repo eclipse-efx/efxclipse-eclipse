@@ -38,15 +38,17 @@ public class NewProjectStructureWizard extends Wizard implements INewWizard {
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.data = new AppBundleProjectData();
-		this.data.setJemmyTest(isJemmyAvailable());
+//		this.data.setJemmyTest(isJemmyAvailable());
 		this.data.setTychoIntegration(true);
 		this.data.setNativeExport(true);
 		this.data.setVersion("1.0.0.qualifier");
+		this.data.setP2Update(false);
+		this.data.setUpdateSite("http://p2.my.comp/updatesite");
 	}
 	
-	private boolean isJemmyAvailable() {
-		return PDECore.getDefault().getModelManager().findModel("at.bestsolution.efxclipse.jemmy") != null;
-	}
+//	private boolean isJemmyAvailable() {
+//		return PDECore.getDefault().getModelManager().findModel("at.bestsolution.efxclipse.jemmy") != null;
+//	}
 	
 	@Override
 	public void addPages() {
@@ -78,7 +80,9 @@ public class NewProjectStructureWizard extends Wizard implements INewWizard {
 		additionalData.put("BundleProject_EE", data.getEEnv());
 		additionalData.put("TychoIntegration", data.isTychoIntegration());
 		additionalData.put("NativeExport", data.isNativeExport());
-		additionalData.put("JemmyTest", data.isJemmyTest());
+		additionalData.put("p2Update", data.isP2Update());
+		additionalData.put("p2Location", data.getUpdateSite().replace(":", "$${#58}"));
+//		additionalData.put("JemmyTest", data.isJemmyTest());
 		
 		WorkspaceModifyOperation w = new WorkspaceModifyOperation() {
 			
