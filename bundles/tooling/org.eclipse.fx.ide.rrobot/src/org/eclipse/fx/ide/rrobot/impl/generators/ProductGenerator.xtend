@@ -5,6 +5,7 @@ import org.eclipse.fx.ide.rrobot.model.task.Generator
 import java.util.Map
 import java.io.ByteArrayInputStream
 import org.eclipse.fx.ide.rrobot.model.bundle.ProductFileFeaturebase
+import org.eclipse.fx.ide.rrobot.model.task.ExcludeableElementMixin
 
 class ProductGenerator implements Generator<ProductFile> {
 	
@@ -28,7 +29,7 @@ class ProductGenerator implements Generator<ProductFile> {
 	
 	«IF file instanceof ProductFileFeaturebase»
 	<features>
-		«FOR pf : (file as ProductFileFeaturebase).features»
+		«FOR pf : (file as ProductFileFeaturebase).features.filter([e|e.excludeExpression(data)])»
 		<feature id="«pf.id»" «IF pf.version != null»version="«pf.version»"«ENDIF»/>
 		«ENDFOR»
 	</features>
@@ -43,4 +44,11 @@ class ProductGenerator implements Generator<ProductFile> {
 </product>
    
 	'''
+	
+	def excludeExpression(ExcludeableElementMixin mixin, Map<String,Object> data) {
+		if( mixin.excludeExpression != null ) {
+			return ! mixin.excludeExpression.execute(data)
+		}
+		return true;
+	}
 }

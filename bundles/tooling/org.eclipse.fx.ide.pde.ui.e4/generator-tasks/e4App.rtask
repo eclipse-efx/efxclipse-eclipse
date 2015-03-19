@@ -22,7 +22,11 @@ RobotTask {
 		## Native export integration
 		BOOLEAN "NativeExport" default "true",
 		## JemmyTest
-		BOOLEAN "JemmyTest" default "false"
+		BOOLEAN "JemmyTest" default "false",
+		## p2 update
+		BOOLEAN "p2Update" default "false",
+		## p2 location
+		STRING "p2Location" default "http://p2.my.comp/updatesite"
 	}
 	projects = {
 		// Create an Bundle Project (this will add the PDE-Nature and the required builders to it!)
@@ -260,7 +264,8 @@ RobotTask {
 					}
 					features = {
 						"${BundleProject_bundleId}.feature",
-						"org.eclipse.fx.runtime.e4fx.feature"
+						"org.eclipse.fx.runtime.e4fx.feature",
+						"org.eclipse.fx.runtime.e4fx.p2.feature" excluded-if "javascript" /# !p2Update; #/
 					}
 				},
 				DynamicFile "${BundleProject_bundleId}.product.product.launch"
@@ -271,7 +276,16 @@ RobotTask {
 						STRING "projectName" default "${BundleProject_bundleId}.product",
 						## Launch feature
 						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature"
-					},
+					} excluded-if "javascript" /# p2Update; #/,
+				DynamicFile "${BundleProject_bundleId}.product.product.launch"
+					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.FeatureLaunchGenerator"
+					by "java"
+					{
+						## Project name
+						STRING "projectName" default "${BundleProject_bundleId}.product",
+						## Launch feature
+						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature, org.eclipse.fx.runtime.e4fx.p2.feature"
+					} excluded-if "javascript" /# !p2Update; #/,
 				DynamicFile "pom.xml"
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.ProductPomGenerator"
 					by "java"
