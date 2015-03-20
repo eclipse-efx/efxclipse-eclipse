@@ -9,6 +9,9 @@ class FeatureLaunchGenerator implements Generator<DynamicFile> {
 	override generate(DynamicFile file, Map<String,Object> data) {
 		val launchDef = new OSGiLaunchDef();
 		
+		val v = file.variables.findFirst([e| e.key.equals("classloaderStrategy")]);
+		
+		launchDef.classloaderStrategy = if( v == null || "default".equals(v.defaultValue)) null else v.defaultValue;
 		launchDef.setProjectName(file.variables.findFirst([e| e.key.equals("projectName")]).defaultValue);
 		launchDef.features.addAll(file.variables.findFirst([e| e.key.equals("feature")]).defaultValue.split(",").map[new LaunchFeature(it.trim)]);
 		
@@ -35,7 +38,7 @@ class FeatureLaunchGenerator implements Generator<DynamicFile> {
 <stringAttribute key="location" value="${workspace_loc}/../runtime-«launch.projectName»"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-nl ${target.nl} -consoleLog -nosplash"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.framework.extensions=org.eclipse.fx.osgi"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="«IF launch.classloaderStrategy != null»-Dorg.osgi.framework.bundle.parent=«launch.classloaderStrategy»«ELSE»-Dosgi.framework.extensions=org.eclipse.fx.osgi«ENDIF»"/>
 <stringAttribute key="pde.version" value="3.3"/>
 <stringAttribute key="product" value="«launch.projectName»"/>
 <stringAttribute key="productFile" value="/«launch.projectName»/«launch.projectName».product"/>

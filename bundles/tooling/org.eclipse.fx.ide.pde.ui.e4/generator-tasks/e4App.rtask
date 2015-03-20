@@ -26,7 +26,9 @@ RobotTask {
 		## p2 update
 		BOOLEAN "p2Update" default "false",
 		## p2 location
-		STRING "p2Location" default "http$${#58}//p2.my.comp/updatesite"
+		STRING "p2Location" default "http$${#58}//p2.my.comp/updatesite",
+		## Use classloadingStrategy
+		STRING "classloaderStrategy" default "ext"
 	}
 	projects = {
 		// Create an Bundle Project (this will add the PDE-Nature and the required builders to it!)
@@ -38,33 +40,33 @@ RobotTask {
 				importedPackages = {
 					"javax.inject" 				[1.0.0,],
 					"javax.annotation" 			[1.0.0,],
-					"javafx.animation" 			[2.0.0,],
-					"javafx.application" 		[2.0.0,],
-					"javafx.beans" 				[2.0.0,],
-					"javafx.beans.binding" 		[2.0.0,],
-					"javafx.beans.property" 	[2.0.0,],
-					"javafx.beans.value" 		[2.0.0,],
-					"javafx.collections" 		[2.0.0,],
-					"javafx.concurrent" 		[2.0.0,],
-					"javafx.event" 				[2.0.0,],
-					"javafx.fxml" 				[2.0.0,],
-					"javafx.geometry" 			[2.0.0,],
-					"javafx.scene" 				[2.0.0,],
-					"javafx.scene.chart" 		[2.0.0,],
-					"javafx.scene.control" 		[2.0.0,],
-					"javafx.scene.control.cell" [2.0.0,],
-					"javafx.scene.effect" 		[2.0.0,],
-					"javafx.scene.image" 		[2.0.0,],
-					"javafx.scene.input" 		[2.0.0,],
-					"javafx.scene.layout" 		[2.0.0,],
-					"javafx.scene.media" 		[2.0.0,],
-					"javafx.scene.paint" 		[2.0.0,],
-					"javafx.scene.shape" 		[2.0.0,],
-					"javafx.scene.text" 		[2.0.0,],
-					"javafx.scene.transform" 	[2.0.0,],
-					"javafx.scene.web" 			[2.0.0,],
-					"javafx.stage"	 			[2.0.0,],
-					"javafx.util" 				[2.0.0,]
+					"javafx.animation" 			[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.application" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.beans" 				[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.beans.binding" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.beans.property" 	[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.beans.value" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.collections" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.concurrent" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.event" 				[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.fxml" 				[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.geometry" 			[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene" 				[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.chart" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.control" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.control.cell" [2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.effect" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.image" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.input" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.layout" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.media" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.paint" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.shape" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.text" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.transform" 	[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.scene.web" 			[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.stage"	 			[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"javafx.util" 				[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/
 				}
 				// Required bundles of the project
 				requiredBundles = {
@@ -217,7 +219,8 @@ RobotTask {
 				}
 				vendor = "${BundleProject_bundleVendor}"
 				plugins = {
-					"${BundleProject_bundleId}"
+					"${BundleProject_bundleId}",
+					"org.eclipse.fx.osgi" excluded-if "javascript" /# classloaderStrategy == 'ext'; #/
 				}
 			}
 			resources = {
@@ -267,7 +270,27 @@ RobotTask {
 						"org.eclipse.fx.runtime.e4fx.feature",
 						"org.eclipse.fx.runtime.e4fx.p2.feature" excluded-if "javascript" /# !p2Update; #/
 					}
-				},
+				} excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+				ProductFileFeaturebase "${BundleProject_bundleId}.product" {
+					productName = "${BundleProject_productName}"
+					application = "org.eclipse.fx.ui.workbench.fx.application"
+					version = "1.0.0"
+					programArgs = "-nosplash"
+					vmArgs = "-Dorg.osgi.framework.bundle.parent=ext"
+					startconfigurations = {
+						"org.eclipse.core.runtime" 					autostarted at  0,
+						"org.eclipse.equinox.common" 				autostarted at  2,
+						"org.eclipse.equinox.event"					autostarted at  2,
+						"org.eclipse.equinox.simpleconfigurator" 	autostarted at 	1,
+						"org.eclipse.equinox.ds" 					autostarted at  2,
+						"org.eclipse.osgi" 							autostarted at -1
+					}
+					features = {
+						"${BundleProject_bundleId}.feature",
+						"org.eclipse.fx.runtime.e4fx.feature",
+						"org.eclipse.fx.runtime.e4fx.p2.feature" excluded-if "javascript" /# !p2Update; #/
+					}
+				} excluded-if "javascript" /# classloaderStrategy != 'ext'; #/,
 				DynamicFile "${BundleProject_bundleId}.product.product.launch"
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.FeatureLaunchGenerator"
 					by "java"
@@ -275,7 +298,9 @@ RobotTask {
 						## Project name
 						STRING "projectName" default "${BundleProject_bundleId}.product",
 						## Launch feature
-						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature"
+						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature",
+						## Classloader strategy
+						STRING "classloaderStrategy" default "${classloaderStrategy}"
 					} excluded-if "javascript" /# p2Update; #/,
 				DynamicFile "${BundleProject_bundleId}.product.product.launch"
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.FeatureLaunchGenerator"
@@ -284,7 +309,9 @@ RobotTask {
 						## Project name
 						STRING "projectName" default "${BundleProject_bundleId}.product",
 						## Launch feature
-						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature, org.eclipse.fx.runtime.e4fx.p2.feature"
+						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature, org.eclipse.fx.runtime.e4fx.p2.feature",
+						## Classloader strategy
+						STRING "classloaderStrategy" default "${classloaderStrategy}"
 					} excluded-if "javascript" /# !p2Update; #/,
 				DataFile "p2.inf" {
 					content = "instructions.configure=\

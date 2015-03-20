@@ -15,6 +15,7 @@ import java.util.Set;
 
 public abstract class BasicLaunchDef {
 	private String projectName;
+	private String classloaderStrategy;
 	private Set<PluginLaunchDef> workbenchPlugins = new HashSet<PluginLaunchDef>();
 	private Set<PluginLaunchDef> targetPlugins = new HashSet<PluginLaunchDef>();
 	private Set<LaunchFeature> features = new HashSet<>();
@@ -37,5 +38,13 @@ public abstract class BasicLaunchDef {
 
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
+	}
+
+	public String getClassloaderStrategy() {
+		return classloaderStrategy;
+	}
+
+	public void setClassloaderStrategy(String classloaderStrategy) {
+		this.classloaderStrategy = classloaderStrategy;
 	}
 }

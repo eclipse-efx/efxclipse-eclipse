@@ -10,6 +10,12 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.pde.ui.e4.project.boot;
 
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ComboViewer;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -20,6 +26,7 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
@@ -44,8 +51,18 @@ class GeneratorConfigurationPage extends WizardPage {
 			setPageComplete(validate());
 		}
 	};
+	
+	private ISelectionChangedListener sListener = new ISelectionChangedListener() {
+		
+		@Override
+		public void selectionChanged(SelectionChangedEvent event) {
+			setPageComplete(validate());
+		}
+	};
+	
 	private Button p2Update;
 	private Text p2UpdateSite;
+	private ComboViewer classloading;
 	
 	
 	public GeneratorConfigurationPage(AppBundleProjectData data, String pageName, String title) {
@@ -68,6 +85,7 @@ class GeneratorConfigurationPage extends WizardPage {
 		data.setUpdateSite(p2UpdateSite.getText());
 		data.setTychoIntegration(tychoButton.getSelection());
 		data.setNativeExport(nativePackaging.getSelection());
+		data.setClassloadingStrategy(classloading.getStructuredSelection().getFirstElement().toString());
 		
 		return true;
 	}
@@ -88,12 +106,32 @@ class GeneratorConfigurationPage extends WizardPage {
 			productName.setMessage("Enter a product name");
 		}
 		
+		{
+			createLabel(group, "Classloading:");
+			classloading = createCombo(group);
+			classloading.setInput(new String[] { "default", "ext", "boot", "app", "fwk", "ccl" });
+			classloading.setSelection(new StructuredSelection(data.getClassloadingStrategy()));
+			classloading.addSelectionChangedListener(this.sListener);
+		}
+		
 //		{
 //			createLabel(group, "Jemmy Unittest stubs:");
 //			jemmyButton = createCheckbox(group, listener);
 //			jemmyButton.setSelection(data.isJemmyTest());
 //			jemmyButton.setEnabled(data.isJemmyTest());
 //		}
+				
+		{
+			createLabel(group, "Tycho Build Stubs:");
+			tychoButton = createCheckbox(group, listener);
+			tychoButton.setSelection(data.isTychoIntegration());
+		}
+		
+		{
+			createLabel(group, "Native packaging:");
+			nativePackaging = createCheckbox(group, listener);
+			nativePackaging.setSelection(data.isNativeExport());
+		}
 		
 		{
 			createLabel(group, "Enable p2 updates");
@@ -106,18 +144,6 @@ class GeneratorConfigurationPage extends WizardPage {
 			p2UpdateSite = createText(group, propertiesListener, 1);
 			p2UpdateSite.setText(data.getUpdateSite());
 			p2UpdateSite.setEnabled(data.isP2Update());
-		}
-		
-		{
-			createLabel(group, "Tycho Build Stubs:");
-			tychoButton = createCheckbox(group, listener);
-			tychoButton.setSelection(data.isTychoIntegration());
-		}
-		
-		{
-			createLabel(group, "Native packaging:");
-			nativePackaging = createCheckbox(group, listener);
-			nativePackaging.setSelection(data.isNativeExport());
 		}
 		
 		setControl(container);
@@ -136,6 +162,13 @@ class GeneratorConfigurationPage extends WizardPage {
 		Button b = new Button(container, SWT.CHECK);
 		b.addSelectionListener(listener);
 		return b;
+	}
+	
+	private ComboViewer createCombo(Composite container) {
+		ComboViewer v = new ComboViewer(container, SWT.READ_ONLY);
+		v.setContentProvider(ArrayContentProvider.getInstance());
+		v.setLabelProvider(new LabelProvider());
+		return v;
 	}
 	
 	private Label createLabel(Composite container, String text) {

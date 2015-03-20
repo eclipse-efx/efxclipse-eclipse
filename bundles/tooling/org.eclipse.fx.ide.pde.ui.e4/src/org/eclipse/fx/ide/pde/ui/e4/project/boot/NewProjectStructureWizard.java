@@ -44,6 +44,7 @@ public class NewProjectStructureWizard extends Wizard implements INewWizard {
 		this.data.setVersion("1.0.0.qualifier");
 		this.data.setP2Update(false);
 		this.data.setUpdateSite("http://p2.my.comp/updatesite");
+		this.data.setClassloadingStrategy("ext");
 	}
 	
 //	private boolean isJemmyAvailable() {
@@ -82,6 +83,7 @@ public class NewProjectStructureWizard extends Wizard implements INewWizard {
 		additionalData.put("NativeExport", data.isNativeExport());
 		additionalData.put("p2Update", data.isP2Update());
 		additionalData.put("p2Location", data.getUpdateSite().replace(":", "$${#58}"));
+		additionalData.put("classloaderStrategy", data.getClassloadingStrategy());
 //		additionalData.put("JemmyTest", data.isJemmyTest());
 		
 		WorkspaceModifyOperation w = new WorkspaceModifyOperation() {

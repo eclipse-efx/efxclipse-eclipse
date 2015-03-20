@@ -18,6 +18,7 @@ class AppBundleProjectData extends BundleProjectData {
 	private String productName;
 	private boolean p2Update;
 	private String updateSite;
+	private String classloadingStrategy;
 
 	public boolean isP2Update() {
 		return p2Update;
@@ -55,5 +56,13 @@ class AppBundleProjectData extends BundleProjectData {
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+	public String getClassloadingStrategy() {
+		return classloadingStrategy;
+	}
+
+	public void setClassloadingStrategy(String classloadingStrategy) {
+		this.classloadingStrategy = classloadingStrategy;
 	}
 }
