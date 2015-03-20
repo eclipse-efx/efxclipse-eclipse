@@ -220,7 +220,8 @@ RobotTask {
 				vendor = "${BundleProject_bundleVendor}"
 				plugins = {
 					"${BundleProject_bundleId}",
-					"org.eclipse.fx.osgi" excluded-if "javascript" /# classloaderStrategy == 'ext'; #/
+					"org.eclipse.fx.osgi" excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+					"org.eclipse.fx.javafx" excluded-if "javascript" /# classloaderStrategy == 'ext'; #/
 				}
 			}
 			resources = {
