@@ -21,8 +21,6 @@ RobotTask {
 		BOOLEAN "TychoIntegration" default "true",
 		## Native export integration
 		BOOLEAN "NativeExport" default "true",
-		## JemmyTest
-		BOOLEAN "JemmyTest" default "false",
 		## p2 update
 		BOOLEAN "p2Update" default "false",
 		## p2 location
@@ -39,7 +37,6 @@ RobotTask {
 				// Add some import package definitions
 				importedPackages = {
 					"javax.inject" 				[1.0.0,],
-					"javax.annotation" 			[1.0.0,],
 					"javafx.animation" 			[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
 					"javafx.application" 		[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
 					"javafx.beans" 				[2.0.0,] excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
@@ -341,147 +338,6 @@ RobotTask {
 					excluded-if "javascript" /# !TychoIntegration; #/
 			}
 		},
-		BundleProject "${BundleProject_projectName}.jemmy" {
-			manifest = ManifestFile "${BundleProject_bundleId}.jemmy" "1.0.0.qualifier" "${BundleProject_EE}" {
-				bundlename = "${BundleProject_bundleName} Jemmy UI Tests"
-				vendor = "${BundleProject_bundleVendor}"
-				importedPackages = {
-					"javax.inject" 				[1.0.0,],
-					"javax.annotation" 			[1.0.0,],
-					"javafx.animation" 			[2.0.0,],
-					"javafx.application" 		[2.0.0,],
-					"javafx.beans" 				[2.0.0,],
-					"javafx.beans.binding" 		[2.0.0,],
-					"javafx.beans.property" 	[2.0.0,],
-					"javafx.beans.value" 		[2.0.0,],
-					"javafx.collections" 		[2.0.0,],
-					"javafx.concurrent" 		[2.0.0,],
-					"javafx.event" 				[2.0.0,],
-					"javafx.fxml" 				[2.0.0,],
-					"javafx.geometry" 			[2.0.0,],
-					"javafx.scene" 				[2.0.0,],
-					"javafx.scene.chart" 		[2.0.0,],
-					"javafx.scene.control" 		[2.0.0,],
-					"javafx.scene.control.cell" [2.0.0,],
-					"javafx.scene.effect" 		[2.0.0,],
-					"javafx.scene.image" 		[2.0.0,],
-					"javafx.scene.input" 		[2.0.0,],
-					"javafx.scene.layout" 		[2.0.0,],
-					"javafx.scene.media" 		[2.0.0,],
-					"javafx.scene.paint" 		[2.0.0,],
-					"javafx.scene.shape" 		[2.0.0,],
-					"javafx.scene.text" 		[2.0.0,],
-					"javafx.scene.transform" 	[2.0.0,],
-					"javafx.scene.web" 			[2.0.0,],
-					"javafx.stage"	 			[2.0.0,],
-					"javafx.util" 				[2.0.0,],
-					// The Jemmy Stuff
-					"org.jemmy.action" 				[3.0.0,],
-					"org.jemmy.browser" 			[3.0.0,],
-					"org.jemmy.control" 			[3.0.0,],
-					"org.jemmy.dock" 				[3.0.0,],
-					"org.jemmy.env" 				[3.0.0,],
-					"org.jemmy.fx" 					[3.0.0,],
-					"org.jemmy.fx.control" 			[3.0.0,],
-					"org.jemmy.fx.control.caspian"	[3.0.0,],
-					"org.jemmy.image" 				[3.0.0,],
-					"org.jemmy.image.pixel" 		[3.0.0,],
-					"org.jemmy.input" 				[3.0.0,],
-					"org.jemmy.input.glass" 		[3.0.0,],
-					"org.jemmy.interfaces" 			[3.0.0,],
-					"org.jemmy.lookup" 				[3.0.0,],
-					"org.jemmy.operators" 			[3.0.0,],
-					"org.jemmy.resources" 			[3.0.0,],
-					"org.jemmy.support" 			[3.0.0,],
-					"org.jemmy.timing" 				[3.0.0,]
-				}
-				requiredBundles = {
-					"org.junit",
-					"at.bestsolution.efxclipse.jemmy"
-				}
-			}
-			build = BuildProperties {
-
-			}
-			resources = {
-				Folder "src",
-				DynamicFile "${BundleProject_bundleId}.jemmy.launch"
-					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.JemmyFeatureLaunchGenerator"
-					by "java"
-					{
-						## Project name
-						STRING "projectName" default "${BundleProject_bundleId}.jemmy",
-						## Launch features
-						STRING "featureList" default "at.bestsolution.efxclipse.jemmy.feature,at.bestsolution.efxclipse.jemmy.junit.feature,${BundleProject_bundleId}.feature,${BundleProject_bundleId}.jemmy.feature",
-						## Test Suite class
-						STRING "testSuite" default "${BundleProject_bundleId}.jemmy.TestSuite",
-						## Test Product Id
-						STRING "testProductId" default "${BundleProject_bundleId}.product"
-					},
-				DynamicFile "pom.xml"
-					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.tycho.JemmyPomGenerator"
-					by "java"
-					{
-						## releng group id
-						STRING "relengGroupId" default "${Maven_GroupId}",
-						## releng artifact id
-						STRING "relengArtifactId" default "${BundleProject_bundleId}.releng",
-						## releng releng path
-						STRING "relengPath" default "../${BundleProject_bundleId}.releng",
-						## group id
-						STRING "groupId" default "${Maven_GroupId}",
-						## artifactId
-						STRING "artifactId" default "${BundleProject_bundleId}.jemmy",
-						## baseVersion
-						STRING "baseVersion" default "${BundleProject_bundleVersion}",
-						## name
-						STRING "name" default "${BundleProject_productName} - jemmy tests",
-						## testBundleId
-						STRING "testBundleId" default "${BundleProject_bundleId}.jemmy",
-						## testSuite
-						STRING "testSuite" default "${BundleProject_bundleId}.jemmy.TestSuite",
-						## testProductId
-						STRING "testProductId" default "${BundleProject_bundleId}.product",
-						## testProductFeature
-						STRING "testProductFeature" default "${BundleProject_bundleId}.feature"
-					}
-			}
-			rootfragments = {
-				fragment "default-src" "src"
-			}
-			compilation-units = {
-				"${BundleProject_bundleId}.jemmy" in "default-src" {
-					DynamicFile "SampleTestCase.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.SampleTestCaseGenerator" by "java"
-				},
-				"${BundleProject_bundleId}.jemmy" in "default-src" {
-					DynamicFile "TestSuite.java" generated-from "bundleclass://org.eclipse.fx.ide.pde.ui.e4/org.eclipse.fx.ide.pde.ui.e4.project.template.TestSuiteGenerator" by "java"
-				}
-			}
-		} excluded-if "javascript" /# !JemmyTest; #/,
-		FeatureProject "${BundleProject_projectName}.jemmy.feature" {
-			feature = FeatureFile "${BundleProject_bundleId}.jemmy.feature" {
-				version = "${BundleProject_bundleVersion}"
-				featurename = "${BundleProject_productName} Jemmy JUnit Feature"
-				description = LinkedString "http://www.efxclipse.org" {
-					"TODO FILL WITH CONTENT"
-				}
-				copyright = LinkedString "http://www.efxclipse.org" {
-					"TODO FILL WITH CONTENT"
-				}
-				license = LinkedString "http://www.efxclipse.org" {
-					"TODO FILL WITH CONTENT"
-				}
-				vendor = "${BundleProject_bundleVendor}"
-				plugins = {
-					"${BundleProject_projectName}.jemmy"
-				}
-			}
-			resources = {
-				DataFile "build.properties" {
-					content = "bin.includes = feature.xml"
-				}
-			}
-		} excluded-if "javascript" /# !JemmyTest; #/,
 		SimpleProject "${BundleProject_projectName}.releng" {
 			resources = {
 				DynamicFile "pom.xml"
