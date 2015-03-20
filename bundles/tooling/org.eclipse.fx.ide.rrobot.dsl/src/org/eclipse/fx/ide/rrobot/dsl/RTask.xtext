@@ -223,7 +223,7 @@ ProductFileFeaturebase returns bundle::ProductFileFeaturebase:
 			features+=ProductFeature ( ',' features+=ProductFeature )*
 		'}')?
 	'}'
-;
+	('excluded-if' excludeExpression=BooleanExpression)?;
 
 FeatureFile returns bundle::FeatureFile:
 	{bundle::FeatureFile}

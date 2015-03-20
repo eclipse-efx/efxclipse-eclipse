@@ -3663,7 +3663,29 @@ ruleProductFileFeaturebase returns [EObject current=null]
     {
     	newLeafNode(otherlv_35, grammarAccess.getProductFileFeaturebaseAccess().getRightCurlyBracketKeyword_8());
     }
+(	otherlv_36='excluded-if' 
+    {
+    	newLeafNode(otherlv_36, grammarAccess.getProductFileFeaturebaseAccess().getExcludedIfKeyword_9_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getProductFileFeaturebaseAccess().getExcludeExpressionBooleanExpressionParserRuleCall_9_1_0()); 
+	    }
+		lv_excludeExpression_37_0=ruleBooleanExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getProductFileFeaturebaseRule());
+	        }
+       		set(
+       			$current, 
+       			"excludeExpression",
+        		lv_excludeExpression_37_0, 
+        		"BooleanExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))?)
 ;
 
 

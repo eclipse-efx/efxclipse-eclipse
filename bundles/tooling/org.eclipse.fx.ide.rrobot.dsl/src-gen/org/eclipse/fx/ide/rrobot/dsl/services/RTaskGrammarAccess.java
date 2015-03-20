@@ -2138,20 +2138,25 @@ public class RTaskGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFeaturesProductFeatureParserRuleCall_7_4_1_0 = (RuleCall)cFeaturesAssignment_7_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_5 = (Keyword)cGroup_7.eContents().get(5);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cExcludedIfKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cExcludeExpressionAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cExcludeExpressionBooleanExpressionParserRuleCall_9_1_0 = (RuleCall)cExcludeExpressionAssignment_9_1.eContents().get(0);
 		
 		//ProductFileFeaturebase returns bundle::ProductFileFeaturebase:
 		//	{bundle::ProductFileFeaturebase} includeLaunchers?="launchable"? "ProductFileFeaturebase" id=STRING "{" (("vmArgs" "="
 		//	vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING & "application" "="
 		//	application=STRING & "version" "=" version=STRING) ("startconfigurations" "=" "{"
 		//	startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)* "}")? ("features" "=" "{"
-		//	features+=ProductFeature ("," features+=ProductFeature)* "}")? "}";
+		//	features+=ProductFeature ("," features+=ProductFeature)* "}")? "}" ("excluded-if"
+		//	excludeExpression=BooleanExpression)?;
 		@Override public ParserRule getRule() { return rule; }
 
 		//{bundle::ProductFileFeaturebase} includeLaunchers?="launchable"? "ProductFileFeaturebase" id=STRING "{" (("vmArgs" "="
 		//vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING & "application" "="
 		//application=STRING & "version" "=" version=STRING) ("startconfigurations" "=" "{"
 		//startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)* "}")? ("features" "=" "{"
-		//features+=ProductFeature ("," features+=ProductFeature)* "}")? "}"
+		//features+=ProductFeature ("," features+=ProductFeature)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//{bundle::ProductFileFeaturebase}
@@ -2323,6 +2328,18 @@ public class RTaskGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+
+		//("excluded-if" excludeExpression=BooleanExpression)?
+		public Group getGroup_9() { return cGroup_9; }
+
+		//"excluded-if"
+		public Keyword getExcludedIfKeyword_9_0() { return cExcludedIfKeyword_9_0; }
+
+		//excludeExpression=BooleanExpression
+		public Assignment getExcludeExpressionAssignment_9_1() { return cExcludeExpressionAssignment_9_1; }
+
+		//BooleanExpression
+		public RuleCall getExcludeExpressionBooleanExpressionParserRuleCall_9_1_0() { return cExcludeExpressionBooleanExpressionParserRuleCall_9_1_0; }
 	}
 
 	public class FeatureFileElements extends AbstractParserRuleElementFinder {
@@ -4180,7 +4197,8 @@ public class RTaskGrammarAccess extends AbstractGrammarElementFinder {
 	//	vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING & "application" "="
 	//	application=STRING & "version" "=" version=STRING) ("startconfigurations" "=" "{"
 	//	startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)* "}")? ("features" "=" "{"
-	//	features+=ProductFeature ("," features+=ProductFeature)* "}")? "}";
+	//	features+=ProductFeature ("," features+=ProductFeature)* "}")? "}" ("excluded-if"
+	//	excludeExpression=BooleanExpression)?;
 	public ProductFileFeaturebaseElements getProductFileFeaturebaseAccess() {
 		return pProductFileFeaturebase;
 	}

@@ -133,6 +133,7 @@ public class RTaskParser extends AbstractContentAssistParser {
 					put(grammarAccess.getProductFileFeaturebaseAccess().getGroup_6_4(), "rule__ProductFileFeaturebase__Group_6_4__0");
 					put(grammarAccess.getProductFileFeaturebaseAccess().getGroup_7(), "rule__ProductFileFeaturebase__Group_7__0");
 					put(grammarAccess.getProductFileFeaturebaseAccess().getGroup_7_4(), "rule__ProductFileFeaturebase__Group_7_4__0");
+					put(grammarAccess.getProductFileFeaturebaseAccess().getGroup_9(), "rule__ProductFileFeaturebase__Group_9__0");
 					put(grammarAccess.getFeatureFileAccess().getGroup(), "rule__FeatureFile__Group__0");
 					put(grammarAccess.getFeatureFileAccess().getGroup_4_0(), "rule__FeatureFile__Group_4_0__0");
 					put(grammarAccess.getFeatureFileAccess().getGroup_4_1(), "rule__FeatureFile__Group_4_1__0");
@@ -281,6 +282,7 @@ public class RTaskParser extends AbstractContentAssistParser {
 					put(grammarAccess.getProductFileFeaturebaseAccess().getStartconfigurationsAssignment_6_4_1(), "rule__ProductFileFeaturebase__StartconfigurationsAssignment_6_4_1");
 					put(grammarAccess.getProductFileFeaturebaseAccess().getFeaturesAssignment_7_3(), "rule__ProductFileFeaturebase__FeaturesAssignment_7_3");
 					put(grammarAccess.getProductFileFeaturebaseAccess().getFeaturesAssignment_7_4_1(), "rule__ProductFileFeaturebase__FeaturesAssignment_7_4_1");
+					put(grammarAccess.getProductFileFeaturebaseAccess().getExcludeExpressionAssignment_9_1(), "rule__ProductFileFeaturebase__ExcludeExpressionAssignment_9_1");
 					put(grammarAccess.getFeatureFileAccess().getFeatureidAssignment_2(), "rule__FeatureFile__FeatureidAssignment_2");
 					put(grammarAccess.getFeatureFileAccess().getVersionAssignment_4_0_2(), "rule__FeatureFile__VersionAssignment_4_0_2");
 					put(grammarAccess.getFeatureFileAccess().getFeaturenameAssignment_4_1_2(), "rule__FeatureFile__FeaturenameAssignment_4_1_2");

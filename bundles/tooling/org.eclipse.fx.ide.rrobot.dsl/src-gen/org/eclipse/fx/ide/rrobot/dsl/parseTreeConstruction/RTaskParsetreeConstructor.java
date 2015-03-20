@@ -10347,7 +10347,8 @@ protected class BuildProperties_RightCurlyBracketKeyword_4 extends KeywordToken 
  * 	vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING & "application" "="
  * 	application=STRING & "version" "=" version=STRING) ("startconfigurations" "=" "{"
  * 	startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)* "}")? ("features" "=" "{"
- * 	features+=ProductFeature ("," features+=ProductFeature)* "}")? "}";
+ * 	features+=ProductFeature ("," features+=ProductFeature)* "}")? "}" ("excluded-if"
+ * 	excludeExpression=BooleanExpression)?;
  *
  **/
 
@@ -10355,7 +10356,7 @@ protected class BuildProperties_RightCurlyBracketKeyword_4 extends KeywordToken 
 // vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING & "application" "="
 // application=STRING & "version" "=" version=STRING) ("startconfigurations" "=" "{"
 // startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)* "}")? ("features" "=" "{"
-// features+=ProductFeature ("," features+=ProductFeature)* "}")? "}"
+// features+=ProductFeature ("," features+=ProductFeature)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
 protected class ProductFileFeaturebase_Group extends GroupToken {
 	
 	public ProductFileFeaturebase_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10370,7 +10371,8 @@ protected class ProductFileFeaturebase_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ProductFileFeaturebase_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ProductFileFeaturebase_Group_9(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ProductFileFeaturebase_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -11580,6 +11582,97 @@ protected class ProductFileFeaturebase_RightCurlyBracketKeyword_8 extends Keywor
 	}
 
 }
+
+// ("excluded-if" excludeExpression=BooleanExpression)?
+protected class ProductFileFeaturebase_Group_9 extends GroupToken {
+	
+	public ProductFileFeaturebase_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getProductFileFeaturebaseAccess().getGroup_9();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ProductFileFeaturebase_ExcludeExpressionAssignment_9_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "excluded-if"
+protected class ProductFileFeaturebase_ExcludedIfKeyword_9_0 extends KeywordToken  {
+	
+	public ProductFileFeaturebase_ExcludedIfKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getProductFileFeaturebaseAccess().getExcludedIfKeyword_9_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ProductFileFeaturebase_RightCurlyBracketKeyword_8(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// excludeExpression=BooleanExpression
+protected class ProductFileFeaturebase_ExcludeExpressionAssignment_9_1 extends AssignmentToken  {
+	
+	public ProductFileFeaturebase_ExcludeExpressionAssignment_9_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getProductFileFeaturebaseAccess().getExcludeExpressionAssignment_9_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BooleanExpression_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("excludeExpression",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("excludeExpression");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getBooleanExpressionRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getProductFileFeaturebaseAccess().getExcludeExpressionBooleanExpressionParserRuleCall_9_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new ProductFileFeaturebase_ExcludedIfKeyword_9_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
 
 
 /************ end Rule ProductFileFeaturebase ****************/
