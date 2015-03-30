@@ -14,4 +14,5 @@ package org.eclipse.fx.ide.pde.ui.e4.project.template
 	String tychoOutDir;
 	String productName;
 	String vendorName;
+	String classloaderStrategy 
 }

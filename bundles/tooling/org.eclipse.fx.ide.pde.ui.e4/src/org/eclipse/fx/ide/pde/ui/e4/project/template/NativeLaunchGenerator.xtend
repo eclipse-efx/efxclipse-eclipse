@@ -21,7 +21,11 @@ class NativeLaunchGenerator implements Generator<DynamicFile> {
 		val projectName = data.get("BundleProject_projectName") as String;
 		val productName = data.get("BundleProject_productName") as String;
 		val vendorName = data.get("BundleProject_bundleVendor") as String;
-		val launcherdata = new NativeLaunchData("../"+projectName+".product/target/products/"+projectName+".product/noenv/noenv/noenv", productName, vendorName);
+		
+		
+		val v = file.variables.findFirst([e| e.key.equals("classloaderStrategy")]);
+		
+		val launcherdata = new NativeLaunchData("../"+projectName+".product/target/products/"+projectName+".product/noenv/noenv/noenv", productName, vendorName, if( v == null || "default".equals(v.defaultValue)) null else v.defaultValue);
 		val gen = new NativeLaunchGenerator();
 		return new ByteArrayInputStream(gen.generate(launcherdata).toString.bytes);
 	}
@@ -70,7 +74,13 @@ class NativeLaunchGenerator implements Generator<DynamicFile> {
 			nativeBundles="all"
 			updatemode="background"
 			>
+			«IF data.classloaderStrategy != null»
+			<fx:platform basedir="${java.home}">
+				<fx:property name="org.osgi.framework.bundle.parent" value="«data.classloaderStrategy»"/>
+			</fx:platform>
+			«ELSE»
 			<fx:platform basedir="${java.home}"/>
+			«ENDIF»
 			<fx:info title="«data.productName»" vendor="«data.vendorName»"/>
 			<fx:application refid="fxApplication"/>
 			<fx:resources refid="appRes"/>
