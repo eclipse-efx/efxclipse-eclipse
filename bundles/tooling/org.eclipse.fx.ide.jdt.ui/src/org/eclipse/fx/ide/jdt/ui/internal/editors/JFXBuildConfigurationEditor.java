@@ -2182,13 +2182,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	protected void pageChange( int newPageIndex ) {
 		dbc.updateTargets();
 	}
-
-	@Override
-	public Object getAdapter( @SuppressWarnings( "rawtypes" ) final Class adapter ) {
-		// TODO we could show an outline page here
-		return super.getAdapter( adapter );
-	}
-
+	
 	/**
 	 * If there is more than one page in the multi-page editor part, this shows the tabs at the bottom. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
