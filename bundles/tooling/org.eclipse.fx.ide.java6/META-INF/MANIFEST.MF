@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: JavaFX Tooling Java Check
 Bundle-SymbolicName: org.eclipse.fx.ide.java6;singleton:=true
 Bundle-Version: 2.0.0.qualifier
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: Eclipse.org
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui;bundle-version="3.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

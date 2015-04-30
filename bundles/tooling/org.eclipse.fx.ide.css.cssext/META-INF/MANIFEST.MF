@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.fx.ide.css.cssext
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: Eclipse.org
 Bundle-Version: 2.0.0.qualifier
 Bundle-SymbolicName: org.eclipse.fx.ide.css.cssext; singleton:=true
 Bundle-ActivationPolicy: lazy

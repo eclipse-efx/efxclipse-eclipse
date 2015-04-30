@@ -20,5 +20,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.fx.ide.rrobot.dsl;bundle-version="0.9.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: Eclipse.org
 Eclipse-BundleShape: dir
