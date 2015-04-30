@@ -12,3 +12,4 @@ Require-Bundle: org.eclipse.fx.ui.controls;bundle-version="1.2.0",
 Import-Package: org.eclipse.fx.ide.css.extapi,
  org.eclipse.fx.ide.css.ui.extapi
 Service-Component: OSGI-INF/paintproposalcontributor.xml
+Bundle-Vendor: Eclipse.org
