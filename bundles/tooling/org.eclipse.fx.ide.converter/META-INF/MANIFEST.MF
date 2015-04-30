@@ -12,3 +12,4 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.fx.osgi.util,
  org.eclipse.jdt.annotation;bundle-version="2.0.0";resolution:=optional
 Import-Package: org.eclipse.fx.core.log
+Bundle-Vendor: Eclipse.org
