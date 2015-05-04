@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.ListResourceBundle;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.function.Consumer;
 import java.util.Properties;
 
 import javafx.application.ConditionalFeature;
@@ -703,9 +704,9 @@ public class LivePreviewPart extends ViewPart {
 				
 				scene.getStylesheets().addAll(contentData.cssFiles);
 				currentScene = scene;
-				System.err.println("SELECTED FIRST ENTRY");
 				folder.setSelection(0);
 				swtFXContainer.setScene(scene);
+				contentData.sceneGraphCallback.accept(scene.getRoot());
 			} catch (Exception e) {
 				StringWriter sw = new StringWriter();
 				e.printStackTrace(new PrintWriter(sw));
@@ -796,14 +797,18 @@ public class LivePreviewPart extends ViewPart {
 		public String resourceBundle;
 		public List<URL> extraJarPath;
 		public IFile file;
+		public Consumer<Object> sceneGraphCallback;
 		
-		public ContentData(String contents, String previewSceneSetup, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, IFile file) {
+		public ContentData(
+				String contents, String previewSceneSetup, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, IFile file,
+				Consumer<Object> sceneGraphCallback) {
 			this.contents = contents;
 			this.previewSceneSetup = previewSceneSetup;
 			this.cssFiles = new ArrayList<String>(cssFiles);
 			this.resourceBundle = resourceBundle;
 			this.extraJarPath = extraJarPath;
 			this.file = file;
+			this.sceneGraphCallback = sceneGraphCallback;
 		}
 	}
 

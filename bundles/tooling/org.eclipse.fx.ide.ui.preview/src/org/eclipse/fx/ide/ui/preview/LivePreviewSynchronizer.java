@@ -120,7 +120,7 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 		
 //		System.err.println("RESOURCE BUNDLE: " + resourceBundle);
 		
-		return new ContentData(contents, previewSceneSetup, cssFiles, resourceBundle, extraJarPath, file);
+		return new ContentData(contents, previewSceneSetup, cssFiles, resourceBundle, extraJarPath, file, contentProvider::renderedRootNode);
 	}
 
 	

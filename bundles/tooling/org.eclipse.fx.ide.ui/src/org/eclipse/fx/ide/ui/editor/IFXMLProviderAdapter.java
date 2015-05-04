@@ -17,9 +17,18 @@ import org.eclipse.core.resources.IFile;
 
 public interface IFXMLProviderAdapter extends IFXPreviewAdapter {
 	public String getPreviewSceneFXML();
+
 	public String getPreviewFXML();
+
 	public List<String> getPreviewCSSFiles();
+
 	public String getPreviewResourceBundle();
+
 	public List<URL> getPreviewClasspath();
+
 	public IFile getFile();
+
+	default <P> void renderedRootNode(P rootNode) {
+		// do nothing
+	}
 }
