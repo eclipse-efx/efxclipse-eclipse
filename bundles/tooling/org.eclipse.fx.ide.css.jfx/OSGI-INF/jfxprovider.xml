@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.eclipse.fx.ide.css.jfx.jfxprovider">
-   <implementation class="org.eclipse.fx.ide.css.jfx.JFXModelProvider"/>
-   <service>
-      <provide interface="org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider"/>
-   </service>
-   <reference bind="bindLoggerFactory" cardinality="1..1" interface="org.eclipse.fx.core.log.LoggerFactory" name="LoggerFactory" policy="dynamic" unbind="unbindLoggerFactory"/>
-</scr:component>
