@@ -57,12 +57,12 @@ public class CssAdapterFactory implements IAdapterFactory {
 	}
 	
 	@Override
-	public Object getAdapter(Object adaptableObject, Class adapterType) {
+	public <T> T getAdapter(Object adaptableObject, Class<T> adapterType) {
 		getLogger().debug("getAdapter(" + adaptableObject + ") " + adaptableObject.getClass().getName());  //$NON-NLS-1$//$NON-NLS-2$
 		if (adapterType == ICssResource.class) {
-			return getOrCreateAdapter(adaptableObject);
+			return (T) getOrCreateAdapter(adaptableObject);
 		}
-		return null;
+		return (T)null;
 	}
 
 	@Override

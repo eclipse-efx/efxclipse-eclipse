@@ -17,7 +17,7 @@ public class ExtensionHolder {
 	private ResourceSet cachedResourceSet;
 	 private IProject project;
 	    private EObject context;
-	    private List<URI> extensionURIs;
+//	    private List<URI> extensionURIs;
 	
     private ResourceSet createResourceSet() {
     	if (cachedResourceSet == null) {
@@ -42,11 +42,10 @@ public class ExtensionHolder {
     	return resourceSet;
     }
     
-   
+    private ACssResource resource;
     
-    public ExtensionHolder(IProject project, EObject context, List<URI> extensionURIs) {
-        this.extensionURIs = new ArrayList<>(extensionURIs);
-        
+    public ExtensionHolder(IProject project, EObject context, ACssResource resource) {
+        this.resource = resource;
         this.project = project;
         this.context = context;
     }
@@ -63,15 +62,18 @@ public class ExtensionHolder {
     	
     	List<CssExtension> result = new ArrayList<>();
     	
-    	final ResourceSet resourceSet = getResourceSet(context);
+    	final ResourceSet resourceSet = getResourceSet(this.context);
     	
     	URI processedURI = null;
     	try {
-    		
-        	for (final URI uri : extensionURIs) {
+        	for (final URI uri : this.resource.getAllEnabledExtensions()) {
         		processedURI = uri;
         		final Resource resource = resourceSet.getResource(uri, true);
-        		result.add((CssExtension) resource.getContents().get(0));
+        		if( ! resource.getContents().isEmpty() ) {
+        			result.add((CssExtension) resource.getContents().get(0));	
+        		} else {
+        			System.err.println("The resource '"+uri+"' does not contain any elements");
+        		}
         	}    		
     	} catch( Throwable t ) {
     		throw new IllegalStateException("Unable to find CSSExtension in " + processedURI, t);

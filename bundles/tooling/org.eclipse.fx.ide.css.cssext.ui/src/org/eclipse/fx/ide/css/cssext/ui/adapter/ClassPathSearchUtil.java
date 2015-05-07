@@ -212,7 +212,6 @@ public class ClassPathSearchUtil {
 		
 		@Override
 		public boolean visit(IResource resource) throws CoreException {
-			System.err.println("VISIT: " + resource);
 			if (resource instanceof IContainer) {
 				return true;
 			}
@@ -377,7 +376,9 @@ public class ClassPathSearchUtil {
 			final IProject p = (IProject) root.findMember(path);
 			final IJavaProject jp = JavaCore.create(p);
 			final IResource output = root.findMember(jp.getOutputLocation());
-			return ClassPathSearchUtil.checkResource(output);
+			if( output != null ) {
+				return ClassPathSearchUtil.checkResource(output);
+			}
 		}
 		catch (JavaModelException e) {
 			e.printStackTrace();

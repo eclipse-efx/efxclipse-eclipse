@@ -66,14 +66,14 @@ public class ClasspathManager {
 	};
 	
 	private ClasspathManager() {
-		JavaCore.addElementChangedListener(listener, ElementChangedEvent.POST_CHANGE);
+		JavaCore.addElementChangedListener(this.listener, ElementChangedEvent.POST_CHANGE);
 	}
 	
 	private Logger getLogger() {
-		if (logger == null) {
-			logger = LoggerCreator.createLogger(ClasspathManager.class);
+		if (this.logger == null) {
+			this.logger = LoggerCreator.createLogger(ClasspathManager.class);
 		}
-		return logger;
+		return this.logger;
 	}
 
 	

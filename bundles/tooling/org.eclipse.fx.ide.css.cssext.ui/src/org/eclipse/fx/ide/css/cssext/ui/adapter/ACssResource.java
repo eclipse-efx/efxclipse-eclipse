@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.QualifiedName;
@@ -37,18 +36,14 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
 import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.linking.impl.XtextLinkingDiagnostic;
-import org.eclipse.xtext.parser.packrat.tokens.ParsedAction;
 import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescription.Manager;
 import org.eclipse.xtext.resource.IResourceDescriptions;
-import org.eclipse.xtext.resource.IResourceServiceProvider;
-import org.eclipse.xtext.resource.XtextResourceSet;
-import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.util.CancelIndicator;
 
 public abstract class ACssResource implements ICssResource {
 
-	private final String PLUGIN_ID = "org.eclipse.fx.ide.css.cssext.ui"; //$NON-NLS-1$
+	private final static String PLUGIN_ID = "org.eclipse.fx.ide.css.cssext.ui"; //$NON-NLS-1$
 	
 	protected QualifiedName KEY_USE_CUSTOM = new QualifiedName(PLUGIN_ID, "useCustom"); //$NON-NLS-1$
 	protected QualifiedName KEY_CUSTOM_EXTENSIONS = new QualifiedName(PLUGIN_ID, "customExtensions"); //$NON-NLS-1$
@@ -113,7 +108,7 @@ public abstract class ACssResource implements ICssResource {
 	private IResourceDescriptions x;
 	
 	public void save() throws CoreException {
-		this.adaptedObject.setPersistentProperty(KEY_USE_CUSTOM, Boolean.toString(useCustom));
+		this.adaptedObject.setPersistentProperty(this.KEY_USE_CUSTOM, Boolean.toString(this.useCustom));
 		
 		try {
 			getLogger().debug("after save: " + adaptedObject.getPersistentProperties());
@@ -121,16 +116,16 @@ public abstract class ACssResource implements ICssResource {
 			e.printStackTrace();
 		}
 		
-		String disabled = disabledExtensions.stream().map((uri)->uri.toString()).collect(Collectors.joining(","));
-		this.adaptedObject.setPersistentProperty(KEY_DISABLED_EXTENSIONS, disabled);
+		String disabled = this.disabledExtensions.stream().map((uri)->uri.toString()).collect(Collectors.joining(","));
+		this.adaptedObject.setPersistentProperty(this.KEY_DISABLED_EXTENSIONS, disabled);
 		
-		String custom = customExtensions.stream().map((uri)->uri.toString()).collect(Collectors.joining(","));
-		this.adaptedObject.setPersistentProperty(KEY_CUSTOM_EXTENSIONS, custom);
+		String custom = this.customExtensions.stream().map((uri)->uri.toString()).collect(Collectors.joining(","));
+		this.adaptedObject.setPersistentProperty(this.KEY_CUSTOM_EXTENSIONS, custom);
 	}
 	
 	private List<URI> parseURIs(String data) {
-		getLogger().debug("parseURIs(" + data + ")");
-		String[] disabledExtensionURIs = data.split(",");
+		getLogger().debug("parseURIs(" + data + ")");  //$NON-NLS-1$//$NON-NLS-2$
+		String[] disabledExtensionURIs = data.split(","); //$NON-NLS-1$
 		List<URI> uris = new ArrayList<>();
 		for (String uriString : disabledExtensionURIs) {
 			if (uriString != null && uriString.trim().length() > 0) {
@@ -138,35 +133,35 @@ public abstract class ACssResource implements ICssResource {
 				uris.add(uri);
 			}
 		}
-		getLogger().debug(" result = " + uris.size() + " / " + uris);
+		getLogger().debug(" result = " + uris.size() + " / " + uris);  //$NON-NLS-1$//$NON-NLS-2$
 		return uris;
 	}
 	
 	public void load() throws CoreException {
-		setUseCustom(Boolean.parseBoolean(this.adaptedObject.getPersistentProperty(KEY_USE_CUSTOM)));
+		setUseCustom(Boolean.parseBoolean(this.adaptedObject.getPersistentProperty(this.KEY_USE_CUSTOM)));
 		
-		final String disabledExtensionsData = this.adaptedObject.getPersistentProperty(KEY_DISABLED_EXTENSIONS);
+		final String disabledExtensionsData = this.adaptedObject.getPersistentProperty(this.KEY_DISABLED_EXTENSIONS);
 		if (disabledExtensionsData != null) {
 			List<URI> uris = parseURIs(disabledExtensionsData);
-			propertyChangeSupport.firePropertyChange("disabledCssExtensions", disabledExtensions, disabledExtensions = uris);
+			this.propertyChangeSupport.firePropertyChange("disabledCssExtensions", this.disabledExtensions, this.disabledExtensions = uris); //$NON-NLS-1$
 		}
 		else {
-			propertyChangeSupport.firePropertyChange("disabledCssExtensions", disabledExtensions, disabledExtensions = new ArrayList<>());
+			this.propertyChangeSupport.firePropertyChange("disabledCssExtensions", this.disabledExtensions, this.disabledExtensions = new ArrayList<>()); //$NON-NLS-1$
 		}
 		
 		
-		final String customExtensionsData = this.adaptedObject.getPersistentProperty(KEY_CUSTOM_EXTENSIONS);
+		final String customExtensionsData = this.adaptedObject.getPersistentProperty(this.KEY_CUSTOM_EXTENSIONS);
 		if (customExtensionsData != null) {
 			List<URI> uris = parseURIs(customExtensionsData);
-			propertyChangeSupport.firePropertyChange("customCssExtensions", customExtensions, customExtensions = uris);
+			this.propertyChangeSupport.firePropertyChange("customCssExtensions", this.customExtensions, this.customExtensions = uris); //$NON-NLS-1$
 		}
 		else {
-			propertyChangeSupport.firePropertyChange("customCssExtensions", customExtensions, customExtensions = new ArrayList<>());
+			this.propertyChangeSupport.firePropertyChange("customCssExtensions", this.customExtensions, this.customExtensions = new ArrayList<>()); //$NON-NLS-1$
 		}
 		
-		getLogger().debug("load done");
-		getLogger().debug("disabled: " + disabledExtensions);
-		getLogger().debug("custom: " + customExtensions);
+		getLogger().debug("load done"); //$NON-NLS-1$
+		getLogger().debug("disabled: " + this.disabledExtensions); //$NON-NLS-1$
+		getLogger().debug("custom: " + this.customExtensions); //$NON-NLS-1$
 	}
 	
 	protected IProject findProject() {
@@ -183,8 +178,8 @@ public abstract class ACssResource implements ICssResource {
 	private ICssResource findParent() {
 		ICssResource parent = null;
 		
-		getLogger().debug(adaptedObject +  " searching parent for " + adaptedObject + " " + adaptedObject.getClass().getName());
-		IContainer container = adaptedObject.getParent();
+		getLogger().debug(this.adaptedObject +  " searching parent for " + this.adaptedObject + " " + this.adaptedObject.getClass().getName()); //$NON-NLS-1$ //$NON-NLS-2$
+		IContainer container = this.adaptedObject.getParent();
 		parent = (ICssResource) Platform.getAdapterManager().getAdapter(container, ICssResource.class);
 		
 //		if (adaptedObject instanceof IPackageFragment) {
@@ -215,7 +210,7 @@ public abstract class ACssResource implements ICssResource {
 //			parent = (ICssResource) Platform.getAdapterManager().getAdapter(parent2, ICssResource.class);
 //		}
 		
-		getLogger().debug(adaptedObject + " => returning parent " + parent);
+		getLogger().debug(this.adaptedObject + " => returning parent " + parent); //$NON-NLS-1$
 		return parent;
 	}
 	
@@ -265,7 +260,7 @@ public abstract class ACssResource implements ICssResource {
 	
 	@Override
 	public List<URI> getAllEnabledExtensions() {
-		getLogger().trace("getAllEnabledExtensions()");
+		getLogger().trace("getAllEnabledExtensions()"); //$NON-NLS-1$
 		List<URI> allEnabled = new ArrayList<>();
 		
 		ICssResource parentResource = getParentResource();
@@ -274,7 +269,7 @@ public abstract class ACssResource implements ICssResource {
 		}
 		allEnabled.addAll(getClasspathExtensions());
 		
-		if (useCustom) {
+		if (this.useCustom) {
 			allEnabled.addAll(getCustomExtensions());
 			allEnabled.removeAll(getDisabledExtensions());
 		}
@@ -283,24 +278,23 @@ public abstract class ACssResource implements ICssResource {
 	}
 	
 	private CssExtension load(URI uri, boolean linkAll) {
-		System.err.println("LOADING " + uri);
-		Resource resource = rs.getResource(uri, true);
+		Resource resource = this.rs.getResource(uri, true);
 		if (linkAll) {
-			System.err.println("(re)linking all");
-			for (Resource r : rs.getResources()) {
-				System.err.println(" * " + r);
+//			System.err.println("(re)linking all");
+			for (Resource r : this.rs.getResources()) {
+//				System.err.println(" * " + r);
 				EcoreUtil2.resolveLazyCrossReferences(r, CancelIndicator.NullImpl);
 				for (Resource.Diagnostic d : r.getErrors()) {
 					if (d instanceof XtextLinkingDiagnostic) {
 						XtextLinkingDiagnostic x = (XtextLinkingDiagnostic) d;
-						System.err.println( "  x " + x.getMessage());
+//						System.err.println( "  x " + x.getMessage());
 					}
 				}
 			}
 		}
 		
-		IResourceDescription desc = manager.getResourceDescription(resource);
-		System.err.println("description uri: " + desc.getURI());
+		IResourceDescription desc = this.manager.getResourceDescription(resource);
+//		System.err.println("description uri: " + desc.getURI()); //$NON-NLS-1$
 		
 		return (CssExtension) resource.getContents().get(0);
 	}
@@ -337,10 +331,10 @@ public abstract class ACssResource implements ICssResource {
 //		load(p2Uri, false);
 //		
 //		return result;
-		if (cachedExtensionHolder == null) {
-			cachedExtensionHolder = new ExtensionHolder(findProject(), context, getAllEnabledExtensions());
+		if (this.cachedExtensionHolder == null) {
+			this.cachedExtensionHolder = new ExtensionHolder(findProject(), context, this);
 		}
-		return new HashSet<>(cachedExtensionHolder.getModels());
+		return new HashSet<>(this.cachedExtensionHolder.getModels());
 		
 //		return getAllEnabledExtensions().stream().map((uri)-> getRegistry().getExtension(uri).getModel()).collect(Collectors.toSet());
 	}
@@ -356,12 +350,12 @@ public abstract class ACssResource implements ICssResource {
 
 	@Override
 	public List<URI> getDisabledExtensions() {
-		return Collections.unmodifiableList(disabledExtensions);
+		return Collections.unmodifiableList(this.disabledExtensions);
 	}
 
 	@Override
 	public List<URI> getCustomExtensions() {
-		return Collections.unmodifiableList(customExtensions);
+		return Collections.unmodifiableList(this.customExtensions);
 	}
 	
 	@Override
@@ -399,31 +393,31 @@ public abstract class ACssResource implements ICssResource {
 
 	@Override
 	public void addDisabledExtension(URI uri) {
-		disabledExtensions.add(uri);
+		this.disabledExtensions.add(uri);
 	}
 	
 	@Override
 	public void removeDisabledExtension(URI uri) {
-		disabledExtensions.remove(uri);
+		this.disabledExtensions.remove(uri);
 	}
 	
 	@Override
 	public void addCustomExtension(URI uri) {
-		customExtensions.add(uri);
+		this.customExtensions.add(uri);
 	}
 	
 	@Override
 	public void removeCustomExtension(URI uri) {
-		customExtensions.remove(uri);
+		this.customExtensions.remove(uri);
 	}
 	
 	@Override
 	public void clearCustomExtensions() {
-		customExtensions.clear();
+		this.customExtensions.clear();
 	}
 	
 	@Override
 	public void clearDisabledExtensions() {
-		disabledExtensions.clear();
+		this.disabledExtensions.clear();
 	}
 }
