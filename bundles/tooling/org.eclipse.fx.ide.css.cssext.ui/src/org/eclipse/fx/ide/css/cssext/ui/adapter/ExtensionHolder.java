@@ -65,9 +65,16 @@ public class ExtensionHolder {
     	
     	final ResourceSet resourceSet = getResourceSet(context);
     	
-    	for (final URI uri : extensionURIs) {
-    		final Resource resource = resourceSet.getResource(uri, true);
-    		result.add((CssExtension) resource.getContents().get(0));
+    	URI processedURI = null;
+    	try {
+    		
+        	for (final URI uri : extensionURIs) {
+        		processedURI = uri;
+        		final Resource resource = resourceSet.getResource(uri, true);
+        		result.add((CssExtension) resource.getContents().get(0));
+        	}    		
+    	} catch( Throwable t ) {
+    		throw new IllegalStateException("Unable to find CSSExtension in " + processedURI, t);
     	}
     	return result;
     }
