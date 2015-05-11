@@ -20,7 +20,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
  * An implementation of the model object '<em><b>Static Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * <p>
  * The following features are implemented:
  * </p>
  * <ul>

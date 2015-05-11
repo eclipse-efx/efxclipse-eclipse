@@ -16,7 +16,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ScriptValueExpression;
  * An implementation of the model object '<em><b>Script Value Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * <p>
  * The following features are implemented:
  * </p>
  * <ul>

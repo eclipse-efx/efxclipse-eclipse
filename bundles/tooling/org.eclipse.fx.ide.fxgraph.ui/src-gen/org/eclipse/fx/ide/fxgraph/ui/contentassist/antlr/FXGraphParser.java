@@ -122,7 +122,8 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementAccess().getGroup_1_1_2_1(), "rule__Element__Group_1_1_2_1__0");
 					put(grammarAccess.getElementAccess().getGroup_1_2(), "rule__Element__Group_1_2__0");
 					put(grammarAccess.getElementAccess().getGroup_1_2_0(), "rule__Element__Group_1_2_0__0");
-					put(grammarAccess.getElementAccess().getGroup_1_2_5(), "rule__Element__Group_1_2_5__0");
+					put(grammarAccess.getElementAccess().getGroup_1_2_3(), "rule__Element__Group_1_2_3__0");
+					put(grammarAccess.getElementAccess().getGroup_1_2_3_2(), "rule__Element__Group_1_2_3_2__0");
 					put(grammarAccess.getDefineAccess().getGroup(), "rule__Define__Group__0");
 					put(grammarAccess.getScriptAccess().getGroup(), "rule__Script__Group__0");
 					put(grammarAccess.getStaticCallValuePropertyAccess().getGroup(), "rule__StaticCallValueProperty__Group__0");
@@ -361,8 +362,8 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_1_1_3(), "rule__Element__DefaultChildrenAssignment_1_1_2_1_1_3");
 					put(grammarAccess.getElementAccess().getNameAssignment_1_2_0_1(), "rule__Element__NameAssignment_1_2_0_1");
 					put(grammarAccess.getElementAccess().getFactoryAssignment_1_2_2(), "rule__Element__FactoryAssignment_1_2_2");
-					put(grammarAccess.getElementAccess().getValuesAssignment_1_2_4(), "rule__Element__ValuesAssignment_1_2_4");
-					put(grammarAccess.getElementAccess().getValuesAssignment_1_2_5_1(), "rule__Element__ValuesAssignment_1_2_5_1");
+					put(grammarAccess.getElementAccess().getValuesAssignment_1_2_3_1(), "rule__Element__ValuesAssignment_1_2_3_1");
+					put(grammarAccess.getElementAccess().getValuesAssignment_1_2_3_2_1(), "rule__Element__ValuesAssignment_1_2_3_2_1");
 					put(grammarAccess.getDefineAccess().getElementAssignment_1_0(), "rule__Define__ElementAssignment_1_0");
 					put(grammarAccess.getDefineAccess().getIncludeElementAssignment_1_1(), "rule__Define__IncludeElementAssignment_1_1");
 					put(grammarAccess.getScriptAccess().getLanguageAssignment_1(), "rule__Script__LanguageAssignment_1");

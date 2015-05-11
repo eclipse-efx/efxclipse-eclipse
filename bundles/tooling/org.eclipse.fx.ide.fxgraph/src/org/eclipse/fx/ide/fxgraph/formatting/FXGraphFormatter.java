@@ -56,10 +56,11 @@ public class FXGraphFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1, 2, 3).before(f.getStaticCallValuePropertyRule());
 		
 		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getLeftCurlyBracketKeyword_1_1_1());
-		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getLeftCurlyBracketKeyword_1_2_3());
+		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getLeftCurlyBracketKeyword_1_2_3_0());
 		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_1_1_3());
-		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_1_2_6());
-		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getCommaKeyword_1_2_5_0());
+		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_1_2_3_3());
+		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getCommaKeyword_1_1_2_1_0());
+		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getCommaKeyword_1_2_3_2_0());
 		
 		c.setLinewrap(1, 2, 3).after(f.getListValuePropertyAccess().getLeftSquareBracketKeyword_0());
 		c.setLinewrap(1, 2, 3).after(f.getListValuePropertyAccess().getCommaKeyword_2_0());

@@ -956,14 +956,14 @@ ruleElement returns [EObject current=null]
 	    }
 
 )
-)	otherlv_23='{' 
+)(	otherlv_23='{' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getElementAccess().getLeftCurlyBracketKeyword_1_2_3());
+    	newLeafNode(otherlv_23, grammarAccess.getElementAccess().getLeftCurlyBracketKeyword_1_2_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_4_0()); 
+	        newCompositeNode(grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_3_1_0()); 
 	    }
 		lv_values_24_0=ruleFactoryValueElement		{
 	        if ($current==null) {
@@ -980,12 +980,12 @@ ruleElement returns [EObject current=null]
 )
 )(	otherlv_25=',' 
     {
-    	newLeafNode(otherlv_25, grammarAccess.getElementAccess().getCommaKeyword_1_2_5_0());
+    	newLeafNode(otherlv_25, grammarAccess.getElementAccess().getCommaKeyword_1_2_3_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_5_1_0()); 
+	        newCompositeNode(grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_3_2_1_0()); 
 	    }
 		lv_values_26_0=ruleFactoryValueElement		{
 	        if ($current==null) {
@@ -1002,9 +1002,9 @@ ruleElement returns [EObject current=null]
 )
 ))*	otherlv_27='}' 
     {
-    	newLeafNode(otherlv_27, grammarAccess.getElementAccess().getRightCurlyBracketKeyword_1_2_6());
+    	newLeafNode(otherlv_27, grammarAccess.getElementAccess().getRightCurlyBracketKeyword_1_2_3_3());
     }
-)))
+)?)))
 ;
 
 

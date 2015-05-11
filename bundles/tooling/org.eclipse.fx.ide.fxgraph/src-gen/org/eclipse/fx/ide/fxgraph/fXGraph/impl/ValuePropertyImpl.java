@@ -13,7 +13,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ValueProperty;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Value Property</b></em>'.
  * <!-- end-user-doc -->
- * <p>
  *
  * @generated
  */

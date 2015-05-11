@@ -13,7 +13,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ListValueElement;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>List Value Element</b></em>'.
  * <!-- end-user-doc -->
- * <p>
  *
  * @generated
  */

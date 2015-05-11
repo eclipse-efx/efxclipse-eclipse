@@ -46,7 +46,7 @@ ComponentDefinition:
 Element:
 	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'
 		((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element ))*)?
-	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID '{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}' ) )
+	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID ('{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}')? ) )
 ;
 
 Define:

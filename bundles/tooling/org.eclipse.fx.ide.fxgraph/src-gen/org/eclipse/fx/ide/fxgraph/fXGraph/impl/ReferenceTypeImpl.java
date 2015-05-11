@@ -13,7 +13,6 @@ import org.eclipse.fx.ide.fxgraph.fXGraph.ReferenceType;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Reference Type</b></em>'.
  * <!-- end-user-doc -->
- * <p>
  *
  * @generated
  */
