@@ -109,7 +109,7 @@ class NLSDslGenerator implements IGenerator {
 				«IF me.paramList.empty»
 					return this::«me.name»;
 				«ELSE»
-					return «me.name»_supplier(«me.paramList.map[p| "(" +p.predefined.toSourceString + ") object["+me.paramList+"]"].join(", ")»);
+					return «me.name»_supplier(«me.paramList.map[p| "(" +p.predefined.toSourceString + ") values["+me.paramList.indexOf(p)+"]"].join(", ")»);
 				«ENDIF»
 			}
 			«ENDFOR»
