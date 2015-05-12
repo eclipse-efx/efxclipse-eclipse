@@ -102,6 +102,20 @@ class NLSDslGenerator implements IGenerator {
 			super.updateMessages(messages);
 		}
 
+		public java.util.function.Supplier<String> getSupplierByKey(String key, Object... values) {
+			«FOR me : nls.messageEntryList»
+			switch(key) {
+				case «me.name»:
+				«IF me.paramList.empty»
+					return this::«me.name»;
+				«ELSE»
+					return «me.name»_supplier(«me.paramList.map[p| "(" +p.predefined.toSourceString + ") object["+me.paramList+"]"].join(", ")»)
+				«ENDIF»
+			}
+			«ENDFOR»
+			throw new IllegalArgumentException("Key '"+key+"' is unknown");
+		}
+
 		«FOR me : nls.messageEntryList»
 			public String «me.name»() {
 				«IF me.entryRef != null»
