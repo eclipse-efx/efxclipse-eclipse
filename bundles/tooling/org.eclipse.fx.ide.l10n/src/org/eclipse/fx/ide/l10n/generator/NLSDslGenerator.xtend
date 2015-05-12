@@ -105,7 +105,7 @@ class NLSDslGenerator implements IGenerator {
 		public java.util.function.Supplier<String> getSupplierByKey(String key, Object... values) {
 			«FOR me : nls.messageEntryList»
 			switch(key) {
-				case «me.name»:
+				case "«me.name»":
 				«IF me.paramList.empty»
 					return this::«me.name»;
 				«ELSE»
