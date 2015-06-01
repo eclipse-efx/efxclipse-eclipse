@@ -16,35 +16,7 @@ RobotTask {
 				bundlename = "My Media app"
 				vendor = "${BundleProject_bundleVendor}"
 				importedPackages = {
-					"javax.inject" 				[1.0.0,],
-					"javax.annotation" 			[1.0.0,],
-					"javafx.animation" 			[2.0.0,],
-					"javafx.application" 		[2.0.0,],
-					"javafx.beans" 				[2.0.0,],
-					"javafx.beans.binding" 		[2.0.0,],
-					"javafx.beans.property" 	[2.0.0,],
-					"javafx.beans.value" 		[2.0.0,],
-					"javafx.collections" 		[2.0.0,],
-					"javafx.concurrent" 		[2.0.0,],
-					"javafx.event" 				[2.0.0,],
-					"javafx.fxml" 				[2.0.0,],
-					"javafx.geometry" 			[2.0.0,],
-					"javafx.scene" 				[2.0.0,],
-					"javafx.scene.chart" 		[2.0.0,],
-					"javafx.scene.control" 		[2.0.0,],
-					"javafx.scene.control.cell" [2.0.0,],
-					"javafx.scene.effect" 		[2.0.0,],
-					"javafx.scene.image" 		[2.0.0,],
-					"javafx.scene.input" 		[2.0.0,],
-					"javafx.scene.layout" 		[2.0.0,],
-					"javafx.scene.media" 		[2.0.0,],
-					"javafx.scene.paint" 		[2.0.0,],
-					"javafx.scene.shape" 		[2.0.0,],
-					"javafx.scene.text" 		[2.0.0,],
-					"javafx.scene.transform" 	[2.0.0,],
-					"javafx.scene.web" 			[2.0.0,],
-					"javafx.stage"	 			[2.0.0,],
-					"javafx.util" 				[2.0.0,]
+					"javax.inject" 				[1.0.0,]
 				}
 				// Required bundles of the project
 				requiredBundles = {
@@ -333,7 +305,7 @@ RobotTask {
 					application = "org.eclipse.fx.ui.workbench.fx.application"
 					version = "1.0.0"
 					programArgs = "-nosplash"
-					vmArgs = "-Dosgi.framework.extensions=org.eclipse.fx.osgi"
+					vmArgs = "-Dorg.osgi.framework.bundle.parent=ext"
 					startconfigurations = {
 						"org.eclipse.core.runtime" 		autostarted at  0,
 						"org.eclipse.equinox.common" 	autostarted at  2, 
@@ -351,7 +323,9 @@ RobotTask {
 						## Project name
 						STRING "projectName" default "${BundleProject_bundleId}.product",
 						## Launch feature
-						STRING "feature" default "${BundleProject_projectName}.feature"
+						STRING "feature" default "${BundleProject_projectName}.feature, org.eclipse.fx.runtime.e4fx.feature",
+						## Classloader strategy
+						STRING "classloaderStrategy" default "ext"
 					}		
 			}
 		}
