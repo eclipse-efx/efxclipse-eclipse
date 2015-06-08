@@ -6,7 +6,7 @@
       <wizard
             category="org.eclipse.fx.ide/org.eclipse.fx.ide.samples"
             class="org.eclipse.fx.ide.pde.ui.e4.project.media.NewMediaProjectWizard"
-            icon="platform:/plugin/org.eclipse.pde.ui/icons/etool16/newpprj_wiz.gif"
+            icon="platform:/plugin/org.eclipse.pde.ui/icons/etool16/newpprj_wiz.png"
             id="org.eclipse.fx.ide.pde.e4.media.app"
             name="e4 Media Application"
             project="true">
@@ -19,7 +19,7 @@
       <wizard
             category="org.eclipse.fx.ide/org.eclipse.fx.ide.pde.ui.osgi"
             class="org.eclipse.fx.ide.pde.ui.e4.project.boot.NewProjectStructureWizard"
-            icon="platform:/plugin/org.eclipse.pde.ui/icons/etool16/newpprj_wiz.gif"
+            icon="platform:/plugin/org.eclipse.pde.ui/icons/etool16/newpprj_wiz.png"
             id="org.eclipse.fx.ide.pde.ui.e4.maven.app"
             name="e4 Application projects"
             project="true">
