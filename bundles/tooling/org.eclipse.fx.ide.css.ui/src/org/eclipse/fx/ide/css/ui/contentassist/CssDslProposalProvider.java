@@ -36,6 +36,8 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.ui.editor.contentassist.ReplacementTextApplier;
 import org.eclipse.xtext.ui.editor.hover.DispatchingEObjectTextHover;
+import org.eclipse.fx.core.log.Logger;
+import org.eclipse.fx.core.log.LoggerCreator;
 import org.eclipse.fx.ide.css.cssDsl.CssDslFactory;
 import org.eclipse.fx.ide.css.cssDsl.CssTok;
 import org.eclipse.fx.ide.css.cssDsl.css_declaration;
@@ -65,6 +67,8 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 
 	@Inject
 	private ILabelProvider labelProvider;
+	
+	private static Logger LOGGER = LoggerCreator.createLogger(CssDslProposalProvider.class); 
 
 
 	private void acceptProposals(List<Proposal> proposals, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -125,7 +129,6 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 								Pattern spaces = Pattern.compile("(.*)[ ]+$");
 								Matcher m = spaces.matcher(beforeChars);
 								if (m.matches()) {
-									System.err.println("REDUCE!! " + m.end(1));
 									offset = amount - m.end(1);
 								}
 								return offset;
@@ -158,7 +161,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 					acceptor.accept(cp);
 				}
 				else {
-					System.err.println("cound not create proposal for " + p);
+					LOGGER.debug("cound not create proposal for " + p); //$NON-NLS-1$
 				}
 			}
 		}
@@ -189,12 +192,10 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	}
 
 	public void complete_CssTok(css_declaration model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		System.err.println("A DECLARATION!!!!");
 		if( model.eContainer() instanceof font_face ) {
 			return;
 		}
 
-//		System.err.println("complete_CssTok prefixTok=" + findPrefixTokens(context) + "prefixString=" + context.getPrefix());
 		final List<Proposal> proposals = cssExt.getValueProposalsForProperty(Utils.getFile(model.eResource()),model,findSelectors(model), model.getProperty(), findPrefixTokens(context), context.getPrefix());
 
 		acceptProposals(proposals, context, acceptor);
