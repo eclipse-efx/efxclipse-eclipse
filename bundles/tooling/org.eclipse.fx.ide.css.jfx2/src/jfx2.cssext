@@ -839,7 +839,7 @@ package javafx {
 	package scene {
 		blend-mode = [ add | blue | color-burn | color-dodge | darken | difference | exclusion | green | hard-light | lighten | multiply | overlay | red | screen | soft-light | src-atop | src-in | src-out | src-over ];
 		cursor = [ null | crosshair | default | hand | move | e-resize | h-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | v-resize | text | wait ] | <uri>;
-		visibility = [ visible | hidden | collapse | inherit ];
+		visibility-rule = [ visible | hidden | collapse | inherit ];
 		
 		/**
 		 * Base class for scene graph nodes. A scene graph is a set of tree data structures
@@ -901,7 +901,7 @@ package javafx {
      		 * transform.
 			 */
 			-fx-translate-z @NUM default: 0;
-			visibility <visibility> default: visible;
+			visibility <visibility-rule> default: visible;
 			
 			/**
 			 * applies when the disabled variable is true
