@@ -14,10 +14,10 @@ import java.io.InputStream;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.fx.core.log.LoggerCreator;
 import org.eclipse.fx.formats.svg.converter.FXMLConverter;
 import org.eclipse.fx.formats.svg.handler.XMLLoader;
 import org.eclipse.fx.formats.svg.svg.SvgSvgElement;
-import org.eclipse.fx.osgi.util.LoggerCreator;
 import org.eclipse.jdt.annotation.NonNull;
 
 /**

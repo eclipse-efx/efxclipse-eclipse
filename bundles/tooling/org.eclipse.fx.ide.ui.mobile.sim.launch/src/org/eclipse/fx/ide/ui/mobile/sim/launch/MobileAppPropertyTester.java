@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.fx.core.log.Logger;
-import org.eclipse.fx.osgi.util.LoggerCreator;
+import org.eclipse.fx.core.log.LoggerCreator;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;

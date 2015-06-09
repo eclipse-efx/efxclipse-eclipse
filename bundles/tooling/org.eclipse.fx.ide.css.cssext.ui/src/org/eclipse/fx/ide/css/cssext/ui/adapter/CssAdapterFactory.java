@@ -9,7 +9,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.fx.core.log.Logger;
-import org.eclipse.fx.osgi.util.LoggerCreator;
+import org.eclipse.fx.core.log.LoggerCreator;
 
 public class CssAdapterFactory implements IAdapterFactory {
 

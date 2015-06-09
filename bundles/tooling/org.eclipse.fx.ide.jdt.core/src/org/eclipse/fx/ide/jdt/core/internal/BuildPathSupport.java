@@ -18,7 +18,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.fx.core.log.Logger;
-import org.eclipse.fx.osgi.util.LoggerCreator;
+import org.eclipse.fx.core.log.LoggerCreator;
 import org.eclipse.jdt.core.IAccessRule;
 import org.eclipse.jdt.core.IClasspathAttribute;
 import org.eclipse.jdt.core.IClasspathEntry;

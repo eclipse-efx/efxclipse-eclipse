@@ -1,13 +1,12 @@
 package org.eclipse.fx.ide.jdt.core.internal;
 
 import java.io.File;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.fx.core.log.Logger;
-import org.eclipse.fx.osgi.util.LoggerCreator;
+import org.eclipse.fx.core.log.LoggerCreator;
 import org.eclipse.jdt.launching.ILibraryLocationResolver;
 
 public class FXLibraryLocationResolver implements ILibraryLocationResolver {

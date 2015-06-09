@@ -23,7 +23,7 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.fx.core.log.Logger;
-import org.eclipse.fx.osgi.util.LoggerCreator;
+import org.eclipse.fx.core.log.LoggerCreator;
 import org.eclipse.jdt.core.ElementChangedEvent;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IElementChangedListener;
