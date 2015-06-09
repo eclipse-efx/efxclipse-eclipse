@@ -18,11 +18,11 @@ import org.eclipse.fx.ide.l10n.nLSDsl.NLSFormatter;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSFormatterImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSFormatterImpl#getClassRef <em>Class Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -13,8 +13,6 @@ import org.eclipse.fx.ide.css.cssDsl.keyframes;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>keyframes</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

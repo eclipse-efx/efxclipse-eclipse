@@ -18,10 +18,10 @@ import org.eclipse.fx.ide.l10n.nLSDsl.RichStringLiteralInbetween;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.RichStringLiteralInbetweenImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

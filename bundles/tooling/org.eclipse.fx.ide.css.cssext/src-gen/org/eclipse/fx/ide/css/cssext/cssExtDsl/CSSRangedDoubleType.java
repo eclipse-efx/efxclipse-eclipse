@@ -10,11 +10,11 @@ package org.eclipse.fx.ide.css.cssext.cssExtDsl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRangedDoubleType#getFrom <em>From</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRangedDoubleType#getTo <em>To</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage#getCSSRangedDoubleType()
  * @model

@@ -18,11 +18,11 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureSelector;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureSelectorImpl#getSelectorName <em>Selector Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureSelectorImpl#getVar <em>Var</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

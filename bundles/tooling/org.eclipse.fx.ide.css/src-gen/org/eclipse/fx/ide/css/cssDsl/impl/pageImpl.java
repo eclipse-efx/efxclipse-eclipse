@@ -28,11 +28,11 @@ import org.eclipse.fx.ide.css.cssDsl.page;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.pageImpl#getPseudoPage <em>Pseudo Page</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.pageImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.MessageEntry#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.MessageEntry#getParamList <em>Param List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.MessageEntry#getMessageList <em>Message List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.MessageEntry#getEntryRef <em>Entry Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.l10n.nLSDsl.NLSDslPackage#getMessageEntry()
  * @model

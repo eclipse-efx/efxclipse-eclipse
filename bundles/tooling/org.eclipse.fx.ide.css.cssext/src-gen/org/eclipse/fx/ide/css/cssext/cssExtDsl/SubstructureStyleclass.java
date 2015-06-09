@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass#getDoku <em>Doku</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass#getElement <em>Element</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass#getChilds <em>Childs</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage#getSubstructureStyleclass()
  * @model

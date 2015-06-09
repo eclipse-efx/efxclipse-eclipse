@@ -17,10 +17,10 @@ import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.ColorTokImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -17,10 +17,10 @@ import org.eclipse.fx.ide.css.cssDsl.SymbolTok;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.SymbolTokImpl#getSymbol <em>Symbol</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

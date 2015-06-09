@@ -28,11 +28,11 @@ import org.eclipse.fx.ide.css.cssDsl.ruleset;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.mediaImpl#getMedialist <em>Medialist</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.mediaImpl#getRulesets <em>Rulesets</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

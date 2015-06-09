@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSDefaultValue#getVal <em>Val</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSDefaultValue#getIval <em>Ival</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSDefaultValue#getDval <em>Dval</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSDefaultValue#getSval <em>Sval</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage#getCSSDefaultValue()
  * @model

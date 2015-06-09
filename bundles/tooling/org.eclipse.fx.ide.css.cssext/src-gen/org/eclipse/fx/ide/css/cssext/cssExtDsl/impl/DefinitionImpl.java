@@ -22,12 +22,12 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.Doku;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.DefinitionImpl#getDoku <em>Doku</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.DefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.DefinitionImpl#getRule <em>Rule</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

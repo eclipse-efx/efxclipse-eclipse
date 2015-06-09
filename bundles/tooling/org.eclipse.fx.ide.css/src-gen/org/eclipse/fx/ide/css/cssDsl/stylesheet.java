@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getCharset <em>Charset</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getImports <em>Imports</em>}</li>
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getFont_face <em>Font face</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.stylesheet#getKeyframes <em>Keyframes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getstylesheet()
  * @model

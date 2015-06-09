@@ -29,11 +29,11 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.PackageDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CssExtensionImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CssExtensionImpl#getPackageDef <em>Package Def</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

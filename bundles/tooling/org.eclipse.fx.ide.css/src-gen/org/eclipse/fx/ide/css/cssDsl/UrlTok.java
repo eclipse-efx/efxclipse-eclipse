@@ -10,10 +10,10 @@ package org.eclipse.fx.ide.css.cssDsl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.UrlTok#getUrl <em>Url</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getUrlTok()
  * @model

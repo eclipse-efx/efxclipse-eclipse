@@ -29,11 +29,11 @@ import org.eclipse.fx.ide.l10n.nLSDsl.PackageDeclaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSImpl#getBundleList <em>Bundle List</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

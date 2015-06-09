@@ -13,8 +13,6 @@ import org.eclipse.fx.ide.css.cssDsl.CssSelector;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Css Selector</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

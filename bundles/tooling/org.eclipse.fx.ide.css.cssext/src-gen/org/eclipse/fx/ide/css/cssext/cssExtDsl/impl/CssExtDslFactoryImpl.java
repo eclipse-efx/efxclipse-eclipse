@@ -30,7 +30,7 @@ public class CssExtDslFactoryImpl extends EFactoryImpl implements CssExtDslFacto
   {
     try
     {
-      CssExtDslFactory theCssExtDslFactory = (CssExtDslFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/efxclipse/ide/css/cssext/CssExtDsl"); 
+      CssExtDslFactory theCssExtDslFactory = (CssExtDslFactory)EPackage.Registry.INSTANCE.getEFactory(CssExtDslPackage.eNS_URI);
       if (theCssExtDslFactory != null)
       {
         return theCssExtDslFactory;

@@ -27,11 +27,11 @@ import org.eclipse.fx.ide.css.cssDsl.selector;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.rulesetImpl#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.rulesetImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

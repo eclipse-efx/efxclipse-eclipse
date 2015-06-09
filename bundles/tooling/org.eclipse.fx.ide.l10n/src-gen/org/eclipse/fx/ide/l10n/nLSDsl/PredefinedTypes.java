@@ -146,6 +146,8 @@ public enum PredefinedTypes implements Enumerator
    * Returns the '<em><b>Predefined Types</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @param literal the literal.
+   * @return the matching enumerator or <code>null</code>.
    * @generated
    */
   public static PredefinedTypes get(String literal)
@@ -165,6 +167,8 @@ public enum PredefinedTypes implements Enumerator
    * Returns the '<em><b>Predefined Types</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @param name the name.
+   * @return the matching enumerator or <code>null</code>.
    * @generated
    */
   public static PredefinedTypes getByName(String name)
@@ -184,6 +188,8 @@ public enum PredefinedTypes implements Enumerator
    * Returns the '<em><b>Predefined Types</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @param value the integer value.
+   * @return the matching enumerator or <code>null</code>.
    * @generated
    */
   public static PredefinedTypes get(int value)

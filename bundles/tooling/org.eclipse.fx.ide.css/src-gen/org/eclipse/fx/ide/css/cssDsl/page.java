@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.page#getPseudoPage <em>Pseudo Page</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.page#getDeclarations <em>Declarations</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getpage()
  * @model

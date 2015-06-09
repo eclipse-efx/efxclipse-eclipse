@@ -17,11 +17,11 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CSSRangedDoubleTypeImpl#getFrom <em>From</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CSSRangedDoubleTypeImpl#getTo <em>To</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -21,13 +21,13 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CSSDefaultValueImpl#getVal <em>Val</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CSSDefaultValueImpl#getIval <em>Ival</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CSSDefaultValueImpl#getDval <em>Dval</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.CSSDefaultValueImpl#getSval <em>Sval</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

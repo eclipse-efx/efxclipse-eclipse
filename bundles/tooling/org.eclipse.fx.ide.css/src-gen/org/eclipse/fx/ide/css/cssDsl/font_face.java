@@ -11,12 +11,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.font_face#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.font_face#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.font_face#getKeyframeselectors <em>Keyframeselectors</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getfont_face()
  * @model

@@ -10,11 +10,11 @@ package org.eclipse.fx.ide.css.cssDsl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.URLType#getMediaList <em>Media List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.URLType#getUrl <em>Url</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getURLType()
  * @model

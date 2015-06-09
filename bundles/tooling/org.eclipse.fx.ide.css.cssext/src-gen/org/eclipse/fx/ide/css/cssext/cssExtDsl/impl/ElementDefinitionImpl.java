@@ -32,6 +32,7 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.Substructure;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.ElementDefinitionImpl#getDoku <em>Doku</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.ElementDefinitionImpl#getName <em>Name</em>}</li>
@@ -41,7 +42,6 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.Substructure;
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.ElementDefinitionImpl#getPseudoClasses <em>Pseudo Classes</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.ElementDefinitionImpl#getSubstructures <em>Substructures</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

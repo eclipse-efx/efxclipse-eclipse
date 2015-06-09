@@ -18,10 +18,10 @@ import org.eclipse.fx.ide.l10n.nLSDsl.PackageDeclaration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.PackageDeclarationImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

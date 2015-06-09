@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.simple_selector#getElement <em>Element</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.simple_selector#getUniversal <em>Universal</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.simple_selector#getSubSelectors <em>Sub Selectors</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getsimple_selector()
  * @model

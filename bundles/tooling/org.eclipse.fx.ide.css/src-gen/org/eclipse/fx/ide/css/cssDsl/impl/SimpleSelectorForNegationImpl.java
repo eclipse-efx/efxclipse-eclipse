@@ -30,12 +30,12 @@ import org.eclipse.fx.ide.css.cssDsl.UniversalSelector;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.SimpleSelectorForNegationImpl#getElement <em>Element</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.SimpleSelectorForNegationImpl#getUniversal <em>Universal</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.SimpleSelectorForNegationImpl#getSubSelectors <em>Sub Selectors</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

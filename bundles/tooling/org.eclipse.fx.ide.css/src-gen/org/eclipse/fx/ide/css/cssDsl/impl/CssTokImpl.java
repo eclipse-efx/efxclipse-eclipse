@@ -13,8 +13,6 @@ import org.eclipse.fx.ide.css.cssDsl.CssTok;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Css Tok</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

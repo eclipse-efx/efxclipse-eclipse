@@ -28,12 +28,12 @@ import org.eclipse.fx.ide.css.cssDsl.keyframe_selector;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.font_faceImpl#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.font_faceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.font_faceImpl#getKeyframeselectors <em>Keyframeselectors</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -29,12 +29,12 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureImpl#getDoku <em>Doku</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureImpl#getChilds <em>Childs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

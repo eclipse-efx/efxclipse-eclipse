@@ -13,8 +13,6 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>CSS Rule</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

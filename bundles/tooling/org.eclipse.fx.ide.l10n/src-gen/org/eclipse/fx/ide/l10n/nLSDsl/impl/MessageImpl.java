@@ -21,11 +21,11 @@ import org.eclipse.fx.ide.l10n.nLSDsl.RichString;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.MessageImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.MessageImpl#getMessage <em>Message</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

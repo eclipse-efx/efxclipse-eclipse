@@ -10,10 +10,10 @@ package org.eclipse.fx.ide.css.cssext.cssExtDsl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleDefinition#getFunc <em>Func</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage#getCSSRuleDefinition()
  * @model

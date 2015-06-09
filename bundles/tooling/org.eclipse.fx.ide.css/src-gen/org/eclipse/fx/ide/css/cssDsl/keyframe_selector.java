@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getType <em>Type</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getPercentage <em>Percentage</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.keyframe_selector#getDeclarations <em>Declarations</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getkeyframe_selector()
  * @model

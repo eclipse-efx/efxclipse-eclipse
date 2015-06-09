@@ -17,10 +17,10 @@ import org.eclipse.fx.ide.css.cssDsl.IdentifierTok;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.IdentifierTokImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

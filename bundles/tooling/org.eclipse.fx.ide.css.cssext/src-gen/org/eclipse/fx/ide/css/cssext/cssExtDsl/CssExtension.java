@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension#getImports <em>Imports</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension#getPackageDef <em>Package Def</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage#getCssExtension()
  * @model

@@ -10,12 +10,12 @@ package org.eclipse.fx.ide.css.cssDsl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.AttributeSelector#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.AttributeSelector#getOp <em>Op</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.AttributeSelector#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getAttributeSelector()
  * @model

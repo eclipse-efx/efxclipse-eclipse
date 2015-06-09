@@ -11,13 +11,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.PseudoClassFunction#isNot <em>Not</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.PseudoClassFunction#getParamSelector <em>Param Selector</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.PseudoClassFunction#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.PseudoClassFunction#getParams <em>Params</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getPseudoClassFunction()
  * @model

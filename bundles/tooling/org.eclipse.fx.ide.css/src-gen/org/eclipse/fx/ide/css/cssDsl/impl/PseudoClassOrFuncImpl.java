@@ -11,8 +11,6 @@ import org.eclipse.fx.ide.css.cssDsl.PseudoClassOrFunc;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Pseudo Class Or Func</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

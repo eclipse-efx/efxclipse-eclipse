@@ -30,6 +30,7 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.PackageDefinition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.PackageDefinitionImpl#getDoku <em>Doku</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.PackageDefinitionImpl#getName <em>Name</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.PackageDefinition;
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.PackageDefinitionImpl#getSubpackages <em>Subpackages</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.PackageDefinitionImpl#getElements <em>Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

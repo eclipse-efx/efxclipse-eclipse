@@ -29,13 +29,13 @@ import org.eclipse.fx.ide.l10n.nLSDsl.NLSDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.MessageEntryImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.MessageEntryImpl#getParamList <em>Param List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.MessageEntryImpl#getMessageList <em>Message List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.MessageEntryImpl#getEntryRef <em>Entry Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

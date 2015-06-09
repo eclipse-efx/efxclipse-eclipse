@@ -17,11 +17,11 @@ import org.eclipse.fx.ide.css.cssDsl.URLType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.URLTypeImpl#getMediaList <em>Media List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.URLTypeImpl#getUrl <em>Url</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

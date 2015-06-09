@@ -12,48 +12,48 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalCssExtDslLexer extends Lexer {
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_REGEX=10;
     public static final int T__19=19;
-    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int RULE_INT=7;
+    public static final int T__18=18;
+    public static final int RULE_ID=4;
     public static final int RULE_PSEUDO=9;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__44=44;
-    public static final int RULE_SL_COMMENT=13;
-    public static final int RULE_DOUBLE=8;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=7;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=12;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int RULE_REGEX=10;
     public static final int RULE_STRING=11;
+    public static final int RULE_SL_COMMENT=13;
+    public static final int T__37=37;
+    public static final int RULE_DOUBLE=8;
+    public static final int T__38=38;
+    public static final int RULE_JDOC=6;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int RULE_JDOC=6;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=5;
+    public static final int RULE_ANY_OTHER=14;
+    public static final int T__44=44;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -1214,10 +1214,10 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1235,10 +1235,10 @@ public class InternalCssExtDslLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -1254,23 +1254,15 @@ public class InternalCssExtDslLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1295,10 +1287,10 @@ public class InternalCssExtDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -1314,23 +1306,15 @@ public class InternalCssExtDslLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipse.fx.ide.css.cssext.ui/src-gen/org/eclipse/fx/ide/css/cssext/ui/contentassist/antlr/internal/InternalCssExtDsl.g:7772:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1745,48 +1729,19 @@ public class InternalCssExtDslLexer extends Lexer {
 
     protected DFA17 dfa17 = new DFA17(this);
     static final String DFA17_eotS =
-        "\6\uffff\1\51\1\52\1\51\3\uffff\1\51\1\uffff\2\51\1\uffff\1\51\3"+
-        "\uffff\1\74\3\uffff\2\42\1\uffff\1\42\1\107\3\42\7\uffff\1\51\3"+
-        "\uffff\1\51\4\uffff\1\51\1\uffff\3\51\1\uffff\1\51\20\uffff\1\107"+
-        "\3\uffff\6\51\2\uffff\14\51\1\146\5\51\1\uffff\1\154\1\155\3\51"+
-        "\2\uffff\2\51\1\uffff\2\51\1\165\1\51\1\uffff\1\51\1\170\1\uffff";
+        "\6\uffff\1\51\1\52\1\51\3\uffff\1\51\1\uffff\2\51\1\uffff\1\51\3\uffff\1\74\3\uffff\2\42\1\uffff\1\42\1\110\3\42\7\uffff\1\51\3\uffff\1\51\4\uffff\1\51\1\uffff\3\51\1\uffff\1\51\17\uffff\1\110\4\uffff\6\51\2\uffff\14\51\1\146\5\51\1\uffff\1\154\1\155\3\51\2\uffff\2\51\1\uffff\2\51\1\165\1\51\1\uffff\1\51\1\170\1\uffff";
     static final String DFA17_eofS =
         "\171\uffff";
     static final String DFA17_minS =
-        "\1\0\5\uffff\1\155\1\60\1\141\3\uffff\1\56\1\uffff\1\170\1\164\1"+
-        "\uffff\1\145\3\uffff\1\174\3\uffff\1\111\1\0\1\uffff\1\52\1\56\1"+
-        "\41\2\0\7\uffff\1\160\3\uffff\1\143\4\uffff\1\56\1\uffff\1\164\1"+
-        "\171\1\142\1\uffff\1\146\15\uffff\1\0\2\uffff\1\56\3\uffff\1\157"+
-        "\1\153\1\145\1\154\1\163\1\141\2\uffff\1\162\1\141\1\156\1\145\1"+
-        "\164\1\165\1\164\1\147\1\144\1\143\1\162\1\154\1\55\1\145\1\163"+
-        "\1\154\1\165\1\164\1\uffff\2\55\1\141\1\143\1\72\2\uffff\1\163\1"+
-        "\164\1\uffff\1\163\1\165\1\55\1\162\1\uffff\1\145\1\55\1\uffff";
+        "\1\0\5\uffff\1\155\1\60\1\141\3\uffff\1\56\1\uffff\1\170\1\164\1\uffff\1\145\3\uffff\1\174\3\uffff\1\111\1\0\1\uffff\1\52\1\56\1\41\2\0\7\uffff\1\160\3\uffff\1\143\4\uffff\1\56\1\uffff\1\164\1\171\1\142\1\uffff\1\146\15\uffff\1\0\1\uffff\1\56\4\uffff\1\157\1\153\1\145\1\154\1\163\1\141\2\uffff\1\162\1\141\1\156\1\145\1\164\1\165\1\164\1\147\1\144\1\143\1\162\1\154\1\55\1\145\1\163\1\154\1\165\1\164\1\uffff\2\55\1\141\1\143\1\72\2\uffff\1\163\1\164\1\uffff\1\163\1\165\1\55\1\162\1\uffff\1\145\1\55\1\uffff";
     static final String DFA17_maxS =
-        "\1\uffff\5\uffff\1\155\1\71\1\141\3\uffff\1\76\1\uffff\1\170\1\165"+
-        "\1\uffff\1\145\3\uffff\1\174\3\uffff\1\125\1\uffff\1\uffff\1\57"+
-        "\1\71\1\175\2\uffff\7\uffff\1\160\3\uffff\1\143\4\uffff\1\71\1\uffff"+
-        "\1\164\1\171\1\142\1\uffff\1\146\15\uffff\1\uffff\2\uffff\1\71\3"+
-        "\uffff\1\157\1\153\1\145\1\154\1\163\1\141\2\uffff\1\162\1\141\1"+
-        "\156\1\145\1\164\1\165\1\164\1\147\1\144\1\143\1\162\1\154\1\172"+
-        "\1\145\1\163\1\154\1\165\1\164\1\uffff\2\172\1\141\1\143\1\72\2"+
-        "\uffff\1\163\1\164\1\uffff\1\163\1\165\1\172\1\162\1\uffff\1\145"+
-        "\1\172\1\uffff";
+        "\1\uffff\5\uffff\1\155\1\71\1\141\3\uffff\1\76\1\uffff\1\170\1\165\1\uffff\1\145\3\uffff\1\174\3\uffff\1\125\1\uffff\1\uffff\1\57\1\71\1\175\2\uffff\7\uffff\1\160\3\uffff\1\143\4\uffff\1\71\1\uffff\1\164\1\171\1\142\1\uffff\1\146\15\uffff\1\uffff\1\uffff\1\71\4\uffff\1\157\1\153\1\145\1\154\1\163\1\141\2\uffff\1\162\1\141\1\156\1\145\1\164\1\165\1\164\1\147\1\144\1\143\1\162\1\154\1\172\1\145\1\163\1\154\1\165\1\164\1\uffff\2\172\1\141\1\143\1\72\2\uffff\1\163\1\164\1\uffff\1\163\1\165\1\172\1\162\1\uffff\1\145\1\172\1\uffff";
     static final String DFA17_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\3\uffff\1\11\1\12\1\13\1\uffff\1\15"+
-        "\2\uffff\1\20\1\uffff\1\22\1\23\1\24\1\uffff\1\27\1\30\1\31\2\uffff"+
-        "\1\40\5\uffff\1\50\1\51\1\1\1\2\1\3\1\4\1\5\1\uffff\1\40\1\7\1\45"+
-        "\1\uffff\1\11\1\12\1\13\1\14\1\uffff\1\15\3\uffff\1\20\1\uffff\1"+
-        "\22\1\23\1\24\1\26\1\25\1\27\1\30\1\31\1\33\1\34\1\35\1\36\1\37"+
-        "\1\uffff\1\43\1\44\1\uffff\1\46\1\47\1\50\6\uffff\1\41\1\42\22\uffff"+
-        "\1\6\5\uffff\1\10\1\16\2\uffff\1\21\4\uffff\1\17\2\uffff\1\32";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\3\uffff\1\11\1\12\1\13\1\uffff\1\15\2\uffff\1\20\1\uffff\1\22\1\23\1\24\1\uffff\1\27\1\30\1\31\2\uffff\1\40\5\uffff\1\50\1\51\1\1\1\2\1\3\1\4\1\5\1\uffff\1\40\1\7\1\45\1\uffff\1\11\1\12\1\13\1\14\1\uffff\1\15\3\uffff\1\20\1\uffff\1\22\1\23\1\24\1\26\1\25\1\27\1\30\1\31\1\33\1\34\1\35\1\36\1\37\1\uffff\1\43\1\uffff\1\44\1\46\1\47\1\50\6\uffff\1\41\1\42\22\uffff\1\6\5\uffff\1\10\1\16\2\uffff\1\21\4\uffff\1\17\2\uffff\1\32";
     static final String DFA17_specialS =
-        "\1\4\31\uffff\1\2\4\uffff\1\0\1\3\44\uffff\1\1\63\uffff}>";
+        "\1\2\31\uffff\1\3\4\uffff\1\0\1\4\44\uffff\1\1\63\uffff}>";
     static final String[] DFA17_transitionS = {
-            "\11\42\2\41\2\42\1\41\22\42\1\41\1\42\1\37\1\42\1\36\1\5\1\42"+
-            "\1\40\1\13\1\15\1\1\1\2\1\4\1\14\1\7\1\34\12\35\1\32\1\20\1"+
-            "\22\1\24\1\23\1\3\1\31\32\33\1\27\1\42\1\30\1\42\1\33\1\42\3"+
-            "\33\1\21\1\16\3\33\1\6\6\33\1\10\2\33\1\17\7\33\1\11\1\25\1"+
-            "\12\1\26\uff81\42",
+            "\11\42\2\41\2\42\1\41\22\42\1\41\1\42\1\37\1\42\1\36\1\5\1\42\1\40\1\13\1\15\1\1\1\2\1\4\1\14\1\7\1\34\12\35\1\32\1\20\1\22\1\24\1\23\1\3\1\31\32\33\1\27\1\42\1\30\1\42\1\33\1\42\3\33\1\21\1\16\3\33\1\6\6\33\1\10\2\33\1\17\7\33\1\11\1\25\1\12\1\26\uff81\42",
             "",
             "",
             "",
@@ -1815,9 +1770,8 @@ public class InternalCssExtDslLexer extends Lexer {
             "\40\104\1\uffff\uffdf\104",
             "",
             "\1\105\4\uffff\1\106",
-            "\1\53\1\uffff\12\110",
-            "\3\111\1\uffff\33\111\1\uffff\33\111\1\uffff\1\111\1\uffff"+
-            "\1\111\1\uffff\33\111\1\uffff\1\111",
+            "\1\53\1\uffff\12\107",
+            "\3\111\1\uffff\33\111\1\uffff\33\111\1\uffff\1\111\1\uffff\1\111\1\uffff\33\111\1\uffff\1\111",
             "\0\112",
             "\0\112",
             "",
@@ -1858,8 +1812,8 @@ public class InternalCssExtDslLexer extends Lexer {
             "",
             "\52\123\1\122\uffd5\123",
             "",
+            "\1\53\1\uffff\12\107",
             "",
-            "\1\53\1\uffff\12\110",
             "",
             "",
             "",
@@ -1967,26 +1921,6 @@ public class InternalCssExtDslLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA17_26 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA17_26>='\u0000' && LA17_26<='\u001F')||(LA17_26>='!' && LA17_26<='\uFFFF')) ) {s = 68;}
-
-                        else s = 34;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA17_32 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA17_32>='\u0000' && LA17_32<='\uFFFF')) ) {s = 74;}
-
-                        else s = 34;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
                         int LA17_0 = input.LA(1);
 
                         s = -1;
@@ -2057,6 +1991,26 @@ public class InternalCssExtDslLexer extends Lexer {
                         else if ( ((LA17_0>='\t' && LA17_0<='\n')||LA17_0=='\r'||LA17_0==' ') ) {s = 33;}
 
                         else if ( ((LA17_0>='\u0000' && LA17_0<='\b')||(LA17_0>='\u000B' && LA17_0<='\f')||(LA17_0>='\u000E' && LA17_0<='\u001F')||LA17_0=='!'||LA17_0=='#'||LA17_0=='&'||LA17_0=='\\'||LA17_0=='^'||LA17_0=='`'||(LA17_0>='\u007F' && LA17_0<='\uFFFF')) ) {s = 34;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA17_26 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA17_26>='\u0000' && LA17_26<='\u001F')||(LA17_26>='!' && LA17_26<='\uFFFF')) ) {s = 68;}
+
+                        else s = 34;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA17_32 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA17_32>='\u0000' && LA17_32<='\uFFFF')) ) {s = 74;}
+
+                        else s = 34;
 
                         if ( s>=0 ) return s;
                         break;

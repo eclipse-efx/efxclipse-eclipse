@@ -30,13 +30,13 @@ import org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureStyleclassImpl#getDoku <em>Doku</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureStyleclassImpl#getElement <em>Element</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureStyleclassImpl#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssext.cssExtDsl.impl.SubstructureStyleclassImpl#getChilds <em>Childs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

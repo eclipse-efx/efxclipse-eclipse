@@ -28,12 +28,12 @@ import org.eclipse.fx.ide.css.cssDsl.simple_selector;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.selectorImpl#getSimpleselectors <em>Simpleselectors</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.selectorImpl#getCombinator <em>Combinator</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.selectorImpl#getSelector <em>Selector</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

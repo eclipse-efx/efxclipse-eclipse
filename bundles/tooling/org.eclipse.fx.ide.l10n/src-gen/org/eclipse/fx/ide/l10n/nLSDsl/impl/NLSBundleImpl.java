@@ -29,13 +29,13 @@ import org.eclipse.fx.ide.l10n.nLSDsl.NLSFormatter;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getLang <em>Lang</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getFormatterList <em>Formatter List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getMessageEntryList <em>Message Entry List</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -361,5 +361,11 @@
             extensions="css">
     </provider>
   </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="css"
+            type="text">
+    </fileTypes>
+  </extension>
 
 </plugin>

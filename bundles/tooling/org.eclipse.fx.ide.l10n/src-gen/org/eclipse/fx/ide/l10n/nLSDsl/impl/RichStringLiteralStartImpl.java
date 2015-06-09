@@ -18,10 +18,10 @@ import org.eclipse.fx.ide.l10n.nLSDsl.RichStringLiteralStart;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.RichStringLiteralStartImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

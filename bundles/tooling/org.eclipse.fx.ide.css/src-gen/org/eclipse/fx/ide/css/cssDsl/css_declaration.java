@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.css_declaration#getProperty <em>Property</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.css_declaration#getValueTokens <em>Value Tokens</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.css_declaration#isImportant <em>Important</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage#getcss_declaration()
  * @model

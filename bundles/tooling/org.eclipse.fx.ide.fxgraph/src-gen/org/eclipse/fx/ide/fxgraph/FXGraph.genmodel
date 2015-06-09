@@ -4,7 +4,7 @@
     editorDirectory="/org.eclipse.fx.ide.fxgraph.editor/src" modelPluginID="org.eclipse.fx.ide.fxgraph"
     forceOverwrite="true" modelName="FXGraph" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.eclipse.fx.ide.fxgraph.edit"
-    editorPluginID="org.eclipse.fx.ide.fxgraph.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types">
+    editorPluginID="org.eclipse.fx.ide.fxgraph.editor" runtimeVersion="2.11" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types">
   <genPackages prefix="FXGraph" basePackage="org.eclipse.fx.ide.fxgraph" disposableProviderFactory="true"
       ecorePackage="FXGraph.ecore#/">
     <genClasses ecoreClass="FXGraph.ecore#//Model">

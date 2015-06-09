@@ -18,10 +18,10 @@ import org.eclipse.fx.ide.css.cssDsl.charset;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.charsetImpl#getCharset <em>Charset</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

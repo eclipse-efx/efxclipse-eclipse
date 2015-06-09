@@ -3,8 +3,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.fx.ide.l10n/src-gen" editDirectory="/org.eclipse.fx.ide.l10n.edit/src"
     editorDirectory="/org.eclipse.fx.ide.l10n.editor/src" modelPluginID="org.eclipse.fx.ide.l10n"
     forceOverwrite="true" modelName="NLSDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.fx.ide.l10n.edit"
-    editorPluginID="org.eclipse.fx.ide.l10n.editor" runtimeVersion="2.10">
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.eclipse.fx.ide.l10n.edit"
+    editorPluginID="org.eclipse.fx.ide.l10n.editor" runtimeVersion="2.11">
   <genPackages prefix="NLSDsl" basePackage="org.eclipse.fx.ide.l10n" disposableProviderFactory="true"
       fileExtensions="l10n" ecorePackage="NLSDsl.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="NLSDsl.ecore#//PredefinedTypes">

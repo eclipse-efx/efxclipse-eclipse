@@ -28,11 +28,11 @@ import org.eclipse.fx.ide.css.cssDsl.IdentifierTok;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.FuncTokImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.FuncTokImpl#getParams <em>Params</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -24,48 +24,48 @@ public class InternalCssExtDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_WS", "RULE_JDOC", "RULE_INT", "RULE_DOUBLE", "RULE_PSEUDO", "RULE_REGEX", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ANY_OTHER", "'import'", "'.'", "'*'", "'package'", "'{'", "'}'", "'@INT'", "'('", "'->'", "')'", "'@NUM'", "'@STRING'", "'@URL'", "'extends'", "','", "'styleclass'", "'default:'", "';'", "'<'", "'>'", "'='", "'|'", "'||'", "'~'", "'+'", "'?'", "'['", "']'", "'%'", "'substructure'"
     };
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=14;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_REGEX=10;
     public static final int T__19=19;
-    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int RULE_INT=7;
+    public static final int T__18=18;
+    public static final int RULE_ID=4;
     public static final int RULE_PSEUDO=9;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__44=44;
-    public static final int RULE_SL_COMMENT=13;
-    public static final int RULE_DOUBLE=8;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=7;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=12;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int RULE_REGEX=10;
     public static final int RULE_STRING=11;
+    public static final int RULE_SL_COMMENT=13;
+    public static final int T__37=37;
+    public static final int RULE_DOUBLE=8;
+    public static final int T__38=38;
+    public static final int RULE_JDOC=6;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=5;
-    public static final int RULE_JDOC=6;
+    public static final int RULE_ANY_OTHER=14;
+    public static final int T__44=44;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -2888,11 +2888,6 @@ public class InternalCssExtDslParser extends AbstractInternalAntlrParser {
                 case RULE_JDOC:
                     {
                     switch ( input.LA(2) ) {
-                    case RULE_PSEUDO:
-                        {
-                        alt32=2;
-                        }
-                        break;
                     case RULE_ID:
                         {
                         alt32=1;
@@ -2901,6 +2896,11 @@ public class InternalCssExtDslParser extends AbstractInternalAntlrParser {
                     case 44:
                         {
                         alt32=3;
+                        }
+                        break;
+                    case RULE_PSEUDO:
+                        {
+                        alt32=2;
                         }
                         break;
 
@@ -3935,11 +3935,11 @@ public class InternalCssExtDslParser extends AbstractInternalAntlrParser {
             else if ( (LA39_0==RULE_ID) ) {
                 int LA39_2 = input.LA(2);
 
-                if ( (LA39_2==22) ) {
-                    alt39=2;
-                }
-                else if ( (LA39_2==RULE_ID||(LA39_2>=RULE_JDOC && LA39_2<=RULE_INT)||LA39_2==RULE_REGEX||LA39_2==17||LA39_2==21||(LA39_2>=25 && LA39_2<=27)||LA39_2==29||(LA39_2>=32 && LA39_2<=33)||(LA39_2>=36 && LA39_2<=41)||LA39_2==43) ) {
+                if ( (LA39_2==RULE_ID||(LA39_2>=RULE_JDOC && LA39_2<=RULE_INT)||LA39_2==RULE_REGEX||LA39_2==17||LA39_2==21||(LA39_2>=25 && LA39_2<=27)||LA39_2==29||(LA39_2>=32 && LA39_2<=33)||(LA39_2>=36 && LA39_2<=41)||LA39_2==43) ) {
                     alt39=1;
+                }
+                else if ( (LA39_2==22) ) {
+                    alt39=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -7520,10 +7520,8 @@ public class InternalCssExtDslParser extends AbstractInternalAntlrParser {
     static final String[] DFA27_transitionS = {
             "\1\1\16\uffff\1\2\3\uffff\1\3\2\4",
             "\1\5\17\uffff\1\2\3\uffff\1\3\2\4",
-            "\4\4\2\uffff\1\4\6\uffff\1\4\3\uffff\1\4\1\6\1\uffff\4\4\1"+
-            "\uffff\1\4\1\uffff\3\4\2\uffff\10\4",
-            "\4\4\2\uffff\1\4\6\uffff\1\4\3\uffff\1\4\1\7\1\uffff\4\4\1"+
-            "\uffff\1\4\1\uffff\3\4\2\uffff\10\4",
+            "\4\4\2\uffff\1\4\6\uffff\1\4\3\uffff\1\4\1\6\1\uffff\4\4\1\uffff\1\4\1\uffff\3\4\2\uffff\10\4",
+            "\4\4\2\uffff\1\4\6\uffff\1\4\3\uffff\1\4\1\7\1\uffff\4\4\1\uffff\1\4\1\uffff\3\4\2\uffff\10\4",
             "",
             "\1\5\17\uffff\1\2\3\uffff\1\3\2\4",
             "",
@@ -7576,10 +7574,8 @@ public class InternalCssExtDslParser extends AbstractInternalAntlrParser {
     static final String DFA51_specialS =
         "\12\uffff}>";
     static final String[] DFA51_transitionS = {
-            "\1\4\1\uffff\1\1\1\10\2\uffff\1\7\12\uffff\1\6\3\uffff\3\6\1"+
-            "\uffff\1\5\3\uffff\1\2\7\uffff\1\3\1\uffff\1\5",
-            "\1\4\1\11\17\uffff\1\6\3\uffff\3\6\1\uffff\1\5\3\uffff\1\2"+
-            "\11\uffff\1\5",
+            "\1\4\1\uffff\1\1\1\10\2\uffff\1\7\12\uffff\1\6\3\uffff\3\6\1\uffff\1\5\3\uffff\1\2\7\uffff\1\3\1\uffff\1\5",
+            "\1\4\1\11\17\uffff\1\6\3\uffff\3\6\1\uffff\1\5\3\uffff\1\2\11\uffff\1\5",
             "",
             "",
             "",
@@ -7587,8 +7583,7 @@ public class InternalCssExtDslParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\4\1\11\17\uffff\1\6\3\uffff\3\6\1\uffff\1\5\3\uffff\1\2"+
-            "\11\uffff\1\5"
+            "\1\4\1\11\17\uffff\1\6\3\uffff\3\6\1\uffff\1\5\3\uffff\1\2\11\uffff\1\5"
     };
 
     static final short[] DFA51_eot = DFA.unpackEncodedString(DFA51_eotS);

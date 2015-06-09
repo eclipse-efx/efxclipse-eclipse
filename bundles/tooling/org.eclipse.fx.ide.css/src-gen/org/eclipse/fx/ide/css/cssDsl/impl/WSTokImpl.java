@@ -11,8 +11,6 @@ import org.eclipse.fx.ide.css.cssDsl.WSTok;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>WS Tok</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

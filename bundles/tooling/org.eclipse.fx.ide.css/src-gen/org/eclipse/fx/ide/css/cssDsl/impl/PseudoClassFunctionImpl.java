@@ -28,13 +28,13 @@ import org.eclipse.fx.ide.css.cssDsl.SimpleSelectorForNegation;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.PseudoClassFunctionImpl#isNot <em>Not</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.PseudoClassFunctionImpl#getParamSelector <em>Param Selector</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.PseudoClassFunctionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.PseudoClassFunctionImpl#getParams <em>Params</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

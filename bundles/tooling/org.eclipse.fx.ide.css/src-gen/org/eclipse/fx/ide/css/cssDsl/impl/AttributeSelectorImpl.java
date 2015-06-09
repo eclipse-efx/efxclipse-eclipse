@@ -17,12 +17,12 @@ import org.eclipse.fx.ide.css.cssDsl.CssDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.AttributeSelectorImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.AttributeSelectorImpl#getOp <em>Op</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.AttributeSelectorImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

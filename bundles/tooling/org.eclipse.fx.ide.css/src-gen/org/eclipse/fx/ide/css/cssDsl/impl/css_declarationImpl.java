@@ -29,12 +29,12 @@ import org.eclipse.fx.ide.css.cssDsl.css_property;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.css_declarationImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.css_declarationImpl#getValueTokens <em>Value Tokens</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.css_declarationImpl#isImportant <em>Important</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

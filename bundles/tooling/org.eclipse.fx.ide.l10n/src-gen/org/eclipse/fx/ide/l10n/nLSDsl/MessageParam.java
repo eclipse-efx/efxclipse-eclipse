@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.MessageParam#getPredefined <em>Predefined</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.MessageParam#getVar <em>Var</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.l10n.nLSDsl.NLSDslPackage#getMessageParam()
  * @model

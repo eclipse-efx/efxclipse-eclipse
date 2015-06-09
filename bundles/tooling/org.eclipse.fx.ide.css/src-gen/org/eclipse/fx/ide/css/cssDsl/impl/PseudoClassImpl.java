@@ -11,8 +11,6 @@ import org.eclipse.fx.ide.css.cssDsl.PseudoClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Pseudo Class</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

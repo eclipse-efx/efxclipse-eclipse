@@ -4,10 +4,12 @@ package org.eclipse.fx.ide.css.cssext.cssExtDsl.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.fx.ide.css.cssext.cssExtDsl.*;
-import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,8 +71,8 @@ public class CssExtDslAdapterFactory extends AdapterFactoryImpl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CssExtDslSwitch<@Nullable Adapter> modelSwitch =
-    new CssExtDslSwitch<@Nullable Adapter>()
+  protected CssExtDslSwitch<Adapter> modelSwitch =
+    new CssExtDslSwitch<Adapter>()
     {
       @Override
       public Adapter caseCssExtension(CssExtension object)

@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.RichVarPart#getKey <em>Key</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.RichVarPart#getFormat <em>Format</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.RichVarPart#getFormatterClass <em>Formatter Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.fx.ide.l10n.nLSDsl.NLSDslPackage#getRichVarPart()
  * @model

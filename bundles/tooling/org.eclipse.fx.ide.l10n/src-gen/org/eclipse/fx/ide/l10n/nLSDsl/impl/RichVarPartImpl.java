@@ -20,12 +20,12 @@ import org.eclipse.fx.ide.l10n.nLSDsl.RichVarPart;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.RichVarPartImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.RichVarPartImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.RichVarPartImpl#getFormatterClass <em>Formatter Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

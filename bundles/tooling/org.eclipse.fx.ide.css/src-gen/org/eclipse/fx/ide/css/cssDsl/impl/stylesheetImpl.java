@@ -34,6 +34,7 @@ import org.eclipse.fx.ide.css.cssDsl.stylesheet;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getCharset <em>Charset</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getImports <em>Imports</em>}</li>
@@ -43,7 +44,6 @@ import org.eclipse.fx.ide.css.cssDsl.stylesheet;
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getFont_face <em>Font face</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.css.cssDsl.impl.stylesheetImpl#getKeyframes <em>Keyframes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
