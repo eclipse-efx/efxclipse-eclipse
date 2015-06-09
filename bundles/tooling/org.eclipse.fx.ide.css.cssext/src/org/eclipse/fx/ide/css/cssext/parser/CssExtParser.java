@@ -370,9 +370,9 @@ public class CssExtParser {
 	}
 	
 	private ResultNode parseRef(IFile f, EObject context, ParserInputCursor l, CSSRuleRef r, ConsumeWS consumeWS) {
-		System.err.println("Entered with: " + r);
+		logger.debug("Entered with: " + r);
 		CSSRule rule =  manager.resolveReference(f,context,r);
-		System.err.println("Resolved to: " + rule);
+		logger.debug("Resolved to: " + rule);
 		if (rule == null) {
 			logger.debug("resolving rule ref " + r.getRef().getName() + " returned null (maybe a function?) !!!!!");
 			ResultNode inv = new ResultNode(NodeType.REF);
