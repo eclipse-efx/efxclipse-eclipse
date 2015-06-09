@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.eclipse.fx.ide.css.cssDsl.*;
-import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.jdt.annotation.Nullable;
  * @see org.eclipse.fx.ide.css.cssDsl.CssDslPackage
  * @generated
  */
-public class CssDslSwitch<@Nullable T> extends Switch<T>
+public class CssDslSwitch<T> extends Switch<T>
 {
   /**
    * The cached model package

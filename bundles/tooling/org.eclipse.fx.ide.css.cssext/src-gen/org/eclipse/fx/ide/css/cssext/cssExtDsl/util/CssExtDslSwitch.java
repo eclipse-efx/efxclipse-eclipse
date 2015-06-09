@@ -4,11 +4,37 @@ package org.eclipse.fx.ide.css.cssext.cssExtDsl.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.fx.ide.css.cssext.cssExtDsl.*;
-import org.eclipse.jdt.annotation.Nullable;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSDefaultValue;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSNumLiteral;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRangedDoubleType;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRangedIntType;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRule;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleBracket;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleConcat;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleConcatWithoutSpace;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleDefinition;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleFunc;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleLiteral;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleOr;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRulePostfix;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleRef;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleRegex;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleSymbol;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSRuleXor;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CSSType;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtension;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.Definition;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.Doku;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.ElementDefinition;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.Import;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.PackageDefinition;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.PropertyDefinition;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.PseudoClassDefinition;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.Substructure;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureSelector;
+import org.eclipse.fx.ide.css.cssext.cssExtDsl.SubstructureStyleclass;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +49,7 @@ import org.eclipse.jdt.annotation.Nullable;
  * @see org.eclipse.fx.ide.css.cssext.cssExtDsl.CssExtDslPackage
  * @generated
  */
-public class CssExtDslSwitch<@Nullable T> extends Switch<T>
+public class CssExtDslSwitch<T> extends Switch<T>
 {
   /**
    * The cached model package
