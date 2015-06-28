@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Jfx2
 Bundle-SymbolicName: org.eclipse.fx.ide.css.jfx2
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 2.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Eclipse.org
