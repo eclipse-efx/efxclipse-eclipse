@@ -211,7 +211,10 @@ public class FXMLValidator extends AbstractValidator implements IValidator, ISou
 	@SuppressWarnings("deprecation")
 	private static int getAttributeLength(IStructuredDocumentRegion structuredDocumentRegion, IDOMAttr domAttr) {
 		int l = domAttr.getValueRegionStartOffset() - domAttr.getStartOffset();
-		l += structuredDocumentRegion.getText(domAttr.getValueRegion()).length();
+		if( domAttr.getValueRegion() != null ) {
+			l += structuredDocumentRegion.getText(domAttr.getValueRegion()).length();	
+		}
+		
 		return l; // domAttr.getLength() too long 
 	}
 
