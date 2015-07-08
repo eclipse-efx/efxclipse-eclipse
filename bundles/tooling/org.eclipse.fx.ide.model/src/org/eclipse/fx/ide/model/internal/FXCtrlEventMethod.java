@@ -88,6 +88,9 @@ public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 			}
 
 			IType t = jp.findType(checkType);
+			if( t == null ) {
+				return false;
+			}
 			checkType = t.getSuperclassName();
 
 			if (checkType != null) {
