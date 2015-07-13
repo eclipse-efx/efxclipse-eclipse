@@ -56,7 +56,7 @@ import org.eclipse.fx.ide.ui.wizards.AbstractJDTElementPage;
  */
 public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 	IType customSelection;
-	
+
 	protected FXMLWizardPage(IPackageFragmentRoot froot, IPackageFragment fragment, IWorkspaceRoot fWorkspaceRoot) {
 		super("fxml", Messages.FXMLWizardPage_1, Messages.FXMLWizardPage_0, froot, fragment, fWorkspaceRoot); //$NON-NLS-1$
 	}
@@ -65,13 +65,13 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 	protected ImageDescriptor getTitleAreaImage(Display display) {
 		return AbstractUIPlugin.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/title_banner.png"); //$NON-NLS-1$
 	}
-	
+
 	@Override
 	protected void createFields(Composite parent, DataBindingContext dbc) {
 		{
 			Label l = new Label(parent, SWT.NONE);
 			l.setText(Messages.FXMLWizardPage_4);
-			
+
 			final ComboViewer viewer = new ComboViewer(parent);
 			viewer.setLabelProvider(new LabelProvider() {
 				@Override
@@ -84,7 +84,7 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 			List<IType> types = getTypes();
 			viewer.setInput(types);
 			viewer.getControl().setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-			
+
 			Button button = new Button(parent, SWT.PUSH);
 			button.setText(Messages.FXMLWizardPage_6);
 			button.addSelectionListener(new SelectionAdapter() {
@@ -98,10 +98,10 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 					}
 				}
 			});
-			
+
 			FXMLElement element = getClazz();
 			element.addPropertyChangeListener(new PropertyChangeListener() {
-				
+
 				@Override
 				public void propertyChange(PropertyChangeEvent evt) {
 					if( "fragmentRoot".equals(evt.getPropertyName()) ) { //$NON-NLS-1$
@@ -110,52 +110,55 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 				}
 			});
 			dbc.bindValue(ViewerProperties.singleSelection().observe(viewer), BeanProperties.value("rootElement").observe(getClazz())); //$NON-NLS-1$
-			
+
 			if( types.size() > 0 ) {
 				viewer.setSelection(new StructuredSelection(types.get(0)));
 			}
 		}
-		
+
 		{
 			Label l = new Label(parent, SWT.NONE);
 			l.setText(Messages.FXMLWizardPage_9);
-			
+
 			Button b = new Button(parent, SWT.CHECK);
 			dbc.bindValue(WidgetProperties.selection().observe(b), BeanProperties.value("fxRoot").observe(getClazz())); //$NON-NLS-1$
 		}
 	}
-	
+
 	IType findContainerType() {
 		if( getClazz().getFragmentRoot() != null ) {
 			IJavaProject project= getClazz().getFragmentRoot().getJavaProject();
-			
+
 			try {
 				IType superType = project.findType("javafx.scene.Parent"); //$NON-NLS-1$
-				
+
 				if( superType != null ) {
-					IJavaSearchScope searchScope = SearchEngine.createStrictHierarchyScope(project, superType, true, false, null);		
-					
+					IJavaSearchScope searchScope = SearchEngine.createStrictHierarchyScope(project, superType, true, false, null);
+
 					SelectionDialog dialog = JavaUI.createTypeDialog(getShell(), PlatformUI.getWorkbench().getProgressService(), searchScope, IJavaElementSearchConstants.CONSIDER_CLASSES, false, ""); //$NON-NLS-1$
 					dialog.setTitle(Messages.FXMLWizardPage_3);
 					if (dialog.open() == Window.OK) {
 						IType type = (IType) dialog.getResult()[0];
 						return type;
-					}	
+					}
 				}
 			} catch (JavaModelException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	@Override
 	protected void revalidate() {
 		if( getClazz().getName() == null || getClazz().getName().trim().length() == 0 ) {
 			setPageComplete(false);
 			setMessage(Messages.FXMLWizardPage_2, IMessageProvider.ERROR);
+		} else if(getClazz().getRootElement() != null) {
+			setPageComplete(false);
+			setMessage(Messages.FXMLWizardPage_10, IMessageProvider.ERROR);
 		} else if(Character.isLowerCase(getClazz().getName().charAt(0))) {
 			setPageComplete(true);
 			setMessage(Messages.FXMLWizardPage_5, IMessageProvider.WARNING);
@@ -164,13 +167,13 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 			setMessage(null);
 		}
 	}
-	
+
 	List<IType> getTypes() {
 		List<IType> list = new ArrayList<IType>();
-		
+
 		if( getClazz().getFragmentRoot() != null ) {
 			IJavaProject jp = getClazz().getFragmentRoot().getJavaProject();
-			
+
 			if( this.customSelection != null ) {
 				try {
 					IType t = jp.findType(this.customSelection.getFullyQualifiedName());
@@ -182,7 +185,7 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 					e.printStackTrace();
 				}
 			}
-			
+
 			if( getDialogSettings() != null ) {
 				if( getDialogSettings().getArray(NewFXMLWizard.KEY_LAST_SELECTIONS) != null ) {
 					for( String s : getDialogSettings().getArray(NewFXMLWizard.KEY_LAST_SELECTIONS) ) {
@@ -198,7 +201,7 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 					}
 				}
 			}
-			
+
 			for(String s : new String[] {
 					"javafx.scene.layout.AnchorPane",  //$NON-NLS-1$
 					"javafx.scene.layout.BorderPane",  //$NON-NLS-1$
@@ -222,11 +225,11 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 				}
 			}
 		}
-		
+
 		return list;
 	}
-	
-	
+
+
 
 	@Override
 	protected FXMLElement createInstance() {
