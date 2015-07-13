@@ -42,10 +42,13 @@ import org.xml.sax.helpers.DefaultHandler;
  * The FXML-Editor
  */
 public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAdapter {
-	
+
 	@Override
 	public String getPreviewFXML() {
-		return getSourceViewer().getDocument().get();
+		if( getSourceViewer() != null && getSourceViewer().getDocument() != null && getSourceViewer().getDocument().get() != null ) {
+			return getSourceViewer().getDocument().get();
+		}
+		return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?import javafx.scene.layout.StackPane?>\n<?import javafx.scene.control.Label?>\n\n<StackPane xmlns:fx=\"http://javafx.com/fxml/1\">\n\t<Label text=\"No document\"></Label>\n</StackPane>";
 	}
 
 	@SuppressWarnings({ "deprecation", "restriction" })
@@ -85,7 +88,7 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 				}
 			}
 		}
-		
+
 		try {
 			SAXParser p = SAXParserFactory.newInstance().newSAXParser();
 			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
@@ -123,7 +126,7 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 	public String getPreviewResourceBundle() {
 		final IFile file = getFile();
 		final AtomicReference<String> ref = new AtomicReference<String>();
-		
+
 		try {
 			SAXParser p = SAXParserFactory.newInstance().newSAXParser();
 			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
@@ -148,14 +151,14 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		if( ref.get() != null ) {
 			return ref.get();
 		}
-		
+
 		Properties propFile = getProperties();
 
-		
+
 		if (propFile != null) {
 			String fileConfig = "fxmlpreview.file." + file.getName().substring(0, file.getName().length() - 5); //$NON-NLS-1$
 
