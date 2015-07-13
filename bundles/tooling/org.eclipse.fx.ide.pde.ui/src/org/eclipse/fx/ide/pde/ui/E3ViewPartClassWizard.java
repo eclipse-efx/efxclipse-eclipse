@@ -47,10 +47,8 @@ public class E3ViewPartClassWizard extends AbstractNewClassWizard<JDTElement> {
 				IBundleProjectDescription bundleDesc = bpService.getDescription(p);
 
 				IRequiredBundleDescription requireDesc = bpService.newRequiredBundle("org.eclipse.fx.ui.workbench3", null, false, false);
-				IPackageImportDescription importDesc = bpService.newPackageImport("javafx.scene", null, false);
 
 				BundleHelper.addRequiredBundleDescriptions(bundleDesc, requireDesc);
-				BundleHelper.addPackageImportDescriptions(bundleDesc, importDesc);
 
 				bundleDesc.apply(new NullProgressMonitor());
 				return super.performFinish();
