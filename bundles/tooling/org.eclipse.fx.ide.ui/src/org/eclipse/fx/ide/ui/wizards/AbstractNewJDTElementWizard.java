@@ -40,7 +40,7 @@ public abstract class AbstractNewJDTElementWizard<O extends JDTElement> extends 
 	protected IPackageFragmentRoot root;
 	protected IPackageFragment fragment;
 	private IFile file;
-	
+
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		IJavaElement jElement = getInitialJavaElement(selection);
 		root = getFragmentRoot(jElement);
@@ -121,55 +121,59 @@ public abstract class AbstractNewJDTElementWizard<O extends JDTElement> extends 
 	}
 
 	protected abstract IGenerator<O> getGenerator();
-	
+
 	@SuppressWarnings("unchecked")
 	public O getDomainClass() {
 		return ((AbstractJDTElementPage<O>) getPages()[0]).getClazz();
 	}
-	
+
 	protected Set<String> getRequiredBundles() {
 		Set<String> rv = new HashSet<String>();
 		rv.add("javax.inject");
 		return rv;
 	}
-	
+
 	@Override
 	public boolean performFinish() {
 		O clazz = getDomainClass();
-		String content = getGenerator().generateContent(clazz).toString();
-		
-		if( clazz.getFragmentRoot() == null ) {
+		if( clazz == null ) {
+			MessageDialog.openError(getShell(), "No domain object", "Please file a bug against e(fx)clipse with steps to reproduce this problem");
 			return false;
-		}
-		
-		IFile file = createFile();
-		
-		if( file != null ) {
-			try {
-				if (!file.exists()) {
-					file.create(new ByteArrayInputStream(content.getBytes()),
-							true, null);
-				} else {
-					if( MessageDialog.openQuestion(getShell(), "File exists", "The file " + file.getName() + " already exists. Would you like to proceed?") ) {
-						file.setContents(new ByteArrayInputStream(content.getBytes()),
-								IFile.FORCE | IFile.KEEP_HISTORY, null);
-					} else {
-						return false;
-					}
-				}
-				IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), file);
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		} else {
+			String content = getGenerator().generateContent(clazz).toString();
+
+			if( clazz.getFragmentRoot() == null ) {
+				return false;
 			}
+
+			IFile file = createFile();
+
+			if( file != null ) {
+				try {
+					if (!file.exists()) {
+						file.create(new ByteArrayInputStream(content.getBytes()),
+								true, null);
+					} else {
+						if( MessageDialog.openQuestion(getShell(), "File exists", "The file " + file.getName() + " already exists. Would you like to proceed?") ) {
+							file.setContents(new ByteArrayInputStream(content.getBytes()),
+									IFile.FORCE | IFile.KEEP_HISTORY, null);
+						} else {
+							return false;
+						}
+					}
+					IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), file);
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+			return true;
 		}
-
-		return true;
-
 	}
-	
+
 	protected abstract IFile createFile();
-	
+
 	public IFile getFile() {
 		return file;
 	}

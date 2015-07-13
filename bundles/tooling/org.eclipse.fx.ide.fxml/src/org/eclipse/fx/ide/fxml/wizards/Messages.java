@@ -15,7 +15,7 @@ import org.eclipse.osgi.util.NLS;
 @SuppressWarnings("javadoc")
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.fx.ide.fxml.wizards.messages"; //$NON-NLS-1$
-	
+
 	public static String FXMLWizardPage_0;
 	public static String FXMLWizardPage_1;
 	public static String FXMLWizardPage_2;
@@ -24,6 +24,8 @@ public class Messages extends NLS {
 	public static String FXMLWizardPage_5;
 	public static String FXMLWizardPage_6;
 	public static String FXMLWizardPage_9;
+	public static String FXMLWizardPage_10;
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
