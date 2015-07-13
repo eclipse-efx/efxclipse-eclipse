@@ -23,12 +23,12 @@ public class NewApplicationClassWizard extends AbstractNewClassWizard<JDTElement
 
 	@Override
 	public void addPages() {
-		addPage(new NewApplicationClassPage(root,fragment,ResourcesPlugin.getWorkspace().getRoot()));
+		addPage(new NewApplicationClassPage(getInitialRoot(),getInitialFragment(),ResourcesPlugin.getWorkspace().getRoot()));
 	}
-	
-	
+
+
 	@Override
-	protected IGenerator<JDTElement> getGenerator() { 
+	protected IGenerator<JDTElement> getGenerator() {
 		return new ApplicationClassGenerator();
 	}
 }

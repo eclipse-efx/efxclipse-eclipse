@@ -30,9 +30,9 @@ import org.eclipse.fx.ide.ui.wizards.template.IGenerator;
 public class NewFXGraphWizard extends AbstractNewJDTElementWizard<FXGraphElement> {
 	private static final String SETTINGS_FILE = "new-graph-settings.xml";
 	public static final String KEY_LAST_SELECTIONS = "KEY_LAST_SELECTIONS";
-	
+
 	private static final int MAX_HISTORY_SIZE = 20;
-	
+
 	public NewFXGraphWizard() {
 		if( getDialogSettings() == null ) {
 			DialogSettings settings = new DialogSettings("new-fxgraph");
@@ -43,44 +43,44 @@ public class NewFXGraphWizard extends AbstractNewJDTElementWizard<FXGraphElement
 			setDialogSettings(settings);
 		}
 	}
-	
+
 	@Override
 	protected IGenerator<FXGraphElement> getGenerator() {
 		return new FXGraphTemplate();
 	}
-	
+
 	@Override
 	public void addPages() {
-		addPage(new FXGraphWizardPage(root,fragment,ResourcesPlugin.getWorkspace().getRoot()));
+		addPage(new FXGraphWizardPage(getInitialRoot(),getInitialFragment(),ResourcesPlugin.getWorkspace().getRoot()));
 	}
-	
+
 	@Override
 	public boolean performFinish() {
 		boolean finish = super.performFinish();
-		
+
 		if( finish && getDialogSettings() != null ) {
 			IDialogSettings settings = getDialogSettings();
 			String typeName = getDomainClass().getRootElement().getFullyQualifiedName();
-			
+
 			String[] elements = settings.getArray(KEY_LAST_SELECTIONS);
-			
+
 			if( elements == null ) {
 				settings.put(KEY_LAST_SELECTIONS, new String[]{ typeName });
 			} else {
 				List<String> ar = new ArrayList<String>(Arrays.asList(elements));
 				ar.remove(typeName);
 				ar.add(0, typeName);
-				
+
 				// If the list gets too long we'll remove the last entry
 				if( ar.size() > MAX_HISTORY_SIZE ) {
 					while( ar.size() > MAX_HISTORY_SIZE ) {
 						ar.remove(MAX_HISTORY_SIZE);
 					}
 				}
-				
+
 				settings.put(KEY_LAST_SELECTIONS, ar.toArray(new String[0]));
 			}
-			
+
 			try {
 				settings.save(SETTINGS_FILE);
 			} catch (IOException e) {
@@ -88,15 +88,15 @@ public class NewFXGraphWizard extends AbstractNewJDTElementWizard<FXGraphElement
 				e.printStackTrace();
 			}
 		}
-		
+
 		return finish;
 	}
 
 	@Override
 	protected IFile createFile() {
-		if (fragment != null) {
+		if (getFragment() != null) {
 			String fxgraph = getDomainClass().getName() + ".fxgraph";
-			IFolder p = (IFolder) fragment.getResource();
+			IFolder p = (IFolder) getFragment().getResource();
 			IResource resource = p.getFile(fxgraph);
 			return (IFile) resource;
 		} else {

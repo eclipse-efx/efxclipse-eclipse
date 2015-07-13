@@ -33,7 +33,7 @@ public class NewHtmlTemplateWizard extends AbstractNewClassWizard<HtmlElement> {
 
 	@Override
 	public void addPages() {
-		addPage( new NewHtmlTemplatePage( root, fragment, ResourcesPlugin.getWorkspace().getRoot() ) );
+		addPage( new NewHtmlTemplatePage( getInitialRoot(), getInitialFragment(), ResourcesPlugin.getWorkspace().getRoot() ) );
 	}
 
 	@Override

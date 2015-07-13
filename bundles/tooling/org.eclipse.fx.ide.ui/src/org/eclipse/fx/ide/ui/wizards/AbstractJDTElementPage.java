@@ -70,31 +70,34 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 	private IPackageFragment fragment;
 	private IWorkspaceRoot fWorkspaceRoot;
 	private Text nameField;
-	
+
 	protected AbstractJDTElementPage(String pageName, String title, String description, IPackageFragmentRoot froot, IPackageFragment fragment, IWorkspaceRoot fWorkspaceRoot) {
 		super(pageName);
+		if( froot == null ) {
+			setMessage("Root is not a java project", IMessageProvider.ERROR);
+		}
 		this.froot = froot;
 		this.fragment = fragment;
 		this.fWorkspaceRoot = fWorkspaceRoot;
-		
+
 		setTitle(title);
 		setDescription(description);
 		setImageDescriptor(getTitleAreaImage(Display.getCurrent()));
 	}
-	
+
 	public void createControl(Composite parent) {
-		
-		parent = new Composite(parent, SWT.NULL);		
+
+		parent = new Composite(parent, SWT.NULL);
 		parent.setLayoutData(new GridData(GridData.FILL_BOTH));
 		parent.setLayout(new GridLayout(3, false));
-		
+
 		clazz = createInstance();
 		clazz.setFragmentRoot(froot);
 		clazz.setPackageFragment(fragment);
-		
-		
+
+
 		DataBindingContext dbc = new DataBindingContext();
-		
+
 		{
 			Label l = new Label(parent, SWT.NONE);
 			l.setText("Source folder");
@@ -103,9 +106,9 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 			t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 			t.setEditable(false);
 			final Binding bd = dbc.bindValue(
-					WidgetProperties.text().observe(t), 
-					BeanProperties.value("fragmentRoot").observe(clazz), 
-					new UpdateValueStrategy(), 
+					WidgetProperties.text().observe(t),
+					BeanProperties.value("fragmentRoot").observe(clazz),
+					new UpdateValueStrategy(),
 					new UpdateValueStrategy().setConverter(new PackageFragmentRootToStringConverter())
 			);
 
@@ -117,7 +120,7 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 					IPackageFragmentRoot root = choosePackageRoot();
 					if( root != null ) {
 						froot = root;
-						clazz.setFragmentRoot(root);	
+						clazz.setFragmentRoot(root);
 					}
 					bd.updateModelToTarget(); //TODO Find out why this is needed
 				}
@@ -132,9 +135,9 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 			t.setEditable(false);
 			t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 			final Binding bd = dbc.bindValue(
-					WidgetProperties.text().observe(t), 
+					WidgetProperties.text().observe(t),
 					BeanProperties.value("packageFragment").observe(clazz),
-					new UpdateValueStrategy(), 
+					new UpdateValueStrategy(),
 					new UpdateValueStrategy().setConverter(new PackageFragmentToStringConverter())
 			);
 
@@ -145,7 +148,7 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 				public void widgetSelected(SelectionEvent e) {
 					IPackageFragment fragment = choosePackage();
 					if( fragment != null ) {
-						clazz.setPackageFragment(fragment);	
+						clazz.setPackageFragment(fragment);
 					}
 					bd.updateModelToTarget(); //TODO Find out why this is needed
 				}
@@ -169,12 +172,12 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 			Label l = new Label(parent, SWT.SEPARATOR | SWT.HORIZONTAL);
 			l.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false, 3, 1));
 		}
-		
+
 		createFields(parent, dbc);
 		setControl(parent);
-		
+
 		clazz.addPropertyChangeListener(new PropertyChangeListener() {
-			
+
 			@Override
 			public void propertyChange(PropertyChangeEvent evt) {
 				revalidate();
@@ -182,26 +185,29 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		});
 		setPageComplete(false);
 	}
-	
+
 	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
-		
+
 		if( visible ) {
-			nameField.setFocus();	
+			nameField.setFocus();
 		}
 	}
-	
+
 	protected void revalidate() {
 		if( getClazz().getName() == null || getClazz().getName().trim().length() == 0 ) {
 			setPageComplete(false);
 			setMessage("Enter a name", IMessageProvider.ERROR);
+		} else if( froot == null ) {
+			setPageComplete(false);
+			setMessage("Root is not a java project", IMessageProvider.ERROR);
 		} else {
 			setPageComplete(true);
 			setMessage(null);
 		}
 	}
-	
+
 	private IPackageFragmentRoot choosePackageRoot() {
 		IJavaElement initElement= clazz.getFragmentRoot();
 		Class<?>[] acceptedClasses= new Class<?>[] { IPackageFragmentRoot.class, IJavaProject.class };
@@ -262,7 +268,7 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		}
 		return null;
 	}
-	
+
 	private IPackageFragment choosePackage() {
 		IJavaElement[] packages= null;
 		try {
@@ -294,21 +300,25 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		}
 		return null;
 	}
-	
+
 	protected IPackageFragmentRoot getFragmentRoot() {
 		return froot;
+	}
+
+	public IPackageFragment getFragment() {
+		return fragment;
 	}
 
 	protected abstract void createFields(Composite parent, DataBindingContext dbc);
 
 	protected abstract O createInstance();
-	
+
 	protected abstract ImageDescriptor getTitleAreaImage(Display display);
 
 	public O getClazz() {
 		return clazz;
 	}
-	
+
 	static class ClassnameValidator implements IValidator {
 
 		public IStatus validate(Object value) {
@@ -342,13 +352,13 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 			return f.getPath().makeRelative().toString();
 		}
 	}
-	
+
 	static class PackageFragmentToStringConverter extends Converter {
 
 		public PackageFragmentToStringConverter() {
 			super(IPackageFragment.class, String.class);
 		}
-		
+
 		public Object convert(Object fromObject) {
 			if( fromObject == null ) {
 				return "";
@@ -357,4 +367,6 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 			return f.getElementName();
 		}
 	}
+
+
 }

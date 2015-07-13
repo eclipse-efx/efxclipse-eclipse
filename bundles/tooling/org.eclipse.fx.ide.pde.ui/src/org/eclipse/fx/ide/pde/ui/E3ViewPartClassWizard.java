@@ -14,46 +14,48 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.clazz.AbstractNewClassWizard;
+import org.eclipse.fx.ide.pde.ui.templates.E3ViewPartGenerator;
+import org.eclipse.fx.ide.ui.wizards.template.IGenerator;
+import org.eclipse.fx.ide.ui.wizards.template.JDTElement;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.pde.core.project.IBundleProjectDescription;
 import org.eclipse.pde.core.project.IBundleProjectService;
 import org.eclipse.pde.core.project.IPackageImportDescription;
 import org.eclipse.pde.core.project.IRequiredBundleDescription;
 
-import org.eclipse.fx.ide.jdt.ui.internal.wizard.clazz.AbstractNewClassWizard;
-import org.eclipse.fx.ide.pde.ui.templates.E3ViewPartGenerator;
-import org.eclipse.fx.ide.ui.wizards.template.IGenerator;
-import org.eclipse.fx.ide.ui.wizards.template.JDTElement;
-
+@SuppressWarnings("restriction")
 public class E3ViewPartClassWizard extends AbstractNewClassWizard<JDTElement> {
 
 	@Override
 	public void addPages() {
-		addPage(new E3ViewPartClassPage(root,fragment,ResourcesPlugin.getWorkspace().getRoot()));
+		addPage(new E3ViewPartClassPage(getInitialRoot(),getInitialFragment(),ResourcesPlugin.getWorkspace().getRoot()));
 	}
-	
+
 	@Override
 	protected IGenerator<JDTElement> getGenerator() {
 		return new E3ViewPartGenerator();
 	}
 
+	@SuppressWarnings("null")
 	public boolean performFinish() {
 		try {
 			IBundleProjectService bpService = Activator.getDefault().acquireService(IBundleProjectService.class);
-			IProject p = root.getJavaProject().getProject();
-			
-			if( p.hasNature("org.eclipse.pde.PluginNature") && bpService != null ) {
+			IProject p = getRoot().getJavaProject().getProject();
+
+			if( p.hasNature("org.eclipse.pde.PluginNature") && bpService != null ) { //$NON-NLS-1$
 				IBundleProjectDescription bundleDesc = bpService.getDescription(p);
-				
+
 				IRequiredBundleDescription requireDesc = bpService.newRequiredBundle("org.eclipse.fx.ui.workbench3", null, false, false);
 				IPackageImportDescription importDesc = bpService.newPackageImport("javafx.scene", null, false);
-				
+
 				BundleHelper.addRequiredBundleDescriptions(bundleDesc, requireDesc);
 				BundleHelper.addPackageImportDescriptions(bundleDesc, importDesc);
-				
+
 				bundleDesc.apply(new NullProgressMonitor());
 				return super.performFinish();
 			} else {
-				// TODO Show error that project is not a plugin
+				MessageDialog.openError(getShell(), "Not a Plug-in project", "The target project is not managed by PDE");
 				return false;
 			}
 		} catch (CoreException e) {

@@ -37,14 +37,36 @@ import org.eclipse.ui.ide.IDE;
 
 
 public abstract class AbstractNewJDTElementWizard<O extends JDTElement> extends Wizard implements INewWizard {
-	protected IPackageFragmentRoot root;
-	protected IPackageFragment fragment;
+	private IPackageFragmentRoot root;
+	private IPackageFragment fragment;
 	private IFile file;
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		IJavaElement jElement = getInitialJavaElement(selection);
 		root = getFragmentRoot(jElement);
 		fragment = getFragment(jElement);
+	}
+
+	public IPackageFragmentRoot getRoot() {
+		if( getPages().length > 0 && getPages()[0] instanceof AbstractJDTElementPage<?>) {
+			return ((AbstractJDTElementPage<?>)getPages()[0]).getFragmentRoot();
+		}
+		return root;
+	}
+
+	public IPackageFragment getFragment() {
+		if( getPages().length > 0 && getPages()[0] instanceof AbstractJDTElementPage<?>) {
+			return ((AbstractJDTElementPage<?>)getPages()[0]).getFragment();
+		}
+		return fragment;
+	}
+
+	public IPackageFragmentRoot getInitialRoot() {
+		return root;
+	}
+
+	public IPackageFragment getInitialFragment() {
+		return fragment;
 	}
 
 	private IPackageFragment getFragment(IJavaElement jElement) {

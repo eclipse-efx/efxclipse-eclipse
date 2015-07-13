@@ -23,10 +23,10 @@ public class NewPreloaderClassWizard extends AbstractNewClassWizard<JDTElement> 
 
 	@Override
 	public void addPages() {
-		addPage(new NewPreloaderClassPage(root,fragment,ResourcesPlugin.getWorkspace().getRoot()));
+		addPage(new NewPreloaderClassPage(getInitialRoot(),getInitialFragment(),ResourcesPlugin.getWorkspace().getRoot()));
 	}
-	
-	
+
+
 	@Override
 	protected IGenerator<JDTElement> getGenerator() {
 		return new PreloaderClassGenerator();
