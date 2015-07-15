@@ -20,27 +20,29 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
 
 public class FXClassmodel implements IFXClassmodel {
-	private Map<String, FXClass> fxClassCache = new HashMap<String, FXClass>();
-	private Map<String, FXCtrlClass> fxCtrlClassCache = new HashMap<String, FXCtrlClass>();
+	private Map<IType, FXClass> fxClassCache = new HashMap<>();
+	private Map<IType, FXCtrlClass> fxCtrlClassCache = new HashMap<>();
 
 	public IFXClass findClass(IJavaProject javaProject, IType type) {
-		IFXClass rv = this.fxClassCache.get(type.getFullyQualifiedName());
-
+		IFXClass rv = this.fxClassCache.get(type);
 		if (rv == null) {
 			FXClass c = new FXClass(javaProject, type);
-			this.fxClassCache.put(c.getFQN(), c);
+			this.fxClassCache.put(type, c);
 			rv = c;
 		}
+
+		System.err.println(fxClassCache);
+
 		return rv;
 	}
 
 	@Override
 	public IFXCtrlClass findCtrlClass(IJavaProject javaProject, IType type) {
-		IFXCtrlClass rv = this.fxCtrlClassCache.get(type.getFullyQualifiedName());
+		IFXCtrlClass rv = this.fxCtrlClassCache.get(type);
 
 		if (rv == null) {
 			FXCtrlClass c = new FXCtrlClass(javaProject, type);
-			this.fxCtrlClassCache.put(c.getFQN(), c);
+			this.fxCtrlClassCache.put(type, c);
 			rv = c;
 		}
 		return rv;
@@ -48,8 +50,7 @@ public class FXClassmodel implements IFXClassmodel {
 
 	@Override
 	public void clearCache(IType type) {
-		String fqn = type.getFullyQualifiedName();
-		this.fxClassCache.remove(fqn);
-		this.fxCtrlClassCache.remove(fqn);
+		this.fxClassCache.remove(type);
+		this.fxCtrlClassCache.remove(type);
 	}
 }
