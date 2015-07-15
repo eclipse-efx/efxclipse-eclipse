@@ -126,7 +126,7 @@ public class FXClass implements IFXClass {
 				FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve properties of '" + type.getFullyQualifiedName() + "'", e);
 			}
 		}
-		return Collections.unmodifiableMap(properties);
+		return properties == null ? Collections.emptyMap() : Collections.unmodifiableMap(properties);
 	}
 
 	@Override
