@@ -156,7 +156,7 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 		if( getClazz().getName() == null || getClazz().getName().trim().length() == 0 ) {
 			setPageComplete(false);
 			setMessage(Messages.FXMLWizardPage_2, IMessageProvider.ERROR);
-		} else if(getClazz().getRootElement() != null) {
+		} else if(getClazz().getRootElement() == null) {
 			setPageComplete(false);
 			setMessage(Messages.FXMLWizardPage_10, IMessageProvider.ERROR);
 		} else if(Character.isLowerCase(getClazz().getName().charAt(0))) {
