@@ -30,7 +30,7 @@ public class FXEventHandlerProperty extends FXProperty implements IFXEventHandle
 		String checkType = erasedFQNType;
 
 		do {
-			if ("javafx.event.EventHandler".equals(checkType)) {
+			if ("javafx.event.EventHandler".equals(checkType)) { //$NON-NLS-1$
 				return true;
 			}
 
@@ -45,8 +45,9 @@ public class FXEventHandlerProperty extends FXProperty implements IFXEventHandle
 		return false;
 	}
 
+	@Override
 	public IType getEventType() {
-		if (eventType == null) {
+		if (this.eventType == null) {
 			try {
 				IMethod m = (IMethod) getJavaElement();
 				String signature;
@@ -59,27 +60,27 @@ public class FXEventHandlerProperty extends FXProperty implements IFXEventHandle
 
 				IType t = (IType) m.getParent();
 				String fqnType = Util.toFQN(t, signature);
-				eventType = getFXClass().getJavaProject().findType(fqnType);
+				this.eventType = getFXClass().getJavaProject().findType(fqnType);
 			} catch (JavaModelException e) {
 				// TODO Auto-generated method stub
 				e.printStackTrace();
 			}
 		}
 
-		return eventType;
+		return this.eventType;
 	}
 
 	@Override
 	public String getEventTypeAsString(boolean fqn) {
 		IType t = getEventType();
 		if (t == null) {
-			return "?";
+			return "?"; //$NON-NLS-1$
 		}
 		return fqn ? t.getFullyQualifiedName() : t.getElementName();
 	}
 
 	@Override
 	public String toString() {
-		return "FXEventHandlerProperty(" + getName() + ")";
+		return "FXEventHandlerProperty(" + getName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

@@ -32,8 +32,11 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.osgi.service.log.LogService;
 
+/**
+ * Abstraction of an {@link IType} providing JavaFX relevant informations
+ */
 public class FXClass implements IFXClass {
-	public static final int STATE_DEFAULT_RESOLVED = 1;
+	private static final int STATE_DEFAULT_RESOLVED = 1;
 	private IFXClass superClass;
 	private IType type;
 
@@ -42,9 +45,17 @@ public class FXClass implements IFXClass {
 	private IFXProperty defaultProperty;
 	private Map<String, IFXProperty> properties;
 	private Map<String, IFXProperty> staticProperties;
-	private boolean valueOfResolved;
+	// private boolean valueOfResolved;
 	private IMethod valueOfMethod;
 
+	/**
+	 * Create a new instance
+	 *
+	 * @param jp
+	 *            the java project
+	 * @param type
+	 *            the type
+	 */
 	public FXClass(IJavaProject jp, IType type) {
 		this.type = type;
 		this.javaProject = jp;
@@ -54,86 +65,94 @@ public class FXClass implements IFXClass {
 
 			if (s != null) {
 				s = getFQNType(type, Signature.getTypeErasure(s));
-				superClass = FXPlugin.getClassmodel().findClass(jp, jp.findType(s));
+				this.superClass = FXPlugin.getClassmodel().findClass(jp, jp.findType(s));
 			}
 		} catch (JavaModelException e) {
-			FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve superclass name of '" + type.getFullyQualifiedName() + "'", e);
+			FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve superclass name of '" + type.getFullyQualifiedName() + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
+	@Override
 	public String getFQN() {
-		return type.getFullyQualifiedName();
+		return this.type.getFullyQualifiedName();
 	}
 
+	@Override
 	public IType getType() {
-		return type;
+		return this.type;
 	}
 
+	/**
+	 * @return the java project the type is attached to
+	 */
 	public IJavaProject getJavaProject() {
-		return javaProject;
+		return this.javaProject;
 	}
 
 	@Override
 	public String getSimpleName() {
-		return type.getElementName();
+		return this.type.getElementName();
 	}
 
 	@Override
 	public IFXProperty getDefaultProperty() {
-		if (!checkStatemask(state, STATE_DEFAULT_RESOLVED)) {
-			IAnnotation annotation = type.getAnnotation("javafx.beans.DefaultProperty");
+		if (!checkStatemask(this.state, STATE_DEFAULT_RESOLVED)) {
+			IAnnotation annotation = this.type.getAnnotation("javafx.beans.DefaultProperty"); //$NON-NLS-1$
 			if (annotation.exists()) {
 				try {
-					String v = getAnnotationMemberValue(annotation, "value");
+					String v = getAnnotationMemberValue(annotation, "value"); //$NON-NLS-1$
 					if (v != null) {
-						defaultProperty = getProperty(v);
+						this.defaultProperty = getProperty(v);
 					}
 				} catch (JavaModelException e) {
-					FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve default annotation value for '" + type.getFullyQualifiedName() + "'", e);
+					FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve default annotation value for '" + this.type.getFullyQualifiedName() + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 				}
 			}
-			state |= STATE_DEFAULT_RESOLVED;
+			this.state |= STATE_DEFAULT_RESOLVED;
 		}
 
-		if (defaultProperty == null) {
-			if (superClass != null) {
-				return superClass.getDefaultProperty();
+		if (this.defaultProperty == null) {
+			if (this.superClass != null) {
+				return this.superClass.getDefaultProperty();
 			}
 		}
 
-		return defaultProperty;
+		return this.defaultProperty;
 	}
 
+	@Override
 	public IFXProperty getProperty(String name) {
 		Map<String, IFXProperty> props = getAllProperties();
 		return props.get(name);
 	}
 
+	@Override
 	public Map<String, IFXProperty> getAllProperties() {
 		Map<String, IFXProperty> rv = new HashMap<String, IFXProperty>();
-		if (superClass != null) {
-			rv.putAll(superClass.getAllProperties());
+		if (this.superClass != null) {
+			rv.putAll(this.superClass.getAllProperties());
 		}
 		rv.putAll(getLocalProperties());
 		return Collections.unmodifiableMap(rv);
 	}
 
+	@Override
 	public Map<String, IFXProperty> getLocalProperties() {
-		if (properties == null) {
+		if (this.properties == null) {
 			try {
-				properties = resolveProperties(this);
+				this.properties = resolveProperties(this);
 			} catch (JavaModelException e) {
-				FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve properties of '" + type.getFullyQualifiedName() + "'", e);
+				FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to retrieve properties of '" + this.type.getFullyQualifiedName() + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
-		return properties == null ? Collections.emptyMap() : Collections.unmodifiableMap(properties);
+		return this.properties == null ? Collections.emptyMap() : Collections.unmodifiableMap(this.properties);
 	}
 
 	@Override
 	public Map<String, IFXProperty> getAllStaticProperties() {
 		Map<String, IFXProperty> rv = new HashMap<String, IFXProperty>();
-		if (superClass != null) {
-			rv.putAll(superClass.getAllStaticProperties());
+		if (this.superClass != null) {
+			rv.putAll(this.superClass.getAllStaticProperties());
 		}
 		rv.putAll(getLocalStaticProperties());
 		return Collections.unmodifiableMap(rv);
@@ -141,14 +160,14 @@ public class FXClass implements IFXClass {
 
 	@Override
 	public Map<String, IFXProperty> getLocalStaticProperties() {
-		if (staticProperties == null) {
+		if (this.staticProperties == null) {
 			try {
-				staticProperties = resolveStaticProperties(this);
+				this.staticProperties = resolveStaticProperties(this);
 			} catch (JavaModelException e) {
-				FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to static retrieve properties of '" + type.getFullyQualifiedName() + "'", e);
+				FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to static retrieve properties of '" + this.type.getFullyQualifiedName() + "'", e); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
-		return Collections.unmodifiableMap(staticProperties);
+		return Collections.unmodifiableMap(this.staticProperties);
 	}
 
 	@Override
@@ -161,24 +180,24 @@ public class FXClass implements IFXClass {
 	public IMethod getValueOf() {
 		// if( ! valueOfResolved ) {
 		try {
-			for (IMethod m : type.getMethods()) {
-				if (Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && "valueOf".equals(m.getElementName())) {
+			for (IMethod m : this.type.getMethods()) {
+				if (Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && "valueOf".equals(m.getElementName())) { //$NON-NLS-1$
 					if (m.getParameterTypes().length == 1) {
 						// String fqnType = Util.toFQN((IType)
 						// m.getParent(),m.getParameterTypes()[0]);
 						// if("java.lang.String".equals( fqnType) ) {
-						valueOfMethod = m;
+						this.valueOfMethod = m;
 						break;
 						// }
 					}
 				}
 			}
-			valueOfResolved = true;
+			// valueOfResolved = true;
 		} catch (JavaModelException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// }
-		return valueOfMethod;
+		return this.valueOfMethod;
 	}
 }

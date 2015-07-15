@@ -48,7 +48,7 @@ public class Util {
 
 	public static String getFQNType(IType referenceType, String name) throws JavaModelException {
 		// no need to resolve it is already an FQN
-		if (name.contains(".")) {
+		if (name.contains(".")) { //$NON-NLS-1$
 			return name;
 		}
 
@@ -72,8 +72,8 @@ public class Util {
 		StringBuilder b = new StringBuilder();
 
 		for (String s : array) {
-			if (b.length() > 0 && !b.toString().endsWith(".")) {
-				b.append(".");
+			if (b.length() > 0 && !b.toString().endsWith(".")) { //$NON-NLS-1$
+				b.append("."); //$NON-NLS-1$
 			}
 			b.append(s);
 		}
@@ -85,16 +85,16 @@ public class Util {
 		String genericType = Signature.toString(signature);
 		String eType = genericType;
 
-		if (genericType.contains("<")) {
+		if (genericType.contains("<")) { //$NON-NLS-1$
 			eType = genericType.substring(genericType.indexOf('<') + 1, genericType.indexOf('>'));
 		}
 
 		// FIXME Is there a better way?
 		// We need to let JDT do the job see how the generate getter/setter stuff for javafx is done
-		if (eType.contains("super")) {
-			eType = eType.substring(eType.indexOf("super") + "super".length()).trim();
-		} else if (eType.contains("extends")) {
-			eType = eType.substring(eType.indexOf("extends") + "extends".length()).trim();
+		if (eType.contains("super")) { //$NON-NLS-1$
+			eType = eType.substring(eType.indexOf("super") + "super".length()).trim(); //$NON-NLS-1$ //$NON-NLS-2$
+		} else if (eType.contains("extends")) { //$NON-NLS-1$
+			eType = eType.substring(eType.indexOf("extends") + "extends".length()).trim(); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
 		String fqn = getFQNType(owner, eType);

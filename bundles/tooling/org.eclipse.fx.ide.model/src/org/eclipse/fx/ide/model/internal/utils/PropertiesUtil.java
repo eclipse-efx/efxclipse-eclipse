@@ -36,14 +36,14 @@ public class PropertiesUtil {
 	public static Map<String, IFXProperty> resolveProperties(FXClass fxClass) throws JavaModelException {
 		Map<String, IFXProperty> rv = new HashMap<String, IFXProperty>();
 
-		if ("java.lang.Object".equals(fxClass.getFQN())) {
+		if ("java.lang.Object".equals(fxClass.getFQN())) { //$NON-NLS-1$
 			return rv;
 		}
 
 		Map<String, IMethod> beanProperties = new HashMap<String, IMethod>();
 		Map<String, IMethod> builderProperties = new HashMap<String, IMethod>();
 
-		String builder = fxClass.getType().getFullyQualifiedName() + "Builder";
+		String builder = fxClass.getType().getFullyQualifiedName() + "Builder"; //$NON-NLS-1$
 		IType builderType = fxClass.getJavaProject().findType(builder);
 		if (builderType != null) {
 			for (IMethod m : builderType.getMethods()) {
@@ -55,7 +55,7 @@ public class PropertiesUtil {
 				String name = m.getElementName();
 
 				// omit the build method
-				if ("build".equals(name) || "applyTo".equals(name)) {
+				if ("build".equals(name) || "applyTo".equals(name)) { //$NON-NLS-1$ //$NON-NLS-2$
 					continue;
 				}
 
@@ -77,19 +77,19 @@ public class PropertiesUtil {
 			String name = m.getElementName();
 
 			// do not use impl methods they are private
-			if (name.startsWith("getImpl") || name.startsWith("isImpl") || name.startsWith("setImpl") || name.contains("Unmodifiable")) {
+			if (name.startsWith("getImpl") || name.startsWith("isImpl") || name.startsWith("setImpl") || name.contains("Unmodifiable")) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 				continue;
 			}
 
-			if (name.startsWith("get") || name.startsWith("is")) {
-				name = name.startsWith("get") ? name.substring(3) : name.substring(2);
+			if (name.startsWith("get") || name.startsWith("is")) { //$NON-NLS-1$ //$NON-NLS-2$
+				name = name.startsWith("get") ? name.substring(3) : name.substring(2); //$NON-NLS-1$
 				name = Character.toLowerCase(name.charAt(0)) + name.substring(1);
 
 				// Only set if there's not already one stored
 				if (!beanProperties.containsKey(name)) {
 					beanProperties.put(name, m);
 				}
-			} else if (m.getElementName().startsWith("set") && m.getParameters().length == 1) {
+			} else if (m.getElementName().startsWith("set") && m.getParameters().length == 1) { //$NON-NLS-1$
 				name = name.substring(3);
 				name = Character.toLowerCase(name.charAt(0)) + name.substring(1);
 				beanProperties.put(name, m);
@@ -127,7 +127,7 @@ public class PropertiesUtil {
 
 		String signature;
 
-		if (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) {
+		if (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) { //$NON-NLS-1$ //$NON-NLS-2$
 			signature = m.getReturnType();
 		} else {
 			// setter or builder method
@@ -161,7 +161,7 @@ public class PropertiesUtil {
 	public static Map<String, IFXProperty> resolveStaticProperties(FXClass fxClass) throws JavaModelException {
 		Map<String, IFXProperty> rv = new HashMap<String, IFXProperty>();
 
-		if ("java.lang.Object".equals(fxClass.getFQN())) {
+		if ("java.lang.Object".equals(fxClass.getFQN())) { //$NON-NLS-1$
 			return rv;
 		}
 
@@ -172,11 +172,11 @@ public class PropertiesUtil {
 
 			String name = m.getElementName();
 
-			if (name.startsWith("setImpl")) {
+			if (name.startsWith("setImpl")) { //$NON-NLS-1$
 				continue;
 			}
 
-			if (name.startsWith("set") && m.getParameterTypes().length == 2) {
+			if (name.startsWith("set") && m.getParameterTypes().length == 2) { //$NON-NLS-1$
 				name = name.substring(3);
 				name = Character.toLowerCase(name.charAt(0)) + name.substring(1);
 

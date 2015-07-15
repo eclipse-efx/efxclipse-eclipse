@@ -32,25 +32,25 @@ public class FXEnumProperty extends FXProperty implements IFXEnumProperty {
 
 	@Override
 	public String toString() {
-		return "FXEnumProperty(" + getName() + ")";
+		return "FXEnumProperty(" + getName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	@Override
 	public String getEnumTypeAsString(boolean fqn) {
-		return fqn ? enumTypeAsString : Signature.getSimpleName(enumTypeAsString);
+		return fqn ? this.enumTypeAsString : Signature.getSimpleName(this.enumTypeAsString);
 	}
 
 	@Override
 	public IType getEnumType() {
-		if (enumType == null) {
+		if (this.enumType == null) {
 			try {
-				enumType = getFXClass().getJavaProject().findType(enumTypeAsString);
+				this.enumType = getFXClass().getJavaProject().findType(this.enumTypeAsString);
 			} catch (JavaModelException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 
-		return enumType;
+		return this.enumType;
 	}
 }

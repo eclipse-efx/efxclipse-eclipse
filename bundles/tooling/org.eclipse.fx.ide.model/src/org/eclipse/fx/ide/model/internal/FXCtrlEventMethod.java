@@ -35,22 +35,22 @@ public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 
 	@Override
 	public IJavaElement getJavaElement() {
-		return method;
+		return this.method;
 	}
 
 	@Override
 	public String getName() {
-		return method.getElementName();
+		return this.method.getElementName();
 	}
 
 	@Override
 	public boolean hasArgument() {
-		return erasedFQNType != null;
+		return this.erasedFQNType != null;
 	}
 
 	public IType getArgumentType() {
 		try {
-			return clazz.getJavaProject().findType(erasedFQNType);
+			return this.clazz.getJavaProject().findType(this.erasedFQNType);
 		} catch (JavaModelException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,7 +61,7 @@ public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 	@Override
 	public Visibility getVisibility() {
 		try {
-			int flags = method.getFlags();
+			int flags = this.method.getFlags();
 
 			if (Flags.isPublic(flags)) {
 				return Visibility.PUBLIC;
@@ -83,7 +83,7 @@ public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 		String checkType = erasedFQNType;
 
 		do {
-			if ("javafx.event.Event".equals(checkType)) {
+			if ("javafx.event.Event".equals(checkType)) { //$NON-NLS-1$
 				return true;
 			}
 

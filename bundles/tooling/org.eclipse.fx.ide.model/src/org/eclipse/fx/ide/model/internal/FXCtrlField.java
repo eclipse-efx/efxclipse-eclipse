@@ -33,17 +33,18 @@ public class FXCtrlField implements IFXCtrlField {
 
 	@Override
 	public IJavaElement getJavaElement() {
-		return field;
+		return this.field;
 	}
 
 	@Override
 	public String getName() {
-		return field.getElementName();
+		return this.field.getElementName();
 	}
 
+	@Override
 	public IType getType() {
 		try {
-			return clazz.getJavaProject().findType(erasedTypeSig);
+			return this.clazz.getJavaProject().findType(this.erasedTypeSig);
 		} catch (JavaModelException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,9 +52,10 @@ public class FXCtrlField implements IFXCtrlField {
 		return null;
 	}
 
+	@Override
 	public Visibility getVisibility() {
 		try {
-			int flags = field.getFlags();
+			int flags = this.field.getFlags();
 
 			if (Flags.isPublic(flags)) {
 				return Visibility.PUBLIC;

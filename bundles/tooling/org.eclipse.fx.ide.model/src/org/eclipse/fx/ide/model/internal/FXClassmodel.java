@@ -24,11 +24,11 @@ public class FXClassmodel implements IFXClassmodel {
 	private Map<String, FXCtrlClass> fxCtrlClassCache = new HashMap<String, FXCtrlClass>();
 
 	public IFXClass findClass(IJavaProject javaProject, IType type) {
-		IFXClass rv = fxClassCache.get(type.getFullyQualifiedName());
+		IFXClass rv = this.fxClassCache.get(type.getFullyQualifiedName());
 
 		if (rv == null) {
 			FXClass c = new FXClass(javaProject, type);
-			fxClassCache.put(c.getFQN(), c);
+			this.fxClassCache.put(c.getFQN(), c);
 			rv = c;
 		}
 		return rv;
@@ -36,11 +36,11 @@ public class FXClassmodel implements IFXClassmodel {
 
 	@Override
 	public IFXCtrlClass findCtrlClass(IJavaProject javaProject, IType type) {
-		IFXCtrlClass rv = fxCtrlClassCache.get(type.getFullyQualifiedName());
+		IFXCtrlClass rv = this.fxCtrlClassCache.get(type.getFullyQualifiedName());
 
 		if (rv == null) {
 			FXCtrlClass c = new FXCtrlClass(javaProject, type);
-			fxCtrlClassCache.put(c.getFQN(), c);
+			this.fxCtrlClassCache.put(c.getFQN(), c);
 			rv = c;
 		}
 		return rv;
@@ -49,7 +49,7 @@ public class FXClassmodel implements IFXClassmodel {
 	@Override
 	public void clearCache(IType type) {
 		String fqn = type.getFullyQualifiedName();
-		fxClassCache.remove(fqn);
-		fxCtrlClassCache.remove(fqn);
+		this.fxClassCache.remove(fqn);
+		this.fxCtrlClassCache.remove(fqn);
 	}
 }

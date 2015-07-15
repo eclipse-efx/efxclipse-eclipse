@@ -32,28 +32,28 @@ public class FXObjectPoperty extends FXProperty implements IFXObjectProperty {
 
 	@Override
 	public String toString() {
-		return "FXObjectPoperty(" + getName() + ")";
+		return "FXObjectPoperty(" + getName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	@Override
 	public String getElementTypeAsString(boolean fqn) {
-		return fqn ? erasedFQNType : Signature.getSimpleName(erasedFQNType);
+		return fqn ? this.erasedFQNType : Signature.getSimpleName(this.erasedFQNType);
 	}
 
 	@Override
 	public boolean hasValueOf() {
-		if (valueOf == null) {
-			valueOf = Boolean.valueOf(getValueOfMethod() != null);
+		if (this.valueOf == null) {
+			this.valueOf = Boolean.valueOf(getValueOfMethod() != null);
 		}
-		return valueOf.booleanValue();
+		return this.valueOf.booleanValue();
 	}
 
 	public IMethod getValueOfMethod() {
-		if (!valueOfMethodResolved) {
+		if (!this.valueOfMethodResolved) {
 			try {
 				for (IMethod m : getElementType().getMethods()) {
-					if (Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && "valueOf".equals(m.getElementName())) {
-						valueOfMethod = m;
+					if (Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && "valueOf".equals(m.getElementName())) { //$NON-NLS-1$
+						this.valueOfMethod = m;
 					}
 				}
 			} catch (JavaModelException e) {
@@ -61,23 +61,23 @@ public class FXObjectPoperty extends FXProperty implements IFXObjectProperty {
 				e.printStackTrace();
 			}
 
-			valueOfMethodResolved = true;
+			this.valueOfMethodResolved = true;
 		}
 
-		return valueOfMethod;
+		return this.valueOfMethod;
 	}
 
 	@Override
 	public IType getElementType() {
-		if (type == null) {
+		if (this.type == null) {
 			try {
-				type = getFXClass().getJavaProject().findType(erasedFQNType);
+				this.type = getFXClass().getJavaProject().findType(this.erasedFQNType);
 			} catch (JavaModelException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 
-		return type;
+		return this.type;
 	}
 }

@@ -27,7 +27,7 @@ public class FXMapProperty extends FXProperty implements IFXMapProperty {
 		String checkType = erasedFQNType;
 
 		do {
-			if ("javafx.collections.ObservableMap".equals(checkType)) {
+			if ("javafx.collections.ObservableMap".equals(checkType)) { //$NON-NLS-1$
 				return true;
 			}
 
@@ -44,6 +44,6 @@ public class FXMapProperty extends FXProperty implements IFXMapProperty {
 
 	@Override
 	public String toString() {
-		return "FXMapProperty(" + getName() + ")";
+		return "FXMapProperty(" + getName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

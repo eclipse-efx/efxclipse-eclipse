@@ -33,7 +33,7 @@ public class FXCollectionProperty extends FXProperty implements IFXCollectionPro
 		String checkType = erasedFQNType;
 
 		do {
-			if ("javafx.collections.ObservableList".equals(checkType) || "javafx.collections.ObservableSet".equals(checkType) || "java.util.Collection".equals(checkType)) {
+			if ("javafx.collections.ObservableList".equals(checkType) || "javafx.collections.ObservableSet".equals(checkType) || "java.util.Collection".equals(checkType)) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				return true;
 			}
 
@@ -50,21 +50,22 @@ public class FXCollectionProperty extends FXProperty implements IFXCollectionPro
 
 	@Override
 	public String toString() {
-		return "FXCollectionProperty(" + getName() + ")";
+		return "FXCollectionProperty(" + getName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
+	@Override
 	public String getCollectionTypeAsString(boolean fqn) {
-		return fqn ? collectionTypeAsString : Signature.getSimpleName(collectionTypeAsString);
+		return fqn ? this.collectionTypeAsString : Signature.getSimpleName(this.collectionTypeAsString);
 	}
 
 	@Override
 	public String getCollectionAsString() {
-		return Signature.getSimpleName(genericType);
+		return Signature.getSimpleName(this.genericType);
 	}
 
 	@Override
 	public IType getElementType() {
-		if (elementType == null) {
+		if (this.elementType == null) {
 			try {
 				IMethod m = (IMethod) getJavaElement();
 				String signature;
@@ -81,10 +82,10 @@ public class FXCollectionProperty extends FXProperty implements IFXCollectionPro
 				String genericType = Signature.toString(signature);
 
 				String eType;
-				if (genericType.contains("extends")) {
-					eType = genericType.substring(genericType.indexOf("extends") + "extends".length(), genericType.indexOf('>'));
-				} else if (genericType.contains("super")) {
-					eType = genericType.substring(genericType.indexOf("super") + "super".length(), genericType.indexOf('>'));
+				if (genericType.contains("extends")) { //$NON-NLS-1$
+					eType = genericType.substring(genericType.indexOf("extends") + "extends".length(), genericType.indexOf('>')); //$NON-NLS-1$ //$NON-NLS-2$
+				} else if (genericType.contains("super")) { //$NON-NLS-1$
+					eType = genericType.substring(genericType.indexOf("super") + "super".length(), genericType.indexOf('>')); //$NON-NLS-1$ //$NON-NLS-2$
 				} else {
 					eType = genericType.substring(genericType.indexOf('<') + 1, genericType.lastIndexOf('>'));
 					eType = Signature.getTypeErasure(eType);

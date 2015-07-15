@@ -23,7 +23,7 @@ public class FXPrimitiveProperty extends FXProperty implements IFXPrimitivePrope
 
 	@Override
 	public Type getType() {
-		return type;
+		return this.type;
 	}
 
 	public static boolean isPrimitive(String genericTypeValue) {
@@ -32,6 +32,6 @@ public class FXPrimitiveProperty extends FXProperty implements IFXPrimitivePrope
 
 	@Override
 	public String toString() {
-		return "FXPrimitiveProperty(" + getName() + ")";
+		return "FXPrimitiveProperty(" + getName() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

@@ -34,26 +34,26 @@ public abstract class FXProperty implements IFXProperty {
 
 	@Override
 	public boolean isStatic() {
-		return isStatic;
+		return this.isStatic;
 	}
 
 	@Override
 	public FXClass getFXClass() {
-		return fxClass;
+		return this.fxClass;
 	}
 
 	@Override
 	public boolean isSetable() {
-		return setable;
+		return this.setable;
 	}
 
 	@Override
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	@Override
 	public IJavaElement getJavaElement() {
-		return javaElement;
+		return this.javaElement;
 	}
 }
