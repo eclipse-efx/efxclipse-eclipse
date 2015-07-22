@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.fx.ide.ldef.feature"
       label="Feature"
-      version="1.0.0.qualifier">
+      version="2.1.0.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
