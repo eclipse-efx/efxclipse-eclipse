@@ -256,6 +256,10 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		@Override
 		public void resourceChanged( IResourceChangeEvent event ) {
 			IResourceDelta delta = event.getDelta();
+			if( delta == null ) {
+				return;
+			}
+
 			try {
 				class ResourceDeltaVisitor implements IResourceDeltaVisitor {
 					protected ResourceSet resourceSet = JFXBuildConfigurationEditor.this.editingDomain.getResourceSet();
@@ -2182,7 +2186,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 	protected void pageChange( int newPageIndex ) {
 		dbc.updateTargets();
 	}
-	
+
 	/**
 	 * If there is more than one page in the multi-page editor part, this shows the tabs at the bottom. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
