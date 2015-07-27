@@ -32,7 +32,7 @@ class RootPomGenerator implements Generator<DynamicFile> {
 					name,
 					groupId,
 					artifactId,
-					null, null, null, null,toPomVersion(version),"0.21.0","4.11","1.8.4","4.2","1.0.0","2.2.0-SNAPSHOT",modules,repos); //FIXME Versions based on release!!!
+					null, null, null, null,toPomVersion(version),"0.23.1","4.11","1.8.4","4.2","1.0.0","2.2.0-SNAPSHOT",modules,repos); //FIXME Versions based on release!!!
 
 		return new ByteArrayInputStream(generate(pomdata).toString.bytes);
 	}
