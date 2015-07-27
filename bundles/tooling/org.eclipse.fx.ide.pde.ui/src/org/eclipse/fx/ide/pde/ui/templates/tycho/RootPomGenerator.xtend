@@ -21,10 +21,6 @@ class RootPomGenerator implements Generator<DynamicFile> {
 			modules.add(it)
 		]
 
-		if( data.get("JemmyTest") == Boolean::FALSE ) {
-			modules.removeAllElements([e|e.contains("jemmy")])
-		}
-
 		val repos = new ArrayList<Repository>();
 		file.variables.findFirst([e|e.key.equals("repos")]).defaultValue.split(";").map [
 			new Repository(it.substring(0,it.indexOf('@')),it.substring(it.indexOf('@')+1,it.length))

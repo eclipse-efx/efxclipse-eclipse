@@ -353,7 +353,7 @@ RobotTask {
 						## baseVersion
 						STRING "baseVersion" default "${BundleProject_bundleVersion}",
 						## modules
-						STRING "modules" default "../${BundleProject_projectName};../${BundleProject_projectName}.feature;../${BundleProject_projectName}.product;../${BundleProject_projectName}.jemmy",
+						STRING "modules" default "../${BundleProject_projectName};../${BundleProject_projectName}.feature;../${BundleProject_projectName}.product",
 						## repos
 						STRING "repos" default "efxclipse-repo@http://download.eclipse.org/efxclipse/runtime-nightly/site;efxclipse-addons@http://downloads.efxclipse.org/efxclipse.bestsolution.at/p2-repos/addons/nightly/site/"
 					},
