@@ -130,8 +130,8 @@ class RootPomGenerator implements Generator<DynamicFile> {
 					<version>${tycho-version}</version>
 					<configuration>
 						<encoding>UTF-8</encoding>
-						<source>1.7</source>
-						<target>1.7</target>
+						<source>1.8</source>
+						<target>1.8</target>
 						<extraClasspathElements>
 							<extraClasspathElement>
 								<groupId>javafx</groupId>
