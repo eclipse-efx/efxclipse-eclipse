@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.ui.handler;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -41,8 +42,12 @@ public class OpenWithFXMLHandler extends AbstractHandler {
 					try {
 						String executable = scenebuilder;
 						if( Util.isMac()  ) {
-						 executable += "/Contents/MacOS/scenebuilder-launcher.sh";	
+						 executable += "/Contents/MacOS/scenebuilder-launcher.sh";
+							if( ! new File(executable).exists() ) {
+								executable = scenebuilder + "/Contents/MacOS/SceneBuilder";
+							}
 						}
+
 						Runtime.getRuntime().exec(new String[] {executable, f.getLocation().toFile().getAbsolutePath() });
 					} catch (IOException e) {
 						MessageDialog.openError(HandlerUtil.getActiveShell(event), "Launch failed", "Failed to launch SceneBuilder. The error message was: " + e.getMessage());
@@ -53,7 +58,7 @@ public class OpenWithFXMLHandler extends AbstractHandler {
 							MessageDialog.openInformation(HandlerUtil.getActiveShell(event), "Unable to open file", "Opening the file with SceneBuilder failed. Try setting the absolute path to scenebuilder in your the preferences");
 						}
 					} else {
-						MessageDialog.openInformation(HandlerUtil.getActiveShell(event), "Unable to open file", "Opening the file with SceneBuilder failed. Try setting the absolute path to scenebuilder in your the preferences");					
+						MessageDialog.openInformation(HandlerUtil.getActiveShell(event), "Unable to open file", "Opening the file with SceneBuilder failed. Try setting the absolute path to scenebuilder in your the preferences");
 					}
 				}
 			}
