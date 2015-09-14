@@ -13,17 +13,10 @@ package org.eclipse.fx.ide.pde.ui.wizard.app;
 import org.eclipse.fx.ide.pde.ui.wizard.model.BundleProjectData;
 
 class AppBundleProjectData extends BundleProjectData {
-	private boolean jemmyTest;
 	private boolean diApp;
 	private boolean nativeExport;
 	private String productName;
-	
-	public boolean isJemmyTest() {
-		return jemmyTest;
-	}
-	public void setJemmyTest(boolean jemmyTest) {
-		this.jemmyTest = jemmyTest;
-	}
+
 	public boolean isDiApp() {
 		return diApp;
 	}
@@ -41,5 +34,5 @@ class AppBundleProjectData extends BundleProjectData {
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;
-	}	
+	}
 }

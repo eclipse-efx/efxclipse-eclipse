@@ -35,16 +35,15 @@ import org.eclipse.fx.ide.rrobot.model.task.RobotTask;
 
 public class NewBundleApplicationWizard extends Wizard implements INewWizard {
 	private AppBundleProjectData data;
-	
+
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.data = new AppBundleProjectData();
-		this.data.setJemmyTest(isJemmyAvailable());
 		this.data.setTychoIntegration(true);
 		this.data.setNativeExport(true);
 		this.data.setVersion("1.0.0.qualifier");
 	}
-	
+
 	private boolean isJemmyAvailable() {
 		return PDECore.getDefault().getModelManager().findModel("at.bestsolution.efxclipse.jemmy") != null;
 	}
@@ -60,7 +59,7 @@ public class NewBundleApplicationWizard extends Wizard implements INewWizard {
 		});
 		addPage(new GeneratorConfigurationPage(data, "generator.page","New FX-OSGi application"));
 	}
-	
+
 	@Override
 	public boolean performFinish() {
 		Bundle b = FrameworkUtil.getBundle(getClass());
@@ -80,16 +79,15 @@ public class NewBundleApplicationWizard extends Wizard implements INewWizard {
 		additionalData.put("TychoIntegration", data.isTychoIntegration());
 		additionalData.put("NativeExport", data.isNativeExport());
 		additionalData.put("EclipseDI", data.isDiApp());
-		additionalData.put("JemmyTest", data.isJemmyTest());
-		
+
 		WorkspaceModifyOperation w = new WorkspaceModifyOperation() {
-			
+
 			@Override
 			protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
 				r.executeTask(monitor, task, additionalData);
 			}
 		};
-		
+
 		try {
 			getContainer().run(true, true,w);
 		} catch (InvocationTargetException e) {

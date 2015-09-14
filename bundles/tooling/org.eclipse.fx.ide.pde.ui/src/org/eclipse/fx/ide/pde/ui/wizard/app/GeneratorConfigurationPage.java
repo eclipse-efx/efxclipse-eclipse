@@ -27,90 +27,81 @@ import org.eclipse.swt.widgets.Text;
 
 class GeneratorConfigurationPage extends WizardPage {
 	private AppBundleProjectData data;
-	private Button jemmyButton;
 	private Button tychoButton;
 	private Button diButton;
 	private Button nativePackaging;
 	private Text productName;
-	
+
 	private ModifyListener propertiesListener = new ModifyListener() {
 		public void modifyText(ModifyEvent e) {
 			setPageComplete(validate());
 		}
 	};
-	
+
 	private SelectionListener listener = new SelectionAdapter() {
 		@Override
 		public void widgetSelected(SelectionEvent e) {
 			setPageComplete(validate());
 		}
 	};
-	
-	
+
+
 	public GeneratorConfigurationPage(AppBundleProjectData data, String pageName, String title) {
 		super(pageName,title,null);
 		this.data = data;
 		setPageComplete(false);
 	}
-	
+
 	protected boolean validate() {
 		setErrorMessage(null);
-		
+
 		if( productName.getText().trim().isEmpty() ) {
 			setErrorMessage("You need to enter a product name");
 			return false;
 		}
-		
+
 		data.setProductName(productName.getText());
-		data.setJemmyTest(jemmyButton.getSelection());
 		data.setTychoIntegration(tychoButton.getSelection());
 		data.setDiApp(diButton.getSelection());
 		data.setNativeExport(nativePackaging.getSelection());
-		
+
 		return true;
 	}
-	
+
 	@Override
 	public void createControl(Composite parent) {
 		Composite container = new Composite(parent, SWT.NONE);
 		container.setLayout(new GridLayout());
-		
+
 		Group group = new Group(container, SWT.NONE);
 		group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		group.setText("Customizations");
 		group.setLayout(new GridLayout(2, false));
-		
+
 		{
 			createLabel(group, "Product Name:");
 			productName = createText(group, propertiesListener, 1);
 			productName.setMessage("Enter a product name");
 		}
-		
-		{
-			createLabel(group, "Jemmy Unittest stubs:");
-			jemmyButton = createCheckbox(group, listener);
-			jemmyButton.setSelection(data.isJemmyTest());
-			jemmyButton.setEnabled(data.isJemmyTest());
-		}
-		
+
 		{
 			createLabel(group, "Tycho Build Stubs:");
 			tychoButton = createCheckbox(group, listener);
 			tychoButton.setSelection(data.isTychoIntegration());
 		}
-		
+
 		{
 			createLabel(group, "Eclipse DI:");
 			diButton = createCheckbox(group, listener);
 			diButton.setSelection(data.isDiApp());
 		}
-		
+
 		{
 			createLabel(group, "Native packaging:");
 			nativePackaging = createCheckbox(group, listener);
 			nativePackaging.setSelection(data.isNativeExport());
 		}
-		
+
 		setControl(container);
 	}
 
@@ -122,13 +113,13 @@ class GeneratorConfigurationPage extends WizardPage {
 		text.addModifyListener(listener);
 		return text;
 	}
-	
+
 	private Button createCheckbox(Composite container, SelectionListener listener) {
 		Button b = new Button(container, SWT.CHECK);
 		b.addSelectionListener(listener);
 		return b;
 	}
-	
+
 	private Label createLabel(Composite container, String text) {
 		Label label = new Label(container, SWT.NONE);
 		label.setText(text);
