@@ -24,33 +24,39 @@ public class FXClassmodel implements IFXClassmodel {
 	private Map<IType, FXCtrlClass> fxCtrlClassCache = new HashMap<>();
 
 	public IFXClass findClass(IJavaProject javaProject, IType type) {
-		IFXClass rv = this.fxClassCache.get(type);
-		if (rv == null) {
-			FXClass c = new FXClass(javaProject, type);
-			this.fxClassCache.put(type, c);
-			rv = c;
+		synchronized (this.fxClassCache) {
+			IFXClass rv = this.fxClassCache.get(type);
+			if (rv == null) {
+				FXClass c = new FXClass(javaProject, type);
+				this.fxClassCache.put(type, c);
+				rv = c;
+			}
+			return rv;
 		}
-
-		System.err.println(fxClassCache);
-
-		return rv;
 	}
 
 	@Override
 	public IFXCtrlClass findCtrlClass(IJavaProject javaProject, IType type) {
-		IFXCtrlClass rv = this.fxCtrlClassCache.get(type);
+		synchronized (this.fxCtrlClassCache) {
+			IFXCtrlClass rv = this.fxCtrlClassCache.get(type);
 
-		if (rv == null) {
-			FXCtrlClass c = new FXCtrlClass(javaProject, type);
-			this.fxCtrlClassCache.put(type, c);
-			rv = c;
+			if (rv == null) {
+				FXCtrlClass c = new FXCtrlClass(javaProject, type);
+				this.fxCtrlClassCache.put(type, c);
+				rv = c;
+			}
+			return rv;
 		}
-		return rv;
 	}
 
 	@Override
 	public void clearCache(IType type) {
-		this.fxClassCache.remove(type);
-		this.fxCtrlClassCache.remove(type);
+		synchronized (this.fxClassCache) {
+			this.fxClassCache.remove(type);
+		}
+
+		synchronized (this.fxCtrlClassCache) {
+			this.fxCtrlClassCache.remove(type);
+		}
 	}
 }
