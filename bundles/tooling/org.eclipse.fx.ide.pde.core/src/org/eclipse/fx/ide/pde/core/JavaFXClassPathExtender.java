@@ -179,7 +179,7 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		final IVMInstall vm = getVM(project);
 		final FXVersion version = FXVersionUtil.getFxVersion(vm);
 		if( DEBUG ) {
-			System.err.println("The javafx version is: " + version);
+			System.err.println("JavaFXClasspathExtender - The javafx version is: " + version);
 		}
 
 		final IClasspathEntry javaCssExtEntry = getJavaCssExtEntry(version);
@@ -190,13 +190,13 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		// FX8 classpath
 		if (version == FXVersion.FX8) {
 			if( DEBUG ) {
-				System.err.println("This is FX8 only add the SWT-Lib ");
+				System.err.println("JavaFXClasspathExtender - This is FX8 only add the SWT-Lib ");
 			}
 			final IClasspathEntry swtFxEntry = getSWTFXEntry(vm);
 
 			if (swtFxEntry != null) {
 				if( DEBUG ) {
-					System.err.println("Adding swt entry");
+					System.err.println("JavaFXClasspathExtender - Adding swt entry");
 				}
 				entries.add(swtFxEntry);
 			}
