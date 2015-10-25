@@ -35,17 +35,19 @@ import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
 import org.eclipse.osgi.service.resolver.BundleDescription;
 import org.eclipse.osgi.service.resolver.ImportPackageSpecification;
 import org.eclipse.pde.core.IClasspathContributor;
-import org.eclipse.pde.core.plugin.IPluginModelBase;
-import org.eclipse.pde.core.plugin.PluginRegistry;
-import org.eclipse.pde.internal.core.ClasspathUtilCore;
-import org.omg.CORBA.UNKNOWN;
 import org.osgi.framework.Bundle;
 
 @SuppressWarnings("restriction")
 public class JavaFXClassPathExtender implements IClasspathContributor {
-	
+	private static boolean DEBUG = Boolean.getBoolean("efxclipse.pde.debug");
+
 	private IVMInstall findVMForEnv(IExecutionEnvironment env) {
+		if( DEBUG ) {
+			System.err.println("JavaFXClasspathExtender - Look up vm for: " + env.getId() );
+		}
 		IVMInstall vm = env.getDefaultVM();
+
+
 		if (vm == null) {
 			for (IVMInstall compatibleVM : env.getCompatibleVMs()) {
 				if (env.isStrictlyCompatible(compatibleVM)) {
@@ -54,9 +56,18 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 				}
 			}
 		}
+
+		if( DEBUG ) {
+			if( vm == null ) {
+				System.err.println("JavaFXClasspathExtender - No vm found");
+			} else {
+				System.err.println("JavaFXClasspathExtender - The default VM is: " +  vm.getInstallLocation());
+			}
+		}
+
 		return vm;
 	}
-	
+
 	private IVMInstall getVM(BundleDescription project) {
 		for( String e : project.getExecutionEnvironments() ) {
 			IExecutionEnvironment env = JavaRuntime.getExecutionEnvironmentsManager().getEnvironment(e);
@@ -67,8 +78,8 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		}
 		return null;
 	}
-	
-	
+
+
 	private IClasspathEntry getJavaCssExtEntry(FXVersion version) {
 		switch (version) {
 		case FX2: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX2_BUNDLE_NAME);
@@ -76,7 +87,7 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		}
 		return null;
 	}
-	
+
 	private static IClasspathEntry getBundleAsEntryByName(String name) {
 		try {
 			final Bundle bundle = Platform.getBundle(name);
@@ -94,21 +105,29 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 			return null;
 		}
 	}
-	
+
 	private IClasspathEntry getSWTFXEntry(IVMInstall vm) {
 		IPath[] swtFxJarPath = BuildPathSupport.getSwtFxJarPath(vm);
 		if( swtFxJarPath != null ) {
+			if( DEBUG ) {
+				System.err.println("JavaFXClasspathExtender - SWTFX is located at: " + swtFxJarPath[0]);
+			}
 			List<IAccessRule> l = new ArrayList<IAccessRule>();
 			l.add(JavaCore.newAccessRule(new Path("javafx.embed.swt".replace('.', '/')+"/*"),IAccessRule.K_ACCESSIBLE));
 			IClasspathAttribute[] extraAttributes = {
 					JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, swtFxJarPath[1] == null || !swtFxJarPath[1].toFile().exists() ? BuildPathSupport.WEB_JAVADOC_LOCATION : swtFxJarPath[1].toFile().toURI().toString())
 			};
-			
+
 			return JavaCore.newLibraryEntry(swtFxJarPath[0], swtFxJarPath[2], null, l.toArray(new IAccessRule[0]), extraAttributes, false);
+		} else {
+			if( DEBUG ) {
+				System.err.println("JavaFXClasspathExtender - Could not find swtfx.jar");
+			}
 		}
+
 		return null;
 	}
-	
+
 	private IClasspathEntry getJavaFX2RuntimeEntry(IVMInstall vm, BundleDescription project) {
 		IPath[] paths = BuildPathSupport.getFxJarPath(vm);
 		if( paths == null ) {
@@ -142,50 +161,57 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 					l.add(JavaCore.newAccessRule(new Path(i.getName().replace('.', '/')+"/*"),IAccessRule.K_DISCOURAGED));
 				} else if( i.getName().startsWith("com.sun.javafx.scene.text") ) {
 					l.add(JavaCore.newAccessRule(new Path(i.getName().replace('.', '/')+"/*"),IAccessRule.K_DISCOURAGED));
-				} 
+				}
 			}
-			
+
 			IClasspathAttribute[] extraAttributes = {
 					JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, paths[1] == null || !paths[1].toFile().exists() ? BuildPathSupport.WEB_JAVADOC_LOCATION : paths[1].toFile().toURI().toString())
 			};
-			
+
 			return JavaCore.newLibraryEntry(paths[0], null, null, l.toArray(new IAccessRule[0]), extraAttributes, false);
 		}
 	}
-	
+
 	@Override
 	public List<IClasspathEntry> getInitialEntries(BundleDescription project) {
 		final List<IClasspathEntry> entries = new ArrayList<>();
-		
+
 		final IVMInstall vm = getVM(project);
 		final FXVersion version = FXVersionUtil.getFxVersion(vm);
-		
-		
+		if( DEBUG ) {
+			System.err.println("The javafx version is: " + version);
+		}
+
 		final IClasspathEntry javaCssExtEntry = getJavaCssExtEntry(version);
 		if (javaCssExtEntry != null) {
 			entries.add(javaCssExtEntry);
 		}
-		
+
 		// FX8 classpath
 		if (version == FXVersion.FX8) {
-			
+			if( DEBUG ) {
+				System.err.println("This is FX8 only add the SWT-Lib ");
+			}
 			final IClasspathEntry swtFxEntry = getSWTFXEntry(vm);
+
 			if (swtFxEntry != null) {
+				if( DEBUG ) {
+					System.err.println("Adding swt entry");
+				}
 				entries.add(swtFxEntry);
 			}
-			
+
 		}
-		
+
 		// FX2 classpath
 		if (version == FXVersion.FX2) {
-		
 			final IClasspathEntry jfx2Runtime = getJavaFX2RuntimeEntry(vm, project);
 			if (jfx2Runtime != null) {
 				entries.add(jfx2Runtime);
 			}
-			
+
 		}
-		
+
 		return entries;
 	}
 
