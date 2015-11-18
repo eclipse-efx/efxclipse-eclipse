@@ -92,13 +92,26 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFormatterListNLSFormatterParserRuleCall_5_0 = (RuleCall)cFormatterListAssignment_5.eContents().get(0);
 		private final Assignment cMessageEntryListAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cMessageEntryListMessageEntryParserRuleCall_6_0 = (RuleCall)cMessageEntryListAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cIncludedBundlesKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cIncludedBundleListAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cIncludedBundleListNLSBundleCrossReference_7_1_0 = (CrossReference)cIncludedBundleListAssignment_7_1.eContents().get(0);
+		private final RuleCall cIncludedBundleListNLSBundleQualifiedNameParserRuleCall_7_1_0_1 = (RuleCall)cIncludedBundleListNLSBundleCrossReference_7_1_0.eContents().get(1);
+		private final Group cGroup_7_2 = (Group)cGroup_7.eContents().get(2);
+		private final Keyword cCommaKeyword_7_2_0 = (Keyword)cGroup_7_2.eContents().get(0);
+		private final Assignment cIncludedBundleListAssignment_7_2_1 = (Assignment)cGroup_7_2.eContents().get(1);
+		private final CrossReference cIncludedBundleListNLSBundleCrossReference_7_2_1_0 = (CrossReference)cIncludedBundleListAssignment_7_2_1.eContents().get(0);
+		private final RuleCall cIncludedBundleListNLSBundleQualifiedNameParserRuleCall_7_2_1_0_1 = (RuleCall)cIncludedBundleListNLSBundleCrossReference_7_2_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//NLSBundle:
-		//	"bundle" name=ID "default" lang=ID "{" formatterList+=NLSFormatter* messageEntryList+=MessageEntry+ "}";
+		//	"bundle" name=ID "default" lang=ID "{" formatterList+=NLSFormatter* messageEntryList+=MessageEntry+
+		//	("included-bundles" includedBundleList+=[NLSBundle|QualifiedName] (","
+		//	includedBundleList+=[NLSBundle|QualifiedName])*)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"bundle" name=ID "default" lang=ID "{" formatterList+=NLSFormatter* messageEntryList+=MessageEntry+ "}"
+		//"bundle" name=ID "default" lang=ID "{" formatterList+=NLSFormatter* messageEntryList+=MessageEntry+ ("included-bundles"
+		//includedBundleList+=[NLSBundle|QualifiedName] ("," includedBundleList+=[NLSBundle|QualifiedName])*)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"bundle"
@@ -134,8 +147,38 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 		//MessageEntry
 		public RuleCall getMessageEntryListMessageEntryParserRuleCall_6_0() { return cMessageEntryListMessageEntryParserRuleCall_6_0; }
 
+		//("included-bundles" includedBundleList+=[NLSBundle|QualifiedName] ("," includedBundleList+=[NLSBundle|QualifiedName])*)?
+		public Group getGroup_7() { return cGroup_7; }
+
+		//"included-bundles"
+		public Keyword getIncludedBundlesKeyword_7_0() { return cIncludedBundlesKeyword_7_0; }
+
+		//includedBundleList+=[NLSBundle|QualifiedName]
+		public Assignment getIncludedBundleListAssignment_7_1() { return cIncludedBundleListAssignment_7_1; }
+
+		//[NLSBundle|QualifiedName]
+		public CrossReference getIncludedBundleListNLSBundleCrossReference_7_1_0() { return cIncludedBundleListNLSBundleCrossReference_7_1_0; }
+
+		//QualifiedName
+		public RuleCall getIncludedBundleListNLSBundleQualifiedNameParserRuleCall_7_1_0_1() { return cIncludedBundleListNLSBundleQualifiedNameParserRuleCall_7_1_0_1; }
+
+		//("," includedBundleList+=[NLSBundle|QualifiedName])*
+		public Group getGroup_7_2() { return cGroup_7_2; }
+
+		//","
+		public Keyword getCommaKeyword_7_2_0() { return cCommaKeyword_7_2_0; }
+
+		//includedBundleList+=[NLSBundle|QualifiedName]
+		public Assignment getIncludedBundleListAssignment_7_2_1() { return cIncludedBundleListAssignment_7_2_1; }
+
+		//[NLSBundle|QualifiedName]
+		public CrossReference getIncludedBundleListNLSBundleCrossReference_7_2_1_0() { return cIncludedBundleListNLSBundleCrossReference_7_2_1_0; }
+
+		//QualifiedName
+		public RuleCall getIncludedBundleListNLSBundleQualifiedNameParserRuleCall_7_2_1_0_1() { return cIncludedBundleListNLSBundleQualifiedNameParserRuleCall_7_2_1_0_1; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class NLSFormatterElements extends AbstractParserRuleElementFinder {
@@ -718,7 +761,9 @@ public class NLSDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NLSBundle:
-	//	"bundle" name=ID "default" lang=ID "{" formatterList+=NLSFormatter* messageEntryList+=MessageEntry+ "}";
+	//	"bundle" name=ID "default" lang=ID "{" formatterList+=NLSFormatter* messageEntryList+=MessageEntry+
+	//	("included-bundles" includedBundleList+=[NLSBundle|QualifiedName] (","
+	//	includedBundleList+=[NLSBundle|QualifiedName])*)? "}";
 	public NLSBundleElements getNLSBundleAccess() {
 		return pNLSBundle;
 	}

@@ -43,6 +43,8 @@ public class NLSDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNLSAccess().getGroup(), "rule__NLS__Group__0");
 					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 					put(grammarAccess.getNLSBundleAccess().getGroup(), "rule__NLSBundle__Group__0");
+					put(grammarAccess.getNLSBundleAccess().getGroup_7(), "rule__NLSBundle__Group_7__0");
+					put(grammarAccess.getNLSBundleAccess().getGroup_7_2(), "rule__NLSBundle__Group_7_2__0");
 					put(grammarAccess.getNLSFormatterAccess().getGroup(), "rule__NLSFormatter__Group__0");
 					put(grammarAccess.getMessageEntryAccess().getGroup(), "rule__MessageEntry__Group__0");
 					put(grammarAccess.getMessageEntryAccess().getGroup_1(), "rule__MessageEntry__Group_1__0");
@@ -65,6 +67,8 @@ public class NLSDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNLSBundleAccess().getLangAssignment_3(), "rule__NLSBundle__LangAssignment_3");
 					put(grammarAccess.getNLSBundleAccess().getFormatterListAssignment_5(), "rule__NLSBundle__FormatterListAssignment_5");
 					put(grammarAccess.getNLSBundleAccess().getMessageEntryListAssignment_6(), "rule__NLSBundle__MessageEntryListAssignment_6");
+					put(grammarAccess.getNLSBundleAccess().getIncludedBundleListAssignment_7_1(), "rule__NLSBundle__IncludedBundleListAssignment_7_1");
+					put(grammarAccess.getNLSBundleAccess().getIncludedBundleListAssignment_7_2_1(), "rule__NLSBundle__IncludedBundleListAssignment_7_2_1");
 					put(grammarAccess.getNLSFormatterAccess().getNameAssignment_1(), "rule__NLSFormatter__NameAssignment_1");
 					put(grammarAccess.getNLSFormatterAccess().getClassRefAssignment_2(), "rule__NLSFormatter__ClassRefAssignment_2");
 					put(grammarAccess.getMessageEntryAccess().getNameAssignment_0(), "rule__MessageEntry__NameAssignment_0");

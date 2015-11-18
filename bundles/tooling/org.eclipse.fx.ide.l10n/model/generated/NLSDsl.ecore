@@ -17,6 +17,8 @@
         eType="#//NLSFormatter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageEntryList" upperBound="-1"
         eType="#//MessageEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includedBundleList" unique="false"
+        upperBound="-1" eType="#//NLSBundle"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NLSFormatter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

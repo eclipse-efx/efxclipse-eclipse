@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.NLSBundle#getLang <em>Lang</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.NLSBundle#getFormatterList <em>Formatter List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.NLSBundle#getMessageEntryList <em>Message Entry List</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.NLSBundle#getIncludedBundleList <em>Included Bundle List</em>}</li>
  * </ul>
  *
  * @see org.eclipse.fx.ide.l10n.nLSDsl.NLSDslPackage#getNLSBundle()
@@ -110,5 +111,21 @@ public interface NLSBundle extends EObject
    * @generated
    */
   EList<MessageEntry> getMessageEntryList();
+
+  /**
+   * Returns the value of the '<em><b>Included Bundle List</b></em>' reference list.
+   * The list contents are of type {@link org.eclipse.fx.ide.l10n.nLSDsl.NLSBundle}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Included Bundle List</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Included Bundle List</em>' reference list.
+   * @see org.eclipse.fx.ide.l10n.nLSDsl.NLSDslPackage#getNLSBundle_IncludedBundleList()
+   * @model
+   * @generated
+   */
+  EList<NLSBundle> getIncludedBundleList();
 
 } // NLSBundle

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.fx.ide.l10n.nLSDsl.MessageEntry;
@@ -35,6 +36,7 @@ import org.eclipse.fx.ide.l10n.nLSDsl.NLSFormatter;
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getLang <em>Lang</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getFormatterList <em>Formatter List</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getMessageEntryList <em>Message Entry List</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSBundleImpl#getIncludedBundleList <em>Included Bundle List</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +102,16 @@ public class NLSBundleImpl extends MinimalEObjectImpl.Container implements NLSBu
    * @ordered
    */
   protected EList<MessageEntry> messageEntryList;
+
+  /**
+   * The cached value of the '{@link #getIncludedBundleList() <em>Included Bundle List</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIncludedBundleList()
+   * @generated
+   * @ordered
+   */
+  protected EList<NLSBundle> includedBundleList;
 
   /**
    * <!-- begin-user-doc -->
@@ -201,6 +213,20 @@ public class NLSBundleImpl extends MinimalEObjectImpl.Container implements NLSBu
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<NLSBundle> getIncludedBundleList()
+  {
+    if (includedBundleList == null)
+    {
+      includedBundleList = new EObjectResolvingEList<NLSBundle>(NLSBundle.class, this, NLSDslPackage.NLS_BUNDLE__INCLUDED_BUNDLE_LIST);
+    }
+    return includedBundleList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -232,6 +258,8 @@ public class NLSBundleImpl extends MinimalEObjectImpl.Container implements NLSBu
         return getFormatterList();
       case NLSDslPackage.NLS_BUNDLE__MESSAGE_ENTRY_LIST:
         return getMessageEntryList();
+      case NLSDslPackage.NLS_BUNDLE__INCLUDED_BUNDLE_LIST:
+        return getIncludedBundleList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -261,6 +289,10 @@ public class NLSBundleImpl extends MinimalEObjectImpl.Container implements NLSBu
         getMessageEntryList().clear();
         getMessageEntryList().addAll((Collection<? extends MessageEntry>)newValue);
         return;
+      case NLSDslPackage.NLS_BUNDLE__INCLUDED_BUNDLE_LIST:
+        getIncludedBundleList().clear();
+        getIncludedBundleList().addAll((Collection<? extends NLSBundle>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -287,6 +319,9 @@ public class NLSBundleImpl extends MinimalEObjectImpl.Container implements NLSBu
       case NLSDslPackage.NLS_BUNDLE__MESSAGE_ENTRY_LIST:
         getMessageEntryList().clear();
         return;
+      case NLSDslPackage.NLS_BUNDLE__INCLUDED_BUNDLE_LIST:
+        getIncludedBundleList().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -309,6 +344,8 @@ public class NLSBundleImpl extends MinimalEObjectImpl.Container implements NLSBu
         return formatterList != null && !formatterList.isEmpty();
       case NLSDslPackage.NLS_BUNDLE__MESSAGE_ENTRY_LIST:
         return messageEntryList != null && !messageEntryList.isEmpty();
+      case NLSDslPackage.NLS_BUNDLE__INCLUDED_BUNDLE_LIST:
+        return includedBundleList != null && !includedBundleList.isEmpty();
     }
     return super.eIsSet(featureID);
   }

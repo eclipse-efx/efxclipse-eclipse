@@ -25,6 +25,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//NLSBundle/lang"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLSBundle/formatterList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLSBundle/messageEntryList"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NLSDsl.ecore#//NLSBundle/includedBundleList"/>
     </genClasses>
     <genClasses ecoreClass="NLSDsl.ecore#//NLSFormatter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NLSDsl.ecore#//NLSFormatter/name"/>

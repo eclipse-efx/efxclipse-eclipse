@@ -169,13 +169,22 @@ public interface NLSDslPackage extends EPackage
   int NLS_BUNDLE__MESSAGE_ENTRY_LIST = 3;
 
   /**
+   * The feature id for the '<em><b>Included Bundle List</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NLS_BUNDLE__INCLUDED_BUNDLE_LIST = 4;
+
+  /**
    * The number of structural features of the '<em>NLS Bundle</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NLS_BUNDLE_FEATURE_COUNT = 4;
+  int NLS_BUNDLE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSFormatterImpl <em>NLS Formatter</em>}' class.
@@ -648,6 +657,17 @@ public interface NLSDslPackage extends EPackage
   EReference getNLSBundle_MessageEntryList();
 
   /**
+   * Returns the meta object for the reference list '{@link org.eclipse.fx.ide.l10n.nLSDsl.NLSBundle#getIncludedBundleList <em>Included Bundle List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Included Bundle List</em>'.
+   * @see org.eclipse.fx.ide.l10n.nLSDsl.NLSBundle#getIncludedBundleList()
+   * @see #getNLSBundle()
+   * @generated
+   */
+  EReference getNLSBundle_IncludedBundleList();
+
+  /**
    * Returns the meta object for class '{@link org.eclipse.fx.ide.l10n.nLSDsl.NLSFormatter <em>NLS Formatter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1063,6 +1083,14 @@ public interface NLSDslPackage extends EPackage
      * @generated
      */
     EReference NLS_BUNDLE__MESSAGE_ENTRY_LIST = eINSTANCE.getNLSBundle_MessageEntryList();
+
+    /**
+     * The meta object literal for the '<em><b>Included Bundle List</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NLS_BUNDLE__INCLUDED_BUNDLE_LIST = eINSTANCE.getNLSBundle_IncludedBundleList();
 
     /**
      * The meta object literal for the '{@link org.eclipse.fx.ide.l10n.nLSDsl.impl.NLSFormatterImpl <em>NLS Formatter</em>}' class.

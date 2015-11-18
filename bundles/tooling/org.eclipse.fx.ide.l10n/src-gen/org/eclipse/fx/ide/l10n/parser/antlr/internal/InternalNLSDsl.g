@@ -270,9 +270,47 @@ ruleNLSBundle returns [EObject current=null]
 	    }
 
 )
-)+	otherlv_7='}' 
+)+(	otherlv_7='included-bundles' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getNLSBundleAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_7, grammarAccess.getNLSBundleAccess().getIncludedBundlesKeyword_7_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNLSBundleRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getNLSBundleAccess().getIncludedBundleListNLSBundleCrossReference_7_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_9=',' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getNLSBundleAccess().getCommaKeyword_7_2_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNLSBundleRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getNLSBundleAccess().getIncludedBundleListNLSBundleCrossReference_7_2_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?	otherlv_11='}' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getNLSBundleAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;

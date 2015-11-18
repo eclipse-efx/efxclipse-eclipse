@@ -16,6 +16,7 @@ NLSBundle:
 	'bundle' name=ID 'default' lang=ID '{'
 		formatterList+=NLSFormatter*
 		messageEntryList+=MessageEntry+
+		( 'included-bundles' includedBundleList+=[NLSBundle|QualifiedName] ( ',' includedBundleList+=[NLSBundle|QualifiedName])* )?
 	'}'
 ;
 

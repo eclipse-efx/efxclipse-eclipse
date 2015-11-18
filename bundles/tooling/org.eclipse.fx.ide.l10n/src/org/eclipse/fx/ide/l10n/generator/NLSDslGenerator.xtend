@@ -89,10 +89,12 @@ class NLSDslGenerator implements IGenerator {
 		private «f.classRef» cust_«f.name»;
 		«ENDFOR»
 
-		«FOR b : nls.messageEntryList.filter[m|m.entryRef != null].fold(new HashSet,[s,e|
+		«val elements = nls.messageEntryList.filter[m|m.entryRef != null].fold(new HashSet,[s,e|
 			s.add(e.entryRef.findNLSBundle)
 			return s
 		])»
+		«val dummy = elements.addAll(nls.includedBundleList)»
+		«FOR b : elements»
 		@javax.inject.Inject
 		private «(b.eContainer as NLS).package.name».«b.name»Registry bundle_«b.name»;
 		«ENDFOR»
@@ -164,6 +166,19 @@ class NLSDslGenerator implements IGenerator {
 				}
 			«ENDIF»
 
+		«ENDFOR»
+
+		«FOR in : nls.includedBundleList»
+			«FOR me : in.messageEntryList»
+				public String «me.name»() {
+					return bundle_«in.name».«me.name»();
+				}
+				«IF ! me.paramList.empty»
+					public String «me.name»(«me.paramList.map[p|p.predefined.toSourceString + " " + p.^var].join(", ")») {
+						return bundle_«in.name».«me.name»(«me.paramList.map[p|p.^var].join(", ")»);
+					}
+				«ENDIF»
+			«ENDFOR»
 		«ENDFOR»
 	}
 	'''

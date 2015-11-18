@@ -300,6 +300,16 @@ public class NLSDslPackageImpl extends EPackageImpl implements NLSDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getNLSBundle_IncludedBundleList()
+  {
+    return (EReference)nlsBundleEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNLSFormatter()
   {
     return nlsFormatterEClass;
@@ -627,6 +637,7 @@ public class NLSDslPackageImpl extends EPackageImpl implements NLSDslPackage
     createEAttribute(nlsBundleEClass, NLS_BUNDLE__LANG);
     createEReference(nlsBundleEClass, NLS_BUNDLE__FORMATTER_LIST);
     createEReference(nlsBundleEClass, NLS_BUNDLE__MESSAGE_ENTRY_LIST);
+    createEReference(nlsBundleEClass, NLS_BUNDLE__INCLUDED_BUNDLE_LIST);
 
     nlsFormatterEClass = createEClass(NLS_FORMATTER);
     createEAttribute(nlsFormatterEClass, NLS_FORMATTER__NAME);
@@ -713,6 +724,7 @@ public class NLSDslPackageImpl extends EPackageImpl implements NLSDslPackage
     initEAttribute(getNLSBundle_Lang(), ecorePackage.getEString(), "lang", null, 0, 1, NLSBundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNLSBundle_FormatterList(), this.getNLSFormatter(), null, "formatterList", null, 0, -1, NLSBundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNLSBundle_MessageEntryList(), this.getMessageEntry(), null, "messageEntryList", null, 0, -1, NLSBundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNLSBundle_IncludedBundleList(), this.getNLSBundle(), null, "includedBundleList", null, 0, -1, NLSBundle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nlsFormatterEClass, NLSFormatter.class, "NLSFormatter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNLSFormatter_Name(), ecorePackage.getEString(), "name", null, 0, 1, NLSFormatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

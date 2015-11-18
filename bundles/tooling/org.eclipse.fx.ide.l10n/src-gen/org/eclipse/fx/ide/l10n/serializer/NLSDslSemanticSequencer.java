@@ -137,7 +137,13 @@ public class NLSDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID lang=ID formatterList+=NLSFormatter* messageEntryList+=MessageEntry+)
+	 *     (
+	 *         name=ID 
+	 *         lang=ID 
+	 *         formatterList+=NLSFormatter* 
+	 *         messageEntryList+=MessageEntry+ 
+	 *         (includedBundleList+=[NLSBundle|QualifiedName] includedBundleList+=[NLSBundle|QualifiedName]*)?
+	 *     )
 	 */
 	protected void sequence_NLSBundle(EObject context, NLSBundle semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

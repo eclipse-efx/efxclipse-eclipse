@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalNLSDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_RICH_TEXT", "RULE_RICH_TEXT_START", "RULE_RICH_TEXT_END", "RULE_RICH_TEXT_INBETWEEN", "RULE_STRING", "RULE_IN_RICH_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'package'", "'bundle'", "'default'", "'formatter'", "'('", "','", "')'", "'['", "']'", "':'", "'.'", "'ANY'", "'NUMBER'", "'DATE'", "'TEMPORAL'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_RICH_TEXT", "RULE_RICH_TEXT_START", "RULE_RICH_TEXT_END", "RULE_RICH_TEXT_INBETWEEN", "RULE_STRING", "RULE_IN_RICH_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'package'", "'bundle'", "'default'", "'included-bundles'", "','", "'formatter'", "'('", "')'", "'['", "']'", "':'", "'.'", "'ANY'", "'NUMBER'", "'DATE'", "'TEMPORAL'"
     };
     public static final int RULE_STRING=9;
     public static final int RULE_SL_COMMENT=13;
@@ -32,6 +32,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int T__33=33;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -456,7 +457,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNLSBundle"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:185:1: ruleNLSBundle returns [EObject current=null] : (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ otherlv_7= '}' ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:185:1: ruleNLSBundle returns [EObject current=null] : (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ (otherlv_7= 'included-bundles' ( ( ruleQualifiedName ) ) (otherlv_9= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_11= '}' ) ;
     public final EObject ruleNLSBundle() throws RecognitionException {
         EObject current = null;
 
@@ -466,6 +467,8 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
         Token lv_lang_3_0=null;
         Token otherlv_4=null;
         Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
         EObject lv_formatterList_5_0 = null;
 
         EObject lv_messageEntryList_6_0 = null;
@@ -474,11 +477,11 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:188:28: ( (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ otherlv_7= '}' ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:189:1: (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ otherlv_7= '}' )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:188:28: ( (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ (otherlv_7= 'included-bundles' ( ( ruleQualifiedName ) ) (otherlv_9= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_11= '}' ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:189:1: (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ (otherlv_7= 'included-bundles' ( ( ruleQualifiedName ) ) (otherlv_9= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_11= '}' )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:189:1: (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ otherlv_7= '}' )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:189:3: otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ otherlv_7= '}'
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:189:1: (otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ (otherlv_7= 'included-bundles' ( ( ruleQualifiedName ) ) (otherlv_9= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_11= '}' )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:189:3: otherlv_0= 'bundle' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'default' ( (lv_lang_3_0= RULE_ID ) ) otherlv_4= '{' ( (lv_formatterList_5_0= ruleNLSFormatter ) )* ( (lv_messageEntryList_6_0= ruleMessageEntry ) )+ (otherlv_7= 'included-bundles' ( ( ruleQualifiedName ) ) (otherlv_9= ',' ( ( ruleQualifiedName ) ) )* )? otherlv_11= '}'
             {
             otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleNLSBundle365); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -564,7 +567,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==21) ) {
+                if ( (LA3_0==23) ) {
                     alt3=1;
                 }
 
@@ -670,10 +673,131 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                 cnt4++;
             } while (true);
 
-            otherlv_7=(Token)match(input,17,FOLLOW_17_in_ruleNLSBundle489); if (state.failed) return current;
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:273:3: (otherlv_7= 'included-bundles' ( ( ruleQualifiedName ) ) (otherlv_9= ',' ( ( ruleQualifiedName ) ) )* )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==21) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:273:5: otherlv_7= 'included-bundles' ( ( ruleQualifiedName ) ) (otherlv_9= ',' ( ( ruleQualifiedName ) ) )*
+                    {
+                    otherlv_7=(Token)match(input,21,FOLLOW_21_in_ruleNLSBundle490); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_7, grammarAccess.getNLSBundleAccess().getIncludedBundlesKeyword_7_0());
+                          
+                    }
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:277:1: ( ( ruleQualifiedName ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:278:1: ( ruleQualifiedName )
+                    {
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:278:1: ( ruleQualifiedName )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:279:3: ruleQualifiedName
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			if (current==null) {
+                      	            current = createModelElement(grammarAccess.getNLSBundleRule());
+                      	        }
+                              
+                    }
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getNLSBundleAccess().getIncludedBundleListNLSBundleCrossReference_7_1_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleNLSBundle513);
+                    ruleQualifiedName();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+                       
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:292:2: (otherlv_9= ',' ( ( ruleQualifiedName ) ) )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( (LA5_0==22) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:292:4: otherlv_9= ',' ( ( ruleQualifiedName ) )
+                    	    {
+                    	    otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleNLSBundle526); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_9, grammarAccess.getNLSBundleAccess().getCommaKeyword_7_2_0());
+                    	          
+                    	    }
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:296:1: ( ( ruleQualifiedName ) )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:297:1: ( ruleQualifiedName )
+                    	    {
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:297:1: ( ruleQualifiedName )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:298:3: ruleQualifiedName
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getNLSBundleRule());
+                    	      	        }
+                    	              
+                    	    }
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        newCompositeNode(grammarAccess.getNLSBundleAccess().getIncludedBundleListNLSBundleCrossReference_7_2_1_0()); 
+                    	      	    
+                    	    }
+                    	    pushFollow(FOLLOW_ruleQualifiedName_in_ruleNLSBundle549);
+                    	    ruleQualifiedName();
+
+                    	    state._fsp--;
+                    	    if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        afterParserOrEnumRuleCall();
+                    	      	    
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_11=(Token)match(input,17,FOLLOW_17_in_ruleNLSBundle565); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_7, grammarAccess.getNLSBundleAccess().getRightCurlyBracketKeyword_7());
+                  	newLeafNode(otherlv_11, grammarAccess.getNLSBundleAccess().getRightCurlyBracketKeyword_8());
                   
             }
 
@@ -699,7 +823,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNLSFormatter"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:285:1: entryRuleNLSFormatter returns [EObject current=null] : iv_ruleNLSFormatter= ruleNLSFormatter EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:323:1: entryRuleNLSFormatter returns [EObject current=null] : iv_ruleNLSFormatter= ruleNLSFormatter EOF ;
     public final EObject entryRuleNLSFormatter() throws RecognitionException {
         EObject current = null;
 
@@ -707,13 +831,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:286:2: (iv_ruleNLSFormatter= ruleNLSFormatter EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:287:2: iv_ruleNLSFormatter= ruleNLSFormatter EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:324:2: (iv_ruleNLSFormatter= ruleNLSFormatter EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:325:2: iv_ruleNLSFormatter= ruleNLSFormatter EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNLSFormatterRule()); 
             }
-            pushFollow(FOLLOW_ruleNLSFormatter_in_entryRuleNLSFormatter525);
+            pushFollow(FOLLOW_ruleNLSFormatter_in_entryRuleNLSFormatter601);
             iv_ruleNLSFormatter=ruleNLSFormatter();
 
             state._fsp--;
@@ -721,7 +845,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleNLSFormatter; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNLSFormatter535); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNLSFormatter611); if (state.failed) return current;
 
             }
 
@@ -739,7 +863,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNLSFormatter"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:294:1: ruleNLSFormatter returns [EObject current=null] : (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:332:1: ruleNLSFormatter returns [EObject current=null] : (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) ) ;
     public final EObject ruleNLSFormatter() throws RecognitionException {
         EObject current = null;
 
@@ -751,25 +875,25 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:297:28: ( (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:298:1: (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:335:28: ( (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:336:1: (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:298:1: (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:298:3: otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:336:1: (otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:336:3: otherlv_0= 'formatter' ( (lv_name_1_0= RULE_ID ) ) ( (lv_classRef_2_0= ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleNLSFormatter572); if (state.failed) return current;
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleNLSFormatter648); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getNLSFormatterAccess().getFormatterKeyword_0());
                   
             }
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:302:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:303:1: (lv_name_1_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:340:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:341:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:303:1: (lv_name_1_0= RULE_ID )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:304:3: lv_name_1_0= RULE_ID
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:341:1: (lv_name_1_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:342:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNLSFormatter589); if (state.failed) return current;
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNLSFormatter665); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_name_1_0, grammarAccess.getNLSFormatterAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -793,18 +917,18 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:320:2: ( (lv_classRef_2_0= ruleQualifiedName ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:321:1: (lv_classRef_2_0= ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:358:2: ( (lv_classRef_2_0= ruleQualifiedName ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:359:1: (lv_classRef_2_0= ruleQualifiedName )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:321:1: (lv_classRef_2_0= ruleQualifiedName )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:322:3: lv_classRef_2_0= ruleQualifiedName
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:359:1: (lv_classRef_2_0= ruleQualifiedName )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:360:3: lv_classRef_2_0= ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getNLSFormatterAccess().getClassRefQualifiedNameParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleNLSFormatter615);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleNLSFormatter691);
             lv_classRef_2_0=ruleQualifiedName();
 
             state._fsp--;
@@ -851,7 +975,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMessageEntry"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:346:1: entryRuleMessageEntry returns [EObject current=null] : iv_ruleMessageEntry= ruleMessageEntry EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:384:1: entryRuleMessageEntry returns [EObject current=null] : iv_ruleMessageEntry= ruleMessageEntry EOF ;
     public final EObject entryRuleMessageEntry() throws RecognitionException {
         EObject current = null;
 
@@ -859,13 +983,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:347:2: (iv_ruleMessageEntry= ruleMessageEntry EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:348:2: iv_ruleMessageEntry= ruleMessageEntry EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:385:2: (iv_ruleMessageEntry= ruleMessageEntry EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:386:2: iv_ruleMessageEntry= ruleMessageEntry EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getMessageEntryRule()); 
             }
-            pushFollow(FOLLOW_ruleMessageEntry_in_entryRuleMessageEntry651);
+            pushFollow(FOLLOW_ruleMessageEntry_in_entryRuleMessageEntry727);
             iv_ruleMessageEntry=ruleMessageEntry();
 
             state._fsp--;
@@ -873,7 +997,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleMessageEntry; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMessageEntry661); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMessageEntry737); if (state.failed) return current;
 
             }
 
@@ -891,7 +1015,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMessageEntry"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:355:1: ruleMessageEntry returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:393:1: ruleMessageEntry returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) ) ;
     public final EObject ruleMessageEntry() throws RecognitionException {
         EObject current = null;
 
@@ -916,19 +1040,19 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:358:28: ( ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:359:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:396:28: ( ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:397:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:359:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:359:2: ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:397:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:397:2: ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )? ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:359:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:360:1: (lv_name_0_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:397:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:398:1: (lv_name_0_0= RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:360:1: (lv_name_0_0= RULE_ID )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:361:3: lv_name_0_0= RULE_ID
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:398:1: (lv_name_0_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:399:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMessageEntry703); if (state.failed) return current;
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMessageEntry779); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_name_0_0, grammarAccess.getMessageEntryAccess().getNameIDTerminalRuleCall_0_0()); 
@@ -952,35 +1076,35 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:377:2: (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:415:2: (otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')' )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA6_0==22) ) {
-                alt6=1;
+            if ( (LA8_0==24) ) {
+                alt8=1;
             }
-            switch (alt6) {
+            switch (alt8) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:377:4: otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')'
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:415:4: otherlv_1= '(' ( (lv_paramList_2_0= ruleMessageParam ) ) (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )* otherlv_5= ')'
                     {
-                    otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleMessageEntry721); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleMessageEntry797); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getMessageEntryAccess().getLeftParenthesisKeyword_1_0());
                           
                     }
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:381:1: ( (lv_paramList_2_0= ruleMessageParam ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:382:1: (lv_paramList_2_0= ruleMessageParam )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:419:1: ( (lv_paramList_2_0= ruleMessageParam ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:420:1: (lv_paramList_2_0= ruleMessageParam )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:382:1: (lv_paramList_2_0= ruleMessageParam )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:383:3: lv_paramList_2_0= ruleMessageParam
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:420:1: (lv_paramList_2_0= ruleMessageParam )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:421:3: lv_paramList_2_0= ruleMessageParam
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getMessageEntryAccess().getParamListMessageParamParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleMessageParam_in_ruleMessageEntry742);
+                    pushFollow(FOLLOW_ruleMessageParam_in_ruleMessageEntry818);
                     lv_paramList_2_0=ruleMessageParam();
 
                     state._fsp--;
@@ -1004,39 +1128,39 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:399:2: (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )*
-                    loop5:
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:437:2: (otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) ) )*
+                    loop7:
                     do {
-                        int alt5=2;
-                        int LA5_0 = input.LA(1);
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
 
-                        if ( (LA5_0==23) ) {
-                            alt5=1;
+                        if ( (LA7_0==22) ) {
+                            alt7=1;
                         }
 
 
-                        switch (alt5) {
+                        switch (alt7) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:399:4: otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:437:4: otherlv_3= ',' ( (lv_paramList_4_0= ruleMessageParam ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleMessageEntry755); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleMessageEntry831); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getMessageEntryAccess().getCommaKeyword_1_2_0());
                     	          
                     	    }
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:403:1: ( (lv_paramList_4_0= ruleMessageParam ) )
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:404:1: (lv_paramList_4_0= ruleMessageParam )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:441:1: ( (lv_paramList_4_0= ruleMessageParam ) )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:442:1: (lv_paramList_4_0= ruleMessageParam )
                     	    {
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:404:1: (lv_paramList_4_0= ruleMessageParam )
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:405:3: lv_paramList_4_0= ruleMessageParam
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:442:1: (lv_paramList_4_0= ruleMessageParam )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:443:3: lv_paramList_4_0= ruleMessageParam
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getMessageEntryAccess().getParamListMessageParamParserRuleCall_1_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleMessageParam_in_ruleMessageEntry776);
+                    	    pushFollow(FOLLOW_ruleMessageParam_in_ruleMessageEntry852);
                     	    lv_paramList_4_0=ruleMessageParam();
 
                     	    state._fsp--;
@@ -1065,11 +1189,11 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop5;
+                    	    break loop7;
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleMessageEntry790); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,25,FOLLOW_25_in_ruleMessageEntry866); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getMessageEntryAccess().getRightParenthesisKeyword_1_3());
@@ -1081,48 +1205,48 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:425:3: ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:463:3: ( (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' ) | (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' ) )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA8_0==16) ) {
-                alt8=1;
+            if ( (LA10_0==16) ) {
+                alt10=1;
             }
-            else if ( (LA8_0==25) ) {
-                alt8=2;
+            else if ( (LA10_0==26) ) {
+                alt10=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt10) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:425:4: (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:463:4: (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:425:4: (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:425:6: otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}'
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:463:4: (otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:463:6: otherlv_6= '{' ( (lv_messageList_7_0= ruleMessage ) ) (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )* otherlv_10= '}'
                     {
-                    otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleMessageEntry806); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleMessageEntry882); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getMessageEntryAccess().getLeftCurlyBracketKeyword_2_0_0());
                           
                     }
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:429:1: ( (lv_messageList_7_0= ruleMessage ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:430:1: (lv_messageList_7_0= ruleMessage )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:467:1: ( (lv_messageList_7_0= ruleMessage ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:468:1: (lv_messageList_7_0= ruleMessage )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:430:1: (lv_messageList_7_0= ruleMessage )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:431:3: lv_messageList_7_0= ruleMessage
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:468:1: (lv_messageList_7_0= ruleMessage )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:469:3: lv_messageList_7_0= ruleMessage
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getMessageEntryAccess().getMessageListMessageParserRuleCall_2_0_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleMessage_in_ruleMessageEntry827);
+                    pushFollow(FOLLOW_ruleMessage_in_ruleMessageEntry903);
                     lv_messageList_7_0=ruleMessage();
 
                     state._fsp--;
@@ -1146,39 +1270,39 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:447:2: (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )*
-                    loop7:
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:485:2: (otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) ) )*
+                    loop9:
                     do {
-                        int alt7=2;
-                        int LA7_0 = input.LA(1);
+                        int alt9=2;
+                        int LA9_0 = input.LA(1);
 
-                        if ( (LA7_0==23) ) {
-                            alt7=1;
+                        if ( (LA9_0==22) ) {
+                            alt9=1;
                         }
 
 
-                        switch (alt7) {
+                        switch (alt9) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:447:4: otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:485:4: otherlv_8= ',' ( (lv_messageList_9_0= ruleMessage ) )
                     	    {
-                    	    otherlv_8=(Token)match(input,23,FOLLOW_23_in_ruleMessageEntry840); if (state.failed) return current;
+                    	    otherlv_8=(Token)match(input,22,FOLLOW_22_in_ruleMessageEntry916); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_8, grammarAccess.getMessageEntryAccess().getCommaKeyword_2_0_2_0());
                     	          
                     	    }
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:451:1: ( (lv_messageList_9_0= ruleMessage ) )
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:452:1: (lv_messageList_9_0= ruleMessage )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:489:1: ( (lv_messageList_9_0= ruleMessage ) )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:490:1: (lv_messageList_9_0= ruleMessage )
                     	    {
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:452:1: (lv_messageList_9_0= ruleMessage )
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:453:3: lv_messageList_9_0= ruleMessage
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:490:1: (lv_messageList_9_0= ruleMessage )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:491:3: lv_messageList_9_0= ruleMessage
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getMessageEntryAccess().getMessageListMessageParserRuleCall_2_0_2_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleMessage_in_ruleMessageEntry861);
+                    	    pushFollow(FOLLOW_ruleMessage_in_ruleMessageEntry937);
                     	    lv_messageList_9_0=ruleMessage();
 
                     	    state._fsp--;
@@ -1207,11 +1331,11 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop7;
+                    	    break loop9;
                         }
                     } while (true);
 
-                    otherlv_10=(Token)match(input,17,FOLLOW_17_in_ruleMessageEntry875); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,17,FOLLOW_17_in_ruleMessageEntry951); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_10, grammarAccess.getMessageEntryAccess().getRightCurlyBracketKeyword_2_0_3());
@@ -1224,22 +1348,22 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:474:6: (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:512:6: (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:474:6: (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:474:8: otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']'
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:512:6: (otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:512:8: otherlv_11= '[' ( ( ruleQualifiedName ) ) otherlv_13= ']'
                     {
-                    otherlv_11=(Token)match(input,25,FOLLOW_25_in_ruleMessageEntry895); if (state.failed) return current;
+                    otherlv_11=(Token)match(input,26,FOLLOW_26_in_ruleMessageEntry971); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_11, grammarAccess.getMessageEntryAccess().getLeftSquareBracketKeyword_2_1_0());
                           
                     }
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:478:1: ( ( ruleQualifiedName ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:479:1: ( ruleQualifiedName )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:516:1: ( ( ruleQualifiedName ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:517:1: ( ruleQualifiedName )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:479:1: ( ruleQualifiedName )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:480:3: ruleQualifiedName
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:517:1: ( ruleQualifiedName )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:518:3: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -1253,7 +1377,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getMessageEntryAccess().getEntryRefMessageEntryCrossReference_2_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleMessageEntry918);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleMessageEntry994);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -1269,7 +1393,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,26,FOLLOW_26_in_ruleMessageEntry930); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,27,FOLLOW_27_in_ruleMessageEntry1006); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_13, grammarAccess.getMessageEntryAccess().getRightSquareBracketKeyword_2_1_2());
@@ -1307,7 +1431,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMessageParam"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:505:1: entryRuleMessageParam returns [EObject current=null] : iv_ruleMessageParam= ruleMessageParam EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:543:1: entryRuleMessageParam returns [EObject current=null] : iv_ruleMessageParam= ruleMessageParam EOF ;
     public final EObject entryRuleMessageParam() throws RecognitionException {
         EObject current = null;
 
@@ -1315,13 +1439,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:506:2: (iv_ruleMessageParam= ruleMessageParam EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:507:2: iv_ruleMessageParam= ruleMessageParam EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:544:2: (iv_ruleMessageParam= ruleMessageParam EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:545:2: iv_ruleMessageParam= ruleMessageParam EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getMessageParamRule()); 
             }
-            pushFollow(FOLLOW_ruleMessageParam_in_entryRuleMessageParam968);
+            pushFollow(FOLLOW_ruleMessageParam_in_entryRuleMessageParam1044);
             iv_ruleMessageParam=ruleMessageParam();
 
             state._fsp--;
@@ -1329,7 +1453,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleMessageParam; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMessageParam978); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMessageParam1054); if (state.failed) return current;
 
             }
 
@@ -1347,7 +1471,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMessageParam"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:514:1: ruleMessageParam returns [EObject current=null] : ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:552:1: ruleMessageParam returns [EObject current=null] : ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) ) ;
     public final EObject ruleMessageParam() throws RecognitionException {
         EObject current = null;
 
@@ -1358,24 +1482,24 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:517:28: ( ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:518:1: ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:555:28: ( ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:556:1: ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:518:1: ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:518:2: ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:556:1: ( ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:556:2: ( (lv_predefined_0_0= rulePredefinedTypes ) ) ( (lv_var_1_0= RULE_ID ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:518:2: ( (lv_predefined_0_0= rulePredefinedTypes ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:519:1: (lv_predefined_0_0= rulePredefinedTypes )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:556:2: ( (lv_predefined_0_0= rulePredefinedTypes ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:557:1: (lv_predefined_0_0= rulePredefinedTypes )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:519:1: (lv_predefined_0_0= rulePredefinedTypes )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:520:3: lv_predefined_0_0= rulePredefinedTypes
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:557:1: (lv_predefined_0_0= rulePredefinedTypes )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:558:3: lv_predefined_0_0= rulePredefinedTypes
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getMessageParamAccess().getPredefinedPredefinedTypesEnumRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_rulePredefinedTypes_in_ruleMessageParam1024);
+            pushFollow(FOLLOW_rulePredefinedTypes_in_ruleMessageParam1100);
             lv_predefined_0_0=rulePredefinedTypes();
 
             state._fsp--;
@@ -1399,13 +1523,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:536:2: ( (lv_var_1_0= RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:537:1: (lv_var_1_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:574:2: ( (lv_var_1_0= RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:575:1: (lv_var_1_0= RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:537:1: (lv_var_1_0= RULE_ID )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:538:3: lv_var_1_0= RULE_ID
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:575:1: (lv_var_1_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:576:3: lv_var_1_0= RULE_ID
             {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMessageParam1041); if (state.failed) return current;
+            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMessageParam1117); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_var_1_0, grammarAccess.getMessageParamAccess().getVarIDTerminalRuleCall_1_0()); 
@@ -1452,7 +1576,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMessage"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:562:1: entryRuleMessage returns [EObject current=null] : iv_ruleMessage= ruleMessage EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:600:1: entryRuleMessage returns [EObject current=null] : iv_ruleMessage= ruleMessage EOF ;
     public final EObject entryRuleMessage() throws RecognitionException {
         EObject current = null;
 
@@ -1460,13 +1584,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:563:2: (iv_ruleMessage= ruleMessage EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:564:2: iv_ruleMessage= ruleMessage EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:601:2: (iv_ruleMessage= ruleMessage EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:602:2: iv_ruleMessage= ruleMessage EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getMessageRule()); 
             }
-            pushFollow(FOLLOW_ruleMessage_in_entryRuleMessage1082);
+            pushFollow(FOLLOW_ruleMessage_in_entryRuleMessage1158);
             iv_ruleMessage=ruleMessage();
 
             state._fsp--;
@@ -1474,7 +1598,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleMessage; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMessage1092); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMessage1168); if (state.failed) return current;
 
             }
 
@@ -1492,7 +1616,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMessage"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:571:1: ruleMessage returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:609:1: ruleMessage returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) ) ;
     public final EObject ruleMessage() throws RecognitionException {
         EObject current = null;
 
@@ -1504,19 +1628,19 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:574:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:575:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:612:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:613:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:575:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:575:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:613:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:613:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_message_2_0= ruleRichString ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:575:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:576:1: (lv_name_0_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:613:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:614:1: (lv_name_0_0= RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:576:1: (lv_name_0_0= RULE_ID )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:577:3: lv_name_0_0= RULE_ID
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:614:1: (lv_name_0_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:615:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMessage1134); if (state.failed) return current;
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMessage1210); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_name_0_0, grammarAccess.getMessageAccess().getNameIDTerminalRuleCall_0_0()); 
@@ -1540,24 +1664,24 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FOLLOW_27_in_ruleMessage1151); if (state.failed) return current;
+            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleMessage1227); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getMessageAccess().getColonKeyword_1());
                   
             }
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:597:1: ( (lv_message_2_0= ruleRichString ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:598:1: (lv_message_2_0= ruleRichString )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:635:1: ( (lv_message_2_0= ruleRichString ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:636:1: (lv_message_2_0= ruleRichString )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:598:1: (lv_message_2_0= ruleRichString )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:599:3: lv_message_2_0= ruleRichString
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:636:1: (lv_message_2_0= ruleRichString )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:637:3: lv_message_2_0= ruleRichString
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getMessageAccess().getMessageRichStringParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleRichString_in_ruleMessage1172);
+            pushFollow(FOLLOW_ruleRichString_in_ruleMessage1248);
             lv_message_2_0=ruleRichString();
 
             state._fsp--;
@@ -1604,7 +1728,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRichString"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:623:1: entryRuleRichString returns [EObject current=null] : iv_ruleRichString= ruleRichString EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:661:1: entryRuleRichString returns [EObject current=null] : iv_ruleRichString= ruleRichString EOF ;
     public final EObject entryRuleRichString() throws RecognitionException {
         EObject current = null;
 
@@ -1612,13 +1736,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:624:2: (iv_ruleRichString= ruleRichString EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:625:2: iv_ruleRichString= ruleRichString EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:662:2: (iv_ruleRichString= ruleRichString EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:663:2: iv_ruleRichString= ruleRichString EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRichStringRule()); 
             }
-            pushFollow(FOLLOW_ruleRichString_in_entryRuleRichString1208);
+            pushFollow(FOLLOW_ruleRichString_in_entryRuleRichString1284);
             iv_ruleRichString=ruleRichString();
 
             state._fsp--;
@@ -1626,7 +1750,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleRichString; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRichString1218); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRichString1294); if (state.failed) return current;
 
             }
 
@@ -1644,7 +1768,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRichString"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:632:1: ruleRichString returns [EObject current=null] : ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:670:1: ruleRichString returns [EObject current=null] : ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) ) ;
     public final EObject ruleRichString() throws RecognitionException {
         EObject current = null;
 
@@ -1664,42 +1788,42 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:635:28: ( ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:636:1: ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:673:28: ( ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:674:1: ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:636:1: ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:674:1: ( ( (lv_expressions_0_0= ruleRichStringLiteral ) ) | ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) ) )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA12_0==RULE_RICH_TEXT) ) {
-                alt12=1;
+            if ( (LA14_0==RULE_RICH_TEXT) ) {
+                alt14=1;
             }
-            else if ( (LA12_0==RULE_RICH_TEXT_START) ) {
-                alt12=2;
+            else if ( (LA14_0==RULE_RICH_TEXT_START) ) {
+                alt14=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt14) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:636:2: ( (lv_expressions_0_0= ruleRichStringLiteral ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:674:2: ( (lv_expressions_0_0= ruleRichStringLiteral ) )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:636:2: ( (lv_expressions_0_0= ruleRichStringLiteral ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:637:1: (lv_expressions_0_0= ruleRichStringLiteral )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:674:2: ( (lv_expressions_0_0= ruleRichStringLiteral ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:675:1: (lv_expressions_0_0= ruleRichStringLiteral )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:637:1: (lv_expressions_0_0= ruleRichStringLiteral )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:638:3: lv_expressions_0_0= ruleRichStringLiteral
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:675:1: (lv_expressions_0_0= ruleRichStringLiteral )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:676:3: lv_expressions_0_0= ruleRichStringLiteral
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralParserRuleCall_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleRichStringLiteral_in_ruleRichString1264);
+                    pushFollow(FOLLOW_ruleRichStringLiteral_in_ruleRichString1340);
                     lv_expressions_0_0=ruleRichStringLiteral();
 
                     state._fsp--;
@@ -1727,23 +1851,23 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:655:6: ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:693:6: ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:655:6: ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:655:7: ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:693:6: ( ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:693:7: ( (lv_expressions_1_0= ruleRichStringLiteralStart ) ) ( (lv_expressions_2_0= ruleRichVarPart ) )? ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )* ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:655:7: ( (lv_expressions_1_0= ruleRichStringLiteralStart ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:656:1: (lv_expressions_1_0= ruleRichStringLiteralStart )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:693:7: ( (lv_expressions_1_0= ruleRichStringLiteralStart ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:694:1: (lv_expressions_1_0= ruleRichStringLiteralStart )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:656:1: (lv_expressions_1_0= ruleRichStringLiteralStart )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:657:3: lv_expressions_1_0= ruleRichStringLiteralStart
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:694:1: (lv_expressions_1_0= ruleRichStringLiteralStart )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:695:3: lv_expressions_1_0= ruleRichStringLiteralStart
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralStartParserRuleCall_1_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleRichStringLiteralStart_in_ruleRichString1292);
+                    pushFollow(FOLLOW_ruleRichStringLiteralStart_in_ruleRichString1368);
                     lv_expressions_1_0=ruleRichStringLiteralStart();
 
                     state._fsp--;
@@ -1767,26 +1891,26 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:673:2: ( (lv_expressions_2_0= ruleRichVarPart ) )?
-                    int alt9=2;
-                    int LA9_0 = input.LA(1);
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:711:2: ( (lv_expressions_2_0= ruleRichVarPart ) )?
+                    int alt11=2;
+                    int LA11_0 = input.LA(1);
 
-                    if ( (LA9_0==RULE_ID) ) {
-                        alt9=1;
+                    if ( (LA11_0==RULE_ID) ) {
+                        alt11=1;
                     }
-                    switch (alt9) {
+                    switch (alt11) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:674:1: (lv_expressions_2_0= ruleRichVarPart )
+                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:712:1: (lv_expressions_2_0= ruleRichVarPart )
                             {
-                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:674:1: (lv_expressions_2_0= ruleRichVarPart )
-                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:675:3: lv_expressions_2_0= ruleRichVarPart
+                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:712:1: (lv_expressions_2_0= ruleRichVarPart )
+                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:713:3: lv_expressions_2_0= ruleRichVarPart
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichVarPartParserRuleCall_1_1_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleRichVarPart_in_ruleRichString1313);
+                            pushFollow(FOLLOW_ruleRichVarPart_in_ruleRichString1389);
                             lv_expressions_2_0=ruleRichVarPart();
 
                             state._fsp--;
@@ -1813,33 +1937,33 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:691:3: ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )*
-                    loop11:
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:729:3: ( ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )? )*
+                    loop13:
                     do {
-                        int alt11=2;
-                        int LA11_0 = input.LA(1);
+                        int alt13=2;
+                        int LA13_0 = input.LA(1);
 
-                        if ( (LA11_0==RULE_RICH_TEXT_INBETWEEN) ) {
-                            alt11=1;
+                        if ( (LA13_0==RULE_RICH_TEXT_INBETWEEN) ) {
+                            alt13=1;
                         }
 
 
-                        switch (alt11) {
+                        switch (alt13) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:691:4: ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )?
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:729:4: ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) ) ( (lv_expressions_4_0= ruleRichVarPart ) )?
                     	    {
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:691:4: ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) )
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:692:1: (lv_expressions_3_0= ruleRichStringLiteralInbetween )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:729:4: ( (lv_expressions_3_0= ruleRichStringLiteralInbetween ) )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:730:1: (lv_expressions_3_0= ruleRichStringLiteralInbetween )
                     	    {
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:692:1: (lv_expressions_3_0= ruleRichStringLiteralInbetween )
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:693:3: lv_expressions_3_0= ruleRichStringLiteralInbetween
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:730:1: (lv_expressions_3_0= ruleRichStringLiteralInbetween )
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:731:3: lv_expressions_3_0= ruleRichStringLiteralInbetween
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralInbetweenParserRuleCall_1_2_0_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleRichStringLiteralInbetween_in_ruleRichString1336);
+                    	    pushFollow(FOLLOW_ruleRichStringLiteralInbetween_in_ruleRichString1412);
                     	    lv_expressions_3_0=ruleRichStringLiteralInbetween();
 
                     	    state._fsp--;
@@ -1863,26 +1987,26 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:709:2: ( (lv_expressions_4_0= ruleRichVarPart ) )?
-                    	    int alt10=2;
-                    	    int LA10_0 = input.LA(1);
+                    	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:747:2: ( (lv_expressions_4_0= ruleRichVarPart ) )?
+                    	    int alt12=2;
+                    	    int LA12_0 = input.LA(1);
 
-                    	    if ( (LA10_0==RULE_ID) ) {
-                    	        alt10=1;
+                    	    if ( (LA12_0==RULE_ID) ) {
+                    	        alt12=1;
                     	    }
-                    	    switch (alt10) {
+                    	    switch (alt12) {
                     	        case 1 :
-                    	            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:710:1: (lv_expressions_4_0= ruleRichVarPart )
+                    	            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:748:1: (lv_expressions_4_0= ruleRichVarPart )
                     	            {
-                    	            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:710:1: (lv_expressions_4_0= ruleRichVarPart )
-                    	            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:711:3: lv_expressions_4_0= ruleRichVarPart
+                    	            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:748:1: (lv_expressions_4_0= ruleRichVarPart )
+                    	            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:749:3: lv_expressions_4_0= ruleRichVarPart
                     	            {
                     	            if ( state.backtracking==0 ) {
                     	               
                     	              	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichVarPartParserRuleCall_1_2_1_0()); 
                     	              	    
                     	            }
-                    	            pushFollow(FOLLOW_ruleRichVarPart_in_ruleRichString1357);
+                    	            pushFollow(FOLLOW_ruleRichVarPart_in_ruleRichString1433);
                     	            lv_expressions_4_0=ruleRichVarPart();
 
                     	            state._fsp--;
@@ -1914,22 +2038,22 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop11;
+                    	    break loop13;
                         }
                     } while (true);
 
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:727:5: ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:728:1: (lv_expressions_5_0= ruleRichStringLiteralEnd )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:765:5: ( (lv_expressions_5_0= ruleRichStringLiteralEnd ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:766:1: (lv_expressions_5_0= ruleRichStringLiteralEnd )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:728:1: (lv_expressions_5_0= ruleRichStringLiteralEnd )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:729:3: lv_expressions_5_0= ruleRichStringLiteralEnd
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:766:1: (lv_expressions_5_0= ruleRichStringLiteralEnd )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:767:3: lv_expressions_5_0= ruleRichStringLiteralEnd
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getRichStringAccess().getExpressionsRichStringLiteralEndParserRuleCall_1_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleRichStringLiteralEnd_in_ruleRichString1381);
+                    pushFollow(FOLLOW_ruleRichStringLiteralEnd_in_ruleRichString1457);
                     lv_expressions_5_0=ruleRichStringLiteralEnd();
 
                     state._fsp--;
@@ -1982,7 +2106,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRichStringLiteral"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:753:1: entryRuleRichStringLiteral returns [EObject current=null] : iv_ruleRichStringLiteral= ruleRichStringLiteral EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:791:1: entryRuleRichStringLiteral returns [EObject current=null] : iv_ruleRichStringLiteral= ruleRichStringLiteral EOF ;
     public final EObject entryRuleRichStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -1990,13 +2114,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:754:2: (iv_ruleRichStringLiteral= ruleRichStringLiteral EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:755:2: iv_ruleRichStringLiteral= ruleRichStringLiteral EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:792:2: (iv_ruleRichStringLiteral= ruleRichStringLiteral EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:793:2: iv_ruleRichStringLiteral= ruleRichStringLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRichStringLiteralRule()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteral_in_entryRuleRichStringLiteral1418);
+            pushFollow(FOLLOW_ruleRichStringLiteral_in_entryRuleRichStringLiteral1494);
             iv_ruleRichStringLiteral=ruleRichStringLiteral();
 
             state._fsp--;
@@ -2004,7 +2128,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleRichStringLiteral; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteral1428); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteral1504); if (state.failed) return current;
 
             }
 
@@ -2022,7 +2146,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRichStringLiteral"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:762:1: ruleRichStringLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:800:1: ruleRichStringLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT ) ) ;
     public final EObject ruleRichStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -2031,16 +2155,16 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:765:28: ( ( (lv_value_0_0= RULE_RICH_TEXT ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:766:1: ( (lv_value_0_0= RULE_RICH_TEXT ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:803:28: ( ( (lv_value_0_0= RULE_RICH_TEXT ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:804:1: ( (lv_value_0_0= RULE_RICH_TEXT ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:766:1: ( (lv_value_0_0= RULE_RICH_TEXT ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:767:1: (lv_value_0_0= RULE_RICH_TEXT )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:804:1: ( (lv_value_0_0= RULE_RICH_TEXT ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:805:1: (lv_value_0_0= RULE_RICH_TEXT )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:767:1: (lv_value_0_0= RULE_RICH_TEXT )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:768:3: lv_value_0_0= RULE_RICH_TEXT
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:805:1: (lv_value_0_0= RULE_RICH_TEXT )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:806:3: lv_value_0_0= RULE_RICH_TEXT
             {
-            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT,FOLLOW_RULE_RICH_TEXT_in_ruleRichStringLiteral1469); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT,FOLLOW_RULE_RICH_TEXT_in_ruleRichStringLiteral1545); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getRichStringLiteralAccess().getValueRICH_TEXTTerminalRuleCall_0()); 
@@ -2084,7 +2208,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRichStringLiteralStart"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:792:1: entryRuleRichStringLiteralStart returns [EObject current=null] : iv_ruleRichStringLiteralStart= ruleRichStringLiteralStart EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:830:1: entryRuleRichStringLiteralStart returns [EObject current=null] : iv_ruleRichStringLiteralStart= ruleRichStringLiteralStart EOF ;
     public final EObject entryRuleRichStringLiteralStart() throws RecognitionException {
         EObject current = null;
 
@@ -2092,13 +2216,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:793:2: (iv_ruleRichStringLiteralStart= ruleRichStringLiteralStart EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:794:2: iv_ruleRichStringLiteralStart= ruleRichStringLiteralStart EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:831:2: (iv_ruleRichStringLiteralStart= ruleRichStringLiteralStart EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:832:2: iv_ruleRichStringLiteralStart= ruleRichStringLiteralStart EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRichStringLiteralStartRule()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteralStart_in_entryRuleRichStringLiteralStart1509);
+            pushFollow(FOLLOW_ruleRichStringLiteralStart_in_entryRuleRichStringLiteralStart1585);
             iv_ruleRichStringLiteralStart=ruleRichStringLiteralStart();
 
             state._fsp--;
@@ -2106,7 +2230,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleRichStringLiteralStart; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteralStart1519); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteralStart1595); if (state.failed) return current;
 
             }
 
@@ -2124,7 +2248,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRichStringLiteralStart"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:801:1: ruleRichStringLiteralStart returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT_START ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:839:1: ruleRichStringLiteralStart returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT_START ) ) ;
     public final EObject ruleRichStringLiteralStart() throws RecognitionException {
         EObject current = null;
 
@@ -2133,16 +2257,16 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:804:28: ( ( (lv_value_0_0= RULE_RICH_TEXT_START ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:805:1: ( (lv_value_0_0= RULE_RICH_TEXT_START ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:842:28: ( ( (lv_value_0_0= RULE_RICH_TEXT_START ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:843:1: ( (lv_value_0_0= RULE_RICH_TEXT_START ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:805:1: ( (lv_value_0_0= RULE_RICH_TEXT_START ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:806:1: (lv_value_0_0= RULE_RICH_TEXT_START )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:843:1: ( (lv_value_0_0= RULE_RICH_TEXT_START ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:844:1: (lv_value_0_0= RULE_RICH_TEXT_START )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:806:1: (lv_value_0_0= RULE_RICH_TEXT_START )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:807:3: lv_value_0_0= RULE_RICH_TEXT_START
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:844:1: (lv_value_0_0= RULE_RICH_TEXT_START )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:845:3: lv_value_0_0= RULE_RICH_TEXT_START
             {
-            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT_START,FOLLOW_RULE_RICH_TEXT_START_in_ruleRichStringLiteralStart1560); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT_START,FOLLOW_RULE_RICH_TEXT_START_in_ruleRichStringLiteralStart1636); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getRichStringLiteralStartAccess().getValueRICH_TEXT_STARTTerminalRuleCall_0()); 
@@ -2186,7 +2310,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRichStringLiteralEnd"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:831:1: entryRuleRichStringLiteralEnd returns [EObject current=null] : iv_ruleRichStringLiteralEnd= ruleRichStringLiteralEnd EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:869:1: entryRuleRichStringLiteralEnd returns [EObject current=null] : iv_ruleRichStringLiteralEnd= ruleRichStringLiteralEnd EOF ;
     public final EObject entryRuleRichStringLiteralEnd() throws RecognitionException {
         EObject current = null;
 
@@ -2194,13 +2318,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:832:2: (iv_ruleRichStringLiteralEnd= ruleRichStringLiteralEnd EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:833:2: iv_ruleRichStringLiteralEnd= ruleRichStringLiteralEnd EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:870:2: (iv_ruleRichStringLiteralEnd= ruleRichStringLiteralEnd EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:871:2: iv_ruleRichStringLiteralEnd= ruleRichStringLiteralEnd EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRichStringLiteralEndRule()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteralEnd_in_entryRuleRichStringLiteralEnd1600);
+            pushFollow(FOLLOW_ruleRichStringLiteralEnd_in_entryRuleRichStringLiteralEnd1676);
             iv_ruleRichStringLiteralEnd=ruleRichStringLiteralEnd();
 
             state._fsp--;
@@ -2208,7 +2332,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleRichStringLiteralEnd; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteralEnd1610); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteralEnd1686); if (state.failed) return current;
 
             }
 
@@ -2226,7 +2350,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRichStringLiteralEnd"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:840:1: ruleRichStringLiteralEnd returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT_END ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:878:1: ruleRichStringLiteralEnd returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT_END ) ) ;
     public final EObject ruleRichStringLiteralEnd() throws RecognitionException {
         EObject current = null;
 
@@ -2235,16 +2359,16 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:843:28: ( ( (lv_value_0_0= RULE_RICH_TEXT_END ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:844:1: ( (lv_value_0_0= RULE_RICH_TEXT_END ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:881:28: ( ( (lv_value_0_0= RULE_RICH_TEXT_END ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:882:1: ( (lv_value_0_0= RULE_RICH_TEXT_END ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:844:1: ( (lv_value_0_0= RULE_RICH_TEXT_END ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:845:1: (lv_value_0_0= RULE_RICH_TEXT_END )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:882:1: ( (lv_value_0_0= RULE_RICH_TEXT_END ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:883:1: (lv_value_0_0= RULE_RICH_TEXT_END )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:845:1: (lv_value_0_0= RULE_RICH_TEXT_END )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:846:3: lv_value_0_0= RULE_RICH_TEXT_END
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:883:1: (lv_value_0_0= RULE_RICH_TEXT_END )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:884:3: lv_value_0_0= RULE_RICH_TEXT_END
             {
-            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT_END,FOLLOW_RULE_RICH_TEXT_END_in_ruleRichStringLiteralEnd1651); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT_END,FOLLOW_RULE_RICH_TEXT_END_in_ruleRichStringLiteralEnd1727); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getRichStringLiteralEndAccess().getValueRICH_TEXT_ENDTerminalRuleCall_0()); 
@@ -2288,7 +2412,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRichStringLiteralInbetween"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:870:1: entryRuleRichStringLiteralInbetween returns [EObject current=null] : iv_ruleRichStringLiteralInbetween= ruleRichStringLiteralInbetween EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:908:1: entryRuleRichStringLiteralInbetween returns [EObject current=null] : iv_ruleRichStringLiteralInbetween= ruleRichStringLiteralInbetween EOF ;
     public final EObject entryRuleRichStringLiteralInbetween() throws RecognitionException {
         EObject current = null;
 
@@ -2296,13 +2420,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:871:2: (iv_ruleRichStringLiteralInbetween= ruleRichStringLiteralInbetween EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:872:2: iv_ruleRichStringLiteralInbetween= ruleRichStringLiteralInbetween EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:909:2: (iv_ruleRichStringLiteralInbetween= ruleRichStringLiteralInbetween EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:910:2: iv_ruleRichStringLiteralInbetween= ruleRichStringLiteralInbetween EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRichStringLiteralInbetweenRule()); 
             }
-            pushFollow(FOLLOW_ruleRichStringLiteralInbetween_in_entryRuleRichStringLiteralInbetween1691);
+            pushFollow(FOLLOW_ruleRichStringLiteralInbetween_in_entryRuleRichStringLiteralInbetween1767);
             iv_ruleRichStringLiteralInbetween=ruleRichStringLiteralInbetween();
 
             state._fsp--;
@@ -2310,7 +2434,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleRichStringLiteralInbetween; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteralInbetween1701); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRichStringLiteralInbetween1777); if (state.failed) return current;
 
             }
 
@@ -2328,7 +2452,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRichStringLiteralInbetween"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:879:1: ruleRichStringLiteralInbetween returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:917:1: ruleRichStringLiteralInbetween returns [EObject current=null] : ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) ) ;
     public final EObject ruleRichStringLiteralInbetween() throws RecognitionException {
         EObject current = null;
 
@@ -2337,16 +2461,16 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:882:28: ( ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:883:1: ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:920:28: ( ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:921:1: ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:883:1: ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:884:1: (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:921:1: ( (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:922:1: (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:884:1: (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:885:3: lv_value_0_0= RULE_RICH_TEXT_INBETWEEN
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:922:1: (lv_value_0_0= RULE_RICH_TEXT_INBETWEEN )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:923:3: lv_value_0_0= RULE_RICH_TEXT_INBETWEEN
             {
-            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT_INBETWEEN,FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_ruleRichStringLiteralInbetween1742); if (state.failed) return current;
+            lv_value_0_0=(Token)match(input,RULE_RICH_TEXT_INBETWEEN,FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_ruleRichStringLiteralInbetween1818); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_0_0, grammarAccess.getRichStringLiteralInbetweenAccess().getValueRICH_TEXT_INBETWEENTerminalRuleCall_0()); 
@@ -2390,7 +2514,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRichVarPart"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:909:1: entryRuleRichVarPart returns [EObject current=null] : iv_ruleRichVarPart= ruleRichVarPart EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:947:1: entryRuleRichVarPart returns [EObject current=null] : iv_ruleRichVarPart= ruleRichVarPart EOF ;
     public final EObject entryRuleRichVarPart() throws RecognitionException {
         EObject current = null;
 
@@ -2398,13 +2522,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:910:2: (iv_ruleRichVarPart= ruleRichVarPart EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:911:2: iv_ruleRichVarPart= ruleRichVarPart EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:948:2: (iv_ruleRichVarPart= ruleRichVarPart EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:949:2: iv_ruleRichVarPart= ruleRichVarPart EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRichVarPartRule()); 
             }
-            pushFollow(FOLLOW_ruleRichVarPart_in_entryRuleRichVarPart1782);
+            pushFollow(FOLLOW_ruleRichVarPart_in_entryRuleRichVarPart1858);
             iv_ruleRichVarPart=ruleRichVarPart();
 
             state._fsp--;
@@ -2412,7 +2536,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleRichVarPart; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRichVarPart1792); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRichVarPart1868); if (state.failed) return current;
 
             }
 
@@ -2430,7 +2554,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRichVarPart"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:918:1: ruleRichVarPart returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:956:1: ruleRichVarPart returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? ) ;
     public final EObject ruleRichVarPart() throws RecognitionException {
         EObject current = null;
 
@@ -2440,19 +2564,19 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:921:28: ( ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:922:1: ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:959:28: ( ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:960:1: ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:922:1: ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:922:2: ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )?
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:960:1: ( ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )? )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:960:2: ( (lv_key_0_0= RULE_ID ) ) ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )?
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:922:2: ( (lv_key_0_0= RULE_ID ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:923:1: (lv_key_0_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:960:2: ( (lv_key_0_0= RULE_ID ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:961:1: (lv_key_0_0= RULE_ID )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:923:1: (lv_key_0_0= RULE_ID )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:924:3: lv_key_0_0= RULE_ID
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:961:1: (lv_key_0_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:962:3: lv_key_0_0= RULE_ID
             {
-            lv_key_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRichVarPart1834); if (state.failed) return current;
+            lv_key_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRichVarPart1910); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_key_0_0, grammarAccess.getRichVarPartAccess().getKeyIDTerminalRuleCall_0_0()); 
@@ -2476,24 +2600,24 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:940:2: ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:978:2: ( ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )? )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA14_0==RULE_STRING) ) {
-                alt14=1;
+            if ( (LA16_0==RULE_STRING) ) {
+                alt16=1;
             }
-            switch (alt14) {
+            switch (alt16) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:940:3: ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )?
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:978:3: ( (lv_format_1_0= RULE_STRING ) ) ( ( ruleQualifiedName ) )?
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:940:3: ( (lv_format_1_0= RULE_STRING ) )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:941:1: (lv_format_1_0= RULE_STRING )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:978:3: ( (lv_format_1_0= RULE_STRING ) )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:979:1: (lv_format_1_0= RULE_STRING )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:941:1: (lv_format_1_0= RULE_STRING )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:942:3: lv_format_1_0= RULE_STRING
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:979:1: (lv_format_1_0= RULE_STRING )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:980:3: lv_format_1_0= RULE_STRING
                     {
-                    lv_format_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRichVarPart1857); if (state.failed) return current;
+                    lv_format_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRichVarPart1933); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_format_1_0, grammarAccess.getRichVarPartAccess().getFormatSTRINGTerminalRuleCall_1_0_0()); 
@@ -2517,19 +2641,19 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:958:2: ( ( ruleQualifiedName ) )?
-                    int alt13=2;
-                    int LA13_0 = input.LA(1);
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:996:2: ( ( ruleQualifiedName ) )?
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
 
-                    if ( (LA13_0==RULE_ID) ) {
-                        alt13=1;
+                    if ( (LA15_0==RULE_ID) ) {
+                        alt15=1;
                     }
-                    switch (alt13) {
+                    switch (alt15) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:959:1: ( ruleQualifiedName )
+                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:997:1: ( ruleQualifiedName )
                             {
-                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:959:1: ( ruleQualifiedName )
-                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:960:3: ruleQualifiedName
+                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:997:1: ( ruleQualifiedName )
+                            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:998:3: ruleQualifiedName
                             {
                             if ( state.backtracking==0 ) {
 
@@ -2543,7 +2667,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                               	        newCompositeNode(grammarAccess.getRichVarPartAccess().getFormatterClassNLSFormatterCrossReference_1_1_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleQualifiedName_in_ruleRichVarPart1885);
+                            pushFollow(FOLLOW_ruleQualifiedName_in_ruleRichVarPart1961);
                             ruleQualifiedName();
 
                             state._fsp--;
@@ -2591,7 +2715,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValidID"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:981:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1019:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
     public final String entryRuleValidID() throws RecognitionException {
         String current = null;
 
@@ -2599,13 +2723,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:982:2: (iv_ruleValidID= ruleValidID EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:983:2: iv_ruleValidID= ruleValidID EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1020:2: (iv_ruleValidID= ruleValidID EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1021:2: iv_ruleValidID= ruleValidID EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getValidIDRule()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID1925);
+            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID2001);
             iv_ruleValidID=ruleValidID();
 
             state._fsp--;
@@ -2613,7 +2737,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleValidID.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID1936); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID2012); if (state.failed) return current;
 
             }
 
@@ -2631,7 +2755,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidID"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:990:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1028:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleValidID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2640,10 +2764,10 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:993:28: (this_ID_0= RULE_ID )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:994:5: this_ID_0= RULE_ID
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1031:28: (this_ID_0= RULE_ID )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1032:5: this_ID_0= RULE_ID
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID1975); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID2051); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -2674,7 +2798,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1009:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1047:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -2682,13 +2806,13 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1010:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1011:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1048:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1049:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName2020);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName2096);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
@@ -2696,7 +2820,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedName.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName2031); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName2107); if (state.failed) return current;
 
             }
 
@@ -2714,7 +2838,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1018:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1056:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2727,18 +2851,18 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1021:28: ( (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1022:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1059:28: ( (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1060:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1022:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1023:5: this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1060:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1061:5: this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName2078);
+            pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName2154);
             this_ValidID_0=ruleValidID();
 
             state._fsp--;
@@ -2753,25 +2877,25 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1033:1: ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
-            loop15:
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1071:1: ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
+            loop17:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA15_0==28) && (synpred1_InternalNLSDsl())) {
-                    alt15=1;
+                if ( (LA17_0==29) && (synpred1_InternalNLSDsl())) {
+                    alt17=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt17) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1033:2: ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID
+            	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1071:2: ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID
             	    {
-            	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1033:2: ( ( '.' )=>kw= '.' )
-            	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1033:3: ( '.' )=>kw= '.'
+            	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1071:2: ( ( '.' )=>kw= '.' )
+            	    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1071:3: ( '.' )=>kw= '.'
             	    {
-            	    kw=(Token)match(input,28,FOLLOW_28_in_ruleQualifiedName2106); if (state.failed) return current;
+            	    kw=(Token)match(input,29,FOLLOW_29_in_ruleQualifiedName2182); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -2786,7 +2910,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             	              newCompositeNode(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_1_1()); 
             	          
             	    }
-            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName2129);
+            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName2205);
             	    this_ValidID_2=ruleValidID();
 
             	    state._fsp--;
@@ -2806,7 +2930,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop17;
                 }
             } while (true);
 
@@ -2833,7 +2957,7 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePredefinedTypes"
-    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1060:1: rulePredefinedTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) ) ;
+    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1098:1: rulePredefinedTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) ) ;
     public final Enumerator rulePredefinedTypes() throws RecognitionException {
         Enumerator current = null;
 
@@ -2844,48 +2968,48 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1062:28: ( ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) ) )
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1063:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1100:28: ( ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) ) )
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1101:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) )
             {
-            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1063:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) )
-            int alt16=4;
+            // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1101:1: ( (enumLiteral_0= 'ANY' ) | (enumLiteral_1= 'NUMBER' ) | (enumLiteral_2= 'DATE' ) | (enumLiteral_3= 'TEMPORAL' ) )
+            int alt18=4;
             switch ( input.LA(1) ) {
-            case 29:
-                {
-                alt16=1;
-                }
-                break;
             case 30:
                 {
-                alt16=2;
+                alt18=1;
                 }
                 break;
             case 31:
                 {
-                alt16=3;
+                alt18=2;
                 }
                 break;
             case 32:
                 {
-                alt16=4;
+                alt18=3;
+                }
+                break;
+            case 33:
+                {
+                alt18=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt16) {
+            switch (alt18) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1063:2: (enumLiteral_0= 'ANY' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1101:2: (enumLiteral_0= 'ANY' )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1063:2: (enumLiteral_0= 'ANY' )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1063:4: enumLiteral_0= 'ANY'
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1101:2: (enumLiteral_0= 'ANY' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1101:4: enumLiteral_0= 'ANY'
                     {
-                    enumLiteral_0=(Token)match(input,29,FOLLOW_29_in_rulePredefinedTypes2190); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,30,FOLLOW_30_in_rulePredefinedTypes2266); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPredefinedTypesAccess().getANYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -2899,12 +3023,12 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1069:6: (enumLiteral_1= 'NUMBER' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1107:6: (enumLiteral_1= 'NUMBER' )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1069:6: (enumLiteral_1= 'NUMBER' )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1069:8: enumLiteral_1= 'NUMBER'
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1107:6: (enumLiteral_1= 'NUMBER' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1107:8: enumLiteral_1= 'NUMBER'
                     {
-                    enumLiteral_1=(Token)match(input,30,FOLLOW_30_in_rulePredefinedTypes2207); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,31,FOLLOW_31_in_rulePredefinedTypes2283); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPredefinedTypesAccess().getNUMBEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -2918,12 +3042,12 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1075:6: (enumLiteral_2= 'DATE' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1113:6: (enumLiteral_2= 'DATE' )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1075:6: (enumLiteral_2= 'DATE' )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1075:8: enumLiteral_2= 'DATE'
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1113:6: (enumLiteral_2= 'DATE' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1113:8: enumLiteral_2= 'DATE'
                     {
-                    enumLiteral_2=(Token)match(input,31,FOLLOW_31_in_rulePredefinedTypes2224); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,32,FOLLOW_32_in_rulePredefinedTypes2300); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPredefinedTypesAccess().getDATEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -2937,12 +3061,12 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1081:6: (enumLiteral_3= 'TEMPORAL' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1119:6: (enumLiteral_3= 'TEMPORAL' )
                     {
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1081:6: (enumLiteral_3= 'TEMPORAL' )
-                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1081:8: enumLiteral_3= 'TEMPORAL'
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1119:6: (enumLiteral_3= 'TEMPORAL' )
+                    // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1119:8: enumLiteral_3= 'TEMPORAL'
                     {
-                    enumLiteral_3=(Token)match(input,32,FOLLOW_32_in_rulePredefinedTypes2241); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,33,FOLLOW_33_in_rulePredefinedTypes2317); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPredefinedTypesAccess().getTEMPORALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -2978,10 +3102,10 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalNLSDsl
     public final void synpred1_InternalNLSDsl_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1033:3: ( '.' )
-        // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1034:2: '.'
+        // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1071:3: ( '.' )
+        // ../org.eclipse.fx.ide.l10n/src-gen/org/eclipse/fx/ide/l10n/parser/antlr/internal/InternalNLSDsl.g:1072:2: '.'
         {
-        match(input,28,FOLLOW_28_in_synpred1_InternalNLSDsl2097); if (state.failed) return ;
+        match(input,29,FOLLOW_29_in_synpred1_InternalNLSDsl2173); if (state.failed) return ;
 
         }
     }
@@ -3023,77 +3147,81 @@ public class InternalNLSDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleNLSBundle382 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_20_in_ruleNLSBundle399 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleNLSBundle416 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleNLSBundle433 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_ruleNLSFormatter_in_ruleNLSBundle454 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_ruleMessageEntry_in_ruleNLSBundle476 = new BitSet(new long[]{0x0000000000220010L});
-    public static final BitSet FOLLOW_17_in_ruleNLSBundle489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNLSFormatter_in_entryRuleNLSFormatter525 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNLSFormatter535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleNLSFormatter572 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNLSFormatter589 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNLSFormatter615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessageEntry_in_entryRuleMessageEntry651 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMessageEntry661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMessageEntry703 = new BitSet(new long[]{0x0000000002410000L});
-    public static final BitSet FOLLOW_22_in_ruleMessageEntry721 = new BitSet(new long[]{0x00000001E0000000L});
-    public static final BitSet FOLLOW_ruleMessageParam_in_ruleMessageEntry742 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_23_in_ruleMessageEntry755 = new BitSet(new long[]{0x00000001E0000000L});
-    public static final BitSet FOLLOW_ruleMessageParam_in_ruleMessageEntry776 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_24_in_ruleMessageEntry790 = new BitSet(new long[]{0x0000000002010000L});
-    public static final BitSet FOLLOW_16_in_ruleMessageEntry806 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleMessage_in_ruleMessageEntry827 = new BitSet(new long[]{0x0000000000820000L});
-    public static final BitSet FOLLOW_23_in_ruleMessageEntry840 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleMessage_in_ruleMessageEntry861 = new BitSet(new long[]{0x0000000000820000L});
-    public static final BitSet FOLLOW_17_in_ruleMessageEntry875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleMessageEntry895 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleMessageEntry918 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleMessageEntry930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessageParam_in_entryRuleMessageParam968 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMessageParam978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredefinedTypes_in_ruleMessageParam1024 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMessageParam1041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessage_in_entryRuleMessage1082 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMessage1092 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMessage1134 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleMessage1151 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleRichString_in_ruleMessage1172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichString_in_entryRuleRichString1208 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRichString1218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteral_in_ruleRichString1264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralStart_in_ruleRichString1292 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_ruleRichVarPart_in_ruleRichString1313 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralInbetween_in_ruleRichString1336 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_ruleRichVarPart_in_ruleRichString1357 = new BitSet(new long[]{0x0000000000000190L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralEnd_in_ruleRichString1381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteral_in_entryRuleRichStringLiteral1418 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteral1428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_in_ruleRichStringLiteral1469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralStart_in_entryRuleRichStringLiteralStart1509 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteralStart1519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_START_in_ruleRichStringLiteralStart1560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralEnd_in_entryRuleRichStringLiteralEnd1600 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteralEnd1610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_END_in_ruleRichStringLiteralEnd1651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichStringLiteralInbetween_in_entryRuleRichStringLiteralInbetween1691 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteralInbetween1701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_ruleRichStringLiteralInbetween1742 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRichVarPart_in_entryRuleRichVarPart1782 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRichVarPart1792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRichVarPart1834 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleRichVarPart1857 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleRichVarPart1885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID1925 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValidID1936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID1975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName2020 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName2031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName2078 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_28_in_ruleQualifiedName2106 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName2129 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_29_in_rulePredefinedTypes2190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rulePredefinedTypes2207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rulePredefinedTypes2224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rulePredefinedTypes2241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_synpred1_InternalNLSDsl2097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleNLSBundle433 = new BitSet(new long[]{0x0000000000800010L});
+    public static final BitSet FOLLOW_ruleNLSFormatter_in_ruleNLSBundle454 = new BitSet(new long[]{0x0000000000800010L});
+    public static final BitSet FOLLOW_ruleMessageEntry_in_ruleNLSBundle476 = new BitSet(new long[]{0x0000000000A20010L});
+    public static final BitSet FOLLOW_21_in_ruleNLSBundle490 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNLSBundle513 = new BitSet(new long[]{0x0000000000420000L});
+    public static final BitSet FOLLOW_22_in_ruleNLSBundle526 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNLSBundle549 = new BitSet(new long[]{0x0000000000420000L});
+    public static final BitSet FOLLOW_17_in_ruleNLSBundle565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNLSFormatter_in_entryRuleNLSFormatter601 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNLSFormatter611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleNLSFormatter648 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNLSFormatter665 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNLSFormatter691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessageEntry_in_entryRuleMessageEntry727 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMessageEntry737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMessageEntry779 = new BitSet(new long[]{0x0000000005010000L});
+    public static final BitSet FOLLOW_24_in_ruleMessageEntry797 = new BitSet(new long[]{0x00000003C0000000L});
+    public static final BitSet FOLLOW_ruleMessageParam_in_ruleMessageEntry818 = new BitSet(new long[]{0x0000000002400000L});
+    public static final BitSet FOLLOW_22_in_ruleMessageEntry831 = new BitSet(new long[]{0x00000003C0000000L});
+    public static final BitSet FOLLOW_ruleMessageParam_in_ruleMessageEntry852 = new BitSet(new long[]{0x0000000002400000L});
+    public static final BitSet FOLLOW_25_in_ruleMessageEntry866 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_16_in_ruleMessageEntry882 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleMessage_in_ruleMessageEntry903 = new BitSet(new long[]{0x0000000000420000L});
+    public static final BitSet FOLLOW_22_in_ruleMessageEntry916 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleMessage_in_ruleMessageEntry937 = new BitSet(new long[]{0x0000000000420000L});
+    public static final BitSet FOLLOW_17_in_ruleMessageEntry951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleMessageEntry971 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleMessageEntry994 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleMessageEntry1006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessageParam_in_entryRuleMessageParam1044 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMessageParam1054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredefinedTypes_in_ruleMessageParam1100 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMessageParam1117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessage_in_entryRuleMessage1158 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMessage1168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMessage1210 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleMessage1227 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleRichString_in_ruleMessage1248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichString_in_entryRuleRichString1284 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRichString1294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteral_in_ruleRichString1340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralStart_in_ruleRichString1368 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_ruleRichVarPart_in_ruleRichString1389 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralInbetween_in_ruleRichString1412 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_ruleRichVarPart_in_ruleRichString1433 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralEnd_in_ruleRichString1457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteral_in_entryRuleRichStringLiteral1494 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteral1504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_in_ruleRichStringLiteral1545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralStart_in_entryRuleRichStringLiteralStart1585 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteralStart1595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_START_in_ruleRichStringLiteralStart1636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralEnd_in_entryRuleRichStringLiteralEnd1676 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteralEnd1686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_END_in_ruleRichStringLiteralEnd1727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichStringLiteralInbetween_in_entryRuleRichStringLiteralInbetween1767 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRichStringLiteralInbetween1777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RICH_TEXT_INBETWEEN_in_ruleRichStringLiteralInbetween1818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRichVarPart_in_entryRuleRichVarPart1858 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRichVarPart1868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRichVarPart1910 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleRichVarPart1933 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleRichVarPart1961 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID2001 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValidID2012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID2051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName2096 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName2107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName2154 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_29_in_ruleQualifiedName2182 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName2205 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_30_in_rulePredefinedTypes2266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rulePredefinedTypes2283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rulePredefinedTypes2300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rulePredefinedTypes2317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_synpred1_InternalNLSDsl2173 = new BitSet(new long[]{0x0000000000000002L});
 
 }
