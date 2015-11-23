@@ -12,7 +12,9 @@ package org.eclipse.fx.ide.jdt.ui.internal.handler;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -320,29 +322,37 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 
 		IMethodBinding readonlyMethod = findMethodBinding(tp, "getReadOnlyProperty"); //$NON-NLS-1$
 
-		String propertyContent = generatePropertyAccessContent(f, makeFinal, readonlyMethod);
+		Set<String> imports = new HashSet<>();
+
+		String propertyContent = generatePropertyAccessContent(f, makeFinal, readonlyMethod, imports);
+		String getterContent = generateGetAccessContent(f, makeFinal, accessMethod, imports);
+		String setterContent = null;
+
+		// TODO We skip the import because the Type is already imported, does this always hold true?
+
+		IType fieldType = Util.toType(ownerType, f.getTypeSignature());
+		if( readonlyMethod == null && ! isReadonly(fieldType, propertyType) ) {
+			setterContent = generateSetAccessContent(f, makeFinal, accessMethod, imports);
+		}
 
 		ASTNode insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, propertyContent , rewrite, insertion);
 
-		String getterContent = generateGetAccessContent(f, makeFinal, accessMethod);
 		insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, getterContent , rewrite, insertion);
 
-		IType fieldType = Util.toType(ownerType, f.getTypeSignature());
-		if( readonlyMethod == null && ! isReadonly(fieldType, propertyType) ) {
-			String setterContent = generateSetAccessContent(f, makeFinal, accessMethod);
+		if( setterContent != null ) {
 			insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
 			addNewAccessor(ownerType, f, setterContent , rewrite, insertion);
 		}
 	}
 
-	static String generateSetAccessContent(IField f, boolean makeFinal, IMethodBinding accessMethod) throws JavaModelException {
+	static String generateSetAccessContent(IField f, boolean makeFinal, IMethodBinding accessMethod, Set<String> imports) throws JavaModelException {
 		String lineDelim = "\n"; //$NON-NLS-1$
 		StringBuffer buf = new StringBuffer();
 		buf.append("public "+(makeFinal?"final ":"")+" void");    //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$//$NON-NLS-4$
 
-		String sig = accessMethod.getReturnType().getQualifiedName();
+		String sig = getSimpleName(accessMethod.getReturnType().getQualifiedName(),imports);
 
 		buf.append(" set" + Util.toFirstUpper(f.getElementName()) + "(final "+sig+" "+f.getElementName()+") {"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		buf.append(lineDelim);
@@ -354,12 +364,12 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 		return buf.toString();
 	}
 
-	static String generateGetAccessContent(IField f, boolean makeFinal, IMethodBinding accessMethod) throws JavaModelException {
+	static String generateGetAccessContent(IField f, boolean makeFinal, IMethodBinding accessMethod, Set<String> imports) throws JavaModelException {
 		String lineDelim = "\n"; //$NON-NLS-1$
 		StringBuffer buf = new StringBuffer();
 		buf.append("public "+(makeFinal?"final ":""));   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 
-		String sig = accessMethod.getReturnType().getQualifiedName();
+		String sig = getSimpleName(accessMethod.getReturnType().getQualifiedName(), imports);
 		buf.append(sig);
 
 		if( "boolean".equals(sig) ) { //$NON-NLS-1$
@@ -376,7 +386,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 		return buf.toString();
 	}
 
-	static String generatePropertyAccessContent(IField f, boolean makeFinal, IMethodBinding readonlyBinding) throws IllegalArgumentException, JavaModelException {
+	static String generatePropertyAccessContent(IField f, boolean makeFinal, IMethodBinding readonlyBinding, Set<String> imports) throws IllegalArgumentException, JavaModelException {
 		String lineDelim = "\n"; //$NON-NLS-1$
 		StringBuffer buf = new StringBuffer();
 		buf.append("public "+(makeFinal?"final ":""));   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
@@ -413,4 +423,17 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			rewrite.insertLast(declaration, null);
 	}
 
+	static String getSimpleName(String value, Set<String> imports) {
+		if( value.startsWith("java.lang.") ) { //$NON-NLS-1$
+			return value.substring("java.lang.".length()); //$NON-NLS-1$
+		} else if( imports.contains(value) ) {
+			String[] split = value.split("\\."); //$NON-NLS-1$
+			return split[split.length-1];
+		} else {
+			// TODO We need to check if this leads to a conflict
+			imports.add(value);
+			String[] split = value.split("\\."); //$NON-NLS-1$
+			return split[split.length-1];
+		}
+	}
 }
