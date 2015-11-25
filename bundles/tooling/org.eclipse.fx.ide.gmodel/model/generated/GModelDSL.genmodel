@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.fx.ide.gmodel/src-gen" editDirectory="/org.eclipse.fx.ide.gmodel.edit/src"
+    editorDirectory="/org.eclipse.fx.ide.gmodel.editor/src" modelPluginID="org.eclipse.fx.ide.gmodel"
+    forceOverwrite="true" modelName="GModelDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.eclipse.fx.ide.gmodel.edit"
+    editorPluginID="org.eclipse.fx.ide.gmodel.editor" runtimeVersion="2.11">
+  <genPackages prefix="GModelDSL" basePackage="org.eclipse.fx.ide.gmodel" disposableProviderFactory="true"
+      fileExtensions="gmod" ecorePackage="GModelDSL.ecore#/">
+    <genClasses ecoreClass="GModelDSL.ecore#//GModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GModel/typeList"/>
+    </genClasses>
+    <genClasses ecoreClass="GModelDSL.ecore#//GDomainElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDomainElement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainElement/superTypeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainElement/propertyList"/>
+    </genClasses>
+    <genClasses ecoreClass="GModelDSL.ecore#//GDomainProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDomainProperty/builtIn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDomainProperty/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDomainProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainProperty/defaultValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainProperty/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="GModelDSL.ecore#//GDefault">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDefault/stringVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDefault/intVal"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

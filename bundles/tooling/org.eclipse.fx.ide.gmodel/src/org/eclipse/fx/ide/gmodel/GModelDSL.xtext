@@ -1,0 +1,29 @@
+grammar org.eclipse.fx.ide.gmodel.GModelDSL with org.eclipse.xtext.common.Terminals
+
+generate gModelDSL "http://www.eclipse.org/fx/ide/gmodel/GModelDSL"
+
+GModel:
+	'package' name=QualifiedName '{'
+		typeList += GDomainElement+
+	'}'
+;
+
+GDomainElement:
+	'type' name=ID ('extends' superTypeList+=[GDomainElement|ID] ( ', ' superTypeList+=[GDomainElement|ID])* )? '{'
+		propertyList += GDomainProperty*
+	'}'
+;
+
+GDomainProperty:
+	((builtIn=('Int'|'Double'|'String'|'Boolean') list?='[]'? name=ID ('=' defaultValue = GDefault)? ) | ((ref=[GDomainElement|ID]) list?='[]'? name=ID)) ';'
+;
+
+GDefault:
+	stringVal=STRING | intVal = INT
+;
+
+ValidID:
+	ID;
+
+QualifiedName:
+  ValidID (=>'.' ValidID)*;
