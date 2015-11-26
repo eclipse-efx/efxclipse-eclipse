@@ -30,6 +30,9 @@
    <feature url="features/org.eclipse.fx.ide.ldef.feature_2.1.0.qualifier.jar" id="org.eclipse.fx.ide.ldef.feature" version="2.1.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
+   <feature url="features/org.eclipse.fx.ide.gmod.feature_2.1.0.qualifier.jar" id="org.eclipse.fx.ide.gmod.feature" version="2.1.0.qualifier">
+      <category name="e(fx)clipse - single components"/>
+   </feature>
    <category-def name="e(fx)clipse - install" label="e(fx)clipse - install"/>
    <category-def name="e(fx)clipse - single components" label="e(fx)clipse - single components"/>
 </site>
