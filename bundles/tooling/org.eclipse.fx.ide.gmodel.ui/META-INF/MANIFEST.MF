@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.fx.ide.gmodel.ui
 Bundle-Vendor: My Company
-Bundle-Version: 2.1.0.qualifier
+Bundle-Version: 2.2.0.qualifier
 Bundle-SymbolicName: org.eclipse.fx.ide.gmodel.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.fx.ide.gmodel;visibility:=reexport,
+Require-Bundle: org.eclipse.fx.ide.gmodel;bundle-version="2.2.0";visibility:=reexport,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",

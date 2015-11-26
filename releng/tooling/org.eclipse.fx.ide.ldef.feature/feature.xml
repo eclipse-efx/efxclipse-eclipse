@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.fx.ide.ldef.feature"
-      label="DSL to setup JavaFX based code editors"
-      version="2.1.0.qualifier">
+      label="e(fx)clipse - IDE - DSL to setup JavaFX based code editors"
+      version="2.2.0.qualifier">
 
    <description>
       DSL to create code editors
