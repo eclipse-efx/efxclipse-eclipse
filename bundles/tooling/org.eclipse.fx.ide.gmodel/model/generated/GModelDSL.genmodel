@@ -14,7 +14,12 @@
     <genClasses ecoreClass="GModelDSL.ecore#//GDomainElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDomainElement/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainElement/superTypeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainElement/map"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainElement/propertyList"/>
+    </genClasses>
+    <genClasses ecoreClass="GModelDSL.ecore#//GDomainMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDomainMap/builtIn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GModelDSL.ecore#//GDomainMap/ref"/>
     </genClasses>
     <genClasses ecoreClass="GModelDSL.ecore#//GDomainProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GModelDSL.ecore#//GDomainProperty/builtIn"/>

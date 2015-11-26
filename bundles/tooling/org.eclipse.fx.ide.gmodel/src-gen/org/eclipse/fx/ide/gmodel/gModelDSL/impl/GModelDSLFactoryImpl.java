@@ -66,6 +66,7 @@ public class GModelDSLFactoryImpl extends EFactoryImpl implements GModelDSLFacto
     {
       case GModelDSLPackage.GMODEL: return createGModel();
       case GModelDSLPackage.GDOMAIN_ELEMENT: return createGDomainElement();
+      case GModelDSLPackage.GDOMAIN_MAP: return createGDomainMap();
       case GModelDSLPackage.GDOMAIN_PROPERTY: return createGDomainProperty();
       case GModelDSLPackage.GDEFAULT: return createGDefault();
       default:
@@ -93,6 +94,17 @@ public class GModelDSLFactoryImpl extends EFactoryImpl implements GModelDSLFacto
   {
     GDomainElementImpl gDomainElement = new GDomainElementImpl();
     return gDomainElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GDomainMap createGDomainMap()
+  {
+    GDomainMapImpl gDomainMap = new GDomainMapImpl();
+    return gDomainMap;
   }
 
   /**

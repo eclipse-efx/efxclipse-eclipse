@@ -37,6 +37,9 @@ public class GModelDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getGDomainElementAccess().getAlternatives_4(), "rule__GDomainElement__Alternatives_4");
+					put(grammarAccess.getGDomainMapAccess().getAlternatives_1(), "rule__GDomainMap__Alternatives_1");
+					put(grammarAccess.getGDomainMapAccess().getBuiltInAlternatives_1_0_0(), "rule__GDomainMap__BuiltInAlternatives_1_0_0");
 					put(grammarAccess.getGDomainPropertyAccess().getAlternatives_0(), "rule__GDomainProperty__Alternatives_0");
 					put(grammarAccess.getGDomainPropertyAccess().getBuiltInAlternatives_0_0_0_0(), "rule__GDomainProperty__BuiltInAlternatives_0_0_0_0");
 					put(grammarAccess.getGDefaultAccess().getAlternatives(), "rule__GDefault__Alternatives");
@@ -44,6 +47,7 @@ public class GModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGDomainElementAccess().getGroup(), "rule__GDomainElement__Group__0");
 					put(grammarAccess.getGDomainElementAccess().getGroup_2(), "rule__GDomainElement__Group_2__0");
 					put(grammarAccess.getGDomainElementAccess().getGroup_2_2(), "rule__GDomainElement__Group_2_2__0");
+					put(grammarAccess.getGDomainMapAccess().getGroup(), "rule__GDomainMap__Group__0");
 					put(grammarAccess.getGDomainPropertyAccess().getGroup(), "rule__GDomainProperty__Group__0");
 					put(grammarAccess.getGDomainPropertyAccess().getGroup_0_0(), "rule__GDomainProperty__Group_0_0__0");
 					put(grammarAccess.getGDomainPropertyAccess().getGroup_0_0_3(), "rule__GDomainProperty__Group_0_0_3__0");
@@ -55,7 +59,10 @@ public class GModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGDomainElementAccess().getNameAssignment_1(), "rule__GDomainElement__NameAssignment_1");
 					put(grammarAccess.getGDomainElementAccess().getSuperTypeListAssignment_2_1(), "rule__GDomainElement__SuperTypeListAssignment_2_1");
 					put(grammarAccess.getGDomainElementAccess().getSuperTypeListAssignment_2_2_1(), "rule__GDomainElement__SuperTypeListAssignment_2_2_1");
-					put(grammarAccess.getGDomainElementAccess().getPropertyListAssignment_4(), "rule__GDomainElement__PropertyListAssignment_4");
+					put(grammarAccess.getGDomainElementAccess().getMapAssignment_4_0(), "rule__GDomainElement__MapAssignment_4_0");
+					put(grammarAccess.getGDomainElementAccess().getPropertyListAssignment_4_1(), "rule__GDomainElement__PropertyListAssignment_4_1");
+					put(grammarAccess.getGDomainMapAccess().getBuiltInAssignment_1_0(), "rule__GDomainMap__BuiltInAssignment_1_0");
+					put(grammarAccess.getGDomainMapAccess().getRefAssignment_1_1(), "rule__GDomainMap__RefAssignment_1_1");
 					put(grammarAccess.getGDomainPropertyAccess().getBuiltInAssignment_0_0_0(), "rule__GDomainProperty__BuiltInAssignment_0_0_0");
 					put(grammarAccess.getGDomainPropertyAccess().getListAssignment_0_0_1(), "rule__GDomainProperty__ListAssignment_0_0_1");
 					put(grammarAccess.getGDomainPropertyAccess().getNameAssignment_0_0_2(), "rule__GDomainProperty__NameAssignment_0_0_2");

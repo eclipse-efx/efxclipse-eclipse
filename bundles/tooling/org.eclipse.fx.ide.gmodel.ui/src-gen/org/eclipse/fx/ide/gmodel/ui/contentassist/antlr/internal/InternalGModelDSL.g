@@ -113,6 +113,34 @@ finally {
 
 
 
+// Entry rule entryRuleGDomainMap
+entryRuleGDomainMap 
+:
+{ before(grammarAccess.getGDomainMapRule()); }
+	 ruleGDomainMap
+{ after(grammarAccess.getGDomainMapRule()); } 
+	 EOF 
+;
+
+// Rule GDomainMap
+ruleGDomainMap
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getGDomainMapAccess().getGroup()); }
+(rule__GDomainMap__Group__0)
+{ after(grammarAccess.getGDomainMapAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleGDomainProperty
 entryRuleGDomainProperty 
 :
@@ -225,6 +253,92 @@ finally {
 
 
 
+
+rule__GDomainElement__Alternatives_4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainElementAccess().getMapAssignment_4_0()); }
+(rule__GDomainElement__MapAssignment_4_0)
+{ after(grammarAccess.getGDomainElementAccess().getMapAssignment_4_0()); }
+)
+
+    |(
+{ before(grammarAccess.getGDomainElementAccess().getPropertyListAssignment_4_1()); }
+(rule__GDomainElement__PropertyListAssignment_4_1)*
+{ after(grammarAccess.getGDomainElementAccess().getPropertyListAssignment_4_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GDomainMap__Alternatives_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainMapAccess().getBuiltInAssignment_1_0()); }
+(rule__GDomainMap__BuiltInAssignment_1_0)
+{ after(grammarAccess.getGDomainMapAccess().getBuiltInAssignment_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getGDomainMapAccess().getRefAssignment_1_1()); }
+(rule__GDomainMap__RefAssignment_1_1)
+{ after(grammarAccess.getGDomainMapAccess().getRefAssignment_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GDomainMap__BuiltInAlternatives_1_0_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainMapAccess().getBuiltInIntKeyword_1_0_0_0()); }
+
+	'Int' 
+
+{ after(grammarAccess.getGDomainMapAccess().getBuiltInIntKeyword_1_0_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getGDomainMapAccess().getBuiltInDoubleKeyword_1_0_0_1()); }
+
+	'Double' 
+
+{ after(grammarAccess.getGDomainMapAccess().getBuiltInDoubleKeyword_1_0_0_1()); }
+)
+
+    |(
+{ before(grammarAccess.getGDomainMapAccess().getBuiltInStringKeyword_1_0_0_2()); }
+
+	'String' 
+
+{ after(grammarAccess.getGDomainMapAccess().getBuiltInStringKeyword_1_0_0_2()); }
+)
+
+    |(
+{ before(grammarAccess.getGDomainMapAccess().getBuiltInBooleanKeyword_1_0_0_3()); }
+
+	'Boolean' 
+
+{ after(grammarAccess.getGDomainMapAccess().getBuiltInBooleanKeyword_1_0_0_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 rule__GDomainProperty__Alternatives_0
     @init {
@@ -619,9 +733,9 @@ rule__GDomainElement__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getGDomainElementAccess().getPropertyListAssignment_4()); }
-(rule__GDomainElement__PropertyListAssignment_4)*
-{ after(grammarAccess.getGDomainElementAccess().getPropertyListAssignment_4()); }
+{ before(grammarAccess.getGDomainElementAccess().getAlternatives_4()); }
+(rule__GDomainElement__Alternatives_4)
+{ after(grammarAccess.getGDomainElementAccess().getAlternatives_4()); }
 )
 
 ;
@@ -817,6 +931,69 @@ rule__GDomainElement__Group_2_2__1__Impl
 { before(grammarAccess.getGDomainElementAccess().getSuperTypeListAssignment_2_2_1()); }
 (rule__GDomainElement__SuperTypeListAssignment_2_2_1)
 { after(grammarAccess.getGDomainElementAccess().getSuperTypeListAssignment_2_2_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__GDomainMap__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__GDomainMap__Group__0__Impl
+	rule__GDomainMap__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GDomainMap__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainMapAccess().getMapKeyword_0()); }
+
+	'map' 
+
+{ after(grammarAccess.getGDomainMapAccess().getMapKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__GDomainMap__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__GDomainMap__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GDomainMap__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainMapAccess().getAlternatives_1()); }
+(rule__GDomainMap__Alternatives_1)
+{ after(grammarAccess.getGDomainMapAccess().getAlternatives_1()); }
 )
 
 ;
@@ -1378,14 +1555,64 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GDomainElement__PropertyListAssignment_4
+rule__GDomainElement__MapAssignment_4_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_0()); }
-	ruleGDomainProperty{ after(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_0()); }
+{ before(grammarAccess.getGDomainElementAccess().getMapGDomainMapParserRuleCall_4_0_0()); }
+	ruleGDomainMap{ after(grammarAccess.getGDomainElementAccess().getMapGDomainMapParserRuleCall_4_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GDomainElement__PropertyListAssignment_4_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_1_0()); }
+	ruleGDomainProperty{ after(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GDomainMap__BuiltInAssignment_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainMapAccess().getBuiltInAlternatives_1_0_0()); }
+(rule__GDomainMap__BuiltInAlternatives_1_0_0)
+{ after(grammarAccess.getGDomainMapAccess().getBuiltInAlternatives_1_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__GDomainMap__RefAssignment_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getGDomainMapAccess().getRefGDomainElementCrossReference_1_1_0()); }
+(
+{ before(grammarAccess.getGDomainMapAccess().getRefGDomainElementIDTerminalRuleCall_1_1_0_1()); }
+	RULE_ID{ after(grammarAccess.getGDomainMapAccess().getRefGDomainElementIDTerminalRuleCall_1_1_0_1()); }
+)
+{ after(grammarAccess.getGDomainMapAccess().getRefGDomainElementCrossReference_1_1_0()); }
 )
 
 ;

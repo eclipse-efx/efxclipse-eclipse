@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDefault;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement;
+import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainProperty;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GModel;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GModelDSLFactory;
@@ -37,6 +38,13 @@ public class GModelDSLPackageImpl extends EPackageImpl implements GModelDSLPacka
    * @generated
    */
   private EClass gDomainElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gDomainMapEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -180,9 +188,49 @@ public class GModelDSLPackageImpl extends EPackageImpl implements GModelDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGDomainElement_PropertyList()
+  public EReference getGDomainElement_Map()
   {
     return (EReference)gDomainElementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGDomainElement_PropertyList()
+  {
+    return (EReference)gDomainElementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGDomainMap()
+  {
+    return gDomainMapEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGDomainMap_BuiltIn()
+  {
+    return (EAttribute)gDomainMapEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGDomainMap_Ref()
+  {
+    return (EReference)gDomainMapEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -312,7 +360,12 @@ public class GModelDSLPackageImpl extends EPackageImpl implements GModelDSLPacka
     gDomainElementEClass = createEClass(GDOMAIN_ELEMENT);
     createEAttribute(gDomainElementEClass, GDOMAIN_ELEMENT__NAME);
     createEReference(gDomainElementEClass, GDOMAIN_ELEMENT__SUPER_TYPE_LIST);
+    createEReference(gDomainElementEClass, GDOMAIN_ELEMENT__MAP);
     createEReference(gDomainElementEClass, GDOMAIN_ELEMENT__PROPERTY_LIST);
+
+    gDomainMapEClass = createEClass(GDOMAIN_MAP);
+    createEAttribute(gDomainMapEClass, GDOMAIN_MAP__BUILT_IN);
+    createEReference(gDomainMapEClass, GDOMAIN_MAP__REF);
 
     gDomainPropertyEClass = createEClass(GDOMAIN_PROPERTY);
     createEAttribute(gDomainPropertyEClass, GDOMAIN_PROPERTY__BUILT_IN);
@@ -364,7 +417,12 @@ public class GModelDSLPackageImpl extends EPackageImpl implements GModelDSLPacka
     initEClass(gDomainElementEClass, GDomainElement.class, "GDomainElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGDomainElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, GDomainElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGDomainElement_SuperTypeList(), this.getGDomainElement(), null, "superTypeList", null, 0, -1, GDomainElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGDomainElement_Map(), this.getGDomainMap(), null, "map", null, 0, 1, GDomainElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGDomainElement_PropertyList(), this.getGDomainProperty(), null, "propertyList", null, 0, -1, GDomainElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(gDomainMapEClass, GDomainMap.class, "GDomainMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGDomainMap_BuiltIn(), ecorePackage.getEString(), "builtIn", null, 0, 1, GDomainMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGDomainMap_Ref(), this.getGDomainElement(), null, "ref", null, 0, 1, GDomainMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(gDomainPropertyEClass, GDomainProperty.class, "GDomainProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGDomainProperty_BuiltIn(), ecorePackage.getEString(), "builtIn", null, 0, 1, GDomainProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

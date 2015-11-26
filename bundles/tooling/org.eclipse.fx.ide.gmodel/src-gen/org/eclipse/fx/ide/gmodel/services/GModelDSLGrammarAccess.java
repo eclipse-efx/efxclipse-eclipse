@@ -75,17 +75,20 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cSuperTypeListGDomainElementCrossReference_2_2_1_0 = (CrossReference)cSuperTypeListAssignment_2_2_1.eContents().get(0);
 		private final RuleCall cSuperTypeListGDomainElementIDTerminalRuleCall_2_2_1_0_1 = (RuleCall)cSuperTypeListGDomainElementCrossReference_2_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cPropertyListAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPropertyListGDomainPropertyParserRuleCall_4_0 = (RuleCall)cPropertyListAssignment_4.eContents().get(0);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Assignment cMapAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
+		private final RuleCall cMapGDomainMapParserRuleCall_4_0_0 = (RuleCall)cMapAssignment_4_0.eContents().get(0);
+		private final Assignment cPropertyListAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
+		private final RuleCall cPropertyListGDomainPropertyParserRuleCall_4_1_0 = (RuleCall)cPropertyListAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//GDomainElement:
 		//	"type" name=ID ("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)? "{"
-		//	propertyList+=GDomainProperty* "}";
+		//	(map=GDomainMap | propertyList+=GDomainProperty*) "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"type" name=ID ("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)? "{"
-		//propertyList+=GDomainProperty* "}"
+		//"type" name=ID ("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)? "{" (map=GDomainMap
+		//| propertyList+=GDomainProperty*) "}"
 		public Group getGroup() { return cGroup; }
 
 		//"type"
@@ -130,14 +133,79 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
+		//map=GDomainMap | propertyList+=GDomainProperty*
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+
+		//map=GDomainMap
+		public Assignment getMapAssignment_4_0() { return cMapAssignment_4_0; }
+
+		//GDomainMap
+		public RuleCall getMapGDomainMapParserRuleCall_4_0_0() { return cMapGDomainMapParserRuleCall_4_0_0; }
+
 		//propertyList+=GDomainProperty*
-		public Assignment getPropertyListAssignment_4() { return cPropertyListAssignment_4; }
+		public Assignment getPropertyListAssignment_4_1() { return cPropertyListAssignment_4_1; }
 
 		//GDomainProperty
-		public RuleCall getPropertyListGDomainPropertyParserRuleCall_4_0() { return cPropertyListGDomainPropertyParserRuleCall_4_0; }
+		public RuleCall getPropertyListGDomainPropertyParserRuleCall_4_1_0() { return cPropertyListGDomainPropertyParserRuleCall_4_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+
+	public class GDomainMapElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GDomainMap");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMapKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cBuiltInAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final Alternatives cBuiltInAlternatives_1_0_0 = (Alternatives)cBuiltInAssignment_1_0.eContents().get(0);
+		private final Keyword cBuiltInIntKeyword_1_0_0_0 = (Keyword)cBuiltInAlternatives_1_0_0.eContents().get(0);
+		private final Keyword cBuiltInDoubleKeyword_1_0_0_1 = (Keyword)cBuiltInAlternatives_1_0_0.eContents().get(1);
+		private final Keyword cBuiltInStringKeyword_1_0_0_2 = (Keyword)cBuiltInAlternatives_1_0_0.eContents().get(2);
+		private final Keyword cBuiltInBooleanKeyword_1_0_0_3 = (Keyword)cBuiltInAlternatives_1_0_0.eContents().get(3);
+		private final Assignment cRefAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final CrossReference cRefGDomainElementCrossReference_1_1_0 = (CrossReference)cRefAssignment_1_1.eContents().get(0);
+		private final RuleCall cRefGDomainElementIDTerminalRuleCall_1_1_0_1 = (RuleCall)cRefGDomainElementCrossReference_1_1_0.eContents().get(1);
+		
+		//GDomainMap:
+		//	"map" (builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement]);
+		@Override public ParserRule getRule() { return rule; }
+
+		//"map" (builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement])
+		public Group getGroup() { return cGroup; }
+
+		//"map"
+		public Keyword getMapKeyword_0() { return cMapKeyword_0; }
+
+		//builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement]
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//builtIn=("Int" | "Double" | "String" | "Boolean")
+		public Assignment getBuiltInAssignment_1_0() { return cBuiltInAssignment_1_0; }
+
+		//"Int" | "Double" | "String" | "Boolean"
+		public Alternatives getBuiltInAlternatives_1_0_0() { return cBuiltInAlternatives_1_0_0; }
+
+		//"Int"
+		public Keyword getBuiltInIntKeyword_1_0_0_0() { return cBuiltInIntKeyword_1_0_0_0; }
+
+		//"Double"
+		public Keyword getBuiltInDoubleKeyword_1_0_0_1() { return cBuiltInDoubleKeyword_1_0_0_1; }
+
+		//"String"
+		public Keyword getBuiltInStringKeyword_1_0_0_2() { return cBuiltInStringKeyword_1_0_0_2; }
+
+		//"Boolean"
+		public Keyword getBuiltInBooleanKeyword_1_0_0_3() { return cBuiltInBooleanKeyword_1_0_0_3; }
+
+		//ref=[GDomainElement]
+		public Assignment getRefAssignment_1_1() { return cRefAssignment_1_1; }
+
+		//[GDomainElement]
+		public CrossReference getRefGDomainElementCrossReference_1_1_0() { return cRefGDomainElementCrossReference_1_1_0; }
+
+		//ID
+		public RuleCall getRefGDomainElementIDTerminalRuleCall_1_1_0_1() { return cRefGDomainElementIDTerminalRuleCall_1_1_0_1; }
 	}
 
 	public class GDomainPropertyElements extends AbstractParserRuleElementFinder {
@@ -326,6 +394,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final GModelElements pGModel;
 	private final GDomainElementElements pGDomainElement;
+	private final GDomainMapElements pGDomainMap;
 	private final GDomainPropertyElements pGDomainProperty;
 	private final GDefaultElements pGDefault;
 	private final ValidIDElements pValidID;
@@ -342,6 +411,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pGModel = new GModelElements();
 		this.pGDomainElement = new GDomainElementElements();
+		this.pGDomainMap = new GDomainMapElements();
 		this.pGDomainProperty = new GDomainPropertyElements();
 		this.pGDefault = new GDefaultElements();
 		this.pValidID = new ValidIDElements();
@@ -387,13 +457,23 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//GDomainElement:
 	//	"type" name=ID ("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)? "{"
-	//	propertyList+=GDomainProperty* "}";
+	//	(map=GDomainMap | propertyList+=GDomainProperty*) "}";
 	public GDomainElementElements getGDomainElementAccess() {
 		return pGDomainElement;
 	}
 	
 	public ParserRule getGDomainElementRule() {
 		return getGDomainElementAccess().getRule();
+	}
+
+	//GDomainMap:
+	//	"map" (builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement]);
+	public GDomainMapElements getGDomainMapAccess() {
+		return pGDomainMap;
+	}
+	
+	public ParserRule getGDomainMapRule() {
+		return getGDomainMapAccess().getRule();
 	}
 
 	//GDomainProperty:

@@ -41,6 +41,15 @@ public interface GModelDSLFactory extends EFactory
   GDomainElement createGDomainElement();
 
   /**
+   * Returns a new object of class '<em>GDomain Map</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>GDomain Map</em>'.
+   * @generated
+   */
+  GDomainMap createGDomainMap();
+
+  /**
    * Returns a new object of class '<em>GDomain Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getSuperTypeList <em>Super Type List</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getMap <em>Map</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getPropertyList <em>Property List</em>}</li>
  * </ul>
  *
@@ -67,6 +68,32 @@ public interface GDomainElement extends EObject
    * @generated
    */
   EList<GDomainElement> getSuperTypeList();
+
+  /**
+   * Returns the value of the '<em><b>Map</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Map</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Map</em>' containment reference.
+   * @see #setMap(GDomainMap)
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.GModelDSLPackage#getGDomainElement_Map()
+   * @model containment="true"
+   * @generated
+   */
+  GDomainMap getMap();
+
+  /**
+   * Sets the value of the '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getMap <em>Map</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Map</em>' containment reference.
+   * @see #getMap()
+   * @generated
+   */
+  void setMap(GDomainMap value);
 
   /**
    * Returns the value of the '<em><b>Property List</b></em>' containment reference list.

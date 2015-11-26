@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement;
+import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainProperty;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GModelDSLPackage;
 
@@ -33,6 +34,7 @@ import org.eclipse.fx.ide.gmodel.gModelDSL.GModelDSLPackage;
  * <ul>
  *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainElementImpl#getSuperTypeList <em>Super Type List</em>}</li>
+ *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainElementImpl#getMap <em>Map</em>}</li>
  *   <li>{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainElementImpl#getPropertyList <em>Property List</em>}</li>
  * </ul>
  *
@@ -69,6 +71,16 @@ public class GDomainElementImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected EList<GDomainElement> superTypeList;
+
+  /**
+   * The cached value of the '{@link #getMap() <em>Map</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMap()
+   * @generated
+   * @ordered
+   */
+  protected GDomainMap map;
 
   /**
    * The cached value of the '{@link #getPropertyList() <em>Property List</em>}' containment reference list.
@@ -143,6 +155,54 @@ public class GDomainElementImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public GDomainMap getMap()
+  {
+    return map;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMap(GDomainMap newMap, NotificationChain msgs)
+  {
+    GDomainMap oldMap = map;
+    map = newMap;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GModelDSLPackage.GDOMAIN_ELEMENT__MAP, oldMap, newMap);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMap(GDomainMap newMap)
+  {
+    if (newMap != map)
+    {
+      NotificationChain msgs = null;
+      if (map != null)
+        msgs = ((InternalEObject)map).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GModelDSLPackage.GDOMAIN_ELEMENT__MAP, null, msgs);
+      if (newMap != null)
+        msgs = ((InternalEObject)newMap).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GModelDSLPackage.GDOMAIN_ELEMENT__MAP, null, msgs);
+      msgs = basicSetMap(newMap, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GModelDSLPackage.GDOMAIN_ELEMENT__MAP, newMap, newMap));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<GDomainProperty> getPropertyList()
   {
     if (propertyList == null)
@@ -162,6 +222,8 @@ public class GDomainElementImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case GModelDSLPackage.GDOMAIN_ELEMENT__MAP:
+        return basicSetMap(null, msgs);
       case GModelDSLPackage.GDOMAIN_ELEMENT__PROPERTY_LIST:
         return ((InternalEList<?>)getPropertyList()).basicRemove(otherEnd, msgs);
     }
@@ -182,6 +244,8 @@ public class GDomainElementImpl extends MinimalEObjectImpl.Container implements 
         return getName();
       case GModelDSLPackage.GDOMAIN_ELEMENT__SUPER_TYPE_LIST:
         return getSuperTypeList();
+      case GModelDSLPackage.GDOMAIN_ELEMENT__MAP:
+        return getMap();
       case GModelDSLPackage.GDOMAIN_ELEMENT__PROPERTY_LIST:
         return getPropertyList();
     }
@@ -205,6 +269,9 @@ public class GDomainElementImpl extends MinimalEObjectImpl.Container implements 
       case GModelDSLPackage.GDOMAIN_ELEMENT__SUPER_TYPE_LIST:
         getSuperTypeList().clear();
         getSuperTypeList().addAll((Collection<? extends GDomainElement>)newValue);
+        return;
+      case GModelDSLPackage.GDOMAIN_ELEMENT__MAP:
+        setMap((GDomainMap)newValue);
         return;
       case GModelDSLPackage.GDOMAIN_ELEMENT__PROPERTY_LIST:
         getPropertyList().clear();
@@ -230,6 +297,9 @@ public class GDomainElementImpl extends MinimalEObjectImpl.Container implements 
       case GModelDSLPackage.GDOMAIN_ELEMENT__SUPER_TYPE_LIST:
         getSuperTypeList().clear();
         return;
+      case GModelDSLPackage.GDOMAIN_ELEMENT__MAP:
+        setMap((GDomainMap)null);
+        return;
       case GModelDSLPackage.GDOMAIN_ELEMENT__PROPERTY_LIST:
         getPropertyList().clear();
         return;
@@ -251,6 +321,8 @@ public class GDomainElementImpl extends MinimalEObjectImpl.Container implements 
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case GModelDSLPackage.GDOMAIN_ELEMENT__SUPER_TYPE_LIST:
         return superTypeList != null && !superTypeList.isEmpty();
+      case GModelDSLPackage.GDOMAIN_ELEMENT__MAP:
+        return map != null;
       case GModelDSLPackage.GDOMAIN_ELEMENT__PROPERTY_LIST:
         return propertyList != null && !propertyList.isEmpty();
     }

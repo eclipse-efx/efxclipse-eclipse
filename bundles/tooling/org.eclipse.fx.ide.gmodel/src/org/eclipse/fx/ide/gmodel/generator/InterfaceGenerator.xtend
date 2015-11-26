@@ -7,6 +7,7 @@ import org.eclipse.fx.ide.gmodel.gModelDSL.GModel
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement
 import static extension org.eclipse.fx.ide.gmodel.generator.Util.*;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainProperty
+import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap
 
 class InterfaceGenerator implements IGenerator {
 
@@ -57,6 +58,9 @@ class InterfaceGenerator implements IGenerator {
 		«FOR p : e.propertyList»
 			public «p.type» «IF p.type == "boolean"»is«ELSE»get«ENDIF»«p.name.toFirstUpper»();
 		«ENDFOR»
+		«IF e.map != null»
+			public java.util.Map<String,«e.map.plainType»> getPropertyMap();
+		«ENDIF»
 		«FOR t : superHierarchy.sortBy[ v | v.name ]»
 			«FOR p : t.propertyList»
 				public «p.type» «IF p.type == "boolean"»is«ELSE»get«ENDIF»«p.name.toFirstUpper»();
@@ -104,6 +108,10 @@ class InterfaceGenerator implements IGenerator {
 	}
 
 	def static getPlainType(GDomainProperty p) {
+		return if( p.builtIn != null ) p.builtIn.toJavaType else p.ref.name;
+	}
+
+	def static getPlainType(GDomainMap p) {
 		return if( p.builtIn != null ) p.builtIn.toJavaType else p.ref.name;
 	}
 }

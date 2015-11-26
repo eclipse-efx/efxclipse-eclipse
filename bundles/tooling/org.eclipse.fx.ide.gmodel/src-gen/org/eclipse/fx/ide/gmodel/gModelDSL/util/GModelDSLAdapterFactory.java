@@ -85,6 +85,11 @@ public class GModelDSLAdapterFactory extends AdapterFactoryImpl
         return createGDomainElementAdapter();
       }
       @Override
+      public Adapter caseGDomainMap(GDomainMap object)
+      {
+        return createGDomainMapAdapter();
+      }
+      @Override
       public Adapter caseGDomainProperty(GDomainProperty object)
       {
         return createGDomainPropertyAdapter();
@@ -142,6 +147,21 @@ public class GModelDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGDomainElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap <em>GDomain Map</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap
+   * @generated
+   */
+  public Adapter createGDomainMapAdapter()
   {
     return null;
   }

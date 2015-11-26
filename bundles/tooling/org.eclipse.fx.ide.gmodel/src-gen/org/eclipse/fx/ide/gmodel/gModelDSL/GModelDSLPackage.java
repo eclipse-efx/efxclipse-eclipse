@@ -122,13 +122,22 @@ public interface GModelDSLPackage extends EPackage
   int GDOMAIN_ELEMENT__SUPER_TYPE_LIST = 1;
 
   /**
+   * The feature id for the '<em><b>Map</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GDOMAIN_ELEMENT__MAP = 2;
+
+  /**
    * The feature id for the '<em><b>Property List</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GDOMAIN_ELEMENT__PROPERTY_LIST = 2;
+  int GDOMAIN_ELEMENT__PROPERTY_LIST = 3;
 
   /**
    * The number of structural features of the '<em>GDomain Element</em>' class.
@@ -137,7 +146,44 @@ public interface GModelDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GDOMAIN_ELEMENT_FEATURE_COUNT = 3;
+  int GDOMAIN_ELEMENT_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainMapImpl <em>GDomain Map</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainMapImpl
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.impl.GModelDSLPackageImpl#getGDomainMap()
+   * @generated
+   */
+  int GDOMAIN_MAP = 2;
+
+  /**
+   * The feature id for the '<em><b>Built In</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GDOMAIN_MAP__BUILT_IN = 0;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GDOMAIN_MAP__REF = 1;
+
+  /**
+   * The number of structural features of the '<em>GDomain Map</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GDOMAIN_MAP_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainPropertyImpl <em>GDomain Property</em>}' class.
@@ -147,7 +193,7 @@ public interface GModelDSLPackage extends EPackage
    * @see org.eclipse.fx.ide.gmodel.gModelDSL.impl.GModelDSLPackageImpl#getGDomainProperty()
    * @generated
    */
-  int GDOMAIN_PROPERTY = 2;
+  int GDOMAIN_PROPERTY = 3;
 
   /**
    * The feature id for the '<em><b>Built In</b></em>' attribute.
@@ -211,7 +257,7 @@ public interface GModelDSLPackage extends EPackage
    * @see org.eclipse.fx.ide.gmodel.gModelDSL.impl.GModelDSLPackageImpl#getGDefault()
    * @generated
    */
-  int GDEFAULT = 3;
+  int GDEFAULT = 4;
 
   /**
    * The feature id for the '<em><b>String Val</b></em>' attribute.
@@ -306,6 +352,17 @@ public interface GModelDSLPackage extends EPackage
   EReference getGDomainElement_SuperTypeList();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getMap <em>Map</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Map</em>'.
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getMap()
+   * @see #getGDomainElement()
+   * @generated
+   */
+  EReference getGDomainElement_Map();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement#getPropertyList <em>Property List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -315,6 +372,38 @@ public interface GModelDSLPackage extends EPackage
    * @generated
    */
   EReference getGDomainElement_PropertyList();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap <em>GDomain Map</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>GDomain Map</em>'.
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap
+   * @generated
+   */
+  EClass getGDomainMap();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap#getBuiltIn <em>Built In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Built In</em>'.
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap#getBuiltIn()
+   * @see #getGDomainMap()
+   * @generated
+   */
+  EAttribute getGDomainMap_BuiltIn();
+
+  /**
+   * Returns the meta object for the reference '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap#getRef()
+   * @see #getGDomainMap()
+   * @generated
+   */
+  EReference getGDomainMap_Ref();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.fx.ide.gmodel.gModelDSL.GDomainProperty <em>GDomain Property</em>}'.
@@ -489,12 +578,46 @@ public interface GModelDSLPackage extends EPackage
     EReference GDOMAIN_ELEMENT__SUPER_TYPE_LIST = eINSTANCE.getGDomainElement_SuperTypeList();
 
     /**
+     * The meta object literal for the '<em><b>Map</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GDOMAIN_ELEMENT__MAP = eINSTANCE.getGDomainElement_Map();
+
+    /**
      * The meta object literal for the '<em><b>Property List</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference GDOMAIN_ELEMENT__PROPERTY_LIST = eINSTANCE.getGDomainElement_PropertyList();
+
+    /**
+     * The meta object literal for the '{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainMapImpl <em>GDomain Map</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainMapImpl
+     * @see org.eclipse.fx.ide.gmodel.gModelDSL.impl.GModelDSLPackageImpl#getGDomainMap()
+     * @generated
+     */
+    EClass GDOMAIN_MAP = eINSTANCE.getGDomainMap();
+
+    /**
+     * The meta object literal for the '<em><b>Built In</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GDOMAIN_MAP__BUILT_IN = eINSTANCE.getGDomainMap_BuiltIn();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GDOMAIN_MAP__REF = eINSTANCE.getGDomainMap_Ref();
 
     /**
      * The meta object literal for the '{@link org.eclipse.fx.ide.gmodel.gModelDSL.impl.GDomainPropertyImpl <em>GDomain Property</em>}' class.

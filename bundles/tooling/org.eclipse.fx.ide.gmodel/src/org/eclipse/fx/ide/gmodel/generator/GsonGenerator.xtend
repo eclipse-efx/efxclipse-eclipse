@@ -8,6 +8,7 @@ import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement
 import static extension org.eclipse.fx.ide.gmodel.generator.Util.*;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainProperty
 import java.util.HashSet
+import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap
 
 class GsonGenerator implements IGenerator {
 
@@ -56,20 +57,29 @@ class GsonGenerator implements IGenerator {
 	«superHierarchy.forEach[ s | properties.addAll(s.propertyList) ]»
 	public final class Gson«e.name»Impl implements GsonBase, «e.name»«IF !e.superTypeList.isEmpty», «superHierarchy.sortBy[ v | v.name ].map[ v | v.name ].join(", ")»«ENDIF» {
 		public Gson«e.name»Impl(JsonObject jsonObject) {
-			«FOR p : properties.sortBy[ p | p.name]»
-				«p.generatePropertyInit»
-			«ENDFOR»
+			«IF e.map != null»
+				this.propertyMap = toMap(jsonObject);
+			«ELSE»
+				«FOR p : properties.sortBy[ p | p.name]»
+					«p.generatePropertyInit»
+				«ENDFOR»
+			«ENDIF»
 		}
-
-		public Gson«e.name»Impl(«properties.sortBy[ p | p.name].map[ p | p.type + " " + p.name].join(", ")») {
-			«FOR p : properties.sortBy[ p | p.name]»
-			this.«p.name» = «p.name»;
-			«ENDFOR»
-		}
+		«IF e.map != null»
+			public Gson«e.name»Impl(java.util.Map<String,«e.map.plainType»> propertyMap) {
+				this.propertyMap = propertyMap;
+			}
+		«ELSE»
+			public Gson«e.name»Impl(«properties.sortBy[ p | p.name].map[ p | p.type + " " + p.name].join(", ")») {
+				«FOR p : properties.sortBy[ p | p.name]»
+				this.«p.name» = «p.name»;
+				«ENDFOR»
+			}
+		«ENDIF»
 
 		public JsonObject toJSONObject() {
 			JsonObject o = new JsonObject();
-			o.addProperty( "__type", "«e.name»" );
+			o.addProperty( "$gtype", "«e.name»" );
 			«FOR p : properties.sortBy[ p | p.name]»
 				«p.generatePropertyToJson»
 			«ENDFOR»
@@ -77,6 +87,11 @@ class GsonGenerator implements IGenerator {
 		}
 
 		public String toString() {
+			«IF e.map != null»
+			return getClass().getSimpleName() + "@" + Integer.toHexString(hashCode()) + " { "
+						+ "propertyMap : " + propertyMap
+					+" }";
+			«ELSE»
 			return getClass().getSimpleName() + "@" + Integer.toHexString(hashCode()) + " { "
 						«properties.sortBy[ p | p.name].map[ p |
 							if( p.builtIn != null ) {
@@ -84,17 +99,46 @@ class GsonGenerator implements IGenerator {
 							} else if( p.isList ) {
 								' + "' + p.name + ' : " + ' + p.name + '.stream().map( e -> e.getClass().getSimpleName() + "@" + Integer.toHexString(e.hashCode()) ).collect(java.util.stream.Collectors.toList())'
 							} else {
-								' + "' + p.name + ' : " + ' + p.name + ' == null ? null : ' + p.name + '.getClass().getSimpleName() + "@" + Integer.toHexString('+p.name+'.hashCode())'
+								' + "' + p.name + ' : " + (' + p.name + ' == null ? null : ' + p.name + '.getClass().getSimpleName() + "@" + Integer.toHexString('+p.name+'.hashCode()))'
 							}
 						].join(''' + ", "
 						''')»
 						+" }";
+			«ENDIF»
 		}
 
-		«FOR p : properties.sortBy[ p | p.name]»
-			«p.generatePropertyEntry»
+		«IF e.map != null»
+			private static java.util.Map<String,«e.map.plainType»> toMap(JsonObject o) {
+				java.util.Map<String,«e.map.plainType»> rv = new java.util.HashMap<>();
+				for( java.util.Map.Entry<String,com.google.gson.JsonElement> e : o.entrySet() ) {
+					«IF e.map.ref != null»
+						rv.put( e.getKey(), GsonElementFactory.create«e.map.ref.name»(e.getValue().getAsJsonObject()) );
+					«ELSE»
+						«IF e.map.plainType == "boolean"»
+							rv.put( e.getKey(), e.getValue().getAsBoolean() );
+						«ELSEIF e.map.plainType == "int"»
+							rv.put( e.getKey(), e.getValue().getAsInt() );
+						«ELSEIF e.map.plainType == "double"»
+							rv.put( e.getKey(), e.getValue().getAsDouble() );
+						«ELSEIF e.map.plainType == "String"»
+							rv.put( e.getKey(), e.getValue().getAsString() );
+						«ENDIF»
+					«ENDIF»
+				}
+				return rv;
+			}
 
-		«ENDFOR»
+			private java.util.Map<String,«e.map.plainType»> propertyMap;
+			public java.util.Map<String,«e.map.plainType»> getPropertyMap() {
+				return this.propertyMap;
+			}
+		«ELSE»
+			«FOR p : properties.sortBy[ p | p.name]»
+				«p.generatePropertyEntry»
+
+			«ENDFOR»
+		«ENDIF»
+
 		«val name = m.eResource.URI.lastSegment.substring(0,m.eResource.URI.lastSegment.length-5)»
 		public static class Builder implements «e.name».Builder {
 			private final «name»GModel instance;
@@ -102,40 +146,67 @@ class GsonGenerator implements IGenerator {
 			public Builder(«name»GModel instance) {
 				this.instance = instance;
 			}
+			«IF e.map != null»
+				java.util.Map<String,«e.map.plainType»> propertyMap = new java.util.HashMap<>();
 
-			«FOR p : properties.sortBy[ p | p.name]»
-				«IF p.isList»
-				private final «p.type» «p.name» = new java.util.ArrayList<>();
-				public Builder «p.name»(«p.type» «p.name») {
-					this.«p.name».addAll(«p.name»);
-					return this;
-				}
-				public Builder append«p.name.toFirstUpper»(«p.plainType» «p.name») {
-					this.«p.name».add(«p.name»);
-					return this;
-				}
-				«IF p.builtIn == null»
-				public Builder «p.name»(java.util.function.Function<«name»GModel,java.util.List<«p.plainType»>> provider) {
-					«p.name»( provider.apply( instance ) );
+				public Builder propertyMap(java.util.Map<String,«e.map.plainType»> propertyMap) {
+					this.propertyMap.putAll(propertyMap);
 					return this;
 				}
 
-				public Builder append«p.name.toFirstUpper»(java.util.function.Function<«p.plainType».Builder,«p.plainType»> provider) {
-					append«p.name.toFirstUpper»( provider.apply( new Gson«p.plainType»Impl.Builder(instance) ) );
+				public Builder propertyMap(String key, «e.map.plainType» value) {
+					this.propertyMap.put(key,value);
 					return this;
 				}
-				«ENDIF»
-				«ELSE»
-				private «p.type» «p.name»;
-				public Builder «p.name»(«p.type» «p.name») {
-					this.«p.name» = «p.name»;
+
+				public Builder propertyMap(String key, java.util.function.Function<«e.map.plainType».Builder,«e.map.plainType»> provider) {
+					this.propertyMap.put(key,provider.apply( new Gson«e.map.plainType»Impl.Builder(instance) ) );
 					return this;
 				}
-				«ENDIF»
-			«ENDFOR»
+
+				public Builder propertyMap(java.util.function.Function<«name»GModel,java.util.Map<String,«e.map.plainType»>> provider) {
+					this.propertyMap.putAll(provider.apply( instance ) );
+					return this;
+				}
+			«ELSE»
+				«FOR p : properties.sortBy[ p | p.name]»
+					«IF p.isList»
+					private final «p.type» «p.name» = new java.util.ArrayList<>();
+					public Builder «p.name»(«p.type» «p.name») {
+						this.«p.name».addAll(«p.name»);
+						return this;
+					}
+					public Builder append«p.name.toFirstUpper»(«p.plainType» «p.name») {
+						this.«p.name».add(«p.name»);
+						return this;
+					}
+					«IF p.builtIn == null»
+					public Builder «p.name»(java.util.function.Function<«name»GModel,java.util.List<«p.plainType»>> provider) {
+						«p.name»( provider.apply( instance ) );
+						return this;
+					}
+
+					public Builder append«p.name.toFirstUpper»(java.util.function.Function<«p.plainType».Builder,«p.plainType»> provider) {
+						append«p.name.toFirstUpper»( provider.apply( new Gson«p.plainType»Impl.Builder(instance) ) );
+						return this;
+					}
+					«ENDIF»
+					«ELSE»
+					private «p.type» «p.name»;
+					public Builder «p.name»(«p.type» «p.name») {
+						this.«p.name» = «p.name»;
+						return this;
+					}
+					«ENDIF»
+				«ENDFOR»
+			«ENDIF»
 
 			public «e.name» build() {
-				return new Gson«e.name»Impl(«properties.sortBy[ p | p.name].map[ p | p.name].join(", ")»);
+				«IF e.map != null»
+					return new Gson«e.name»Impl(propertyMap);
+				«ELSE»
+					return new Gson«e.name»Impl(«properties.sortBy[ p | p.name].map[ p | p.name].join(", ")»);
+				«ENDIF»
 			}
 		}
 	}
@@ -172,20 +243,20 @@ class GsonGenerator implements IGenerator {
 	def generatePropertyInit(GDomainProperty p) '''
 		«IF p.isList»
 			«IF p.plainType == "boolean"»
-				this.«p.name» = java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
-										.map( e -> e.getAsBoolean()).collect(java.util.stream.Collectors.toList()));
+				this.«p.name» = jsonObject.has("«p.name»") ? java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
+										.map( e -> e.getAsBoolean()).collect(java.util.stream.Collectors.toList())) : java.util.Collections.emptyList();
 			«ELSEIF p.plainType == "int"»
-				this.«p.name» = java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
-										.map( e -> e.getAsInt()).collect(java.util.stream.Collectors.toList()));
+				this.«p.name» = jsonObject.has("«p.name»") ? java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
+										.map( e -> e.getAsInt()).collect(java.util.stream.Collectors.toList())) : java.util.Collections.emptyList();
 			«ELSEIF p.plainType == "double"»
-				this.«p.name» = java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
-										.map( e -> e.getAsDouble()).collect(java.util.stream.Collectors.toList()));
+				this.«p.name» = jsonObject.has("«p.name»") ? java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
+										.map( e -> e.getAsDouble()).collect(java.util.stream.Collectors.toList())) : java.util.Collections.emptyList();
 			«ELSEIF p.plainType == "String"»
-				this.«p.name» = java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
-										.map( e -> e.getAsString()).collect(java.util.stream.Collectors.toList()));
+				this.«p.name» = jsonObject.has("«p.name»") ? java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
+										.map( e -> e.getAsString()).collect(java.util.stream.Collectors.toList())) : java.util.Collections.emptyList();
 			«ELSE»
-				this.«p.name» = java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
-										.map( e -> GsonElementFactory.create«p.ref.name»(e.getAsJsonObject())).collect(java.util.stream.Collectors.toList()));
+				this.«p.name» = jsonObject.has("«p.name»") ? java.util.Collections.unmodifiableList(java.util.stream.StreamSupport.stream( jsonObject.getAsJsonArray("«p.name»").spliterator(), false )
+										.map( e -> GsonElementFactory.create«p.ref.name»(e.getAsJsonObject())).collect(java.util.stream.Collectors.toList())) : java.util.Collections.emptyList();
 			«ENDIF»
 		«ELSE»
 			«IF p.type == "boolean"»
@@ -221,8 +292,8 @@ class GsonGenerator implements IGenerator {
 	public final class GsonElementFactory implements «name»GModel {
 		«FOR t : m.typeList»
 		public static «t.name» create«t.name»(JsonObject o) {
-			if( o.has("__type") ) {
-				switch( o.get("__type").getAsString() ) {
+			if( o.has("$gtype") ) {
+				switch( o.get("$gtype").getAsString() ) {
 					case "«t.name»":
 						return new Gson«t.name»Impl(o);
 					«FOR sub : t.getAllImpl(m)»
@@ -250,15 +321,15 @@ class GsonGenerator implements IGenerator {
 
 		@SuppressWarnings("unchecked")
 		private static <T extends «name»Base> T _createObject(JsonObject o) {
-			if( o.has("__type") ) {
-				switch( o.get("__type").getAsString() ) {
+			if( o.has("$gtype") ) {
+				switch( o.get("$gtype").getAsString() ) {
 					«FOR t : m.typeList»
 					case "«t.name»":
 						return (T) create«t.name»(o);
 					«ENDFOR»
 				}
 			}
-			throw new IllegalArgumentException();
+			return (T) create«m.typeList.head.name»(o);
 		}
 
 		public <T extends «name»Base> java.util.List<T> createList(java.io.Reader json) {
@@ -292,6 +363,10 @@ class GsonGenerator implements IGenerator {
 	}
 
 	def static getPlainType(GDomainProperty p) {
+		return if( p.builtIn != null ) p.builtIn.toJavaType else p.ref.name;
+	}
+
+	def static getPlainType(GDomainMap p) {
 		return if( p.builtIn != null ) p.builtIn.toJavaType else p.ref.name;
 	}
 }

@@ -8,6 +8,7 @@ import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDefault;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement;
+import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainProperty;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GModel;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GModelDSLPackage;
@@ -35,6 +36,9 @@ public class GModelDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case GModelDSLPackage.GDOMAIN_ELEMENT:
 				sequence_GDomainElement(context, (GDomainElement) semanticObject); 
 				return; 
+			case GModelDSLPackage.GDOMAIN_MAP:
+				sequence_GDomainMap(context, (GDomainMap) semanticObject); 
+				return; 
 			case GModelDSLPackage.GDOMAIN_PROPERTY:
 				sequence_GDomainProperty(context, (GDomainProperty) semanticObject); 
 				return; 
@@ -56,9 +60,18 @@ public class GModelDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (superTypeList+=[GDomainElement|ID] superTypeList+=[GDomainElement|ID]*)? propertyList+=GDomainProperty*)
+	 *     (name=ID (superTypeList+=[GDomainElement|ID] superTypeList+=[GDomainElement|ID]*)? (map=GDomainMap | propertyList+=GDomainProperty*))
 	 */
 	protected void sequence_GDomainElement(EObject context, GDomainElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (builtIn='Int' | builtIn='Double' | builtIn='String' | builtIn='Boolean' | ref=[GDomainElement|ID])
+	 */
+	protected void sequence_GDomainMap(EObject context, GDomainMap semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

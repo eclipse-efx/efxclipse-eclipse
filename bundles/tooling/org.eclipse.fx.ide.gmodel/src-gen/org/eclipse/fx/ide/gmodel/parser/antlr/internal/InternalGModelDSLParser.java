@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'{'", "'}'", "'type'", "'extends'", "', '", "'Int'", "'Double'", "'String'", "'Boolean'", "'[]'", "'='", "';'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'{'", "'}'", "'type'", "'extends'", "', '", "'map'", "'Int'", "'Double'", "'String'", "'Boolean'", "'[]'", "'='", "';'", "'.'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -44,6 +44,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
     public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -322,7 +323,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGDomainElement"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:145:1: ruleGDomainElement returns [EObject current=null] : (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( (lv_propertyList_7_0= ruleGDomainProperty ) )* otherlv_8= '}' ) ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:145:1: ruleGDomainElement returns [EObject current=null] : (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( ( (lv_map_7_0= ruleGDomainMap ) ) | ( (lv_propertyList_8_0= ruleGDomainProperty ) )* ) otherlv_9= '}' ) ;
     public final EObject ruleGDomainElement() throws RecognitionException {
         EObject current = null;
 
@@ -333,18 +334,20 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
-        Token otherlv_8=null;
-        EObject lv_propertyList_7_0 = null;
+        Token otherlv_9=null;
+        EObject lv_map_7_0 = null;
+
+        EObject lv_propertyList_8_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:148:28: ( (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( (lv_propertyList_7_0= ruleGDomainProperty ) )* otherlv_8= '}' ) )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:149:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( (lv_propertyList_7_0= ruleGDomainProperty ) )* otherlv_8= '}' )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:148:28: ( (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( ( (lv_map_7_0= ruleGDomainMap ) ) | ( (lv_propertyList_8_0= ruleGDomainProperty ) )* ) otherlv_9= '}' ) )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:149:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( ( (lv_map_7_0= ruleGDomainMap ) ) | ( (lv_propertyList_8_0= ruleGDomainProperty ) )* ) otherlv_9= '}' )
             {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:149:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( (lv_propertyList_7_0= ruleGDomainProperty ) )* otherlv_8= '}' )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:149:3: otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( (lv_propertyList_7_0= ruleGDomainProperty ) )* otherlv_8= '}'
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:149:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( ( (lv_map_7_0= ruleGDomainMap ) ) | ( (lv_propertyList_8_0= ruleGDomainProperty ) )* ) otherlv_9= '}' )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:149:3: otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) (otherlv_4= ', ' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '{' ( ( (lv_map_7_0= ruleGDomainMap ) ) | ( (lv_propertyList_8_0= ruleGDomainProperty ) )* ) otherlv_9= '}'
             {
             otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleGDomainElement272); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -491,63 +494,131 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_6, grammarAccess.getGDomainElementAccess().getLeftCurlyBracketKeyword_3());
                   
             }
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:209:1: ( (lv_propertyList_7_0= ruleGDomainProperty ) )*
-            loop4:
-            do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:209:1: ( ( (lv_map_7_0= ruleGDomainMap ) ) | ( (lv_propertyList_8_0= ruleGDomainProperty ) )* )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-                if ( (LA4_0==RULE_ID||(LA4_0>=17 && LA4_0<=20)) ) {
-                    alt4=1;
-                }
+            if ( (LA5_0==17) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==RULE_ID||LA5_0==13||(LA5_0>=18 && LA5_0<=21)) ) {
+                alt5=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:209:2: ( (lv_map_7_0= ruleGDomainMap ) )
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:209:2: ( (lv_map_7_0= ruleGDomainMap ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:210:1: (lv_map_7_0= ruleGDomainMap )
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:210:1: (lv_map_7_0= ruleGDomainMap )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:211:3: lv_map_7_0= ruleGDomainMap
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getGDomainElementAccess().getMapGDomainMapParserRuleCall_4_0_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleGDomainMap_in_ruleGDomainElement398);
+                    lv_map_7_0=ruleGDomainMap();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElementForParent(grammarAccess.getGDomainElementRule());
+                      	        }
+                             		set(
+                             			current, 
+                             			"map",
+                              		lv_map_7_0, 
+                              		"GDomainMap");
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
 
 
-                switch (alt4) {
-            	case 1 :
-            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:210:1: (lv_propertyList_7_0= ruleGDomainProperty )
-            	    {
-            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:210:1: (lv_propertyList_7_0= ruleGDomainProperty )
-            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:211:3: lv_propertyList_7_0= ruleGDomainProperty
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_0()); 
-            	      	    
-            	    }
-            	    pushFollow(FOLLOW_ruleGDomainProperty_in_ruleGDomainElement397);
-            	    lv_propertyList_7_0=ruleGDomainProperty();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGDomainElementRule());
-            	      	        }
-            	             		add(
-            	             			current, 
-            	             			"propertyList",
-            	              		lv_propertyList_7_0, 
-            	              		"GDomainProperty");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
-            	    }
-
-            	    }
+                    }
 
 
-            	    }
-            	    break;
+                    }
+                    break;
+                case 2 :
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:228:6: ( (lv_propertyList_8_0= ruleGDomainProperty ) )*
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:228:6: ( (lv_propertyList_8_0= ruleGDomainProperty ) )*
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
 
-            	default :
-            	    break loop4;
-                }
-            } while (true);
+                        if ( (LA4_0==RULE_ID||(LA4_0>=18 && LA4_0<=21)) ) {
+                            alt4=1;
+                        }
 
-            otherlv_8=(Token)match(input,13,FOLLOW_13_in_ruleGDomainElement410); if (state.failed) return current;
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:229:1: (lv_propertyList_8_0= ruleGDomainProperty )
+                    	    {
+                    	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:229:1: (lv_propertyList_8_0= ruleGDomainProperty )
+                    	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:230:3: lv_propertyList_8_0= ruleGDomainProperty
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        newCompositeNode(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_1_0()); 
+                    	      	    
+                    	    }
+                    	    pushFollow(FOLLOW_ruleGDomainProperty_in_ruleGDomainElement425);
+                    	    lv_propertyList_8_0=ruleGDomainProperty();
+
+                    	    state._fsp--;
+                    	    if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      	        if (current==null) {
+                    	      	            current = createModelElementForParent(grammarAccess.getGDomainElementRule());
+                    	      	        }
+                    	             		add(
+                    	             			current, 
+                    	             			"propertyList",
+                    	              		lv_propertyList_8_0, 
+                    	              		"GDomainProperty");
+                    	      	        afterParserOrEnumRuleCall();
+                    	      	    
+                    	    }
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop4;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_9=(Token)match(input,13,FOLLOW_13_in_ruleGDomainElement439); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_8, grammarAccess.getGDomainElementAccess().getRightCurlyBracketKeyword_5());
+                  	newLeafNode(otherlv_9, grammarAccess.getGDomainElementAccess().getRightCurlyBracketKeyword_5());
                   
             }
 
@@ -572,8 +643,282 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleGDomainElement"
 
 
+    // $ANTLR start "entryRuleGDomainMap"
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:258:1: entryRuleGDomainMap returns [EObject current=null] : iv_ruleGDomainMap= ruleGDomainMap EOF ;
+    public final EObject entryRuleGDomainMap() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleGDomainMap = null;
+
+
+        try {
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:259:2: (iv_ruleGDomainMap= ruleGDomainMap EOF )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:260:2: iv_ruleGDomainMap= ruleGDomainMap EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getGDomainMapRule()); 
+            }
+            pushFollow(FOLLOW_ruleGDomainMap_in_entryRuleGDomainMap475);
+            iv_ruleGDomainMap=ruleGDomainMap();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleGDomainMap; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGDomainMap485); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleGDomainMap"
+
+
+    // $ANTLR start "ruleGDomainMap"
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:267:1: ruleGDomainMap returns [EObject current=null] : (otherlv_0= 'map' ( ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) ) | ( (otherlv_2= RULE_ID ) ) ) ) ;
+    public final EObject ruleGDomainMap() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_builtIn_1_1=null;
+        Token lv_builtIn_1_2=null;
+        Token lv_builtIn_1_3=null;
+        Token lv_builtIn_1_4=null;
+        Token otherlv_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:270:28: ( (otherlv_0= 'map' ( ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) ) | ( (otherlv_2= RULE_ID ) ) ) ) )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:271:1: (otherlv_0= 'map' ( ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) ) | ( (otherlv_2= RULE_ID ) ) ) )
+            {
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:271:1: (otherlv_0= 'map' ( ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) ) | ( (otherlv_2= RULE_ID ) ) ) )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:271:3: otherlv_0= 'map' ( ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) ) | ( (otherlv_2= RULE_ID ) ) )
+            {
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleGDomainMap522); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_0, grammarAccess.getGDomainMapAccess().getMapKeyword_0());
+                  
+            }
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:275:1: ( ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) ) | ( (otherlv_2= RULE_ID ) ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( ((LA7_0>=18 && LA7_0<=21)) ) {
+                alt7=1;
+            }
+            else if ( (LA7_0==RULE_ID) ) {
+                alt7=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:275:2: ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) )
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:275:2: ( ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:276:1: ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) )
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:276:1: ( (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:277:1: (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' )
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:277:1: (lv_builtIn_1_1= 'Int' | lv_builtIn_1_2= 'Double' | lv_builtIn_1_3= 'String' | lv_builtIn_1_4= 'Boolean' )
+                    int alt6=4;
+                    switch ( input.LA(1) ) {
+                    case 18:
+                        {
+                        alt6=1;
+                        }
+                        break;
+                    case 19:
+                        {
+                        alt6=2;
+                        }
+                        break;
+                    case 20:
+                        {
+                        alt6=3;
+                        }
+                        break;
+                    case 21:
+                        {
+                        alt6=4;
+                        }
+                        break;
+                    default:
+                        if (state.backtracking>0) {state.failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 6, 0, input);
+
+                        throw nvae;
+                    }
+
+                    switch (alt6) {
+                        case 1 :
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:278:3: lv_builtIn_1_1= 'Int'
+                            {
+                            lv_builtIn_1_1=(Token)match(input,18,FOLLOW_18_in_ruleGDomainMap543); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                                      newLeafNode(lv_builtIn_1_1, grammarAccess.getGDomainMapAccess().getBuiltInIntKeyword_1_0_0_0());
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = createModelElement(grammarAccess.getGDomainMapRule());
+                              	        }
+                                     		setWithLastConsumed(current, "builtIn", lv_builtIn_1_1, null);
+                              	    
+                            }
+
+                            }
+                            break;
+                        case 2 :
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:290:8: lv_builtIn_1_2= 'Double'
+                            {
+                            lv_builtIn_1_2=(Token)match(input,19,FOLLOW_19_in_ruleGDomainMap572); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                                      newLeafNode(lv_builtIn_1_2, grammarAccess.getGDomainMapAccess().getBuiltInDoubleKeyword_1_0_0_1());
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = createModelElement(grammarAccess.getGDomainMapRule());
+                              	        }
+                                     		setWithLastConsumed(current, "builtIn", lv_builtIn_1_2, null);
+                              	    
+                            }
+
+                            }
+                            break;
+                        case 3 :
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:302:8: lv_builtIn_1_3= 'String'
+                            {
+                            lv_builtIn_1_3=(Token)match(input,20,FOLLOW_20_in_ruleGDomainMap601); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                                      newLeafNode(lv_builtIn_1_3, grammarAccess.getGDomainMapAccess().getBuiltInStringKeyword_1_0_0_2());
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = createModelElement(grammarAccess.getGDomainMapRule());
+                              	        }
+                                     		setWithLastConsumed(current, "builtIn", lv_builtIn_1_3, null);
+                              	    
+                            }
+
+                            }
+                            break;
+                        case 4 :
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:314:8: lv_builtIn_1_4= 'Boolean'
+                            {
+                            lv_builtIn_1_4=(Token)match(input,21,FOLLOW_21_in_ruleGDomainMap630); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                                      newLeafNode(lv_builtIn_1_4, grammarAccess.getGDomainMapAccess().getBuiltInBooleanKeyword_1_0_0_3());
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = createModelElement(grammarAccess.getGDomainMapRule());
+                              	        }
+                                     		setWithLastConsumed(current, "builtIn", lv_builtIn_1_4, null);
+                              	    
+                            }
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:330:6: ( (otherlv_2= RULE_ID ) )
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:330:6: ( (otherlv_2= RULE_ID ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:331:1: (otherlv_2= RULE_ID )
+                    {
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:331:1: (otherlv_2= RULE_ID )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:332:3: otherlv_2= RULE_ID
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			if (current==null) {
+                      	            current = createModelElement(grammarAccess.getGDomainMapRule());
+                      	        }
+                              
+                    }
+                    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGDomainMap672); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		newLeafNode(otherlv_2, grammarAccess.getGDomainMapAccess().getRefGDomainElementCrossReference_1_1_0()); 
+                      	
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleGDomainMap"
+
+
     // $ANTLR start "entryRuleGDomainProperty"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:239:1: entryRuleGDomainProperty returns [EObject current=null] : iv_ruleGDomainProperty= ruleGDomainProperty EOF ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:351:1: entryRuleGDomainProperty returns [EObject current=null] : iv_ruleGDomainProperty= ruleGDomainProperty EOF ;
     public final EObject entryRuleGDomainProperty() throws RecognitionException {
         EObject current = null;
 
@@ -581,13 +926,13 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:240:2: (iv_ruleGDomainProperty= ruleGDomainProperty EOF )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:241:2: iv_ruleGDomainProperty= ruleGDomainProperty EOF
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:352:2: (iv_ruleGDomainProperty= ruleGDomainProperty EOF )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:353:2: iv_ruleGDomainProperty= ruleGDomainProperty EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGDomainPropertyRule()); 
             }
-            pushFollow(FOLLOW_ruleGDomainProperty_in_entryRuleGDomainProperty446);
+            pushFollow(FOLLOW_ruleGDomainProperty_in_entryRuleGDomainProperty709);
             iv_ruleGDomainProperty=ruleGDomainProperty();
 
             state._fsp--;
@@ -595,7 +940,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleGDomainProperty; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGDomainProperty456); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGDomainProperty719); if (state.failed) return current;
 
             }
 
@@ -613,7 +958,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGDomainProperty"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:248:1: ruleGDomainProperty returns [EObject current=null] : ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' ) ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:360:1: ruleGDomainProperty returns [EObject current=null] : ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' ) ;
     public final EObject ruleGDomainProperty() throws RecognitionException {
         EObject current = null;
 
@@ -634,78 +979,78 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:251:28: ( ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' ) )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:1: ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:363:28: ( ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' ) )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:1: ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' )
             {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:1: ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:2: ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';'
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:1: ( ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';' )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:2: ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) ) otherlv_8= ';'
             {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:2: ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:2: ( ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? ) | ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( ((LA9_0>=17 && LA9_0<=20)) ) {
-                alt9=1;
+            if ( ((LA12_0>=18 && LA12_0<=21)) ) {
+                alt12=1;
             }
-            else if ( (LA9_0==RULE_ID) ) {
-                alt9=2;
+            else if ( (LA12_0==RULE_ID) ) {
+                alt12=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt12) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:3: ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:3: ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:3: ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:4: ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )?
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:3: ( ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )? )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:4: ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) ) ( (lv_list_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )?
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:252:4: ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:253:1: ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:4: ( ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:365:1: ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:253:1: ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:254:1: (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:365:1: ( (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:366:1: (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:254:1: (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' )
-                    int alt5=4;
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:366:1: (lv_builtIn_0_1= 'Int' | lv_builtIn_0_2= 'Double' | lv_builtIn_0_3= 'String' | lv_builtIn_0_4= 'Boolean' )
+                    int alt8=4;
                     switch ( input.LA(1) ) {
-                    case 17:
-                        {
-                        alt5=1;
-                        }
-                        break;
                     case 18:
                         {
-                        alt5=2;
+                        alt8=1;
                         }
                         break;
                     case 19:
                         {
-                        alt5=3;
+                        alt8=2;
                         }
                         break;
                     case 20:
                         {
-                        alt5=4;
+                        alt8=3;
+                        }
+                        break;
+                    case 21:
+                        {
+                        alt8=4;
                         }
                         break;
                     default:
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 5, 0, input);
+                            new NoViableAltException("", 8, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt5) {
+                    switch (alt8) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:255:3: lv_builtIn_0_1= 'Int'
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:367:3: lv_builtIn_0_1= 'Int'
                             {
-                            lv_builtIn_0_1=(Token)match(input,17,FOLLOW_17_in_ruleGDomainProperty503); if (state.failed) return current;
+                            lv_builtIn_0_1=(Token)match(input,18,FOLLOW_18_in_ruleGDomainProperty766); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_builtIn_0_1, grammarAccess.getGDomainPropertyAccess().getBuiltInIntKeyword_0_0_0_0_0());
@@ -723,9 +1068,9 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:267:8: lv_builtIn_0_2= 'Double'
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:379:8: lv_builtIn_0_2= 'Double'
                             {
-                            lv_builtIn_0_2=(Token)match(input,18,FOLLOW_18_in_ruleGDomainProperty532); if (state.failed) return current;
+                            lv_builtIn_0_2=(Token)match(input,19,FOLLOW_19_in_ruleGDomainProperty795); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_builtIn_0_2, grammarAccess.getGDomainPropertyAccess().getBuiltInDoubleKeyword_0_0_0_0_1());
@@ -743,9 +1088,9 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 3 :
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:279:8: lv_builtIn_0_3= 'String'
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:391:8: lv_builtIn_0_3= 'String'
                             {
-                            lv_builtIn_0_3=(Token)match(input,19,FOLLOW_19_in_ruleGDomainProperty561); if (state.failed) return current;
+                            lv_builtIn_0_3=(Token)match(input,20,FOLLOW_20_in_ruleGDomainProperty824); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_builtIn_0_3, grammarAccess.getGDomainPropertyAccess().getBuiltInStringKeyword_0_0_0_0_2());
@@ -763,9 +1108,9 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 4 :
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:291:8: lv_builtIn_0_4= 'Boolean'
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:403:8: lv_builtIn_0_4= 'Boolean'
                             {
-                            lv_builtIn_0_4=(Token)match(input,20,FOLLOW_20_in_ruleGDomainProperty590); if (state.failed) return current;
+                            lv_builtIn_0_4=(Token)match(input,21,FOLLOW_21_in_ruleGDomainProperty853); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_builtIn_0_4, grammarAccess.getGDomainPropertyAccess().getBuiltInBooleanKeyword_0_0_0_0_3());
@@ -791,21 +1136,21 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:306:2: ( (lv_list_1_0= '[]' ) )?
-                    int alt6=2;
-                    int LA6_0 = input.LA(1);
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:418:2: ( (lv_list_1_0= '[]' ) )?
+                    int alt9=2;
+                    int LA9_0 = input.LA(1);
 
-                    if ( (LA6_0==21) ) {
-                        alt6=1;
+                    if ( (LA9_0==22) ) {
+                        alt9=1;
                     }
-                    switch (alt6) {
+                    switch (alt9) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:307:1: (lv_list_1_0= '[]' )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:419:1: (lv_list_1_0= '[]' )
                             {
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:307:1: (lv_list_1_0= '[]' )
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:308:3: lv_list_1_0= '[]'
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:419:1: (lv_list_1_0= '[]' )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:420:3: lv_list_1_0= '[]'
                             {
-                            lv_list_1_0=(Token)match(input,21,FOLLOW_21_in_ruleGDomainProperty624); if (state.failed) return current;
+                            lv_list_1_0=(Token)match(input,22,FOLLOW_22_in_ruleGDomainProperty887); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_list_1_0, grammarAccess.getGDomainPropertyAccess().getListLeftSquareBracketRightSquareBracketKeyword_0_0_1_0());
@@ -828,13 +1173,13 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:321:3: ( (lv_name_2_0= RULE_ID ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:322:1: (lv_name_2_0= RULE_ID )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:433:3: ( (lv_name_2_0= RULE_ID ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:434:1: (lv_name_2_0= RULE_ID )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:322:1: (lv_name_2_0= RULE_ID )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:323:3: lv_name_2_0= RULE_ID
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:434:1: (lv_name_2_0= RULE_ID )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:435:3: lv_name_2_0= RULE_ID
                     {
-                    lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGDomainProperty655); if (state.failed) return current;
+                    lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGDomainProperty918); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_name_2_0, grammarAccess.getGDomainPropertyAccess().getNameIDTerminalRuleCall_0_0_2_0()); 
@@ -858,35 +1203,35 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:339:2: (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )?
-                    int alt7=2;
-                    int LA7_0 = input.LA(1);
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:451:2: (otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) ) )?
+                    int alt10=2;
+                    int LA10_0 = input.LA(1);
 
-                    if ( (LA7_0==22) ) {
-                        alt7=1;
+                    if ( (LA10_0==23) ) {
+                        alt10=1;
                     }
-                    switch (alt7) {
+                    switch (alt10) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:339:4: otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:451:4: otherlv_3= '=' ( (lv_defaultValue_4_0= ruleGDefault ) )
                             {
-                            otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleGDomainProperty673); if (state.failed) return current;
+                            otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleGDomainProperty936); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_3, grammarAccess.getGDomainPropertyAccess().getEqualsSignKeyword_0_0_3_0());
                                   
                             }
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:343:1: ( (lv_defaultValue_4_0= ruleGDefault ) )
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:344:1: (lv_defaultValue_4_0= ruleGDefault )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:455:1: ( (lv_defaultValue_4_0= ruleGDefault ) )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:456:1: (lv_defaultValue_4_0= ruleGDefault )
                             {
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:344:1: (lv_defaultValue_4_0= ruleGDefault )
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:345:3: lv_defaultValue_4_0= ruleGDefault
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:456:1: (lv_defaultValue_4_0= ruleGDefault )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:457:3: lv_defaultValue_4_0= ruleGDefault
                             {
                             if ( state.backtracking==0 ) {
                                
                               	        newCompositeNode(grammarAccess.getGDomainPropertyAccess().getDefaultValueGDefaultParserRuleCall_0_0_3_1_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleGDefault_in_ruleGDomainProperty694);
+                            pushFollow(FOLLOW_ruleGDefault_in_ruleGDomainProperty957);
                             lv_defaultValue_4_0=ruleGDefault();
 
                             state._fsp--;
@@ -923,16 +1268,16 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:362:6: ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:474:6: ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:362:6: ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:362:7: ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:474:6: ( ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:474:7: ( (otherlv_5= RULE_ID ) ) ( (lv_list_6_0= '[]' ) )? ( (lv_name_7_0= RULE_ID ) )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:362:7: ( (otherlv_5= RULE_ID ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:363:1: (otherlv_5= RULE_ID )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:474:7: ( (otherlv_5= RULE_ID ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:475:1: (otherlv_5= RULE_ID )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:363:1: (otherlv_5= RULE_ID )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:364:3: otherlv_5= RULE_ID
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:475:1: (otherlv_5= RULE_ID )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:476:3: otherlv_5= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -941,7 +1286,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGDomainProperty724); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGDomainProperty987); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		newLeafNode(otherlv_5, grammarAccess.getGDomainPropertyAccess().getRefGDomainElementCrossReference_0_1_0_0()); 
@@ -953,21 +1298,21 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:375:2: ( (lv_list_6_0= '[]' ) )?
-                    int alt8=2;
-                    int LA8_0 = input.LA(1);
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:487:2: ( (lv_list_6_0= '[]' ) )?
+                    int alt11=2;
+                    int LA11_0 = input.LA(1);
 
-                    if ( (LA8_0==21) ) {
-                        alt8=1;
+                    if ( (LA11_0==22) ) {
+                        alt11=1;
                     }
-                    switch (alt8) {
+                    switch (alt11) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:376:1: (lv_list_6_0= '[]' )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:488:1: (lv_list_6_0= '[]' )
                             {
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:376:1: (lv_list_6_0= '[]' )
-                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:377:3: lv_list_6_0= '[]'
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:488:1: (lv_list_6_0= '[]' )
+                            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:489:3: lv_list_6_0= '[]'
                             {
-                            lv_list_6_0=(Token)match(input,21,FOLLOW_21_in_ruleGDomainProperty742); if (state.failed) return current;
+                            lv_list_6_0=(Token)match(input,22,FOLLOW_22_in_ruleGDomainProperty1005); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_list_6_0, grammarAccess.getGDomainPropertyAccess().getListLeftSquareBracketRightSquareBracketKeyword_0_1_1_0());
@@ -990,13 +1335,13 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:390:3: ( (lv_name_7_0= RULE_ID ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:391:1: (lv_name_7_0= RULE_ID )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:502:3: ( (lv_name_7_0= RULE_ID ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:503:1: (lv_name_7_0= RULE_ID )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:391:1: (lv_name_7_0= RULE_ID )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:392:3: lv_name_7_0= RULE_ID
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:503:1: (lv_name_7_0= RULE_ID )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:504:3: lv_name_7_0= RULE_ID
                     {
-                    lv_name_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGDomainProperty773); if (state.failed) return current;
+                    lv_name_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGDomainProperty1036); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_name_7_0, grammarAccess.getGDomainPropertyAccess().getNameIDTerminalRuleCall_0_1_2_0()); 
@@ -1029,7 +1374,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,23,FOLLOW_23_in_ruleGDomainProperty792); if (state.failed) return current;
+            otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleGDomainProperty1055); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_8, grammarAccess.getGDomainPropertyAccess().getSemicolonKeyword_1());
@@ -1058,7 +1403,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGDefault"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:420:1: entryRuleGDefault returns [EObject current=null] : iv_ruleGDefault= ruleGDefault EOF ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:532:1: entryRuleGDefault returns [EObject current=null] : iv_ruleGDefault= ruleGDefault EOF ;
     public final EObject entryRuleGDefault() throws RecognitionException {
         EObject current = null;
 
@@ -1066,13 +1411,13 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:421:2: (iv_ruleGDefault= ruleGDefault EOF )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:422:2: iv_ruleGDefault= ruleGDefault EOF
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:533:2: (iv_ruleGDefault= ruleGDefault EOF )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:534:2: iv_ruleGDefault= ruleGDefault EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGDefaultRule()); 
             }
-            pushFollow(FOLLOW_ruleGDefault_in_entryRuleGDefault828);
+            pushFollow(FOLLOW_ruleGDefault_in_entryRuleGDefault1091);
             iv_ruleGDefault=ruleGDefault();
 
             state._fsp--;
@@ -1080,7 +1425,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleGDefault; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGDefault838); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGDefault1101); if (state.failed) return current;
 
             }
 
@@ -1098,7 +1443,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGDefault"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:429:1: ruleGDefault returns [EObject current=null] : ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) ) ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:541:1: ruleGDefault returns [EObject current=null] : ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) ) ;
     public final EObject ruleGDefault() throws RecognitionException {
         EObject current = null;
 
@@ -1108,37 +1453,37 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:432:28: ( ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) ) )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:433:1: ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:544:28: ( ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) ) )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:545:1: ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) )
             {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:433:1: ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:545:1: ( ( (lv_stringVal_0_0= RULE_STRING ) ) | ( (lv_intVal_1_0= RULE_INT ) ) )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA10_0==RULE_STRING) ) {
-                alt10=1;
+            if ( (LA13_0==RULE_STRING) ) {
+                alt13=1;
             }
-            else if ( (LA10_0==RULE_INT) ) {
-                alt10=2;
+            else if ( (LA13_0==RULE_INT) ) {
+                alt13=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt13) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:433:2: ( (lv_stringVal_0_0= RULE_STRING ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:545:2: ( (lv_stringVal_0_0= RULE_STRING ) )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:433:2: ( (lv_stringVal_0_0= RULE_STRING ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:434:1: (lv_stringVal_0_0= RULE_STRING )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:545:2: ( (lv_stringVal_0_0= RULE_STRING ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:546:1: (lv_stringVal_0_0= RULE_STRING )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:434:1: (lv_stringVal_0_0= RULE_STRING )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:435:3: lv_stringVal_0_0= RULE_STRING
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:546:1: (lv_stringVal_0_0= RULE_STRING )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:547:3: lv_stringVal_0_0= RULE_STRING
                     {
-                    lv_stringVal_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleGDefault880); if (state.failed) return current;
+                    lv_stringVal_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleGDefault1143); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_stringVal_0_0, grammarAccess.getGDefaultAccess().getStringValSTRINGTerminalRuleCall_0_0()); 
@@ -1166,15 +1511,15 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:452:6: ( (lv_intVal_1_0= RULE_INT ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:564:6: ( (lv_intVal_1_0= RULE_INT ) )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:452:6: ( (lv_intVal_1_0= RULE_INT ) )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:453:1: (lv_intVal_1_0= RULE_INT )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:564:6: ( (lv_intVal_1_0= RULE_INT ) )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:565:1: (lv_intVal_1_0= RULE_INT )
                     {
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:453:1: (lv_intVal_1_0= RULE_INT )
-                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:454:3: lv_intVal_1_0= RULE_INT
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:565:1: (lv_intVal_1_0= RULE_INT )
+                    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:566:3: lv_intVal_1_0= RULE_INT
                     {
-                    lv_intVal_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleGDefault908); if (state.failed) return current;
+                    lv_intVal_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleGDefault1171); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_intVal_1_0, grammarAccess.getGDefaultAccess().getIntValINTTerminalRuleCall_1_0()); 
@@ -1224,7 +1569,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValidID"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:478:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:590:1: entryRuleValidID returns [String current=null] : iv_ruleValidID= ruleValidID EOF ;
     public final String entryRuleValidID() throws RecognitionException {
         String current = null;
 
@@ -1232,13 +1577,13 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:479:2: (iv_ruleValidID= ruleValidID EOF )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:480:2: iv_ruleValidID= ruleValidID EOF
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:591:2: (iv_ruleValidID= ruleValidID EOF )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:592:2: iv_ruleValidID= ruleValidID EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getValidIDRule()); 
             }
-            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID950);
+            pushFollow(FOLLOW_ruleValidID_in_entryRuleValidID1213);
             iv_ruleValidID=ruleValidID();
 
             state._fsp--;
@@ -1246,7 +1591,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleValidID.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID961); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValidID1224); if (state.failed) return current;
 
             }
 
@@ -1264,7 +1609,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidID"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:487:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:599:1: ruleValidID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleValidID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1273,10 +1618,10 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:490:28: (this_ID_0= RULE_ID )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:491:5: this_ID_0= RULE_ID
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:602:28: (this_ID_0= RULE_ID )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:603:5: this_ID_0= RULE_ID
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID1000); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValidID1263); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -1307,7 +1652,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:506:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:618:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -1315,13 +1660,13 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:507:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:508:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:619:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:620:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1045);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1308);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
@@ -1329,7 +1674,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedName.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1056); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1319); if (state.failed) return current;
 
             }
 
@@ -1347,7 +1692,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:515:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) ;
+    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:627:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1360,18 +1705,18 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:518:28: ( (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:519:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:630:28: ( (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* ) )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:631:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
             {
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:519:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:520:5: this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:631:1: (this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )* )
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:632:5: this_ValidID_0= ruleValidID ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName1103);
+            pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName1366);
             this_ValidID_0=ruleValidID();
 
             state._fsp--;
@@ -1386,25 +1731,25 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:530:1: ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
-            loop11:
+            // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:642:1: ( ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID )*
+            loop14:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA11_0==24) && (synpred1_InternalGModelDSL())) {
-                    alt11=1;
+                if ( (LA14_0==25) && (synpred1_InternalGModelDSL())) {
+                    alt14=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt14) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:530:2: ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID
+            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:642:2: ( ( '.' )=>kw= '.' ) this_ValidID_2= ruleValidID
             	    {
-            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:530:2: ( ( '.' )=>kw= '.' )
-            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:530:3: ( '.' )=>kw= '.'
+            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:642:2: ( ( '.' )=>kw= '.' )
+            	    // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:642:3: ( '.' )=>kw= '.'
             	    {
-            	    kw=(Token)match(input,24,FOLLOW_24_in_ruleQualifiedName1131); if (state.failed) return current;
+            	    kw=(Token)match(input,25,FOLLOW_25_in_ruleQualifiedName1394); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -1419,7 +1764,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
             	              newCompositeNode(grammarAccess.getQualifiedNameAccess().getValidIDParserRuleCall_1_1()); 
             	          
             	    }
-            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName1154);
+            	    pushFollow(FOLLOW_ruleValidID_in_ruleQualifiedName1417);
             	    this_ValidID_2=ruleValidID();
 
             	    state._fsp--;
@@ -1439,7 +1784,7 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop14;
                 }
             } while (true);
 
@@ -1466,10 +1811,10 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalGModelDSL
     public final void synpred1_InternalGModelDSL_fragment() throws RecognitionException {   
-        // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:530:3: ( '.' )
-        // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:531:2: '.'
+        // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:642:3: ( '.' )
+        // ../org.eclipse.fx.ide.gmodel/src-gen/org/eclipse/fx/ide/gmodel/parser/antlr/internal/InternalGModelDSL.g:643:2: '.'
         {
-        match(input,24,FOLLOW_24_in_synpred1_InternalGModelDSL1122); if (state.failed) return ;
+        match(input,25,FOLLOW_25_in_synpred1_InternalGModelDSL1385); if (state.failed) return ;
 
         }
     }
@@ -1510,35 +1855,44 @@ public class InternalGModelDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainElement327 = new BitSet(new long[]{0x0000000000011000L});
     public static final BitSet FOLLOW_16_in_ruleGDomainElement340 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainElement360 = new BitSet(new long[]{0x0000000000011000L});
-    public static final BitSet FOLLOW_12_in_ruleGDomainElement376 = new BitSet(new long[]{0x00000000001E2010L});
-    public static final BitSet FOLLOW_ruleGDomainProperty_in_ruleGDomainElement397 = new BitSet(new long[]{0x00000000001E2010L});
-    public static final BitSet FOLLOW_13_in_ruleGDomainElement410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGDomainProperty_in_entryRuleGDomainProperty446 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGDomainProperty456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleGDomainProperty503 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_18_in_ruleGDomainProperty532 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_19_in_ruleGDomainProperty561 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_20_in_ruleGDomainProperty590 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_21_in_ruleGDomainProperty624 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainProperty655 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_22_in_ruleGDomainProperty673 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleGDefault_in_ruleGDomainProperty694 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainProperty724 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_21_in_ruleGDomainProperty742 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainProperty773 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleGDomainProperty792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGDefault_in_entryRuleGDefault828 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGDefault838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleGDefault880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleGDefault908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID950 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValidID961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID1000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1045 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName1103 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_ruleQualifiedName1131 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName1154 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_synpred1_InternalGModelDSL1122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleGDomainElement376 = new BitSet(new long[]{0x00000000003E2010L});
+    public static final BitSet FOLLOW_ruleGDomainMap_in_ruleGDomainElement398 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_ruleGDomainProperty_in_ruleGDomainElement425 = new BitSet(new long[]{0x00000000003C2010L});
+    public static final BitSet FOLLOW_13_in_ruleGDomainElement439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGDomainMap_in_entryRuleGDomainMap475 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGDomainMap485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleGDomainMap522 = new BitSet(new long[]{0x00000000003C0010L});
+    public static final BitSet FOLLOW_18_in_ruleGDomainMap543 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleGDomainMap572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleGDomainMap601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleGDomainMap630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainMap672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGDomainProperty_in_entryRuleGDomainProperty709 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGDomainProperty719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleGDomainProperty766 = new BitSet(new long[]{0x0000000000400010L});
+    public static final BitSet FOLLOW_19_in_ruleGDomainProperty795 = new BitSet(new long[]{0x0000000000400010L});
+    public static final BitSet FOLLOW_20_in_ruleGDomainProperty824 = new BitSet(new long[]{0x0000000000400010L});
+    public static final BitSet FOLLOW_21_in_ruleGDomainProperty853 = new BitSet(new long[]{0x0000000000400010L});
+    public static final BitSet FOLLOW_22_in_ruleGDomainProperty887 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainProperty918 = new BitSet(new long[]{0x0000000001800000L});
+    public static final BitSet FOLLOW_23_in_ruleGDomainProperty936 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleGDefault_in_ruleGDomainProperty957 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainProperty987 = new BitSet(new long[]{0x0000000000400010L});
+    public static final BitSet FOLLOW_22_in_ruleGDomainProperty1005 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGDomainProperty1036 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleGDomainProperty1055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGDefault_in_entryRuleGDefault1091 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGDefault1101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleGDefault1143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleGDefault1171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_entryRuleValidID1213 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValidID1224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleValidID1263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1308 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName1366 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_25_in_ruleQualifiedName1394 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleQualifiedName1417 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_25_in_synpred1_InternalGModelDSL1385 = new BitSet(new long[]{0x0000000000000002L});
 
 }

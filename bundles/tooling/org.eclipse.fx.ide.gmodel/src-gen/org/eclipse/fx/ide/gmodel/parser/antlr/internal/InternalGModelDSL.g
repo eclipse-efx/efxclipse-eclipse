@@ -206,29 +206,141 @@ ruleGDomainElement returns [EObject current=null]
     {
     	newLeafNode(otherlv_6, grammarAccess.getGDomainElementAccess().getLeftCurlyBracketKeyword_3());
     }
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getGDomainElementAccess().getMapGDomainMapParserRuleCall_4_0_0()); 
 	    }
-		lv_propertyList_7_0=ruleGDomainProperty		{
+		lv_map_7_0=ruleGDomainMap		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getGDomainElementRule());
+	        }
+       		set(
+       			$current, 
+       			"map",
+        		lv_map_7_0, 
+        		"GDomainMap");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getGDomainElementAccess().getPropertyListGDomainPropertyParserRuleCall_4_1_0()); 
+	    }
+		lv_propertyList_8_0=ruleGDomainProperty		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGDomainElementRule());
 	        }
        		add(
        			$current, 
        			"propertyList",
-        		lv_propertyList_7_0, 
+        		lv_propertyList_8_0, 
         		"GDomainProperty");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_8='}' 
+)*)	otherlv_9='}' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getGDomainElementAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_9, grammarAccess.getGDomainElementAccess().getRightCurlyBracketKeyword_5());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleGDomainMap
+entryRuleGDomainMap returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGDomainMapRule()); }
+	 iv_ruleGDomainMap=ruleGDomainMap 
+	 { $current=$iv_ruleGDomainMap.current; } 
+	 EOF 
+;
+
+// Rule GDomainMap
+ruleGDomainMap returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='map' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getGDomainMapAccess().getMapKeyword_0());
+    }
+((
+(
+(
+		lv_builtIn_1_1=	'Int' 
+    {
+        newLeafNode(lv_builtIn_1_1, grammarAccess.getGDomainMapAccess().getBuiltInIntKeyword_1_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGDomainMapRule());
+	        }
+       		setWithLastConsumed($current, "builtIn", lv_builtIn_1_1, null);
+	    }
+
+    |		lv_builtIn_1_2=	'Double' 
+    {
+        newLeafNode(lv_builtIn_1_2, grammarAccess.getGDomainMapAccess().getBuiltInDoubleKeyword_1_0_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGDomainMapRule());
+	        }
+       		setWithLastConsumed($current, "builtIn", lv_builtIn_1_2, null);
+	    }
+
+    |		lv_builtIn_1_3=	'String' 
+    {
+        newLeafNode(lv_builtIn_1_3, grammarAccess.getGDomainMapAccess().getBuiltInStringKeyword_1_0_0_2());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGDomainMapRule());
+	        }
+       		setWithLastConsumed($current, "builtIn", lv_builtIn_1_3, null);
+	    }
+
+    |		lv_builtIn_1_4=	'Boolean' 
+    {
+        newLeafNode(lv_builtIn_1_4, grammarAccess.getGDomainMapAccess().getBuiltInBooleanKeyword_1_0_0_3());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGDomainMapRule());
+	        }
+       		setWithLastConsumed($current, "builtIn", lv_builtIn_1_4, null);
+	    }
+
+)
+
+)
+)
+    |(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGDomainMapRule());
+	        }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getGDomainMapAccess().getRefGDomainElementCrossReference_1_1_0()); 
+	}
+
+)
+)))
 ;
 
 

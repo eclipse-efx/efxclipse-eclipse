@@ -32,6 +32,7 @@ public class InternalGModelDSLLexer extends Lexer {
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
     public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -261,10 +262,11 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:21:7: ( ';' )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:21:9: ';'
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:21:7: ( 'map' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:21:9: 'map'
             {
-            match(';'); 
+            match("map"); 
+
 
             }
 
@@ -281,10 +283,10 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:22:7: ( '=' )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:22:9: '='
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:22:7: ( ';' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:22:9: ';'
             {
-            match('='); 
+            match(';'); 
 
             }
 
@@ -301,10 +303,10 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:23:7: ( '.' )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:23:9: '.'
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:23:7: ( '=' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:23:9: '='
             {
-            match('.'); 
+            match('='); 
 
             }
 
@@ -321,8 +323,28 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:24:7: ( '[]' )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:24:9: '[]'
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:24:7: ( '.' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:24:9: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__24"
+
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
+        try {
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:25:7: ( '[]' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:25:9: '[]'
             {
             match("[]"); 
 
@@ -335,17 +357,17 @@ public class InternalGModelDSLLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__24"
+    // $ANTLR end "T__25"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1553:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1553:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1780:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1780:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1553:11: ( '^' )?
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1780:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -354,7 +376,7 @@ public class InternalGModelDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1553:11: '^'
+                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1780:11: '^'
                     {
                     match('^'); 
 
@@ -372,7 +394,7 @@ public class InternalGModelDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1553:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1780:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -421,10 +443,10 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1555:10: ( ( '0' .. '9' )+ )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1555:12: ( '0' .. '9' )+
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1782:10: ( ( '0' .. '9' )+ )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1782:12: ( '0' .. '9' )+
             {
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1555:12: ( '0' .. '9' )+
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1782:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -438,7 +460,7 @@ public class InternalGModelDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1555:13: '0' .. '9'
+            	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1782:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -470,10 +492,10 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -491,10 +513,10 @@ public class InternalGModelDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -510,7 +532,7 @@ public class InternalGModelDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:21: '\\\\' .
+                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -518,7 +540,7 @@ public class InternalGModelDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -543,10 +565,10 @@ public class InternalGModelDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -562,7 +584,7 @@ public class InternalGModelDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:54: '\\\\' .
+                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -570,7 +592,7 @@ public class InternalGModelDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1557:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1784:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -613,12 +635,12 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1559:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1559:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1786:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1786:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1559:24: ( options {greedy=false; } : . )*
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1786:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -643,7 +665,7 @@ public class InternalGModelDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1559:52: .
+            	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1786:52: .
             	    {
             	    matchAny(); 
 
@@ -673,12 +695,12 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -691,7 +713,7 @@ public class InternalGModelDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -711,7 +733,7 @@ public class InternalGModelDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:40: ( ( '\\r' )? '\\n' )?
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -720,9 +742,9 @@ public class InternalGModelDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:41: ( '\\r' )? '\\n'
+                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:41: ( '\\r' )?
+                    // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -731,7 +753,7 @@ public class InternalGModelDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1561:41: '\\r'
+                            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1788:41: '\\r'
                             {
                             match('\r'); 
 
@@ -763,10 +785,10 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1563:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1563:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1790:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1790:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1563:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1790:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -820,8 +842,8 @@ public class InternalGModelDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1565:16: ( . )
-            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1565:18: .
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1792:16: ( . )
+            // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1792:18: .
             {
             matchAny(); 
 
@@ -836,8 +858,8 @@ public class InternalGModelDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=21;
+        // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=22;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -939,49 +961,56 @@ public class InternalGModelDSLLexer extends Lexer {
                 }
                 break;
             case 15 :
-                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:94: RULE_ID
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:94: T__25
+                {
+                mT__25(); 
+
+                }
+                break;
+            case 16 :
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:100: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 16 :
-                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:102: RULE_INT
+            case 17 :
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:108: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 17 :
-                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:111: RULE_STRING
+            case 18 :
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:117: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 18 :
-                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:123: RULE_ML_COMMENT
+            case 19 :
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:129: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 19 :
-                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:139: RULE_SL_COMMENT
+            case 20 :
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:145: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:155: RULE_WS
+            case 21 :
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:161: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:163: RULE_ANY_OTHER
+            case 22 :
+                // ../org.eclipse.fx.ide.gmodel.ui/src-gen/org/eclipse/fx/ide/gmodel/ui/contentassist/antlr/internal/InternalGModelDSL.g:1:169: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -995,91 +1024,95 @@ public class InternalGModelDSLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\5\30\2\uffff\2\30\1\26\3\uffff\2\26\2\uffff\3\26\2\uffff\1\30\1\uffff\4\30\2\uffff\2\30\12\uffff\1\62\6\30\1\uffff\4\30\1\75\5\30\1\uffff\1\30\1\104\1\105\3\30\2\uffff\1\111\1\112\1\113\3\uffff";
+        "\1\uffff\5\31\2\uffff\2\31\1\27\1\31\3\uffff\2\27\2\uffff\3\27\2\uffff\1\31\1\uffff\4\31\2\uffff\2\31\1\uffff\1\31\11\uffff\1\65\6\31\1\74\1\uffff\4\31\1\101\1\31\1\uffff\4\31\1\uffff\1\31\1\110\1\111\3\31\2\uffff\1\115\1\116\1\117\3\uffff";
     static final String DFA12_eofS =
-        "\114\uffff";
+        "\120\uffff";
     static final String DFA12_minS =
-        "\1\0\1\156\1\157\1\164\1\157\1\141\2\uffff\1\171\1\170\1\40\3\uffff\1\135\1\101\2\uffff\2\0\1\52\2\uffff\1\164\1\uffff\1\165\1\162\1\157\1\143\2\uffff\1\160\1\164\12\uffff\1\60\1\142\1\151\1\154\1\153\2\145\1\uffff\1\154\1\156\1\145\1\141\1\60\1\156\1\145\1\147\1\141\1\147\1\uffff\1\144\2\60\1\156\1\145\1\163\2\uffff\3\60\3\uffff";
+        "\1\0\1\156\1\157\1\164\1\157\1\141\2\uffff\1\171\1\170\1\40\1\141\3\uffff\1\135\1\101\2\uffff\2\0\1\52\2\uffff\1\164\1\uffff\1\165\1\162\1\157\1\143\2\uffff\1\160\1\164\1\uffff\1\160\11\uffff\1\60\1\142\1\151\1\154\1\153\2\145\1\60\1\uffff\1\154\1\156\1\145\1\141\1\60\1\156\1\uffff\1\145\1\147\1\141\1\147\1\uffff\1\144\2\60\1\156\1\145\1\163\2\uffff\3\60\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\156\1\157\1\164\1\157\1\141\2\uffff\1\171\1\170\1\40\3\uffff\1\135\1\172\2\uffff\2\uffff\1\57\2\uffff\1\164\1\uffff\1\165\1\162\1\157\1\143\2\uffff\1\160\1\164\12\uffff\1\172\1\142\1\151\1\154\1\153\2\145\1\uffff\1\154\1\156\1\145\1\141\1\172\1\156\1\145\1\147\1\141\1\147\1\uffff\1\144\2\172\1\156\1\145\1\163\2\uffff\3\172\3\uffff";
+        "\1\uffff\1\156\1\157\1\164\1\157\1\141\2\uffff\1\171\1\170\1\40\1\141\3\uffff\1\135\1\172\2\uffff\2\uffff\1\57\2\uffff\1\164\1\uffff\1\165\1\162\1\157\1\143\2\uffff\1\160\1\164\1\uffff\1\160\11\uffff\1\172\1\142\1\151\1\154\1\153\2\145\1\172\1\uffff\1\154\1\156\1\145\1\141\1\172\1\156\1\uffff\1\145\1\147\1\141\1\147\1\uffff\1\144\2\172\1\156\1\145\1\163\2\uffff\3\172\3\uffff";
     static final String DFA12_acceptS =
-        "\6\uffff\1\6\1\7\3\uffff\1\13\1\14\1\15\2\uffff\1\17\1\20\3\uffff\1\24\1\25\1\uffff\1\17\4\uffff\1\6\1\7\2\uffff\1\12\1\13\1\14\1\15\1\16\1\20\1\21\1\22\1\23\1\24\7\uffff\1\1\12\uffff\1\10\6\uffff\1\2\1\3\3\uffff\1\4\1\5\1\11";
+        "\6\uffff\1\6\1\7\4\uffff\1\14\1\15\1\16\2\uffff\1\20\1\21\3\uffff\1\25\1\26\1\uffff\1\20\4\uffff\1\6\1\7\2\uffff\1\12\1\uffff\1\14\1\15\1\16\1\17\1\21\1\22\1\23\1\24\1\25\10\uffff\1\1\6\uffff\1\13\4\uffff\1\10\6\uffff\1\2\1\3\3\uffff\1\4\1\5\1\11";
     static final String DFA12_specialS =
-        "\1\2\21\uffff\1\0\1\1\70\uffff}>";
+        "\1\1\22\uffff\1\2\1\0\73\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\26\2\25\2\26\1\25\22\26\1\25\1\26\1\22\4\26\1\23\4\26\1\12\1\26\1\15\1\24\12\21\1\26\1\13\1\26\1\14\3\26\1\20\1\4\1\20\1\2\4\20\1\1\11\20\1\3\7\20\1\16\2\26\1\17\1\20\1\26\4\20\1\11\12\20\1\5\3\20\1\10\6\20\1\6\1\26\1\7\uff82\26",
-            "\1\27",
-            "\1\31",
+            "\11\27\2\26\2\27\1\26\22\27\1\26\1\27\1\23\4\27\1\24\4\27\1\12\1\27\1\16\1\25\12\22\1\27\1\14\1\27\1\15\3\27\1\21\1\4\1\21\1\2\4\21\1\1\11\21\1\3\7\21\1\17\2\27\1\20\1\21\1\27\4\21\1\11\7\21\1\13\2\21\1\5\3\21\1\10\6\21\1\6\1\27\1\7\uff82\27",
+            "\1\30",
             "\1\32",
             "\1\33",
             "\1\34",
+            "\1\35",
             "",
             "",
-            "\1\37",
             "\1\40",
             "\1\41",
+            "\1\42",
+            "\1\43",
             "",
             "",
             "",
-            "\1\45",
-            "\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\47",
+            "\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\0\47",
-            "\0\47",
-            "\1\50\4\uffff\1\51",
+            "\0\51",
+            "\0\51",
+            "\1\52\4\uffff\1\53",
             "",
             "",
-            "\1\53",
-            "",
-            "\1\54",
             "\1\55",
+            "",
             "\1\56",
             "\1\57",
-            "",
-            "",
             "\1\60",
             "\1\61",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\62",
             "\1\63",
+            "",
             "\1\64",
-            "\1\65",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\66",
             "\1\67",
             "\1\70",
-            "",
             "\1\71",
             "\1\72",
             "\1\73",
-            "\1\74",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
+            "\1\75",
             "\1\76",
             "\1\77",
             "\1\100",
-            "\1\101",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\102",
             "",
             "\1\103",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\104",
+            "\1\105",
             "\1\106",
+            "",
             "\1\107",
-            "\1\110",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\112",
+            "\1\113",
+            "\1\114",
             "",
             "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             ""
@@ -1115,33 +1148,23 @@ public class InternalGModelDSLLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_18 = input.LA(1);
+                        int LA12_20 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 39;}
+                        if ( ((LA12_20>='\u0000' && LA12_20<='\uFFFF')) ) {s = 41;}
 
-                        else s = 22;
+                        else s = 23;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_19 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_19>='\u0000' && LA12_19<='\uFFFF')) ) {s = 39;}
-
-                        else s = 22;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1165,29 +1188,41 @@ public class InternalGModelDSLLexer extends Lexer {
 
                         else if ( (LA12_0==',') ) {s = 10;}
 
-                        else if ( (LA12_0==';') ) {s = 11;}
+                        else if ( (LA12_0=='m') ) {s = 11;}
 
-                        else if ( (LA12_0=='=') ) {s = 12;}
+                        else if ( (LA12_0==';') ) {s = 12;}
 
-                        else if ( (LA12_0=='.') ) {s = 13;}
+                        else if ( (LA12_0=='=') ) {s = 13;}
 
-                        else if ( (LA12_0=='[') ) {s = 14;}
+                        else if ( (LA12_0=='.') ) {s = 14;}
 
-                        else if ( (LA12_0=='^') ) {s = 15;}
+                        else if ( (LA12_0=='[') ) {s = 15;}
 
-                        else if ( (LA12_0=='A'||LA12_0=='C'||(LA12_0>='E' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='d')||(LA12_0>='f' && LA12_0<='o')||(LA12_0>='q' && LA12_0<='s')||(LA12_0>='u' && LA12_0<='z')) ) {s = 16;}
+                        else if ( (LA12_0=='^') ) {s = 16;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 17;}
+                        else if ( (LA12_0=='A'||LA12_0=='C'||(LA12_0>='E' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='d')||(LA12_0>='f' && LA12_0<='l')||(LA12_0>='n' && LA12_0<='o')||(LA12_0>='q' && LA12_0<='s')||(LA12_0>='u' && LA12_0<='z')) ) {s = 17;}
 
-                        else if ( (LA12_0=='\"') ) {s = 18;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 18;}
 
-                        else if ( (LA12_0=='\'') ) {s = 19;}
+                        else if ( (LA12_0=='\"') ) {s = 19;}
 
-                        else if ( (LA12_0=='/') ) {s = 20;}
+                        else if ( (LA12_0=='\'') ) {s = 20;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 21;}
+                        else if ( (LA12_0=='/') ) {s = 21;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||LA12_0=='-'||LA12_0==':'||LA12_0=='<'||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='\\' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 22;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 22;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||LA12_0=='-'||LA12_0==':'||LA12_0=='<'||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='\\' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 23;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_19 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_19>='\u0000' && LA12_19<='\uFFFF')) ) {s = 41;}
+
+                        else s = 23;
 
                         if ( s>=0 ) return s;
                         break;

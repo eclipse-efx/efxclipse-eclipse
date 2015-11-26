@@ -11,8 +11,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superTypeList" unique="false"
         upperBound="-1" eType="#//GDomainElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="map" eType="#//GDomainMap"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="propertyList" upperBound="-1"
         eType="#//GDomainProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GDomainMap">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="builtIn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//GDomainElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GDomainProperty">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="builtIn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

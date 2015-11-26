@@ -10,8 +10,12 @@ GModel:
 
 GDomainElement:
 	'type' name=ID ('extends' superTypeList+=[GDomainElement|ID] ( ', ' superTypeList+=[GDomainElement|ID])* )? '{'
-		propertyList += GDomainProperty*
+		(map=GDomainMap | propertyList += GDomainProperty*)
 	'}'
+;
+
+GDomainMap:
+	'map' (builtIn=('Int'|'Double'|'String'|'Boolean') | ref=[GDomainElement|ID] )
 ;
 
 GDomainProperty:
