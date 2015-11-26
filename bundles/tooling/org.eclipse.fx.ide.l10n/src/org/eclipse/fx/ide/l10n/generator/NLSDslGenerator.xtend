@@ -188,6 +188,10 @@ class NLSDslGenerator implements IGenerator {
 						return bundle_«in.name».«me.name»(«me.paramList.map[p|p.^var].join(", ")»);
 					}
 				«ENDIF»
+
+				public java.util.function.Supplier<String> «me.name»_supplier(«me.paramList.map[p|p.predefined.toSourceString + " " + p.^var].join(", ")») {
+					return () -> «me.name»(«me.paramList.map[p|p.^var].join(", ")»);
+				}
 			«ENDFOR»
 		«ENDFOR»
 	}
