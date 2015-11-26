@@ -84,7 +84,7 @@ class GsonGenerator implements IGenerator {
 							} else if( p.isList ) {
 								' + "' + p.name + ' : " + ' + p.name + '.stream().map( e -> e.getClass().getSimpleName() + "@" + Integer.toHexString(e.hashCode()) ).collect(java.util.stream.Collectors.toList())'
 							} else {
-								' + "' + p.name + ' : "' + p.name + ' == null ? null : ' + p.name + '.getClass().getSimpleName() + "@" + Integer.toHexString('+p.name+'.hashCode())'
+								' + "' + p.name + ' : " + ' + p.name + ' == null ? null : ' + p.name + '.getClass().getSimpleName() + "@" + Integer.toHexString('+p.name+'.hashCode())'
 							}
 						].join(''' + ", "
 						''')»
@@ -164,7 +164,7 @@ class GsonGenerator implements IGenerator {
 			«ELSEIF p.type == "String"»
 			o.addProperty( "«p.name»", get«p.name.toFirstUpper»() );
 			«ELSE»
-			o.addProperty( "«p.name»", get«p.name.toFirstUpper»() == null ? null : get«p.name.toFirstUpper»().toJSONObject() );
+			o.add( "«p.name»", get«p.name.toFirstUpper»() == null ? null : ((GsonBase)get«p.name.toFirstUpper»()).toJSONObject() );
 			«ENDIF»
 		«ENDIF»
 	'''
@@ -197,7 +197,7 @@ class GsonGenerator implements IGenerator {
 			«ELSEIF p.type == "String"»
 				this.«p.name» = jsonObject.has("«p.name»") ? jsonObject.get("«p.name»").getAsString() : «IF p.value != null»«p.value»«ELSE»null«ENDIF»;
 			«ELSE»
-				this.«p.name» = new Gson«p.type»Impl(jsonObject.getAsJsonObject(«p.name»)) : «IF p.value != null»«p.value»«ELSE»null«ENDIF»;
+				this.«p.name» = jsonObject.has("«p.name»") ? GsonElementFactory.create«p.ref.name»(jsonObject.getAsJsonObject("«p.name»")) : «IF p.value != null»«p.value»«ELSE»null«ENDIF»;
 			«ENDIF»
 		«ENDIF»
 	'''
