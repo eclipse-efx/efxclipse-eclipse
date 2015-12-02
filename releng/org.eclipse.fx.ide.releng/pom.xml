@@ -71,6 +71,8 @@
 		<module>../../bundles/tooling/org.eclipse.fx.ide.gmodel</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.gmodel.ui</module>
 
+		<!-- ldef -->
+		<module>../../bundles/code/org.eclipse.fx.code.editor.ldef</module>
 		<module>../../bundles/code/org.eclipse.fx.code.editor.ldef.ui</module>
 
 		<!-- Mobile -->
