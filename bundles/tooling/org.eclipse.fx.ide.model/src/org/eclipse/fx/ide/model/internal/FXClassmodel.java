@@ -23,6 +23,7 @@ public class FXClassmodel implements IFXClassmodel {
 	private Map<IType, FXClass> fxClassCache = new HashMap<>();
 	private Map<IType, FXCtrlClass> fxCtrlClassCache = new HashMap<>();
 
+	@Override
 	public IFXClass findClass(IJavaProject javaProject, IType type) {
 		synchronized (this.fxClassCache) {
 			IFXClass rv = this.fxClassCache.get(type);

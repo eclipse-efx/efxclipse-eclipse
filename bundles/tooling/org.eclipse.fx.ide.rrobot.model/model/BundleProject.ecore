@@ -179,4 +179,5 @@
     <eLiterals name="DYNAMIC"/>
     <eLiterals name="STATIC" value="1"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BndProject"/>
 </ecore:EPackage>

@@ -80,9 +80,15 @@ class GsonGenerator implements IGenerator {
 		public JsonObject toJSONObject() {
 			JsonObject o = new JsonObject();
 			o.addProperty( "$gtype", "«e.name»" );
-			«FOR p : properties.sortBy[ p | p.name]»
-				«p.generatePropertyToJson»
-			«ENDFOR»
+			«IF e.map != null»
+				for( java.util.Map.Entry<String,«e.map.plainType»> e : this.propertyMap ) {
+					o.add( e.getKey(), ((GsonBase)e.getValue()).toJSONObject() );
+				}
+			«ELSE»
+				«FOR p : properties.sortBy[ p | p.name]»
+					«p.generatePropertyToJson»
+				«ENDFOR»
+			«ENDIF»
 			return o;
 		}
 
@@ -111,6 +117,9 @@ class GsonGenerator implements IGenerator {
 			private static java.util.Map<String,«e.map.plainType»> toMap(JsonObject o) {
 				java.util.Map<String,«e.map.plainType»> rv = new java.util.HashMap<>();
 				for( java.util.Map.Entry<String,com.google.gson.JsonElement> e : o.entrySet() ) {
+					if( e.getKey().startsWith("$") ) {
+						continue;
+					}
 					«IF e.map.ref != null»
 						rv.put( e.getKey(), GsonElementFactory.create«e.map.ref.name»(e.getValue().getAsJsonObject()) );
 					«ELSE»
