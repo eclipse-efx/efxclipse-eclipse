@@ -94,7 +94,7 @@ ruleGModel returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"QualifiedName");
+        		"org.eclipse.fx.ide.gmodel.GModelDSL.QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -116,7 +116,7 @@ ruleGModel returns [EObject current=null]
        			$current, 
        			"typeList",
         		lv_typeList_3_0, 
-        		"GDomainElement");
+        		"org.eclipse.fx.ide.gmodel.GModelDSL.GDomainElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -164,7 +164,7 @@ ruleGDomainElement returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -219,7 +219,7 @@ ruleGDomainElement returns [EObject current=null]
        			$current, 
        			"map",
         		lv_map_7_0, 
-        		"GDomainMap");
+        		"org.eclipse.fx.ide.gmodel.GModelDSL.GDomainMap");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -238,7 +238,7 @@ ruleGDomainElement returns [EObject current=null]
        			$current, 
        			"propertyList",
         		lv_propertyList_8_0, 
-        		"GDomainProperty");
+        		"org.eclipse.fx.ide.gmodel.GModelDSL.GDomainProperty");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -444,7 +444,7 @@ ruleGDomainProperty returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -465,7 +465,7 @@ ruleGDomainProperty returns [EObject current=null]
        			$current, 
        			"defaultValue",
         		lv_defaultValue_4_0, 
-        		"GDefault");
+        		"org.eclipse.fx.ide.gmodel.GModelDSL.GDefault");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -513,7 +513,7 @@ ruleGDomainProperty returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_7_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -556,7 +556,7 @@ ruleGDefault returns [EObject current=null]
        			$current, 
        			"stringVal",
         		lv_stringVal_0_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -575,7 +575,7 @@ ruleGDefault returns [EObject current=null]
        			$current, 
        			"intVal",
         		lv_intVal_1_0, 
-        		"INT");
+        		"org.eclipse.xtext.common.Terminals.INT");
 	    }
 
 )

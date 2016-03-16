@@ -21,5 +21,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.fx.ide.gmodel.ui.quickfix,
  org.eclipse.fx.ide.gmodel.ui.contentassist,
  org.eclipse.fx.ide.gmodel.ui.internal,
- org.eclipse.fx.ide.gmodel.ui.contentassist.antlr
+ org.eclipse.fx.ide.gmodel.ui.contentassist.antlr,
+ org.eclipse.fx.ide.gmodel.ui.contentassist.antlr.internal
 Bundle-Activator: org.eclipse.fx.ide.gmodel.ui.internal.GModelDSLActivator

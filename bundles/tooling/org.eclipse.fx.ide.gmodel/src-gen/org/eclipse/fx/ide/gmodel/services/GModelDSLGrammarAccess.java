@@ -19,7 +19,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class GModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GModel");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.gmodel.GModelDSL.GModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -30,13 +30,15 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//GModel:
-		//	"package" name=QualifiedName "{" typeList+=GDomainElement+ "}";
+		//	'package' name=QualifiedName '{'
+		//	typeList+=GDomainElement+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//"package" name=QualifiedName "{" typeList+=GDomainElement+ "}"
+		//'package' name=QualifiedName '{' typeList+=GDomainElement+ '}'
 		public Group getGroup() { return cGroup; }
 
-		//"package"
+		//'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 
 		//name=QualifiedName
@@ -45,7 +47,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//typeList+=GDomainElement+
@@ -54,12 +56,12 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//GDomainElement
 		public RuleCall getTypeListGDomainElementParserRuleCall_3_0() { return cTypeListGDomainElementParserRuleCall_3_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class GDomainElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GDomainElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.gmodel.GModelDSL.GDomainElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -83,15 +85,16 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//GDomainElement:
-		//	"type" name=ID ("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)? "{"
-		//	(map=GDomainMap | propertyList+=GDomainProperty*) "}";
+		//	'type' name=ID ('extends' superTypeList+=[GDomainElement] (', ' superTypeList+=[GDomainElement])*)? '{'
+		//	(map=GDomainMap | propertyList+=GDomainProperty*)
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//"type" name=ID ("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)? "{" (map=GDomainMap
-		//| propertyList+=GDomainProperty*) "}"
+		//'type' name=ID ('extends' superTypeList+=[GDomainElement] (', ' superTypeList+=[GDomainElement])*)? '{' (map=GDomainMap
+		//| propertyList+=GDomainProperty*) '}'
 		public Group getGroup() { return cGroup; }
 
-		//"type"
+		//'type'
 		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
 
 		//name=ID
@@ -100,10 +103,10 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)?
+		//('extends' superTypeList+=[GDomainElement] (', ' superTypeList+=[GDomainElement])*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"extends"
+		//'extends'
 		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
 
 		//superTypeList+=[GDomainElement]
@@ -115,10 +118,10 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSuperTypeListGDomainElementIDTerminalRuleCall_2_1_0_1() { return cSuperTypeListGDomainElementIDTerminalRuleCall_2_1_0_1; }
 
-		//(", " superTypeList+=[GDomainElement])*
+		//(', ' superTypeList+=[GDomainElement])*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 
-		//", "
+		//', '
 		public Keyword getCommaSpaceKeyword_2_2_0() { return cCommaSpaceKeyword_2_2_0; }
 
 		//superTypeList+=[GDomainElement]
@@ -130,10 +133,10 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSuperTypeListGDomainElementIDTerminalRuleCall_2_2_1_0_1() { return cSuperTypeListGDomainElementIDTerminalRuleCall_2_2_1_0_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//map=GDomainMap | propertyList+=GDomainProperty*
+		//(map=GDomainMap | propertyList+=GDomainProperty*)
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 
 		//map=GDomainMap
@@ -148,12 +151,12 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//GDomainProperty
 		public RuleCall getPropertyListGDomainPropertyParserRuleCall_4_1_0() { return cPropertyListGDomainPropertyParserRuleCall_4_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class GDomainMapElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GDomainMap");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.gmodel.GModelDSL.GDomainMap");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMapKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -168,34 +171,34 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRefGDomainElementIDTerminalRuleCall_1_1_0_1 = (RuleCall)cRefGDomainElementCrossReference_1_1_0.eContents().get(1);
 		
 		//GDomainMap:
-		//	"map" (builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement]);
+		//	'map' (builtIn=('Int' | 'Double' | 'String' | 'Boolean') | ref=[GDomainElement]);
 		@Override public ParserRule getRule() { return rule; }
 
-		//"map" (builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement])
+		//'map' (builtIn=('Int' | 'Double' | 'String' | 'Boolean') | ref=[GDomainElement])
 		public Group getGroup() { return cGroup; }
 
-		//"map"
+		//'map'
 		public Keyword getMapKeyword_0() { return cMapKeyword_0; }
 
-		//builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement]
+		//(builtIn=('Int' | 'Double' | 'String' | 'Boolean') | ref=[GDomainElement])
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//builtIn=("Int" | "Double" | "String" | "Boolean")
+		//builtIn=('Int' | 'Double' | 'String' | 'Boolean')
 		public Assignment getBuiltInAssignment_1_0() { return cBuiltInAssignment_1_0; }
 
-		//"Int" | "Double" | "String" | "Boolean"
+		//('Int' | 'Double' | 'String' | 'Boolean')
 		public Alternatives getBuiltInAlternatives_1_0_0() { return cBuiltInAlternatives_1_0_0; }
 
-		//"Int"
+		//'Int'
 		public Keyword getBuiltInIntKeyword_1_0_0_0() { return cBuiltInIntKeyword_1_0_0_0; }
 
-		//"Double"
+		//'Double'
 		public Keyword getBuiltInDoubleKeyword_1_0_0_1() { return cBuiltInDoubleKeyword_1_0_0_1; }
 
-		//"String"
+		//'String'
 		public Keyword getBuiltInStringKeyword_1_0_0_2() { return cBuiltInStringKeyword_1_0_0_2; }
 
-		//"Boolean"
+		//'Boolean'
 		public Keyword getBuiltInBooleanKeyword_1_0_0_3() { return cBuiltInBooleanKeyword_1_0_0_3; }
 
 		//ref=[GDomainElement]
@@ -209,7 +212,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class GDomainPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GDomainProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.gmodel.GModelDSL.GDomainProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
@@ -238,43 +241,43 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//GDomainProperty:
-		//	(builtIn=("Int" | "Double" | "String" | "Boolean") list?="[]"? name=ID ("=" defaultValue=GDefault)? |
-		//	ref=[GDomainElement] list?="[]"? name=ID) ";";
+		//	(builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)? |
+		//	ref=[GDomainElement] list?='[]'? name=ID) ';';
 		@Override public ParserRule getRule() { return rule; }
 
-		//(builtIn=("Int" | "Double" | "String" | "Boolean") list?="[]"? name=ID ("=" defaultValue=GDefault)? |
-		//ref=[GDomainElement] list?="[]"? name=ID) ";"
+		//(builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)? |
+		//ref=[GDomainElement] list?='[]'? name=ID) ';'
 		public Group getGroup() { return cGroup; }
 
-		//builtIn=("Int" | "Double" | "String" | "Boolean") list?="[]"? name=ID ("=" defaultValue=GDefault)? |
-		//ref=[GDomainElement] list?="[]"? name=ID
+		//(builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)? |
+		//ref=[GDomainElement] list?='[]'? name=ID)
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//builtIn=("Int" | "Double" | "String" | "Boolean") list?="[]"? name=ID ("=" defaultValue=GDefault)?
+		//builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)?
 		public Group getGroup_0_0() { return cGroup_0_0; }
 
-		//builtIn=("Int" | "Double" | "String" | "Boolean")
+		//builtIn=('Int' | 'Double' | 'String' | 'Boolean')
 		public Assignment getBuiltInAssignment_0_0_0() { return cBuiltInAssignment_0_0_0; }
 
-		//"Int" | "Double" | "String" | "Boolean"
+		//('Int' | 'Double' | 'String' | 'Boolean')
 		public Alternatives getBuiltInAlternatives_0_0_0_0() { return cBuiltInAlternatives_0_0_0_0; }
 
-		//"Int"
+		//'Int'
 		public Keyword getBuiltInIntKeyword_0_0_0_0_0() { return cBuiltInIntKeyword_0_0_0_0_0; }
 
-		//"Double"
+		//'Double'
 		public Keyword getBuiltInDoubleKeyword_0_0_0_0_1() { return cBuiltInDoubleKeyword_0_0_0_0_1; }
 
-		//"String"
+		//'String'
 		public Keyword getBuiltInStringKeyword_0_0_0_0_2() { return cBuiltInStringKeyword_0_0_0_0_2; }
 
-		//"Boolean"
+		//'Boolean'
 		public Keyword getBuiltInBooleanKeyword_0_0_0_0_3() { return cBuiltInBooleanKeyword_0_0_0_0_3; }
 
-		//list?="[]"?
+		//list?='[]'?
 		public Assignment getListAssignment_0_0_1() { return cListAssignment_0_0_1; }
 
-		//"[]"
+		//'[]'
 		public Keyword getListLeftSquareBracketRightSquareBracketKeyword_0_0_1_0() { return cListLeftSquareBracketRightSquareBracketKeyword_0_0_1_0; }
 
 		//name=ID
@@ -283,10 +286,10 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0_2_0() { return cNameIDTerminalRuleCall_0_0_2_0; }
 
-		//("=" defaultValue=GDefault)?
+		//('=' defaultValue=GDefault)?
 		public Group getGroup_0_0_3() { return cGroup_0_0_3; }
 
-		//"="
+		//'='
 		public Keyword getEqualsSignKeyword_0_0_3_0() { return cEqualsSignKeyword_0_0_3_0; }
 
 		//defaultValue=GDefault
@@ -295,7 +298,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//GDefault
 		public RuleCall getDefaultValueGDefaultParserRuleCall_0_0_3_1_0() { return cDefaultValueGDefaultParserRuleCall_0_0_3_1_0; }
 
-		//ref=[GDomainElement] list?="[]"? name=ID
+		//ref=[GDomainElement] list?='[]'? name=ID
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
 		//ref=[GDomainElement]
@@ -307,10 +310,10 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getRefGDomainElementIDTerminalRuleCall_0_1_0_0_1() { return cRefGDomainElementIDTerminalRuleCall_0_1_0_0_1; }
 
-		//list?="[]"?
+		//list?='[]'?
 		public Assignment getListAssignment_0_1_1() { return cListAssignment_0_1_1; }
 
-		//"[]"
+		//'[]'
 		public Keyword getListLeftSquareBracketRightSquareBracketKeyword_0_1_1_0() { return cListLeftSquareBracketRightSquareBracketKeyword_0_1_1_0; }
 
 		//name=ID
@@ -319,12 +322,12 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_1_2_0() { return cNameIDTerminalRuleCall_0_1_2_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 
 	public class GDefaultElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GDefault");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.gmodel.GModelDSL.GDefault");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cStringValAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cStringValSTRINGTerminalRuleCall_0_0 = (RuleCall)cStringValAssignment_0.eContents().get(0);
@@ -352,7 +355,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ValidIDElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ValidID");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.gmodel.GModelDSL.ValidID");
 		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//ValidID:
@@ -364,7 +367,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.gmodel.GModelDSL.QualifiedName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cValidIDParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -372,19 +375,19 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValidIDParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedName:
-		//	ValidID ("." ValidID)*;
+		//	ValidID (=> '.' ValidID)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//ValidID ("." ValidID)*
+		//ValidID (=> '.' ValidID)*
 		public Group getGroup() { return cGroup; }
 
 		//ValidID
 		public RuleCall getValidIDParserRuleCall_0() { return cValidIDParserRuleCall_0; }
 
-		//(=> "." ValidID)*
+		//(=> '.' ValidID)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//=> "."
+		//=> '.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 
 		//ValidID
@@ -446,7 +449,9 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//GModel:
-	//	"package" name=QualifiedName "{" typeList+=GDomainElement+ "}";
+	//	'package' name=QualifiedName '{'
+	//	typeList+=GDomainElement+
+	//	'}';
 	public GModelElements getGModelAccess() {
 		return pGModel;
 	}
@@ -456,8 +461,9 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//GDomainElement:
-	//	"type" name=ID ("extends" superTypeList+=[GDomainElement] (", " superTypeList+=[GDomainElement])*)? "{"
-	//	(map=GDomainMap | propertyList+=GDomainProperty*) "}";
+	//	'type' name=ID ('extends' superTypeList+=[GDomainElement] (', ' superTypeList+=[GDomainElement])*)? '{'
+	//	(map=GDomainMap | propertyList+=GDomainProperty*)
+	//	'}';
 	public GDomainElementElements getGDomainElementAccess() {
 		return pGDomainElement;
 	}
@@ -467,7 +473,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//GDomainMap:
-	//	"map" (builtIn=("Int" | "Double" | "String" | "Boolean") | ref=[GDomainElement]);
+	//	'map' (builtIn=('Int' | 'Double' | 'String' | 'Boolean') | ref=[GDomainElement]);
 	public GDomainMapElements getGDomainMapAccess() {
 		return pGDomainMap;
 	}
@@ -477,8 +483,8 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//GDomainProperty:
-	//	(builtIn=("Int" | "Double" | "String" | "Boolean") list?="[]"? name=ID ("=" defaultValue=GDefault)? |
-	//	ref=[GDomainElement] list?="[]"? name=ID) ";";
+	//	(builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)? |
+	//	ref=[GDomainElement] list?='[]'? name=ID) ';';
 	public GDomainPropertyElements getGDomainPropertyAccess() {
 		return pGDomainProperty;
 	}
@@ -508,7 +514,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedName:
-	//	ValidID ("." ValidID)*;
+	//	ValidID (=> '.' ValidID)*;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return pQualifiedName;
 	}
@@ -518,38 +524,38 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' |
+	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 

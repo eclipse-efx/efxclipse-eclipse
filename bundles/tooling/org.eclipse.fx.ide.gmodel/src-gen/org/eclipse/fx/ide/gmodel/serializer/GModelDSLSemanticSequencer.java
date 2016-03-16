@@ -4,8 +4,9 @@
 package org.eclipse.fx.ide.gmodel.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
+import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDefault;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainElement;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainMap;
@@ -13,13 +14,11 @@ import org.eclipse.fx.ide.gmodel.gModelDSL.GDomainProperty;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GModel;
 import org.eclipse.fx.ide.gmodel.gModelDSL.GModelDSLPackage;
 import org.eclipse.fx.ide.gmodel.services.GModelDSLGrammarAccess;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Parameter;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 
 @SuppressWarnings("all")
 public class GModelDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -28,8 +27,13 @@ public class GModelDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	private GModelDSLGrammarAccess grammarAccess;
 	
 	@Override
-	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == GModelDSLPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+	public void sequence(ISerializationContext context, EObject semanticObject) {
+		EPackage epackage = semanticObject.eClass().getEPackage();
+		ParserRule rule = context.getParserRule();
+		Action action = context.getAssignedAction();
+		Set<Parameter> parameters = context.getEnabledBooleanParameters();
+		if (epackage == GModelDSLPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case GModelDSLPackage.GDEFAULT:
 				sequence_GDefault(context, (GDefault) semanticObject); 
 				return; 
@@ -46,53 +50,71 @@ public class GModelDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 				sequence_GModel(context, (GModel) semanticObject); 
 				return; 
 			}
-		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+		if (errorAcceptor != null)
+			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * Contexts:
+	 *     GDefault returns GDefault
+	 *
 	 * Constraint:
 	 *     (stringVal=STRING | intVal=INT)
 	 */
-	protected void sequence_GDefault(EObject context, GDefault semanticObject) {
+	protected void sequence_GDefault(ISerializationContext context, GDefault semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     GDomainElement returns GDomainElement
+	 *
 	 * Constraint:
-	 *     (name=ID (superTypeList+=[GDomainElement|ID] superTypeList+=[GDomainElement|ID]*)? (map=GDomainMap | propertyList+=GDomainProperty*))
+	 *     (name=ID (superTypeList+=[GDomainElement|ID] superTypeList+=[GDomainElement|ID]*)? (map=GDomainMap | propertyList+=GDomainProperty+)?)
 	 */
-	protected void sequence_GDomainElement(EObject context, GDomainElement semanticObject) {
+	protected void sequence_GDomainElement(ISerializationContext context, GDomainElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     GDomainMap returns GDomainMap
+	 *
 	 * Constraint:
 	 *     (builtIn='Int' | builtIn='Double' | builtIn='String' | builtIn='Boolean' | ref=[GDomainElement|ID])
 	 */
-	protected void sequence_GDomainMap(EObject context, GDomainMap semanticObject) {
+	protected void sequence_GDomainMap(ISerializationContext context, GDomainMap semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     GDomainProperty returns GDomainProperty
+	 *
 	 * Constraint:
 	 *     (
 	 *         ((builtIn='Int' | builtIn='Double' | builtIn='String' | builtIn='Boolean') list?='[]'? name=ID defaultValue=GDefault?) | 
 	 *         (ref=[GDomainElement|ID] list?='[]'? name=ID)
 	 *     )
 	 */
-	protected void sequence_GDomainProperty(EObject context, GDomainProperty semanticObject) {
+	protected void sequence_GDomainProperty(ISerializationContext context, GDomainProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     GModel returns GModel
+	 *
 	 * Constraint:
 	 *     (name=QualifiedName typeList+=GDomainElement+)
 	 */
-	protected void sequence_GModel(EObject context, GModel semanticObject) {
+	protected void sequence_GModel(ISerializationContext context, GModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
+	
+	
 }
