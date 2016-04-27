@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.fx.ide.pde.feature"
       label="e(fx)clipse - IDE - PDE"
-      version="2.3.0.qualifier"
+      version="2.4.0.qualifier"
       provider-name="Eclipse.org">
 
    <description>
