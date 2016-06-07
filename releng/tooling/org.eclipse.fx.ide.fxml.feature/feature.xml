@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.fx.ide.fxml.feature"
       label="e(fx)clipse - IDE - FXML"
-      version="2.4.0.qualifier"
+      version="3.0.0.qualifier"
       provider-name="Eclipse.org">
 
    <description>
