@@ -1,6 +1,8 @@
 package org.eclipse.fx.ide.jdt.core.internal;
 
 import org.eclipse.core.runtime.Path;
+import org.eclipse.fx.ide.jdt.core.FXVersion;
+import org.eclipse.fx.ide.jdt.core.FXVersionUtil;
 import org.eclipse.jdt.core.IAccessRule;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
@@ -29,16 +31,28 @@ public class FXAccessRuleParticipant implements IAccessRuleParticipant {
 			rules[3] = JavaCore.newAccessRule(new Path("com/sun/glass/**"), IAccessRule.K_DISCOURAGED);
 			rules[4] = JavaCore.newAccessRule(new Path("com/sun/media/jfxmedia/**"), IAccessRule.K_DISCOURAGED);
 			rules[5] = JavaCore.newAccessRule(new Path("com/sun/prism/**"), IAccessRule.K_DISCOURAGED);
-			
+
 			IAccessRule[][] rv = new IAccessRule[libraries.length][];
-			
+
 			for( int i = 0; i < rv.length; i++ ) {
 				rv[i] = rules;
 			}
-			
+
+			return rv;
+		} else if( FXVersionUtil.getFxVersion(vm) == FXVersion.FX9 ) {
+			IAccessRule[] rules = new IAccessRule[2];
+			rules[0] = JavaCore.newAccessRule(new Path("javafx/**"), IAccessRule.K_ACCESSIBLE);
+			rules[1] = JavaCore.newAccessRule(new Path("netscape/javascript/**"), IAccessRule.K_ACCESSIBLE);
+
+			IAccessRule[][] rv = new IAccessRule[libraries.length][];
+
+			for( int i = 0; i < rv.length; i++ ) {
+				rv[i] = rules;
+			}
+
 			return rv;
 		}
-		
+
 		return new IAccessRule[0][0];
 	}
 

@@ -9,7 +9,7 @@ import org.eclipse.jdt.launching.IVMInstall2;
 public class FXVersionUtil {
 	/**
 	 * Check the version for the given java install
-	 * 
+	 *
 	 * @param i
 	 *            the installation
 	 * @return the value
@@ -25,6 +25,8 @@ public class FXVersionUtil {
 				return FXVersion.FX8;
 			} else if (javaVersion.startsWith("1.7")) { //$NON-NLS-1$
 				return FXVersion.FX2;
+			} else if( javaVersion.startsWith("9") ) { //$NON-NLS-1$
+				return FXVersion.FX9;
 			}
 		}
 		return FXVersion.UNKNOWN;
