@@ -13,9 +13,9 @@ public class JavaVersionCheck implements IStartup {
 	@Override
 	public void earlyStartup() {
 		String v = System.getProperty("java.version"); //$NON-NLS-1$
-		if( !(v.startsWith("1.8") || v.startsWith("1.9")) ) { //$NON-NLS-1$ //$NON-NLS-2$
+		if( !(v.startsWith("1.8") || v.startsWith("9")) ) { //$NON-NLS-1$ //$NON-NLS-2$
 			StatusManager.getManager().handle(
-					new Status(IStatus.ERROR, "org.eclipse.fx.ide.java6", "You are not running your eclipse instance with Java8. The JavaFX tooling is disabled because of this.Make Java8 the default system java or adjust your eclipse.ini to pass -vm pointing to your Java8 install.\r\n\r\nIn case you want to turn off this check open your preferences and go to General > Startup and Shutdown and uncheck 'JavaFX Tooling Java Check'"),StatusManager.SHOW); //$NON-NLS-1$ //$NON-NLS-2$			
+					new Status(IStatus.ERROR, "org.eclipse.fx.ide.java6", "You are not running your eclipse instance with Java8. The JavaFX tooling is disabled because of this.Make Java8 the default system java or adjust your eclipse.ini to pass -vm pointing to your Java8 install.\r\n\r\nIn case you want to turn off this check open your preferences and go to General > Startup and Shutdown and uncheck 'JavaFX Tooling Java Check'"),StatusManager.SHOW); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 }
