@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.fx.ide.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - install"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.basic.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.basic.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.basic.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.basic.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.css.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.css.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.css.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.css.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.fxml.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.fxml.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.fxml.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.fxml.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.pde.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.pde.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.pde.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.pde.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.rrobot.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.rrobot.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.rrobot.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.rrobot.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.fxgraph.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.fxgraph.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.fxgraph.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.fxgraph.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.converter.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.converter.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.converter.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.converter.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.l10n.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.l10n.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.l10n.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.l10n.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.ldef.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.ldef.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.ldef.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.ldef.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
-   <feature url="features/org.eclipse.fx.ide.gmod.feature_2.4.0.qualifier.jar" id="org.eclipse.fx.ide.gmod.feature" version="2.4.0.qualifier">
+   <feature url="features/org.eclipse.fx.ide.gmod.feature_3.0.0.qualifier.jar" id="org.eclipse.fx.ide.gmod.feature" version="3.0.0.qualifier">
       <category name="e(fx)clipse - single components"/>
    </feature>
    <category-def name="e(fx)clipse - install" label="e(fx)clipse - install"/>
