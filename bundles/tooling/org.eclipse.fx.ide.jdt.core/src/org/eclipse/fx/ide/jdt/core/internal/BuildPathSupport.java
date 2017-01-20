@@ -19,6 +19,8 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.core.log.LoggerCreator;
+import org.eclipse.fx.ide.jdt.core.FXVersion;
+import org.eclipse.fx.ide.jdt.core.FXVersionUtil;
 import org.eclipse.jdt.core.IAccessRule;
 import org.eclipse.jdt.core.IClasspathAttribute;
 import org.eclipse.jdt.core.IClasspathEntry;
@@ -32,17 +34,17 @@ import org.eclipse.jdt.launching.LibraryLocation;
 
 public class BuildPathSupport {
 	public static final String WEB_JAVADOC_LOCATION = "http://docs.oracle.com/javase/8/javafx/api/";
-	
+
 	private static final Logger LOGGER = LoggerCreator.createLogger(BuildPathSupport.class);
-	
+
 	public static IClasspathEntry getJavaFXLibraryEntry(IJavaProject project) {
 		IPath[] paths = getFxJarPath(project);
 		if( paths != null ) {
-			
+
 			IPath jarLocationPath = paths[0];
 			IPath javadocLocation = paths[1];
 			IPath fxSource = paths[3];
-			
+
 			IClasspathAttribute[] attributes;
 			IAccessRule[] accessRules= { };
 			if (javadocLocation == null || !javadocLocation.toFile().exists()) {
@@ -50,27 +52,31 @@ public class BuildPathSupport {
 			} else {
 				attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString()) };
 			}
-			
+
 			if( jarLocationPath.toFile().exists() ) {
-				return JavaCore.newLibraryEntry(jarLocationPath, fxSource, null, accessRules, attributes, false);	
-			}	
+				return JavaCore.newLibraryEntry(jarLocationPath, fxSource, null, accessRules, attributes, false);
+			}
 		}
-		
+
 		return null;
 	}
-	
+
 	public static IPath[] getFxJarPath(IJavaProject project) {
 		IPath jarLocationPath = null;
 		IPath javadocLocation = null;
 		IPath antJarLocationPath = null;
 		IPath sourceLocationPath = null;
-		
+
 		try {
 			IVMInstall i = JavaRuntime.getVMInstall(project);
 			if( i == null ) {
 				i = JavaRuntime.getDefaultVMInstall();
 			}
-			return getFxJarPath(i);
+
+			if( FXVersionUtil.getFxVersion(i) != FXVersion.FX9 ) {
+				return getFxJarPath(i);
+			}
+			return null;
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,8 +84,8 @@ public class BuildPathSupport {
 
 		return new IPath[] { jarLocationPath, javadocLocation, antJarLocationPath, sourceLocationPath };
 	}
-	
-	
+
+
 	public static IPath[] getSwtFxJarPath(IVMInstall i) {
 		File installDir = i.getInstallLocation();
 		IPath[] checkPaths = {
@@ -87,13 +93,13 @@ public class BuildPathSupport {
 				new Path(installDir.getAbsolutePath()).append("jre").append("lib").append("jfxswt.jar"),
 				new Path(installDir.getAbsolutePath()).append("lib").append("jfxswt.jar") // JRE
 			};
-		
+
 		IPath jarLocationPath = null;
 		IPath javadocLocation = null;
 		IPath sourceLocationPath = null;
-		
+
 		jarLocationPath = checkPaths[0];
-		
+
 		if( ! jarLocationPath.toFile().exists() ) {
 			for( IPath p : checkPaths ) {
 				if( p.toFile().exists() ) {
@@ -102,48 +108,48 @@ public class BuildPathSupport {
 				}
 			}
 		}
-		
+
 		if( jarLocationPath.toFile().exists() ) {
 			sourceLocationPath = new Path(installDir.getAbsolutePath()).append("javafx-src.zip");
-			
+
 			return new IPath[] { jarLocationPath, javadocLocation, sourceLocationPath };
 		}
-		
+
 		return null;
 	}
-	
+
 	public static IPath[] getFxJarPath(IVMInstall i) {
 		for( LibraryLocation l : JavaRuntime.getLibraryLocations(i) ) {
 			if( "jfxrt.jar".equals(l.getSystemLibraryPath().lastSegment()) ) {
 				return null;
 			}
 		}
-		
+
 		IPath jarLocationPath = null;
 		IPath javadocLocation = null;
 		IPath antJarLocationPath = null;
 		IPath sourceLocationPath = null;
-		
+
 		File installDir = i.getInstallLocation();
-			
+
 		IPath[] checkPaths = {
 			// Java 7
 			new Path(installDir.getAbsolutePath()).append("jre").append("lib").append("jfxrt.jar"),
 			new Path(installDir.getAbsolutePath()).append("lib").append("jfxrt.jar") // JRE
-			
+
 		};
-		
+
 		jarLocationPath = checkPaths[0];
-				
+
 		if( ! jarLocationPath.toFile().exists() ) {
 			for( IPath p : checkPaths ) {
 				if( p.toFile().exists() ) {
 					jarLocationPath = p;
 					break;
 				}
-			}	
+			}
 		}
-		
+
 		if( ! jarLocationPath.toFile().exists() ) {
 			LOGGER.error("Unable to detect JavaFX jar for JRE " + i.getName());
 			LOGGER.error("	JRE: " + installDir.getAbsolutePath());
@@ -151,10 +157,10 @@ public class BuildPathSupport {
 			for( IPath p : checkPaths ) {
 				LOGGER.error("		" + p.toFile().getAbsolutePath());
 			}
-			
+
 			return null;
 		}
-		
+
 		javadocLocation = new Path(installDir.getParentFile().getAbsolutePath()).append("docs").append("api"); //TODO Not shipped yet
 		if( ! javadocLocation.toFile().exists() ) {
 			IPath p = new Path(System.getProperty("user.home")).append("javafx-api-"+ i.getName()).append("docs").append("api");
@@ -162,15 +168,15 @@ public class BuildPathSupport {
 				javadocLocation = p;
 			}
 		}
-		
+
 		antJarLocationPath = new Path(installDir.getParent()).append("lib").append("ant-javafx.jar");
-		
+
 		sourceLocationPath = new Path(installDir.getAbsolutePath()).append("javafx-src.zip");
-		
+
 		if( ! sourceLocationPath.toFile().exists() ) {
 			sourceLocationPath = null;
 		}
-		
+
 		return new IPath[] { jarLocationPath, javadocLocation, antJarLocationPath, sourceLocationPath };
 	}
 }
