@@ -91,7 +91,8 @@ public class BuildPathSupport {
 		IPath[] checkPaths = {
 				// JDK 8
 				new Path(installDir.getAbsolutePath()).append("jre").append("lib").append("jfxswt.jar"),
-				new Path(installDir.getAbsolutePath()).append("lib").append("jfxswt.jar") // JRE
+				new Path(installDir.getAbsolutePath()).append("lib").append("jfxswt.jar"), // JRE
+				new Path(installDir.getAbsolutePath()).append("lib").append("javafx-swt.jar")
 			};
 
 		IPath jarLocationPath = null;

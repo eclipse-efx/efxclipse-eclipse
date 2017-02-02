@@ -188,7 +188,7 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		}
 
 		// FX8 classpath
-		if (version == FXVersion.FX8) {
+		if (version == FXVersion.FX8 || version == FXVersion.FX9) {
 			if( DEBUG ) {
 				System.err.println("JavaFXClasspathExtender - This is FX8 only add the SWT-Lib ");
 			}
@@ -200,7 +200,6 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 				}
 				entries.add(swtFxEntry);
 			}
-
 		}
 
 		// FX2 classpath
