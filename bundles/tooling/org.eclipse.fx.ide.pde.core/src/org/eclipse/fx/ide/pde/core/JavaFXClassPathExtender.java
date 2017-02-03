@@ -84,6 +84,7 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		switch (version) {
 		case FX2: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX2_BUNDLE_NAME);
 		case FX8: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
+		case FX9: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
 		}
 		return null;
 	}
