@@ -22,7 +22,9 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ListResourceBundle;
@@ -30,6 +32,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Consumer;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 import javafx.application.ConditionalFeature;
 import javafx.application.Platform;
@@ -115,16 +118,16 @@ public class LivePreviewPart extends ViewPart {
 		ANDROID_800_1280("Galaxy Note II 800x1280",800,1280,true),
 //		ANDROID_240_320("Android 240x320 ldpi",240,320,true),
 //		ANDROID_320_480("Android 320x480 mdpi",320,480,true),
-//		
+//
 //		DESKTOP_1024_768("1024x768",1024,768,false),
 //		DESKTOP_1280_1024("1280x1024",1280,1024,false)
 		;
-		
+
 		private String name;
 		private int width;
 		private int height;
 		private boolean supportsHorizontal;
-		
+
 		private SCREEN_SIZE(String name, int width, int height, boolean supportsHorizontal) {
 			this.name = name;
 			this.width = width;
@@ -132,22 +135,22 @@ public class LivePreviewPart extends ViewPart {
 			this.supportsHorizontal = supportsHorizontal;
 		}
 	}
-	
+
 	class ScreenAction extends Action {
 		private final SCREEN_SIZE size;
-		
+
 		public ScreenAction(SCREEN_SIZE size) {
 			super(size.name, IAction.AS_RADIO_BUTTON);
 			this.size = size;
 		}
-		
+
 		@Override
 		public void run() {
 			screenSize.setText(size.name);
 			updateResolution(size,currentHorizontal);
 		}
 	}
-	
+
 	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
 	@Inject
 	private LivePreviewSynchronizer synchronizer;
@@ -199,14 +202,14 @@ public class LivePreviewPart extends ViewPart {
 	private IFile currentFile;
 
 	private IDocument document;
-	
+
 	private ContentData currentData;
-	
+
 	private Scene currentScene;
-	
+
 	private SCREEN_SIZE currentSize = SCREEN_SIZE.DEFAULT;
-	
-	
+
+
 	private Map<SCREEN_SIZE, BasicDevice[]> previewers = new HashMap<>();
 	private Action screenSize;
 	private boolean currentHorizontal;
@@ -214,16 +217,16 @@ public class LivePreviewPart extends ViewPart {
 	{
 		AppleIPhone4HorizontalDevice horizontal_iphone4 = new AppleIPhone4HorizontalDevice(960,640);
 		AppleIPhone4VerticalDevice vertical_iphone4 = new AppleIPhone4VerticalDevice(640,960);
-		
+
 		AppleIPadHorizontalDevice horizontal_ipad = new AppleIPadHorizontalDevice(1024, 768);
 		AppleIPadVerticalDevice vertical_ipad = new AppleIPadVerticalDevice(768, 1024);
-		
+
 		AndroidPhoneHorizontalDevice horizonal_android_phone = new AndroidPhoneHorizontalDevice(1024,600);
 		AndroidPhoneVerticalDevice vertical_android_phone = new AndroidPhoneVerticalDevice(600,1024);
 
 		AndroidTabletHorizontalDevice horizontal_android_tablet = new AndroidTabletHorizontalDevice(800, 480);
 		AndroidTabletVerticalDevice vertical_android_tablet = new AndroidTabletVerticalDevice(480,800);
-		
+
 		previewers.put(SCREEN_SIZE.IPHONE_4_RETINA, new BasicDevice[] { vertical_iphone4, horizontal_iphone4 });
 		previewers.put(SCREEN_SIZE.IPHONE_5, new BasicDevice[] { vertical_iphone4, horizontal_iphone4 });
 		previewers.put(SCREEN_SIZE.IPAD_DEFAULT, new BasicDevice[] { vertical_ipad, horizontal_ipad });
@@ -232,7 +235,7 @@ public class LivePreviewPart extends ViewPart {
 		previewers.put(SCREEN_SIZE.ANDROID_PHONE_720_1280, new BasicDevice[] { vertical_android_phone, horizonal_android_phone });
 		previewers.put(SCREEN_SIZE.ANDROID_480_800, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
 		previewers.put(SCREEN_SIZE.ANDROID_720_1280, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
-		previewers.put(SCREEN_SIZE.ANDROID_800_1280, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });		
+		previewers.put(SCREEN_SIZE.ANDROID_800_1280, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
 	}
 
 	static {
@@ -309,7 +312,7 @@ public class LivePreviewPart extends ViewPart {
 		folder.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true, 3, 1));
 
 		document = new Document();
-		
+
 //		parent.getDisplay().syncExec(new Runnable() {
 //
 //			@Override
@@ -406,15 +409,15 @@ public class LivePreviewPart extends ViewPart {
 						}
 					}
 				});
-				
+
 				parent.layout(true, true);
-				
+
 				if( currentData != null ) {
 					refreshContent(currentData);
 				}
 //			}
 //		});
-		
+
 		parent.layout(true, true);
 
 		Action loadController = new Action("", IAction.AS_CHECK_BOX) {
@@ -442,13 +445,13 @@ public class LivePreviewPart extends ViewPart {
 		};
 		refresh.setToolTipText("Force a refresh");
 
-		
+
 		MenuManager mgr = new MenuManager();
 		for( SCREEN_SIZE s : SCREEN_SIZE.values() ) {
 			mgr.add(new ScreenAction(s));
 		}
 		final Menu m = mgr.createContextMenu(parent);
-		
+
 		screenSize = new Action("ScreenSize",IAction.AS_DROP_DOWN_MENU) {
 			@Override
 			public void runWithEvent(Event event) {
@@ -469,7 +472,7 @@ public class LivePreviewPart extends ViewPart {
 		getViewSite().getActionBars().getToolBarManager().add(refresh);
 		getViewSite().getActionBars().getToolBarManager().add(loadController);
 	}
-	
+
 	void updateResolution(SCREEN_SIZE size, boolean horizontal) {
 		currentSize = size;
 		currentHorizontal = horizontal;
@@ -483,11 +486,11 @@ public class LivePreviewPart extends ViewPart {
 
 	@Override
 	public void dispose() {
-		
+
 		if( currentScene != null ) {
 			currentScene.getStylesheets().clear();
 		}
-				
+
 		getSite().getWorkbenchWindow().getPartService().removePartListener(synchronizer);
 		getSite().getWorkbenchWindow().getPartService().addPartListener(listener);
 
@@ -514,14 +517,14 @@ public class LivePreviewPart extends ViewPart {
 					@Override
 					public void run() {
 						try {
-							saveRefreshContent(contentData);	
+							saveRefreshContent(contentData);
 						} catch(Throwable t) {
 							t.printStackTrace();
 						}
 					}
-				});	
+				});
 			}
-			
+
 		}
 	}
 
@@ -550,7 +553,7 @@ public class LivePreviewPart extends ViewPart {
 			loader = new FXMLLoader();
 		}
 
-		String exception = null;
+		final StringBuilder exception = new StringBuilder();
 
 		try {
 			currentFile = contentData.file;
@@ -583,6 +586,28 @@ public class LivePreviewPart extends ViewPart {
 							return entries;
 						}
 					};
+					ResourceBundle rb = new ResourceBundle() {
+
+						@Override
+						protected Object handleGetObject(String key) {
+							Object object = b.handleGetObject(key);
+							if( object == null ) {
+								exception.append("Warning: Missing key '"+key+"'\n");
+								object = "!" + key + "!";
+							}
+							return object;
+						}
+
+						@Override
+						public Enumeration<String> getKeys() {
+							return b.getKeys();
+						}
+
+						@Override
+						public boolean containsKey(String key) {
+							return true;
+						}
+					};
 					loader.setResources(b);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -596,6 +621,26 @@ public class LivePreviewPart extends ViewPart {
 						}
 					}
 				}
+			} else {
+				ResourceBundle rb = new ResourceBundle() {
+
+					@Override
+					protected Object handleGetObject(String key) {
+						exception.append("Warning: No resource bundle provided\n");
+						return "!" + key + "!";
+					}
+
+					@Override
+					public Enumeration<String> getKeys() {
+						return Collections.emptyEnumeration();
+					}
+
+					@Override
+					public boolean containsKey(String key) {
+						return true;
+					}
+				};
+				loader.setResources(rb);
 			}
 
 			try {
@@ -616,9 +661,9 @@ public class LivePreviewPart extends ViewPart {
 							scene = (Scene) sceneRoot;
 						}
 					}
-					
+
 					rootPane_new = (Node) root;
-					
+
 					if( scene == null ) {
 						Parent p;
 						if( currentSize == SCREEN_SIZE.DEFAULT ) {
@@ -630,31 +675,31 @@ public class LivePreviewPart extends ViewPart {
 							Node n = rootPane_new;
 							rootPane_new = v[currentHorizontal ? 1 : 0].getSimulatorNode();
 							v[currentHorizontal ? 1 : 0].setContent(n);
-							
+
 							BorderPane container = new BorderPane();
 							container.setTop(rootPane_new);
 							p = container;
 						}
-						
+
 						((BorderPane)defaultScene.getRoot()).setCenter(p);
 						scene = defaultScene;
-//						
+//
 //						scene = new Scene(p, -1, -1, Platform.isSupported(ConditionalFeature.SCENE3D));
 //						if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
 //							scene.setCamera(new PerspectiveCamera());
-//						}	
+//						}
 					} else {
 						Node n = scene.getRoot().lookup("#previewcontainer");
 						if( n == null || ! (n instanceof Parent) ) {
 							n = scene.getRoot();
 						}
-						
+
 						String previewFeature = null;
-						
+
 						if( n.getUserData() != null && n.getUserData() != null ) {
 							previewFeature = n.getUserData().toString().trim();
 						}
-						
+
 						if( previewFeature != null ) {
 							try {
 								String mName = "set" + Character.toUpperCase(previewFeature.charAt(0)) + previewFeature.substring(1);
@@ -684,24 +729,24 @@ public class LivePreviewPart extends ViewPart {
 					if (scaleMap.containsKey(currentFile)) {
 						int value = scaleMap.get(currentFile).intValue();
 						scale.setSelection(value);
-						
+
 						rootPane_new.getTransforms().setAll(Transform.scale(value / 100.0, value / 100.0));
 					} else {
 						scale.setSelection(100);
 						rootPane_new.getTransforms().clear();
 					}
 				}
-				
+
 				// Force CSS-Reloading
 				if( isJavaFX2() ) {
 					ReflectiveInvoke.onStyleManagerClass(scene);
 				}
-				
+
 				// In FX8 we need to remove the stylesheets on the old scene to force reloading them
 				if( swtFXContainer.getScene() != null ) {
-					swtFXContainer.getScene().getStylesheets().clear();	
+					swtFXContainer.getScene().getStylesheets().clear();
 				}
-				
+
 				scene.getStylesheets().addAll(contentData.cssFiles);
 				currentScene = scene;
 				folder.setSelection(0);
@@ -710,7 +755,7 @@ public class LivePreviewPart extends ViewPart {
 			} catch (Exception e) {
 				StringWriter sw = new StringWriter();
 				e.printStackTrace(new PrintWriter(sw));
-				exception = sw.toString();
+				exception.append(sw.toString());
 			}
 		} finally {
 			if (cl != null) {
@@ -718,8 +763,8 @@ public class LivePreviewPart extends ViewPart {
 			}
 		}
 
-		if (exception != null) {
-			final String innerException = exception;
+		if (exception.length() > 0) {
+			final String innerException = exception.toString();
 			if (folder.isDisposed()) {
 				return;
 			}
@@ -785,7 +830,7 @@ public class LivePreviewPart extends ViewPart {
 			});
 		}
 	}
-	
+
 	private static boolean isJavaFX2() {
 		return System.getProperty("javafx.version") != null && System.getProperty("javafx.version").startsWith("2");
 	}
@@ -798,7 +843,7 @@ public class LivePreviewPart extends ViewPart {
 		public List<URL> extraJarPath;
 		public IFile file;
 		public Consumer<Object> sceneGraphCallback;
-		
+
 		public ContentData(
 				String contents, String previewSceneSetup, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, IFile file,
 				Consumer<Object> sceneGraphCallback) {
@@ -817,7 +862,7 @@ public class LivePreviewPart extends ViewPart {
 		public PreviewURLClassloader(URL[] urls, ClassLoader parent) {
 			super(urls, parent);
 		}
-		
+
 		@Override
 		public Class<?> loadClass(String name) throws ClassNotFoundException {
 			return super.loadClass(name);
