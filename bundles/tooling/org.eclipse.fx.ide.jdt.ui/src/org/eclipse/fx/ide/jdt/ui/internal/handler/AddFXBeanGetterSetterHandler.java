@@ -19,7 +19,10 @@ import java.util.Set;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
@@ -46,6 +49,7 @@ import org.eclipse.jdt.core.dom.NodeFinder;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
+import org.eclipse.jdt.internal.corext.CorextMessages;
 import org.eclipse.jdt.internal.corext.ValidateEditException;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility2;
@@ -54,6 +58,7 @@ import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
 import org.eclipse.jdt.internal.corext.refactoring.util.RefactoringASTParser;
 import org.eclipse.jdt.internal.corext.util.CodeFormatterUtil;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
+import org.eclipse.jdt.internal.corext.util.Resources;
 import org.eclipse.jdt.internal.ui.actions.ActionMessages;
 import org.eclipse.jdt.internal.ui.actions.SelectionConverter;
 import org.eclipse.jdt.internal.ui.javaeditor.ASTProvider;
@@ -271,13 +276,38 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 				}
 
 				TextEdit fEdit = astRewrite.rewriteAST();
-				JavaModelUtil.applyEdit(unit, fEdit, true, new SubProgressMonitor(new NullProgressMonitor(), 1));
+				applyEdit(unit, fEdit, true, new SubProgressMonitor(new NullProgressMonitor(), 1));
 
 			} catch(CoreException e) {
 				this.logger.error("Failure while generating accessor code", e); //$NON-NLS-1$
 			}
 
 			super.okPressed();
+		}
+	}
+	
+	// From JavaModelUtil
+	private static void applyEdit(ICompilationUnit cu, TextEdit edit, boolean save, IProgressMonitor monitor) throws CoreException, ValidateEditException {
+		IFile file= (IFile) cu.getResource();
+		if (!save || !file.exists()) {
+			cu.applyTextEdit(edit, monitor);
+		} else {
+			if (monitor == null) {
+				monitor= new NullProgressMonitor();
+			}
+			monitor.beginTask(CorextMessages.JavaModelUtil_applyedit_operation, 2);
+			try {
+				IStatus status= Resources.makeCommittable(file, null);
+				if (!status.isOK()) {
+					throw new ValidateEditException(status);
+				}
+
+				cu.applyTextEdit(edit, new SubProgressMonitor(monitor, 1));
+
+				cu.save(new SubProgressMonitor(monitor, 1), true);
+			} finally {
+				monitor.done();
+			}
 		}
 	}
 
