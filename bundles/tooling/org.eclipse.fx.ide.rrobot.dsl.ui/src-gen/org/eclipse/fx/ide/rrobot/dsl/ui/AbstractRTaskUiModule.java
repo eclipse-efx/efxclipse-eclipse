@@ -92,6 +92,11 @@ public abstract class AbstractRTaskUiModule extends org.eclipse.xtext.ui.Default
 		return org.eclipse.xtext.ui.compare.DefaultViewerCreator.class;
 	}
 
+	// contributed by org.eclipse.xtext.ui.generator.compare.CompareFragment
+	public void configureCompareViewerTitle(com.google.inject.Binder binder) {
+		binder.bind(String.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.UIBindings.COMPARE_VIEWER_TITLE)).toInstance("RTask Compare");
+	}
+
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
 	public void configureIResourceDescriptionsBuilderScope(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.NAMED_BUILDER_SCOPE)).to(org.eclipse.xtext.builder.clustering.CurrentDescriptions.ResourceSetAware.class);

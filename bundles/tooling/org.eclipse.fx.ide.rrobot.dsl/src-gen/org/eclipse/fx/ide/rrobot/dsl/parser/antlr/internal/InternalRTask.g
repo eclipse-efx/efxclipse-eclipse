@@ -117,7 +117,7 @@ ruleRobotTask returns [EObject current=null]
        			$current, 
        			"variables",
         		lv_variables_6_0, 
-        		"Variable");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Variable");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -139,7 +139,7 @@ ruleRobotTask returns [EObject current=null]
        			$current, 
        			"variables",
         		lv_variables_8_0, 
-        		"Variable");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Variable");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -173,7 +173,7 @@ ruleRobotTask returns [EObject current=null]
        			$current, 
        			"projects",
         		lv_projects_13_0, 
-        		"GenericProject");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.GenericProject");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -195,7 +195,7 @@ ruleRobotTask returns [EObject current=null]
        			$current, 
        			"projects",
         		lv_projects_15_0, 
-        		"GenericProject");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.GenericProject");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -243,7 +243,7 @@ ruleVariable returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_0_0, 
-        		"SL_DOC");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.SL_DOC");
 	    }
 
 )
@@ -260,7 +260,7 @@ ruleVariable returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_1_0, 
-        		"Type");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Type");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -279,7 +279,7 @@ ruleVariable returns [EObject current=null]
        			$current, 
        			"key",
         		lv_key_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -301,7 +301,7 @@ ruleVariable returns [EObject current=null]
        			$current, 
        			"defaultValue",
         		lv_defaultValue_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -509,7 +509,7 @@ ruleProject returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -543,7 +543,7 @@ ruleProject returns [EObject current=null]
        			$current, 
        			"resources",
         		lv_resources_7_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -565,7 +565,7 @@ ruleProject returns [EObject current=null]
        			$current, 
        			"resources",
         		lv_resources_9_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -595,7 +595,7 @@ ruleProject returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_13_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -680,7 +680,7 @@ ruleFolder returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -714,7 +714,7 @@ ruleFolder returns [EObject current=null]
        			$current, 
        			"children",
         		lv_children_7_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -736,7 +736,7 @@ ruleFolder returns [EObject current=null]
        			$current, 
        			"children",
         		lv_children_9_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -793,7 +793,7 @@ ruleTemplatedFile returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -823,7 +823,7 @@ ruleTemplatedFile returns [EObject current=null]
        			$current, 
        			"generatorType",
         		lv_generatorType_6_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -849,7 +849,7 @@ ruleTemplatedFile returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_9_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -898,7 +898,7 @@ ruleDataFile returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -928,7 +928,7 @@ ruleDataFile returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_6_0, 
-        		"EByteArray");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EByteArray");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -954,7 +954,7 @@ ruleDataFile returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_9_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1003,7 +1003,7 @@ ruleURLFile returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1021,7 +1021,7 @@ ruleURLFile returns [EObject current=null]
        			$current, 
        			"uri",
         		lv_uri_3_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1043,7 +1043,7 @@ ruleURLFile returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_5_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1092,7 +1092,7 @@ ruleDynamicFile returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1115,7 +1115,7 @@ ruleDynamicFile returns [EObject current=null]
        			$current, 
        			"executionURI",
         		lv_executionURI_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1137,7 +1137,7 @@ ruleDynamicFile returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_6_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1158,7 +1158,7 @@ ruleDynamicFile returns [EObject current=null]
        			$current, 
        			"variables",
         		lv_variables_8_0, 
-        		"Variable");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Variable");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1180,7 +1180,7 @@ ruleDynamicFile returns [EObject current=null]
        			$current, 
        			"variables",
         		lv_variables_10_0, 
-        		"Variable");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Variable");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1206,7 +1206,7 @@ ruleDynamicFile returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_13_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1255,7 +1255,7 @@ ruleComponentDefinitionFile returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1299,7 +1299,7 @@ ruleComponentDefinitionFile returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_7_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1337,7 +1337,7 @@ ruleComponentDefinitionFile returns [EObject current=null]
        			$current, 
        			"componentClass",
         		lv_componentClass_10_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1382,7 +1382,7 @@ ruleComponentDefinitionFile returns [EObject current=null]
        			$current, 
        			"serviceInterfaceList",
         		lv_serviceInterfaceList_14_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1404,7 +1404,7 @@ ruleComponentDefinitionFile returns [EObject current=null]
        			$current, 
        			"serviceInterfaceList",
         		lv_serviceInterfaceList_16_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1438,7 +1438,7 @@ ruleComponentDefinitionFile returns [EObject current=null]
        			$current, 
        			"referenceList",
         		lv_referenceList_21_0, 
-        		"ComponentReference");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ComponentReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1460,7 +1460,7 @@ ruleComponentDefinitionFile returns [EObject current=null]
        			$current, 
        			"referenceList",
         		lv_referenceList_23_0, 
-        		"ComponentReference");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ComponentReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1514,7 +1514,7 @@ ruleComponentReference returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -1558,7 +1558,7 @@ ruleComponentReference returns [EObject current=null]
        			$current, 
        			"bind",
         		lv_bind_6_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -1596,7 +1596,7 @@ ruleComponentReference returns [EObject current=null]
        			$current, 
        			"unbind",
         		lv_unbind_9_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -1633,7 +1633,7 @@ ruleComponentReference returns [EObject current=null]
        			$current, 
        			"typeName",
         		lv_typeName_12_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1671,7 +1671,7 @@ ruleComponentReference returns [EObject current=null]
        			$current, 
        			"cardinality",
         		lv_cardinality_15_0, 
-        		"Cardinality");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Cardinality");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1709,7 +1709,7 @@ ruleComponentReference returns [EObject current=null]
        			$current, 
        			"policy",
         		lv_policy_18_0, 
-        		"Policy");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Policy");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1808,7 +1808,7 @@ ruleReferencingBooleanExpression returns [EObject current=null]
        			$current, 
        			"executionURI",
         		lv_executionURI_0_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1830,7 +1830,7 @@ ruleReferencingBooleanExpression returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1869,7 +1869,7 @@ ruleInlineBooleanExpression returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_0_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1887,7 +1887,7 @@ ruleInlineBooleanExpression returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_1_0, 
-        		"INLINE_SCRIPT");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.INLINE_SCRIPT");
 	    }
 
 )
@@ -1967,7 +1967,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2011,7 +2011,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"manifest",
         		lv_manifest_7_0, 
-        		"ManifestFile");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ManifestFile");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2049,7 +2049,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"buildProperties",
         		lv_buildProperties_10_0, 
-        		"BuildProperties");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BuildProperties");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2087,7 +2087,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"pluginxml",
         		lv_pluginxml_13_0, 
-        		"PluginXMLFile");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.PluginXMLFile");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2132,7 +2132,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"resources",
         		lv_resources_17_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2154,7 +2154,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"resources",
         		lv_resources_19_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2188,7 +2188,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"sourceFragments",
         		lv_sourceFragments_24_0, 
-        		"SourceFragment");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.SourceFragment");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2210,7 +2210,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"sourceFragments",
         		lv_sourceFragments_26_0, 
-        		"SourceFragment");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.SourceFragment");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2244,7 +2244,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"compilationUnits",
         		lv_compilationUnits_31_0, 
-        		"CompilationUnit");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.CompilationUnit");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2266,7 +2266,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"compilationUnits",
         		lv_compilationUnits_33_0, 
-        		"CompilationUnit");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.CompilationUnit");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2296,7 +2296,7 @@ ruleBundleProject returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_37_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2339,7 +2339,7 @@ ruleSourceFragment returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2392,7 +2392,7 @@ ruleCompilationUnit returns [EObject current=null]
        			$current, 
        			"packagename",
         		lv_packagename_0_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2431,7 +2431,7 @@ ruleCompilationUnit returns [EObject current=null]
        			$current, 
        			"file",
         		lv_file_4_1, 
-        		"TemplatedFile");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.TemplatedFile");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2446,7 +2446,7 @@ ruleCompilationUnit returns [EObject current=null]
        			$current, 
        			"file",
         		lv_file_4_2, 
-        		"DataFile");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.DataFile");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2461,7 +2461,7 @@ ruleCompilationUnit returns [EObject current=null]
        			$current, 
        			"file",
         		lv_file_4_3, 
-        		"URLFile");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.URLFile");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2476,7 +2476,7 @@ ruleCompilationUnit returns [EObject current=null]
        			$current, 
        			"file",
         		lv_file_4_4, 
-        		"DynamicFile");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.DynamicFile");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2504,7 +2504,7 @@ ruleCompilationUnit returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_7_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2553,7 +2553,7 @@ ruleFeatureProject returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2583,7 +2583,7 @@ ruleFeatureProject returns [EObject current=null]
        			$current, 
        			"feature",
         		lv_feature_6_0, 
-        		"FeatureFile");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.FeatureFile");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2613,7 +2613,7 @@ ruleFeatureProject returns [EObject current=null]
        			$current, 
        			"resources",
         		lv_resources_10_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2635,7 +2635,7 @@ ruleFeatureProject returns [EObject current=null]
        			$current, 
        			"resources",
         		lv_resources_12_0, 
-        		"Resource");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Resource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2665,7 +2665,7 @@ ruleFeatureProject returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_16_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2745,7 +2745,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"symbolicname",
         		lv_symbolicname_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2763,7 +2763,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"version",
         		lv_version_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2781,7 +2781,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"executionEnvironment",
         		lv_executionEnvironment_6_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2825,7 +2825,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"bundlename",
         		lv_bundlename_11_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2863,7 +2863,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"vendor",
         		lv_vendor_14_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2901,7 +2901,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"activatorClass",
         		lv_activatorClass_17_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2945,7 +2945,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"exportedPackages",
         		lv_exportedPackages_21_0, 
-        		"ExportedPackage");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ExportedPackage");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2967,7 +2967,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"exportedPackages",
         		lv_exportedPackages_23_0, 
-        		"ExportedPackage");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ExportedPackage");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3001,7 +3001,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"importedPackages",
         		lv_importedPackages_28_0, 
-        		"ImportedPackage");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ImportedPackage");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3023,7 +3023,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"importedPackages",
         		lv_importedPackages_30_0, 
-        		"ImportedPackage");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ImportedPackage");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3057,7 +3057,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"requiredBundles",
         		lv_requiredBundles_35_0, 
-        		"RequiredBundle");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.RequiredBundle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3079,7 +3079,7 @@ ruleManifestFile returns [EObject current=null]
        			$current, 
        			"requiredBundles",
         		lv_requiredBundles_37_0, 
-        		"RequiredBundle");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.RequiredBundle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3152,7 +3152,7 @@ rulePluginXMLFile returns [EObject current=null]
        			$current, 
        			"extensions",
         		lv_extensions_6_0, 
-        		"Extension");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Extension");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3174,7 +3174,7 @@ rulePluginXMLFile returns [EObject current=null]
        			$current, 
        			"extensions",
         		lv_extensions_8_0, 
-        		"Extension");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Extension");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3332,7 +3332,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_3_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3376,7 +3376,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"vmArgs",
         		lv_vmArgs_8_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3414,7 +3414,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"programArgs",
         		lv_programArgs_11_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3452,7 +3452,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"productName",
         		lv_productName_14_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3490,7 +3490,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"application",
         		lv_application_17_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3528,7 +3528,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"version",
         		lv_version_20_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3572,7 +3572,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"startconfigurations",
         		lv_startconfigurations_24_0, 
-        		"ProductStartConfig");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ProductStartConfig");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3594,7 +3594,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"startconfigurations",
         		lv_startconfigurations_26_0, 
-        		"ProductStartConfig");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ProductStartConfig");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3628,7 +3628,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"features",
         		lv_features_31_0, 
-        		"ProductFeature");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ProductFeature");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3650,7 +3650,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"features",
         		lv_features_33_0, 
-        		"ProductFeature");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.ProductFeature");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3680,7 +3680,7 @@ ruleProductFileFeaturebase returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_37_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3730,7 +3730,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"featureid",
         		lv_featureid_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3774,7 +3774,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"version",
         		lv_version_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3812,7 +3812,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"featurename",
         		lv_featurename_10_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3850,7 +3850,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"vendor",
         		lv_vendor_13_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3887,7 +3887,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_16_0, 
-        		"LinkedString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.LinkedString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3925,7 +3925,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"copyright",
         		lv_copyright_19_0, 
-        		"LinkedString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.LinkedString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3963,7 +3963,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"license",
         		lv_license_22_0, 
-        		"LinkedString");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.LinkedString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4016,7 +4016,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"license_feature",
         		lv_license_feature_26_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4053,7 +4053,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"license_feature_version",
         		lv_license_feature_version_29_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4113,7 +4113,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"plugins",
         		lv_plugins_33_0, 
-        		"FeaturePlugin");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.FeaturePlugin");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4135,7 +4135,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"plugins",
         		lv_plugins_35_0, 
-        		"FeaturePlugin");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.FeaturePlugin");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4169,7 +4169,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"requiredfeatures",
         		lv_requiredfeatures_40_0, 
-        		"RequiredFeature");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.RequiredFeature");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4191,7 +4191,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"requiredfeatures",
         		lv_requiredfeatures_42_0, 
-        		"RequiredFeature");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.RequiredFeature");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4225,7 +4225,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"includedfeatures",
         		lv_includedfeatures_47_0, 
-        		"IncludedFeature");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.IncludedFeature");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4247,7 +4247,7 @@ ruleFeatureFile returns [EObject current=null]
        			$current, 
        			"includedfeatures",
         		lv_includedfeatures_49_0, 
-        		"IncludedFeature");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.IncludedFeature");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4301,7 +4301,7 @@ ruleImportedPackage returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4338,7 +4338,7 @@ ruleImportedPackage returns [EObject current=null]
        			$current, 
        			"minVersion",
         		lv_minVersion_4_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4360,7 +4360,7 @@ ruleImportedPackage returns [EObject current=null]
        			$current, 
        			"maxVersion",
         		lv_maxVersion_6_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4402,7 +4402,7 @@ ruleImportedPackage returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_10_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4448,7 +4448,7 @@ ruleExportedPackage returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4465,7 +4465,7 @@ ruleExportedPackage returns [EObject current=null]
        			$current, 
        			"version",
         		lv_version_2_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4487,7 +4487,7 @@ ruleExportedPackage returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_4_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4533,7 +4533,7 @@ ruleExtension returns [EObject current=null]
        			$current, 
        			"point",
         		lv_point_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4563,7 +4563,7 @@ ruleExtension returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4592,7 +4592,7 @@ ruleExtension returns [EObject current=null]
        			$current, 
        			"elements",
         		lv_elements_9_0, 
-        		"Element");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Element");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4614,7 +4614,7 @@ ruleExtension returns [EObject current=null]
        			$current, 
        			"elements",
         		lv_elements_11_0, 
-        		"Element");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Element");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4644,7 +4644,7 @@ ruleExtension returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_15_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4690,7 +4690,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4723,7 +4723,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"attributes",
         		lv_attributes_6_0, 
-        		"Attribute");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Attribute");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4745,7 +4745,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"attributes",
         		lv_attributes_8_0, 
-        		"Attribute");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Attribute");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4779,7 +4779,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"children",
         		lv_children_13_0, 
-        		"Element");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Element");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4801,7 +4801,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"children",
         		lv_children_15_0, 
-        		"Element");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Element");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4859,7 +4859,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4881,7 +4881,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4930,7 +4930,7 @@ ruleRequiredBundle returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4967,7 +4967,7 @@ ruleRequiredBundle returns [EObject current=null]
        			$current, 
        			"minVersion",
         		lv_minVersion_4_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4989,7 +4989,7 @@ ruleRequiredBundle returns [EObject current=null]
        			$current, 
        			"maxVersion",
         		lv_maxVersion_6_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5031,7 +5031,7 @@ ruleRequiredBundle returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_10_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5081,7 +5081,7 @@ ruleLinkedString returns [EObject current=null]
        			$current, 
        			"weburl",
         		lv_weburl_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5103,7 +5103,7 @@ ruleLinkedString returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5182,7 +5182,7 @@ ruleFeaturePlugin returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_3_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5203,7 +5203,7 @@ ruleFeaturePlugin returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_5_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5249,7 +5249,7 @@ ruleRequiredFeature returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5266,7 +5266,7 @@ ruleRequiredFeature returns [EObject current=null]
        			$current, 
        			"match",
         		lv_match_2_0, 
-        		"MatchRule");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.MatchRule");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5284,7 +5284,7 @@ ruleRequiredFeature returns [EObject current=null]
        			$current, 
        			"version",
         		lv_version_3_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5306,7 +5306,7 @@ ruleRequiredFeature returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_5_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5352,7 +5352,7 @@ ruleIncludedFeature returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5369,7 +5369,7 @@ ruleIncludedFeature returns [EObject current=null]
        			$current, 
        			"version",
         		lv_version_2_0, 
-        		"Version");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5391,7 +5391,7 @@ ruleIncludedFeature returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_4_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5437,7 +5437,7 @@ ruleProductFeature returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5455,7 +5455,7 @@ ruleProductFeature returns [EObject current=null]
        			$current, 
        			"version",
         		lv_version_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5476,7 +5476,7 @@ ruleProductFeature returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_4_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5522,7 +5522,7 @@ ruleProductStartConfig returns [EObject current=null]
        			$current, 
        			"id",
         		lv_id_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -5560,7 +5560,7 @@ ruleProductStartConfig returns [EObject current=null]
        			$current, 
        			"startLevel",
         		lv_startLevel_4_1, 
-        		"SIGNED_INT");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.SIGNED_INT");
 	    }
 
     |		lv_startLevel_4_2=RULE_INT
@@ -5575,7 +5575,7 @@ ruleProductStartConfig returns [EObject current=null]
        			$current, 
        			"startLevel",
         		lv_startLevel_4_2, 
-        		"INT");
+        		"org.eclipse.xtext.common.Terminals.INT");
 	    }
 
 )
@@ -5598,7 +5598,7 @@ ruleProductStartConfig returns [EObject current=null]
        			$current, 
        			"excludeExpression",
         		lv_excludeExpression_6_0, 
-        		"BooleanExpression");
+        		"org.eclipse.fx.ide.rrobot.dsl.RTask.BooleanExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 

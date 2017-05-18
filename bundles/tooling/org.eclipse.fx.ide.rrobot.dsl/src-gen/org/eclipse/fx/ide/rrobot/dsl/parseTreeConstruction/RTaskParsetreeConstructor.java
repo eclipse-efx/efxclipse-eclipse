@@ -74,14 +74,17 @@ protected class ThisRootNode extends RootToken {
 
 /************ begin Rule RobotTask ****************
  *
- * RobotTask returns task::RobotTask:
- * 	{task::RobotTask} "RobotTask" "{" ("variables" "=" "{" variables+=Variable ("," variables+=Variable)* "}")?
- * 	("projects" "=" "{" projects+=GenericProject ("," projects+=GenericProject)* "}")? "}";
+ * RobotTask task::RobotTask:
+ * 	{task::RobotTask}
+ * 	'RobotTask'
+ * 	'{' ('variables' '=' '{' variables+=Variable ("," variables+=Variable)* '}')? ('projects' '=' '{'
+ * 	projects+=GenericProject ("," projects+=GenericProject)* '}')?
+ * 	'}';
  *
  **/
 
-// {task::RobotTask} "RobotTask" "{" ("variables" "=" "{" variables+=Variable ("," variables+=Variable)* "}")? ("projects"
-// "=" "{" projects+=GenericProject ("," projects+=GenericProject)* "}")? "}"
+// {task::RobotTask} 'RobotTask' '{' ('variables' '=' '{' variables+=Variable ("," variables+=Variable)* '}')? ('projects'
+// '=' '{' projects+=GenericProject ("," projects+=GenericProject)* '}')? '}'
 protected class RobotTask_Group extends GroupToken {
 	
 	public RobotTask_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -136,7 +139,7 @@ protected class RobotTask_RobotTaskAction_0 extends ActionToken  {
 	}
 }
 
-// "RobotTask"
+// 'RobotTask'
 protected class RobotTask_RobotTaskKeyword_1 extends KeywordToken  {
 	
 	public RobotTask_RobotTaskKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -158,7 +161,7 @@ protected class RobotTask_RobotTaskKeyword_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class RobotTask_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 	
 	public RobotTask_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -180,7 +183,7 @@ protected class RobotTask_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 
 }
 
-// ("variables" "=" "{" variables+=Variable ("," variables+=Variable)* "}")?
+// ('variables' '=' '{' variables+=Variable ("," variables+=Variable)* '}')?
 protected class RobotTask_Group_3 extends GroupToken {
 	
 	public RobotTask_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -202,7 +205,7 @@ protected class RobotTask_Group_3 extends GroupToken {
 
 }
 
-// "variables"
+// 'variables'
 protected class RobotTask_VariablesKeyword_3_0 extends KeywordToken  {
 	
 	public RobotTask_VariablesKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -224,7 +227,7 @@ protected class RobotTask_VariablesKeyword_3_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class RobotTask_EqualsSignKeyword_3_1 extends KeywordToken  {
 	
 	public RobotTask_EqualsSignKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -246,7 +249,7 @@ protected class RobotTask_EqualsSignKeyword_3_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class RobotTask_LeftCurlyBracketKeyword_3_2 extends KeywordToken  {
 	
 	public RobotTask_LeftCurlyBracketKeyword_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -406,7 +409,7 @@ protected class RobotTask_VariablesAssignment_3_4_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class RobotTask_RightCurlyBracketKeyword_3_5 extends KeywordToken  {
 	
 	public RobotTask_RightCurlyBracketKeyword_3_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -430,7 +433,7 @@ protected class RobotTask_RightCurlyBracketKeyword_3_5 extends KeywordToken  {
 }
 
 
-// ("projects" "=" "{" projects+=GenericProject ("," projects+=GenericProject)* "}")?
+// ('projects' '=' '{' projects+=GenericProject ("," projects+=GenericProject)* '}')?
 protected class RobotTask_Group_4 extends GroupToken {
 	
 	public RobotTask_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -452,7 +455,7 @@ protected class RobotTask_Group_4 extends GroupToken {
 
 }
 
-// "projects"
+// 'projects'
 protected class RobotTask_ProjectsKeyword_4_0 extends KeywordToken  {
 	
 	public RobotTask_ProjectsKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -475,7 +478,7 @@ protected class RobotTask_ProjectsKeyword_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class RobotTask_EqualsSignKeyword_4_1 extends KeywordToken  {
 	
 	public RobotTask_EqualsSignKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -497,7 +500,7 @@ protected class RobotTask_EqualsSignKeyword_4_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class RobotTask_LeftCurlyBracketKeyword_4_2 extends KeywordToken  {
 	
 	public RobotTask_LeftCurlyBracketKeyword_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -657,7 +660,7 @@ protected class RobotTask_ProjectsAssignment_4_4_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class RobotTask_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 	
 	public RobotTask_RightCurlyBracketKeyword_4_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -681,7 +684,7 @@ protected class RobotTask_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 }
 
 
-// "}"
+// '}'
 protected class RobotTask_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public RobotTask_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -711,12 +714,13 @@ protected class RobotTask_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 /************ begin Rule Variable ****************
  *
- * Variable returns task::Variable:
- * 	description=SL_DOC type=Type key=STRING ("default" defaultValue=STRING)?;
+ * Variable task::Variable:
+ * 	description=SL_DOC
+ * 	type=Type key=STRING ('default' defaultValue=STRING)?;
  *
  **/
 
-// description=SL_DOC type=Type key=STRING ("default" defaultValue=STRING)?
+// description=SL_DOC type=Type key=STRING ('default' defaultValue=STRING)?
 protected class Variable_Group extends GroupToken {
 	
 	public Variable_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -847,7 +851,7 @@ protected class Variable_KeyAssignment_2 extends AssignmentToken  {
 
 }
 
-// ("default" defaultValue=STRING)?
+// ('default' defaultValue=STRING)?
 protected class Variable_Group_3 extends GroupToken {
 	
 	public Variable_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -869,7 +873,7 @@ protected class Variable_Group_3 extends GroupToken {
 
 }
 
-// "default"
+// 'default'
 protected class Variable_DefaultKeyword_3_0 extends KeywordToken  {
 	
 	public Variable_DefaultKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -932,7 +936,7 @@ protected class Variable_DefaultValueAssignment_3_1 extends AssignmentToken  {
 
 /************ begin Rule GenericProject ****************
  *
- * GenericProject returns task::Project:
+ * GenericProject task::Project:
  * 	Project | BundleProject | FeatureProject;
  *
  **/
@@ -1084,7 +1088,7 @@ protected class GenericProject_FeatureProjectParserRuleCall_2 extends RuleCallTo
 
 /************ begin Rule Resource ****************
  *
- * Resource returns task::Resource:
+ * Resource task::Resource:
  * 	Folder | TemplatedFile | DataFile | URLFile | DynamicFile | ManifestFile | ProductFileFeaturebase | PluginXMLFile |
  * 	ComponentDefinitionFile;
  *
@@ -1466,14 +1470,16 @@ protected class Resource_ComponentDefinitionFileParserRuleCall_8 extends RuleCal
 
 /************ begin Rule Project ****************
  *
- * Project returns task::Project:
- * 	{task::Project} "SimpleProject" name=EString "{" ("resources" "=" "{" resources+=Resource ("," resources+=Resource)*
- * 	"}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?;
+ * Project task::Project:
+ * 	{task::Project}
+ * 	'SimpleProject' name=EString
+ * 	'{' ('resources' '=' '{' resources+=Resource ("," resources+=Resource)* '}')?
+ * 	'}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {task::Project} "SimpleProject" name=EString "{" ("resources" "=" "{" resources+=Resource ("," resources+=Resource)*
-// "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
+// {task::Project} 'SimpleProject' name=EString '{' ('resources' '=' '{' resources+=Resource ("," resources+=Resource)*
+// '}')? '}' ('excluded-if' excludeExpression=BooleanExpression)?
 protected class Project_Group extends GroupToken {
 	
 	public Project_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1529,7 +1535,7 @@ protected class Project_ProjectAction_0 extends ActionToken  {
 	}
 }
 
-// "SimpleProject"
+// 'SimpleProject'
 protected class Project_SimpleProjectKeyword_1 extends KeywordToken  {
 	
 	public Project_SimpleProjectKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1585,7 +1591,7 @@ protected class Project_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class Project_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public Project_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1607,7 +1613,7 @@ protected class Project_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 
 }
 
-// ("resources" "=" "{" resources+=Resource ("," resources+=Resource)* "}")?
+// ('resources' '=' '{' resources+=Resource ("," resources+=Resource)* '}')?
 protected class Project_Group_4 extends GroupToken {
 	
 	public Project_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1629,7 +1635,7 @@ protected class Project_Group_4 extends GroupToken {
 
 }
 
-// "resources"
+// 'resources'
 protected class Project_ResourcesKeyword_4_0 extends KeywordToken  {
 	
 	public Project_ResourcesKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1651,7 +1657,7 @@ protected class Project_ResourcesKeyword_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class Project_EqualsSignKeyword_4_1 extends KeywordToken  {
 	
 	public Project_EqualsSignKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1673,7 +1679,7 @@ protected class Project_EqualsSignKeyword_4_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class Project_LeftCurlyBracketKeyword_4_2 extends KeywordToken  {
 	
 	public Project_LeftCurlyBracketKeyword_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1833,7 +1839,7 @@ protected class Project_ResourcesAssignment_4_4_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class Project_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 	
 	public Project_RightCurlyBracketKeyword_4_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1857,7 +1863,7 @@ protected class Project_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 }
 
 
-// "}"
+// '}'
 protected class Project_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public Project_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1880,7 +1886,7 @@ protected class Project_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class Project_Group_6 extends GroupToken {
 	
 	public Project_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1902,7 +1908,7 @@ protected class Project_Group_6 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class Project_ExcludedIfKeyword_6_0 extends KeywordToken  {
 	
 	public Project_ExcludedIfKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1978,12 +1984,16 @@ protected class Project_ExcludeExpressionAssignment_6_1 extends AssignmentToken 
 
 /************ begin Rule Folder ****************
  *
- * Folder returns task::Folder:
- * 	{task::Folder} "Folder" name=EString ("{" "children" "=" "{" children+=Resource ("," children+=Resource)* "}" "}")?;
+ * Folder task::Folder:
+ * 	{task::Folder}
+ * 	'Folder'
+ * 	name=EString ('{'
+ * 	'children' '=' '{' children+=Resource ("," children+=Resource)* '}'
+ * 	'}')?;
  *
  **/
 
-// {task::Folder} "Folder" name=EString ("{" "children" "=" "{" children+=Resource ("," children+=Resource)* "}" "}")?
+// {task::Folder} 'Folder' name=EString ('{' 'children' '=' '{' children+=Resource ("," children+=Resource)* '}' '}')?
 protected class Folder_Group extends GroupToken {
 	
 	public Folder_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2039,7 +2049,7 @@ protected class Folder_FolderAction_0 extends ActionToken  {
 	}
 }
 
-// "Folder"
+// 'Folder'
 protected class Folder_FolderKeyword_1 extends KeywordToken  {
 	
 	public Folder_FolderKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2095,7 +2105,7 @@ protected class Folder_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// ("{" "children" "=" "{" children+=Resource ("," children+=Resource)* "}" "}")?
+// ('{' 'children' '=' '{' children+=Resource ("," children+=Resource)* '}' '}')?
 protected class Folder_Group_3 extends GroupToken {
 	
 	public Folder_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2117,7 +2127,7 @@ protected class Folder_Group_3 extends GroupToken {
 
 }
 
-// "{"
+// '{'
 protected class Folder_LeftCurlyBracketKeyword_3_0 extends KeywordToken  {
 	
 	public Folder_LeftCurlyBracketKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2139,7 +2149,7 @@ protected class Folder_LeftCurlyBracketKeyword_3_0 extends KeywordToken  {
 
 }
 
-// "children"
+// 'children'
 protected class Folder_ChildrenKeyword_3_1 extends KeywordToken  {
 	
 	public Folder_ChildrenKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2161,7 +2171,7 @@ protected class Folder_ChildrenKeyword_3_1 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class Folder_EqualsSignKeyword_3_2 extends KeywordToken  {
 	
 	public Folder_EqualsSignKeyword_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2183,7 +2193,7 @@ protected class Folder_EqualsSignKeyword_3_2 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class Folder_LeftCurlyBracketKeyword_3_3 extends KeywordToken  {
 	
 	public Folder_LeftCurlyBracketKeyword_3_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2343,7 +2353,7 @@ protected class Folder_ChildrenAssignment_3_5_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class Folder_RightCurlyBracketKeyword_3_6 extends KeywordToken  {
 	
 	public Folder_RightCurlyBracketKeyword_3_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2366,7 +2376,7 @@ protected class Folder_RightCurlyBracketKeyword_3_6 extends KeywordToken  {
 
 }
 
-// "}"
+// '}'
 protected class Folder_RightCurlyBracketKeyword_3_7 extends KeywordToken  {
 	
 	public Folder_RightCurlyBracketKeyword_3_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2395,13 +2405,16 @@ protected class Folder_RightCurlyBracketKeyword_3_7 extends KeywordToken  {
 
 /************ begin Rule TemplatedFile ****************
  *
- * TemplatedFile returns task::TemplatedFile:
- * 	{task::TemplatedFile} "TemplatedFile" name=EString "{" ("generatorType" "=" generatorType=EString)? "}" ("excluded-if"
- * 	excludeExpression=BooleanExpression)?;
+ * TemplatedFile task::TemplatedFile:
+ * 	{task::TemplatedFile}
+ * 	'TemplatedFile'
+ * 	name=EString
+ * 	'{' ('generatorType' '=' generatorType=EString)?
+ * 	'}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {task::TemplatedFile} "TemplatedFile" name=EString "{" ("generatorType" "=" generatorType=EString)? "}" ("excluded-if"
+// {task::TemplatedFile} 'TemplatedFile' name=EString '{' ('generatorType' '=' generatorType=EString)? '}' ('excluded-if'
 // excludeExpression=BooleanExpression)?
 protected class TemplatedFile_Group extends GroupToken {
 	
@@ -2458,7 +2471,7 @@ protected class TemplatedFile_TemplatedFileAction_0 extends ActionToken  {
 	}
 }
 
-// "TemplatedFile"
+// 'TemplatedFile'
 protected class TemplatedFile_TemplatedFileKeyword_1 extends KeywordToken  {
 	
 	public TemplatedFile_TemplatedFileKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2514,7 +2527,7 @@ protected class TemplatedFile_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class TemplatedFile_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public TemplatedFile_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2536,7 +2549,7 @@ protected class TemplatedFile_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 
 }
 
-// ("generatorType" "=" generatorType=EString)?
+// ('generatorType' '=' generatorType=EString)?
 protected class TemplatedFile_Group_4 extends GroupToken {
 	
 	public TemplatedFile_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2558,7 +2571,7 @@ protected class TemplatedFile_Group_4 extends GroupToken {
 
 }
 
-// "generatorType"
+// 'generatorType'
 protected class TemplatedFile_GeneratorTypeKeyword_4_0 extends KeywordToken  {
 	
 	public TemplatedFile_GeneratorTypeKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2580,7 +2593,7 @@ protected class TemplatedFile_GeneratorTypeKeyword_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class TemplatedFile_EqualsSignKeyword_4_1 extends KeywordToken  {
 	
 	public TemplatedFile_EqualsSignKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2637,7 +2650,7 @@ protected class TemplatedFile_GeneratorTypeAssignment_4_2 extends AssignmentToke
 }
 
 
-// "}"
+// '}'
 protected class TemplatedFile_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public TemplatedFile_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2660,7 +2673,7 @@ protected class TemplatedFile_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class TemplatedFile_Group_6 extends GroupToken {
 	
 	public TemplatedFile_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2682,7 +2695,7 @@ protected class TemplatedFile_Group_6 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class TemplatedFile_ExcludedIfKeyword_6_0 extends KeywordToken  {
 	
 	public TemplatedFile_ExcludedIfKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2757,13 +2770,16 @@ protected class TemplatedFile_ExcludeExpressionAssignment_6_1 extends Assignment
 
 /************ begin Rule DataFile ****************
  *
- * DataFile returns task::DataFile:
- * 	{task::DataFile} "DataFile" name=EString "{" ("content" "=" content=EByteArray)? "}" ("excluded-if"
- * 	excludeExpression=BooleanExpression)?;
+ * DataFile task::DataFile:
+ * 	{task::DataFile}
+ * 	'DataFile'
+ * 	name=EString
+ * 	'{' ('content' '=' content=EByteArray)?
+ * 	'}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {task::DataFile} "DataFile" name=EString "{" ("content" "=" content=EByteArray)? "}" ("excluded-if"
+// {task::DataFile} 'DataFile' name=EString '{' ('content' '=' content=EByteArray)? '}' ('excluded-if'
 // excludeExpression=BooleanExpression)?
 protected class DataFile_Group extends GroupToken {
 	
@@ -2820,7 +2836,7 @@ protected class DataFile_DataFileAction_0 extends ActionToken  {
 	}
 }
 
-// "DataFile"
+// 'DataFile'
 protected class DataFile_DataFileKeyword_1 extends KeywordToken  {
 	
 	public DataFile_DataFileKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2876,7 +2892,7 @@ protected class DataFile_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class DataFile_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public DataFile_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2898,7 +2914,7 @@ protected class DataFile_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 
 }
 
-// ("content" "=" content=EByteArray)?
+// ('content' '=' content=EByteArray)?
 protected class DataFile_Group_4 extends GroupToken {
 	
 	public DataFile_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2920,7 +2936,7 @@ protected class DataFile_Group_4 extends GroupToken {
 
 }
 
-// "content"
+// 'content'
 protected class DataFile_ContentKeyword_4_0 extends KeywordToken  {
 	
 	public DataFile_ContentKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2942,7 +2958,7 @@ protected class DataFile_ContentKeyword_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class DataFile_EqualsSignKeyword_4_1 extends KeywordToken  {
 	
 	public DataFile_EqualsSignKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2999,7 +3015,7 @@ protected class DataFile_ContentAssignment_4_2 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class DataFile_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public DataFile_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3022,7 +3038,7 @@ protected class DataFile_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class DataFile_Group_6 extends GroupToken {
 	
 	public DataFile_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3044,7 +3060,7 @@ protected class DataFile_Group_6 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class DataFile_ExcludedIfKeyword_6_0 extends KeywordToken  {
 	
 	public DataFile_ExcludedIfKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3119,12 +3135,14 @@ protected class DataFile_ExcludeExpressionAssignment_6_1 extends AssignmentToken
 
 /************ begin Rule URLFile ****************
  *
- * URLFile returns task::URLFile:
- * 	{task::URLFile} "URLFile" name=EString uri=EString ("excluded-if" excludeExpression=BooleanExpression)?;
+ * URLFile task::URLFile:
+ * 	{task::URLFile}
+ * 	'URLFile'
+ * 	name=EString uri=EString ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {task::URLFile} "URLFile" name=EString uri=EString ("excluded-if" excludeExpression=BooleanExpression)?
+// {task::URLFile} 'URLFile' name=EString uri=EString ('excluded-if' excludeExpression=BooleanExpression)?
 protected class URLFile_Group extends GroupToken {
 	
 	public URLFile_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3180,7 +3198,7 @@ protected class URLFile_URLFileAction_0 extends ActionToken  {
 	}
 }
 
-// "URLFile"
+// 'URLFile'
 protected class URLFile_URLFileKeyword_1 extends KeywordToken  {
 	
 	public URLFile_URLFileKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3270,7 +3288,7 @@ protected class URLFile_UriAssignment_3 extends AssignmentToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class URLFile_Group_4 extends GroupToken {
 	
 	public URLFile_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3292,7 +3310,7 @@ protected class URLFile_Group_4 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class URLFile_ExcludedIfKeyword_4_0 extends KeywordToken  {
 	
 	public URLFile_ExcludedIfKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3367,14 +3385,15 @@ protected class URLFile_ExcludeExpressionAssignment_4_1 extends AssignmentToken 
 
 /************ begin Rule DynamicFile ****************
  *
- * DynamicFile returns task::DynamicFile:
- * 	{task::DynamicFile} "DynamicFile" name=EString "generated-from" executionURI=STRING "by" type=STRING ("{"
- * 	variables+=Variable ("," variables+=Variable)* "}")? ("excluded-if" excludeExpression=BooleanExpression)?;
+ * DynamicFile task::DynamicFile:
+ * 	{task::DynamicFile}
+ * 	'DynamicFile' name=EString 'generated-from' executionURI=STRING 'by' type=STRING ('{' variables+=Variable (','
+ * 	variables+=Variable)* '}')? ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {task::DynamicFile} "DynamicFile" name=EString "generated-from" executionURI=STRING "by" type=STRING ("{"
-// variables+=Variable ("," variables+=Variable)* "}")? ("excluded-if" excludeExpression=BooleanExpression)?
+// {task::DynamicFile} 'DynamicFile' name=EString 'generated-from' executionURI=STRING 'by' type=STRING ('{'
+// variables+=Variable (',' variables+=Variable)* '}')? ('excluded-if' excludeExpression=BooleanExpression)?
 protected class DynamicFile_Group extends GroupToken {
 	
 	public DynamicFile_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3431,7 +3450,7 @@ protected class DynamicFile_DynamicFileAction_0 extends ActionToken  {
 	}
 }
 
-// "DynamicFile"
+// 'DynamicFile'
 protected class DynamicFile_DynamicFileKeyword_1 extends KeywordToken  {
 	
 	public DynamicFile_DynamicFileKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3487,7 +3506,7 @@ protected class DynamicFile_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "generated-from"
+// 'generated-from'
 protected class DynamicFile_GeneratedFromKeyword_3 extends KeywordToken  {
 	
 	public DynamicFile_GeneratedFromKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3543,7 +3562,7 @@ protected class DynamicFile_ExecutionURIAssignment_4 extends AssignmentToken  {
 
 }
 
-// "by"
+// 'by'
 protected class DynamicFile_ByKeyword_5 extends KeywordToken  {
 	
 	public DynamicFile_ByKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3599,7 +3618,7 @@ protected class DynamicFile_TypeAssignment_6 extends AssignmentToken  {
 
 }
 
-// ("{" variables+=Variable ("," variables+=Variable)* "}")?
+// ('{' variables+=Variable (',' variables+=Variable)* '}')?
 protected class DynamicFile_Group_7 extends GroupToken {
 	
 	public DynamicFile_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3621,7 +3640,7 @@ protected class DynamicFile_Group_7 extends GroupToken {
 
 }
 
-// "{"
+// '{'
 protected class DynamicFile_LeftCurlyBracketKeyword_7_0 extends KeywordToken  {
 	
 	public DynamicFile_LeftCurlyBracketKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3689,7 +3708,7 @@ protected class DynamicFile_VariablesAssignment_7_1 extends AssignmentToken  {
 	}	
 }
 
-// ("," variables+=Variable)*
+// (',' variables+=Variable)*
 protected class DynamicFile_Group_7_2 extends GroupToken {
 	
 	public DynamicFile_Group_7_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3711,7 +3730,7 @@ protected class DynamicFile_Group_7_2 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class DynamicFile_CommaKeyword_7_2_0 extends KeywordToken  {
 	
 	public DynamicFile_CommaKeyword_7_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3781,7 +3800,7 @@ protected class DynamicFile_VariablesAssignment_7_2_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class DynamicFile_RightCurlyBracketKeyword_7_3 extends KeywordToken  {
 	
 	public DynamicFile_RightCurlyBracketKeyword_7_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3805,7 +3824,7 @@ protected class DynamicFile_RightCurlyBracketKeyword_7_3 extends KeywordToken  {
 }
 
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class DynamicFile_Group_8 extends GroupToken {
 	
 	public DynamicFile_Group_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3827,7 +3846,7 @@ protected class DynamicFile_Group_8 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class DynamicFile_ExcludedIfKeyword_8_0 extends KeywordToken  {
 	
 	public DynamicFile_ExcludedIfKeyword_8_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3903,16 +3922,20 @@ protected class DynamicFile_ExcludeExpressionAssignment_8_1 extends AssignmentTo
 
 /************ begin Rule ComponentDefinitionFile ****************
  *
- * ComponentDefinitionFile returns bundle::ComponentDefinitionFile:
- * 	{bundle::ComponentDefinitionFile} "ComponentDefinition" name=EString "{" ("name" "=" id=EString & "class" "="
- * 	componentClass=EString) "services" "=" "{" serviceInterfaceList+=EString ("," serviceInterfaceList+=EString)* "}"
- * 	"references" "=" "{" referenceList+=ComponentReference ("," referenceList+=ComponentReference)* "}" "}";
+ * ComponentDefinitionFile bundle::ComponentDefinitionFile:
+ * 	{bundle::ComponentDefinitionFile}
+ * 	'ComponentDefinition' name=EString '{' ('name' '=' id=EString
+ * 	&
+ * 	'class' '=' componentClass=EString)
+ * 	'services' '=' '{' serviceInterfaceList+=EString (',' serviceInterfaceList+=EString)* '}'
+ * 	'references' '=' '{' referenceList+=ComponentReference (',' referenceList+=ComponentReference)* '}'
+ * 	'}';
  *
  **/
 
-// {bundle::ComponentDefinitionFile} "ComponentDefinition" name=EString "{" ("name" "=" id=EString & "class" "="
-// componentClass=EString) "services" "=" "{" serviceInterfaceList+=EString ("," serviceInterfaceList+=EString)* "}"
-// "references" "=" "{" referenceList+=ComponentReference ("," referenceList+=ComponentReference)* "}" "}"
+// {bundle::ComponentDefinitionFile} 'ComponentDefinition' name=EString '{' ('name' '=' id=EString & 'class' '='
+// componentClass=EString) 'services' '=' '{' serviceInterfaceList+=EString (',' serviceInterfaceList+=EString)* '}'
+// 'references' '=' '{' referenceList+=ComponentReference (',' referenceList+=ComponentReference)* '}' '}'
 protected class ComponentDefinitionFile_Group extends GroupToken {
 	
 	public ComponentDefinitionFile_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3967,7 +3990,7 @@ protected class ComponentDefinitionFile_ComponentDefinitionFileAction_0 extends 
 	}
 }
 
-// "ComponentDefinition"
+// 'ComponentDefinition'
 protected class ComponentDefinitionFile_ComponentDefinitionKeyword_1 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_ComponentDefinitionKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4023,7 +4046,7 @@ protected class ComponentDefinitionFile_NameAssignment_2 extends AssignmentToken
 
 }
 
-// "{"
+// '{'
 protected class ComponentDefinitionFile_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4045,7 +4068,7 @@ protected class ComponentDefinitionFile_LeftCurlyBracketKeyword_3 extends Keywor
 
 }
 
-// "name" "=" id=EString & "class" "=" componentClass=EString
+// 'name' '=' id=EString & 'class' '=' componentClass=EString
 protected class ComponentDefinitionFile_UnorderedGroup_4 extends UnorderedGroupToken {
 	
 	public ComponentDefinitionFile_UnorderedGroup_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4067,7 +4090,7 @@ protected class ComponentDefinitionFile_UnorderedGroup_4 extends UnorderedGroupT
 
 }
 
-// "name" "=" id=EString
+// 'name' '=' id=EString
 protected class ComponentDefinitionFile_Group_4_0 extends GroupToken {
 	
 	public ComponentDefinitionFile_Group_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4089,7 +4112,7 @@ protected class ComponentDefinitionFile_Group_4_0 extends GroupToken {
 
 }
 
-// "name"
+// 'name'
 protected class ComponentDefinitionFile_NameKeyword_4_0_0 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_NameKeyword_4_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4111,7 +4134,7 @@ protected class ComponentDefinitionFile_NameKeyword_4_0_0 extends KeywordToken  
 
 }
 
-// "="
+// '='
 protected class ComponentDefinitionFile_EqualsSignKeyword_4_0_1 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_EqualsSignKeyword_4_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4168,7 +4191,7 @@ protected class ComponentDefinitionFile_IdAssignment_4_0_2 extends AssignmentTok
 }
 
 
-// "class" "=" componentClass=EString
+// 'class' '=' componentClass=EString
 protected class ComponentDefinitionFile_Group_4_1 extends GroupToken {
 	
 	public ComponentDefinitionFile_Group_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4190,7 +4213,7 @@ protected class ComponentDefinitionFile_Group_4_1 extends GroupToken {
 
 }
 
-// "class"
+// 'class'
 protected class ComponentDefinitionFile_ClassKeyword_4_1_0 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_ClassKeyword_4_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4212,7 +4235,7 @@ protected class ComponentDefinitionFile_ClassKeyword_4_1_0 extends KeywordToken 
 
 }
 
-// "="
+// '='
 protected class ComponentDefinitionFile_EqualsSignKeyword_4_1_1 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_EqualsSignKeyword_4_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4270,7 +4293,7 @@ protected class ComponentDefinitionFile_ComponentClassAssignment_4_1_2 extends A
 
 
 
-// "services"
+// 'services'
 protected class ComponentDefinitionFile_ServicesKeyword_5 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_ServicesKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4292,7 +4315,7 @@ protected class ComponentDefinitionFile_ServicesKeyword_5 extends KeywordToken  
 
 }
 
-// "="
+// '='
 protected class ComponentDefinitionFile_EqualsSignKeyword_6 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_EqualsSignKeyword_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4314,7 +4337,7 @@ protected class ComponentDefinitionFile_EqualsSignKeyword_6 extends KeywordToken
 
 }
 
-// "{"
+// '{'
 protected class ComponentDefinitionFile_LeftCurlyBracketKeyword_7 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_LeftCurlyBracketKeyword_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4370,7 +4393,7 @@ protected class ComponentDefinitionFile_ServiceInterfaceListAssignment_8 extends
 
 }
 
-// ("," serviceInterfaceList+=EString)*
+// (',' serviceInterfaceList+=EString)*
 protected class ComponentDefinitionFile_Group_9 extends GroupToken {
 	
 	public ComponentDefinitionFile_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4392,7 +4415,7 @@ protected class ComponentDefinitionFile_Group_9 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ComponentDefinitionFile_CommaKeyword_9_0 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_CommaKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4450,7 +4473,7 @@ protected class ComponentDefinitionFile_ServiceInterfaceListAssignment_9_1 exten
 }
 
 
-// "}"
+// '}'
 protected class ComponentDefinitionFile_RightCurlyBracketKeyword_10 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_RightCurlyBracketKeyword_10(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4473,7 +4496,7 @@ protected class ComponentDefinitionFile_RightCurlyBracketKeyword_10 extends Keyw
 
 }
 
-// "references"
+// 'references'
 protected class ComponentDefinitionFile_ReferencesKeyword_11 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_ReferencesKeyword_11(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4495,7 +4518,7 @@ protected class ComponentDefinitionFile_ReferencesKeyword_11 extends KeywordToke
 
 }
 
-// "="
+// '='
 protected class ComponentDefinitionFile_EqualsSignKeyword_12 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_EqualsSignKeyword_12(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4517,7 +4540,7 @@ protected class ComponentDefinitionFile_EqualsSignKeyword_12 extends KeywordToke
 
 }
 
-// "{"
+// '{'
 protected class ComponentDefinitionFile_LeftCurlyBracketKeyword_13 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_LeftCurlyBracketKeyword_13(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4585,7 +4608,7 @@ protected class ComponentDefinitionFile_ReferenceListAssignment_14 extends Assig
 	}	
 }
 
-// ("," referenceList+=ComponentReference)*
+// (',' referenceList+=ComponentReference)*
 protected class ComponentDefinitionFile_Group_15 extends GroupToken {
 	
 	public ComponentDefinitionFile_Group_15(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4607,7 +4630,7 @@ protected class ComponentDefinitionFile_Group_15 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ComponentDefinitionFile_CommaKeyword_15_0 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_CommaKeyword_15_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4677,7 +4700,7 @@ protected class ComponentDefinitionFile_ReferenceListAssignment_15_1 extends Ass
 }
 
 
-// "}"
+// '}'
 protected class ComponentDefinitionFile_RightCurlyBracketKeyword_16 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_RightCurlyBracketKeyword_16(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4700,7 +4723,7 @@ protected class ComponentDefinitionFile_RightCurlyBracketKeyword_16 extends Keyw
 
 }
 
-// "}"
+// '}'
 protected class ComponentDefinitionFile_RightCurlyBracketKeyword_17 extends KeywordToken  {
 	
 	public ComponentDefinitionFile_RightCurlyBracketKeyword_17(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4728,14 +4751,22 @@ protected class ComponentDefinitionFile_RightCurlyBracketKeyword_17 extends Keyw
 
 /************ begin Rule ComponentReference ****************
  *
- * ComponentReference returns bundle::ComponentReference:
- * 	{bundle::ComponentReference} name=ID "{" ("bind" "=" bind=ID & "unbind" "=" unbind=ID & "class" "=" typeName=EString &
- * 	"cardinality" "=" cardinality=Cardinality & "policy" "=" policy=Policy) "}";
+ * ComponentReference bundle::ComponentReference:
+ * 	{bundle::ComponentReference} name=ID '{' ('bind' '=' bind=ID
+ * 	&
+ * 	'unbind' '=' unbind=ID
+ * 	&
+ * 	'class' '=' typeName=EString
+ * 	&
+ * 	'cardinality' '=' cardinality=Cardinality
+ * 	&
+ * 	'policy' '=' policy=Policy)
+ * 	'}';
  *
  **/
 
-// {bundle::ComponentReference} name=ID "{" ("bind" "=" bind=ID & "unbind" "=" unbind=ID & "class" "=" typeName=EString &
-// "cardinality" "=" cardinality=Cardinality & "policy" "=" policy=Policy) "}"
+// {bundle::ComponentReference} name=ID '{' ('bind' '=' bind=ID & 'unbind' '=' unbind=ID & 'class' '=' typeName=EString &
+// 'cardinality' '=' cardinality=Cardinality & 'policy' '=' policy=Policy) '}'
 protected class ComponentReference_Group extends GroupToken {
 	
 	public ComponentReference_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4824,7 +4855,7 @@ protected class ComponentReference_NameAssignment_1 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class ComponentReference_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 	
 	public ComponentReference_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4846,8 +4877,8 @@ protected class ComponentReference_LeftCurlyBracketKeyword_2 extends KeywordToke
 
 }
 
-// "bind" "=" bind=ID & "unbind" "=" unbind=ID & "class" "=" typeName=EString & "cardinality" "=" cardinality=Cardinality &
-// "policy" "=" policy=Policy
+// 'bind' '=' bind=ID & 'unbind' '=' unbind=ID & 'class' '=' typeName=EString & 'cardinality' '=' cardinality=Cardinality &
+// 'policy' '=' policy=Policy
 protected class ComponentReference_UnorderedGroup_3 extends UnorderedGroupToken {
 	
 	public ComponentReference_UnorderedGroup_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4869,7 +4900,7 @@ protected class ComponentReference_UnorderedGroup_3 extends UnorderedGroupToken 
 
 }
 
-// "bind" "=" bind=ID
+// 'bind' '=' bind=ID
 protected class ComponentReference_Group_3_0 extends GroupToken {
 	
 	public ComponentReference_Group_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4891,7 +4922,7 @@ protected class ComponentReference_Group_3_0 extends GroupToken {
 
 }
 
-// "bind"
+// 'bind'
 protected class ComponentReference_BindKeyword_3_0_0 extends KeywordToken  {
 	
 	public ComponentReference_BindKeyword_3_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4913,7 +4944,7 @@ protected class ComponentReference_BindKeyword_3_0_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ComponentReference_EqualsSignKeyword_3_0_1 extends KeywordToken  {
 	
 	public ComponentReference_EqualsSignKeyword_3_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4970,7 +5001,7 @@ protected class ComponentReference_BindAssignment_3_0_2 extends AssignmentToken 
 }
 
 
-// "unbind" "=" unbind=ID
+// 'unbind' '=' unbind=ID
 protected class ComponentReference_Group_3_1 extends GroupToken {
 	
 	public ComponentReference_Group_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4992,7 +5023,7 @@ protected class ComponentReference_Group_3_1 extends GroupToken {
 
 }
 
-// "unbind"
+// 'unbind'
 protected class ComponentReference_UnbindKeyword_3_1_0 extends KeywordToken  {
 	
 	public ComponentReference_UnbindKeyword_3_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5014,7 +5045,7 @@ protected class ComponentReference_UnbindKeyword_3_1_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ComponentReference_EqualsSignKeyword_3_1_1 extends KeywordToken  {
 	
 	public ComponentReference_EqualsSignKeyword_3_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5071,7 +5102,7 @@ protected class ComponentReference_UnbindAssignment_3_1_2 extends AssignmentToke
 }
 
 
-// "class" "=" typeName=EString
+// 'class' '=' typeName=EString
 protected class ComponentReference_Group_3_2 extends GroupToken {
 	
 	public ComponentReference_Group_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5093,7 +5124,7 @@ protected class ComponentReference_Group_3_2 extends GroupToken {
 
 }
 
-// "class"
+// 'class'
 protected class ComponentReference_ClassKeyword_3_2_0 extends KeywordToken  {
 	
 	public ComponentReference_ClassKeyword_3_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5115,7 +5146,7 @@ protected class ComponentReference_ClassKeyword_3_2_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ComponentReference_EqualsSignKeyword_3_2_1 extends KeywordToken  {
 	
 	public ComponentReference_EqualsSignKeyword_3_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5172,7 +5203,7 @@ protected class ComponentReference_TypeNameAssignment_3_2_2 extends AssignmentTo
 }
 
 
-// "cardinality" "=" cardinality=Cardinality
+// 'cardinality' '=' cardinality=Cardinality
 protected class ComponentReference_Group_3_3 extends GroupToken {
 	
 	public ComponentReference_Group_3_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5194,7 +5225,7 @@ protected class ComponentReference_Group_3_3 extends GroupToken {
 
 }
 
-// "cardinality"
+// 'cardinality'
 protected class ComponentReference_CardinalityKeyword_3_3_0 extends KeywordToken  {
 	
 	public ComponentReference_CardinalityKeyword_3_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5216,7 +5247,7 @@ protected class ComponentReference_CardinalityKeyword_3_3_0 extends KeywordToken
 
 }
 
-// "="
+// '='
 protected class ComponentReference_EqualsSignKeyword_3_3_1 extends KeywordToken  {
 	
 	public ComponentReference_EqualsSignKeyword_3_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5273,7 +5304,7 @@ protected class ComponentReference_CardinalityAssignment_3_3_2 extends Assignmen
 }
 
 
-// "policy" "=" policy=Policy
+// 'policy' '=' policy=Policy
 protected class ComponentReference_Group_3_4 extends GroupToken {
 	
 	public ComponentReference_Group_3_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5295,7 +5326,7 @@ protected class ComponentReference_Group_3_4 extends GroupToken {
 
 }
 
-// "policy"
+// 'policy'
 protected class ComponentReference_PolicyKeyword_3_4_0 extends KeywordToken  {
 	
 	public ComponentReference_PolicyKeyword_3_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5317,7 +5348,7 @@ protected class ComponentReference_PolicyKeyword_3_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ComponentReference_EqualsSignKeyword_3_4_1 extends KeywordToken  {
 	
 	public ComponentReference_EqualsSignKeyword_3_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5375,7 +5406,7 @@ protected class ComponentReference_PolicyAssignment_3_4_2 extends AssignmentToke
 
 
 
-// "}"
+// '}'
 protected class ComponentReference_RightCurlyBracketKeyword_4 extends KeywordToken  {
 	
 	public ComponentReference_RightCurlyBracketKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5403,7 +5434,7 @@ protected class ComponentReference_RightCurlyBracketKeyword_4 extends KeywordTok
 
 /************ begin Rule BooleanExpression ****************
  *
- * BooleanExpression returns task::BooleanExpression:
+ * BooleanExpression task::BooleanExpression:
  * 	ReferencingBooleanExpression | InlineBooleanExpression;
  *
  **/
@@ -5517,12 +5548,12 @@ protected class BooleanExpression_InlineBooleanExpressionParserRuleCall_1 extend
 
 /************ begin Rule ReferencingBooleanExpression ****************
  *
- * ReferencingBooleanExpression returns task::ReferencingBooleanExpression:
- * 	executionURI=STRING "by" type=STRING;
+ * ReferencingBooleanExpression task::ReferencingBooleanExpression:
+ * 	executionURI=STRING 'by' type=STRING;
  *
  **/
 
-// executionURI=STRING "by" type=STRING
+// executionURI=STRING 'by' type=STRING
 protected class ReferencingBooleanExpression_Group extends GroupToken {
 	
 	public ReferencingBooleanExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5584,7 +5615,7 @@ protected class ReferencingBooleanExpression_ExecutionURIAssignment_0 extends As
 
 }
 
-// "by"
+// 'by'
 protected class ReferencingBooleanExpression_ByKeyword_1 extends KeywordToken  {
 	
 	public ReferencingBooleanExpression_ByKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5646,7 +5677,7 @@ protected class ReferencingBooleanExpression_TypeAssignment_2 extends Assignment
 
 /************ begin Rule InlineBooleanExpression ****************
  *
- * InlineBooleanExpression returns task::InlineBooleanExpression:
+ * InlineBooleanExpression task::InlineBooleanExpression:
  * 	type=STRING expression=INLINE_SCRIPT;
  *
  **/
@@ -5754,20 +5785,25 @@ protected class InlineBooleanExpression_ExpressionAssignment_1 extends Assignmen
 
 /************ begin Rule BundleProject ****************
  *
- * BundleProject returns bundle::BundleProject:
- * 	{bundle::BundleProject} "BundleProject" name=EString "{" ("manifest" "=" manifest=ManifestFile & "build" "="
- * 	buildProperties=BuildProperties & ("pluginxml" "=" pluginxml=PluginXMLFile)?) ("resources" "=" "{" resources+=Resource
- * 	("," resources+=Resource)* "}")? "rootfragments" "=" "{" sourceFragments+=SourceFragment (","
- * 	sourceFragments+=SourceFragment)* "}" ("compilation-units" "=" "{" compilationUnits+=CompilationUnit (","
- * 	compilationUnits+=CompilationUnit)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?;
+ * BundleProject bundle::BundleProject:
+ * 	{bundle::BundleProject}
+ * 	'BundleProject'
+ * 	name=EString '{' ('manifest' '=' manifest=ManifestFile
+ * 	&
+ * 	'build' '=' buildProperties=BuildProperties
+ * 	& ('pluginxml' '=' pluginxml=PluginXMLFile)?) ('resources' '=' '{' resources+=Resource ("," resources+=Resource)*
+ * 	'}')?
+ * 	'rootfragments' '=' '{' sourceFragments+=SourceFragment ("," sourceFragments+=SourceFragment)* '}'
+ * 	('compilation-units' '=' '{' compilationUnits+=CompilationUnit (',' compilationUnits+=CompilationUnit)* '}')?
+ * 	'}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::BundleProject} "BundleProject" name=EString "{" ("manifest" "=" manifest=ManifestFile & "build" "="
-// buildProperties=BuildProperties & ("pluginxml" "=" pluginxml=PluginXMLFile)?) ("resources" "=" "{" resources+=Resource
-// ("," resources+=Resource)* "}")? "rootfragments" "=" "{" sourceFragments+=SourceFragment (","
-// sourceFragments+=SourceFragment)* "}" ("compilation-units" "=" "{" compilationUnits+=CompilationUnit (","
-// compilationUnits+=CompilationUnit)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::BundleProject} 'BundleProject' name=EString '{' ('manifest' '=' manifest=ManifestFile & 'build' '='
+// buildProperties=BuildProperties & ('pluginxml' '=' pluginxml=PluginXMLFile)?) ('resources' '=' '{' resources+=Resource
+// ("," resources+=Resource)* '}')? 'rootfragments' '=' '{' sourceFragments+=SourceFragment (","
+// sourceFragments+=SourceFragment)* '}' ('compilation-units' '=' '{' compilationUnits+=CompilationUnit (','
+// compilationUnits+=CompilationUnit)* '}')? '}' ('excluded-if' excludeExpression=BooleanExpression)?
 protected class BundleProject_Group extends GroupToken {
 	
 	public BundleProject_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5823,7 +5859,7 @@ protected class BundleProject_BundleProjectAction_0 extends ActionToken  {
 	}
 }
 
-// "BundleProject"
+// 'BundleProject'
 protected class BundleProject_BundleProjectKeyword_1 extends KeywordToken  {
 	
 	public BundleProject_BundleProjectKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5879,7 +5915,7 @@ protected class BundleProject_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class BundleProject_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public BundleProject_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5901,7 +5937,7 @@ protected class BundleProject_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 
 }
 
-// "manifest" "=" manifest=ManifestFile & "build" "=" buildProperties=BuildProperties & ("pluginxml" "="
+// 'manifest' '=' manifest=ManifestFile & 'build' '=' buildProperties=BuildProperties & ('pluginxml' '='
 // pluginxml=PluginXMLFile)?
 protected class BundleProject_UnorderedGroup_4 extends UnorderedGroupToken {
 	
@@ -5925,7 +5961,7 @@ protected class BundleProject_UnorderedGroup_4 extends UnorderedGroupToken {
 
 }
 
-// "manifest" "=" manifest=ManifestFile
+// 'manifest' '=' manifest=ManifestFile
 protected class BundleProject_Group_4_0 extends GroupToken {
 	
 	public BundleProject_Group_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5947,7 +5983,7 @@ protected class BundleProject_Group_4_0 extends GroupToken {
 
 }
 
-// "manifest"
+// 'manifest'
 protected class BundleProject_ManifestKeyword_4_0_0 extends KeywordToken  {
 	
 	public BundleProject_ManifestKeyword_4_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5969,7 +6005,7 @@ protected class BundleProject_ManifestKeyword_4_0_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class BundleProject_EqualsSignKeyword_4_0_1 extends KeywordToken  {
 	
 	public BundleProject_EqualsSignKeyword_4_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6038,7 +6074,7 @@ protected class BundleProject_ManifestAssignment_4_0_2 extends AssignmentToken  
 }
 
 
-// "build" "=" buildProperties=BuildProperties
+// 'build' '=' buildProperties=BuildProperties
 protected class BundleProject_Group_4_1 extends GroupToken {
 	
 	public BundleProject_Group_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6060,7 +6096,7 @@ protected class BundleProject_Group_4_1 extends GroupToken {
 
 }
 
-// "build"
+// 'build'
 protected class BundleProject_BuildKeyword_4_1_0 extends KeywordToken  {
 	
 	public BundleProject_BuildKeyword_4_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6082,7 +6118,7 @@ protected class BundleProject_BuildKeyword_4_1_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class BundleProject_EqualsSignKeyword_4_1_1 extends KeywordToken  {
 	
 	public BundleProject_EqualsSignKeyword_4_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6151,7 +6187,7 @@ protected class BundleProject_BuildPropertiesAssignment_4_1_2 extends Assignment
 }
 
 
-// ("pluginxml" "=" pluginxml=PluginXMLFile)?
+// ('pluginxml' '=' pluginxml=PluginXMLFile)?
 protected class BundleProject_Group_4_2 extends GroupToken {
 	
 	public BundleProject_Group_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6173,7 +6209,7 @@ protected class BundleProject_Group_4_2 extends GroupToken {
 
 }
 
-// "pluginxml"
+// 'pluginxml'
 protected class BundleProject_PluginxmlKeyword_4_2_0 extends KeywordToken  {
 	
 	public BundleProject_PluginxmlKeyword_4_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6195,7 +6231,7 @@ protected class BundleProject_PluginxmlKeyword_4_2_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class BundleProject_EqualsSignKeyword_4_2_1 extends KeywordToken  {
 	
 	public BundleProject_EqualsSignKeyword_4_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6265,7 +6301,7 @@ protected class BundleProject_PluginxmlAssignment_4_2_2 extends AssignmentToken 
 
 
 
-// ("resources" "=" "{" resources+=Resource ("," resources+=Resource)* "}")?
+// ('resources' '=' '{' resources+=Resource ("," resources+=Resource)* '}')?
 protected class BundleProject_Group_5 extends GroupToken {
 	
 	public BundleProject_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6287,7 +6323,7 @@ protected class BundleProject_Group_5 extends GroupToken {
 
 }
 
-// "resources"
+// 'resources'
 protected class BundleProject_ResourcesKeyword_5_0 extends KeywordToken  {
 	
 	public BundleProject_ResourcesKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6309,7 +6345,7 @@ protected class BundleProject_ResourcesKeyword_5_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class BundleProject_EqualsSignKeyword_5_1 extends KeywordToken  {
 	
 	public BundleProject_EqualsSignKeyword_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6331,7 +6367,7 @@ protected class BundleProject_EqualsSignKeyword_5_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class BundleProject_LeftCurlyBracketKeyword_5_2 extends KeywordToken  {
 	
 	public BundleProject_LeftCurlyBracketKeyword_5_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6491,7 +6527,7 @@ protected class BundleProject_ResourcesAssignment_5_4_1 extends AssignmentToken 
 }
 
 
-// "}"
+// '}'
 protected class BundleProject_RightCurlyBracketKeyword_5_5 extends KeywordToken  {
 	
 	public BundleProject_RightCurlyBracketKeyword_5_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6515,7 +6551,7 @@ protected class BundleProject_RightCurlyBracketKeyword_5_5 extends KeywordToken 
 }
 
 
-// "rootfragments"
+// 'rootfragments'
 protected class BundleProject_RootfragmentsKeyword_6 extends KeywordToken  {
 	
 	public BundleProject_RootfragmentsKeyword_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6538,7 +6574,7 @@ protected class BundleProject_RootfragmentsKeyword_6 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class BundleProject_EqualsSignKeyword_7 extends KeywordToken  {
 	
 	public BundleProject_EqualsSignKeyword_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6560,7 +6596,7 @@ protected class BundleProject_EqualsSignKeyword_7 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class BundleProject_LeftCurlyBracketKeyword_8 extends KeywordToken  {
 	
 	public BundleProject_LeftCurlyBracketKeyword_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6720,7 +6756,7 @@ protected class BundleProject_SourceFragmentsAssignment_10_1 extends AssignmentT
 }
 
 
-// "}"
+// '}'
 protected class BundleProject_RightCurlyBracketKeyword_11 extends KeywordToken  {
 	
 	public BundleProject_RightCurlyBracketKeyword_11(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6743,7 +6779,7 @@ protected class BundleProject_RightCurlyBracketKeyword_11 extends KeywordToken  
 
 }
 
-// ("compilation-units" "=" "{" compilationUnits+=CompilationUnit ("," compilationUnits+=CompilationUnit)* "}")?
+// ('compilation-units' '=' '{' compilationUnits+=CompilationUnit (',' compilationUnits+=CompilationUnit)* '}')?
 protected class BundleProject_Group_12 extends GroupToken {
 	
 	public BundleProject_Group_12(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6765,7 +6801,7 @@ protected class BundleProject_Group_12 extends GroupToken {
 
 }
 
-// "compilation-units"
+// 'compilation-units'
 protected class BundleProject_CompilationUnitsKeyword_12_0 extends KeywordToken  {
 	
 	public BundleProject_CompilationUnitsKeyword_12_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6787,7 +6823,7 @@ protected class BundleProject_CompilationUnitsKeyword_12_0 extends KeywordToken 
 
 }
 
-// "="
+// '='
 protected class BundleProject_EqualsSignKeyword_12_1 extends KeywordToken  {
 	
 	public BundleProject_EqualsSignKeyword_12_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6809,7 +6845,7 @@ protected class BundleProject_EqualsSignKeyword_12_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class BundleProject_LeftCurlyBracketKeyword_12_2 extends KeywordToken  {
 	
 	public BundleProject_LeftCurlyBracketKeyword_12_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6877,7 +6913,7 @@ protected class BundleProject_CompilationUnitsAssignment_12_3 extends Assignment
 	}	
 }
 
-// ("," compilationUnits+=CompilationUnit)*
+// (',' compilationUnits+=CompilationUnit)*
 protected class BundleProject_Group_12_4 extends GroupToken {
 	
 	public BundleProject_Group_12_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6899,7 +6935,7 @@ protected class BundleProject_Group_12_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class BundleProject_CommaKeyword_12_4_0 extends KeywordToken  {
 	
 	public BundleProject_CommaKeyword_12_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6969,7 +7005,7 @@ protected class BundleProject_CompilationUnitsAssignment_12_4_1 extends Assignme
 }
 
 
-// "}"
+// '}'
 protected class BundleProject_RightCurlyBracketKeyword_12_5 extends KeywordToken  {
 	
 	public BundleProject_RightCurlyBracketKeyword_12_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6993,7 +7029,7 @@ protected class BundleProject_RightCurlyBracketKeyword_12_5 extends KeywordToken
 }
 
 
-// "}"
+// '}'
 protected class BundleProject_RightCurlyBracketKeyword_13 extends KeywordToken  {
 	
 	public BundleProject_RightCurlyBracketKeyword_13(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7016,7 +7052,7 @@ protected class BundleProject_RightCurlyBracketKeyword_13 extends KeywordToken  
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class BundleProject_Group_14 extends GroupToken {
 	
 	public BundleProject_Group_14(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7038,7 +7074,7 @@ protected class BundleProject_Group_14 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class BundleProject_ExcludedIfKeyword_14_0 extends KeywordToken  {
 	
 	public BundleProject_ExcludedIfKeyword_14_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7113,12 +7149,12 @@ protected class BundleProject_ExcludeExpressionAssignment_14_1 extends Assignmen
 
 /************ begin Rule SourceFragment ****************
  *
- * SourceFragment returns task::SourceFragment:
- * 	"fragment" name=EString folder=[task::Folder|STRING];
+ * SourceFragment task::SourceFragment:
+ * 	'fragment' name=EString folder=[task::Folder|STRING];
  *
  **/
 
-// "fragment" name=EString folder=[task::Folder|STRING]
+// 'fragment' name=EString folder=[task::Folder|STRING]
 protected class SourceFragment_Group extends GroupToken {
 	
 	public SourceFragment_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7147,7 +7183,7 @@ protected class SourceFragment_Group extends GroupToken {
 
 }
 
-// "fragment"
+// 'fragment'
 protected class SourceFragment_FragmentKeyword_0 extends KeywordToken  {
 	
 	public SourceFragment_FragmentKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7245,14 +7281,14 @@ protected class SourceFragment_FolderAssignment_2 extends AssignmentToken  {
 
 /************ begin Rule CompilationUnit ****************
  *
- * CompilationUnit returns task::CompilationUnit:
- * 	packagename=STRING "in" sourcefragment=[task::SourceFragment|STRING] "{" file=(TemplatedFile | DataFile | URLFile |
- * 	DynamicFile) "}" ("excluded-if" excludeExpression=BooleanExpression)?;
+ * CompilationUnit task::CompilationUnit:
+ * 	packagename=STRING 'in' sourcefragment=[task::SourceFragment|STRING] '{' file=(TemplatedFile | DataFile | URLFile |
+ * 	DynamicFile) '}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// packagename=STRING "in" sourcefragment=[task::SourceFragment|STRING] "{" file=(TemplatedFile | DataFile | URLFile |
-// DynamicFile) "}" ("excluded-if" excludeExpression=BooleanExpression)?
+// packagename=STRING 'in' sourcefragment=[task::SourceFragment|STRING] '{' file=(TemplatedFile | DataFile | URLFile |
+// DynamicFile) '}' ('excluded-if' excludeExpression=BooleanExpression)?
 protected class CompilationUnit_Group extends GroupToken {
 	
 	public CompilationUnit_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7315,7 +7351,7 @@ protected class CompilationUnit_PackagenameAssignment_0 extends AssignmentToken 
 
 }
 
-// "in"
+// 'in'
 protected class CompilationUnit_InKeyword_1 extends KeywordToken  {
 	
 	public CompilationUnit_InKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7374,7 +7410,7 @@ protected class CompilationUnit_SourcefragmentAssignment_2 extends AssignmentTok
 
 }
 
-// "{"
+// '{'
 protected class CompilationUnit_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public CompilationUnit_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7472,7 +7508,7 @@ protected class CompilationUnit_FileAssignment_4 extends AssignmentToken  {
 	}	
 }
 
-// "}"
+// '}'
 protected class CompilationUnit_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public CompilationUnit_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7494,7 +7530,7 @@ protected class CompilationUnit_RightCurlyBracketKeyword_5 extends KeywordToken 
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class CompilationUnit_Group_6 extends GroupToken {
 	
 	public CompilationUnit_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7516,7 +7552,7 @@ protected class CompilationUnit_Group_6 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class CompilationUnit_ExcludedIfKeyword_6_0 extends KeywordToken  {
 	
 	public CompilationUnit_ExcludedIfKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7591,14 +7627,17 @@ protected class CompilationUnit_ExcludeExpressionAssignment_6_1 extends Assignme
 
 /************ begin Rule FeatureProject ****************
  *
- * FeatureProject returns bundle::FeatureProject:
- * 	{bundle::FeatureProject} "FeatureProject" name=EString "{" "feature" "=" feature=FeatureFile ("resources" "=" "{"
- * 	resources+=Resource ("," resources+=Resource)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?;
+ * FeatureProject bundle::FeatureProject:
+ * 	{bundle::FeatureProject}
+ * 	'FeatureProject'
+ * 	name=EString '{'
+ * 	'feature' '=' feature=FeatureFile ('resources' '=' '{' resources+=Resource ("," resources+=Resource)* '}')?
+ * 	'}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::FeatureProject} "FeatureProject" name=EString "{" "feature" "=" feature=FeatureFile ("resources" "=" "{"
-// resources+=Resource ("," resources+=Resource)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::FeatureProject} 'FeatureProject' name=EString '{' 'feature' '=' feature=FeatureFile ('resources' '=' '{'
+// resources+=Resource ("," resources+=Resource)* '}')? '}' ('excluded-if' excludeExpression=BooleanExpression)?
 protected class FeatureProject_Group extends GroupToken {
 	
 	public FeatureProject_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7654,7 +7693,7 @@ protected class FeatureProject_FeatureProjectAction_0 extends ActionToken  {
 	}
 }
 
-// "FeatureProject"
+// 'FeatureProject'
 protected class FeatureProject_FeatureProjectKeyword_1 extends KeywordToken  {
 	
 	public FeatureProject_FeatureProjectKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7710,7 +7749,7 @@ protected class FeatureProject_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class FeatureProject_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public FeatureProject_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7732,7 +7771,7 @@ protected class FeatureProject_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 
 }
 
-// "feature"
+// 'feature'
 protected class FeatureProject_FeatureKeyword_4 extends KeywordToken  {
 	
 	public FeatureProject_FeatureKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7754,7 +7793,7 @@ protected class FeatureProject_FeatureKeyword_4 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureProject_EqualsSignKeyword_5 extends KeywordToken  {
 	
 	public FeatureProject_EqualsSignKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7822,7 +7861,7 @@ protected class FeatureProject_FeatureAssignment_6 extends AssignmentToken  {
 	}	
 }
 
-// ("resources" "=" "{" resources+=Resource ("," resources+=Resource)* "}")?
+// ('resources' '=' '{' resources+=Resource ("," resources+=Resource)* '}')?
 protected class FeatureProject_Group_7 extends GroupToken {
 	
 	public FeatureProject_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7844,7 +7883,7 @@ protected class FeatureProject_Group_7 extends GroupToken {
 
 }
 
-// "resources"
+// 'resources'
 protected class FeatureProject_ResourcesKeyword_7_0 extends KeywordToken  {
 	
 	public FeatureProject_ResourcesKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7866,7 +7905,7 @@ protected class FeatureProject_ResourcesKeyword_7_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureProject_EqualsSignKeyword_7_1 extends KeywordToken  {
 	
 	public FeatureProject_EqualsSignKeyword_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7888,7 +7927,7 @@ protected class FeatureProject_EqualsSignKeyword_7_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class FeatureProject_LeftCurlyBracketKeyword_7_2 extends KeywordToken  {
 	
 	public FeatureProject_LeftCurlyBracketKeyword_7_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8048,7 +8087,7 @@ protected class FeatureProject_ResourcesAssignment_7_4_1 extends AssignmentToken
 }
 
 
-// "}"
+// '}'
 protected class FeatureProject_RightCurlyBracketKeyword_7_5 extends KeywordToken  {
 	
 	public FeatureProject_RightCurlyBracketKeyword_7_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8072,7 +8111,7 @@ protected class FeatureProject_RightCurlyBracketKeyword_7_5 extends KeywordToken
 }
 
 
-// "}"
+// '}'
 protected class FeatureProject_RightCurlyBracketKeyword_8 extends KeywordToken  {
 	
 	public FeatureProject_RightCurlyBracketKeyword_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8095,7 +8134,7 @@ protected class FeatureProject_RightCurlyBracketKeyword_8 extends KeywordToken  
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class FeatureProject_Group_9 extends GroupToken {
 	
 	public FeatureProject_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8117,7 +8156,7 @@ protected class FeatureProject_Group_9 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class FeatureProject_ExcludedIfKeyword_9_0 extends KeywordToken  {
 	
 	public FeatureProject_ExcludedIfKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8192,22 +8231,25 @@ protected class FeatureProject_ExcludeExpressionAssignment_9_1 extends Assignmen
 
 /************ begin Rule ManifestFile ****************
  *
- * ManifestFile returns bundle::ManifestFile:
- * 	{bundle::ManifestFile} lazy?="lazy"? singleton?="singleton"? "ManifestFile" symbolicname=STRING version=STRING
- * 	executionEnvironment=STRING "{" ("bundlename" "=" bundlename=STRING & "vendor" "=" vendor=STRING & ("activatorClass"
- * 	"=" activatorClass=STRING)?) ("exportedPackages" "=" "{" exportedPackages+=ExportedPackage (","
- * 	exportedPackages+=ExportedPackage)* "}")? ("importedPackages" "=" "{" importedPackages+=ImportedPackage (","
- * 	importedPackages+=ImportedPackage)* "}")? ("requiredBundles" "=" "{" requiredBundles+=RequiredBundle (","
- * 	requiredBundles+=RequiredBundle)* "}")? "}";
+ * ManifestFile bundle::ManifestFile:
+ * 	{bundle::ManifestFile} lazy?='lazy'? singleton?='singleton'? 'ManifestFile' symbolicname=STRING version=STRING
+ * 	executionEnvironment=STRING '{' ('bundlename' '=' bundlename=STRING
+ * 	&
+ * 	'vendor' '=' vendor=STRING
+ * 	& ('activatorClass' '=' activatorClass=STRING)?) ('exportedPackages' '=' '{' exportedPackages+=ExportedPackage (','
+ * 	exportedPackages+=ExportedPackage)* '}')? ('importedPackages' '=' '{' importedPackages+=ImportedPackage (','
+ * 	importedPackages+=ImportedPackage)* '}')? ('requiredBundles' '=' '{' requiredBundles+=RequiredBundle (','
+ * 	requiredBundles+=RequiredBundle)* '}')?
+ * 	'}';
  *
  **/
 
-// {bundle::ManifestFile} lazy?="lazy"? singleton?="singleton"? "ManifestFile" symbolicname=STRING version=STRING
-// executionEnvironment=STRING "{" ("bundlename" "=" bundlename=STRING & "vendor" "=" vendor=STRING & ("activatorClass"
-// "=" activatorClass=STRING)?) ("exportedPackages" "=" "{" exportedPackages+=ExportedPackage (","
-// exportedPackages+=ExportedPackage)* "}")? ("importedPackages" "=" "{" importedPackages+=ImportedPackage (","
-// importedPackages+=ImportedPackage)* "}")? ("requiredBundles" "=" "{" requiredBundles+=RequiredBundle (","
-// requiredBundles+=RequiredBundle)* "}")? "}"
+// {bundle::ManifestFile} lazy?='lazy'? singleton?='singleton'? 'ManifestFile' symbolicname=STRING version=STRING
+// executionEnvironment=STRING '{' ('bundlename' '=' bundlename=STRING & 'vendor' '=' vendor=STRING & ('activatorClass'
+// '=' activatorClass=STRING)?) ('exportedPackages' '=' '{' exportedPackages+=ExportedPackage (','
+// exportedPackages+=ExportedPackage)* '}')? ('importedPackages' '=' '{' importedPackages+=ImportedPackage (','
+// importedPackages+=ImportedPackage)* '}')? ('requiredBundles' '=' '{' requiredBundles+=RequiredBundle (','
+// requiredBundles+=RequiredBundle)* '}')? '}'
 protected class ManifestFile_Group extends GroupToken {
 	
 	public ManifestFile_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8262,7 +8304,7 @@ protected class ManifestFile_ManifestFileAction_0 extends ActionToken  {
 	}
 }
 
-// lazy?="lazy"?
+// lazy?='lazy'?
 protected class ManifestFile_LazyAssignment_1 extends AssignmentToken  {
 	
 	public ManifestFile_LazyAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8296,7 +8338,7 @@ protected class ManifestFile_LazyAssignment_1 extends AssignmentToken  {
 
 }
 
-// singleton?="singleton"?
+// singleton?='singleton'?
 protected class ManifestFile_SingletonAssignment_2 extends AssignmentToken  {
 	
 	public ManifestFile_SingletonAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8331,7 +8373,7 @@ protected class ManifestFile_SingletonAssignment_2 extends AssignmentToken  {
 
 }
 
-// "ManifestFile"
+// 'ManifestFile'
 protected class ManifestFile_ManifestFileKeyword_3 extends KeywordToken  {
 	
 	public ManifestFile_ManifestFileKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8457,7 +8499,7 @@ protected class ManifestFile_ExecutionEnvironmentAssignment_6 extends Assignment
 
 }
 
-// "{"
+// '{'
 protected class ManifestFile_LeftCurlyBracketKeyword_7 extends KeywordToken  {
 	
 	public ManifestFile_LeftCurlyBracketKeyword_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8479,7 +8521,7 @@ protected class ManifestFile_LeftCurlyBracketKeyword_7 extends KeywordToken  {
 
 }
 
-// "bundlename" "=" bundlename=STRING & "vendor" "=" vendor=STRING & ("activatorClass" "=" activatorClass=STRING)?
+// 'bundlename' '=' bundlename=STRING & 'vendor' '=' vendor=STRING & ('activatorClass' '=' activatorClass=STRING)?
 protected class ManifestFile_UnorderedGroup_8 extends UnorderedGroupToken {
 	
 	public ManifestFile_UnorderedGroup_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8502,7 +8544,7 @@ protected class ManifestFile_UnorderedGroup_8 extends UnorderedGroupToken {
 
 }
 
-// "bundlename" "=" bundlename=STRING
+// 'bundlename' '=' bundlename=STRING
 protected class ManifestFile_Group_8_0 extends GroupToken {
 	
 	public ManifestFile_Group_8_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8524,7 +8566,7 @@ protected class ManifestFile_Group_8_0 extends GroupToken {
 
 }
 
-// "bundlename"
+// 'bundlename'
 protected class ManifestFile_BundlenameKeyword_8_0_0 extends KeywordToken  {
 	
 	public ManifestFile_BundlenameKeyword_8_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8546,7 +8588,7 @@ protected class ManifestFile_BundlenameKeyword_8_0_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ManifestFile_EqualsSignKeyword_8_0_1 extends KeywordToken  {
 	
 	public ManifestFile_EqualsSignKeyword_8_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8603,7 +8645,7 @@ protected class ManifestFile_BundlenameAssignment_8_0_2 extends AssignmentToken 
 }
 
 
-// "vendor" "=" vendor=STRING
+// 'vendor' '=' vendor=STRING
 protected class ManifestFile_Group_8_1 extends GroupToken {
 	
 	public ManifestFile_Group_8_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8625,7 +8667,7 @@ protected class ManifestFile_Group_8_1 extends GroupToken {
 
 }
 
-// "vendor"
+// 'vendor'
 protected class ManifestFile_VendorKeyword_8_1_0 extends KeywordToken  {
 	
 	public ManifestFile_VendorKeyword_8_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8647,7 +8689,7 @@ protected class ManifestFile_VendorKeyword_8_1_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ManifestFile_EqualsSignKeyword_8_1_1 extends KeywordToken  {
 	
 	public ManifestFile_EqualsSignKeyword_8_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8704,7 +8746,7 @@ protected class ManifestFile_VendorAssignment_8_1_2 extends AssignmentToken  {
 }
 
 
-// ("activatorClass" "=" activatorClass=STRING)?
+// ('activatorClass' '=' activatorClass=STRING)?
 protected class ManifestFile_Group_8_2 extends GroupToken {
 	
 	public ManifestFile_Group_8_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8726,7 +8768,7 @@ protected class ManifestFile_Group_8_2 extends GroupToken {
 
 }
 
-// "activatorClass"
+// 'activatorClass'
 protected class ManifestFile_ActivatorClassKeyword_8_2_0 extends KeywordToken  {
 	
 	public ManifestFile_ActivatorClassKeyword_8_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8748,7 +8790,7 @@ protected class ManifestFile_ActivatorClassKeyword_8_2_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ManifestFile_EqualsSignKeyword_8_2_1 extends KeywordToken  {
 	
 	public ManifestFile_EqualsSignKeyword_8_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8806,7 +8848,7 @@ protected class ManifestFile_ActivatorClassAssignment_8_2_2 extends AssignmentTo
 
 
 
-// ("exportedPackages" "=" "{" exportedPackages+=ExportedPackage ("," exportedPackages+=ExportedPackage)* "}")?
+// ('exportedPackages' '=' '{' exportedPackages+=ExportedPackage (',' exportedPackages+=ExportedPackage)* '}')?
 protected class ManifestFile_Group_9 extends GroupToken {
 	
 	public ManifestFile_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8828,7 +8870,7 @@ protected class ManifestFile_Group_9 extends GroupToken {
 
 }
 
-// "exportedPackages"
+// 'exportedPackages'
 protected class ManifestFile_ExportedPackagesKeyword_9_0 extends KeywordToken  {
 	
 	public ManifestFile_ExportedPackagesKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8850,7 +8892,7 @@ protected class ManifestFile_ExportedPackagesKeyword_9_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ManifestFile_EqualsSignKeyword_9_1 extends KeywordToken  {
 	
 	public ManifestFile_EqualsSignKeyword_9_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8872,7 +8914,7 @@ protected class ManifestFile_EqualsSignKeyword_9_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class ManifestFile_LeftCurlyBracketKeyword_9_2 extends KeywordToken  {
 	
 	public ManifestFile_LeftCurlyBracketKeyword_9_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8940,7 +8982,7 @@ protected class ManifestFile_ExportedPackagesAssignment_9_3 extends AssignmentTo
 	}	
 }
 
-// ("," exportedPackages+=ExportedPackage)*
+// (',' exportedPackages+=ExportedPackage)*
 protected class ManifestFile_Group_9_4 extends GroupToken {
 	
 	public ManifestFile_Group_9_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8962,7 +9004,7 @@ protected class ManifestFile_Group_9_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ManifestFile_CommaKeyword_9_4_0 extends KeywordToken  {
 	
 	public ManifestFile_CommaKeyword_9_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9032,7 +9074,7 @@ protected class ManifestFile_ExportedPackagesAssignment_9_4_1 extends Assignment
 }
 
 
-// "}"
+// '}'
 protected class ManifestFile_RightCurlyBracketKeyword_9_5 extends KeywordToken  {
 	
 	public ManifestFile_RightCurlyBracketKeyword_9_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9056,7 +9098,7 @@ protected class ManifestFile_RightCurlyBracketKeyword_9_5 extends KeywordToken  
 }
 
 
-// ("importedPackages" "=" "{" importedPackages+=ImportedPackage ("," importedPackages+=ImportedPackage)* "}")?
+// ('importedPackages' '=' '{' importedPackages+=ImportedPackage (',' importedPackages+=ImportedPackage)* '}')?
 protected class ManifestFile_Group_10 extends GroupToken {
 	
 	public ManifestFile_Group_10(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9078,7 +9120,7 @@ protected class ManifestFile_Group_10 extends GroupToken {
 
 }
 
-// "importedPackages"
+// 'importedPackages'
 protected class ManifestFile_ImportedPackagesKeyword_10_0 extends KeywordToken  {
 	
 	public ManifestFile_ImportedPackagesKeyword_10_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9101,7 +9143,7 @@ protected class ManifestFile_ImportedPackagesKeyword_10_0 extends KeywordToken  
 
 }
 
-// "="
+// '='
 protected class ManifestFile_EqualsSignKeyword_10_1 extends KeywordToken  {
 	
 	public ManifestFile_EqualsSignKeyword_10_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9123,7 +9165,7 @@ protected class ManifestFile_EqualsSignKeyword_10_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class ManifestFile_LeftCurlyBracketKeyword_10_2 extends KeywordToken  {
 	
 	public ManifestFile_LeftCurlyBracketKeyword_10_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9191,7 +9233,7 @@ protected class ManifestFile_ImportedPackagesAssignment_10_3 extends AssignmentT
 	}	
 }
 
-// ("," importedPackages+=ImportedPackage)*
+// (',' importedPackages+=ImportedPackage)*
 protected class ManifestFile_Group_10_4 extends GroupToken {
 	
 	public ManifestFile_Group_10_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9213,7 +9255,7 @@ protected class ManifestFile_Group_10_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ManifestFile_CommaKeyword_10_4_0 extends KeywordToken  {
 	
 	public ManifestFile_CommaKeyword_10_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9283,7 +9325,7 @@ protected class ManifestFile_ImportedPackagesAssignment_10_4_1 extends Assignmen
 }
 
 
-// "}"
+// '}'
 protected class ManifestFile_RightCurlyBracketKeyword_10_5 extends KeywordToken  {
 	
 	public ManifestFile_RightCurlyBracketKeyword_10_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9307,7 +9349,7 @@ protected class ManifestFile_RightCurlyBracketKeyword_10_5 extends KeywordToken 
 }
 
 
-// ("requiredBundles" "=" "{" requiredBundles+=RequiredBundle ("," requiredBundles+=RequiredBundle)* "}")?
+// ('requiredBundles' '=' '{' requiredBundles+=RequiredBundle (',' requiredBundles+=RequiredBundle)* '}')?
 protected class ManifestFile_Group_11 extends GroupToken {
 	
 	public ManifestFile_Group_11(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9329,7 +9371,7 @@ protected class ManifestFile_Group_11 extends GroupToken {
 
 }
 
-// "requiredBundles"
+// 'requiredBundles'
 protected class ManifestFile_RequiredBundlesKeyword_11_0 extends KeywordToken  {
 	
 	public ManifestFile_RequiredBundlesKeyword_11_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9353,7 +9395,7 @@ protected class ManifestFile_RequiredBundlesKeyword_11_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class ManifestFile_EqualsSignKeyword_11_1 extends KeywordToken  {
 	
 	public ManifestFile_EqualsSignKeyword_11_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9375,7 +9417,7 @@ protected class ManifestFile_EqualsSignKeyword_11_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class ManifestFile_LeftCurlyBracketKeyword_11_2 extends KeywordToken  {
 	
 	public ManifestFile_LeftCurlyBracketKeyword_11_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9443,7 +9485,7 @@ protected class ManifestFile_RequiredBundlesAssignment_11_3 extends AssignmentTo
 	}	
 }
 
-// ("," requiredBundles+=RequiredBundle)*
+// (',' requiredBundles+=RequiredBundle)*
 protected class ManifestFile_Group_11_4 extends GroupToken {
 	
 	public ManifestFile_Group_11_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9465,7 +9507,7 @@ protected class ManifestFile_Group_11_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ManifestFile_CommaKeyword_11_4_0 extends KeywordToken  {
 	
 	public ManifestFile_CommaKeyword_11_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9535,7 +9577,7 @@ protected class ManifestFile_RequiredBundlesAssignment_11_4_1 extends Assignment
 }
 
 
-// "}"
+// '}'
 protected class ManifestFile_RightCurlyBracketKeyword_11_5 extends KeywordToken  {
 	
 	public ManifestFile_RightCurlyBracketKeyword_11_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9559,7 +9601,7 @@ protected class ManifestFile_RightCurlyBracketKeyword_11_5 extends KeywordToken 
 }
 
 
-// "}"
+// '}'
 protected class ManifestFile_RightCurlyBracketKeyword_12 extends KeywordToken  {
 	
 	public ManifestFile_RightCurlyBracketKeyword_12(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9590,14 +9632,15 @@ protected class ManifestFile_RightCurlyBracketKeyword_12 extends KeywordToken  {
 
 /************ begin Rule PluginXMLFile ****************
  *
- * PluginXMLFile returns bundle::PluginXMLFile:
- * 	{bundle::PluginXMLFile} "PluginXMLFile" "{" ("extensions" "=" "{" extensions+=Extension ("," extensions+=Extension)*
- * 	"}")? "}";
+ * PluginXMLFile bundle::PluginXMLFile:
+ * 	{bundle::PluginXMLFile}
+ * 	'PluginXMLFile' '{' ('extensions' '=' '{' extensions+=Extension (',' extensions+=Extension)* '}')?
+ * 	'}';
  *
  **/
 
-// {bundle::PluginXMLFile} "PluginXMLFile" "{" ("extensions" "=" "{" extensions+=Extension ("," extensions+=Extension)*
-// "}")? "}"
+// {bundle::PluginXMLFile} 'PluginXMLFile' '{' ('extensions' '=' '{' extensions+=Extension (',' extensions+=Extension)*
+// '}')? '}'
 protected class PluginXMLFile_Group extends GroupToken {
 	
 	public PluginXMLFile_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9652,7 +9695,7 @@ protected class PluginXMLFile_PluginXMLFileAction_0 extends ActionToken  {
 	}
 }
 
-// "PluginXMLFile"
+// 'PluginXMLFile'
 protected class PluginXMLFile_PluginXMLFileKeyword_1 extends KeywordToken  {
 	
 	public PluginXMLFile_PluginXMLFileKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9674,7 +9717,7 @@ protected class PluginXMLFile_PluginXMLFileKeyword_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class PluginXMLFile_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 	
 	public PluginXMLFile_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9696,7 +9739,7 @@ protected class PluginXMLFile_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 
 }
 
-// ("extensions" "=" "{" extensions+=Extension ("," extensions+=Extension)* "}")?
+// ('extensions' '=' '{' extensions+=Extension (',' extensions+=Extension)* '}')?
 protected class PluginXMLFile_Group_3 extends GroupToken {
 	
 	public PluginXMLFile_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9718,7 +9761,7 @@ protected class PluginXMLFile_Group_3 extends GroupToken {
 
 }
 
-// "extensions"
+// 'extensions'
 protected class PluginXMLFile_ExtensionsKeyword_3_0 extends KeywordToken  {
 	
 	public PluginXMLFile_ExtensionsKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9740,7 +9783,7 @@ protected class PluginXMLFile_ExtensionsKeyword_3_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class PluginXMLFile_EqualsSignKeyword_3_1 extends KeywordToken  {
 	
 	public PluginXMLFile_EqualsSignKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9762,7 +9805,7 @@ protected class PluginXMLFile_EqualsSignKeyword_3_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class PluginXMLFile_LeftCurlyBracketKeyword_3_2 extends KeywordToken  {
 	
 	public PluginXMLFile_LeftCurlyBracketKeyword_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9830,7 +9873,7 @@ protected class PluginXMLFile_ExtensionsAssignment_3_3 extends AssignmentToken  
 	}	
 }
 
-// ("," extensions+=Extension)*
+// (',' extensions+=Extension)*
 protected class PluginXMLFile_Group_3_4 extends GroupToken {
 	
 	public PluginXMLFile_Group_3_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9852,7 +9895,7 @@ protected class PluginXMLFile_Group_3_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class PluginXMLFile_CommaKeyword_3_4_0 extends KeywordToken  {
 	
 	public PluginXMLFile_CommaKeyword_3_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9922,7 +9965,7 @@ protected class PluginXMLFile_ExtensionsAssignment_3_4_1 extends AssignmentToken
 }
 
 
-// "}"
+// '}'
 protected class PluginXMLFile_RightCurlyBracketKeyword_3_5 extends KeywordToken  {
 	
 	public PluginXMLFile_RightCurlyBracketKeyword_3_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9946,7 +9989,7 @@ protected class PluginXMLFile_RightCurlyBracketKeyword_3_5 extends KeywordToken 
 }
 
 
-// "}"
+// '}'
 protected class PluginXMLFile_RightCurlyBracketKeyword_4 extends KeywordToken  {
 	
 	public PluginXMLFile_RightCurlyBracketKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -9975,14 +10018,16 @@ protected class PluginXMLFile_RightCurlyBracketKeyword_4 extends KeywordToken  {
 
 /************ begin Rule BuildProperties ****************
  *
- * BuildProperties returns bundle::BuildProperties:
- * 	{bundle::BuildProperties} "BuildProperties" "{" ("binIncludes" "=" "{" binIncludes+=[task::Resource|STRING] (","
- * 	binIncludes+=[task::Resource|STRING])* "}")? "}";
+ * BuildProperties bundle::BuildProperties:
+ * 	{bundle::BuildProperties}
+ * 	'BuildProperties' '{' ('binIncludes' '=' '{' binIncludes+=[task::Resource|STRING] (','
+ * 	binIncludes+=[task::Resource|STRING])* '}')?
+ * 	'}';
  *
  **/
 
-// {bundle::BuildProperties} "BuildProperties" "{" ("binIncludes" "=" "{" binIncludes+=[task::Resource|STRING] (","
-// binIncludes+=[task::Resource|STRING])* "}")? "}"
+// {bundle::BuildProperties} 'BuildProperties' '{' ('binIncludes' '=' '{' binIncludes+=[task::Resource|STRING] (','
+// binIncludes+=[task::Resource|STRING])* '}')? '}'
 protected class BuildProperties_Group extends GroupToken {
 	
 	public BuildProperties_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10037,7 +10082,7 @@ protected class BuildProperties_BuildPropertiesAction_0 extends ActionToken  {
 	}
 }
 
-// "BuildProperties"
+// 'BuildProperties'
 protected class BuildProperties_BuildPropertiesKeyword_1 extends KeywordToken  {
 	
 	public BuildProperties_BuildPropertiesKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10059,7 +10104,7 @@ protected class BuildProperties_BuildPropertiesKeyword_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class BuildProperties_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 	
 	public BuildProperties_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10081,7 +10126,7 @@ protected class BuildProperties_LeftCurlyBracketKeyword_2 extends KeywordToken  
 
 }
 
-// ("binIncludes" "=" "{" binIncludes+=[task::Resource|STRING] ("," binIncludes+=[task::Resource|STRING])* "}")?
+// ('binIncludes' '=' '{' binIncludes+=[task::Resource|STRING] (',' binIncludes+=[task::Resource|STRING])* '}')?
 protected class BuildProperties_Group_3 extends GroupToken {
 	
 	public BuildProperties_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10103,7 +10148,7 @@ protected class BuildProperties_Group_3 extends GroupToken {
 
 }
 
-// "binIncludes"
+// 'binIncludes'
 protected class BuildProperties_BinIncludesKeyword_3_0 extends KeywordToken  {
 	
 	public BuildProperties_BinIncludesKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10125,7 +10170,7 @@ protected class BuildProperties_BinIncludesKeyword_3_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class BuildProperties_EqualsSignKeyword_3_1 extends KeywordToken  {
 	
 	public BuildProperties_EqualsSignKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10147,7 +10192,7 @@ protected class BuildProperties_EqualsSignKeyword_3_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class BuildProperties_LeftCurlyBracketKeyword_3_2 extends KeywordToken  {
 	
 	public BuildProperties_LeftCurlyBracketKeyword_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10206,7 +10251,7 @@ protected class BuildProperties_BinIncludesAssignment_3_3 extends AssignmentToke
 
 }
 
-// ("," binIncludes+=[task::Resource|STRING])*
+// (',' binIncludes+=[task::Resource|STRING])*
 protected class BuildProperties_Group_3_4 extends GroupToken {
 	
 	public BuildProperties_Group_3_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10228,7 +10273,7 @@ protected class BuildProperties_Group_3_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class BuildProperties_CommaKeyword_3_4_0 extends KeywordToken  {
 	
 	public BuildProperties_CommaKeyword_3_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10289,7 +10334,7 @@ protected class BuildProperties_BinIncludesAssignment_3_4_1 extends AssignmentTo
 }
 
 
-// "}"
+// '}'
 protected class BuildProperties_RightCurlyBracketKeyword_3_5 extends KeywordToken  {
 	
 	public BuildProperties_RightCurlyBracketKeyword_3_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10313,7 +10358,7 @@ protected class BuildProperties_RightCurlyBracketKeyword_3_5 extends KeywordToke
 }
 
 
-// "}"
+// '}'
 protected class BuildProperties_RightCurlyBracketKeyword_4 extends KeywordToken  {
 	
 	public BuildProperties_RightCurlyBracketKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10342,21 +10387,29 @@ protected class BuildProperties_RightCurlyBracketKeyword_4 extends KeywordToken 
 
 /************ begin Rule ProductFileFeaturebase ****************
  *
- * ProductFileFeaturebase returns bundle::ProductFileFeaturebase:
- * 	{bundle::ProductFileFeaturebase} includeLaunchers?="launchable"? "ProductFileFeaturebase" id=STRING "{" (("vmArgs" "="
- * 	vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING & "application" "="
- * 	application=STRING & "version" "=" version=STRING) ("startconfigurations" "=" "{"
- * 	startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)* "}")? ("features" "=" "{"
- * 	features+=ProductFeature ("," features+=ProductFeature)* "}")? "}" ("excluded-if"
- * 	excludeExpression=BooleanExpression)?;
+ * ProductFileFeaturebase bundle::ProductFileFeaturebase:
+ * 	{bundle::ProductFileFeaturebase} includeLaunchers?='launchable'? 'ProductFileFeaturebase' id=STRING '{' (('vmArgs' '='
+ * 	vmArgs=STRING)?
+ * 	& ('programArgs' '=' programArgs=STRING)?
+ * 	&
+ * 	'productName' '=' productName=STRING
+ * 	&
+ * 	'application' '=' application=STRING
+ * 	&
+ * 	'version' '=' version=STRING) ('startconfigurations' '=' '{'
+ * 	startconfigurations+=ProductStartConfig (',' startconfigurations+=ProductStartConfig)*
+ * 	'}')? ('features' '=' '{'
+ * 	features+=ProductFeature (',' features+=ProductFeature)*
+ * 	'}')?
+ * 	'}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::ProductFileFeaturebase} includeLaunchers?="launchable"? "ProductFileFeaturebase" id=STRING "{" (("vmArgs" "="
-// vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING & "application" "="
-// application=STRING & "version" "=" version=STRING) ("startconfigurations" "=" "{"
-// startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)* "}")? ("features" "=" "{"
-// features+=ProductFeature ("," features+=ProductFeature)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::ProductFileFeaturebase} includeLaunchers?='launchable'? 'ProductFileFeaturebase' id=STRING '{' (('vmArgs' '='
+// vmArgs=STRING)? & ('programArgs' '=' programArgs=STRING)? & 'productName' '=' productName=STRING & 'application' '='
+// application=STRING & 'version' '=' version=STRING) ('startconfigurations' '=' '{'
+// startconfigurations+=ProductStartConfig (',' startconfigurations+=ProductStartConfig)* '}')? ('features' '=' '{'
+// features+=ProductFeature (',' features+=ProductFeature)* '}')? '}' ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ProductFileFeaturebase_Group extends GroupToken {
 	
 	public ProductFileFeaturebase_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10412,7 +10465,7 @@ protected class ProductFileFeaturebase_ProductFileFeaturebaseAction_0 extends Ac
 	}
 }
 
-// includeLaunchers?="launchable"?
+// includeLaunchers?='launchable'?
 protected class ProductFileFeaturebase_IncludeLaunchersAssignment_1 extends AssignmentToken  {
 	
 	public ProductFileFeaturebase_IncludeLaunchersAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10446,7 +10499,7 @@ protected class ProductFileFeaturebase_IncludeLaunchersAssignment_1 extends Assi
 
 }
 
-// "ProductFileFeaturebase"
+// 'ProductFileFeaturebase'
 protected class ProductFileFeaturebase_ProductFileFeaturebaseKeyword_2 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_ProductFileFeaturebaseKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10503,7 +10556,7 @@ protected class ProductFileFeaturebase_IdAssignment_3 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class ProductFileFeaturebase_LeftCurlyBracketKeyword_4 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_LeftCurlyBracketKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10525,8 +10578,8 @@ protected class ProductFileFeaturebase_LeftCurlyBracketKeyword_4 extends Keyword
 
 }
 
-// ("vmArgs" "=" vmArgs=STRING)? & ("programArgs" "=" programArgs=STRING)? & "productName" "=" productName=STRING &
-// "application" "=" application=STRING & "version" "=" version=STRING
+// ('vmArgs' '=' vmArgs=STRING)? & ('programArgs' '=' programArgs=STRING)? & 'productName' '=' productName=STRING &
+// 'application' '=' application=STRING & 'version' '=' version=STRING
 protected class ProductFileFeaturebase_UnorderedGroup_5 extends UnorderedGroupToken {
 	
 	public ProductFileFeaturebase_UnorderedGroup_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10548,7 +10601,7 @@ protected class ProductFileFeaturebase_UnorderedGroup_5 extends UnorderedGroupTo
 
 }
 
-// ("vmArgs" "=" vmArgs=STRING)?
+// ('vmArgs' '=' vmArgs=STRING)?
 protected class ProductFileFeaturebase_Group_5_0 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10570,7 +10623,7 @@ protected class ProductFileFeaturebase_Group_5_0 extends GroupToken {
 
 }
 
-// "vmArgs"
+// 'vmArgs'
 protected class ProductFileFeaturebase_VmArgsKeyword_5_0_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_VmArgsKeyword_5_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10592,7 +10645,7 @@ protected class ProductFileFeaturebase_VmArgsKeyword_5_0_0 extends KeywordToken 
 
 }
 
-// "="
+// '='
 protected class ProductFileFeaturebase_EqualsSignKeyword_5_0_1 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_EqualsSignKeyword_5_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10649,7 +10702,7 @@ protected class ProductFileFeaturebase_VmArgsAssignment_5_0_2 extends Assignment
 }
 
 
-// ("programArgs" "=" programArgs=STRING)?
+// ('programArgs' '=' programArgs=STRING)?
 protected class ProductFileFeaturebase_Group_5_1 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10671,7 +10724,7 @@ protected class ProductFileFeaturebase_Group_5_1 extends GroupToken {
 
 }
 
-// "programArgs"
+// 'programArgs'
 protected class ProductFileFeaturebase_ProgramArgsKeyword_5_1_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_ProgramArgsKeyword_5_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10694,7 +10747,7 @@ protected class ProductFileFeaturebase_ProgramArgsKeyword_5_1_0 extends KeywordT
 
 }
 
-// "="
+// '='
 protected class ProductFileFeaturebase_EqualsSignKeyword_5_1_1 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_EqualsSignKeyword_5_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10751,7 +10804,7 @@ protected class ProductFileFeaturebase_ProgramArgsAssignment_5_1_2 extends Assig
 }
 
 
-// "productName" "=" productName=STRING
+// 'productName' '=' productName=STRING
 protected class ProductFileFeaturebase_Group_5_2 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_5_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10773,7 +10826,7 @@ protected class ProductFileFeaturebase_Group_5_2 extends GroupToken {
 
 }
 
-// "productName"
+// 'productName'
 protected class ProductFileFeaturebase_ProductNameKeyword_5_2_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_ProductNameKeyword_5_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10797,7 +10850,7 @@ protected class ProductFileFeaturebase_ProductNameKeyword_5_2_0 extends KeywordT
 
 }
 
-// "="
+// '='
 protected class ProductFileFeaturebase_EqualsSignKeyword_5_2_1 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_EqualsSignKeyword_5_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10854,7 +10907,7 @@ protected class ProductFileFeaturebase_ProductNameAssignment_5_2_2 extends Assig
 }
 
 
-// "application" "=" application=STRING
+// 'application' '=' application=STRING
 protected class ProductFileFeaturebase_Group_5_3 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_5_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10876,7 +10929,7 @@ protected class ProductFileFeaturebase_Group_5_3 extends GroupToken {
 
 }
 
-// "application"
+// 'application'
 protected class ProductFileFeaturebase_ApplicationKeyword_5_3_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_ApplicationKeyword_5_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10898,7 +10951,7 @@ protected class ProductFileFeaturebase_ApplicationKeyword_5_3_0 extends KeywordT
 
 }
 
-// "="
+// '='
 protected class ProductFileFeaturebase_EqualsSignKeyword_5_3_1 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_EqualsSignKeyword_5_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10955,7 +11008,7 @@ protected class ProductFileFeaturebase_ApplicationAssignment_5_3_2 extends Assig
 }
 
 
-// "version" "=" version=STRING
+// 'version' '=' version=STRING
 protected class ProductFileFeaturebase_Group_5_4 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_5_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10977,7 +11030,7 @@ protected class ProductFileFeaturebase_Group_5_4 extends GroupToken {
 
 }
 
-// "version"
+// 'version'
 protected class ProductFileFeaturebase_VersionKeyword_5_4_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_VersionKeyword_5_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -10999,7 +11052,7 @@ protected class ProductFileFeaturebase_VersionKeyword_5_4_0 extends KeywordToken
 
 }
 
-// "="
+// '='
 protected class ProductFileFeaturebase_EqualsSignKeyword_5_4_1 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_EqualsSignKeyword_5_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11057,8 +11110,8 @@ protected class ProductFileFeaturebase_VersionAssignment_5_4_2 extends Assignmen
 
 
 
-// ("startconfigurations" "=" "{" startconfigurations+=ProductStartConfig ("," startconfigurations+=ProductStartConfig)*
-// "}")?
+// ('startconfigurations' '=' '{' startconfigurations+=ProductStartConfig (',' startconfigurations+=ProductStartConfig)*
+// '}')?
 protected class ProductFileFeaturebase_Group_6 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11080,7 +11133,7 @@ protected class ProductFileFeaturebase_Group_6 extends GroupToken {
 
 }
 
-// "startconfigurations"
+// 'startconfigurations'
 protected class ProductFileFeaturebase_StartconfigurationsKeyword_6_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_StartconfigurationsKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11102,7 +11155,7 @@ protected class ProductFileFeaturebase_StartconfigurationsKeyword_6_0 extends Ke
 
 }
 
-// "="
+// '='
 protected class ProductFileFeaturebase_EqualsSignKeyword_6_1 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_EqualsSignKeyword_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11124,7 +11177,7 @@ protected class ProductFileFeaturebase_EqualsSignKeyword_6_1 extends KeywordToke
 
 }
 
-// "{"
+// '{'
 protected class ProductFileFeaturebase_LeftCurlyBracketKeyword_6_2 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_LeftCurlyBracketKeyword_6_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11192,7 +11245,7 @@ protected class ProductFileFeaturebase_StartconfigurationsAssignment_6_3 extends
 	}	
 }
 
-// ("," startconfigurations+=ProductStartConfig)*
+// (',' startconfigurations+=ProductStartConfig)*
 protected class ProductFileFeaturebase_Group_6_4 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_6_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11214,7 +11267,7 @@ protected class ProductFileFeaturebase_Group_6_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ProductFileFeaturebase_CommaKeyword_6_4_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_CommaKeyword_6_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11284,7 +11337,7 @@ protected class ProductFileFeaturebase_StartconfigurationsAssignment_6_4_1 exten
 }
 
 
-// "}"
+// '}'
 protected class ProductFileFeaturebase_RightCurlyBracketKeyword_6_5 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_RightCurlyBracketKeyword_6_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11308,7 +11361,7 @@ protected class ProductFileFeaturebase_RightCurlyBracketKeyword_6_5 extends Keyw
 }
 
 
-// ("features" "=" "{" features+=ProductFeature ("," features+=ProductFeature)* "}")?
+// ('features' '=' '{' features+=ProductFeature (',' features+=ProductFeature)* '}')?
 protected class ProductFileFeaturebase_Group_7 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11330,7 +11383,7 @@ protected class ProductFileFeaturebase_Group_7 extends GroupToken {
 
 }
 
-// "features"
+// 'features'
 protected class ProductFileFeaturebase_FeaturesKeyword_7_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_FeaturesKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11353,7 +11406,7 @@ protected class ProductFileFeaturebase_FeaturesKeyword_7_0 extends KeywordToken 
 
 }
 
-// "="
+// '='
 protected class ProductFileFeaturebase_EqualsSignKeyword_7_1 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_EqualsSignKeyword_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11375,7 +11428,7 @@ protected class ProductFileFeaturebase_EqualsSignKeyword_7_1 extends KeywordToke
 
 }
 
-// "{"
+// '{'
 protected class ProductFileFeaturebase_LeftCurlyBracketKeyword_7_2 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_LeftCurlyBracketKeyword_7_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11443,7 +11496,7 @@ protected class ProductFileFeaturebase_FeaturesAssignment_7_3 extends Assignment
 	}	
 }
 
-// ("," features+=ProductFeature)*
+// (',' features+=ProductFeature)*
 protected class ProductFileFeaturebase_Group_7_4 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_7_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11465,7 +11518,7 @@ protected class ProductFileFeaturebase_Group_7_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ProductFileFeaturebase_CommaKeyword_7_4_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_CommaKeyword_7_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11535,7 +11588,7 @@ protected class ProductFileFeaturebase_FeaturesAssignment_7_4_1 extends Assignme
 }
 
 
-// "}"
+// '}'
 protected class ProductFileFeaturebase_RightCurlyBracketKeyword_7_5 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_RightCurlyBracketKeyword_7_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11559,7 +11612,7 @@ protected class ProductFileFeaturebase_RightCurlyBracketKeyword_7_5 extends Keyw
 }
 
 
-// "}"
+// '}'
 protected class ProductFileFeaturebase_RightCurlyBracketKeyword_8 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_RightCurlyBracketKeyword_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11583,7 +11636,7 @@ protected class ProductFileFeaturebase_RightCurlyBracketKeyword_8 extends Keywor
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ProductFileFeaturebase_Group_9 extends GroupToken {
 	
 	public ProductFileFeaturebase_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11605,7 +11658,7 @@ protected class ProductFileFeaturebase_Group_9 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class ProductFileFeaturebase_ExcludedIfKeyword_9_0 extends KeywordToken  {
 	
 	public ProductFileFeaturebase_ExcludedIfKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11680,24 +11733,36 @@ protected class ProductFileFeaturebase_ExcludeExpressionAssignment_9_1 extends A
 
 /************ begin Rule FeatureFile ****************
  *
- * FeatureFile returns bundle::FeatureFile:
- * 	{bundle::FeatureFile} "FeatureFile" featureid=STRING "{" ("version" "=" version=STRING & "featurename" "="
- * 	featurename=STRING & "vendor" "=" vendor=STRING & "description" "=" description=LinkedString & "copyright" "="
- * 	copyright=LinkedString & "license" "=" license=LinkedString & ("license-feature" "=" license_feature=STRING &
- * 	"license-feature-version" "=" license_feature_version=Version)?) ("plugins" "=" "{" plugins+=FeaturePlugin (","
- * 	plugins+=FeaturePlugin)* "}")? ("required" "=" "{" requiredfeatures+=RequiredFeature (","
- * 	requiredfeatures+=RequiredFeature)* "}")? ("included" "=" "{" includedfeatures+=IncludedFeature (","
- * 	includedfeatures+=IncludedFeature)* "}")? "}";
+ * FeatureFile bundle::FeatureFile:
+ * 	{bundle::FeatureFile}
+ * 	'FeatureFile' featureid=STRING '{' ('version' '=' version=STRING
+ * 	&
+ * 	'featurename' '=' featurename=STRING
+ * 	&
+ * 	'vendor' '=' vendor=STRING
+ * 	&
+ * 	'description' '=' description=LinkedString
+ * 	&
+ * 	'copyright' '=' copyright=LinkedString
+ * 	&
+ * 	'license' '=' license=LinkedString
+ * 	& ('license-feature' '=' license_feature=STRING
+ * 	&
+ * 	'license-feature-version' '=' license_feature_version=Version)?) ('plugins' '=' '{'
+ * 	plugins+=FeaturePlugin (',' plugins+=FeaturePlugin)*
+ * 	'}')? ('required' '=' '{' requiredfeatures+=RequiredFeature (',' requiredfeatures+=RequiredFeature)* '}')? ('included'
+ * 	'=' '{' includedfeatures+=IncludedFeature (',' includedfeatures+=IncludedFeature)* '}')?
+ * 	'}';
  *
  **/
 
-// {bundle::FeatureFile} "FeatureFile" featureid=STRING "{" ("version" "=" version=STRING & "featurename" "="
-// featurename=STRING & "vendor" "=" vendor=STRING & "description" "=" description=LinkedString & "copyright" "="
-// copyright=LinkedString & "license" "=" license=LinkedString & ("license-feature" "=" license_feature=STRING &
-// "license-feature-version" "=" license_feature_version=Version)?) ("plugins" "=" "{" plugins+=FeaturePlugin (","
-// plugins+=FeaturePlugin)* "}")? ("required" "=" "{" requiredfeatures+=RequiredFeature (","
-// requiredfeatures+=RequiredFeature)* "}")? ("included" "=" "{" includedfeatures+=IncludedFeature (","
-// includedfeatures+=IncludedFeature)* "}")? "}"
+// {bundle::FeatureFile} 'FeatureFile' featureid=STRING '{' ('version' '=' version=STRING & 'featurename' '='
+// featurename=STRING & 'vendor' '=' vendor=STRING & 'description' '=' description=LinkedString & 'copyright' '='
+// copyright=LinkedString & 'license' '=' license=LinkedString & ('license-feature' '=' license_feature=STRING &
+// 'license-feature-version' '=' license_feature_version=Version)?) ('plugins' '=' '{' plugins+=FeaturePlugin (','
+// plugins+=FeaturePlugin)* '}')? ('required' '=' '{' requiredfeatures+=RequiredFeature (','
+// requiredfeatures+=RequiredFeature)* '}')? ('included' '=' '{' includedfeatures+=IncludedFeature (','
+// includedfeatures+=IncludedFeature)* '}')? '}'
 protected class FeatureFile_Group extends GroupToken {
 	
 	public FeatureFile_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11752,7 +11817,7 @@ protected class FeatureFile_FeatureFileAction_0 extends ActionToken  {
 	}
 }
 
-// "FeatureFile"
+// 'FeatureFile'
 protected class FeatureFile_FeatureFileKeyword_1 extends KeywordToken  {
 	
 	public FeatureFile_FeatureFileKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11808,7 +11873,7 @@ protected class FeatureFile_FeatureidAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class FeatureFile_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public FeatureFile_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11830,9 +11895,9 @@ protected class FeatureFile_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 
 }
 
-// "version" "=" version=STRING & "featurename" "=" featurename=STRING & "vendor" "=" vendor=STRING & "description" "="
-// description=LinkedString & "copyright" "=" copyright=LinkedString & "license" "=" license=LinkedString &
-// ("license-feature" "=" license_feature=STRING & "license-feature-version" "=" license_feature_version=Version)?
+// 'version' '=' version=STRING & 'featurename' '=' featurename=STRING & 'vendor' '=' vendor=STRING & 'description' '='
+// description=LinkedString & 'copyright' '=' copyright=LinkedString & 'license' '=' license=LinkedString &
+// ('license-feature' '=' license_feature=STRING & 'license-feature-version' '=' license_feature_version=Version)?
 protected class FeatureFile_UnorderedGroup_4 extends UnorderedGroupToken {
 	
 	public FeatureFile_UnorderedGroup_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11855,7 +11920,7 @@ protected class FeatureFile_UnorderedGroup_4 extends UnorderedGroupToken {
 
 }
 
-// "version" "=" version=STRING
+// 'version' '=' version=STRING
 protected class FeatureFile_Group_4_0 extends GroupToken {
 	
 	public FeatureFile_Group_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11877,7 +11942,7 @@ protected class FeatureFile_Group_4_0 extends GroupToken {
 
 }
 
-// "version"
+// 'version'
 protected class FeatureFile_VersionKeyword_4_0_0 extends KeywordToken  {
 	
 	public FeatureFile_VersionKeyword_4_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11899,7 +11964,7 @@ protected class FeatureFile_VersionKeyword_4_0_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_0_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11956,7 +12021,7 @@ protected class FeatureFile_VersionAssignment_4_0_2 extends AssignmentToken  {
 }
 
 
-// "featurename" "=" featurename=STRING
+// 'featurename' '=' featurename=STRING
 protected class FeatureFile_Group_4_1 extends GroupToken {
 	
 	public FeatureFile_Group_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -11978,7 +12043,7 @@ protected class FeatureFile_Group_4_1 extends GroupToken {
 
 }
 
-// "featurename"
+// 'featurename'
 protected class FeatureFile_FeaturenameKeyword_4_1_0 extends KeywordToken  {
 	
 	public FeatureFile_FeaturenameKeyword_4_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12000,7 +12065,7 @@ protected class FeatureFile_FeaturenameKeyword_4_1_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_1_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12057,7 +12122,7 @@ protected class FeatureFile_FeaturenameAssignment_4_1_2 extends AssignmentToken 
 }
 
 
-// "vendor" "=" vendor=STRING
+// 'vendor' '=' vendor=STRING
 protected class FeatureFile_Group_4_2 extends GroupToken {
 	
 	public FeatureFile_Group_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12079,7 +12144,7 @@ protected class FeatureFile_Group_4_2 extends GroupToken {
 
 }
 
-// "vendor"
+// 'vendor'
 protected class FeatureFile_VendorKeyword_4_2_0 extends KeywordToken  {
 	
 	public FeatureFile_VendorKeyword_4_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12101,7 +12166,7 @@ protected class FeatureFile_VendorKeyword_4_2_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_2_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12158,7 +12223,7 @@ protected class FeatureFile_VendorAssignment_4_2_2 extends AssignmentToken  {
 }
 
 
-// "description" "=" description=LinkedString
+// 'description' '=' description=LinkedString
 protected class FeatureFile_Group_4_3 extends GroupToken {
 	
 	public FeatureFile_Group_4_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12180,7 +12245,7 @@ protected class FeatureFile_Group_4_3 extends GroupToken {
 
 }
 
-// "description"
+// 'description'
 protected class FeatureFile_DescriptionKeyword_4_3_0 extends KeywordToken  {
 	
 	public FeatureFile_DescriptionKeyword_4_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12202,7 +12267,7 @@ protected class FeatureFile_DescriptionKeyword_4_3_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_3_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12271,7 +12336,7 @@ protected class FeatureFile_DescriptionAssignment_4_3_2 extends AssignmentToken 
 }
 
 
-// "copyright" "=" copyright=LinkedString
+// 'copyright' '=' copyright=LinkedString
 protected class FeatureFile_Group_4_4 extends GroupToken {
 	
 	public FeatureFile_Group_4_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12293,7 +12358,7 @@ protected class FeatureFile_Group_4_4 extends GroupToken {
 
 }
 
-// "copyright"
+// 'copyright'
 protected class FeatureFile_CopyrightKeyword_4_4_0 extends KeywordToken  {
 	
 	public FeatureFile_CopyrightKeyword_4_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12315,7 +12380,7 @@ protected class FeatureFile_CopyrightKeyword_4_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_4_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12384,7 +12449,7 @@ protected class FeatureFile_CopyrightAssignment_4_4_2 extends AssignmentToken  {
 }
 
 
-// "license" "=" license=LinkedString
+// 'license' '=' license=LinkedString
 protected class FeatureFile_Group_4_5 extends GroupToken {
 	
 	public FeatureFile_Group_4_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12406,7 +12471,7 @@ protected class FeatureFile_Group_4_5 extends GroupToken {
 
 }
 
-// "license"
+// 'license'
 protected class FeatureFile_LicenseKeyword_4_5_0 extends KeywordToken  {
 	
 	public FeatureFile_LicenseKeyword_4_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12428,7 +12493,7 @@ protected class FeatureFile_LicenseKeyword_4_5_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_5_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12497,7 +12562,7 @@ protected class FeatureFile_LicenseAssignment_4_5_2 extends AssignmentToken  {
 }
 
 
-// ("license-feature" "=" license_feature=STRING & "license-feature-version" "=" license_feature_version=Version)?
+// ('license-feature' '=' license_feature=STRING & 'license-feature-version' '=' license_feature_version=Version)?
 protected class FeatureFile_UnorderedGroup_4_6 extends UnorderedGroupToken {
 	
 	public FeatureFile_UnorderedGroup_4_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12519,7 +12584,7 @@ protected class FeatureFile_UnorderedGroup_4_6 extends UnorderedGroupToken {
 
 }
 
-// "license-feature" "=" license_feature=STRING
+// 'license-feature' '=' license_feature=STRING
 protected class FeatureFile_Group_4_6_0 extends GroupToken {
 	
 	public FeatureFile_Group_4_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12541,7 +12606,7 @@ protected class FeatureFile_Group_4_6_0 extends GroupToken {
 
 }
 
-// "license-feature"
+// 'license-feature'
 protected class FeatureFile_LicenseFeatureKeyword_4_6_0_0 extends KeywordToken  {
 	
 	public FeatureFile_LicenseFeatureKeyword_4_6_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12563,7 +12628,7 @@ protected class FeatureFile_LicenseFeatureKeyword_4_6_0_0 extends KeywordToken  
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_6_0_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_6_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12620,7 +12685,7 @@ protected class FeatureFile_License_featureAssignment_4_6_0_2 extends Assignment
 }
 
 
-// "license-feature-version" "=" license_feature_version=Version
+// 'license-feature-version' '=' license_feature_version=Version
 protected class FeatureFile_Group_4_6_1 extends GroupToken {
 	
 	public FeatureFile_Group_4_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12642,7 +12707,7 @@ protected class FeatureFile_Group_4_6_1 extends GroupToken {
 
 }
 
-// "license-feature-version"
+// 'license-feature-version'
 protected class FeatureFile_LicenseFeatureVersionKeyword_4_6_1_0 extends KeywordToken  {
 	
 	public FeatureFile_LicenseFeatureVersionKeyword_4_6_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12664,7 +12729,7 @@ protected class FeatureFile_LicenseFeatureVersionKeyword_4_6_1_0 extends Keyword
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_4_6_1_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_4_6_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12723,7 +12788,7 @@ protected class FeatureFile_License_feature_versionAssignment_4_6_1_2 extends As
 
 
 
-// ("plugins" "=" "{" plugins+=FeaturePlugin ("," plugins+=FeaturePlugin)* "}")?
+// ('plugins' '=' '{' plugins+=FeaturePlugin (',' plugins+=FeaturePlugin)* '}')?
 protected class FeatureFile_Group_5 extends GroupToken {
 	
 	public FeatureFile_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12745,7 +12810,7 @@ protected class FeatureFile_Group_5 extends GroupToken {
 
 }
 
-// "plugins"
+// 'plugins'
 protected class FeatureFile_PluginsKeyword_5_0 extends KeywordToken  {
 	
 	public FeatureFile_PluginsKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12767,7 +12832,7 @@ protected class FeatureFile_PluginsKeyword_5_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_5_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12789,7 +12854,7 @@ protected class FeatureFile_EqualsSignKeyword_5_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class FeatureFile_LeftCurlyBracketKeyword_5_2 extends KeywordToken  {
 	
 	public FeatureFile_LeftCurlyBracketKeyword_5_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12857,7 +12922,7 @@ protected class FeatureFile_PluginsAssignment_5_3 extends AssignmentToken  {
 	}	
 }
 
-// ("," plugins+=FeaturePlugin)*
+// (',' plugins+=FeaturePlugin)*
 protected class FeatureFile_Group_5_4 extends GroupToken {
 	
 	public FeatureFile_Group_5_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12879,7 +12944,7 @@ protected class FeatureFile_Group_5_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class FeatureFile_CommaKeyword_5_4_0 extends KeywordToken  {
 	
 	public FeatureFile_CommaKeyword_5_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12949,7 +13014,7 @@ protected class FeatureFile_PluginsAssignment_5_4_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class FeatureFile_RightCurlyBracketKeyword_5_5 extends KeywordToken  {
 	
 	public FeatureFile_RightCurlyBracketKeyword_5_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12973,7 +13038,7 @@ protected class FeatureFile_RightCurlyBracketKeyword_5_5 extends KeywordToken  {
 }
 
 
-// ("required" "=" "{" requiredfeatures+=RequiredFeature ("," requiredfeatures+=RequiredFeature)* "}")?
+// ('required' '=' '{' requiredfeatures+=RequiredFeature (',' requiredfeatures+=RequiredFeature)* '}')?
 protected class FeatureFile_Group_6 extends GroupToken {
 	
 	public FeatureFile_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -12995,7 +13060,7 @@ protected class FeatureFile_Group_6 extends GroupToken {
 
 }
 
-// "required"
+// 'required'
 protected class FeatureFile_RequiredKeyword_6_0 extends KeywordToken  {
 	
 	public FeatureFile_RequiredKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13018,7 +13083,7 @@ protected class FeatureFile_RequiredKeyword_6_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_6_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13040,7 +13105,7 @@ protected class FeatureFile_EqualsSignKeyword_6_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class FeatureFile_LeftCurlyBracketKeyword_6_2 extends KeywordToken  {
 	
 	public FeatureFile_LeftCurlyBracketKeyword_6_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13108,7 +13173,7 @@ protected class FeatureFile_RequiredfeaturesAssignment_6_3 extends AssignmentTok
 	}	
 }
 
-// ("," requiredfeatures+=RequiredFeature)*
+// (',' requiredfeatures+=RequiredFeature)*
 protected class FeatureFile_Group_6_4 extends GroupToken {
 	
 	public FeatureFile_Group_6_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13130,7 +13195,7 @@ protected class FeatureFile_Group_6_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class FeatureFile_CommaKeyword_6_4_0 extends KeywordToken  {
 	
 	public FeatureFile_CommaKeyword_6_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13200,7 +13265,7 @@ protected class FeatureFile_RequiredfeaturesAssignment_6_4_1 extends AssignmentT
 }
 
 
-// "}"
+// '}'
 protected class FeatureFile_RightCurlyBracketKeyword_6_5 extends KeywordToken  {
 	
 	public FeatureFile_RightCurlyBracketKeyword_6_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13224,7 +13289,7 @@ protected class FeatureFile_RightCurlyBracketKeyword_6_5 extends KeywordToken  {
 }
 
 
-// ("included" "=" "{" includedfeatures+=IncludedFeature ("," includedfeatures+=IncludedFeature)* "}")?
+// ('included' '=' '{' includedfeatures+=IncludedFeature (',' includedfeatures+=IncludedFeature)* '}')?
 protected class FeatureFile_Group_7 extends GroupToken {
 	
 	public FeatureFile_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13246,7 +13311,7 @@ protected class FeatureFile_Group_7 extends GroupToken {
 
 }
 
-// "included"
+// 'included'
 protected class FeatureFile_IncludedKeyword_7_0 extends KeywordToken  {
 	
 	public FeatureFile_IncludedKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13270,7 +13335,7 @@ protected class FeatureFile_IncludedKeyword_7_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class FeatureFile_EqualsSignKeyword_7_1 extends KeywordToken  {
 	
 	public FeatureFile_EqualsSignKeyword_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13292,7 +13357,7 @@ protected class FeatureFile_EqualsSignKeyword_7_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class FeatureFile_LeftCurlyBracketKeyword_7_2 extends KeywordToken  {
 	
 	public FeatureFile_LeftCurlyBracketKeyword_7_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13360,7 +13425,7 @@ protected class FeatureFile_IncludedfeaturesAssignment_7_3 extends AssignmentTok
 	}	
 }
 
-// ("," includedfeatures+=IncludedFeature)*
+// (',' includedfeatures+=IncludedFeature)*
 protected class FeatureFile_Group_7_4 extends GroupToken {
 	
 	public FeatureFile_Group_7_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13382,7 +13447,7 @@ protected class FeatureFile_Group_7_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class FeatureFile_CommaKeyword_7_4_0 extends KeywordToken  {
 	
 	public FeatureFile_CommaKeyword_7_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13452,7 +13517,7 @@ protected class FeatureFile_IncludedfeaturesAssignment_7_4_1 extends AssignmentT
 }
 
 
-// "}"
+// '}'
 protected class FeatureFile_RightCurlyBracketKeyword_7_5 extends KeywordToken  {
 	
 	public FeatureFile_RightCurlyBracketKeyword_7_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13476,7 +13541,7 @@ protected class FeatureFile_RightCurlyBracketKeyword_7_5 extends KeywordToken  {
 }
 
 
-// "}"
+// '}'
 protected class FeatureFile_RightCurlyBracketKeyword_8 extends KeywordToken  {
 	
 	public FeatureFile_RightCurlyBracketKeyword_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13507,14 +13572,14 @@ protected class FeatureFile_RightCurlyBracketKeyword_8 extends KeywordToken  {
 
 /************ begin Rule ImportedPackage ****************
  *
- * ImportedPackage returns bundle::ImportedPackage:
- * 	{bundle::ImportedPackage} name=STRING ((minExclusive?="("? | "[") minVersion=Version? "," (maxVersion=Version?
- * 	(maxExclusive?=")"? | "]")))? ("excluded-if" excludeExpression=BooleanExpression)?;
+ * ImportedPackage bundle::ImportedPackage:
+ * 	{bundle::ImportedPackage} name=STRING ((minExclusive?='('? | '[') minVersion=Version? ',' (maxVersion=Version?
+ * 	(maxExclusive?=')'? | ']')))? ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::ImportedPackage} name=STRING ((minExclusive?="("? | "[") minVersion=Version? "," (maxVersion=Version?
-// (maxExclusive?=")"? | "]")))? ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::ImportedPackage} name=STRING ((minExclusive?='('? | '[') minVersion=Version? ',' (maxVersion=Version?
+// (maxExclusive?=')'? | ']')))? ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ImportedPackage_Group extends GroupToken {
 	
 	public ImportedPackage_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13605,7 +13670,7 @@ protected class ImportedPackage_NameAssignment_1 extends AssignmentToken  {
 
 }
 
-// ((minExclusive?="("? | "[") minVersion=Version? "," (maxVersion=Version? (maxExclusive?=")"? | "]")))?
+// ((minExclusive?='('? | '[') minVersion=Version? ',' (maxVersion=Version? (maxExclusive?=')'? | ']')))?
 protected class ImportedPackage_Group_2 extends GroupToken {
 	
 	public ImportedPackage_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13627,7 +13692,7 @@ protected class ImportedPackage_Group_2 extends GroupToken {
 
 }
 
-// minExclusive?="("? | "["
+// minExclusive?='('? | '['
 protected class ImportedPackage_Alternatives_2_0 extends AlternativesToken {
 
 	public ImportedPackage_Alternatives_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13650,7 +13715,7 @@ protected class ImportedPackage_Alternatives_2_0 extends AlternativesToken {
 
 }
 
-// minExclusive?="("?
+// minExclusive?='('?
 protected class ImportedPackage_MinExclusiveAssignment_2_0_0 extends AssignmentToken  {
 	
 	public ImportedPackage_MinExclusiveAssignment_2_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13719,7 +13784,7 @@ protected class ImportedPackage_MinVersionAssignment_2_1 extends AssignmentToken
 
 }
 
-// ","
+// ','
 protected class ImportedPackage_CommaKeyword_2_2 extends KeywordToken  {
 	
 	public ImportedPackage_CommaKeyword_2_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13742,7 +13807,7 @@ protected class ImportedPackage_CommaKeyword_2_2 extends KeywordToken  {
 
 }
 
-// maxVersion=Version? (maxExclusive?=")"? | "]")
+// maxVersion=Version? (maxExclusive?=')'? | ']')
 protected class ImportedPackage_Group_2_3 extends GroupToken {
 	
 	public ImportedPackage_Group_2_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13798,7 +13863,7 @@ protected class ImportedPackage_MaxVersionAssignment_2_3_0 extends AssignmentTok
 
 }
 
-// maxExclusive?=")"? | "]"
+// maxExclusive?=')'? | ']'
 protected class ImportedPackage_Alternatives_2_3_1 extends AlternativesToken {
 
 	public ImportedPackage_Alternatives_2_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13822,7 +13887,7 @@ protected class ImportedPackage_Alternatives_2_3_1 extends AlternativesToken {
 
 }
 
-// maxExclusive?=")"?
+// maxExclusive?=')'?
 protected class ImportedPackage_MaxExclusiveAssignment_2_3_1_0 extends AssignmentToken  {
 	
 	public ImportedPackage_MaxExclusiveAssignment_2_3_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13860,7 +13925,7 @@ protected class ImportedPackage_MaxExclusiveAssignment_2_3_1_0 extends Assignmen
 
 
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ImportedPackage_Group_3 extends GroupToken {
 	
 	public ImportedPackage_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13882,7 +13947,7 @@ protected class ImportedPackage_Group_3 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class ImportedPackage_ExcludedIfKeyword_3_0 extends KeywordToken  {
 	
 	public ImportedPackage_ExcludedIfKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -13958,12 +14023,12 @@ protected class ImportedPackage_ExcludeExpressionAssignment_3_1 extends Assignme
 
 /************ begin Rule ExportedPackage ****************
  *
- * ExportedPackage returns bundle::ExportedPackage:
- * 	{bundle::ExportedPackage} name=STRING version=Version? ("excluded-if" excludeExpression=BooleanExpression)?;
+ * ExportedPackage bundle::ExportedPackage:
+ * 	{bundle::ExportedPackage} name=STRING version=Version? ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::ExportedPackage} name=STRING version=Version? ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::ExportedPackage} name=STRING version=Version? ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ExportedPackage_Group extends GroupToken {
 	
 	public ExportedPackage_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14088,7 +14153,7 @@ protected class ExportedPackage_VersionAssignment_2 extends AssignmentToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ExportedPackage_Group_3 extends GroupToken {
 	
 	public ExportedPackage_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14110,7 +14175,7 @@ protected class ExportedPackage_Group_3 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class ExportedPackage_ExcludedIfKeyword_3_0 extends KeywordToken  {
 	
 	public ExportedPackage_ExcludedIfKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14186,14 +14251,16 @@ protected class ExportedPackage_ExcludeExpressionAssignment_3_1 extends Assignme
 
 /************ begin Rule Extension ****************
  *
- * Extension returns bundle::Extension:
- * 	{bundle::Extension} point=STRING "{" ("id" "=" id=STRING)? ("elements" "=" "{" elements+=Element (","
- * 	elements+=Element)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?;
+ * Extension bundle::Extension:
+ * 	{bundle::Extension} point=STRING '{' ('id' '=' id=STRING)? ('elements' '=' '{'
+ * 	elements+=Element (',' elements+=Element)*
+ * 	'}')?
+ * 	'}' ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::Extension} point=STRING "{" ("id" "=" id=STRING)? ("elements" "=" "{" elements+=Element (","
-// elements+=Element)* "}")? "}" ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::Extension} point=STRING '{' ('id' '=' id=STRING)? ('elements' '=' '{' elements+=Element (','
+// elements+=Element)* '}')? '}' ('excluded-if' excludeExpression=BooleanExpression)?
 protected class Extension_Group extends GroupToken {
 	
 	public Extension_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14283,7 +14350,7 @@ protected class Extension_PointAssignment_1 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class Extension_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 	
 	public Extension_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14305,7 +14372,7 @@ protected class Extension_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 
 }
 
-// ("id" "=" id=STRING)?
+// ('id' '=' id=STRING)?
 protected class Extension_Group_3 extends GroupToken {
 	
 	public Extension_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14327,7 +14394,7 @@ protected class Extension_Group_3 extends GroupToken {
 
 }
 
-// "id"
+// 'id'
 protected class Extension_IdKeyword_3_0 extends KeywordToken  {
 	
 	public Extension_IdKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14349,7 +14416,7 @@ protected class Extension_IdKeyword_3_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class Extension_EqualsSignKeyword_3_1 extends KeywordToken  {
 	
 	public Extension_EqualsSignKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14406,7 +14473,7 @@ protected class Extension_IdAssignment_3_2 extends AssignmentToken  {
 }
 
 
-// ("elements" "=" "{" elements+=Element ("," elements+=Element)* "}")?
+// ('elements' '=' '{' elements+=Element (',' elements+=Element)* '}')?
 protected class Extension_Group_4 extends GroupToken {
 	
 	public Extension_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14428,7 +14495,7 @@ protected class Extension_Group_4 extends GroupToken {
 
 }
 
-// "elements"
+// 'elements'
 protected class Extension_ElementsKeyword_4_0 extends KeywordToken  {
 	
 	public Extension_ElementsKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14451,7 +14518,7 @@ protected class Extension_ElementsKeyword_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class Extension_EqualsSignKeyword_4_1 extends KeywordToken  {
 	
 	public Extension_EqualsSignKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14473,7 +14540,7 @@ protected class Extension_EqualsSignKeyword_4_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class Extension_LeftCurlyBracketKeyword_4_2 extends KeywordToken  {
 	
 	public Extension_LeftCurlyBracketKeyword_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14541,7 +14608,7 @@ protected class Extension_ElementsAssignment_4_3 extends AssignmentToken  {
 	}	
 }
 
-// ("," elements+=Element)*
+// (',' elements+=Element)*
 protected class Extension_Group_4_4 extends GroupToken {
 	
 	public Extension_Group_4_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14563,7 +14630,7 @@ protected class Extension_Group_4_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class Extension_CommaKeyword_4_4_0 extends KeywordToken  {
 	
 	public Extension_CommaKeyword_4_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14633,7 +14700,7 @@ protected class Extension_ElementsAssignment_4_4_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class Extension_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 	
 	public Extension_RightCurlyBracketKeyword_4_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14657,7 +14724,7 @@ protected class Extension_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 }
 
 
-// "}"
+// '}'
 protected class Extension_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public Extension_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14681,7 +14748,7 @@ protected class Extension_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class Extension_Group_6 extends GroupToken {
 	
 	public Extension_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14703,7 +14770,7 @@ protected class Extension_Group_6 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class Extension_ExcludedIfKeyword_6_0 extends KeywordToken  {
 	
 	public Extension_ExcludedIfKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14778,14 +14845,18 @@ protected class Extension_ExcludeExpressionAssignment_6_1 extends AssignmentToke
 
 /************ begin Rule Element ****************
  *
- * Element returns bundle::Element:
- * 	{bundle::Element} name=STRING "{" ("attributes" "=" "{" attributes+=Attribute ("," attributes+=Attribute)* "}")?
- * 	("children" "=" "{" children+=Element ("," children+=Element)* "}")? "}";
+ * Element bundle::Element:
+ * 	{bundle::Element} name=STRING '{' ('attributes' '=' '{'
+ * 	attributes+=Attribute (',' attributes+=Attribute)*
+ * 	'}')? ('children' '=' '{'
+ * 	children+=Element (',' children+=Element)*
+ * 	'}')?
+ * 	'}';
  *
  **/
 
-// {bundle::Element} name=STRING "{" ("attributes" "=" "{" attributes+=Attribute ("," attributes+=Attribute)* "}")?
-// ("children" "=" "{" children+=Element ("," children+=Element)* "}")? "}"
+// {bundle::Element} name=STRING '{' ('attributes' '=' '{' attributes+=Attribute (',' attributes+=Attribute)* '}')?
+// ('children' '=' '{' children+=Element (',' children+=Element)* '}')? '}'
 protected class Element_Group extends GroupToken {
 	
 	public Element_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14874,7 +14945,7 @@ protected class Element_NameAssignment_1 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class Element_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 	
 	public Element_LeftCurlyBracketKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14896,7 +14967,7 @@ protected class Element_LeftCurlyBracketKeyword_2 extends KeywordToken  {
 
 }
 
-// ("attributes" "=" "{" attributes+=Attribute ("," attributes+=Attribute)* "}")?
+// ('attributes' '=' '{' attributes+=Attribute (',' attributes+=Attribute)* '}')?
 protected class Element_Group_3 extends GroupToken {
 	
 	public Element_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14918,7 +14989,7 @@ protected class Element_Group_3 extends GroupToken {
 
 }
 
-// "attributes"
+// 'attributes'
 protected class Element_AttributesKeyword_3_0 extends KeywordToken  {
 	
 	public Element_AttributesKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14940,7 +15011,7 @@ protected class Element_AttributesKeyword_3_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class Element_EqualsSignKeyword_3_1 extends KeywordToken  {
 	
 	public Element_EqualsSignKeyword_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -14962,7 +15033,7 @@ protected class Element_EqualsSignKeyword_3_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class Element_LeftCurlyBracketKeyword_3_2 extends KeywordToken  {
 	
 	public Element_LeftCurlyBracketKeyword_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15030,7 +15101,7 @@ protected class Element_AttributesAssignment_3_3 extends AssignmentToken  {
 	}	
 }
 
-// ("," attributes+=Attribute)*
+// (',' attributes+=Attribute)*
 protected class Element_Group_3_4 extends GroupToken {
 	
 	public Element_Group_3_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15052,7 +15123,7 @@ protected class Element_Group_3_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class Element_CommaKeyword_3_4_0 extends KeywordToken  {
 	
 	public Element_CommaKeyword_3_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15122,7 +15193,7 @@ protected class Element_AttributesAssignment_3_4_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class Element_RightCurlyBracketKeyword_3_5 extends KeywordToken  {
 	
 	public Element_RightCurlyBracketKeyword_3_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15146,7 +15217,7 @@ protected class Element_RightCurlyBracketKeyword_3_5 extends KeywordToken  {
 }
 
 
-// ("children" "=" "{" children+=Element ("," children+=Element)* "}")?
+// ('children' '=' '{' children+=Element (',' children+=Element)* '}')?
 protected class Element_Group_4 extends GroupToken {
 	
 	public Element_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15168,7 +15239,7 @@ protected class Element_Group_4 extends GroupToken {
 
 }
 
-// "children"
+// 'children'
 protected class Element_ChildrenKeyword_4_0 extends KeywordToken  {
 	
 	public Element_ChildrenKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15191,7 +15262,7 @@ protected class Element_ChildrenKeyword_4_0 extends KeywordToken  {
 
 }
 
-// "="
+// '='
 protected class Element_EqualsSignKeyword_4_1 extends KeywordToken  {
 	
 	public Element_EqualsSignKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15213,7 +15284,7 @@ protected class Element_EqualsSignKeyword_4_1 extends KeywordToken  {
 
 }
 
-// "{"
+// '{'
 protected class Element_LeftCurlyBracketKeyword_4_2 extends KeywordToken  {
 	
 	public Element_LeftCurlyBracketKeyword_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15281,7 +15352,7 @@ protected class Element_ChildrenAssignment_4_3 extends AssignmentToken  {
 	}	
 }
 
-// ("," children+=Element)*
+// (',' children+=Element)*
 protected class Element_Group_4_4 extends GroupToken {
 	
 	public Element_Group_4_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15303,7 +15374,7 @@ protected class Element_Group_4_4 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class Element_CommaKeyword_4_4_0 extends KeywordToken  {
 	
 	public Element_CommaKeyword_4_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15373,7 +15444,7 @@ protected class Element_ChildrenAssignment_4_4_1 extends AssignmentToken  {
 }
 
 
-// "}"
+// '}'
 protected class Element_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 	
 	public Element_RightCurlyBracketKeyword_4_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15397,7 +15468,7 @@ protected class Element_RightCurlyBracketKeyword_4_5 extends KeywordToken  {
 }
 
 
-// "}"
+// '}'
 protected class Element_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public Element_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15427,12 +15498,13 @@ protected class Element_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 /************ begin Rule Attribute ****************
  *
- * Attribute returns bundle::Attribute:
- * 	{bundle::Attribute} "{" name=STRING "," value=STRING "}";
+ * Attribute bundle::Attribute:
+ * 	{bundle::Attribute}
+ * 	'{' name=STRING ',' value=STRING '}';
  *
  **/
 
-// {bundle::Attribute} "{" name=STRING "," value=STRING "}"
+// {bundle::Attribute} '{' name=STRING ',' value=STRING '}'
 protected class Attribute_Group extends GroupToken {
 	
 	public Attribute_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15487,7 +15559,7 @@ protected class Attribute_AttributeAction_0 extends ActionToken  {
 	}
 }
 
-// "{"
+// '{'
 protected class Attribute_LeftCurlyBracketKeyword_1 extends KeywordToken  {
 	
 	public Attribute_LeftCurlyBracketKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15543,7 +15615,7 @@ protected class Attribute_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// ","
+// ','
 protected class Attribute_CommaKeyword_3 extends KeywordToken  {
 	
 	public Attribute_CommaKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15599,7 +15671,7 @@ protected class Attribute_ValueAssignment_4 extends AssignmentToken  {
 
 }
 
-// "}"
+// '}'
 protected class Attribute_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public Attribute_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15627,14 +15699,14 @@ protected class Attribute_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 /************ begin Rule RequiredBundle ****************
  *
- * RequiredBundle returns bundle::RequiredBundle:
- * 	{bundle::RequiredBundle} name=STRING ((minExclusive?="("? | "[") minVersion=Version? "," maxVersion=Version?
- * 	(maxExclusive?=")"? | "]"))? ("excluded-if" excludeExpression=BooleanExpression)?;
+ * RequiredBundle bundle::RequiredBundle:
+ * 	{bundle::RequiredBundle} name=STRING ((minExclusive?='('? | '[') minVersion=Version? ',' maxVersion=Version?
+ * 	(maxExclusive?=')'? | ']'))? ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::RequiredBundle} name=STRING ((minExclusive?="("? | "[") minVersion=Version? "," maxVersion=Version?
-// (maxExclusive?=")"? | "]"))? ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::RequiredBundle} name=STRING ((minExclusive?='('? | '[') minVersion=Version? ',' maxVersion=Version?
+// (maxExclusive?=')'? | ']'))? ('excluded-if' excludeExpression=BooleanExpression)?
 protected class RequiredBundle_Group extends GroupToken {
 	
 	public RequiredBundle_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15725,7 +15797,7 @@ protected class RequiredBundle_NameAssignment_1 extends AssignmentToken  {
 
 }
 
-// ((minExclusive?="("? | "[") minVersion=Version? "," maxVersion=Version? (maxExclusive?=")"? | "]"))?
+// ((minExclusive?='('? | '[') minVersion=Version? ',' maxVersion=Version? (maxExclusive?=')'? | ']'))?
 protected class RequiredBundle_Group_2 extends GroupToken {
 	
 	public RequiredBundle_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15747,7 +15819,7 @@ protected class RequiredBundle_Group_2 extends GroupToken {
 
 }
 
-// minExclusive?="("? | "["
+// minExclusive?='('? | '['
 protected class RequiredBundle_Alternatives_2_0 extends AlternativesToken {
 
 	public RequiredBundle_Alternatives_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15770,7 +15842,7 @@ protected class RequiredBundle_Alternatives_2_0 extends AlternativesToken {
 
 }
 
-// minExclusive?="("?
+// minExclusive?='('?
 protected class RequiredBundle_MinExclusiveAssignment_2_0_0 extends AssignmentToken  {
 	
 	public RequiredBundle_MinExclusiveAssignment_2_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15839,7 +15911,7 @@ protected class RequiredBundle_MinVersionAssignment_2_1 extends AssignmentToken 
 
 }
 
-// ","
+// ','
 protected class RequiredBundle_CommaKeyword_2_2 extends KeywordToken  {
 	
 	public RequiredBundle_CommaKeyword_2_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15896,7 +15968,7 @@ protected class RequiredBundle_MaxVersionAssignment_2_3 extends AssignmentToken 
 
 }
 
-// maxExclusive?=")"? | "]"
+// maxExclusive?=')'? | ']'
 protected class RequiredBundle_Alternatives_2_4 extends AlternativesToken {
 
 	public RequiredBundle_Alternatives_2_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15920,7 +15992,7 @@ protected class RequiredBundle_Alternatives_2_4 extends AlternativesToken {
 
 }
 
-// maxExclusive?=")"?
+// maxExclusive?=')'?
 protected class RequiredBundle_MaxExclusiveAssignment_2_4_0 extends AssignmentToken  {
 	
 	public RequiredBundle_MaxExclusiveAssignment_2_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15957,7 +16029,7 @@ protected class RequiredBundle_MaxExclusiveAssignment_2_4_0 extends AssignmentTo
 
 
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class RequiredBundle_Group_3 extends GroupToken {
 	
 	public RequiredBundle_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -15979,7 +16051,7 @@ protected class RequiredBundle_Group_3 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class RequiredBundle_ExcludedIfKeyword_3_0 extends KeywordToken  {
 	
 	public RequiredBundle_ExcludedIfKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16055,12 +16127,15 @@ protected class RequiredBundle_ExcludeExpressionAssignment_3_1 extends Assignmen
 
 /************ begin Rule LinkedString ****************
  *
- * LinkedString returns bundle::LinkedString:
- * 	{bundle::LinkedString} "LinkedString" weburl=STRING "{" value=STRING "}";
+ * LinkedString bundle::LinkedString:
+ * 	{bundle::LinkedString}
+ * 	'LinkedString' weburl=STRING '{'
+ * 	value=STRING
+ * 	'}';
  *
  **/
 
-// {bundle::LinkedString} "LinkedString" weburl=STRING "{" value=STRING "}"
+// {bundle::LinkedString} 'LinkedString' weburl=STRING '{' value=STRING '}'
 protected class LinkedString_Group extends GroupToken {
 	
 	public LinkedString_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16115,7 +16190,7 @@ protected class LinkedString_LinkedStringAction_0 extends ActionToken  {
 	}
 }
 
-// "LinkedString"
+// 'LinkedString'
 protected class LinkedString_LinkedStringKeyword_1 extends KeywordToken  {
 	
 	public LinkedString_LinkedStringKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16171,7 +16246,7 @@ protected class LinkedString_WeburlAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class LinkedString_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public LinkedString_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16227,7 +16302,7 @@ protected class LinkedString_ValueAssignment_4 extends AssignmentToken  {
 
 }
 
-// "}"
+// '}'
 protected class LinkedString_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public LinkedString_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16255,13 +16330,13 @@ protected class LinkedString_RightCurlyBracketKeyword_5 extends KeywordToken  {
 
 /************ begin Rule FeaturePlugin ****************
  *
- * FeaturePlugin returns bundle::FeaturePlugin:
- * 	{bundle::FeaturePlugin} unpack?="unpacked"? ^fragment?="fragment"? id=STRING ("excluded-if"
+ * FeaturePlugin bundle::FeaturePlugin:
+ * 	{bundle::FeaturePlugin} unpack?='unpacked'? ^fragment?='fragment'? id=STRING ('excluded-if'
  * 	excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::FeaturePlugin} unpack?="unpacked"? ^fragment?="fragment"? id=STRING ("excluded-if"
+// {bundle::FeaturePlugin} unpack?='unpacked'? ^fragment?='fragment'? id=STRING ('excluded-if'
 // excludeExpression=BooleanExpression)?
 protected class FeaturePlugin_Group extends GroupToken {
 	
@@ -16318,7 +16393,7 @@ protected class FeaturePlugin_FeaturePluginAction_0 extends ActionToken  {
 	}
 }
 
-// unpack?="unpacked"?
+// unpack?='unpacked'?
 protected class FeaturePlugin_UnpackAssignment_1 extends AssignmentToken  {
 	
 	public FeaturePlugin_UnpackAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16352,7 +16427,7 @@ protected class FeaturePlugin_UnpackAssignment_1 extends AssignmentToken  {
 
 }
 
-// ^fragment?="fragment"?
+// ^fragment?='fragment'?
 protected class FeaturePlugin_FragmentAssignment_2 extends AssignmentToken  {
 	
 	public FeaturePlugin_FragmentAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16423,7 +16498,7 @@ protected class FeaturePlugin_IdAssignment_3 extends AssignmentToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class FeaturePlugin_Group_4 extends GroupToken {
 	
 	public FeaturePlugin_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16445,7 +16520,7 @@ protected class FeaturePlugin_Group_4 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class FeaturePlugin_ExcludedIfKeyword_4_0 extends KeywordToken  {
 	
 	public FeaturePlugin_ExcludedIfKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16520,13 +16595,13 @@ protected class FeaturePlugin_ExcludeExpressionAssignment_4_1 extends Assignment
 
 /************ begin Rule RequiredFeature ****************
  *
- * RequiredFeature returns bundle::RequiredFeature:
- * 	{bundle::RequiredFeature} id=STRING match=MatchRule version=Version ("excluded-if"
+ * RequiredFeature bundle::RequiredFeature:
+ * 	{bundle::RequiredFeature} id=STRING match=MatchRule version=Version ('excluded-if'
  * 	excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::RequiredFeature} id=STRING match=MatchRule version=Version ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::RequiredFeature} id=STRING match=MatchRule version=Version ('excluded-if' excludeExpression=BooleanExpression)?
 protected class RequiredFeature_Group extends GroupToken {
 	
 	public RequiredFeature_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16684,7 +16759,7 @@ protected class RequiredFeature_VersionAssignment_3 extends AssignmentToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class RequiredFeature_Group_4 extends GroupToken {
 	
 	public RequiredFeature_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16706,7 +16781,7 @@ protected class RequiredFeature_Group_4 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class RequiredFeature_ExcludedIfKeyword_4_0 extends KeywordToken  {
 	
 	public RequiredFeature_ExcludedIfKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16781,12 +16856,12 @@ protected class RequiredFeature_ExcludeExpressionAssignment_4_1 extends Assignme
 
 /************ begin Rule IncludedFeature ****************
  *
- * IncludedFeature returns bundle::IncludedFeature:
- * 	{bundle::IncludedFeature} id=STRING version=Version? ("excluded-if" excludeExpression=BooleanExpression)?;
+ * IncludedFeature bundle::IncludedFeature:
+ * 	{bundle::IncludedFeature} id=STRING version=Version? ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::IncludedFeature} id=STRING version=Version? ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::IncludedFeature} id=STRING version=Version? ('excluded-if' excludeExpression=BooleanExpression)?
 protected class IncludedFeature_Group extends GroupToken {
 	
 	public IncludedFeature_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16911,7 +16986,7 @@ protected class IncludedFeature_VersionAssignment_2 extends AssignmentToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class IncludedFeature_Group_3 extends GroupToken {
 	
 	public IncludedFeature_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16933,7 +17008,7 @@ protected class IncludedFeature_Group_3 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class IncludedFeature_ExcludedIfKeyword_3_0 extends KeywordToken  {
 	
 	public IncludedFeature_ExcludedIfKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17013,12 +17088,12 @@ protected class IncludedFeature_ExcludeExpressionAssignment_3_1 extends Assignme
  * //	{bundle::ProductPlugin}
  * //	id=STRING version=Version?
  * //;
- * ProductFeature returns bundle::ProductFeature:
- * 	{bundle::ProductFeature} id=STRING version=STRING? ("excluded-if" excludeExpression=BooleanExpression)?;
+ * ProductFeature bundle::ProductFeature:
+ * 	{bundle::ProductFeature} id=STRING version=STRING? ('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::ProductFeature} id=STRING version=STRING? ("excluded-if" excludeExpression=BooleanExpression)?
+// {bundle::ProductFeature} id=STRING version=STRING? ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ProductFeature_Group extends GroupToken {
 	
 	public ProductFeature_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17143,7 +17218,7 @@ protected class ProductFeature_VersionAssignment_2 extends AssignmentToken  {
 
 }
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ProductFeature_Group_3 extends GroupToken {
 	
 	public ProductFeature_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17165,7 +17240,7 @@ protected class ProductFeature_Group_3 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class ProductFeature_ExcludedIfKeyword_3_0 extends KeywordToken  {
 	
 	public ProductFeature_ExcludedIfKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17241,13 +17316,13 @@ protected class ProductFeature_ExcludeExpressionAssignment_3_1 extends Assignmen
 
 /************ begin Rule ProductStartConfig ****************
  *
- * ProductStartConfig returns bundle::ProductStartConfig:
- * 	{bundle::ProductStartConfig} id=STRING (autoStart?="autostarted" ("at" startLevel=(SIGNED_INT | INT))?)?
- * 	("excluded-if" excludeExpression=BooleanExpression)?;
+ * ProductStartConfig bundle::ProductStartConfig:
+ * 	{bundle::ProductStartConfig} id=STRING (autoStart?='autostarted' ('at' startLevel=(SIGNED_INT | INT))?)?
+ * 	('excluded-if' excludeExpression=BooleanExpression)?;
  *
  **/
 
-// {bundle::ProductStartConfig} id=STRING (autoStart?="autostarted" ("at" startLevel=(SIGNED_INT | INT))?)? ("excluded-if"
+// {bundle::ProductStartConfig} id=STRING (autoStart?='autostarted' ('at' startLevel=(SIGNED_INT | INT))?)? ('excluded-if'
 // excludeExpression=BooleanExpression)?
 protected class ProductStartConfig_Group extends GroupToken {
 	
@@ -17339,7 +17414,7 @@ protected class ProductStartConfig_IdAssignment_1 extends AssignmentToken  {
 
 }
 
-// (autoStart?="autostarted" ("at" startLevel=(SIGNED_INT | INT))?)?
+// (autoStart?='autostarted' ('at' startLevel=(SIGNED_INT | INT))?)?
 protected class ProductStartConfig_Group_2 extends GroupToken {
 	
 	public ProductStartConfig_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17362,7 +17437,7 @@ protected class ProductStartConfig_Group_2 extends GroupToken {
 
 }
 
-// autoStart?="autostarted"
+// autoStart?='autostarted'
 protected class ProductStartConfig_AutoStartAssignment_2_0 extends AssignmentToken  {
 	
 	public ProductStartConfig_AutoStartAssignment_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17396,7 +17471,7 @@ protected class ProductStartConfig_AutoStartAssignment_2_0 extends AssignmentTok
 
 }
 
-// ("at" startLevel=(SIGNED_INT | INT))?
+// ('at' startLevel=(SIGNED_INT | INT))?
 protected class ProductStartConfig_Group_2_1 extends GroupToken {
 	
 	public ProductStartConfig_Group_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17418,7 +17493,7 @@ protected class ProductStartConfig_Group_2_1 extends GroupToken {
 
 }
 
-// "at"
+// 'at'
 protected class ProductStartConfig_AtKeyword_2_1_0 extends KeywordToken  {
 	
 	public ProductStartConfig_AtKeyword_2_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17481,7 +17556,7 @@ protected class ProductStartConfig_StartLevelAssignment_2_1_1 extends Assignment
 
 
 
-// ("excluded-if" excludeExpression=BooleanExpression)?
+// ('excluded-if' excludeExpression=BooleanExpression)?
 protected class ProductStartConfig_Group_3 extends GroupToken {
 	
 	public ProductStartConfig_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -17503,7 +17578,7 @@ protected class ProductStartConfig_Group_3 extends GroupToken {
 
 }
 
-// "excluded-if"
+// 'excluded-if'
 protected class ProductStartConfig_ExcludedIfKeyword_3_0 extends KeywordToken  {
 	
 	public ProductStartConfig_ExcludedIfKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
