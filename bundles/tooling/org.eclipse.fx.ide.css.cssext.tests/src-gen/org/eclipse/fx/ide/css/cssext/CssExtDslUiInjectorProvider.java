@@ -8,10 +8,10 @@ import org.eclipse.xtext.junit4.IInjectorProvider;
 import com.google.inject.Injector;
 
 public class CssExtDslUiInjectorProvider implements IInjectorProvider {
-	
+
 	@Override
 	public Injector getInjector() {
 		return org.eclipse.fx.ide.css.cssext.ui.internal.CssExtDslActivator.getInstance().getInjector("org.eclipse.fx.ide.css.cssext.CssExtDsl");
 	}
-	
+
 }

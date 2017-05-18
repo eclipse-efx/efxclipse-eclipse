@@ -19,17 +19,19 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class CssExtensionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CssExtension");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CssExtension");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
 		private final Assignment cPackageDefAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cPackageDefPackageDefinitionParserRuleCall_1_0 = (RuleCall)cPackageDefAssignment_1.eContents().get(0);
 		
-		////	packageDef=PackageDefinition?
-		////	rule=CSSRuleSet
 		//CssExtension:
-		//	imports+=Import* packageDef=PackageDefinition?;
+		//	imports+=Import*
+		//	packageDef=PackageDefinition?
+		//	//	packageDef=PackageDefinition?
+		//	//	rule=CSSRuleSet
+		//;
 		@Override public ParserRule getRule() { return rule; }
 
 		//imports+=Import* packageDef=PackageDefinition?
@@ -49,20 +51,20 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.Import");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
 		//Import:
-		//	"import" importedNamespace=QualifiedNameWithWildCard;
+		//	'import' importedNamespace=QualifiedNameWithWildCard;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"import" importedNamespace=QualifiedNameWithWildCard
+		//'import' importedNamespace=QualifiedNameWithWildCard
 		public Group getGroup() { return cGroup; }
 
-		//"import"
+		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
 		//importedNamespace=QualifiedNameWithWildCard
@@ -73,7 +75,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ValidIDElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ValidID");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.ValidID");
 		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//ValidID:
@@ -85,7 +87,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.QualifiedName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cValidIDParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -93,19 +95,19 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValidIDParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedName:
-		//	ValidID ("." ValidID)*;
+		//	ValidID (=> '.' ValidID)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//ValidID ("." ValidID)*
+		//ValidID (=> '.' ValidID)*
 		public Group getGroup() { return cGroup; }
 
 		//ValidID
 		public RuleCall getValidIDParserRuleCall_0() { return cValidIDParserRuleCall_0; }
 
-		//(=> "." ValidID)*
+		//(=> '.' ValidID)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//=> "."
+		//=> '.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 
 		//ValidID
@@ -113,7 +115,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class QualifiedNameWithWildCardElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildCard");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.QualifiedNameWithWildCard");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -121,27 +123,27 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAsteriskKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//QualifiedNameWithWildCard:
-		//	QualifiedName ("." "*")?;
+		//	QualifiedName ('.' '*')?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//QualifiedName ("." "*")?
+		//QualifiedName ('.' '*')?
 		public Group getGroup() { return cGroup; }
 
 		//QualifiedName
 		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
 
-		//("." "*")?
+		//('.' '*')?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"."
+		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 
-		//"*"
+		//'*'
 		public Keyword getAsteriskKeyword_1_1() { return cAsteriskKeyword_1_1; }
 	}
 
 	public class PackageDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageDefinition");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.PackageDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Assignment cDokuAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
@@ -161,12 +163,14 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//PackageDefinition:
-		//	(doku=Doku WS*)? "package" name=QualifiedName "{" (rules+=CSSRuleDefinition | subpackages+=PackageDefinition |
-		//	elements+=ElementDefinition)* "}";
+		//	(doku=Doku WS*)?
+		//	'package' name=QualifiedName
+		//	'{' (rules+=CSSRuleDefinition | subpackages+=PackageDefinition | elements+=ElementDefinition)*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//(doku=Doku WS*)? "package" name=QualifiedName "{" (rules+=CSSRuleDefinition | subpackages+=PackageDefinition |
-		//elements+=ElementDefinition)* "}"
+		//(doku=Doku WS*)? 'package' name=QualifiedName '{' (rules+=CSSRuleDefinition | subpackages+=PackageDefinition |
+		//elements+=ElementDefinition)* '}'
 		public Group getGroup() { return cGroup; }
 
 		//(doku=Doku WS*)?
@@ -181,7 +185,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_0_1() { return cWSTerminalRuleCall_0_1; }
 
-		//"package"
+		//'package'
 		public Keyword getPackageKeyword_1() { return cPackageKeyword_1; }
 
 		//name=QualifiedName
@@ -190,7 +194,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//(rules+=CSSRuleDefinition | subpackages+=PackageDefinition | elements+=ElementDefinition)*
@@ -214,12 +218,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ElementDefinition
 		public RuleCall getElementsElementDefinitionParserRuleCall_4_2_0() { return cElementsElementDefinitionParserRuleCall_4_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class DokuElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Doku");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 		private final Assignment cContentAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cContentJDOCTerminalRuleCall_0 = (RuleCall)cContentAssignment.eContents().get(0);
 		
@@ -235,10 +239,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSBaseTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSBaseType");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSBaseType");
 		private final RuleCall cCSSTypeParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//CSSBaseType returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+		//CSSBaseType CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 		//	CSSType;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -247,7 +251,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSType");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cCSSRangedIntTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
@@ -311,17 +315,17 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cWSTerminalRuleCall_2_1_3_1 = (RuleCall)cGroup_2_1_3.eContents().get(1);
 		
 		//CSSType hidden(SL_COMMENT, ML_COMMENT):
-		//	{CSSRangedIntType} (doku=Doku WS*)? type="@INT" "(" WS* from=INT WS* "->" WS* to=INT WS* ")" | {CSSRangedDoubleType}
-		//	(doku=Doku WS*)? type="@NUM" "(" WS* from=DOUBLE WS* "->" WS* to=DOUBLE WS* ")" | (doku=Doku WS*)? (type="@INT" WS* |
-		//	type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*);
+		//	{CSSRangedIntType} (doku=Doku WS*)? type='@INT' '(' WS* from=INT WS* '->' WS* to=INT WS* ')' | {CSSRangedDoubleType}
+		//	(doku=Doku WS*)? type='@NUM' '(' WS* from=DOUBLE WS* '->' WS* to=DOUBLE WS* ')' | (doku=Doku WS*)? (type='@INT' WS* |
+		//	type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*);
 		@Override public ParserRule getRule() { return rule; }
 
-		//{CSSRangedIntType} (doku=Doku WS*)? type="@INT" "(" WS* from=INT WS* "->" WS* to=INT WS* ")" | {CSSRangedDoubleType}
-		//(doku=Doku WS*)? type="@NUM" "(" WS* from=DOUBLE WS* "->" WS* to=DOUBLE WS* ")" | (doku=Doku WS*)? (type="@INT" WS* |
-		//type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*)
+		//{CSSRangedIntType} (doku=Doku WS*)? type='@INT' '(' WS* from=INT WS* '->' WS* to=INT WS* ')' | {CSSRangedDoubleType}
+		//(doku=Doku WS*)? type='@NUM' '(' WS* from=DOUBLE WS* '->' WS* to=DOUBLE WS* ')' | (doku=Doku WS*)? (type='@INT' WS* |
+		//type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*)
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{CSSRangedIntType} (doku=Doku WS*)? type="@INT" "(" WS* from=INT WS* "->" WS* to=INT WS* ")"
+		//{CSSRangedIntType} (doku=Doku WS*)? type='@INT' '(' WS* from=INT WS* '->' WS* to=INT WS* ')'
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{CSSRangedIntType}
@@ -339,13 +343,13 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_0_1_1() { return cWSTerminalRuleCall_0_1_1; }
 
-		//type="@INT"
+		//type='@INT'
 		public Assignment getTypeAssignment_0_2() { return cTypeAssignment_0_2; }
 
-		//"@INT"
+		//'@INT'
 		public Keyword getTypeINTKeyword_0_2_0() { return cTypeINTKeyword_0_2_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_0_3() { return cLeftParenthesisKeyword_0_3; }
 
 		//WS*
@@ -360,7 +364,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_0_6() { return cWSTerminalRuleCall_0_6; }
 
-		//"->"
+		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_0_7() { return cHyphenMinusGreaterThanSignKeyword_0_7; }
 
 		//WS*
@@ -375,10 +379,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_0_10() { return cWSTerminalRuleCall_0_10; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_0_11() { return cRightParenthesisKeyword_0_11; }
 
-		//{CSSRangedDoubleType} (doku=Doku WS*)? type="@NUM" "(" WS* from=DOUBLE WS* "->" WS* to=DOUBLE WS* ")"
+		//{CSSRangedDoubleType} (doku=Doku WS*)? type='@NUM' '(' WS* from=DOUBLE WS* '->' WS* to=DOUBLE WS* ')'
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{CSSRangedDoubleType}
@@ -396,13 +400,13 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_1_1_1() { return cWSTerminalRuleCall_1_1_1; }
 
-		//type="@NUM"
+		//type='@NUM'
 		public Assignment getTypeAssignment_1_2() { return cTypeAssignment_1_2; }
 
-		//"@NUM"
+		//'@NUM'
 		public Keyword getTypeNUMKeyword_1_2_0() { return cTypeNUMKeyword_1_2_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1_3() { return cLeftParenthesisKeyword_1_3; }
 
 		//WS*
@@ -417,7 +421,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_1_6() { return cWSTerminalRuleCall_1_6; }
 
-		//"->"
+		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1_7() { return cHyphenMinusGreaterThanSignKeyword_1_7; }
 
 		//WS*
@@ -432,10 +436,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_1_10() { return cWSTerminalRuleCall_1_10; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_1_11() { return cRightParenthesisKeyword_1_11; }
 
-		//(doku=Doku WS*)? (type="@INT" WS* | type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*)
+		//(doku=Doku WS*)? (type='@INT' WS* | type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*)
 		public Group getGroup_2() { return cGroup_2; }
 
 		//(doku=Doku WS*)?
@@ -450,52 +454,52 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_2_0_1() { return cWSTerminalRuleCall_2_0_1; }
 
-		//type="@INT" WS* | type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*
+		//type='@INT' WS* | type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*
 		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 
-		//type="@INT" WS*
+		//type='@INT' WS*
 		public Group getGroup_2_1_0() { return cGroup_2_1_0; }
 
-		//type="@INT"
+		//type='@INT'
 		public Assignment getTypeAssignment_2_1_0_0() { return cTypeAssignment_2_1_0_0; }
 
-		//"@INT"
+		//'@INT'
 		public Keyword getTypeINTKeyword_2_1_0_0_0() { return cTypeINTKeyword_2_1_0_0_0; }
 
 		//WS*
 		public RuleCall getWSTerminalRuleCall_2_1_0_1() { return cWSTerminalRuleCall_2_1_0_1; }
 
-		//type="@NUM" WS*
+		//type='@NUM' WS*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
-		//type="@NUM"
+		//type='@NUM'
 		public Assignment getTypeAssignment_2_1_1_0() { return cTypeAssignment_2_1_1_0; }
 
-		//"@NUM"
+		//'@NUM'
 		public Keyword getTypeNUMKeyword_2_1_1_0_0() { return cTypeNUMKeyword_2_1_1_0_0; }
 
 		//WS*
 		public RuleCall getWSTerminalRuleCall_2_1_1_1() { return cWSTerminalRuleCall_2_1_1_1; }
 
-		//type="@STRING" WS*
+		//type='@STRING' WS*
 		public Group getGroup_2_1_2() { return cGroup_2_1_2; }
 
-		//type="@STRING"
+		//type='@STRING'
 		public Assignment getTypeAssignment_2_1_2_0() { return cTypeAssignment_2_1_2_0; }
 
-		//"@STRING"
+		//'@STRING'
 		public Keyword getTypeSTRINGKeyword_2_1_2_0_0() { return cTypeSTRINGKeyword_2_1_2_0_0; }
 
 		//WS*
 		public RuleCall getWSTerminalRuleCall_2_1_2_1() { return cWSTerminalRuleCall_2_1_2_1; }
 
-		//type="@URL" WS*
+		//type='@URL' WS*
 		public Group getGroup_2_1_3() { return cGroup_2_1_3; }
 
-		//type="@URL"
+		//type='@URL'
 		public Assignment getTypeAssignment_2_1_3_0() { return cTypeAssignment_2_1_3_0; }
 
-		//"@URL"
+		//'@URL'
 		public Keyword getTypeURLKeyword_2_1_3_0_0() { return cTypeURLKeyword_2_1_3_0_0; }
 
 		//WS*
@@ -503,7 +507,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ElementDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementDefinition");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.ElementDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cElementDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cDokuAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -538,14 +542,16 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		////	
 		////;
 		//ElementDefinition:
-		//	{ElementDefinition} doku=Doku? name=QualifiedName ("extends" super+=[ElementDefinition|QualifiedName] (","
-		//	super+=[ElementDefinition|QualifiedName])*)? ("styleclass" styleclass=ID)? "{" (properties+=PropertyDefinition |
-		//	pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)* "}";
+		//	{ElementDefinition} doku=Doku?
+		//	name=QualifiedName ('extends' super+=[ElementDefinition|QualifiedName] (','
+		//	super+=[ElementDefinition|QualifiedName])*)? ('styleclass' styleclass=ID)?
+		//	'{' (properties+=PropertyDefinition | pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{ElementDefinition} doku=Doku? name=QualifiedName ("extends" super+=[ElementDefinition|QualifiedName] (","
-		//super+=[ElementDefinition|QualifiedName])*)? ("styleclass" styleclass=ID)? "{" (properties+=PropertyDefinition |
-		//pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)* "}"
+		//{ElementDefinition} doku=Doku? name=QualifiedName ('extends' super+=[ElementDefinition|QualifiedName] (','
+		//super+=[ElementDefinition|QualifiedName])*)? ('styleclass' styleclass=ID)? '{' (properties+=PropertyDefinition |
+		//pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{ElementDefinition}
@@ -563,10 +569,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 
-		//("extends" super+=[ElementDefinition|QualifiedName] ("," super+=[ElementDefinition|QualifiedName])*)?
+		//('extends' super+=[ElementDefinition|QualifiedName] (',' super+=[ElementDefinition|QualifiedName])*)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"extends"
+		//'extends'
 		public Keyword getExtendsKeyword_3_0() { return cExtendsKeyword_3_0; }
 
 		//super+=[ElementDefinition|QualifiedName]
@@ -578,10 +584,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getSuperElementDefinitionQualifiedNameParserRuleCall_3_1_0_1() { return cSuperElementDefinitionQualifiedNameParserRuleCall_3_1_0_1; }
 
-		//("," super+=[ElementDefinition|QualifiedName])*
+		//(',' super+=[ElementDefinition|QualifiedName])*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
 		//super+=[ElementDefinition|QualifiedName]
@@ -593,10 +599,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getSuperElementDefinitionQualifiedNameParserRuleCall_3_2_1_0_1() { return cSuperElementDefinitionQualifiedNameParserRuleCall_3_2_1_0_1; }
 
-		//("styleclass" styleclass=ID)?
+		//('styleclass' styleclass=ID)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"styleclass"
+		//'styleclass'
 		public Keyword getStyleclassKeyword_4_0() { return cStyleclassKeyword_4_0; }
 
 		//styleclass=ID
@@ -605,7 +611,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getStyleclassIDTerminalRuleCall_4_1_0() { return cStyleclassIDTerminalRuleCall_4_1_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//(properties+=PropertyDefinition | pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)*
@@ -629,12 +635,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Substructure
 		public RuleCall getSubstructuresSubstructureParserRuleCall_6_2_0() { return cSubstructuresSubstructureParserRuleCall_6_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class PropertyDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PropertyDefinition");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.PropertyDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPropertyDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cDokuAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -649,11 +655,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefaultCSSDefaultValueParserRuleCall_4_1_0 = (RuleCall)cDefaultAssignment_4_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//PropertyDefinition returns Definition:
-		//	{PropertyDefinition} doku=Doku? name=QualifiedName rule=CSSRuleOr ("default:" default=CSSDefaultValue)? ";";
+		//PropertyDefinition Definition:
+		//	{PropertyDefinition} doku=Doku?
+		//	name=QualifiedName rule=CSSRuleOr ('default:' default=CSSDefaultValue)? ';';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{PropertyDefinition} doku=Doku? name=QualifiedName rule=CSSRuleOr ("default:" default=CSSDefaultValue)? ";"
+		//{PropertyDefinition} doku=Doku? name=QualifiedName rule=CSSRuleOr ('default:' default=CSSDefaultValue)? ';'
 		public Group getGroup() { return cGroup; }
 
 		//{PropertyDefinition}
@@ -677,10 +684,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//CSSRuleOr
 		public RuleCall getRuleCSSRuleOrParserRuleCall_3_0() { return cRuleCSSRuleOrParserRuleCall_3_0; }
 
-		//("default:" default=CSSDefaultValue)?
+		//('default:' default=CSSDefaultValue)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"default:"
+		//'default:'
 		public Keyword getDefaultKeyword_4_0() { return cDefaultKeyword_4_0; }
 
 		//default=CSSDefaultValue
@@ -689,12 +696,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//CSSDefaultValue
 		public RuleCall getDefaultCSSDefaultValueParserRuleCall_4_1_0() { return cDefaultCSSDefaultValueParserRuleCall_4_1_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class PseudoClassDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PseudoClassDefinition");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.PseudoClassDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPseudoClassDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cDokuAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -703,7 +710,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamePSEUDOTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//PseudoClassDefinition:
-		//	{PseudoClassDefinition} doku=Doku? name=PSEUDO;
+		//	{PseudoClassDefinition} doku=Doku?
+		//	name=PSEUDO;
 		@Override public ParserRule getRule() { return rule; }
 
 		//{PseudoClassDefinition} doku=Doku? name=PSEUDO
@@ -726,7 +734,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRuleRefElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleRef");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleRef");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Assignment cDokuAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
@@ -739,10 +747,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//CSSRuleRef hidden():
-		//	(doku=Doku WS*)? "<" ref=[Definition|QualifiedName] ">";
+		//	(doku=Doku WS*)? '<' ref=[Definition|QualifiedName] '>';
 		@Override public ParserRule getRule() { return rule; }
 
-		//(doku=Doku WS*)? "<" ref=[Definition|QualifiedName] ">"
+		//(doku=Doku WS*)? '<' ref=[Definition|QualifiedName] '>'
 		public Group getGroup() { return cGroup; }
 
 		//(doku=Doku WS*)?
@@ -757,7 +765,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_0_1() { return cWSTerminalRuleCall_0_1; }
 
-		//"<"
+		//'<'
 		public Keyword getLessThanSignKeyword_1() { return cLessThanSignKeyword_1; }
 
 		//ref=[Definition|QualifiedName]
@@ -769,12 +777,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getRefDefinitionQualifiedNameParserRuleCall_2_0_1() { return cRefDefinitionQualifiedNameParserRuleCall_2_0_1; }
 
-		//">"
+		//'>'
 		public Keyword getGreaterThanSignKeyword_3() { return cGreaterThanSignKeyword_3; }
 	}
 
 	public class CSSRuleDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleDefinition");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCSSRuleDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cDokuAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -789,11 +797,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFuncCSSRuleFuncParserRuleCall_4_1_0 = (RuleCall)cFuncAssignment_4_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//CSSRuleDefinition returns Definition hidden(WS, SL_COMMENT, ML_COMMENT):
-		//	{CSSRuleDefinition} doku=Doku? name=QualifiedName "=" (rule=CSSRuleOr | func=CSSRuleFunc) ";";
+		//CSSRuleDefinition Definition hidden(WS, SL_COMMENT, ML_COMMENT):
+		//	{CSSRuleDefinition} doku=Doku?
+		//	name=QualifiedName '=' (rule=CSSRuleOr | func=CSSRuleFunc) ';';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{CSSRuleDefinition} doku=Doku? name=QualifiedName "=" (rule=CSSRuleOr | func=CSSRuleFunc) ";"
+		//{CSSRuleDefinition} doku=Doku? name=QualifiedName '=' (rule=CSSRuleOr | func=CSSRuleFunc) ';'
 		public Group getGroup() { return cGroup; }
 
 		//{CSSRuleDefinition}
@@ -811,7 +820,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 
-		//"="
+		//'='
 		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 
 		//rule=CSSRuleOr | func=CSSRuleFunc
@@ -829,12 +838,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//CSSRuleFunc
 		public RuleCall getFuncCSSRuleFuncParserRuleCall_4_1_0() { return cFuncCSSRuleFuncParserRuleCall_4_1_0; }
 
-		//";"
+		//';'
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class CSSRuleFuncElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleFunc");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleFunc");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCSSRuleFuncAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -845,15 +854,13 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParamsCSSRuleOrParserRuleCall_4_0 = (RuleCall)cParamsAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//CSSRuleFunc returns CSSRule hidden(ML_COMMENT, SL_COMMENT): //{CSSRuleFunc} name=ValidID '(' WS* params+=CSSRuleOr ( ',' WS* params+=CSSRuleOr)* ')' // PARAMS disabled in favor of ',' as literal
-		//	{CSSRuleFunc} name=ValidID "(" WS* params=CSSRuleOr ")";
+		//CSSRuleFunc CSSRule hidden(ML_COMMENT, SL_COMMENT):
+		//	{CSSRuleFunc} name=ValidID '(' WS* params=CSSRuleOr ')';
 		@Override public ParserRule getRule() { return rule; }
 
-		////{CSSRuleFunc} name=ValidID '(' WS* params+=CSSRuleOr ( ',' WS* params+=CSSRuleOr)* ')' // PARAMS disabled in favor of ',' as literal
-		//{CSSRuleFunc} name=ValidID "(" WS* params=CSSRuleOr ")"
+		//{CSSRuleFunc} name=ValidID '(' WS* params=CSSRuleOr ')'
 		public Group getGroup() { return cGroup; }
 
-		////{CSSRuleFunc} name=ValidID '(' WS* params+=CSSRuleOr ( ',' WS* params+=CSSRuleOr)* ')' // PARAMS disabled in favor of ',' as literal
 		//{CSSRuleFunc}
 		public Action getCSSRuleFuncAction_0() { return cCSSRuleFuncAction_0; }
 
@@ -863,7 +870,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_0() { return cNameValidIDParserRuleCall_1_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
 		//WS*
@@ -875,12 +882,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//CSSRuleOr
 		public RuleCall getParamsCSSRuleOrParserRuleCall_4_0() { return cParamsCSSRuleOrParserRuleCall_4_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class CSSRuleOrElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleOr");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleOr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cCSSRuleXorParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -890,26 +897,26 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOrsAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cOrsCSSRuleXorParserRuleCall_1_1_1_0 = (RuleCall)cOrsAssignment_1_1_1.eContents().get(0);
 		
-		//CSSRuleOr returns CSSRule hidden(WS, ML_COMMENT, SL_COMMENT):
-		//	CSSRuleXor ({CSSRuleOr.ors+=current} ("|" ors+=CSSRuleXor)+)?;
+		//CSSRuleOr CSSRule hidden(WS, ML_COMMENT, SL_COMMENT):
+		//	CSSRuleXor ({CSSRuleOr.ors+=current} ('|' ors+=CSSRuleXor)+)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//CSSRuleXor ({CSSRuleOr.ors+=current} ("|" ors+=CSSRuleXor)+)?
+		//CSSRuleXor ({CSSRuleOr.ors+=current} ('|' ors+=CSSRuleXor)+)?
 		public Group getGroup() { return cGroup; }
 
 		//CSSRuleXor
 		public RuleCall getCSSRuleXorParserRuleCall_0() { return cCSSRuleXorParserRuleCall_0; }
 
-		//({CSSRuleOr.ors+=current} ("|" ors+=CSSRuleXor)+)?
+		//({CSSRuleOr.ors+=current} ('|' ors+=CSSRuleXor)+)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{CSSRuleOr.ors+=current}
 		public Action getCSSRuleOrOrsAction_1_0() { return cCSSRuleOrOrsAction_1_0; }
 
-		//("|" ors+=CSSRuleXor)+
+		//('|' ors+=CSSRuleXor)+
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//"|"
+		//'|'
 		public Keyword getVerticalLineKeyword_1_1_0() { return cVerticalLineKeyword_1_1_0; }
 
 		//ors+=CSSRuleXor
@@ -920,7 +927,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRuleXorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleXor");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleXor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cCSSRuleConcatParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -930,26 +937,26 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cXorsAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cXorsCSSRuleConcatParserRuleCall_1_1_1_0 = (RuleCall)cXorsAssignment_1_1_1.eContents().get(0);
 		
-		//CSSRuleXor returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-		//	CSSRuleConcat ({CSSRuleXor.xors+=current} ("||" xors+=CSSRuleConcat)+)?;
+		//CSSRuleXor CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+		//	CSSRuleConcat ({CSSRuleXor.xors+=current} ('||' xors+=CSSRuleConcat)+)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//CSSRuleConcat ({CSSRuleXor.xors+=current} ("||" xors+=CSSRuleConcat)+)?
+		//CSSRuleConcat ({CSSRuleXor.xors+=current} ('||' xors+=CSSRuleConcat)+)?
 		public Group getGroup() { return cGroup; }
 
 		//CSSRuleConcat
 		public RuleCall getCSSRuleConcatParserRuleCall_0() { return cCSSRuleConcatParserRuleCall_0; }
 
-		//({CSSRuleXor.xors+=current} ("||" xors+=CSSRuleConcat)+)?
+		//({CSSRuleXor.xors+=current} ('||' xors+=CSSRuleConcat)+)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{CSSRuleXor.xors+=current}
 		public Action getCSSRuleXorXorsAction_1_0() { return cCSSRuleXorXorsAction_1_0; }
 
-		//("||" xors+=CSSRuleConcat)+
+		//('||' xors+=CSSRuleConcat)+
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//"||"
+		//'||'
 		public Keyword getVerticalLineVerticalLineKeyword_1_1_0() { return cVerticalLineVerticalLineKeyword_1_1_0; }
 
 		//xors+=CSSRuleConcat
@@ -960,7 +967,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRuleConcatElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleConcat");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleConcat");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cCSSRuleConcatWithoutSpaceParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -968,7 +975,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cConcAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cConcCSSRuleConcatWithoutSpaceParserRuleCall_1_1_0 = (RuleCall)cConcAssignment_1_1.eContents().get(0);
 		
-		//CSSRuleConcat returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+		//CSSRuleConcat CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 		//	CSSRuleConcatWithoutSpace ({CSSRuleConcat.conc+=current} conc+=CSSRuleConcatWithoutSpace+)?;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -992,7 +999,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRuleConcatWithoutSpaceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleConcatWithoutSpace");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleConcatWithoutSpace");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cCSSRulePostfixParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1002,26 +1009,26 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cConcAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cConcCSSRulePostfixParserRuleCall_1_1_1_0 = (RuleCall)cConcAssignment_1_1_1.eContents().get(0);
 		
-		//CSSRuleConcatWithoutSpace returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-		//	CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ("~" conc+=CSSRulePostfix)+)?;
+		//CSSRuleConcatWithoutSpace CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+		//	CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ('~' conc+=CSSRulePostfix)+)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ("~" conc+=CSSRulePostfix)+)?
+		//CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ('~' conc+=CSSRulePostfix)+)?
 		public Group getGroup() { return cGroup; }
 
 		//CSSRulePostfix
 		public RuleCall getCSSRulePostfixParserRuleCall_0() { return cCSSRulePostfixParserRuleCall_0; }
 
-		//({CSSRuleConcatWithoutSpace.conc+=current} ("~" conc+=CSSRulePostfix)+)?
+		//({CSSRuleConcatWithoutSpace.conc+=current} ('~' conc+=CSSRulePostfix)+)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{CSSRuleConcatWithoutSpace.conc+=current}
 		public Action getCSSRuleConcatWithoutSpaceConcAction_1_0() { return cCSSRuleConcatWithoutSpaceConcAction_1_0; }
 
-		//("~" conc+=CSSRulePostfix)+
+		//('~' conc+=CSSRulePostfix)+
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//"~"
+		//'~'
 		public Keyword getTildeKeyword_1_1_0() { return cTildeKeyword_1_1_0; }
 
 		//conc+=CSSRulePostfix
@@ -1032,7 +1039,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRulePostfixElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRulePostfix");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRulePostfix");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cCSSRulePrimaryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1043,40 +1050,40 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCardinalityPlusSignKeyword_1_1_0_1 = (Keyword)cCardinalityAlternatives_1_1_0.eContents().get(1);
 		private final Keyword cCardinalityQuestionMarkKeyword_1_1_0_2 = (Keyword)cCardinalityAlternatives_1_1_0.eContents().get(2);
 		
-		//CSSRulePostfix returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-		//	CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=("*" | "+" | "?"))?;
+		//CSSRulePostfix CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+		//	CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=('*' | '+' | '?'))?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=("*" | "+" | "?"))?
+		//CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=('*' | '+' | '?'))?
 		public Group getGroup() { return cGroup; }
 
 		//CSSRulePrimary
 		public RuleCall getCSSRulePrimaryParserRuleCall_0() { return cCSSRulePrimaryParserRuleCall_0; }
 
-		//({CSSRulePostfix.rule=current} cardinality=("*" | "+" | "?"))?
+		//({CSSRulePostfix.rule=current} cardinality=('*' | '+' | '?'))?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{CSSRulePostfix.rule=current}
 		public Action getCSSRulePostfixRuleAction_1_0() { return cCSSRulePostfixRuleAction_1_0; }
 
-		//cardinality=("*" | "+" | "?")
+		//cardinality=('*' | '+' | '?')
 		public Assignment getCardinalityAssignment_1_1() { return cCardinalityAssignment_1_1; }
 
-		//"*" | "+" | "?"
+		//('*' | '+' | '?')
 		public Alternatives getCardinalityAlternatives_1_1_0() { return cCardinalityAlternatives_1_1_0; }
 
-		//"*"
+		//'*'
 		public Keyword getCardinalityAsteriskKeyword_1_1_0_0() { return cCardinalityAsteriskKeyword_1_1_0_0; }
 
-		//"+"
+		//'+'
 		public Keyword getCardinalityPlusSignKeyword_1_1_0_1() { return cCardinalityPlusSignKeyword_1_1_0_1; }
 
-		//"?"
+		//'?'
 		public Keyword getCardinalityQuestionMarkKeyword_1_1_0_2() { return cCardinalityQuestionMarkKeyword_1_1_0_2; }
 	}
 
 	public class CSSRuleBracketElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleBracket");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleBracket");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCSSRuleBracketAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1084,17 +1091,17 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInnerCSSRuleOrParserRuleCall_2_0 = (RuleCall)cInnerAssignment_2.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//CSSRuleBracket returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-		//	{CSSRuleBracket} "[" inner=CSSRuleOr "]";
+		//CSSRuleBracket CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+		//	{CSSRuleBracket} '[' inner=CSSRuleOr ']';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{CSSRuleBracket} "[" inner=CSSRuleOr "]"
+		//{CSSRuleBracket} '[' inner=CSSRuleOr ']'
 		public Group getGroup() { return cGroup; }
 
 		//{CSSRuleBracket}
 		public Action getCSSRuleBracketAction_0() { return cCSSRuleBracketAction_0; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
 		//inner=CSSRuleOr
@@ -1103,12 +1110,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//CSSRuleOr
 		public RuleCall getInnerCSSRuleOrParserRuleCall_2_0() { return cInnerCSSRuleOrParserRuleCall_2_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 	}
 
 	public class CSSRulePrimaryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRulePrimary");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRulePrimary");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cCSSRuleRefParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCSSRuleBracketParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -1124,13 +1131,11 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		////CSSRuleParenthesis returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 		////	{CSSRuleParanthesis} '(' inner=CSSRuleOr ')'
 		////;
-		//CSSRulePrimary returns CSSRule hidden(SL_COMMENT, ML_COMMENT):
-		//	CSSRuleRef | CSSRuleBracket | //	CSSRuleParenthesis |
-		//	CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT;
+		//CSSRulePrimary CSSRule hidden(SL_COMMENT, ML_COMMENT):
+		//	CSSRuleRef | CSSRuleBracket | CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT;
 		@Override public ParserRule getRule() { return rule; }
 
-		//CSSRuleRef | CSSRuleBracket | //	CSSRuleParenthesis |
-		//CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT
+		//CSSRuleRef | CSSRuleBracket | CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//CSSRuleRef
@@ -1166,13 +1171,13 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRuleRegexElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleRegex");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleRegex");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCSSRuleRegexAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cRegexAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cRegexREGEXTerminalRuleCall_1_0 = (RuleCall)cRegexAssignment_1.eContents().get(0);
 		
-		//CSSRuleRegex returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+		//CSSRuleRegex CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 		//	{CSSRuleRegex} regex=REGEX;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -1190,7 +1195,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRuleLiteralElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleLiteral");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleLiteral");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCSSRuleLiteralAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1200,7 +1205,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueIDTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
-		//CSSRuleLiteral returns CSSRule:
+		//CSSRuleLiteral CSSRule:
 		//	{CSSRuleLiteral} (doku=Doku WS*)? value=ID;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -1230,7 +1235,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CSSRuleSymbolElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSRuleSymbol");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleSymbol");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCSSRuleSymbolAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1242,11 +1247,11 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSymbolCommaKeyword_2_0_0 = (Keyword)cSymbolAlternatives_2_0.eContents().get(0);
 		private final Keyword cSymbolPercentSignKeyword_2_0_1 = (Keyword)cSymbolAlternatives_2_0.eContents().get(1);
 		
-		//CSSRuleSymbol returns CSSRule:
-		//	{CSSRuleSymbol} (doku=Doku WS*)? symbol=("," | "%");
+		//CSSRuleSymbol CSSRule:
+		//	{CSSRuleSymbol} (doku=Doku WS*)? symbol=(',' | '%');
 		@Override public ParserRule getRule() { return rule; }
 
-		//{CSSRuleSymbol} (doku=Doku WS*)? symbol=("," | "%")
+		//{CSSRuleSymbol} (doku=Doku WS*)? symbol=(',' | '%')
 		public Group getGroup() { return cGroup; }
 
 		//{CSSRuleSymbol}
@@ -1264,21 +1269,21 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
 
-		//symbol=("," | "%")
+		//symbol=(',' | '%')
 		public Assignment getSymbolAssignment_2() { return cSymbolAssignment_2; }
 
-		//"," | "%"
+		//(',' | '%')
 		public Alternatives getSymbolAlternatives_2_0() { return cSymbolAlternatives_2_0; }
 
-		//","
+		//','
 		public Keyword getSymbolCommaKeyword_2_0_0() { return cSymbolCommaKeyword_2_0_0; }
 
-		//"%"
+		//'%'
 		public Keyword getSymbolPercentSignKeyword_2_0_1() { return cSymbolPercentSignKeyword_2_0_1; }
 	}
 
 	public class CSSDefaultValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CSSDefaultValue");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSDefaultValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cCSSDefaultValueAction_0_0 = (Action)cGroup_0.eContents().get(0);
@@ -1330,7 +1335,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class SubstructureSelectorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubstructureSelector");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.SubstructureSelector");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSubstructureSelectorAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cSelectorNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1342,10 +1347,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//SubstructureSelector hidden():
-		//	{SubstructureSelector} selectorName=ID ("[" var=ID "]")?;
+		//	{SubstructureSelector} selectorName=ID ('[' var=ID ']')?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{SubstructureSelector} selectorName=ID ("[" var=ID "]")?
+		//{SubstructureSelector} selectorName=ID ('[' var=ID ']')?
 		public Group getGroup() { return cGroup; }
 
 		//{SubstructureSelector}
@@ -1357,10 +1362,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSelectorNameIDTerminalRuleCall_1_0() { return cSelectorNameIDTerminalRuleCall_1_0; }
 
-		//("[" var=ID "]")?
+		//('[' var=ID ']')?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_2_0() { return cLeftSquareBracketKeyword_2_0; }
 
 		//var=ID
@@ -1369,12 +1374,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_2_1_0() { return cVarIDTerminalRuleCall_2_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_2_2() { return cRightSquareBracketKeyword_2_2; }
 	}
 
 	public class SubstructureElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Substructure");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.Substructure");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDokuAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDokuDokuParserRuleCall_0_0 = (RuleCall)cDokuAssignment_0.eContents().get(0);
@@ -1387,10 +1392,13 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Substructure:
-		//	doku=Doku? "substructure" name=ID "{" childs+=SubstructureStyleclass+ "}";
+		//	doku=Doku?
+		//	'substructure' name=ID '{'
+		//	childs+=SubstructureStyleclass+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//doku=Doku? "substructure" name=ID "{" childs+=SubstructureStyleclass+ "}"
+		//doku=Doku? 'substructure' name=ID '{' childs+=SubstructureStyleclass+ '}'
 		public Group getGroup() { return cGroup; }
 
 		//doku=Doku?
@@ -1399,7 +1407,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Doku
 		public RuleCall getDokuDokuParserRuleCall_0_0() { return cDokuDokuParserRuleCall_0_0; }
 
-		//"substructure"
+		//'substructure'
 		public Keyword getSubstructureKeyword_1() { return cSubstructureKeyword_1; }
 
 		//name=ID
@@ -1408,7 +1416,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//childs+=SubstructureStyleclass+
@@ -1417,12 +1425,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//SubstructureStyleclass
 		public RuleCall getChildsSubstructureStyleclassParserRuleCall_4_0() { return cChildsSubstructureStyleclassParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class SubstructureStyleclassElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubstructureStyleclass");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.SubstructureStyleclass");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDokuAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDokuDokuParserRuleCall_0_0 = (RuleCall)cDokuAssignment_0.eContents().get(0);
@@ -1439,12 +1447,13 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//SubstructureStyleclass:
-		//	doku=Doku? element=[ElementDefinition|QualifiedName] "styleclass" selectors+=SubstructureSelector+ ("{"
-		//	childs+=SubstructureStyleclass+ "}")?;
+		//	doku=Doku?
+		//	element=[ElementDefinition|QualifiedName] 'styleclass' selectors+=SubstructureSelector+ ('{'
+		//	childs+=SubstructureStyleclass+ '}')?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//doku=Doku? element=[ElementDefinition|QualifiedName] "styleclass" selectors+=SubstructureSelector+ ("{"
-		//childs+=SubstructureStyleclass+ "}")?
+		//doku=Doku? element=[ElementDefinition|QualifiedName] 'styleclass' selectors+=SubstructureSelector+ ('{'
+		//childs+=SubstructureStyleclass+ '}')?
 		public Group getGroup() { return cGroup; }
 
 		//doku=Doku?
@@ -1462,7 +1471,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getElementElementDefinitionQualifiedNameParserRuleCall_1_0_1() { return cElementElementDefinitionQualifiedNameParserRuleCall_1_0_1; }
 
-		//"styleclass"
+		//'styleclass'
 		public Keyword getStyleclassKeyword_2() { return cStyleclassKeyword_2; }
 
 		//selectors+=SubstructureSelector+
@@ -1471,10 +1480,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//SubstructureSelector
 		public RuleCall getSelectorsSubstructureSelectorParserRuleCall_3_0() { return cSelectorsSubstructureSelectorParserRuleCall_3_0; }
 
-		//("{" childs+=SubstructureStyleclass+ "}")?
+		//('{' childs+=SubstructureStyleclass+ '}')?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
 
 		//childs+=SubstructureStyleclass+
@@ -1483,7 +1492,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		//SubstructureStyleclass
 		public RuleCall getChildsSubstructureStyleclassParserRuleCall_4_1_0() { return cChildsSubstructureStyleclassParserRuleCall_4_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
 	}
 	
@@ -1536,11 +1545,11 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pCssExtension = new CssExtensionElements();
-		this.tPSEUDO = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PSEUDO");
-		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
-		this.tJDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "JDOC");
-		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
-		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
+		this.tPSEUDO = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.PSEUDO");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.ID");
+		this.tJDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.JDOC");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.SL_COMMENT");
 		this.pImport = new ImportElements();
 		this.pValidID = new ValidIDElements();
 		this.pQualifiedName = new QualifiedNameElements();
@@ -1569,9 +1578,9 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSubstructureSelector = new SubstructureSelectorElements();
 		this.pSubstructure = new SubstructureElements();
 		this.pSubstructureStyleclass = new SubstructureStyleclassElements();
-		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
-		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE");
-		this.tREGEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REGEX");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.INT");
+		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.DOUBLE");
+		this.tREGEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.css.cssext.CssExtDsl.REGEX");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1601,10 +1610,12 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	////	packageDef=PackageDefinition?
-	////	rule=CSSRuleSet
 	//CssExtension:
-	//	imports+=Import* packageDef=PackageDefinition?;
+	//	imports+=Import*
+	//	packageDef=PackageDefinition?
+	//	//	packageDef=PackageDefinition?
+	//	//	rule=CSSRuleSet
+	//;
 	public CssExtensionElements getCssExtensionAccess() {
 		return pCssExtension;
 	}
@@ -1614,37 +1625,37 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal PSEUDO:
-	//	":" !" " ID;
+	//	':' !' ' ID;
 	public TerminalRule getPSEUDORule() {
 		return tPSEUDO;
 	} 
 
 	//terminal ID:
-	//	("a".."z" | "A".."Z" | "_" | "-") ("a".."z" | "A".."Z" | "_" | "0".."9" | "-")*;
+	//	('a'..'z' | 'A'..'Z' | '_' | '-') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9' | '-')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	} 
 
 	//terminal JDOC:
-	//	"/ **"->"* /";
+	//	'/**'->'*/';
 	public TerminalRule getJDOCRule() {
 		return tJDOC;
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *" !"*"->"* /";
+	//	'/*' !'*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
 		return tML_COMMENT;
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return tSL_COMMENT;
 	} 
 
 	//Import:
-	//	"import" importedNamespace=QualifiedNameWithWildCard;
+	//	'import' importedNamespace=QualifiedNameWithWildCard;
 	public ImportElements getImportAccess() {
 		return pImport;
 	}
@@ -1664,7 +1675,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedName:
-	//	ValidID ("." ValidID)*;
+	//	ValidID (=> '.' ValidID)*;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return pQualifiedName;
 	}
@@ -1674,7 +1685,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedNameWithWildCard:
-	//	QualifiedName ("." "*")?;
+	//	QualifiedName ('.' '*')?;
 	public QualifiedNameWithWildCardElements getQualifiedNameWithWildCardAccess() {
 		return pQualifiedNameWithWildCard;
 	}
@@ -1684,8 +1695,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PackageDefinition:
-	//	(doku=Doku WS*)? "package" name=QualifiedName "{" (rules+=CSSRuleDefinition | subpackages+=PackageDefinition |
-	//	elements+=ElementDefinition)* "}";
+	//	(doku=Doku WS*)?
+	//	'package' name=QualifiedName
+	//	'{' (rules+=CSSRuleDefinition | subpackages+=PackageDefinition | elements+=ElementDefinition)*
+	//	'}';
 	public PackageDefinitionElements getPackageDefinitionAccess() {
 		return pPackageDefinition;
 	}
@@ -1704,7 +1717,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getDokuAccess().getRule();
 	}
 
-	//CSSBaseType returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+	//CSSBaseType CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 	//	CSSType;
 	public CSSBaseTypeElements getCSSBaseTypeAccess() {
 		return pCSSBaseType;
@@ -1715,9 +1728,9 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//CSSType hidden(SL_COMMENT, ML_COMMENT):
-	//	{CSSRangedIntType} (doku=Doku WS*)? type="@INT" "(" WS* from=INT WS* "->" WS* to=INT WS* ")" | {CSSRangedDoubleType}
-	//	(doku=Doku WS*)? type="@NUM" "(" WS* from=DOUBLE WS* "->" WS* to=DOUBLE WS* ")" | (doku=Doku WS*)? (type="@INT" WS* |
-	//	type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*);
+	//	{CSSRangedIntType} (doku=Doku WS*)? type='@INT' '(' WS* from=INT WS* '->' WS* to=INT WS* ')' | {CSSRangedDoubleType}
+	//	(doku=Doku WS*)? type='@NUM' '(' WS* from=DOUBLE WS* '->' WS* to=DOUBLE WS* ')' | (doku=Doku WS*)? (type='@INT' WS* |
+	//	type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*);
 	public CSSTypeElements getCSSTypeAccess() {
 		return pCSSType;
 	}
@@ -1730,9 +1743,11 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	////	
 	////;
 	//ElementDefinition:
-	//	{ElementDefinition} doku=Doku? name=QualifiedName ("extends" super+=[ElementDefinition|QualifiedName] (","
-	//	super+=[ElementDefinition|QualifiedName])*)? ("styleclass" styleclass=ID)? "{" (properties+=PropertyDefinition |
-	//	pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)* "}";
+	//	{ElementDefinition} doku=Doku?
+	//	name=QualifiedName ('extends' super+=[ElementDefinition|QualifiedName] (','
+	//	super+=[ElementDefinition|QualifiedName])*)? ('styleclass' styleclass=ID)?
+	//	'{' (properties+=PropertyDefinition | pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)*
+	//	'}';
 	public ElementDefinitionElements getElementDefinitionAccess() {
 		return pElementDefinition;
 	}
@@ -1741,8 +1756,9 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementDefinitionAccess().getRule();
 	}
 
-	//PropertyDefinition returns Definition:
-	//	{PropertyDefinition} doku=Doku? name=QualifiedName rule=CSSRuleOr ("default:" default=CSSDefaultValue)? ";";
+	//PropertyDefinition Definition:
+	//	{PropertyDefinition} doku=Doku?
+	//	name=QualifiedName rule=CSSRuleOr ('default:' default=CSSDefaultValue)? ';';
 	public PropertyDefinitionElements getPropertyDefinitionAccess() {
 		return pPropertyDefinition;
 	}
@@ -1752,7 +1768,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PseudoClassDefinition:
-	//	{PseudoClassDefinition} doku=Doku? name=PSEUDO;
+	//	{PseudoClassDefinition} doku=Doku?
+	//	name=PSEUDO;
 	public PseudoClassDefinitionElements getPseudoClassDefinitionAccess() {
 		return pPseudoClassDefinition;
 	}
@@ -1762,7 +1779,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//CSSRuleRef hidden():
-	//	(doku=Doku WS*)? "<" ref=[Definition|QualifiedName] ">";
+	//	(doku=Doku WS*)? '<' ref=[Definition|QualifiedName] '>';
 	public CSSRuleRefElements getCSSRuleRefAccess() {
 		return pCSSRuleRef;
 	}
@@ -1771,8 +1788,9 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleRefAccess().getRule();
 	}
 
-	//CSSRuleDefinition returns Definition hidden(WS, SL_COMMENT, ML_COMMENT):
-	//	{CSSRuleDefinition} doku=Doku? name=QualifiedName "=" (rule=CSSRuleOr | func=CSSRuleFunc) ";";
+	//CSSRuleDefinition Definition hidden(WS, SL_COMMENT, ML_COMMENT):
+	//	{CSSRuleDefinition} doku=Doku?
+	//	name=QualifiedName '=' (rule=CSSRuleOr | func=CSSRuleFunc) ';';
 	public CSSRuleDefinitionElements getCSSRuleDefinitionAccess() {
 		return pCSSRuleDefinition;
 	}
@@ -1781,8 +1799,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleDefinitionAccess().getRule();
 	}
 
-	//CSSRuleFunc returns CSSRule hidden(ML_COMMENT, SL_COMMENT): //{CSSRuleFunc} name=ValidID '(' WS* params+=CSSRuleOr ( ',' WS* params+=CSSRuleOr)* ')' // PARAMS disabled in favor of ',' as literal
-	//	{CSSRuleFunc} name=ValidID "(" WS* params=CSSRuleOr ")";
+	//CSSRuleFunc CSSRule hidden(ML_COMMENT, SL_COMMENT):
+	//	{CSSRuleFunc} name=ValidID '(' WS* params=CSSRuleOr ')';
 	public CSSRuleFuncElements getCSSRuleFuncAccess() {
 		return pCSSRuleFunc;
 	}
@@ -1791,8 +1809,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleFuncAccess().getRule();
 	}
 
-	//CSSRuleOr returns CSSRule hidden(WS, ML_COMMENT, SL_COMMENT):
-	//	CSSRuleXor ({CSSRuleOr.ors+=current} ("|" ors+=CSSRuleXor)+)?;
+	//CSSRuleOr CSSRule hidden(WS, ML_COMMENT, SL_COMMENT):
+	//	CSSRuleXor ({CSSRuleOr.ors+=current} ('|' ors+=CSSRuleXor)+)?;
 	public CSSRuleOrElements getCSSRuleOrAccess() {
 		return pCSSRuleOr;
 	}
@@ -1801,8 +1819,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleOrAccess().getRule();
 	}
 
-	//CSSRuleXor returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-	//	CSSRuleConcat ({CSSRuleXor.xors+=current} ("||" xors+=CSSRuleConcat)+)?;
+	//CSSRuleXor CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+	//	CSSRuleConcat ({CSSRuleXor.xors+=current} ('||' xors+=CSSRuleConcat)+)?;
 	public CSSRuleXorElements getCSSRuleXorAccess() {
 		return pCSSRuleXor;
 	}
@@ -1811,7 +1829,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleXorAccess().getRule();
 	}
 
-	//CSSRuleConcat returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+	//CSSRuleConcat CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 	//	CSSRuleConcatWithoutSpace ({CSSRuleConcat.conc+=current} conc+=CSSRuleConcatWithoutSpace+)?;
 	public CSSRuleConcatElements getCSSRuleConcatAccess() {
 		return pCSSRuleConcat;
@@ -1821,8 +1839,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleConcatAccess().getRule();
 	}
 
-	//CSSRuleConcatWithoutSpace returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-	//	CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ("~" conc+=CSSRulePostfix)+)?;
+	//CSSRuleConcatWithoutSpace CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+	//	CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ('~' conc+=CSSRulePostfix)+)?;
 	public CSSRuleConcatWithoutSpaceElements getCSSRuleConcatWithoutSpaceAccess() {
 		return pCSSRuleConcatWithoutSpace;
 	}
@@ -1831,8 +1849,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleConcatWithoutSpaceAccess().getRule();
 	}
 
-	//CSSRulePostfix returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-	//	CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=("*" | "+" | "?"))?;
+	//CSSRulePostfix CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+	//	CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=('*' | '+' | '?'))?;
 	public CSSRulePostfixElements getCSSRulePostfixAccess() {
 		return pCSSRulePostfix;
 	}
@@ -1841,8 +1859,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRulePostfixAccess().getRule();
 	}
 
-	//CSSRuleBracket returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
-	//	{CSSRuleBracket} "[" inner=CSSRuleOr "]";
+	//CSSRuleBracket CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+	//	{CSSRuleBracket} '[' inner=CSSRuleOr ']';
 	public CSSRuleBracketElements getCSSRuleBracketAccess() {
 		return pCSSRuleBracket;
 	}
@@ -1854,9 +1872,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	////CSSRuleParenthesis returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 	////	{CSSRuleParanthesis} '(' inner=CSSRuleOr ')'
 	////;
-	//CSSRulePrimary returns CSSRule hidden(SL_COMMENT, ML_COMMENT):
-	//	CSSRuleRef | CSSRuleBracket | //	CSSRuleParenthesis |
-	//	CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT;
+	//CSSRulePrimary CSSRule hidden(SL_COMMENT, ML_COMMENT):
+	//	CSSRuleRef | CSSRuleBracket | CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT;
 	public CSSRulePrimaryElements getCSSRulePrimaryAccess() {
 		return pCSSRulePrimary;
 	}
@@ -1865,7 +1882,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRulePrimaryAccess().getRule();
 	}
 
-	//CSSRuleRegex returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+	//CSSRuleRegex CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
 	//	{CSSRuleRegex} regex=REGEX;
 	public CSSRuleRegexElements getCSSRuleRegexAccess() {
 		return pCSSRuleRegex;
@@ -1875,7 +1892,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleRegexAccess().getRule();
 	}
 
-	//CSSRuleLiteral returns CSSRule:
+	//CSSRuleLiteral CSSRule:
 	//	{CSSRuleLiteral} (doku=Doku WS*)? value=ID;
 	public CSSRuleLiteralElements getCSSRuleLiteralAccess() {
 		return pCSSRuleLiteral;
@@ -1885,8 +1902,8 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCSSRuleLiteralAccess().getRule();
 	}
 
-	//CSSRuleSymbol returns CSSRule:
-	//	{CSSRuleSymbol} (doku=Doku WS*)? symbol=("," | "%");
+	//CSSRuleSymbol CSSRule:
+	//	{CSSRuleSymbol} (doku=Doku WS*)? symbol=(',' | '%');
 	public CSSRuleSymbolElements getCSSRuleSymbolAccess() {
 		return pCSSRuleSymbol;
 	}
@@ -1906,7 +1923,7 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SubstructureSelector hidden():
-	//	{SubstructureSelector} selectorName=ID ("[" var=ID "]")?;
+	//	{SubstructureSelector} selectorName=ID ('[' var=ID ']')?;
 	public SubstructureSelectorElements getSubstructureSelectorAccess() {
 		return pSubstructureSelector;
 	}
@@ -1916,7 +1933,10 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Substructure:
-	//	doku=Doku? "substructure" name=ID "{" childs+=SubstructureStyleclass+ "}";
+	//	doku=Doku?
+	//	'substructure' name=ID '{'
+	//	childs+=SubstructureStyleclass+
+	//	'}';
 	public SubstructureElements getSubstructureAccess() {
 		return pSubstructure;
 	}
@@ -1926,8 +1946,9 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SubstructureStyleclass:
-	//	doku=Doku? element=[ElementDefinition|QualifiedName] "styleclass" selectors+=SubstructureSelector+ ("{"
-	//	childs+=SubstructureStyleclass+ "}")?;
+	//	doku=Doku?
+	//	element=[ElementDefinition|QualifiedName] 'styleclass' selectors+=SubstructureSelector+ ('{'
+	//	childs+=SubstructureStyleclass+ '}')?;
 	public SubstructureStyleclassElements getSubstructureStyleclassAccess() {
 		return pSubstructureStyleclass;
 	}
@@ -1937,34 +1958,33 @@ public class CssExtDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal INT returns ecore::EInt:
-	//	"-"? "0".."9"+;
+	//	'-'? '0'..'9'+;
 	public TerminalRule getINTRule() {
 		return tINT;
 	} 
 
 	//terminal DOUBLE returns ecore::EDouble:
-	//	"-"? "0".."9"* "." "0".."9"+;
+	//	'-'? '0'..'9'* '.' '0'..'9'+;
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
 	} 
 
-	//// TODO maybe directly return a Pattern
-	//terminal REGEX:
-	//	"$" ("a".."z" | "A".."Z" | "0".."9" | "-" | "," | "." | "?" | "\'" | ":" | "\"" | ">" | "<" | "/" | "_" | "=" | ";" |
-	//	"(" | ")" | "&" | "!" | "#" | "%" | "*" | "+" | "[" | "]" | "{" | "}")+ "$";
+	//terminal REGEX: // TODO maybe directly return a Pattern
+	//	'$' ('a'..'z' | 'A'..'Z' | '0'..'9' | '-' | ',' | '.' | '?' | '\'' | ':' | '\"' | '>' | '<' | '/' | '_' | '=' | ';' |
+	//	'(' | ')' | '&' | '!' | '#' | '%' | '*' | '+' | '[' | ']' | '{' | '}')+ '$';
 	public TerminalRule getREGEXRule() {
 		return tREGEX;
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' |
+	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 

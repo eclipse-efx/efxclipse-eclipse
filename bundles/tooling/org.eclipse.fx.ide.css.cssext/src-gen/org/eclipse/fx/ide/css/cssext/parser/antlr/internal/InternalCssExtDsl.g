@@ -90,7 +90,7 @@ ruleCssExtension returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_0_0, 
-        		"Import");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -108,7 +108,7 @@ ruleCssExtension returns [EObject current=null]
        			$current, 
        			"packageDef",
         		lv_packageDef_1_0, 
-        		"PackageDefinition");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.PackageDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -151,7 +151,7 @@ ruleImport returns [EObject current=null]
        			$current, 
        			"importedNamespace",
         		lv_importedNamespace_1_0, 
-        		"QualifiedNameWithWildCard");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.QualifiedNameWithWildCard");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -313,7 +313,7 @@ rulePackageDefinition returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_0_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -339,7 +339,7 @@ rulePackageDefinition returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_3_0, 
-        		"QualifiedName");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -361,7 +361,7 @@ rulePackageDefinition returns [EObject current=null]
        			$current, 
        			"rules",
         		lv_rules_5_0, 
-        		"CSSRuleDefinition");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -380,7 +380,7 @@ rulePackageDefinition returns [EObject current=null]
        			$current, 
        			"subpackages",
         		lv_subpackages_6_0, 
-        		"PackageDefinition");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.PackageDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -399,7 +399,7 @@ rulePackageDefinition returns [EObject current=null]
        			$current, 
        			"elements",
         		lv_elements_7_0, 
-        		"ElementDefinition");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.ElementDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -443,7 +443,7 @@ ruleDoku returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_0_0, 
-        		"JDOC");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.JDOC");
 	    }
 
 )
@@ -534,7 +534,7 @@ ruleCSSType returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_1_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -580,7 +580,7 @@ ruleCSSType returns [EObject current=null]
        			$current, 
        			"from",
         		lv_from_6_0, 
-        		"INT");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.INT");
 	    }
 
 )
@@ -610,7 +610,7 @@ ruleCSSType returns [EObject current=null]
        			$current, 
        			"to",
         		lv_to_10_0, 
-        		"INT");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.INT");
 	    }
 
 )
@@ -642,7 +642,7 @@ ruleCSSType returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_14_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -688,7 +688,7 @@ ruleCSSType returns [EObject current=null]
        			$current, 
        			"from",
         		lv_from_19_0, 
-        		"DOUBLE");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.DOUBLE");
 	    }
 
 )
@@ -718,7 +718,7 @@ ruleCSSType returns [EObject current=null]
        			$current, 
        			"to",
         		lv_to_23_0, 
-        		"DOUBLE");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.DOUBLE");
 	    }
 
 )
@@ -744,7 +744,7 @@ ruleCSSType returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_26_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -875,7 +875,7 @@ ruleElementDefinition returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_1_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -893,7 +893,7 @@ ruleElementDefinition returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"QualifiedName");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -954,7 +954,7 @@ ruleElementDefinition returns [EObject current=null]
        			$current, 
        			"styleclass",
         		lv_styleclass_8_0, 
-        		"ID");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.ID");
 	    }
 
 )
@@ -975,7 +975,7 @@ ruleElementDefinition returns [EObject current=null]
        			$current, 
        			"properties",
         		lv_properties_10_0, 
-        		"PropertyDefinition");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.PropertyDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -994,7 +994,7 @@ ruleElementDefinition returns [EObject current=null]
        			$current, 
        			"pseudoClasses",
         		lv_pseudoClasses_11_0, 
-        		"PseudoClassDefinition");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.PseudoClassDefinition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1013,7 +1013,7 @@ ruleElementDefinition returns [EObject current=null]
        			$current, 
        			"substructures",
         		lv_substructures_12_0, 
-        		"Substructure");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Substructure");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1062,7 +1062,7 @@ rulePropertyDefinition returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_1_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1080,7 +1080,7 @@ rulePropertyDefinition returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"QualifiedName");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1098,7 +1098,7 @@ rulePropertyDefinition returns [EObject current=null]
        			$current, 
        			"rule",
         		lv_rule_3_0, 
-        		"CSSRuleOr");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleOr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1120,7 +1120,7 @@ rulePropertyDefinition returns [EObject current=null]
        			$current, 
        			"default",
         		lv_default_5_0, 
-        		"CSSDefaultValue");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSDefaultValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1169,7 +1169,7 @@ rulePseudoClassDefinition returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_1_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1188,7 +1188,7 @@ rulePseudoClassDefinition returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"PSEUDO");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.PSEUDO");
 	    }
 
 )
@@ -1233,7 +1233,7 @@ ruleCSSRuleRef returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_0_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1315,7 +1315,7 @@ ruleCSSRuleDefinition returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_1_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1333,7 +1333,7 @@ ruleCSSRuleDefinition returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"QualifiedName");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1355,7 +1355,7 @@ ruleCSSRuleDefinition returns [EObject current=null]
        			$current, 
        			"rule",
         		lv_rule_4_0, 
-        		"CSSRuleOr");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleOr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1374,7 +1374,7 @@ ruleCSSRuleDefinition returns [EObject current=null]
        			$current, 
        			"func",
         		lv_func_5_0, 
-        		"CSSRuleFunc");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleFunc");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1433,7 +1433,7 @@ ruleCSSRuleFunc returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"ValidID");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.ValidID");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1459,7 +1459,7 @@ ruleCSSRuleFunc returns [EObject current=null]
        			$current, 
        			"params",
         		lv_params_4_0, 
-        		"CSSRuleOr");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleOr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1531,7 +1531,7 @@ ruleCSSRuleOr returns [EObject current=null]
        			$current, 
        			"ors",
         		lv_ors_3_0, 
-        		"CSSRuleXor");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleXor");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1599,7 +1599,7 @@ ruleCSSRuleXor returns [EObject current=null]
        			$current, 
        			"xors",
         		lv_xors_3_0, 
-        		"CSSRuleConcat");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleConcat");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1663,7 +1663,7 @@ ruleCSSRuleConcat returns [EObject current=null]
        			$current, 
        			"conc",
         		lv_conc_2_0, 
-        		"CSSRuleConcatWithoutSpace");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleConcatWithoutSpace");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1731,7 +1731,7 @@ ruleCSSRuleConcatWithoutSpace returns [EObject current=null]
        			$current, 
        			"conc",
         		lv_conc_3_0, 
-        		"CSSRulePostfix");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRulePostfix");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1878,7 +1878,7 @@ ruleCSSRuleBracket returns [EObject current=null]
        			$current, 
        			"inner",
         		lv_inner_2_0, 
-        		"CSSRuleOr");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleOr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1998,7 +1998,7 @@ ruleCSSRulePrimary returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_7_0, 
-        		"INT");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.INT");
 	    }
 
 )
@@ -2053,7 +2053,7 @@ ruleCSSRuleRegex returns [EObject current=null]
        			$current, 
        			"regex",
         		lv_regex_1_0, 
-        		"REGEX");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.REGEX");
 	    }
 
 )
@@ -2100,7 +2100,7 @@ ruleCSSRuleLiteral returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_1_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2123,7 +2123,7 @@ ruleCSSRuleLiteral returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_3_0, 
-        		"ID");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.ID");
 	    }
 
 )
@@ -2167,7 +2167,7 @@ ruleCSSRuleSymbol returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_1_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2246,7 +2246,7 @@ ruleCSSDefaultValue returns [EObject current=null]
        			$current, 
        			"val",
         		lv_val_1_0, 
-        		"CSSRuleLiteral");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.CSSRuleLiteral");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2266,7 +2266,7 @@ ruleCSSDefaultValue returns [EObject current=null]
        			$current, 
        			"ival",
         		lv_ival_2_0, 
-        		"INT");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.INT");
 	    }
 
 )
@@ -2285,7 +2285,7 @@ ruleCSSDefaultValue returns [EObject current=null]
        			$current, 
        			"dval",
         		lv_dval_3_0, 
-        		"DOUBLE");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.DOUBLE");
 	    }
 
 )
@@ -2304,7 +2304,7 @@ ruleCSSDefaultValue returns [EObject current=null]
        			$current, 
        			"sval",
         		lv_sval_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2356,7 +2356,7 @@ ruleSubstructureSelector returns [EObject current=null]
        			$current, 
        			"selectorName",
         		lv_selectorName_1_0, 
-        		"ID");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.ID");
 	    }
 
 )
@@ -2378,7 +2378,7 @@ ruleSubstructureSelector returns [EObject current=null]
        			$current, 
        			"var",
         		lv_var_3_0, 
-        		"ID");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.ID");
 	    }
 
 )
@@ -2423,7 +2423,7 @@ ruleSubstructure returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_0_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2446,7 +2446,7 @@ ruleSubstructure returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.ID");
 	    }
 
 )
@@ -2467,7 +2467,7 @@ ruleSubstructure returns [EObject current=null]
        			$current, 
        			"childs",
         		lv_childs_4_0, 
-        		"SubstructureStyleclass");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.SubstructureStyleclass");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2510,7 +2510,7 @@ ruleSubstructureStyleclass returns [EObject current=null]
        			$current, 
        			"doku",
         		lv_doku_0_0, 
-        		"Doku");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.Doku");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2547,7 +2547,7 @@ ruleSubstructureStyleclass returns [EObject current=null]
        			$current, 
        			"selectors",
         		lv_selectors_3_0, 
-        		"SubstructureSelector");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.SubstructureSelector");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2569,7 +2569,7 @@ ruleSubstructureStyleclass returns [EObject current=null]
        			$current, 
        			"childs",
         		lv_childs_5_0, 
-        		"SubstructureStyleclass");
+        		"org.eclipse.fx.ide.css.cssext.CssExtDsl.SubstructureStyleclass");
 	        afterParserOrEnumRuleCall();
 	    }
 

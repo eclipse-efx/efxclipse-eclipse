@@ -64,10 +64,12 @@ protected class ThisRootNode extends RootToken {
 
 /************ begin Rule CssExtension ****************
  *
- * //	packageDef=PackageDefinition?
- * //	rule=CSSRuleSet
  * CssExtension:
- * 	imports+=Import* packageDef=PackageDefinition?;
+ * 	imports+=Import*
+ * 	packageDef=PackageDefinition?
+ * 	//	packageDef=PackageDefinition?
+ * 	//	rule=CSSRuleSet
+ * ;
  *
  **/
 
@@ -200,11 +202,11 @@ protected class CssExtension_PackageDefAssignment_1 extends AssignmentToken  {
 /************ begin Rule Import ****************
  *
  * Import:
- * 	"import" importedNamespace=QualifiedNameWithWildCard;
+ * 	'import' importedNamespace=QualifiedNameWithWildCard;
  *
  **/
 
-// "import" importedNamespace=QualifiedNameWithWildCard
+// 'import' importedNamespace=QualifiedNameWithWildCard
 protected class Import_Group extends GroupToken {
 	
 	public Import_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -233,7 +235,7 @@ protected class Import_Group extends GroupToken {
 
 }
 
-// "import"
+// 'import'
 protected class Import_ImportKeyword_0 extends KeywordToken  {
 	
 	public Import_ImportKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -298,13 +300,15 @@ protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
 /************ begin Rule PackageDefinition ****************
  *
  * PackageDefinition:
- * 	(doku=Doku WS*)? "package" name=QualifiedName "{" (rules+=CSSRuleDefinition | subpackages+=PackageDefinition |
- * 	elements+=ElementDefinition)* "}";
+ * 	(doku=Doku WS*)?
+ * 	'package' name=QualifiedName
+ * 	'{' (rules+=CSSRuleDefinition | subpackages+=PackageDefinition | elements+=ElementDefinition)*
+ * 	'}';
  *
  **/
 
-// (doku=Doku WS*)? "package" name=QualifiedName "{" (rules+=CSSRuleDefinition | subpackages+=PackageDefinition |
-// elements+=ElementDefinition)* "}"
+// (doku=Doku WS*)? 'package' name=QualifiedName '{' (rules+=CSSRuleDefinition | subpackages+=PackageDefinition |
+// elements+=ElementDefinition)* '}'
 protected class PackageDefinition_Group extends GroupToken {
 	
 	public PackageDefinition_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -401,7 +405,7 @@ protected class PackageDefinition_DokuAssignment_0_0 extends AssignmentToken  {
 }
 
 
-// "package"
+// 'package'
 protected class PackageDefinition_PackageKeyword_1 extends KeywordToken  {
 	
 	public PackageDefinition_PackageKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -457,7 +461,7 @@ protected class PackageDefinition_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class PackageDefinition_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public PackageDefinition_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -645,7 +649,7 @@ protected class PackageDefinition_ElementsAssignment_4_2 extends AssignmentToken
 }
 
 
-// "}"
+// '}'
 protected class PackageDefinition_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public PackageDefinition_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -719,7 +723,7 @@ protected class Doku_ContentAssignment extends AssignmentToken  {
 
 /************ begin Rule CSSBaseType ****************
  *
- * CSSBaseType returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+ * CSSBaseType CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
  * 	CSSType;
  *
  **/
@@ -768,15 +772,15 @@ protected class CSSBaseType_CSSTypeParserRuleCall extends RuleCallToken {
 /************ begin Rule CSSType ****************
  *
  * CSSType hidden(SL_COMMENT, ML_COMMENT):
- * 	{CSSRangedIntType} (doku=Doku WS*)? type="@INT" "(" WS* from=INT WS* "->" WS* to=INT WS* ")" | {CSSRangedDoubleType}
- * 	(doku=Doku WS*)? type="@NUM" "(" WS* from=DOUBLE WS* "->" WS* to=DOUBLE WS* ")" | (doku=Doku WS*)? (type="@INT" WS* |
- * 	type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*);
+ * 	{CSSRangedIntType} (doku=Doku WS*)? type='@INT' '(' WS* from=INT WS* '->' WS* to=INT WS* ')' | {CSSRangedDoubleType}
+ * 	(doku=Doku WS*)? type='@NUM' '(' WS* from=DOUBLE WS* '->' WS* to=DOUBLE WS* ')' | (doku=Doku WS*)? (type='@INT' WS* |
+ * 	type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*);
  *
  **/
 
-// {CSSRangedIntType} (doku=Doku WS*)? type="@INT" "(" WS* from=INT WS* "->" WS* to=INT WS* ")" | {CSSRangedDoubleType}
-// (doku=Doku WS*)? type="@NUM" "(" WS* from=DOUBLE WS* "->" WS* to=DOUBLE WS* ")" | (doku=Doku WS*)? (type="@INT" WS* |
-// type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*)
+// {CSSRangedIntType} (doku=Doku WS*)? type='@INT' '(' WS* from=INT WS* '->' WS* to=INT WS* ')' | {CSSRangedDoubleType}
+// (doku=Doku WS*)? type='@NUM' '(' WS* from=DOUBLE WS* '->' WS* to=DOUBLE WS* ')' | (doku=Doku WS*)? (type='@INT' WS* |
+// type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*)
 protected class CSSType_Alternatives extends AlternativesToken {
 
 	public CSSType_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -809,7 +813,7 @@ protected class CSSType_Alternatives extends AlternativesToken {
 
 }
 
-// {CSSRangedIntType} (doku=Doku WS*)? type="@INT" "(" WS* from=INT WS* "->" WS* to=INT WS* ")"
+// {CSSRangedIntType} (doku=Doku WS*)? type='@INT' '(' WS* from=INT WS* '->' WS* to=INT WS* ')'
 protected class CSSType_Group_0 extends GroupToken {
 	
 	public CSSType_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -933,7 +937,7 @@ protected class CSSType_DokuAssignment_0_1_0 extends AssignmentToken  {
 }
 
 
-// type="@INT"
+// type='@INT'
 protected class CSSType_TypeAssignment_0_2 extends AssignmentToken  {
 	
 	public CSSType_TypeAssignment_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -968,7 +972,7 @@ protected class CSSType_TypeAssignment_0_2 extends AssignmentToken  {
 
 }
 
-// "("
+// '('
 protected class CSSType_LeftParenthesisKeyword_0_3 extends KeywordToken  {
 	
 	public CSSType_LeftParenthesisKeyword_0_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1024,7 +1028,7 @@ protected class CSSType_FromAssignment_0_5 extends AssignmentToken  {
 
 }
 
-// "->"
+// '->'
 protected class CSSType_HyphenMinusGreaterThanSignKeyword_0_7 extends KeywordToken  {
 	
 	public CSSType_HyphenMinusGreaterThanSignKeyword_0_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1080,7 +1084,7 @@ protected class CSSType_ToAssignment_0_9 extends AssignmentToken  {
 
 }
 
-// ")"
+// ')'
 protected class CSSType_RightParenthesisKeyword_0_11 extends KeywordToken  {
 	
 	public CSSType_RightParenthesisKeyword_0_11(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1103,7 +1107,7 @@ protected class CSSType_RightParenthesisKeyword_0_11 extends KeywordToken  {
 }
 
 
-// {CSSRangedDoubleType} (doku=Doku WS*)? type="@NUM" "(" WS* from=DOUBLE WS* "->" WS* to=DOUBLE WS* ")"
+// {CSSRangedDoubleType} (doku=Doku WS*)? type='@NUM' '(' WS* from=DOUBLE WS* '->' WS* to=DOUBLE WS* ')'
 protected class CSSType_Group_1 extends GroupToken {
 	
 	public CSSType_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1227,7 +1231,7 @@ protected class CSSType_DokuAssignment_1_1_0 extends AssignmentToken  {
 }
 
 
-// type="@NUM"
+// type='@NUM'
 protected class CSSType_TypeAssignment_1_2 extends AssignmentToken  {
 	
 	public CSSType_TypeAssignment_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1262,7 +1266,7 @@ protected class CSSType_TypeAssignment_1_2 extends AssignmentToken  {
 
 }
 
-// "("
+// '('
 protected class CSSType_LeftParenthesisKeyword_1_3 extends KeywordToken  {
 	
 	public CSSType_LeftParenthesisKeyword_1_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1318,7 +1322,7 @@ protected class CSSType_FromAssignment_1_5 extends AssignmentToken  {
 
 }
 
-// "->"
+// '->'
 protected class CSSType_HyphenMinusGreaterThanSignKeyword_1_7 extends KeywordToken  {
 	
 	public CSSType_HyphenMinusGreaterThanSignKeyword_1_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1374,7 +1378,7 @@ protected class CSSType_ToAssignment_1_9 extends AssignmentToken  {
 
 }
 
-// ")"
+// ')'
 protected class CSSType_RightParenthesisKeyword_1_11 extends KeywordToken  {
 	
 	public CSSType_RightParenthesisKeyword_1_11(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1397,7 +1401,7 @@ protected class CSSType_RightParenthesisKeyword_1_11 extends KeywordToken  {
 }
 
 
-// (doku=Doku WS*)? (type="@INT" WS* | type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*)
+// (doku=Doku WS*)? (type='@INT' WS* | type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*)
 protected class CSSType_Group_2 extends GroupToken {
 	
 	public CSSType_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1494,7 +1498,7 @@ protected class CSSType_DokuAssignment_2_0_0 extends AssignmentToken  {
 }
 
 
-// type="@INT" WS* | type="@NUM" WS* | type="@STRING" WS* | type="@URL" WS*
+// type='@INT' WS* | type='@NUM' WS* | type='@STRING' WS* | type='@URL' WS*
 protected class CSSType_Alternatives_2_1 extends AlternativesToken {
 
 	public CSSType_Alternatives_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1519,7 +1523,7 @@ protected class CSSType_Alternatives_2_1 extends AlternativesToken {
 
 }
 
-// type="@INT" WS*
+// type='@INT' WS*
 protected class CSSType_Group_2_1_0 extends GroupToken {
 	
 	public CSSType_Group_2_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1541,7 +1545,7 @@ protected class CSSType_Group_2_1_0 extends GroupToken {
 
 }
 
-// type="@INT"
+// type='@INT'
 protected class CSSType_TypeAssignment_2_1_0_0 extends AssignmentToken  {
 	
 	public CSSType_TypeAssignment_2_1_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1576,7 +1580,7 @@ protected class CSSType_TypeAssignment_2_1_0_0 extends AssignmentToken  {
 }
 
 
-// type="@NUM" WS*
+// type='@NUM' WS*
 protected class CSSType_Group_2_1_1 extends GroupToken {
 	
 	public CSSType_Group_2_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1598,7 +1602,7 @@ protected class CSSType_Group_2_1_1 extends GroupToken {
 
 }
 
-// type="@NUM"
+// type='@NUM'
 protected class CSSType_TypeAssignment_2_1_1_0 extends AssignmentToken  {
 	
 	public CSSType_TypeAssignment_2_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1633,7 +1637,7 @@ protected class CSSType_TypeAssignment_2_1_1_0 extends AssignmentToken  {
 }
 
 
-// type="@STRING" WS*
+// type='@STRING' WS*
 protected class CSSType_Group_2_1_2 extends GroupToken {
 	
 	public CSSType_Group_2_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1655,7 +1659,7 @@ protected class CSSType_Group_2_1_2 extends GroupToken {
 
 }
 
-// type="@STRING"
+// type='@STRING'
 protected class CSSType_TypeAssignment_2_1_2_0 extends AssignmentToken  {
 	
 	public CSSType_TypeAssignment_2_1_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1690,7 +1694,7 @@ protected class CSSType_TypeAssignment_2_1_2_0 extends AssignmentToken  {
 }
 
 
-// type="@URL" WS*
+// type='@URL' WS*
 protected class CSSType_Group_2_1_3 extends GroupToken {
 	
 	public CSSType_Group_2_1_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1712,7 +1716,7 @@ protected class CSSType_Group_2_1_3 extends GroupToken {
 
 }
 
-// type="@URL"
+// type='@URL'
 protected class CSSType_TypeAssignment_2_1_3_0 extends AssignmentToken  {
 	
 	public CSSType_TypeAssignment_2_1_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1759,15 +1763,17 @@ protected class CSSType_TypeAssignment_2_1_3_0 extends AssignmentToken  {
  * //	
  * //;
  * ElementDefinition:
- * 	{ElementDefinition} doku=Doku? name=QualifiedName ("extends" super+=[ElementDefinition|QualifiedName] (","
- * 	super+=[ElementDefinition|QualifiedName])*)? ("styleclass" styleclass=ID)? "{" (properties+=PropertyDefinition |
- * 	pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)* "}";
+ * 	{ElementDefinition} doku=Doku?
+ * 	name=QualifiedName ('extends' super+=[ElementDefinition|QualifiedName] (','
+ * 	super+=[ElementDefinition|QualifiedName])*)? ('styleclass' styleclass=ID)?
+ * 	'{' (properties+=PropertyDefinition | pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)*
+ * 	'}';
  *
  **/
 
-// {ElementDefinition} doku=Doku? name=QualifiedName ("extends" super+=[ElementDefinition|QualifiedName] (","
-// super+=[ElementDefinition|QualifiedName])*)? ("styleclass" styleclass=ID)? "{" (properties+=PropertyDefinition |
-// pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)* "}"
+// {ElementDefinition} doku=Doku? name=QualifiedName ('extends' super+=[ElementDefinition|QualifiedName] (','
+// super+=[ElementDefinition|QualifiedName])*)? ('styleclass' styleclass=ID)? '{' (properties+=PropertyDefinition |
+// pseudoClasses+=PseudoClassDefinition | substructures+=Substructure)* '}'
 protected class ElementDefinition_Group extends GroupToken {
 	
 	public ElementDefinition_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1903,7 +1909,7 @@ protected class ElementDefinition_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// ("extends" super+=[ElementDefinition|QualifiedName] ("," super+=[ElementDefinition|QualifiedName])*)?
+// ('extends' super+=[ElementDefinition|QualifiedName] (',' super+=[ElementDefinition|QualifiedName])*)?
 protected class ElementDefinition_Group_3 extends GroupToken {
 	
 	public ElementDefinition_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1926,7 +1932,7 @@ protected class ElementDefinition_Group_3 extends GroupToken {
 
 }
 
-// "extends"
+// 'extends'
 protected class ElementDefinition_ExtendsKeyword_3_0 extends KeywordToken  {
 	
 	public ElementDefinition_ExtendsKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1985,7 +1991,7 @@ protected class ElementDefinition_SuperAssignment_3_1 extends AssignmentToken  {
 
 }
 
-// ("," super+=[ElementDefinition|QualifiedName])*
+// (',' super+=[ElementDefinition|QualifiedName])*
 protected class ElementDefinition_Group_3_2 extends GroupToken {
 	
 	public ElementDefinition_Group_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2007,7 +2013,7 @@ protected class ElementDefinition_Group_3_2 extends GroupToken {
 
 }
 
-// ","
+// ','
 protected class ElementDefinition_CommaKeyword_3_2_0 extends KeywordToken  {
 	
 	public ElementDefinition_CommaKeyword_3_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2069,7 +2075,7 @@ protected class ElementDefinition_SuperAssignment_3_2_1 extends AssignmentToken 
 
 
 
-// ("styleclass" styleclass=ID)?
+// ('styleclass' styleclass=ID)?
 protected class ElementDefinition_Group_4 extends GroupToken {
 	
 	public ElementDefinition_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2091,7 +2097,7 @@ protected class ElementDefinition_Group_4 extends GroupToken {
 
 }
 
-// "styleclass"
+// 'styleclass'
 protected class ElementDefinition_StyleclassKeyword_4_0 extends KeywordToken  {
 	
 	public ElementDefinition_StyleclassKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2149,7 +2155,7 @@ protected class ElementDefinition_StyleclassAssignment_4_1 extends AssignmentTok
 }
 
 
-// "{"
+// '{'
 protected class ElementDefinition_LeftCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public ElementDefinition_LeftCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2339,7 +2345,7 @@ protected class ElementDefinition_SubstructuresAssignment_6_2 extends Assignment
 }
 
 
-// "}"
+// '}'
 protected class ElementDefinition_RightCurlyBracketKeyword_7 extends KeywordToken  {
 	
 	public ElementDefinition_RightCurlyBracketKeyword_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2368,12 +2374,13 @@ protected class ElementDefinition_RightCurlyBracketKeyword_7 extends KeywordToke
 
 /************ begin Rule PropertyDefinition ****************
  *
- * PropertyDefinition returns Definition:
- * 	{PropertyDefinition} doku=Doku? name=QualifiedName rule=CSSRuleOr ("default:" default=CSSDefaultValue)? ";";
+ * PropertyDefinition Definition:
+ * 	{PropertyDefinition} doku=Doku?
+ * 	name=QualifiedName rule=CSSRuleOr ('default:' default=CSSDefaultValue)? ';';
  *
  **/
 
-// {PropertyDefinition} doku=Doku? name=QualifiedName rule=CSSRuleOr ("default:" default=CSSDefaultValue)? ";"
+// {PropertyDefinition} doku=Doku? name=QualifiedName rule=CSSRuleOr ('default:' default=CSSDefaultValue)? ';'
 protected class PropertyDefinition_Group extends GroupToken {
 	
 	public PropertyDefinition_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2555,7 +2562,7 @@ protected class PropertyDefinition_RuleAssignment_3 extends AssignmentToken  {
 	}	
 }
 
-// ("default:" default=CSSDefaultValue)?
+// ('default:' default=CSSDefaultValue)?
 protected class PropertyDefinition_Group_4 extends GroupToken {
 	
 	public PropertyDefinition_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2577,7 +2584,7 @@ protected class PropertyDefinition_Group_4 extends GroupToken {
 
 }
 
-// "default:"
+// 'default:'
 protected class PropertyDefinition_DefaultKeyword_4_0 extends KeywordToken  {
 	
 	public PropertyDefinition_DefaultKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2646,7 +2653,7 @@ protected class PropertyDefinition_DefaultAssignment_4_1 extends AssignmentToken
 }
 
 
-// ";"
+// ';'
 protected class PropertyDefinition_SemicolonKeyword_5 extends KeywordToken  {
 	
 	public PropertyDefinition_SemicolonKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2676,7 +2683,8 @@ protected class PropertyDefinition_SemicolonKeyword_5 extends KeywordToken  {
 /************ begin Rule PseudoClassDefinition ****************
  *
  * PseudoClassDefinition:
- * 	{PseudoClassDefinition} doku=Doku? name=PSEUDO;
+ * 	{PseudoClassDefinition} doku=Doku?
+ * 	name=PSEUDO;
  *
  **/
 
@@ -2823,11 +2831,11 @@ protected class PseudoClassDefinition_NameAssignment_2 extends AssignmentToken  
 /************ begin Rule CSSRuleRef ****************
  *
  * CSSRuleRef hidden():
- * 	(doku=Doku WS*)? "<" ref=[Definition|QualifiedName] ">";
+ * 	(doku=Doku WS*)? '<' ref=[Definition|QualifiedName] '>';
  *
  **/
 
-// (doku=Doku WS*)? "<" ref=[Definition|QualifiedName] ">"
+// (doku=Doku WS*)? '<' ref=[Definition|QualifiedName] '>'
 protected class CSSRuleRef_Group extends GroupToken {
 	
 	public CSSRuleRef_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2924,7 +2932,7 @@ protected class CSSRuleRef_DokuAssignment_0_0 extends AssignmentToken  {
 }
 
 
-// "<"
+// '<'
 protected class CSSRuleRef_LessThanSignKeyword_1 extends KeywordToken  {
 	
 	public CSSRuleRef_LessThanSignKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2983,7 +2991,7 @@ protected class CSSRuleRef_RefAssignment_2 extends AssignmentToken  {
 
 }
 
-// ">"
+// '>'
 protected class CSSRuleRef_GreaterThanSignKeyword_3 extends KeywordToken  {
 	
 	public CSSRuleRef_GreaterThanSignKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3011,12 +3019,13 @@ protected class CSSRuleRef_GreaterThanSignKeyword_3 extends KeywordToken  {
 
 /************ begin Rule CSSRuleDefinition ****************
  *
- * CSSRuleDefinition returns Definition hidden(WS, SL_COMMENT, ML_COMMENT):
- * 	{CSSRuleDefinition} doku=Doku? name=QualifiedName "=" (rule=CSSRuleOr | func=CSSRuleFunc) ";";
+ * CSSRuleDefinition Definition hidden(WS, SL_COMMENT, ML_COMMENT):
+ * 	{CSSRuleDefinition} doku=Doku?
+ * 	name=QualifiedName '=' (rule=CSSRuleOr | func=CSSRuleFunc) ';';
  *
  **/
 
-// {CSSRuleDefinition} doku=Doku? name=QualifiedName "=" (rule=CSSRuleOr | func=CSSRuleFunc) ";"
+// {CSSRuleDefinition} doku=Doku? name=QualifiedName '=' (rule=CSSRuleOr | func=CSSRuleFunc) ';'
 protected class CSSRuleDefinition_Group extends GroupToken {
 	
 	public CSSRuleDefinition_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3152,7 +3161,7 @@ protected class CSSRuleDefinition_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "="
+// '='
 protected class CSSRuleDefinition_EqualsSignKeyword_3 extends KeywordToken  {
 	
 	public CSSRuleDefinition_EqualsSignKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3290,7 +3299,7 @@ protected class CSSRuleDefinition_FuncAssignment_4_1 extends AssignmentToken  {
 }
 
 
-// ";"
+// ';'
 protected class CSSRuleDefinition_SemicolonKeyword_5 extends KeywordToken  {
 	
 	public CSSRuleDefinition_SemicolonKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3318,13 +3327,12 @@ protected class CSSRuleDefinition_SemicolonKeyword_5 extends KeywordToken  {
 
 /************ begin Rule CSSRuleFunc ****************
  *
- * CSSRuleFunc returns CSSRule hidden(ML_COMMENT, SL_COMMENT): //{CSSRuleFunc} name=ValidID '(' WS* params+=CSSRuleOr ( ',' WS* params+=CSSRuleOr)* ')' // PARAMS disabled in favor of ',' as literal
- * 	{CSSRuleFunc} name=ValidID "(" WS* params=CSSRuleOr ")";
+ * CSSRuleFunc CSSRule hidden(ML_COMMENT, SL_COMMENT):
+ * 	{CSSRuleFunc} name=ValidID '(' WS* params=CSSRuleOr ')';
  *
  **/
 
-// //{CSSRuleFunc} name=ValidID '(' WS* params+=CSSRuleOr ( ',' WS* params+=CSSRuleOr)* ')' // PARAMS disabled in favor of ',' as literal
-// {CSSRuleFunc} name=ValidID "(" WS* params=CSSRuleOr ")"
+// {CSSRuleFunc} name=ValidID '(' WS* params=CSSRuleOr ')'
 protected class CSSRuleFunc_Group extends GroupToken {
 	
 	public CSSRuleFunc_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3353,7 +3361,6 @@ protected class CSSRuleFunc_Group extends GroupToken {
 
 }
 
-// //{CSSRuleFunc} name=ValidID '(' WS* params+=CSSRuleOr ( ',' WS* params+=CSSRuleOr)* ')' // PARAMS disabled in favor of ',' as literal
 // {CSSRuleFunc}
 protected class CSSRuleFunc_CSSRuleFuncAction_0 extends ActionToken  {
 
@@ -3414,7 +3421,7 @@ protected class CSSRuleFunc_NameAssignment_1 extends AssignmentToken  {
 
 }
 
-// "("
+// '('
 protected class CSSRuleFunc_LeftParenthesisKeyword_2 extends KeywordToken  {
 	
 	public CSSRuleFunc_LeftParenthesisKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3482,7 +3489,7 @@ protected class CSSRuleFunc_ParamsAssignment_4 extends AssignmentToken  {
 	}	
 }
 
-// ")"
+// ')'
 protected class CSSRuleFunc_RightParenthesisKeyword_5 extends KeywordToken  {
 	
 	public CSSRuleFunc_RightParenthesisKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3510,12 +3517,12 @@ protected class CSSRuleFunc_RightParenthesisKeyword_5 extends KeywordToken  {
 
 /************ begin Rule CSSRuleOr ****************
  *
- * CSSRuleOr returns CSSRule hidden(WS, ML_COMMENT, SL_COMMENT):
- * 	CSSRuleXor ({CSSRuleOr.ors+=current} ("|" ors+=CSSRuleXor)+)?;
+ * CSSRuleOr CSSRule hidden(WS, ML_COMMENT, SL_COMMENT):
+ * 	CSSRuleXor ({CSSRuleOr.ors+=current} ('|' ors+=CSSRuleXor)+)?;
  *
  **/
 
-// CSSRuleXor ({CSSRuleOr.ors+=current} ("|" ors+=CSSRuleXor)+)?
+// CSSRuleXor ({CSSRuleOr.ors+=current} ('|' ors+=CSSRuleXor)+)?
 protected class CSSRuleOr_Group extends GroupToken {
 	
 	public CSSRuleOr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3606,7 +3613,7 @@ protected class CSSRuleOr_CSSRuleXorParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({CSSRuleOr.ors+=current} ("|" ors+=CSSRuleXor)+)?
+// ({CSSRuleOr.ors+=current} ('|' ors+=CSSRuleXor)+)?
 protected class CSSRuleOr_Group_1 extends GroupToken {
 	
 	public CSSRuleOr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3664,7 +3671,7 @@ protected class CSSRuleOr_CSSRuleOrOrsAction_1_0 extends ActionToken  {
 	}
 }
 
-// ("|" ors+=CSSRuleXor)+
+// ('|' ors+=CSSRuleXor)+
 protected class CSSRuleOr_Group_1_1 extends GroupToken {
 	
 	public CSSRuleOr_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3686,7 +3693,7 @@ protected class CSSRuleOr_Group_1_1 extends GroupToken {
 
 }
 
-// "|"
+// '|'
 protected class CSSRuleOr_VerticalLineKeyword_1_1_0 extends KeywordToken  {
 	
 	public CSSRuleOr_VerticalLineKeyword_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3763,12 +3770,12 @@ protected class CSSRuleOr_OrsAssignment_1_1_1 extends AssignmentToken  {
 
 /************ begin Rule CSSRuleXor ****************
  *
- * CSSRuleXor returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
- * 	CSSRuleConcat ({CSSRuleXor.xors+=current} ("||" xors+=CSSRuleConcat)+)?;
+ * CSSRuleXor CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+ * 	CSSRuleConcat ({CSSRuleXor.xors+=current} ('||' xors+=CSSRuleConcat)+)?;
  *
  **/
 
-// CSSRuleConcat ({CSSRuleXor.xors+=current} ("||" xors+=CSSRuleConcat)+)?
+// CSSRuleConcat ({CSSRuleXor.xors+=current} ('||' xors+=CSSRuleConcat)+)?
 protected class CSSRuleXor_Group extends GroupToken {
 	
 	public CSSRuleXor_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3857,7 +3864,7 @@ protected class CSSRuleXor_CSSRuleConcatParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({CSSRuleXor.xors+=current} ("||" xors+=CSSRuleConcat)+)?
+// ({CSSRuleXor.xors+=current} ('||' xors+=CSSRuleConcat)+)?
 protected class CSSRuleXor_Group_1 extends GroupToken {
 	
 	public CSSRuleXor_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3915,7 +3922,7 @@ protected class CSSRuleXor_CSSRuleXorXorsAction_1_0 extends ActionToken  {
 	}
 }
 
-// ("||" xors+=CSSRuleConcat)+
+// ('||' xors+=CSSRuleConcat)+
 protected class CSSRuleXor_Group_1_1 extends GroupToken {
 	
 	public CSSRuleXor_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3937,7 +3944,7 @@ protected class CSSRuleXor_Group_1_1 extends GroupToken {
 
 }
 
-// "||"
+// '||'
 protected class CSSRuleXor_VerticalLineVerticalLineKeyword_1_1_0 extends KeywordToken  {
 	
 	public CSSRuleXor_VerticalLineVerticalLineKeyword_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4014,7 +4021,7 @@ protected class CSSRuleXor_XorsAssignment_1_1_1 extends AssignmentToken  {
 
 /************ begin Rule CSSRuleConcat ****************
  *
- * CSSRuleConcat returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+ * CSSRuleConcat CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
  * 	CSSRuleConcatWithoutSpace ({CSSRuleConcat.conc+=current} conc+=CSSRuleConcatWithoutSpace+)?;
  *
  **/
@@ -4218,12 +4225,12 @@ protected class CSSRuleConcat_ConcAssignment_1_1 extends AssignmentToken  {
 
 /************ begin Rule CSSRuleConcatWithoutSpace ****************
  *
- * CSSRuleConcatWithoutSpace returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
- * 	CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ("~" conc+=CSSRulePostfix)+)?;
+ * CSSRuleConcatWithoutSpace CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+ * 	CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ('~' conc+=CSSRulePostfix)+)?;
  *
  **/
 
-// CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ("~" conc+=CSSRulePostfix)+)?
+// CSSRulePostfix ({CSSRuleConcatWithoutSpace.conc+=current} ('~' conc+=CSSRulePostfix)+)?
 protected class CSSRuleConcatWithoutSpace_Group extends GroupToken {
 	
 	public CSSRuleConcatWithoutSpace_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4308,7 +4315,7 @@ protected class CSSRuleConcatWithoutSpace_CSSRulePostfixParserRuleCall_0 extends
 	}	
 }
 
-// ({CSSRuleConcatWithoutSpace.conc+=current} ("~" conc+=CSSRulePostfix)+)?
+// ({CSSRuleConcatWithoutSpace.conc+=current} ('~' conc+=CSSRulePostfix)+)?
 protected class CSSRuleConcatWithoutSpace_Group_1 extends GroupToken {
 	
 	public CSSRuleConcatWithoutSpace_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4366,7 +4373,7 @@ protected class CSSRuleConcatWithoutSpace_CSSRuleConcatWithoutSpaceConcAction_1_
 	}
 }
 
-// ("~" conc+=CSSRulePostfix)+
+// ('~' conc+=CSSRulePostfix)+
 protected class CSSRuleConcatWithoutSpace_Group_1_1 extends GroupToken {
 	
 	public CSSRuleConcatWithoutSpace_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4388,7 +4395,7 @@ protected class CSSRuleConcatWithoutSpace_Group_1_1 extends GroupToken {
 
 }
 
-// "~"
+// '~'
 protected class CSSRuleConcatWithoutSpace_TildeKeyword_1_1_0 extends KeywordToken  {
 	
 	public CSSRuleConcatWithoutSpace_TildeKeyword_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4465,12 +4472,12 @@ protected class CSSRuleConcatWithoutSpace_ConcAssignment_1_1_1 extends Assignmen
 
 /************ begin Rule CSSRulePostfix ****************
  *
- * CSSRulePostfix returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
- * 	CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=("*" | "+" | "?"))?;
+ * CSSRulePostfix CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+ * 	CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=('*' | '+' | '?'))?;
  *
  **/
 
-// CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=("*" | "+" | "?"))?
+// CSSRulePrimary ({CSSRulePostfix.rule=current} cardinality=('*' | '+' | '?'))?
 protected class CSSRulePostfix_Group extends GroupToken {
 	
 	public CSSRulePostfix_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4553,7 +4560,7 @@ protected class CSSRulePostfix_CSSRulePrimaryParserRuleCall_0 extends RuleCallTo
 	}	
 }
 
-// ({CSSRulePostfix.rule=current} cardinality=("*" | "+" | "?"))?
+// ({CSSRulePostfix.rule=current} cardinality=('*' | '+' | '?'))?
 protected class CSSRulePostfix_Group_1 extends GroupToken {
 	
 	public CSSRulePostfix_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4611,7 +4618,7 @@ protected class CSSRulePostfix_CSSRulePostfixRuleAction_1_0 extends ActionToken 
 	}
 }
 
-// cardinality=("*" | "+" | "?")
+// cardinality=('*' | '+' | '?')
 protected class CSSRulePostfix_CardinalityAssignment_1_1 extends AssignmentToken  {
 	
 	public CSSRulePostfix_CardinalityAssignment_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4662,12 +4669,12 @@ protected class CSSRulePostfix_CardinalityAssignment_1_1 extends AssignmentToken
 
 /************ begin Rule CSSRuleBracket ****************
  *
- * CSSRuleBracket returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
- * 	{CSSRuleBracket} "[" inner=CSSRuleOr "]";
+ * CSSRuleBracket CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+ * 	{CSSRuleBracket} '[' inner=CSSRuleOr ']';
  *
  **/
 
-// {CSSRuleBracket} "[" inner=CSSRuleOr "]"
+// {CSSRuleBracket} '[' inner=CSSRuleOr ']'
 protected class CSSRuleBracket_Group extends GroupToken {
 	
 	public CSSRuleBracket_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4722,7 +4729,7 @@ protected class CSSRuleBracket_CSSRuleBracketAction_0 extends ActionToken  {
 	}
 }
 
-// "["
+// '['
 protected class CSSRuleBracket_LeftSquareBracketKeyword_1 extends KeywordToken  {
 	
 	public CSSRuleBracket_LeftSquareBracketKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4790,7 +4797,7 @@ protected class CSSRuleBracket_InnerAssignment_2 extends AssignmentToken  {
 	}	
 }
 
-// "]"
+// ']'
 protected class CSSRuleBracket_RightSquareBracketKeyword_3 extends KeywordToken  {
 	
 	public CSSRuleBracket_RightSquareBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4821,14 +4828,12 @@ protected class CSSRuleBracket_RightSquareBracketKeyword_3 extends KeywordToken 
  * //CSSRuleParenthesis returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
  * //	{CSSRuleParanthesis} '(' inner=CSSRuleOr ')'
  * //;
- * CSSRulePrimary returns CSSRule hidden(SL_COMMENT, ML_COMMENT):
- * 	CSSRuleRef | CSSRuleBracket | //	CSSRuleParenthesis |
- * 	CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT;
+ * CSSRulePrimary CSSRule hidden(SL_COMMENT, ML_COMMENT):
+ * 	CSSRuleRef | CSSRuleBracket | CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT;
  *
  **/
 
-// CSSRuleRef | CSSRuleBracket | //	CSSRuleParenthesis |
-// CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT
+// CSSRuleRef | CSSRuleBracket | CSSRuleLiteral | CSSRuleSymbol | CSSBaseType | CSSRuleRegex | {CSSNumLiteral} value=INT
 protected class CSSRulePrimary_Alternatives extends AlternativesToken {
 
 	public CSSRulePrimary_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5186,7 +5191,7 @@ protected class CSSRulePrimary_ValueAssignment_6_1 extends AssignmentToken  {
 
 /************ begin Rule CSSRuleRegex ****************
  *
- * CSSRuleRegex returns CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
+ * CSSRuleRegex CSSRule hidden(WS, SL_COMMENT, ML_COMMENT):
  * 	{CSSRuleRegex} regex=REGEX;
  *
  **/
@@ -5286,7 +5291,7 @@ protected class CSSRuleRegex_RegexAssignment_1 extends AssignmentToken  {
 
 /************ begin Rule CSSRuleLiteral ****************
  *
- * CSSRuleLiteral returns CSSRule:
+ * CSSRuleLiteral CSSRule:
  * 	{CSSRuleLiteral} (doku=Doku WS*)? value=ID;
  *
  **/
@@ -5456,12 +5461,12 @@ protected class CSSRuleLiteral_ValueAssignment_2 extends AssignmentToken  {
 
 /************ begin Rule CSSRuleSymbol ****************
  *
- * CSSRuleSymbol returns CSSRule:
- * 	{CSSRuleSymbol} (doku=Doku WS*)? symbol=("," | "%");
+ * CSSRuleSymbol CSSRule:
+ * 	{CSSRuleSymbol} (doku=Doku WS*)? symbol=(',' | '%');
  *
  **/
 
-// {CSSRuleSymbol} (doku=Doku WS*)? symbol=("," | "%")
+// {CSSRuleSymbol} (doku=Doku WS*)? symbol=(',' | '%')
 protected class CSSRuleSymbol_Group extends GroupToken {
 	
 	public CSSRuleSymbol_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5585,7 +5590,7 @@ protected class CSSRuleSymbol_DokuAssignment_1_0 extends AssignmentToken  {
 }
 
 
-// symbol=("," | "%")
+// symbol=(',' | '%')
 protected class CSSRuleSymbol_SymbolAssignment_2 extends AssignmentToken  {
 	
 	public CSSRuleSymbol_SymbolAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5869,11 +5874,11 @@ protected class CSSDefaultValue_SvalAssignment_3 extends AssignmentToken  {
 /************ begin Rule SubstructureSelector ****************
  *
  * SubstructureSelector hidden():
- * 	{SubstructureSelector} selectorName=ID ("[" var=ID "]")?;
+ * 	{SubstructureSelector} selectorName=ID ('[' var=ID ']')?;
  *
  **/
 
-// {SubstructureSelector} selectorName=ID ("[" var=ID "]")?
+// {SubstructureSelector} selectorName=ID ('[' var=ID ']')?
 protected class SubstructureSelector_Group extends GroupToken {
 	
 	public SubstructureSelector_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5963,7 +5968,7 @@ protected class SubstructureSelector_SelectorNameAssignment_1 extends Assignment
 
 }
 
-// ("[" var=ID "]")?
+// ('[' var=ID ']')?
 protected class SubstructureSelector_Group_2 extends GroupToken {
 	
 	public SubstructureSelector_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5985,7 +5990,7 @@ protected class SubstructureSelector_Group_2 extends GroupToken {
 
 }
 
-// "["
+// '['
 protected class SubstructureSelector_LeftSquareBracketKeyword_2_0 extends KeywordToken  {
 	
 	public SubstructureSelector_LeftSquareBracketKeyword_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6041,7 +6046,7 @@ protected class SubstructureSelector_VarAssignment_2_1 extends AssignmentToken  
 
 }
 
-// "]"
+// ']'
 protected class SubstructureSelector_RightSquareBracketKeyword_2_2 extends KeywordToken  {
 	
 	public SubstructureSelector_RightSquareBracketKeyword_2_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6071,11 +6076,14 @@ protected class SubstructureSelector_RightSquareBracketKeyword_2_2 extends Keywo
 /************ begin Rule Substructure ****************
  *
  * Substructure:
- * 	doku=Doku? "substructure" name=ID "{" childs+=SubstructureStyleclass+ "}";
+ * 	doku=Doku?
+ * 	'substructure' name=ID '{'
+ * 	childs+=SubstructureStyleclass+
+ * 	'}';
  *
  **/
 
-// doku=Doku? "substructure" name=ID "{" childs+=SubstructureStyleclass+ "}"
+// doku=Doku? 'substructure' name=ID '{' childs+=SubstructureStyleclass+ '}'
 protected class Substructure_Group extends GroupToken {
 	
 	public Substructure_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6149,7 +6157,7 @@ protected class Substructure_DokuAssignment_0 extends AssignmentToken  {
 	}	
 }
 
-// "substructure"
+// 'substructure'
 protected class Substructure_SubstructureKeyword_1 extends KeywordToken  {
 	
 	public Substructure_SubstructureKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6205,7 +6213,7 @@ protected class Substructure_NameAssignment_2 extends AssignmentToken  {
 
 }
 
-// "{"
+// '{'
 protected class Substructure_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
 	public Substructure_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6274,7 +6282,7 @@ protected class Substructure_ChildsAssignment_4 extends AssignmentToken  {
 	}	
 }
 
-// "}"
+// '}'
 protected class Substructure_RightCurlyBracketKeyword_5 extends KeywordToken  {
 	
 	public Substructure_RightCurlyBracketKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6303,13 +6311,14 @@ protected class Substructure_RightCurlyBracketKeyword_5 extends KeywordToken  {
 /************ begin Rule SubstructureStyleclass ****************
  *
  * SubstructureStyleclass:
- * 	doku=Doku? element=[ElementDefinition|QualifiedName] "styleclass" selectors+=SubstructureSelector+ ("{"
- * 	childs+=SubstructureStyleclass+ "}")?;
+ * 	doku=Doku?
+ * 	element=[ElementDefinition|QualifiedName] 'styleclass' selectors+=SubstructureSelector+ ('{'
+ * 	childs+=SubstructureStyleclass+ '}')?;
  *
  **/
 
-// doku=Doku? element=[ElementDefinition|QualifiedName] "styleclass" selectors+=SubstructureSelector+ ("{"
-// childs+=SubstructureStyleclass+ "}")?
+// doku=Doku? element=[ElementDefinition|QualifiedName] 'styleclass' selectors+=SubstructureSelector+ ('{'
+// childs+=SubstructureStyleclass+ '}')?
 protected class SubstructureStyleclass_Group extends GroupToken {
 	
 	public SubstructureStyleclass_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6421,7 +6430,7 @@ protected class SubstructureStyleclass_ElementAssignment_1 extends AssignmentTok
 
 }
 
-// "styleclass"
+// 'styleclass'
 protected class SubstructureStyleclass_StyleclassKeyword_2 extends KeywordToken  {
 	
 	public SubstructureStyleclass_StyleclassKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6490,7 +6499,7 @@ protected class SubstructureStyleclass_SelectorsAssignment_3 extends AssignmentT
 	}	
 }
 
-// ("{" childs+=SubstructureStyleclass+ "}")?
+// ('{' childs+=SubstructureStyleclass+ '}')?
 protected class SubstructureStyleclass_Group_4 extends GroupToken {
 	
 	public SubstructureStyleclass_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6512,7 +6521,7 @@ protected class SubstructureStyleclass_Group_4 extends GroupToken {
 
 }
 
-// "{"
+// '{'
 protected class SubstructureStyleclass_LeftCurlyBracketKeyword_4_0 extends KeywordToken  {
 	
 	public SubstructureStyleclass_LeftCurlyBracketKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6581,7 +6590,7 @@ protected class SubstructureStyleclass_ChildsAssignment_4_1 extends AssignmentTo
 	}	
 }
 
-// "}"
+// '}'
 protected class SubstructureStyleclass_RightCurlyBracketKeyword_4_2 extends KeywordToken  {
 	
 	public SubstructureStyleclass_RightCurlyBracketKeyword_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

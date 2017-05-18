@@ -66,15 +66,15 @@ public class InternalCssExtDslLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g"; }
+    public String getGrammarFileName() { return "InternalCssExtDsl.g"; }
 
     // $ANTLR start "T__15"
     public final void mT__15() throws RecognitionException {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:11:7: ( 'import' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:11:9: 'import'
+            // InternalCssExtDsl.g:11:7: ( 'import' )
+            // InternalCssExtDsl.g:11:9: 'import'
             {
             match("import"); 
 
@@ -94,8 +94,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:12:7: ( '.' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:12:9: '.'
+            // InternalCssExtDsl.g:12:7: ( '.' )
+            // InternalCssExtDsl.g:12:9: '.'
             {
             match('.'); 
 
@@ -114,8 +114,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:13:7: ( '*' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:13:9: '*'
+            // InternalCssExtDsl.g:13:7: ( '*' )
+            // InternalCssExtDsl.g:13:9: '*'
             {
             match('*'); 
 
@@ -134,8 +134,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:14:7: ( 'package' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:14:9: 'package'
+            // InternalCssExtDsl.g:14:7: ( 'package' )
+            // InternalCssExtDsl.g:14:9: 'package'
             {
             match("package"); 
 
@@ -155,8 +155,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:15:7: ( '{' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:15:9: '{'
+            // InternalCssExtDsl.g:15:7: ( '{' )
+            // InternalCssExtDsl.g:15:9: '{'
             {
             match('{'); 
 
@@ -175,8 +175,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:16:7: ( '}' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:16:9: '}'
+            // InternalCssExtDsl.g:16:7: ( '}' )
+            // InternalCssExtDsl.g:16:9: '}'
             {
             match('}'); 
 
@@ -195,8 +195,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:17:7: ( '@INT' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:17:9: '@INT'
+            // InternalCssExtDsl.g:17:7: ( '@INT' )
+            // InternalCssExtDsl.g:17:9: '@INT'
             {
             match("@INT"); 
 
@@ -216,8 +216,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:18:7: ( '(' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:18:9: '('
+            // InternalCssExtDsl.g:18:7: ( '(' )
+            // InternalCssExtDsl.g:18:9: '('
             {
             match('('); 
 
@@ -236,8 +236,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:19:7: ( '->' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:19:9: '->'
+            // InternalCssExtDsl.g:19:7: ( '->' )
+            // InternalCssExtDsl.g:19:9: '->'
             {
             match("->"); 
 
@@ -257,8 +257,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:20:7: ( ')' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:20:9: ')'
+            // InternalCssExtDsl.g:20:7: ( ')' )
+            // InternalCssExtDsl.g:20:9: ')'
             {
             match(')'); 
 
@@ -277,8 +277,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:21:7: ( '@NUM' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:21:9: '@NUM'
+            // InternalCssExtDsl.g:21:7: ( '@NUM' )
+            // InternalCssExtDsl.g:21:9: '@NUM'
             {
             match("@NUM"); 
 
@@ -298,8 +298,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:22:7: ( '@STRING' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:22:9: '@STRING'
+            // InternalCssExtDsl.g:22:7: ( '@STRING' )
+            // InternalCssExtDsl.g:22:9: '@STRING'
             {
             match("@STRING"); 
 
@@ -319,8 +319,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:23:7: ( '@URL' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:23:9: '@URL'
+            // InternalCssExtDsl.g:23:7: ( '@URL' )
+            // InternalCssExtDsl.g:23:9: '@URL'
             {
             match("@URL"); 
 
@@ -340,8 +340,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:24:7: ( 'extends' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:24:9: 'extends'
+            // InternalCssExtDsl.g:24:7: ( 'extends' )
+            // InternalCssExtDsl.g:24:9: 'extends'
             {
             match("extends"); 
 
@@ -361,8 +361,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:25:7: ( ',' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:25:9: ','
+            // InternalCssExtDsl.g:25:7: ( ',' )
+            // InternalCssExtDsl.g:25:9: ','
             {
             match(','); 
 
@@ -381,8 +381,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:26:7: ( 'styleclass' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:26:9: 'styleclass'
+            // InternalCssExtDsl.g:26:7: ( 'styleclass' )
+            // InternalCssExtDsl.g:26:9: 'styleclass'
             {
             match("styleclass"); 
 
@@ -402,8 +402,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:27:7: ( 'default:' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:27:9: 'default:'
+            // InternalCssExtDsl.g:27:7: ( 'default:' )
+            // InternalCssExtDsl.g:27:9: 'default:'
             {
             match("default:"); 
 
@@ -423,8 +423,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:28:7: ( ';' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:28:9: ';'
+            // InternalCssExtDsl.g:28:7: ( ';' )
+            // InternalCssExtDsl.g:28:9: ';'
             {
             match(';'); 
 
@@ -443,8 +443,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:29:7: ( '<' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:29:9: '<'
+            // InternalCssExtDsl.g:29:7: ( '<' )
+            // InternalCssExtDsl.g:29:9: '<'
             {
             match('<'); 
 
@@ -463,8 +463,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:30:7: ( '>' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:30:9: '>'
+            // InternalCssExtDsl.g:30:7: ( '>' )
+            // InternalCssExtDsl.g:30:9: '>'
             {
             match('>'); 
 
@@ -483,8 +483,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:31:7: ( '=' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:31:9: '='
+            // InternalCssExtDsl.g:31:7: ( '=' )
+            // InternalCssExtDsl.g:31:9: '='
             {
             match('='); 
 
@@ -503,8 +503,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:32:7: ( '|' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:32:9: '|'
+            // InternalCssExtDsl.g:32:7: ( '|' )
+            // InternalCssExtDsl.g:32:9: '|'
             {
             match('|'); 
 
@@ -523,8 +523,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:33:7: ( '||' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:33:9: '||'
+            // InternalCssExtDsl.g:33:7: ( '||' )
+            // InternalCssExtDsl.g:33:9: '||'
             {
             match("||"); 
 
@@ -544,8 +544,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:34:7: ( '~' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:34:9: '~'
+            // InternalCssExtDsl.g:34:7: ( '~' )
+            // InternalCssExtDsl.g:34:9: '~'
             {
             match('~'); 
 
@@ -564,8 +564,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:35:7: ( '+' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:35:9: '+'
+            // InternalCssExtDsl.g:35:7: ( '+' )
+            // InternalCssExtDsl.g:35:9: '+'
             {
             match('+'); 
 
@@ -584,8 +584,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:36:7: ( '?' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:36:9: '?'
+            // InternalCssExtDsl.g:36:7: ( '?' )
+            // InternalCssExtDsl.g:36:9: '?'
             {
             match('?'); 
 
@@ -604,8 +604,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:37:7: ( '[' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:37:9: '['
+            // InternalCssExtDsl.g:37:7: ( '[' )
+            // InternalCssExtDsl.g:37:9: '['
             {
             match('['); 
 
@@ -624,8 +624,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:38:7: ( ']' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:38:9: ']'
+            // InternalCssExtDsl.g:38:7: ( ']' )
+            // InternalCssExtDsl.g:38:9: ']'
             {
             match(']'); 
 
@@ -644,8 +644,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:39:7: ( '%' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:39:9: '%'
+            // InternalCssExtDsl.g:39:7: ( '%' )
+            // InternalCssExtDsl.g:39:9: '%'
             {
             match('%'); 
 
@@ -664,8 +664,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:40:7: ( 'substructure' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:40:9: 'substructure'
+            // InternalCssExtDsl.g:40:7: ( 'substructure' )
+            // InternalCssExtDsl.g:40:9: 'substructure'
             {
             match("substructure"); 
 
@@ -685,8 +685,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_PSEUDO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2588:13: ( ':' ~ ( ' ' ) RULE_ID )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2588:15: ':' ~ ( ' ' ) RULE_ID
+            // InternalCssExtDsl.g:2588:13: ( ':' ~ ( ' ' ) RULE_ID )
+            // InternalCssExtDsl.g:2588:15: ':' ~ ( ' ' ) RULE_ID
             {
             match(':'); 
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<='\uFFFF') ) {
@@ -715,8 +715,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2590:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' )* )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2590:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' )*
+            // InternalCssExtDsl.g:2590:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' )* )
+            // InternalCssExtDsl.g:2590:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '-' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' )*
             {
             if ( input.LA(1)=='-'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -727,7 +727,7 @@ public class InternalCssExtDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2590:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' )*
+            // InternalCssExtDsl.g:2590:39: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' )*
             loop1:
             do {
                 int alt1=2;
@@ -740,7 +740,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:
+            	    // InternalCssExtDsl.g:
             	    {
             	    if ( input.LA(1)=='-'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -776,12 +776,12 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_JDOC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2592:11: ( '/**' ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2592:13: '/**' ( options {greedy=false; } : . )* '*/'
+            // InternalCssExtDsl.g:2592:11: ( '/**' ( options {greedy=false; } : . )* '*/' )
+            // InternalCssExtDsl.g:2592:13: '/**' ( options {greedy=false; } : . )* '*/'
             {
             match("/**"); 
 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2592:19: ( options {greedy=false; } : . )*
+            // InternalCssExtDsl.g:2592:19: ( options {greedy=false; } : . )*
             loop2:
             do {
                 int alt2=2;
@@ -806,7 +806,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2592:47: .
+            	    // InternalCssExtDsl.g:2592:47: .
             	    {
             	    matchAny(); 
 
@@ -836,8 +836,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2594:17: ( '/*' ~ ( '*' ) ( options {greedy=false; } : . )* '*/' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2594:19: '/*' ~ ( '*' ) ( options {greedy=false; } : . )* '*/'
+            // InternalCssExtDsl.g:2594:17: ( '/*' ~ ( '*' ) ( options {greedy=false; } : . )* '*/' )
+            // InternalCssExtDsl.g:2594:19: '/*' ~ ( '*' ) ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
@@ -850,7 +850,7 @@ public class InternalCssExtDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2594:31: ( options {greedy=false; } : . )*
+            // InternalCssExtDsl.g:2594:31: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -875,7 +875,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2594:59: .
+            	    // InternalCssExtDsl.g:2594:59: .
             	    {
             	    matchAny(); 
 
@@ -905,12 +905,12 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalCssExtDsl.g:2596:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalCssExtDsl.g:2596:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalCssExtDsl.g:2596:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop4:
             do {
                 int alt4=2;
@@ -923,7 +923,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalCssExtDsl.g:2596:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -943,7 +943,7 @@ public class InternalCssExtDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:40: ( ( '\\r' )? '\\n' )?
+            // InternalCssExtDsl.g:2596:40: ( ( '\\r' )? '\\n' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -952,9 +952,9 @@ public class InternalCssExtDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:41: ( '\\r' )? '\\n'
+                    // InternalCssExtDsl.g:2596:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:41: ( '\\r' )?
+                    // InternalCssExtDsl.g:2596:41: ( '\\r' )?
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
@@ -963,7 +963,7 @@ public class InternalCssExtDslLexer extends Lexer {
                     }
                     switch (alt5) {
                         case 1 :
-                            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2596:41: '\\r'
+                            // InternalCssExtDsl.g:2596:41: '\\r'
                             {
                             match('\r'); 
 
@@ -995,10 +995,10 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2598:10: ( ( '-' )? ( '0' .. '9' )+ )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2598:12: ( '-' )? ( '0' .. '9' )+
+            // InternalCssExtDsl.g:2598:10: ( ( '-' )? ( '0' .. '9' )+ )
+            // InternalCssExtDsl.g:2598:12: ( '-' )? ( '0' .. '9' )+
             {
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2598:12: ( '-' )?
+            // InternalCssExtDsl.g:2598:12: ( '-' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1007,7 +1007,7 @@ public class InternalCssExtDslLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2598:12: '-'
+                    // InternalCssExtDsl.g:2598:12: '-'
                     {
                     match('-'); 
 
@@ -1016,7 +1016,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
             }
 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2598:17: ( '0' .. '9' )+
+            // InternalCssExtDsl.g:2598:17: ( '0' .. '9' )+
             int cnt8=0;
             loop8:
             do {
@@ -1030,7 +1030,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2598:18: '0' .. '9'
+            	    // InternalCssExtDsl.g:2598:18: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1062,10 +1062,10 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:13: ( ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:15: ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            // InternalCssExtDsl.g:2600:13: ( ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // InternalCssExtDsl.g:2600:15: ( '-' )? ( '0' .. '9' )* '.' ( '0' .. '9' )+
             {
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:15: ( '-' )?
+            // InternalCssExtDsl.g:2600:15: ( '-' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1074,7 +1074,7 @@ public class InternalCssExtDslLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:15: '-'
+                    // InternalCssExtDsl.g:2600:15: '-'
                     {
                     match('-'); 
 
@@ -1083,7 +1083,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
             }
 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:20: ( '0' .. '9' )*
+            // InternalCssExtDsl.g:2600:20: ( '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -1096,7 +1096,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:21: '0' .. '9'
+            	    // InternalCssExtDsl.g:2600:21: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1109,7 +1109,7 @@ public class InternalCssExtDslLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:36: ( '0' .. '9' )+
+            // InternalCssExtDsl.g:2600:36: ( '0' .. '9' )+
             int cnt11=0;
             loop11:
             do {
@@ -1123,7 +1123,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2600:37: '0' .. '9'
+            	    // InternalCssExtDsl.g:2600:37: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1155,11 +1155,11 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_REGEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2602:12: ( '$' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | ',' | '.' | '?' | '\\'' | ':' | '\"' | '>' | '<' | '/' | '_' | '=' | ';' | '(' | ')' | '&' | '!' | '#' | '%' | '*' | '+' | '[' | ']' | '{' | '}' )+ '$' )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2602:14: '$' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | ',' | '.' | '?' | '\\'' | ':' | '\"' | '>' | '<' | '/' | '_' | '=' | ';' | '(' | ')' | '&' | '!' | '#' | '%' | '*' | '+' | '[' | ']' | '{' | '}' )+ '$'
+            // InternalCssExtDsl.g:2602:12: ( '$' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | ',' | '.' | '?' | '\\'' | ':' | '\"' | '>' | '<' | '/' | '_' | '=' | ';' | '(' | ')' | '&' | '!' | '#' | '%' | '*' | '+' | '[' | ']' | '{' | '}' )+ '$' )
+            // InternalCssExtDsl.g:2602:14: '$' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | ',' | '.' | '?' | '\\'' | ':' | '\"' | '>' | '<' | '/' | '_' | '=' | ';' | '(' | ')' | '&' | '!' | '#' | '%' | '*' | '+' | '[' | ']' | '{' | '}' )+ '$'
             {
             match('$'); 
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2602:18: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | ',' | '.' | '?' | '\\'' | ':' | '\"' | '>' | '<' | '/' | '_' | '=' | ';' | '(' | ')' | '&' | '!' | '#' | '%' | '*' | '+' | '[' | ']' | '{' | '}' )+
+            // InternalCssExtDsl.g:2602:18: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | ',' | '.' | '?' | '\\'' | ':' | '\"' | '>' | '<' | '/' | '_' | '=' | ';' | '(' | ')' | '&' | '!' | '#' | '%' | '*' | '+' | '[' | ']' | '{' | '}' )+
             int cnt12=0;
             loop12:
             do {
@@ -1173,7 +1173,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:
+            	    // InternalCssExtDsl.g:
             	    {
             	    if ( (input.LA(1)>='!' && input.LA(1)<='#')||(input.LA(1)>='%' && input.LA(1)<='?')||(input.LA(1)>='A' && input.LA(1)<='[')||input.LA(1)==']'||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='{')||input.LA(1)=='}' ) {
             	        input.consume();
@@ -1214,10 +1214,10 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCssExtDsl.g:2604:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalCssExtDsl.g:2604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCssExtDsl.g:2604:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1235,10 +1235,10 @@ public class InternalCssExtDslLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalCssExtDsl.g:2604:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalCssExtDsl.g:2604:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -1254,7 +1254,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:21: '\\\\' .
+                    	    // InternalCssExtDsl.g:2604:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1262,7 +1262,7 @@ public class InternalCssExtDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalCssExtDsl.g:2604:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1287,10 +1287,10 @@ public class InternalCssExtDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalCssExtDsl.g:2604:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalCssExtDsl.g:2604:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -1306,7 +1306,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:54: '\\\\' .
+                    	    // InternalCssExtDsl.g:2604:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1314,7 +1314,7 @@ public class InternalCssExtDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2604:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalCssExtDsl.g:2604:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1357,10 +1357,10 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2606:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCssExtDsl.g:2606:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCssExtDsl.g:2606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCssExtDsl.g:2606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt16=0;
             loop16:
             do {
@@ -1374,7 +1374,7 @@ public class InternalCssExtDslLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:
+            	    // InternalCssExtDsl.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -1414,8 +1414,8 @@ public class InternalCssExtDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2608:16: ( . )
-            // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:2608:18: .
+            // InternalCssExtDsl.g:2608:16: ( . )
+            // InternalCssExtDsl.g:2608:18: .
             {
             matchAny(); 
 
@@ -1430,292 +1430,292 @@ public class InternalCssExtDslLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | RULE_PSEUDO | RULE_ID | RULE_JDOC | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_INT | RULE_DOUBLE | RULE_REGEX | RULE_STRING | RULE_WS | RULE_ANY_OTHER )
+        // InternalCssExtDsl.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | RULE_PSEUDO | RULE_ID | RULE_JDOC | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_INT | RULE_DOUBLE | RULE_REGEX | RULE_STRING | RULE_WS | RULE_ANY_OTHER )
         int alt17=41;
         alt17 = dfa17.predict(input);
         switch (alt17) {
             case 1 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:10: T__15
+                // InternalCssExtDsl.g:1:10: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 2 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:16: T__16
+                // InternalCssExtDsl.g:1:16: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 3 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:22: T__17
+                // InternalCssExtDsl.g:1:22: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 4 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:28: T__18
+                // InternalCssExtDsl.g:1:28: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 5 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:34: T__19
+                // InternalCssExtDsl.g:1:34: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 6 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:40: T__20
+                // InternalCssExtDsl.g:1:40: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 7 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:46: T__21
+                // InternalCssExtDsl.g:1:46: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 8 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:52: T__22
+                // InternalCssExtDsl.g:1:52: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 9 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:58: T__23
+                // InternalCssExtDsl.g:1:58: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 10 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:64: T__24
+                // InternalCssExtDsl.g:1:64: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 11 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:70: T__25
+                // InternalCssExtDsl.g:1:70: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 12 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:76: T__26
+                // InternalCssExtDsl.g:1:76: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 13 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:82: T__27
+                // InternalCssExtDsl.g:1:82: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 14 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:88: T__28
+                // InternalCssExtDsl.g:1:88: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 15 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:94: T__29
+                // InternalCssExtDsl.g:1:94: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 16 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:100: T__30
+                // InternalCssExtDsl.g:1:100: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 17 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:106: T__31
+                // InternalCssExtDsl.g:1:106: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 18 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:112: T__32
+                // InternalCssExtDsl.g:1:112: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 19 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:118: T__33
+                // InternalCssExtDsl.g:1:118: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
             case 20 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:124: T__34
+                // InternalCssExtDsl.g:1:124: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
             case 21 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:130: T__35
+                // InternalCssExtDsl.g:1:130: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
             case 22 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:136: T__36
+                // InternalCssExtDsl.g:1:136: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
             case 23 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:142: T__37
+                // InternalCssExtDsl.g:1:142: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
             case 24 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:148: T__38
+                // InternalCssExtDsl.g:1:148: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
             case 25 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:154: T__39
+                // InternalCssExtDsl.g:1:154: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
             case 26 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:160: T__40
+                // InternalCssExtDsl.g:1:160: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
             case 27 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:166: T__41
+                // InternalCssExtDsl.g:1:166: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
             case 28 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:172: T__42
+                // InternalCssExtDsl.g:1:172: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
             case 29 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:178: T__43
+                // InternalCssExtDsl.g:1:178: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
             case 30 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:184: T__44
+                // InternalCssExtDsl.g:1:184: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
             case 31 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:190: RULE_PSEUDO
+                // InternalCssExtDsl.g:1:190: RULE_PSEUDO
                 {
                 mRULE_PSEUDO(); 
 
                 }
                 break;
             case 32 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:202: RULE_ID
+                // InternalCssExtDsl.g:1:202: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 33 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:210: RULE_JDOC
+                // InternalCssExtDsl.g:1:210: RULE_JDOC
                 {
                 mRULE_JDOC(); 
 
                 }
                 break;
             case 34 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:220: RULE_ML_COMMENT
+                // InternalCssExtDsl.g:1:220: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 35 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:236: RULE_SL_COMMENT
+                // InternalCssExtDsl.g:1:236: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 36 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:252: RULE_INT
+                // InternalCssExtDsl.g:1:252: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 37 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:261: RULE_DOUBLE
+                // InternalCssExtDsl.g:1:261: RULE_DOUBLE
                 {
                 mRULE_DOUBLE(); 
 
                 }
                 break;
             case 38 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:273: RULE_REGEX
+                // InternalCssExtDsl.g:1:273: RULE_REGEX
                 {
                 mRULE_REGEX(); 
 
                 }
                 break;
             case 39 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:284: RULE_STRING
+                // InternalCssExtDsl.g:1:284: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 40 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:296: RULE_WS
+                // InternalCssExtDsl.g:1:296: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 41 :
-                // ../org.eclipse.fx.ide.css.cssext/src-gen/org/eclipse/fx/ide/css/cssext/parser/antlr/internal/InternalCssExtDsl.g:1:304: RULE_ANY_OTHER
+                // InternalCssExtDsl.g:1:304: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
