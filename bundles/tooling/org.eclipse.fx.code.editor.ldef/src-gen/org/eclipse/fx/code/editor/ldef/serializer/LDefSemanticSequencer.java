@@ -328,7 +328,7 @@ public class LDefSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LDefPackage.Literals.LEXICAL_PARTITION_HIGHLIGHTING_JS__SCRIPT_URI));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLexicalPartitionHighlighting_JSAccess().getPartitionPartitionIDTerminalRuleCall_1_0_1(), semanticObject.getPartition());
+		feeder.accept(grammarAccess.getLexicalPartitionHighlighting_JSAccess().getPartitionPartitionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(LDefPackage.Literals.LEXICAL_PARTITION_HIGHLIGHTING__PARTITION, false));
 		feeder.accept(grammarAccess.getLexicalPartitionHighlighting_JSAccess().getScriptURISTRINGTerminalRuleCall_2_0(), semanticObject.getScriptURI());
 		feeder.finish();
 	}

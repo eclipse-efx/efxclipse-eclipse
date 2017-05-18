@@ -4,7 +4,7 @@
     editorDirectory="/org.eclipse.fx.code.editor.ldef.editor/src" modelPluginID="org.eclipse.fx.code.editor.ldef"
     forceOverwrite="true" modelName="LDef" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.eclipse.fx.code.editor.ldef.edit"
-    editorPluginID="org.eclipse.fx.code.editor.ldef.editor" runtimeVersion="2.11">
+    editorPluginID="org.eclipse.fx.code.editor.ldef.editor" runtimeVersion="2.13">
   <genPackages prefix="LDef" basePackage="org.eclipse.fx.code.editor.ldef" disposableProviderFactory="true"
       fileExtensions="ldef" ecorePackage="LDef.ecore#/">
     <genClasses ecoreClass="LDef.ecore#//Root">

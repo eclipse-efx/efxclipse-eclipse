@@ -434,7 +434,7 @@ public class LDefGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
-		//(simpleValue=STRING | '{' children+=ConfigValue+ '}')
+		//simpleValue=STRING | '{' children+=ConfigValue+ '}'
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
 		//simpleValue=STRING
@@ -2096,7 +2096,7 @@ public class LDefGrammarAccess extends AbstractGrammarElementFinder {
 		//'whitespace'
 		public Keyword getWhitespaceKeyword_0() { return cWhitespaceKeyword_0; }
 
-		//('[' characters+=STRING (',' characters+=STRING)* ']' | javawhitespace?='javawhitespace' | fileURI=STRING)
+		//'[' characters+=STRING (',' characters+=STRING)* ']' | javawhitespace?='javawhitespace' | fileURI=STRING
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//'[' characters+=STRING (',' characters+=STRING)* ']'
@@ -2806,7 +2806,7 @@ public class LDefGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal ML_COMMENT:
-	//	'/ *'->'* /';
+	//	'/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
