@@ -76,7 +76,7 @@ public class CssExtDslOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	protected void _createChildren(DocumentRootNode parentNode, CssExtension ext) {
 		
 		if (!ext.getImports().isEmpty()) {
-			createEStructuralFeatureNode(parentNode, ext, CssExtDslPackage.Literals.CSS_EXTENSION__IMPORTS, null, "Imports", false);
+			createEStructuralFeatureNode(parentNode, ext, CssExtDslPackage.Literals.CSS_EXTENSION__IMPORTS, (Image)null, "Imports", false);
 		}
 		
 		SortedSet<PackageDefinition> packages = new TreeSet<PackageDefinition>(new Comparator<PackageDefinition>() {
