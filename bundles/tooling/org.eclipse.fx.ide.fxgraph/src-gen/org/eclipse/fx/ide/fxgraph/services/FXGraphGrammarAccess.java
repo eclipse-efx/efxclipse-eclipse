@@ -20,7 +20,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPackageAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cPackagePackageDeclarationParserRuleCall_0_0 = (RuleCall)cPackageAssignment_0.eContents().get(0);
@@ -30,7 +30,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cComponentDefComponentDefinitionParserRuleCall_2_0 = (RuleCall)cComponentDefAssignment_2.eContents().get(0);
 		
 		//Model:
-		//	package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition;
+		//	package=PackageDeclaration?
+		//	imports+=Import*
+		//	componentDef=ComponentDefinition;
 		@Override public ParserRule getRule() { return rule; }
 
 		//package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition
@@ -56,20 +58,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageDeclaration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.PackageDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//PackageDeclaration:
-		//	"package" name=QualifiedName;
+		//	'package' name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"package" name=QualifiedName
+		//'package' name=QualifiedName
 		public Group getGroup() { return cGroup; }
 
-		//"package"
+		//'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 
 		//name=QualifiedName
@@ -80,7 +82,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.Import");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -89,19 +91,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cImportedNamespaceQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cImportedNamespaceAlternatives_1_0.eContents().get(1);
 		
 		//Import:
-		//	"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
+		//	'import' importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
 		@Override public ParserRule getRule() { return rule; }
 
-		//"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName)
+		//'import' importedNamespace=(QualifiedNameWithWildcard | QualifiedName)
 		public Group getGroup() { return cGroup; }
 
-		//"import"
+		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
 		//importedNamespace=(QualifiedNameWithWildcard | QualifiedName)
 		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
 
-		//QualifiedNameWithWildcard | QualifiedName
+		//(QualifiedNameWithWildcard | QualifiedName)
 		public Alternatives getImportedNamespaceAlternatives_1_0() { return cImportedNamespaceAlternatives_1_0; }
 
 		//QualifiedNameWithWildcard
@@ -112,7 +114,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ComponentDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComponentDefinition");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ComponentDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDynamicRootAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Keyword cDynamicRootDynamicKeyword_0_0 = (Keyword)cDynamicRootAssignment_0.eContents().get(0);
@@ -172,27 +174,30 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//ComponentDefinition:
-		//	dynamicRoot?="dynamic"? "component" name=ValidID (("controlledby" controller=JvmTypeReference)? & ("styledwith"
-		//	(previewCssFiles+=STRING | "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile"
-		//	previewResourceBundle=STRING)? & ("extraClasspath" "[" previewClasspathEntries+=STRING (","
-		//	previewClasspathEntries+=STRING)* "]")? & ("sceneSetup" sceneDefinition=[ComponentDefinition|QualifiedName])?) "{"
-		//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+		//	dynamicRoot?='dynamic'? 'component' name=ValidID (('controlledby' controller=JvmTypeReference)? & ('styledwith'
+		//	(previewCssFiles+=STRING | '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']'))? & ('resourcefile'
+		//	previewResourceBundle=STRING)? & ('extraClasspath' '[' previewClasspathEntries+=STRING (','
+		//	previewClasspathEntries+=STRING)* ']')? & ('sceneSetup' sceneDefinition=[ComponentDefinition|QualifiedName])?)
+		//	'{'
+		//	scripts+=Script? (defines+=Define (',' defines+=Define)*)?
+		//	rootNode=Element
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//dynamicRoot?="dynamic"? "component" name=ValidID (("controlledby" controller=JvmTypeReference)? & ("styledwith"
-		//(previewCssFiles+=STRING | "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile"
-		//previewResourceBundle=STRING)? & ("extraClasspath" "[" previewClasspathEntries+=STRING (","
-		//previewClasspathEntries+=STRING)* "]")? & ("sceneSetup" sceneDefinition=[ComponentDefinition|QualifiedName])?) "{"
-		//scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
+		//dynamicRoot?='dynamic'? 'component' name=ValidID (('controlledby' controller=JvmTypeReference)? & ('styledwith'
+		//(previewCssFiles+=STRING | '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']'))? & ('resourcefile'
+		//previewResourceBundle=STRING)? & ('extraClasspath' '[' previewClasspathEntries+=STRING (','
+		//previewClasspathEntries+=STRING)* ']')? & ('sceneSetup' sceneDefinition=[ComponentDefinition|QualifiedName])?) '{'
+		//scripts+=Script? (defines+=Define (',' defines+=Define)*)? rootNode=Element '}'
 		public Group getGroup() { return cGroup; }
 
-		//dynamicRoot?="dynamic"?
+		//dynamicRoot?='dynamic'?
 		public Assignment getDynamicRootAssignment_0() { return cDynamicRootAssignment_0; }
 
-		//"dynamic"
+		//'dynamic'
 		public Keyword getDynamicRootDynamicKeyword_0_0() { return cDynamicRootDynamicKeyword_0_0; }
 
-		//"component"
+		//'component'
 		public Keyword getComponentKeyword_1() { return cComponentKeyword_1; }
 
 		//name=ValidID
@@ -201,16 +206,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_2_0() { return cNameValidIDParserRuleCall_2_0; }
 
-		//("controlledby" controller=JvmTypeReference)? & ("styledwith" (previewCssFiles+=STRING | "[" previewCssFiles+=STRING
-		//("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? & ("extraClasspath" "["
-		//previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
+		//('controlledby' controller=JvmTypeReference)? & ('styledwith' (previewCssFiles+=STRING | '[' previewCssFiles+=STRING
+		//(',' previewCssFiles+=STRING)* ']'))? & ('resourcefile' previewResourceBundle=STRING)? & ('extraClasspath' '['
+		//previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? & ('sceneSetup'
 		//sceneDefinition=[ComponentDefinition|QualifiedName])?
 		public UnorderedGroup getUnorderedGroup_3() { return cUnorderedGroup_3; }
 
-		//("controlledby" controller=JvmTypeReference)?
+		//('controlledby' controller=JvmTypeReference)?
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
-		//"controlledby"
+		//'controlledby'
 		public Keyword getControlledbyKeyword_3_0_0() { return cControlledbyKeyword_3_0_0; }
 
 		//controller=JvmTypeReference
@@ -219,13 +224,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//JvmTypeReference
 		public RuleCall getControllerJvmTypeReferenceParserRuleCall_3_0_1_0() { return cControllerJvmTypeReferenceParserRuleCall_3_0_1_0; }
 
-		//("styledwith" (previewCssFiles+=STRING | "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))?
+		//('styledwith' (previewCssFiles+=STRING | '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']'))?
 		public Group getGroup_3_1() { return cGroup_3_1; }
 
-		//"styledwith"
+		//'styledwith'
 		public Keyword getStyledwithKeyword_3_1_0() { return cStyledwithKeyword_3_1_0; }
 
-		//previewCssFiles+=STRING | "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"
+		//previewCssFiles+=STRING | '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']'
 		public Alternatives getAlternatives_3_1_1() { return cAlternatives_3_1_1; }
 
 		//previewCssFiles+=STRING
@@ -234,10 +239,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_0_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_0_0; }
 
-		//"[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"
+		//'[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']'
 		public Group getGroup_3_1_1_1() { return cGroup_3_1_1_1; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_3_1_1_1_0() { return cLeftSquareBracketKeyword_3_1_1_1_0; }
 
 		//previewCssFiles+=STRING
@@ -246,10 +251,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_1_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_1_0; }
 
-		//("," previewCssFiles+=STRING)*
+		//(',' previewCssFiles+=STRING)*
 		public Group getGroup_3_1_1_1_2() { return cGroup_3_1_1_1_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_1_1_1_2_0() { return cCommaKeyword_3_1_1_1_2_0; }
 
 		//previewCssFiles+=STRING
@@ -258,13 +263,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_2_1_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_2_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3_1_1_1_3() { return cRightSquareBracketKeyword_3_1_1_1_3; }
 
-		//("resourcefile" previewResourceBundle=STRING)?
+		//('resourcefile' previewResourceBundle=STRING)?
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//"resourcefile"
+		//'resourcefile'
 		public Keyword getResourcefileKeyword_3_2_0() { return cResourcefileKeyword_3_2_0; }
 
 		//previewResourceBundle=STRING
@@ -273,13 +278,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPreviewResourceBundleSTRINGTerminalRuleCall_3_2_1_0() { return cPreviewResourceBundleSTRINGTerminalRuleCall_3_2_1_0; }
 
-		//("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?
+		//('extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')?
 		public Group getGroup_3_3() { return cGroup_3_3; }
 
-		//"extraClasspath"
+		//'extraClasspath'
 		public Keyword getExtraClasspathKeyword_3_3_0() { return cExtraClasspathKeyword_3_3_0; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_3_3_1() { return cLeftSquareBracketKeyword_3_3_1; }
 
 		//previewClasspathEntries+=STRING
@@ -288,10 +293,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPreviewClasspathEntriesSTRINGTerminalRuleCall_3_3_2_0() { return cPreviewClasspathEntriesSTRINGTerminalRuleCall_3_3_2_0; }
 
-		//("," previewClasspathEntries+=STRING)*
+		//(',' previewClasspathEntries+=STRING)*
 		public Group getGroup_3_3_3() { return cGroup_3_3_3; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_3_3_0() { return cCommaKeyword_3_3_3_0; }
 
 		//previewClasspathEntries+=STRING
@@ -300,13 +305,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPreviewClasspathEntriesSTRINGTerminalRuleCall_3_3_3_1_0() { return cPreviewClasspathEntriesSTRINGTerminalRuleCall_3_3_3_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3_3_4() { return cRightSquareBracketKeyword_3_3_4; }
 
-		//("sceneSetup" sceneDefinition=[ComponentDefinition|QualifiedName])?
+		//('sceneSetup' sceneDefinition=[ComponentDefinition|QualifiedName])?
 		public Group getGroup_3_4() { return cGroup_3_4; }
 
-		//"sceneSetup"
+		//'sceneSetup'
 		public Keyword getSceneSetupKeyword_3_4_0() { return cSceneSetupKeyword_3_4_0; }
 
 		//sceneDefinition=[ComponentDefinition|QualifiedName]
@@ -318,7 +323,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getSceneDefinitionComponentDefinitionQualifiedNameParserRuleCall_3_4_1_0_1() { return cSceneDefinitionComponentDefinitionQualifiedNameParserRuleCall_3_4_1_0_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
 		//scripts+=Script?
@@ -327,7 +332,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Script
 		public RuleCall getScriptsScriptParserRuleCall_5_0() { return cScriptsScriptParserRuleCall_5_0; }
 
-		//(defines+=Define ("," defines+=Define)*)?
+		//(defines+=Define (',' defines+=Define)*)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//defines+=Define
@@ -336,10 +341,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Define
 		public RuleCall getDefinesDefineParserRuleCall_6_0_0() { return cDefinesDefineParserRuleCall_6_0_0; }
 
-		//("," defines+=Define)*
+		//(',' defines+=Define)*
 		public Group getGroup_6_1() { return cGroup_6_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_6_1_0() { return cCommaKeyword_6_1_0; }
 
 		//defines+=Define
@@ -354,12 +359,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Element
 		public RuleCall getRootNodeElementParserRuleCall_7_0() { return cRootNodeElementParserRuleCall_7_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class ElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Element");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.Element");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
@@ -421,18 +426,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_1_2_3_3 = (Keyword)cGroup_1_2_3.eContents().get(3);
 		
 		//Element:
-		//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
+		//	type=JvmTypeReference (('(' value=SimpleValueProperty ')')? ('id' name=ValidID)? | ('id' name=ValidID)? '{'
 		//	((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
-		//	defaultChildren+=Element) ("," (properties+=Property | staticProperties+=StaticValueProperty |
-		//	staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
-		//	factory=ID ("{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")?);
+		//	defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty |
+		//	staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)?
+		//	'}' | ('id' name=ValidID)? 'createdby' factory=ID ('{' values+=FactoryValueElement (',' values+=FactoryValueElement)*
+		//	'}')?);
 		@Override public ParserRule getRule() { return rule; }
 
-		//type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
+		//type=JvmTypeReference (('(' value=SimpleValueProperty ')')? ('id' name=ValidID)? | ('id' name=ValidID)? '{'
 		//((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
-		//defaultChildren+=Element) ("," (properties+=Property | staticProperties+=StaticValueProperty |
-		//staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
-		//factory=ID ("{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")?)
+		//defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty |
+		//staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? '}' | ('id' name=ValidID)? 'createdby'
+		//factory=ID ('{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}')?)
 		public Group getGroup() { return cGroup; }
 
 		//type=JvmTypeReference
@@ -441,20 +447,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//JvmTypeReference
 		public RuleCall getTypeJvmTypeReferenceParserRuleCall_0_0() { return cTypeJvmTypeReferenceParserRuleCall_0_0; }
 
-		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
-		//staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (","
+		//('(' value=SimpleValueProperty ')')? ('id' name=ValidID)? | ('id' name=ValidID)? '{' ((properties+=Property |
+		//staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (','
 		//(properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
-		//defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID ("{" values+=FactoryValueElement (","
-		//values+=FactoryValueElement)* "}")?
+		//defaultChildren+=Element))*)? '}' | ('id' name=ValidID)? 'createdby' factory=ID ('{' values+=FactoryValueElement (','
+		//values+=FactoryValueElement)* '}')?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)?
+		//('(' value=SimpleValueProperty ')')? ('id' name=ValidID)?
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
-		//("(" value=SimpleValueProperty ")")?
+		//('(' value=SimpleValueProperty ')')?
 		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_1_0_0_0() { return cLeftParenthesisKeyword_1_0_0_0; }
 
 		//value=SimpleValueProperty
@@ -463,13 +469,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//SimpleValueProperty
 		public RuleCall getValueSimpleValuePropertyParserRuleCall_1_0_0_1_0() { return cValueSimpleValuePropertyParserRuleCall_1_0_0_1_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_1_0_0_2() { return cRightParenthesisKeyword_1_0_0_2; }
 
-		//("id" name=ValidID)?
+		//('id' name=ValidID)?
 		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
 
-		//"id"
+		//'id'
 		public Keyword getIdKeyword_1_0_1_0() { return cIdKeyword_1_0_1_0; }
 
 		//name=ValidID
@@ -478,16 +484,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_0_1_1_0() { return cNameValidIDParserRuleCall_1_0_1_1_0; }
 
-		//("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty |
-		//staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+		//('id' name=ValidID)? '{' ((properties+=Property | staticProperties+=StaticValueProperty |
+		//staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (',' (properties+=Property |
 		//staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)?
-		//"}"
+		//'}'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//("id" name=ValidID)?
+		//('id' name=ValidID)?
 		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
 
-		//"id"
+		//'id'
 		public Keyword getIdKeyword_1_1_0_0() { return cIdKeyword_1_1_0_0; }
 
 		//name=ValidID
@@ -496,11 +502,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_1_0_1_0() { return cNameValidIDParserRuleCall_1_1_0_1_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1_1_1() { return cLeftCurlyBracketKeyword_1_1_1; }
 
 		//((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
-		//defaultChildren+=Element) ("," (properties+=Property | staticProperties+=StaticValueProperty |
+		//defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty |
 		//staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)?
 		public Group getGroup_1_1_2() { return cGroup_1_1_2; }
 
@@ -532,11 +538,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Element
 		public RuleCall getDefaultChildrenElementParserRuleCall_1_1_2_0_3_0() { return cDefaultChildrenElementParserRuleCall_1_1_2_0_3_0; }
 
-		//("," (properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+		//(',' (properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
 		//defaultChildren+=Element))*
 		public Group getGroup_1_1_2_1() { return cGroup_1_1_2_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_1_1_2_1_0() { return cCommaKeyword_1_1_2_1_0; }
 
 		//properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
@@ -567,16 +573,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Element
 		public RuleCall getDefaultChildrenElementParserRuleCall_1_1_2_1_1_3_0() { return cDefaultChildrenElementParserRuleCall_1_1_2_1_1_3_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_1_1_3() { return cRightCurlyBracketKeyword_1_1_3; }
 
-		//("id" name=ValidID)? "createdby" factory=ID ("{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")?
+		//('id' name=ValidID)? 'createdby' factory=ID ('{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}')?
 		public Group getGroup_1_2() { return cGroup_1_2; }
 
-		//("id" name=ValidID)?
+		//('id' name=ValidID)?
 		public Group getGroup_1_2_0() { return cGroup_1_2_0; }
 
-		//"id"
+		//'id'
 		public Keyword getIdKeyword_1_2_0_0() { return cIdKeyword_1_2_0_0; }
 
 		//name=ValidID
@@ -585,7 +591,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_2_0_1_0() { return cNameValidIDParserRuleCall_1_2_0_1_0; }
 
-		//"createdby"
+		//'createdby'
 		public Keyword getCreatedbyKeyword_1_2_1() { return cCreatedbyKeyword_1_2_1; }
 
 		//factory=ID
@@ -594,10 +600,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getFactoryIDTerminalRuleCall_1_2_2_0() { return cFactoryIDTerminalRuleCall_1_2_2_0; }
 
-		//("{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")?
+		//('{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}')?
 		public Group getGroup_1_2_3() { return cGroup_1_2_3; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1_2_3_0() { return cLeftCurlyBracketKeyword_1_2_3_0; }
 
 		//values+=FactoryValueElement
@@ -606,10 +612,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//FactoryValueElement
 		public RuleCall getValuesFactoryValueElementParserRuleCall_1_2_3_1_0() { return cValuesFactoryValueElementParserRuleCall_1_2_3_1_0; }
 
-		//("," values+=FactoryValueElement)*
+		//(',' values+=FactoryValueElement)*
 		public Group getGroup_1_2_3_2() { return cGroup_1_2_3_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_1_2_3_2_0() { return cCommaKeyword_1_2_3_2_0; }
 
 		//values+=FactoryValueElement
@@ -618,12 +624,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//FactoryValueElement
 		public RuleCall getValuesFactoryValueElementParserRuleCall_1_2_3_2_1_0() { return cValuesFactoryValueElementParserRuleCall_1_2_3_2_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_1_2_3_3() { return cRightCurlyBracketKeyword_1_2_3_3; }
 	}
 
 	public class DefineElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Define");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.Define");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDefineKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -633,13 +639,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIncludeElementIncludeValuePropertyParserRuleCall_1_1_0 = (RuleCall)cIncludeElementAssignment_1_1.eContents().get(0);
 		
 		//Define:
-		//	"define" (element=Element | includeElement=IncludeValueProperty);
+		//	'define' (element=Element | includeElement=IncludeValueProperty);
 		@Override public ParserRule getRule() { return rule; }
 
-		//"define" (element=Element | includeElement=IncludeValueProperty)
+		//'define' (element=Element | includeElement=IncludeValueProperty)
 		public Group getGroup() { return cGroup; }
 
-		//"define"
+		//'define'
 		public Keyword getDefineKeyword_0() { return cDefineKeyword_0; }
 
 		//element=Element | includeElement=IncludeValueProperty
@@ -659,7 +665,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ScriptElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Script");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.Script");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cScriptKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cLanguageAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -671,13 +677,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSourcecodeSCRIPTLITERALTerminalRuleCall_2_1_0 = (RuleCall)cSourcecodeAssignment_2_1.eContents().get(0);
 		
 		//Script:
-		//	"script" language=ID (source=STRING | sourcecode=SCRIPTLITERAL);
+		//	'script' language=ID (source=STRING | sourcecode=SCRIPTLITERAL);
 		@Override public ParserRule getRule() { return rule; }
 
-		//"script" language=ID (source=STRING | sourcecode=SCRIPTLITERAL)
+		//'script' language=ID (source=STRING | sourcecode=SCRIPTLITERAL)
 		public Group getGroup() { return cGroup; }
 
-		//"script"
+		//'script'
 		public Keyword getScriptKeyword_0() { return cScriptKeyword_0; }
 
 		//language=ID
@@ -703,7 +709,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class StaticCallValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StaticCallValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.StaticCallValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cModifierAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Alternatives cModifierAlternatives_0_0 = (Alternatives)cModifierAssignment_0.eContents().get(0);
@@ -720,25 +726,25 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueValuePropertyParserRuleCall_6_0 = (RuleCall)cValueAssignment_6.eContents().get(0);
 		
 		//StaticCallValueProperty:
-		//	modifier=("preview" | "runtime-only")? "call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty;
+		//	modifier=('preview' | 'runtime-only')? 'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty;
 		@Override public ParserRule getRule() { return rule; }
 
-		//modifier=("preview" | "runtime-only")? "call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty
+		//modifier=('preview' | 'runtime-only')? 'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty
 		public Group getGroup() { return cGroup; }
 
-		//modifier=("preview" | "runtime-only")?
+		//modifier=('preview' | 'runtime-only')?
 		public Assignment getModifierAssignment_0() { return cModifierAssignment_0; }
 
-		//"preview" | "runtime-only"
+		//('preview' | 'runtime-only')
 		public Alternatives getModifierAlternatives_0_0() { return cModifierAlternatives_0_0; }
 
-		//"preview"
+		//'preview'
 		public Keyword getModifierPreviewKeyword_0_0_0() { return cModifierPreviewKeyword_0_0_0; }
 
-		//"runtime-only"
+		//'runtime-only'
 		public Keyword getModifierRuntimeOnlyKeyword_0_0_1() { return cModifierRuntimeOnlyKeyword_0_0_1; }
 
-		//"call"
+		//'call'
 		public Keyword getCallKeyword_1() { return cCallKeyword_1; }
 
 		//type=JvmTypeReference
@@ -747,7 +753,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//JvmTypeReference
 		public RuleCall getTypeJvmTypeReferenceParserRuleCall_2_0() { return cTypeJvmTypeReferenceParserRuleCall_2_0; }
 
-		//"#"
+		//'#'
 		public Keyword getNumberSignKeyword_3() { return cNumberSignKeyword_3; }
 
 		//name=ID
@@ -756,7 +762,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_4_0() { return cNameIDTerminalRuleCall_4_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//value=ValueProperty
@@ -767,7 +773,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class StaticValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StaticValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.StaticValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cModifierAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Alternatives cModifierAlternatives_0_0 = (Alternatives)cModifierAssignment_0.eContents().get(0);
@@ -781,25 +787,25 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueValuePropertyParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		
 		//StaticValueProperty:
-		//	modifier=("preview" | "runtime-only")? "static" name=ID ":" value=ValueProperty;
+		//	modifier=('preview' | 'runtime-only')? 'static' name=ID ':' value=ValueProperty;
 		@Override public ParserRule getRule() { return rule; }
 
-		//modifier=("preview" | "runtime-only")? "static" name=ID ":" value=ValueProperty
+		//modifier=('preview' | 'runtime-only')? 'static' name=ID ':' value=ValueProperty
 		public Group getGroup() { return cGroup; }
 
-		//modifier=("preview" | "runtime-only")?
+		//modifier=('preview' | 'runtime-only')?
 		public Assignment getModifierAssignment_0() { return cModifierAssignment_0; }
 
-		//"preview" | "runtime-only"
+		//('preview' | 'runtime-only')
 		public Alternatives getModifierAlternatives_0_0() { return cModifierAlternatives_0_0; }
 
-		//"preview"
+		//'preview'
 		public Keyword getModifierPreviewKeyword_0_0_0() { return cModifierPreviewKeyword_0_0_0; }
 
-		//"runtime-only"
+		//'runtime-only'
 		public Keyword getModifierRuntimeOnlyKeyword_0_0_1() { return cModifierRuntimeOnlyKeyword_0_0_1; }
 
-		//"static"
+		//'static'
 		public Keyword getStaticKeyword_1() { return cStaticKeyword_1; }
 
 		//name=ID
@@ -808,7 +814,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 
 		//value=ValueProperty
@@ -819,7 +825,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class PropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Property");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.Property");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cModifierAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Alternatives cModifierAlternatives_0_0 = (Alternatives)cModifierAssignment_0.eContents().get(0);
@@ -832,22 +838,22 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueValuePropertyParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//Property:
-		//	modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty;
+		//	modifier=('preview' | 'runtime-only')? name=ID ':' value=ValueProperty;
 		@Override public ParserRule getRule() { return rule; }
 
-		//modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty
+		//modifier=('preview' | 'runtime-only')? name=ID ':' value=ValueProperty
 		public Group getGroup() { return cGroup; }
 
-		//modifier=("preview" | "runtime-only")?
+		//modifier=('preview' | 'runtime-only')?
 		public Assignment getModifierAssignment_0() { return cModifierAssignment_0; }
 
-		//"preview" | "runtime-only"
+		//('preview' | 'runtime-only')
 		public Alternatives getModifierAlternatives_0_0() { return cModifierAlternatives_0_0; }
 
-		//"preview"
+		//'preview'
 		public Keyword getModifierPreviewKeyword_0_0_0() { return cModifierPreviewKeyword_0_0_0; }
 
-		//"runtime-only"
+		//'runtime-only'
 		public Keyword getModifierRuntimeOnlyKeyword_0_0_1() { return cModifierRuntimeOnlyKeyword_0_0_1; }
 
 		//name=ID
@@ -856,7 +862,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//value=ValueProperty
@@ -867,7 +873,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ValueProperty");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSingleValuePropertyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cMultiValuePropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -887,7 +893,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class SingleValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SingleValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.SingleValueProperty");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSimpleValuePropertyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -955,7 +961,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class MultiValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MultiValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.MultiValueProperty");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cListValuePropertyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cMapValuePropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -975,7 +981,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class FactoryValueElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FactoryValueElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.FactoryValueElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSimpleValuePropertyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -995,7 +1001,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ListValueElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ListValueElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ListValueElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cReferenceValuePropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -1023,7 +1029,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ListValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ListValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ListValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1035,13 +1041,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ListValueProperty:
-		//	"[" value+=ListValueElement ("," value+=ListValueElement)* "]";
+		//	'[' value+=ListValueElement (',' value+=ListValueElement)* ']';
 		@Override public ParserRule getRule() { return rule; }
 
-		//"[" value+=ListValueElement ("," value+=ListValueElement)* "]"
+		//'[' value+=ListValueElement (',' value+=ListValueElement)* ']'
 		public Group getGroup() { return cGroup; }
 
-		//"["
+		//'['
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 
 		//value+=ListValueElement
@@ -1050,10 +1056,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ListValueElement
 		public RuleCall getValueListValueElementParserRuleCall_1_0() { return cValueListValueElementParserRuleCall_1_0; }
 
-		//("," value+=ListValueElement)*
+		//(',' value+=ListValueElement)*
 		public Group getGroup_2() { return cGroup_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
 		//value+=ListValueElement
@@ -1062,12 +1068,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ListValueElement
 		public RuleCall getValueListValueElementParserRuleCall_2_1_0() { return cValueListValueElementParserRuleCall_2_1_0; }
 
-		//"]"
+		//']'
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 	}
 
 	public class MapValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MapValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.MapValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cPropertiesAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1079,13 +1085,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//MapValueProperty:
-		//	"{" properties+=Property ("," properties+=Property)* "}";
+		//	'{' properties+=Property (',' properties+=Property)* '}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//"{" properties+=Property ("," properties+=Property)* "}"
+		//'{' properties+=Property (',' properties+=Property)* '}'
 		public Group getGroup() { return cGroup; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 
 		//properties+=Property
@@ -1094,10 +1100,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Property
 		public RuleCall getPropertiesPropertyParserRuleCall_1_0() { return cPropertiesPropertyParserRuleCall_1_0; }
 
-		//("," properties+=Property)*
+		//(',' properties+=Property)*
 		public Group getGroup_2() { return cGroup_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
 		//properties+=Property
@@ -1106,12 +1112,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Property
 		public RuleCall getPropertiesPropertyParserRuleCall_2_1_0() { return cPropertiesPropertyParserRuleCall_2_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class SimpleValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.SimpleValueProperty");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cStringValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cStringValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cStringValueAssignment_0.eContents().get(0);
@@ -1126,10 +1132,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNumberNumberParserRuleCall_2_1_0 = (RuleCall)cNumberAssignment_2_1.eContents().get(0);
 		
 		//SimpleValueProperty:
-		//	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number;
+		//	stringValue=STRING | booleanValue=("true" | "false") | negative?='-'? number=Number;
 		@Override public ParserRule getRule() { return rule; }
 
-		//stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number
+		//stringValue=STRING | booleanValue=("true" | "false") | negative?='-'? number=Number
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//stringValue=STRING
@@ -1141,7 +1147,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//booleanValue=("true" | "false")
 		public Assignment getBooleanValueAssignment_1() { return cBooleanValueAssignment_1; }
 
-		//"true" | "false"
+		//("true" | "false")
 		public Alternatives getBooleanValueAlternatives_1_0() { return cBooleanValueAlternatives_1_0; }
 
 		//"true"
@@ -1150,13 +1156,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"false"
 		public Keyword getBooleanValueFalseKeyword_1_0_1() { return cBooleanValueFalseKeyword_1_0_1; }
 
-		//negative?="-"? number=Number
+		//negative?='-'? number=Number
 		public Group getGroup_2() { return cGroup_2; }
 
-		//negative?="-"?
+		//negative?='-'?
 		public Assignment getNegativeAssignment_2_0() { return cNegativeAssignment_2_0; }
 
-		//"-"
+		//'-'
 		public Keyword getNegativeHyphenMinusKeyword_2_0_0() { return cNegativeHyphenMinusKeyword_2_0_0; }
 
 		//number=Number
@@ -1167,7 +1173,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ConstValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ConstValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cConstKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1177,13 +1183,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFieldIDTerminalRuleCall_3_0 = (RuleCall)cFieldAssignment_3.eContents().get(0);
 		
 		//ConstValueProperty:
-		//	"const" type=JvmTypeReference "#" field=ID;
+		//	'const' type=JvmTypeReference '#' field=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"const" type=JvmTypeReference "#" field=ID
+		//'const' type=JvmTypeReference '#' field=ID
 		public Group getGroup() { return cGroup; }
 
-		//"const"
+		//'const'
 		public Keyword getConstKeyword_0() { return cConstKeyword_0; }
 
 		//type=JvmTypeReference
@@ -1192,7 +1198,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//JvmTypeReference
 		public RuleCall getTypeJvmTypeReferenceParserRuleCall_1_0() { return cTypeJvmTypeReferenceParserRuleCall_1_0; }
 
-		//"#"
+		//'#'
 		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
 
 		//field=ID
@@ -1203,7 +1209,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ReferenceTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferenceType");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ReferenceType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIncludeValuePropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -1223,7 +1229,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ReferenceValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferenceValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ReferenceValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIdrefKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1246,17 +1252,18 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//ReferenceValueProperty:
-		//	"idref" reference=[ReferenceType|ValidID] ("{" (staticProperties+=StaticValueProperty |
-		//	staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
-		//	staticCallProperties+=StaticCallValueProperty))* "}")?;
+		//	'idref' reference=[ReferenceType|ValidID] ('{' (staticProperties+=StaticValueProperty |
+		//	staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty |
+		//	staticCallProperties+=StaticCallValueProperty))*
+		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"idref" reference=[ReferenceType|ValidID] ("{" (staticProperties+=StaticValueProperty |
-		//staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
-		//staticCallProperties+=StaticCallValueProperty))* "}")?
+		//'idref' reference=[ReferenceType|ValidID] ('{' (staticProperties+=StaticValueProperty |
+		//staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty |
+		//staticCallProperties+=StaticCallValueProperty))* '}')?
 		public Group getGroup() { return cGroup; }
 
-		//"idref"
+		//'idref'
 		public Keyword getIdrefKeyword_0() { return cIdrefKeyword_0; }
 
 		//reference=[ReferenceType|ValidID]
@@ -1268,11 +1275,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getReferenceReferenceTypeValidIDParserRuleCall_1_0_1() { return cReferenceReferenceTypeValidIDParserRuleCall_1_0_1; }
 
-		//("{" (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty) (","
-		//(staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))* "}")?
+		//('{' (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty) (','
+		//(staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))* '}')?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 
 		//staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty
@@ -1290,10 +1297,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//StaticCallValueProperty
 		public RuleCall getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_2_1_1_0() { return cStaticCallPropertiesStaticCallValuePropertyParserRuleCall_2_1_1_0; }
 
-		//("," (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))*
+		//(',' (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
 
 		//staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty
@@ -1311,12 +1318,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//StaticCallValueProperty
 		public RuleCall getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_2_2_1_1_0() { return cStaticCallPropertiesStaticCallValuePropertyParserRuleCall_2_2_1_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_2_3() { return cRightCurlyBracketKeyword_2_3; }
 	}
 
 	public class IncludeValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IncludeValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.IncludeValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIncludeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSourceAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1343,17 +1350,18 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		
 		//IncludeValueProperty:
-		//	"include" source=[ComponentDefinition|QualifiedName] ("as" name=ValidID)? ("{" (staticProperties+=StaticValueProperty
-		//	| staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
-		//	staticCallProperties+=StaticCallValueProperty))* "}")?;
+		//	'include' source=[ComponentDefinition|QualifiedName] ('as' name=ValidID)? ('{' (staticProperties+=StaticValueProperty
+		//	| staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty |
+		//	staticCallProperties+=StaticCallValueProperty))*
+		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"include" source=[ComponentDefinition|QualifiedName] ("as" name=ValidID)? ("{" (staticProperties+=StaticValueProperty |
-		//staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
-		//staticCallProperties+=StaticCallValueProperty))* "}")?
+		//'include' source=[ComponentDefinition|QualifiedName] ('as' name=ValidID)? ('{' (staticProperties+=StaticValueProperty |
+		//staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty |
+		//staticCallProperties+=StaticCallValueProperty))* '}')?
 		public Group getGroup() { return cGroup; }
 
-		//"include"
+		//'include'
 		public Keyword getIncludeKeyword_0() { return cIncludeKeyword_0; }
 
 		//source=[ComponentDefinition|QualifiedName]
@@ -1365,10 +1373,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getSourceComponentDefinitionQualifiedNameParserRuleCall_1_0_1() { return cSourceComponentDefinitionQualifiedNameParserRuleCall_1_0_1; }
 
-		//("as" name=ValidID)?
+		//('as' name=ValidID)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"as"
+		//'as'
 		public Keyword getAsKeyword_2_0() { return cAsKeyword_2_0; }
 
 		//name=ValidID
@@ -1377,11 +1385,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_2_1_0() { return cNameValidIDParserRuleCall_2_1_0; }
 
-		//("{" (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty) (","
-		//(staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))* "}")?
+		//('{' (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty) (','
+		//(staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))* '}')?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
 
 		//staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty
@@ -1399,10 +1407,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//StaticCallValueProperty
 		public RuleCall getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_3_1_1_0() { return cStaticCallPropertiesStaticCallValuePropertyParserRuleCall_3_1_1_0; }
 
-		//("," (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))*
+		//(',' (staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty))*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
 		//staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty
@@ -1420,12 +1428,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//StaticCallValueProperty
 		public RuleCall getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_3_2_1_1_0() { return cStaticCallPropertiesStaticCallValuePropertyParserRuleCall_3_2_1_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
 	}
 
 	public class CopyValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CopyValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.CopyValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCopyKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1433,13 +1441,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cReferenceElementValidIDParserRuleCall_1_0_1 = (RuleCall)cReferenceElementCrossReference_1_0.eContents().get(1);
 		
 		//CopyValueProperty:
-		//	"copy" reference=[Element|ValidID];
+		//	'copy' reference=[Element|ValidID];
 		@Override public ParserRule getRule() { return rule; }
 
-		//"copy" reference=[Element|ValidID]
+		//'copy' reference=[Element|ValidID]
 		public Group getGroup() { return cGroup; }
 
-		//"copy"
+		//'copy'
 		public Keyword getCopyKeyword_0() { return cCopyKeyword_0; }
 
 		//reference=[Element|ValidID]
@@ -1453,20 +1461,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ControllerHandledValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ControllerHandledValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ControllerHandledValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cControllermethodKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cMethodnameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cMethodnameIDTerminalRuleCall_1_0 = (RuleCall)cMethodnameAssignment_1.eContents().get(0);
 		
 		//ControllerHandledValueProperty:
-		//	"controllermethod" methodname=ID;
+		//	'controllermethod' methodname=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"controllermethod" methodname=ID
+		//'controllermethod' methodname=ID
 		public Group getGroup() { return cGroup; }
 
-		//"controllermethod"
+		//'controllermethod'
 		public Keyword getControllermethodKeyword_0() { return cControllermethodKeyword_0; }
 
 		//methodname=ID
@@ -1477,20 +1485,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ScriptHandlerHandledValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ScriptHandlerHandledValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ScriptHandlerHandledValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cScriptmethodKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFunctionnameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cFunctionnameSTRINGTerminalRuleCall_1_0 = (RuleCall)cFunctionnameAssignment_1.eContents().get(0);
 		
 		//ScriptHandlerHandledValueProperty:
-		//	"scriptmethod" functionname=STRING;
+		//	'scriptmethod' functionname=STRING;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"scriptmethod" functionname=STRING
+		//'scriptmethod' functionname=STRING
 		public Group getGroup() { return cGroup; }
 
-		//"scriptmethod"
+		//'scriptmethod'
 		public Keyword getScriptmethodKeyword_0() { return cScriptmethodKeyword_0; }
 
 		//functionname=STRING
@@ -1501,20 +1509,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ScriptValueExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ScriptValueExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ScriptValueExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cScriptexpressionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSourcecodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cSourcecodeSCRIPTLITERALTerminalRuleCall_1_0 = (RuleCall)cSourcecodeAssignment_1.eContents().get(0);
 		
 		//ScriptValueExpression:
-		//	"scriptexpression" sourcecode=SCRIPTLITERAL;
+		//	'scriptexpression' sourcecode=SCRIPTLITERAL;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"scriptexpression" sourcecode=SCRIPTLITERAL
+		//'scriptexpression' sourcecode=SCRIPTLITERAL
 		public Group getGroup() { return cGroup; }
 
-		//"scriptexpression"
+		//'scriptexpression'
 		public Keyword getScriptexpressionKeyword_0() { return cScriptexpressionKeyword_0; }
 
 		//sourcecode=SCRIPTLITERAL
@@ -1525,20 +1533,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ScriptValueReferenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ScriptValueReference");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ScriptValueReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cScriptvalueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cReferenceIDTerminalRuleCall_1_0 = (RuleCall)cReferenceAssignment_1.eContents().get(0);
 		
 		//ScriptValueReference:
-		//	"scriptvalue" reference=ID;
+		//	'scriptvalue' reference=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"scriptvalue" reference=ID
+		//'scriptvalue' reference=ID
 		public Group getGroup() { return cGroup; }
 
-		//"scriptvalue"
+		//'scriptvalue'
 		public Keyword getScriptvalueKeyword_0() { return cScriptvalueKeyword_0; }
 
 		//reference=ID
@@ -1549,20 +1557,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LocationValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocationValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.LocationValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLocationKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//LocationValueProperty:
-		//	"location" value=STRING;
+		//	'location' value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"location" value=STRING
+		//'location' value=STRING
 		public Group getGroup() { return cGroup; }
 
-		//"location"
+		//'location'
 		public Keyword getLocationKeyword_0() { return cLocationKeyword_0; }
 
 		//value=STRING
@@ -1573,20 +1581,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ResourceValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ResourceValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.ResourceValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRstringKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueStringValueParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//ResourceValueProperty:
-		//	"rstring" value=StringValue;
+		//	'rstring' value=StringValue;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"rstring" value=StringValue
+		//'rstring' value=StringValue
 		public Group getGroup() { return cGroup; }
 
-		//"rstring"
+		//'rstring'
 		public Keyword getRstringKeyword_0() { return cRstringKeyword_0; }
 
 		//value=StringValue
@@ -1597,7 +1605,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class BindValuePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BindValueProperty");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.BindValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cElementReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1608,13 +1616,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAttributeIDTerminalRuleCall_3_0 = (RuleCall)cAttributeAssignment_3.eContents().get(0);
 		
 		//BindValueProperty:
-		//	"bind" elementReference=[Element|ValidID] "#" attribute=ID;
+		//	'bind' elementReference=[Element|ValidID] '#' attribute=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"bind" elementReference=[Element|ValidID] "#" attribute=ID
+		//'bind' elementReference=[Element|ValidID] '#' attribute=ID
 		public Group getGroup() { return cGroup; }
 
-		//"bind"
+		//'bind'
 		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
 
 		//elementReference=[Element|ValidID]
@@ -1626,7 +1634,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getElementReferenceElementValidIDParserRuleCall_1_0_1() { return cElementReferenceElementValidIDParserRuleCall_1_0_1; }
 
-		//"#"
+		//'#'
 		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
 
 		//attribute=ID
@@ -1637,7 +1645,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class StringValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringValue");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.StringValue");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
@@ -1690,11 +1698,15 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	private final XbaseGrammarAccess gaXbase;
 
+	private final XtypeGrammarAccess gaXtype;
+
 	@Inject
 	public FXGraphGrammarAccess(GrammarProvider grammarProvider,
-		XbaseGrammarAccess gaXbase) {
+		XbaseGrammarAccess gaXbase,
+		XtypeGrammarAccess gaXtype) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaXbase = gaXbase;
+		this.gaXtype = gaXtype;
 		this.pModel = new ModelElements();
 		this.pPackageDeclaration = new PackageDeclarationElements();
 		this.pImport = new ImportElements();
@@ -1726,7 +1738,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		this.pResourceValueProperty = new ResourceValuePropertyElements();
 		this.pBindValueProperty = new BindValuePropertyElements();
 		this.pStringValue = new StringValueElements();
-		this.tSCRIPTLITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCRIPTLITERAL");
+		this.tSCRIPTLITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.fx.ide.fxgraph.FXGraph.SCRIPTLITERAL");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1755,9 +1767,15 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return gaXbase;
 	}
 
+	public XtypeGrammarAccess getXtypeGrammarAccess() {
+		return gaXtype;
+	}
+
 	
 	//Model:
-	//	package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition;
+	//	package=PackageDeclaration?
+	//	imports+=Import*
+	//	componentDef=ComponentDefinition;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -1767,7 +1785,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PackageDeclaration:
-	//	"package" name=QualifiedName;
+	//	'package' name=QualifiedName;
 	public PackageDeclarationElements getPackageDeclarationAccess() {
 		return pPackageDeclaration;
 	}
@@ -1777,7 +1795,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Import:
-	//	"import" importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
+	//	'import' importedNamespace=(QualifiedNameWithWildcard | QualifiedName);
 	public ImportElements getImportAccess() {
 		return pImport;
 	}
@@ -1787,11 +1805,14 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ComponentDefinition:
-	//	dynamicRoot?="dynamic"? "component" name=ValidID (("controlledby" controller=JvmTypeReference)? & ("styledwith"
-	//	(previewCssFiles+=STRING | "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile"
-	//	previewResourceBundle=STRING)? & ("extraClasspath" "[" previewClasspathEntries+=STRING (","
-	//	previewClasspathEntries+=STRING)* "]")? & ("sceneSetup" sceneDefinition=[ComponentDefinition|QualifiedName])?) "{"
-	//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+	//	dynamicRoot?='dynamic'? 'component' name=ValidID (('controlledby' controller=JvmTypeReference)? & ('styledwith'
+	//	(previewCssFiles+=STRING | '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']'))? & ('resourcefile'
+	//	previewResourceBundle=STRING)? & ('extraClasspath' '[' previewClasspathEntries+=STRING (','
+	//	previewClasspathEntries+=STRING)* ']')? & ('sceneSetup' sceneDefinition=[ComponentDefinition|QualifiedName])?)
+	//	'{'
+	//	scripts+=Script? (defines+=Define (',' defines+=Define)*)?
+	//	rootNode=Element
+	//	'}';
 	public ComponentDefinitionElements getComponentDefinitionAccess() {
 		return pComponentDefinition;
 	}
@@ -1801,11 +1822,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Element:
-	//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
+	//	type=JvmTypeReference (('(' value=SimpleValueProperty ')')? ('id' name=ValidID)? | ('id' name=ValidID)? '{'
 	//	((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
-	//	defaultChildren+=Element) ("," (properties+=Property | staticProperties+=StaticValueProperty |
-	//	staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
-	//	factory=ID ("{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")?);
+	//	defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty |
+	//	staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)?
+	//	'}' | ('id' name=ValidID)? 'createdby' factory=ID ('{' values+=FactoryValueElement (',' values+=FactoryValueElement)*
+	//	'}')?);
 	public ElementElements getElementAccess() {
 		return pElement;
 	}
@@ -1815,7 +1837,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Define:
-	//	"define" (element=Element | includeElement=IncludeValueProperty);
+	//	'define' (element=Element | includeElement=IncludeValueProperty);
 	public DefineElements getDefineAccess() {
 		return pDefine;
 	}
@@ -1825,7 +1847,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Script:
-	//	"script" language=ID (source=STRING | sourcecode=SCRIPTLITERAL);
+	//	'script' language=ID (source=STRING | sourcecode=SCRIPTLITERAL);
 	public ScriptElements getScriptAccess() {
 		return pScript;
 	}
@@ -1835,7 +1857,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StaticCallValueProperty:
-	//	modifier=("preview" | "runtime-only")? "call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty;
+	//	modifier=('preview' | 'runtime-only')? 'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty;
 	public StaticCallValuePropertyElements getStaticCallValuePropertyAccess() {
 		return pStaticCallValueProperty;
 	}
@@ -1845,7 +1867,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StaticValueProperty:
-	//	modifier=("preview" | "runtime-only")? "static" name=ID ":" value=ValueProperty;
+	//	modifier=('preview' | 'runtime-only')? 'static' name=ID ':' value=ValueProperty;
 	public StaticValuePropertyElements getStaticValuePropertyAccess() {
 		return pStaticValueProperty;
 	}
@@ -1855,7 +1877,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Property:
-	//	modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty;
+	//	modifier=('preview' | 'runtime-only')? name=ID ':' value=ValueProperty;
 	public PropertyElements getPropertyAccess() {
 		return pProperty;
 	}
@@ -1917,7 +1939,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ListValueProperty:
-	//	"[" value+=ListValueElement ("," value+=ListValueElement)* "]";
+	//	'[' value+=ListValueElement (',' value+=ListValueElement)* ']';
 	public ListValuePropertyElements getListValuePropertyAccess() {
 		return pListValueProperty;
 	}
@@ -1927,7 +1949,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MapValueProperty:
-	//	"{" properties+=Property ("," properties+=Property)* "}";
+	//	'{' properties+=Property (',' properties+=Property)* '}';
 	public MapValuePropertyElements getMapValuePropertyAccess() {
 		return pMapValueProperty;
 	}
@@ -1937,7 +1959,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SimpleValueProperty:
-	//	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? number=Number;
+	//	stringValue=STRING | booleanValue=("true" | "false") | negative?='-'? number=Number;
 	public SimpleValuePropertyElements getSimpleValuePropertyAccess() {
 		return pSimpleValueProperty;
 	}
@@ -1947,7 +1969,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConstValueProperty:
-	//	"const" type=JvmTypeReference "#" field=ID;
+	//	'const' type=JvmTypeReference '#' field=ID;
 	public ConstValuePropertyElements getConstValuePropertyAccess() {
 		return pConstValueProperty;
 	}
@@ -1967,9 +1989,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReferenceValueProperty:
-	//	"idref" reference=[ReferenceType|ValidID] ("{" (staticProperties+=StaticValueProperty |
-	//	staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
-	//	staticCallProperties+=StaticCallValueProperty))* "}")?;
+	//	'idref' reference=[ReferenceType|ValidID] ('{' (staticProperties+=StaticValueProperty |
+	//	staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty |
+	//	staticCallProperties+=StaticCallValueProperty))*
+	//	'}')?;
 	public ReferenceValuePropertyElements getReferenceValuePropertyAccess() {
 		return pReferenceValueProperty;
 	}
@@ -1979,9 +2002,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IncludeValueProperty:
-	//	"include" source=[ComponentDefinition|QualifiedName] ("as" name=ValidID)? ("{" (staticProperties+=StaticValueProperty
-	//	| staticCallProperties+=StaticCallValueProperty) ("," (staticProperties+=StaticValueProperty |
-	//	staticCallProperties+=StaticCallValueProperty))* "}")?;
+	//	'include' source=[ComponentDefinition|QualifiedName] ('as' name=ValidID)? ('{' (staticProperties+=StaticValueProperty
+	//	| staticCallProperties+=StaticCallValueProperty) (',' (staticProperties+=StaticValueProperty |
+	//	staticCallProperties+=StaticCallValueProperty))*
+	//	'}')?;
 	public IncludeValuePropertyElements getIncludeValuePropertyAccess() {
 		return pIncludeValueProperty;
 	}
@@ -1991,7 +2015,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//CopyValueProperty:
-	//	"copy" reference=[Element|ValidID];
+	//	'copy' reference=[Element|ValidID];
 	public CopyValuePropertyElements getCopyValuePropertyAccess() {
 		return pCopyValueProperty;
 	}
@@ -2001,7 +2025,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ControllerHandledValueProperty:
-	//	"controllermethod" methodname=ID;
+	//	'controllermethod' methodname=ID;
 	public ControllerHandledValuePropertyElements getControllerHandledValuePropertyAccess() {
 		return pControllerHandledValueProperty;
 	}
@@ -2011,7 +2035,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ScriptHandlerHandledValueProperty:
-	//	"scriptmethod" functionname=STRING;
+	//	'scriptmethod' functionname=STRING;
 	public ScriptHandlerHandledValuePropertyElements getScriptHandlerHandledValuePropertyAccess() {
 		return pScriptHandlerHandledValueProperty;
 	}
@@ -2021,7 +2045,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ScriptValueExpression:
-	//	"scriptexpression" sourcecode=SCRIPTLITERAL;
+	//	'scriptexpression' sourcecode=SCRIPTLITERAL;
 	public ScriptValueExpressionElements getScriptValueExpressionAccess() {
 		return pScriptValueExpression;
 	}
@@ -2031,7 +2055,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ScriptValueReference:
-	//	"scriptvalue" reference=ID;
+	//	'scriptvalue' reference=ID;
 	public ScriptValueReferenceElements getScriptValueReferenceAccess() {
 		return pScriptValueReference;
 	}
@@ -2041,7 +2065,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LocationValueProperty:
-	//	"location" value=STRING;
+	//	'location' value=STRING;
 	public LocationValuePropertyElements getLocationValuePropertyAccess() {
 		return pLocationValueProperty;
 	}
@@ -2051,7 +2075,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ResourceValueProperty:
-	//	"rstring" value=StringValue;
+	//	'rstring' value=StringValue;
 	public ResourceValuePropertyElements getResourceValuePropertyAccess() {
 		return pResourceValueProperty;
 	}
@@ -2061,7 +2085,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BindValueProperty:
-	//	"bind" elementReference=[Element|ValidID] "#" attribute=ID;
+	//	'bind' elementReference=[Element|ValidID] '#' attribute=ID;
 	public BindValuePropertyElements getBindValuePropertyAccess() {
 		return pBindValueProperty;
 	}
@@ -2080,9 +2104,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getStringValueAccess().getRule();
 	}
 
-	////terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
 	//terminal SCRIPTLITERAL:
-	//	"#{"->"}#";
+	//	'#{'->'}#';
 	public TerminalRule getSCRIPTLITERALRule() {
 		return tSCRIPTLITERAL;
 	} 
@@ -2097,7 +2120,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXExpressionAccess().getRule();
 	}
 
-	//XAssignment returns XExpression:
+	//XAssignment XExpression:
 	//	{XAssignment} feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign value=XAssignment | XOrExpression
 	//	(=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMultiAssign])
 	//	rightOperand=XAssignment)?;
@@ -2110,7 +2133,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpSingleAssign:
-	//	"=";
+	//	'=';
 	public XbaseGrammarAccess.OpSingleAssignElements getOpSingleAssignAccess() {
 		return gaXbase.getOpSingleAssignAccess();
 	}
@@ -2120,7 +2143,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpMultiAssign:
-	//	"+=" | "-=" | "*=" | "/=" | "%=" | "<" "<" "=" | ">" ">"? ">=";
+	//	'+=' | '-=' | '*=' | '/=' | '%=' |
+	//	'<' '<' '=' |
+	//	'>' '>'? '>=';
 	public XbaseGrammarAccess.OpMultiAssignElements getOpMultiAssignAccess() {
 		return gaXbase.getOpMultiAssignAccess();
 	}
@@ -2129,7 +2154,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpMultiAssignAccess().getRule();
 	}
 
-	//XOrExpression returns XExpression:
+	//XOrExpression XExpression:
 	//	XAndExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOr])
 	//	rightOperand=XAndExpression)*;
 	public XbaseGrammarAccess.XOrExpressionElements getXOrExpressionAccess() {
@@ -2141,7 +2166,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpOr:
-	//	"||";
+	//	'||';
 	public XbaseGrammarAccess.OpOrElements getOpOrAccess() {
 		return gaXbase.getOpOrAccess();
 	}
@@ -2150,7 +2175,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpOrAccess().getRule();
 	}
 
-	//XAndExpression returns XExpression:
+	//XAndExpression XExpression:
 	//	XEqualityExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAnd])
 	//	rightOperand=XEqualityExpression)*;
 	public XbaseGrammarAccess.XAndExpressionElements getXAndExpressionAccess() {
@@ -2162,7 +2187,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpAnd:
-	//	"&&";
+	//	'&&';
 	public XbaseGrammarAccess.OpAndElements getOpAndAccess() {
 		return gaXbase.getOpAndAccess();
 	}
@@ -2171,7 +2196,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpAndAccess().getRule();
 	}
 
-	//XEqualityExpression returns XExpression:
+	//XEqualityExpression XExpression:
 	//	XRelationalExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpEquality])
 	//	rightOperand=XRelationalExpression)*;
 	public XbaseGrammarAccess.XEqualityExpressionElements getXEqualityExpressionAccess() {
@@ -2183,7 +2208,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpEquality:
-	//	"==" | "!=" | "===" | "!==";
+	//	'==' | '!=' | '===' | '!==';
 	public XbaseGrammarAccess.OpEqualityElements getOpEqualityAccess() {
 		return gaXbase.getOpEqualityAccess();
 	}
@@ -2192,9 +2217,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpEqualityAccess().getRule();
 	}
 
-	//XRelationalExpression returns XExpression:
-	//	XOtherOperatorExpression (=> ({XInstanceOfExpression.expression=current} "instanceof") type=JvmTypeReference | =>
-	//	({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpCompare])
+	//XRelationalExpression XExpression:
+	//	XOtherOperatorExpression (=> ({XInstanceOfExpression.expression=current} 'instanceof') type=JvmTypeReference |
+	//	=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpCompare])
 	//	rightOperand=XOtherOperatorExpression)*;
 	public XbaseGrammarAccess.XRelationalExpressionElements getXRelationalExpressionAccess() {
 		return gaXbase.getXRelationalExpressionAccess();
@@ -2205,7 +2230,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpCompare:
-	//	">=" | "<" "=" | ">" | "<";
+	//	'>=' | '<' '=' | '>' | '<';
 	public XbaseGrammarAccess.OpCompareElements getOpCompareAccess() {
 		return gaXbase.getOpCompareAccess();
 	}
@@ -2214,7 +2239,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpCompareAccess().getRule();
 	}
 
-	//XOtherOperatorExpression returns XExpression:
+	//XOtherOperatorExpression XExpression:
 	//	XAdditiveExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOther])
 	//	rightOperand=XAdditiveExpression)*;
 	public XbaseGrammarAccess.XOtherOperatorExpressionElements getXOtherOperatorExpressionAccess() {
@@ -2226,7 +2251,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpOther:
-	//	"->" | "..<" | ">" ".." | ".." | "=>" | ">" (=> (">" ">") | ">") | "<" (=> ("<" "<") | "<" | "=>") | "<>" | "?:";
+	//	'->'
+	//	| '..<'
+	//	| '>' '..'
+	//	| '..'
+	//	| '=>'
+	//	| '>' (=> ('>' '>') | '>') | '<' (=> ('<' '<') | '<' | '=>') | '<>'
+	//	| '?:';
 	public XbaseGrammarAccess.OpOtherElements getOpOtherAccess() {
 		return gaXbase.getOpOtherAccess();
 	}
@@ -2235,7 +2266,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpOtherAccess().getRule();
 	}
 
-	//XAdditiveExpression returns XExpression:
+	//XAdditiveExpression XExpression:
 	//	XMultiplicativeExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAdd])
 	//	rightOperand=XMultiplicativeExpression)*;
 	public XbaseGrammarAccess.XAdditiveExpressionElements getXAdditiveExpressionAccess() {
@@ -2247,7 +2278,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpAdd:
-	//	"+" | "-";
+	//	'+' | '-';
 	public XbaseGrammarAccess.OpAddElements getOpAddAccess() {
 		return gaXbase.getOpAddAccess();
 	}
@@ -2256,7 +2287,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpAddAccess().getRule();
 	}
 
-	//XMultiplicativeExpression returns XExpression:
+	//XMultiplicativeExpression XExpression:
 	//	XUnaryOperation (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMulti])
 	//	rightOperand=XUnaryOperation)*;
 	public XbaseGrammarAccess.XMultiplicativeExpressionElements getXMultiplicativeExpressionAccess() {
@@ -2268,7 +2299,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpMulti:
-	//	"*" | "**" | "/" | "%";
+	//	'*' | '**' | '/' | '%';
 	public XbaseGrammarAccess.OpMultiElements getOpMultiAccess() {
 		return gaXbase.getOpMultiAccess();
 	}
@@ -2277,8 +2308,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpMultiAccess().getRule();
 	}
 
-	//XUnaryOperation returns XExpression:
-	//	{XUnaryOperation} feature=[types::JvmIdentifiableElement|OpUnary] operand=XUnaryOperation | XCastedExpression;
+	//XUnaryOperation XExpression:
+	//	{XUnaryOperation} feature=[types::JvmIdentifiableElement|OpUnary] operand=XUnaryOperation
+	//	| XCastedExpression;
 	public XbaseGrammarAccess.XUnaryOperationElements getXUnaryOperationAccess() {
 		return gaXbase.getXUnaryOperationAccess();
 	}
@@ -2297,8 +2329,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpUnaryAccess().getRule();
 	}
 
-	//XCastedExpression returns XExpression:
-	//	XPostfixOperation (=> ({XCastedExpression.target=current} "as") type=JvmTypeReference)*;
+	//XCastedExpression XExpression:
+	//	XPostfixOperation (=> ({XCastedExpression.target=current} 'as') type=JvmTypeReference)*;
 	public XbaseGrammarAccess.XCastedExpressionElements getXCastedExpressionAccess() {
 		return gaXbase.getXCastedExpressionAccess();
 	}
@@ -2307,7 +2339,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXCastedExpressionAccess().getRule();
 	}
 
-	//XPostfixOperation returns XExpression:
+	//XPostfixOperation XExpression:
 	//	XMemberFeatureCall => ({XPostfixOperation.operand=current} feature=[types::JvmIdentifiableElement|OpPostfix])?;
 	public XbaseGrammarAccess.XPostfixOperationElements getXPostfixOperationAccess() {
 		return gaXbase.getXPostfixOperationAccess();
@@ -2327,13 +2359,15 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpPostfixAccess().getRule();
 	}
 
-	//XMemberFeatureCall returns XExpression:
-	//	XPrimaryExpression (=> ({XAssignment.assignable=current} ("." | explicitStatic?="::")
-	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment | =>
-	//	({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ("<"
-	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
-	//	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? memberCallArguments+=XClosure?)*;
+	//XMemberFeatureCall XExpression:
+	//	XPrimaryExpression (=> ({XAssignment.assignable=current} ('.' | explicitStatic?="::")
+	//	feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment
+	//	| => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | explicitStatic?="::")) ('<'
+	//	typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (memberCallArguments+=XShortClosure
+	//	| memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*)?
+	//	')')?
+	//	memberCallArguments+=XClosure?)*;
 	public XbaseGrammarAccess.XMemberFeatureCallElements getXMemberFeatureCallAccess() {
 		return gaXbase.getXMemberFeatureCallAccess();
 	}
@@ -2342,7 +2376,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXMemberFeatureCallAccess().getRule();
 	}
 
-	//XPrimaryExpression returns XExpression:
+	//XPrimaryExpression XExpression:
 	//	XConstructorCall | XBlockExpression | XSwitchExpression | XSynchronizedExpression | XFeatureCall | XLiteral |
 	//	XIfExpression | XForLoopExpression | XBasicForLoopExpression | XWhileExpression | XDoWhileExpression |
 	//	XThrowExpression | XReturnExpression | XTryCatchFinallyExpression | XParenthesizedExpression;
@@ -2354,7 +2388,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXPrimaryExpressionAccess().getRule();
 	}
 
-	//XLiteral returns XExpression:
+	//XLiteral XExpression:
 	//	XCollectionLiteral | XClosure | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral | XTypeLiteral;
 	public XbaseGrammarAccess.XLiteralElements getXLiteralAccess() {
 		return gaXbase.getXLiteralAccess();
@@ -2375,7 +2409,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XSetLiteral:
-	//	{XSetLiteral} "#" "{" (elements+=XExpression ("," elements+=XExpression)*)? "}";
+	//	{XSetLiteral} '#' '{' (elements+=XExpression (',' elements+=XExpression)*)? '}';
 	public XbaseGrammarAccess.XSetLiteralElements getXSetLiteralAccess() {
 		return gaXbase.getXSetLiteralAccess();
 	}
@@ -2385,7 +2419,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XListLiteral:
-	//	{XListLiteral} "#" "[" (elements+=XExpression ("," elements+=XExpression)*)? "]";
+	//	{XListLiteral} '#' '[' (elements+=XExpression (',' elements+=XExpression)*)? ']';
 	public XbaseGrammarAccess.XListLiteralElements getXListLiteralAccess() {
 		return gaXbase.getXListLiteralAccess();
 	}
@@ -2394,9 +2428,13 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXListLiteralAccess().getRule();
 	}
 
-	//XClosure returns XExpression:
-	//	=> ({XClosure} "[") => ((declaredFormalParameters+=JvmFormalParameter (","
-	//	declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?="|")? expression=XExpressionInClosure "]";
+	//XClosure XExpression:
+	//	=> ({XClosure}
+	//	'[')
+	//	=> ((declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)?
+	//	explicitSyntax?='|')?
+	//	expression=XExpressionInClosure
+	//	']';
 	public XbaseGrammarAccess.XClosureElements getXClosureAccess() {
 		return gaXbase.getXClosureAccess();
 	}
@@ -2405,8 +2443,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXClosureAccess().getRule();
 	}
 
-	//XExpressionInClosure returns XExpression:
-	//	{XBlockExpression} (expressions+=XExpressionOrVarDeclaration ";"?)*;
+	//XExpressionInClosure XExpression:
+	//	{XBlockExpression} (expressions+=XExpressionOrVarDeclaration ';'?)*;
 	public XbaseGrammarAccess.XExpressionInClosureElements getXExpressionInClosureAccess() {
 		return gaXbase.getXExpressionInClosureAccess();
 	}
@@ -2415,9 +2453,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXExpressionInClosureAccess().getRule();
 	}
 
-	//XShortClosure returns XExpression:
-	//	=> ({XClosure} (declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
-	//	explicitSyntax?="|") expression=XExpression;
+	//XShortClosure XExpression:
+	//	=> ({XClosure} (declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)?
+	//	explicitSyntax?='|') expression=XExpression;
 	public XbaseGrammarAccess.XShortClosureElements getXShortClosureAccess() {
 		return gaXbase.getXShortClosureAccess();
 	}
@@ -2426,8 +2464,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXShortClosureAccess().getRule();
 	}
 
-	//XParenthesizedExpression returns XExpression:
-	//	"(" XExpression ")";
+	//XParenthesizedExpression XExpression:
+	//	'(' XExpression ')';
 	public XbaseGrammarAccess.XParenthesizedExpressionElements getXParenthesizedExpressionAccess() {
 		return gaXbase.getXParenthesizedExpressionAccess();
 	}
@@ -2436,8 +2474,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXParenthesizedExpressionAccess().getRule();
 	}
 
-	//XIfExpression returns XExpression:
-	//	{XIfExpression} "if" "(" if=XExpression ")" then=XExpression ("else" else=XExpression)?;
+	//XIfExpression XExpression:
+	//	{XIfExpression}
+	//	'if' '(' if=XExpression ')'
+	//	then=XExpression (=> 'else' else=XExpression)?;
 	public XbaseGrammarAccess.XIfExpressionElements getXIfExpressionAccess() {
 		return gaXbase.getXIfExpressionAccess();
 	}
@@ -2446,10 +2486,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXIfExpressionAccess().getRule();
 	}
 
-	//XSwitchExpression returns XExpression:
-	//	{XSwitchExpression} "switch" (=> ("(" declaredParam=JvmFormalParameter ":") switch=XExpression ")" | =>
-	//	(declaredParam=JvmFormalParameter ":")? switch=XExpression) "{" cases+=XCasePart* ("default" ":" default=XExpression)?
-	//	"}";
+	//XSwitchExpression XExpression:
+	//	{XSwitchExpression}
+	//	'switch' (=> ('(' declaredParam=JvmFormalParameter ':') switch=XExpression ')'
+	//	| => (declaredParam=JvmFormalParameter ':')? switch=XExpression) '{'
+	//	cases+=XCasePart* ('default' ':' default=XExpression)?
+	//	'}';
 	public XbaseGrammarAccess.XSwitchExpressionElements getXSwitchExpressionAccess() {
 		return gaXbase.getXSwitchExpressionAccess();
 	}
@@ -2459,7 +2501,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XCasePart:
-	//	{XCasePart} typeGuard=JvmTypeReference? ("case" case=XExpression)? (":" then=XExpression | fallThrough?=",");
+	//	{XCasePart} typeGuard=JvmTypeReference? ('case' case=XExpression)? (':' then=XExpression | fallThrough?=',');
 	public XbaseGrammarAccess.XCasePartElements getXCasePartAccess() {
 		return gaXbase.getXCasePartAccess();
 	}
@@ -2468,8 +2510,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXCasePartAccess().getRule();
 	}
 
-	//XForLoopExpression returns XExpression:
-	//	=> ({XForLoopExpression} "for" "(" declaredParam=JvmFormalParameter ":") forExpression=XExpression ")"
+	//XForLoopExpression XExpression:
+	//	=> ({XForLoopExpression}
+	//	'for' '(' declaredParam=JvmFormalParameter ':') forExpression=XExpression ')'
 	//	eachExpression=XExpression;
 	public XbaseGrammarAccess.XForLoopExpressionElements getXForLoopExpressionAccess() {
 		return gaXbase.getXForLoopExpressionAccess();
@@ -2479,10 +2522,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXForLoopExpressionAccess().getRule();
 	}
 
-	//XBasicForLoopExpression returns XExpression:
-	//	{XBasicForLoopExpression} "for" "(" (initExpressions+=XExpressionOrVarDeclaration (","
-	//	initExpressions+=XExpressionOrVarDeclaration)*)? ";" expression=XExpression? ";" (updateExpressions+=XExpression (","
-	//	updateExpressions+=XExpression)*)? ")" eachExpression=XExpression;
+	//XBasicForLoopExpression XExpression:
+	//	{XBasicForLoopExpression}
+	//	'for' '(' (initExpressions+=XExpressionOrVarDeclaration (',' initExpressions+=XExpressionOrVarDeclaration)*)? ';'
+	//	expression=XExpression? ';' (updateExpressions+=XExpression (',' updateExpressions+=XExpression)*)? ')'
+	//	eachExpression=XExpression;
 	public XbaseGrammarAccess.XBasicForLoopExpressionElements getXBasicForLoopExpressionAccess() {
 		return gaXbase.getXBasicForLoopExpressionAccess();
 	}
@@ -2491,8 +2535,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXBasicForLoopExpressionAccess().getRule();
 	}
 
-	//XWhileExpression returns XExpression:
-	//	{XWhileExpression} "while" "(" predicate=XExpression ")" body=XExpression;
+	//XWhileExpression XExpression:
+	//	{XWhileExpression}
+	//	'while' '(' predicate=XExpression ')'
+	//	body=XExpression;
 	public XbaseGrammarAccess.XWhileExpressionElements getXWhileExpressionAccess() {
 		return gaXbase.getXWhileExpressionAccess();
 	}
@@ -2501,8 +2547,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXWhileExpressionAccess().getRule();
 	}
 
-	//XDoWhileExpression returns XExpression:
-	//	{XDoWhileExpression} "do" body=XExpression "while" "(" predicate=XExpression ")";
+	//XDoWhileExpression XExpression:
+	//	{XDoWhileExpression}
+	//	'do'
+	//	body=XExpression
+	//	'while' '(' predicate=XExpression ')';
 	public XbaseGrammarAccess.XDoWhileExpressionElements getXDoWhileExpressionAccess() {
 		return gaXbase.getXDoWhileExpressionAccess();
 	}
@@ -2511,8 +2560,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXDoWhileExpressionAccess().getRule();
 	}
 
-	//XBlockExpression returns XExpression:
-	//	{XBlockExpression} "{" (expressions+=XExpressionOrVarDeclaration ";"?)* "}";
+	//XBlockExpression XExpression:
+	//	{XBlockExpression}
+	//	'{' (expressions+=XExpressionOrVarDeclaration ';'?)*
+	//	'}';
 	public XbaseGrammarAccess.XBlockExpressionElements getXBlockExpressionAccess() {
 		return gaXbase.getXBlockExpressionAccess();
 	}
@@ -2521,7 +2572,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXBlockExpressionAccess().getRule();
 	}
 
-	//XExpressionOrVarDeclaration returns XExpression:
+	//XExpressionOrVarDeclaration XExpression:
 	//	XVariableDeclaration | XExpression;
 	public XbaseGrammarAccess.XExpressionOrVarDeclarationElements getXExpressionOrVarDeclarationAccess() {
 		return gaXbase.getXExpressionOrVarDeclarationAccess();
@@ -2531,8 +2582,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXExpressionOrVarDeclarationAccess().getRule();
 	}
 
-	//XVariableDeclaration returns XExpression:
-	//	{XVariableDeclaration} (writeable?="var" | "val") (=> (type=JvmTypeReference name=ValidID) | name=ValidID) ("="
+	//XVariableDeclaration XExpression:
+	//	{XVariableDeclaration} (writeable?='var' | 'val') (=> (type=JvmTypeReference name=ValidID) | name=ValidID) ('='
 	//	right=XExpression)?;
 	public XbaseGrammarAccess.XVariableDeclarationElements getXVariableDeclarationAccess() {
 		return gaXbase.getXVariableDeclarationAccess();
@@ -2542,7 +2593,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXVariableDeclarationAccess().getRule();
 	}
 
-	//JvmFormalParameter returns types::JvmFormalParameter:
+	//JvmFormalParameter types::JvmFormalParameter:
 	//	parameterType=JvmTypeReference? name=ValidID;
 	public XbaseGrammarAccess.JvmFormalParameterElements getJvmFormalParameterAccess() {
 		return gaXbase.getJvmFormalParameterAccess();
@@ -2552,7 +2603,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getJvmFormalParameterAccess().getRule();
 	}
 
-	//FullJvmFormalParameter returns types::JvmFormalParameter:
+	//FullJvmFormalParameter types::JvmFormalParameter:
 	//	parameterType=JvmTypeReference name=ValidID;
 	public XbaseGrammarAccess.FullJvmFormalParameterElements getFullJvmFormalParameterAccess() {
 		return gaXbase.getFullJvmFormalParameterAccess();
@@ -2562,10 +2613,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getFullJvmFormalParameterAccess().getRule();
 	}
 
-	//XFeatureCall returns XExpression:
-	//	{XFeatureCall} ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?="(" (featureCallArguments+=XShortClosure
-	//	| featureCallArguments+=XExpression ("," featureCallArguments+=XExpression)*)? ")")? featureCallArguments+=XClosure?;
+	//XFeatureCall XExpression:
+	//	{XFeatureCall} ('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
+	//	feature=[types::JvmIdentifiableElement|IdOrSuper] (=> explicitOperationCall?='(' (featureCallArguments+=XShortClosure
+	//	| featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*)?
+	//	')')?
+	//	featureCallArguments+=XClosure?;
 	public XbaseGrammarAccess.XFeatureCallElements getXFeatureCallAccess() {
 		return gaXbase.getXFeatureCallAccess();
 	}
@@ -2575,7 +2628,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FeatureCallID:
-	//	ValidID | "extends" | "static" | "import" | "extension";
+	//	ValidID | 'extends' | 'static' | 'import' | 'extension';
 	public XbaseGrammarAccess.FeatureCallIDElements getFeatureCallIDAccess() {
 		return gaXbase.getFeatureCallIDAccess();
 	}
@@ -2585,7 +2638,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IdOrSuper:
-	//	FeatureCallID | "super";
+	//	FeatureCallID | 'super';
 	public XbaseGrammarAccess.IdOrSuperElements getIdOrSuperAccess() {
 		return gaXbase.getIdOrSuperAccess();
 	}
@@ -2594,10 +2647,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getIdOrSuperAccess().getRule();
 	}
 
-	//XConstructorCall returns XExpression:
-	//	{XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<"
-	//	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? (=>
-	//	explicitConstructorCall?="(" (arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")?
+	//XConstructorCall XExpression:
+	//	{XConstructorCall}
+	//	'new' constructor=[types::JvmConstructor|QualifiedName] (=> '<' typeArguments+=JvmArgumentTypeReference (','
+	//	typeArguments+=JvmArgumentTypeReference)* '>')? (=> explicitConstructorCall?='(' (arguments+=XShortClosure
+	//	| arguments+=XExpression (',' arguments+=XExpression)*)?
+	//	')')?
 	//	arguments+=XClosure?;
 	public XbaseGrammarAccess.XConstructorCallElements getXConstructorCallAccess() {
 		return gaXbase.getXConstructorCallAccess();
@@ -2607,8 +2662,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXConstructorCallAccess().getRule();
 	}
 
-	//XBooleanLiteral returns XExpression:
-	//	{XBooleanLiteral} ("false" | isTrue?="true");
+	//XBooleanLiteral XExpression:
+	//	{XBooleanLiteral} ('false' | isTrue?='true');
 	public XbaseGrammarAccess.XBooleanLiteralElements getXBooleanLiteralAccess() {
 		return gaXbase.getXBooleanLiteralAccess();
 	}
@@ -2617,8 +2672,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXBooleanLiteralAccess().getRule();
 	}
 
-	//XNullLiteral returns XExpression:
-	//	{XNullLiteral} "null";
+	//XNullLiteral XExpression:
+	//	{XNullLiteral} 'null';
 	public XbaseGrammarAccess.XNullLiteralElements getXNullLiteralAccess() {
 		return gaXbase.getXNullLiteralAccess();
 	}
@@ -2627,7 +2682,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXNullLiteralAccess().getRule();
 	}
 
-	//XNumberLiteral returns XExpression:
+	//XNumberLiteral XExpression:
 	//	{XNumberLiteral} value=Number;
 	public XbaseGrammarAccess.XNumberLiteralElements getXNumberLiteralAccess() {
 		return gaXbase.getXNumberLiteralAccess();
@@ -2637,7 +2692,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXNumberLiteralAccess().getRule();
 	}
 
-	//XStringLiteral returns XExpression:
+	//XStringLiteral XExpression:
 	//	{XStringLiteral} value=STRING;
 	public XbaseGrammarAccess.XStringLiteralElements getXStringLiteralAccess() {
 		return gaXbase.getXStringLiteralAccess();
@@ -2647,8 +2702,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXStringLiteralAccess().getRule();
 	}
 
-	//XTypeLiteral returns XExpression:
-	//	{XTypeLiteral} "typeof" "(" type=[types::JvmType|QualifiedName] arrayDimensions+=ArrayBrackets* ")";
+	//XTypeLiteral XExpression:
+	//	{XTypeLiteral} 'typeof' '(' type=[types::JvmType|QualifiedName] arrayDimensions+=ArrayBrackets* ')';
 	public XbaseGrammarAccess.XTypeLiteralElements getXTypeLiteralAccess() {
 		return gaXbase.getXTypeLiteralAccess();
 	}
@@ -2657,8 +2712,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXTypeLiteralAccess().getRule();
 	}
 
-	//XThrowExpression returns XExpression:
-	//	{XThrowExpression} "throw" expression=XExpression;
+	//XThrowExpression XExpression:
+	//	{XThrowExpression} 'throw' expression=XExpression;
 	public XbaseGrammarAccess.XThrowExpressionElements getXThrowExpressionAccess() {
 		return gaXbase.getXThrowExpressionAccess();
 	}
@@ -2667,8 +2722,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXThrowExpressionAccess().getRule();
 	}
 
-	//XReturnExpression returns XExpression:
-	//	{XReturnExpression} "return" -> expression=XExpression?;
+	//XReturnExpression XExpression:
+	//	{XReturnExpression} 'return' -> expression=XExpression?;
 	public XbaseGrammarAccess.XReturnExpressionElements getXReturnExpressionAccess() {
 		return gaXbase.getXReturnExpressionAccess();
 	}
@@ -2677,9 +2732,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXReturnExpressionAccess().getRule();
 	}
 
-	//XTryCatchFinallyExpression returns XExpression:
-	//	{XTryCatchFinallyExpression} "try" expression=XExpression (catchClauses+=XCatchClause+ ("finally"
-	//	finallyExpression=XExpression)? | "finally" finallyExpression=XExpression);
+	//XTryCatchFinallyExpression XExpression:
+	//	{XTryCatchFinallyExpression}
+	//	'try'
+	//	expression=XExpression (catchClauses+=XCatchClause+ (=> 'finally' finallyExpression=XExpression)?
+	//	| 'finally' finallyExpression=XExpression);
 	public XbaseGrammarAccess.XTryCatchFinallyExpressionElements getXTryCatchFinallyExpressionAccess() {
 		return gaXbase.getXTryCatchFinallyExpressionAccess();
 	}
@@ -2688,8 +2745,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getXTryCatchFinallyExpressionAccess().getRule();
 	}
 
-	//XSynchronizedExpression returns XExpression:
-	//	=> ({XSynchronizedExpression} "synchronized" "(") param=XExpression ")" expression=XExpression;
+	//XSynchronizedExpression XExpression:
+	//	=> ({XSynchronizedExpression}
+	//	'synchronized' '(') param=XExpression ')' expression=XExpression;
 	public XbaseGrammarAccess.XSynchronizedExpressionElements getXSynchronizedExpressionAccess() {
 		return gaXbase.getXSynchronizedExpressionAccess();
 	}
@@ -2699,7 +2757,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XCatchClause:
-	//	"catch" "(" declaredParam=FullJvmFormalParameter ")" expression=XExpression;
+	//	=> 'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
 	public XbaseGrammarAccess.XCatchClauseElements getXCatchClauseAccess() {
 		return gaXbase.getXCatchClauseAccess();
 	}
@@ -2709,7 +2767,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedName:
-	//	ValidID ("." ValidID)*;
+	//	ValidID (=> '.' ValidID)*;
 	public XbaseGrammarAccess.QualifiedNameElements getQualifiedNameAccess() {
 		return gaXbase.getQualifiedNameAccess();
 	}
@@ -2719,7 +2777,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Number hidden():
-	//	HEX | (INT | DECIMAL) ("." (INT | DECIMAL))?;
+	//	HEX | (INT | DECIMAL) ('.' (INT | DECIMAL))?;
 	public XbaseGrammarAccess.NumberElements getNumberAccess() {
 		return gaXbase.getNumberAccess();
 	}
@@ -2728,11 +2786,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getNumberAccess().getRule();
 	}
 
-	/// **
+	///**
 	// * Dummy rule, for "better" downwards compatibility, since GrammarAccess generates non-static inner classes, 
 	// * which makes downstream grammars break on classloading, when a rule is removed.
-	// * / StaticQualifier:
-	//	(ValidID "::")+;
+	// */ StaticQualifier:
+	//	(ValidID '::')+;
 	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
 		return gaXbase.getStaticQualifierAccess();
 	}
@@ -2742,28 +2800,28 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal HEX:
-	//	("0x" | "0X") ("0".."9" | "a".."f" | "A".."F" | "_")+ ("#" (("b" | "B") ("i" | "I") | ("l" | "L")))?;
+	//	('0x' | '0X') ('0'..'9' | 'a'..'f' | 'A'..'F' | '_')+ ('#' (('b' | 'B') ('i' | 'I') | ('l' | 'L')))?;
 	public TerminalRule getHEXRule() {
 		return gaXbase.getHEXRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9" ("0".."9" | "_")*;
+	//	'0'..'9' ('0'..'9' | '_')*;
 	public TerminalRule getINTRule() {
 		return gaXbase.getINTRule();
 	} 
 
 	//terminal DECIMAL:
-	//	INT (("e" | "E") ("+" | "-")? INT)? (("b" | "B") ("i" | "I" | "d" | "D") | ("l" | "L" | "d" | "D" | "f" | "F"))?;
+	//	INT (('e' | 'E') ('+' | '-')? INT)? (('b' | 'B') ('i' | 'I' | 'd' | 'D') | ('l' | 'L' | 'd' | 'D' | 'f' | 'F'))?;
 	public TerminalRule getDECIMALRule() {
 		return gaXbase.getDECIMALRule();
 	} 
 
 	//JvmTypeReference:
-	//	JvmParameterizedTypeReference => ({JvmGenericArrayTypeReference.componentType=current} ArrayBrackets)* |
-	//	XFunctionTypeRef;
+	//	JvmParameterizedTypeReference => ({JvmGenericArrayTypeReference.componentType=current} ArrayBrackets)*
+	//	| XFunctionTypeRef;
 	public XtypeGrammarAccess.JvmTypeReferenceElements getJvmTypeReferenceAccess() {
-		return gaXbase.getJvmTypeReferenceAccess();
+		return gaXtype.getJvmTypeReferenceAccess();
 	}
 	
 	public ParserRule getJvmTypeReferenceRule() {
@@ -2771,9 +2829,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ArrayBrackets:
-	//	"[" "]";
+	//	'[' ']';
 	public XtypeGrammarAccess.ArrayBracketsElements getArrayBracketsAccess() {
-		return gaXbase.getArrayBracketsAccess();
+		return gaXtype.getArrayBracketsAccess();
 	}
 	
 	public ParserRule getArrayBracketsRule() {
@@ -2781,9 +2839,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XFunctionTypeRef:
-	//	("(" (paramTypes+=JvmTypeReference ("," paramTypes+=JvmTypeReference)*)? ")")? "=>" returnType=JvmTypeReference;
+	//	('(' (paramTypes+=JvmTypeReference (',' paramTypes+=JvmTypeReference)*)? ')')? '=>' returnType=JvmTypeReference;
 	public XtypeGrammarAccess.XFunctionTypeRefElements getXFunctionTypeRefAccess() {
-		return gaXbase.getXFunctionTypeRefAccess();
+		return gaXtype.getXFunctionTypeRefAccess();
 	}
 	
 	public ParserRule getXFunctionTypeRefRule() {
@@ -2791,21 +2849,21 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//JvmParameterizedTypeReference:
-	//	type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)* ">"
-	//	(=> ({JvmInnerTypeReference.outer=current} ".") type=[JvmType|ValidID] ("<" arguments+=JvmArgumentTypeReference (","
-	//	arguments+=JvmArgumentTypeReference)* ">")?)*)?;
+	//	type=[JvmType|super::QualifiedName] (=> '<' arguments+=JvmArgumentTypeReference (','
+	//	arguments+=JvmArgumentTypeReference)* '>' (=> ({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (=>
+	//	'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*)?;
 	public XtypeGrammarAccess.JvmParameterizedTypeReferenceElements getJvmParameterizedTypeReferenceAccess() {
-		return gaXbase.getJvmParameterizedTypeReferenceAccess();
+		return gaXtype.getJvmParameterizedTypeReferenceAccess();
 	}
 	
 	public ParserRule getJvmParameterizedTypeReferenceRule() {
 		return getJvmParameterizedTypeReferenceAccess().getRule();
 	}
 
-	//JvmArgumentTypeReference returns JvmTypeReference:
+	//JvmArgumentTypeReference JvmTypeReference:
 	//	JvmTypeReference | JvmWildcardTypeReference;
 	public XtypeGrammarAccess.JvmArgumentTypeReferenceElements getJvmArgumentTypeReferenceAccess() {
-		return gaXbase.getJvmArgumentTypeReferenceAccess();
+		return gaXtype.getJvmArgumentTypeReferenceAccess();
 	}
 	
 	public ParserRule getJvmArgumentTypeReferenceRule() {
@@ -2813,10 +2871,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//JvmWildcardTypeReference:
-	//	{JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* |
-	//	constraints+=JvmLowerBound constraints+=JvmLowerBoundAnded*)?;
+	//	{JvmWildcardTypeReference} '?' (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*
+	//	| constraints+=JvmLowerBound constraints+=JvmLowerBoundAnded*)?;
 	public XtypeGrammarAccess.JvmWildcardTypeReferenceElements getJvmWildcardTypeReferenceAccess() {
-		return gaXbase.getJvmWildcardTypeReferenceAccess();
+		return gaXtype.getJvmWildcardTypeReferenceAccess();
 	}
 	
 	public ParserRule getJvmWildcardTypeReferenceRule() {
@@ -2824,19 +2882,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//JvmUpperBound:
-	//	"extends" typeReference=JvmTypeReference;
+	//	'extends' typeReference=JvmTypeReference;
 	public XtypeGrammarAccess.JvmUpperBoundElements getJvmUpperBoundAccess() {
-		return gaXbase.getJvmUpperBoundAccess();
+		return gaXtype.getJvmUpperBoundAccess();
 	}
 	
 	public ParserRule getJvmUpperBoundRule() {
 		return getJvmUpperBoundAccess().getRule();
 	}
 
-	//JvmUpperBoundAnded returns JvmUpperBound:
-	//	"&" typeReference=JvmTypeReference;
+	//JvmUpperBoundAnded JvmUpperBound:
+	//	'&' typeReference=JvmTypeReference;
 	public XtypeGrammarAccess.JvmUpperBoundAndedElements getJvmUpperBoundAndedAccess() {
-		return gaXbase.getJvmUpperBoundAndedAccess();
+		return gaXtype.getJvmUpperBoundAndedAccess();
 	}
 	
 	public ParserRule getJvmUpperBoundAndedRule() {
@@ -2844,19 +2902,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//JvmLowerBound:
-	//	"super" typeReference=JvmTypeReference;
+	//	'super' typeReference=JvmTypeReference;
 	public XtypeGrammarAccess.JvmLowerBoundElements getJvmLowerBoundAccess() {
-		return gaXbase.getJvmLowerBoundAccess();
+		return gaXtype.getJvmLowerBoundAccess();
 	}
 	
 	public ParserRule getJvmLowerBoundRule() {
 		return getJvmLowerBoundAccess().getRule();
 	}
 
-	//JvmLowerBoundAnded returns JvmLowerBound:
-	//	"&" typeReference=JvmTypeReference;
+	//JvmLowerBoundAnded JvmLowerBound:
+	//	'&' typeReference=JvmTypeReference;
 	public XtypeGrammarAccess.JvmLowerBoundAndedElements getJvmLowerBoundAndedAccess() {
-		return gaXbase.getJvmLowerBoundAndedAccess();
+		return gaXtype.getJvmLowerBoundAndedAccess();
 	}
 	
 	public ParserRule getJvmLowerBoundAndedRule() {
@@ -2866,7 +2924,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//JvmTypeParameter:
 	//	name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded*)?;
 	public XtypeGrammarAccess.JvmTypeParameterElements getJvmTypeParameterAccess() {
-		return gaXbase.getJvmTypeParameterAccess();
+		return gaXtype.getJvmTypeParameterAccess();
 	}
 	
 	public ParserRule getJvmTypeParameterRule() {
@@ -2874,9 +2932,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedNameWithWildcard:
-	//	QualifiedName "." "*";
+	//	super::QualifiedName '.' '*';
 	public XtypeGrammarAccess.QualifiedNameWithWildcardElements getQualifiedNameWithWildcardAccess() {
-		return gaXbase.getQualifiedNameWithWildcardAccess();
+		return gaXtype.getQualifiedNameWithWildcardAccess();
 	}
 	
 	public ParserRule getQualifiedNameWithWildcardRule() {
@@ -2886,7 +2944,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//ValidID:
 	//	ID;
 	public XtypeGrammarAccess.ValidIDElements getValidIDAccess() {
-		return gaXbase.getValidIDAccess();
+		return gaXtype.getValidIDAccess();
 	}
 	
 	public ParserRule getValidIDRule() {
@@ -2896,7 +2954,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//XImportSection:
 	//	importDeclarations+=XImportDeclaration+;
 	public XtypeGrammarAccess.XImportSectionElements getXImportSectionAccess() {
-		return gaXbase.getXImportSectionAccess();
+		return gaXtype.getXImportSectionAccess();
 	}
 	
 	public ParserRule getXImportSectionRule() {
@@ -2904,11 +2962,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XImportDeclaration:
-	//	"import" (static?="static" extension?="extension"? importedType=[JvmDeclaredType|QualifiedNameInStaticImport]
-	//	(wildcard?="*" | memberName=ValidID) | importedType=[JvmDeclaredType|QualifiedName] |
-	//	importedNamespace=QualifiedNameWithWildcard) ";"?;
+	//	'import' (static?='static' extension?='extension'? importedType=[JvmDeclaredType|QualifiedNameInStaticImport]
+	//	(wildcard?='*' | memberName=ValidID) | importedType=[JvmDeclaredType|super::QualifiedName] |
+	//	importedNamespace=QualifiedNameWithWildcard) ';'?;
 	public XtypeGrammarAccess.XImportDeclarationElements getXImportDeclarationAccess() {
-		return gaXbase.getXImportDeclarationAccess();
+		return gaXtype.getXImportDeclarationAccess();
 	}
 	
 	public ParserRule getXImportDeclarationRule() {
@@ -2916,9 +2974,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedNameInStaticImport:
-	//	(ValidID ".")+;
+	//	(ValidID '.')+;
 	public XtypeGrammarAccess.QualifiedNameInStaticImportElements getQualifiedNameInStaticImportAccess() {
-		return gaXbase.getQualifiedNameInStaticImportAccess();
+		return gaXtype.getQualifiedNameInStaticImportAccess();
 	}
 	
 	public ParserRule getQualifiedNameInStaticImportRule() {
@@ -2926,39 +2984,39 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "$" | "_") ("a".."z" | "A".."Z" | "$" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '$' | '_') ('a'..'z' | 'A'..'Z' | '$' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaXbase.getIDRule();
+		return gaXtype.getIDRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') * / | !("\\" | "\""))* "\""? | "\'" ("\\" .
-	//	/ * ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') * / | !("\\" | "\'"))* "\'"?;
+	//	'"' ('\\' . | !('\\' | '"'))* '"'? |
+	//	"'" ('\\' . | !('\\' | "'"))* "'"?;
 	public TerminalRule getSTRINGRule() {
-		return gaXbase.getSTRINGRule();
+		return gaXtype.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
-		return gaXbase.getML_COMMENTRule();
+		return gaXtype.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaXbase.getSL_COMMENTRule();
+		return gaXtype.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
-		return gaXbase.getWSRule();
+		return gaXtype.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaXbase.getANY_OTHERRule();
+		return gaXtype.getANY_OTHERRule();
 	} 
 }

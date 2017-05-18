@@ -127,6 +127,11 @@ public abstract class AbstractFXGraphUiModule extends org.eclipse.xtext.xbase.ui
 		return org.eclipse.xtext.ui.compare.DefaultViewerCreator.class;
 	}
 
+	// contributed by org.eclipse.xtext.ui.generator.compare.CompareFragment
+	public void configureCompareViewerTitle(com.google.inject.Binder binder) {
+		binder.bind(String.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.UIBindings.COMPARE_VIEWER_TITLE)).toInstance("FXGraph Compare");
+	}
+
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher> bindPrefixMatcher() {
 		return org.eclipse.xtext.ui.editor.contentassist.FQNPrefixMatcher.class;
