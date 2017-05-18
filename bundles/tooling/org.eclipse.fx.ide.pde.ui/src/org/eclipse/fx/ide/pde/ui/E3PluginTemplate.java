@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.pde.core.plugin.IPluginBase;
@@ -91,7 +93,8 @@ public class E3PluginTemplate extends FXPDETemplateSection {
 
 	@Override
 	protected void updateModel(IProgressMonitor monitor) throws CoreException {
-		Activator.getDefault().acquireService(IBundleProjectService.class);
+		Class<IBundleProjectService> serviceClass = IBundleProjectService.class;
+		IBundleProjectService  v = Activator.getDefault().acquireService(serviceClass);
 		
 		IPluginBase plugin = model.getPluginBase();
 		IPluginExtension extension = createExtension("org.eclipse.ui.views", true); //$NON-NLS-1$
