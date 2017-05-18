@@ -140,7 +140,7 @@ public class ClassPathSearchUtil {
 			Enumeration<? extends ZipEntry> entries = jar.entries();
 			while (entries.hasMoreElements()) {
 				ZipEntry el = entries.nextElement();
-				if (el.getName().endsWith(".cssext")) {
+				if (el != null && el.getName().endsWith(".cssext")) {
 					String elPath = el.getName().startsWith("/") ? el.getName() : "/" + el.getName();
 					results.add(new StringUriEntry("archive:" + uri + "!" + elPath));
 //					results.add(new StringUriEntry("jar:file:" + absoluteJarPath.replace('\\', '/') + "!" + elPath));
@@ -248,7 +248,7 @@ public class ClassPathSearchUtil {
 			Enumeration<? extends ZipEntry> entries = jar.entries();
 			while (entries.hasMoreElements()) {
 				ZipEntry el = entries.nextElement();
-				if (el.getName().endsWith(".cssext")) {
+				if (el != null && el.getName().endsWith(".cssext")) {
 					String elPath = el.getName().startsWith("/") ? el.getName() : "/" + el.getName();
 					results.add(new IFileArchiveEntry(file, elPath));
 				}
@@ -271,7 +271,7 @@ public class ClassPathSearchUtil {
 			Enumeration<? extends ZipEntry> entries = jar.entries();
 			while (entries.hasMoreElements()) {
 				ZipEntry el = entries.nextElement();
-				if (el.getName().endsWith(".cssext")) {
+				if (el != null && el.getName().endsWith(".cssext")) {
 					String elPath = el.getName().startsWith("/") ? el.getName() : "/" + el.getName();
 					results.add(new FileArchiveEntry(jarFile, elPath));
 				}
