@@ -8,10 +8,10 @@ import org.eclipse.xtext.junit4.IInjectorProvider;
 import com.google.inject.Injector;
 
 public class GModelDSLUiInjectorProvider implements IInjectorProvider {
-	
+
 	@Override
 	public Injector getInjector() {
 		return org.eclipse.fx.ide.gmodel.ui.internal.GModelDSLActivator.getInstance().getInjector("org.eclipse.fx.ide.gmodel.GModelDSL");
 	}
-	
+
 }

@@ -4,7 +4,7 @@
     editorDirectory="/org.eclipse.fx.ide.gmodel.editor/src" modelPluginID="org.eclipse.fx.ide.gmodel"
     forceOverwrite="true" modelName="GModelDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.eclipse.fx.ide.gmodel.edit"
-    editorPluginID="org.eclipse.fx.ide.gmodel.editor" runtimeVersion="2.11">
+    editorPluginID="org.eclipse.fx.ide.gmodel.editor" runtimeVersion="2.13">
   <genPackages prefix="GModelDSL" basePackage="org.eclipse.fx.ide.gmodel" disposableProviderFactory="true"
       fileExtensions="gmod" ecorePackage="GModelDSL.ecore#/">
     <genClasses ecoreClass="GModelDSL.ecore#//GModel">

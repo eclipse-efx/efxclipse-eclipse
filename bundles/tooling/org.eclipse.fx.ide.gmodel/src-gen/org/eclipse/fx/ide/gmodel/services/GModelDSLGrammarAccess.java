@@ -136,7 +136,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//(map=GDomainMap | propertyList+=GDomainProperty*)
+		//map=GDomainMap | propertyList+=GDomainProperty*
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 
 		//map=GDomainMap
@@ -180,7 +180,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'map'
 		public Keyword getMapKeyword_0() { return cMapKeyword_0; }
 
-		//(builtIn=('Int' | 'Double' | 'String' | 'Boolean') | ref=[GDomainElement])
+		//builtIn=('Int' | 'Double' | 'String' | 'Boolean') | ref=[GDomainElement]
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//builtIn=('Int' | 'Double' | 'String' | 'Boolean')
@@ -249,8 +249,8 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ref=[GDomainElement] list?='[]'? name=ID) ';'
 		public Group getGroup() { return cGroup; }
 
-		//(builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)? |
-		//ref=[GDomainElement] list?='[]'? name=ID)
+		//builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)? |
+		//ref=[GDomainElement] list?='[]'? name=ID
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//builtIn=('Int' | 'Double' | 'String' | 'Boolean') list?='[]'? name=ID ('=' defaultValue=GDefault)?
@@ -543,7 +543,7 @@ public class GModelDSLGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal ML_COMMENT:
-	//	'/ *'->'* /';
+	//	'/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 

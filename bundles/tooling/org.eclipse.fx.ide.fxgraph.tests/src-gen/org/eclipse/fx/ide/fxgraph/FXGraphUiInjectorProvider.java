@@ -8,10 +8,10 @@ import org.eclipse.xtext.junit4.IInjectorProvider;
 import com.google.inject.Injector;
 
 public class FXGraphUiInjectorProvider implements IInjectorProvider {
-	
+
 	@Override
 	public Injector getInjector() {
 		return org.eclipse.fx.ide.fxgraph.ui.internal.FXGraphActivator.getInstance().getInjector("org.eclipse.fx.ide.fxgraph.FXGraph");
 	}
-	
+
 }
