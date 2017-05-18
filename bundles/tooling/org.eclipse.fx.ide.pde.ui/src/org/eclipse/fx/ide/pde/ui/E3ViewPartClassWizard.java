@@ -40,7 +40,8 @@ public class E3ViewPartClassWizard extends AbstractNewClassWizard<JDTElement> {
 	@SuppressWarnings("null")
 	public boolean performFinish() {
 		try {
-			IBundleProjectService bpService = Activator.getDefault().acquireService(IBundleProjectService.class);
+			Class<IBundleProjectService> serviceClass = IBundleProjectService.class;
+			IBundleProjectService bpService = Activator.getDefault().acquireService(serviceClass);
 			IProject p = getRoot().getJavaProject().getProject();
 
 			if( p.hasNature("org.eclipse.pde.PluginNature") && bpService != null ) { //$NON-NLS-1$
