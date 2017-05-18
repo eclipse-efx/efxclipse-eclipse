@@ -52,15 +52,6 @@ import javafx.util.BuilderFactory;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
-import org.eclipse.fx.ide.ui.mobile.sim.device.BasicDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyNote2.AndroidTabletHorizontalDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyNote2.AndroidTabletVerticalDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyS3.AndroidPhoneHorizontalDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.android.galaxyS3.AndroidPhoneVerticalDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.ios.ipad.AppleIPadHorizontalDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.ios.ipad.AppleIPadVerticalDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.ios.iphone.AppleIPhone4HorizontalDevice;
-import org.eclipse.fx.ide.ui.mobile.sim.device.ios.iphone.AppleIPhone4VerticalDevice;
 import org.eclipse.fx.ide.ui.preview.bundle.Activator;
 import org.eclipse.fx.ide.ui.preview.text.AnnotationAccess;
 import org.eclipse.fx.ide.ui.preview.text.ColorManager;
@@ -210,33 +201,9 @@ public class LivePreviewPart extends ViewPart {
 	private SCREEN_SIZE currentSize = SCREEN_SIZE.DEFAULT;
 
 
-	private Map<SCREEN_SIZE, BasicDevice[]> previewers = new HashMap<>();
 	private Action screenSize;
 	private boolean currentHorizontal;
 	private Scene defaultScene;
-	{
-		AppleIPhone4HorizontalDevice horizontal_iphone4 = new AppleIPhone4HorizontalDevice(960,640);
-		AppleIPhone4VerticalDevice vertical_iphone4 = new AppleIPhone4VerticalDevice(640,960);
-
-		AppleIPadHorizontalDevice horizontal_ipad = new AppleIPadHorizontalDevice(1024, 768);
-		AppleIPadVerticalDevice vertical_ipad = new AppleIPadVerticalDevice(768, 1024);
-
-		AndroidPhoneHorizontalDevice horizonal_android_phone = new AndroidPhoneHorizontalDevice(1024,600);
-		AndroidPhoneVerticalDevice vertical_android_phone = new AndroidPhoneVerticalDevice(600,1024);
-
-		AndroidTabletHorizontalDevice horizontal_android_tablet = new AndroidTabletHorizontalDevice(800, 480);
-		AndroidTabletVerticalDevice vertical_android_tablet = new AndroidTabletVerticalDevice(480,800);
-
-		previewers.put(SCREEN_SIZE.IPHONE_4_RETINA, new BasicDevice[] { vertical_iphone4, horizontal_iphone4 });
-		previewers.put(SCREEN_SIZE.IPHONE_5, new BasicDevice[] { vertical_iphone4, horizontal_iphone4 });
-		previewers.put(SCREEN_SIZE.IPAD_DEFAULT, new BasicDevice[] { vertical_ipad, horizontal_ipad });
-		previewers.put(SCREEN_SIZE.IPAD_RETINA, new BasicDevice[] { vertical_ipad, horizontal_ipad });
-		previewers.put(SCREEN_SIZE.ANDROID_PHONE_600_1024, new BasicDevice[] { vertical_android_phone, horizonal_android_phone });
-		previewers.put(SCREEN_SIZE.ANDROID_PHONE_720_1280, new BasicDevice[] { vertical_android_phone, horizonal_android_phone });
-		previewers.put(SCREEN_SIZE.ANDROID_480_800, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
-		previewers.put(SCREEN_SIZE.ANDROID_720_1280, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
-		previewers.put(SCREEN_SIZE.ANDROID_800_1280, new BasicDevice[] { vertical_android_tablet, horizontal_android_tablet });
-	}
 
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/security-high.png"));
@@ -476,11 +443,6 @@ public class LivePreviewPart extends ViewPart {
 	void updateResolution(SCREEN_SIZE size, boolean horizontal) {
 		currentSize = size;
 		currentHorizontal = horizontal;
-		BasicDevice[] pv = previewers.get(size);
-		if( pv != null ) {
-			pv[0].setContentSize(size.width, size.height);
-			pv[1].setContentSize(size.height, size.width);
-		}
 		synchronizer.refreshPreview();
 	}
 
@@ -666,20 +628,9 @@ public class LivePreviewPart extends ViewPart {
 
 					if( scene == null ) {
 						Parent p;
-						if( currentSize == SCREEN_SIZE.DEFAULT ) {
-							BorderPane b = new BorderPane();
-							b.setCenter(rootPane_new);
-							p = b;
-						} else {
-							BasicDevice[] v = previewers.get(currentSize);
-							Node n = rootPane_new;
-							rootPane_new = v[currentHorizontal ? 1 : 0].getSimulatorNode();
-							v[currentHorizontal ? 1 : 0].setContent(n);
-
-							BorderPane container = new BorderPane();
-							container.setTop(rootPane_new);
-							p = container;
-						}
+						BorderPane b = new BorderPane();
+						b.setCenter(rootPane_new);
+						p = b;
 
 						((BorderPane)defaultScene.getRoot()).setCenter(p);
 						scene = defaultScene;
