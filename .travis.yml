@@ -1,0 +1,18 @@
+language: java
+
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      
+script:
+- mvn -f releng/org.eclipse.fx.ide.releng/pom.xml clean package
+
+jdk:
+  - oraclejdk8
+
+
+cache:
+  directories:
+- $HOME/.m2
