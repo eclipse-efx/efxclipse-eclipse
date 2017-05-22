@@ -382,7 +382,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 		StringBuffer buf = new StringBuffer();
 		buf.append("public "+(makeFinal?"final ":"")+" void");    //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$//$NON-NLS-4$
 
-		String sig = getSimpleName(accessMethod.getReturnType().getQualifiedName(),imports);
+		String sig = Signature.getSimpleName(accessMethod.getReturnType().getQualifiedName());
 
 		buf.append(" set" + Util.toFirstUpper(f.getElementName()) + "(final "+sig+" "+f.getElementName()+") {"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		buf.append(lineDelim);
@@ -399,7 +399,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 		StringBuffer buf = new StringBuffer();
 		buf.append("public "+(makeFinal?"final ":""));   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 
-		String sig = getSimpleName(accessMethod.getReturnType().getQualifiedName(), imports);
+		String sig = Signature.getSimpleName(accessMethod.getReturnType().getQualifiedName());
 		buf.append(sig);
 
 		if( "boolean".equals(sig) ) { //$NON-NLS-1$
