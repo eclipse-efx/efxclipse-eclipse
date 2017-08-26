@@ -22,30 +22,51 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 
 public class DefaultCssExtProvider implements CssExt {
+	private boolean init;
 	
 	private @Inject ICssExtManager cssExtManager;
 	private @Inject CssExtParser parser;
 	private @Inject CssExtDocParser docParser;
 	private @Inject IQualifiedNameProvider nameProvider;
 	
+	private List<CssExtProposalContributor> contributorList = new ArrayList<>();
+	private List<ICSSExtModelProvider> modelProviderList = new ArrayList<>();
+	
 	public DefaultCssExtProvider() {
-		Injector i = CssExtDslActivator.getInstance().getInjector(CssExtDslActivator.ORG_ECLIPSE_FX_IDE_CSS_CSSEXT_CSSEXTDSL);
-		i.injectMembers(this);
+		
+	}
+	
+	private void lazyInit() {
+		if( ! init ) {
+			init = true;
+			Injector i = CssExtDslActivator.getInstance().getInjector(CssExtDslActivator.ORG_ECLIPSE_FX_IDE_CSS_CSSEXT_CSSEXTDSL);
+			i.injectMembers(this);
+			
+			synchronized (contributorList) {
+				contributorList.forEach(cssExtManager::addCssExtProposalContributer);
+			}
+			
+			synchronized (modelProviderList) {
+				modelProviderList.forEach(cssExtManager::addCssExtensionModelProvider);
+			}
+		}
 	}
 
 	@Override
 	public String getDocumentationHeader(IFile f, EObject context, EObject obj) {
+		lazyInit();
 		return docParser.getDocHead(f,obj);
 	}
 
 	@Override
 	public String getDocumentation(IFile f, EObject context, EObject obj) {
+		lazyInit();
 		return docParser.getDocumentation(f,obj);
 	}
 
 	@Override
 	public List<Proposal> getPropertyProposalsForSelector(IFile f, EObject context, List<selector> selectors) {
-
+		lazyInit();
 		List<Proposal> result = new ArrayList<>();
 		
 		List<PropertyDefinition> defs = new ArrayList<>();
@@ -110,7 +131,7 @@ public class DefaultCssExtProvider implements CssExt {
 	@Override
 	public List<Proposal> getValueProposalsForProperty(IFile f, EObject context, List<selector> selector,
 			css_property property, List<CssTok> prefixTok, String prefixString) {
-		
+		lazyInit();
 		// TODO add element
 		
 		return parser.findProposals(f, context, null, property.getName(), prefixTok, prefixString);
@@ -118,18 +139,38 @@ public class DefaultCssExtProvider implements CssExt {
 	}
 	
 	public void bindCssExtProposalContributor(CssExtProposalContributor c) {
-		cssExtManager.addCssExtProposalContributer(c);
+		synchronized (contributorList) {
+			contributorList.add(c);
+		}
+		if( cssExtManager != null ) {
+			cssExtManager.addCssExtProposalContributer(c);
+		}
 	}
 	
 	public void unbindCssExtProposalContributor(CssExtProposalContributor c) {
-		cssExtManager.removeCssExtProposalContributer(c);
+		synchronized (contributorList) {
+			contributorList.remove(c);
+		}
+		if( cssExtManager != null ) {
+			cssExtManager.removeCssExtProposalContributer(c);
+		}
 	}
 	
 	public void bindCssExtensionModelProvider(ICSSExtModelProvider p) {
-		cssExtManager.addCssExtensionModelProvider(p);
+		synchronized (modelProviderList) {
+			modelProviderList.add(p);
+		}
+		if( modelProviderList != null ) {
+			cssExtManager.addCssExtensionModelProvider(p);
+		}
 	}
 	
 	public void unbindCssExtensionModelProvider(ICSSExtModelProvider p) {
-		cssExtManager.removeCssExtensionModelProvider(p);
+		synchronized (modelProviderList) {
+			modelProviderList.remove(p);
+		}
+		if( cssExtManager != null ) {
+			cssExtManager.removeCssExtensionModelProvider(p);
+		}
 	}
 }
