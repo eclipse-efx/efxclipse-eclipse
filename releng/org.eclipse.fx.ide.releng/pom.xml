@@ -72,6 +72,9 @@
 		<!-- ldef -->
 		<module>../../bundles/tooling/org.eclipse.fx.code.editor.ldef</module>
 		<module>../../bundles/tooling/org.eclipse.fx.code.editor.ldef.ui</module>
+		
+		<module>../../bundles/tooling/org.eclipse.fx.ide.mvnosgi.launching</module>
+		<module>../../bundles/tooling/org.eclipse.fx.ide.mvnosgi.launching.ui</module>
 
 		<module>../tooling/org.eclipse.fx.ide.basic.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.rrobot.feature</module>
@@ -83,6 +86,7 @@
 		<module>../tooling/org.eclipse.fx.ide.l10n.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.ldef.feature</module>
 		<module>../tooling/org.eclipse.fx.ide.gmod.feature</module>
+		<module>../tooling/org.eclipse.fx.ide.m2e.feature</module>
 
 		<module>../tooling/org.eclipse.fx.ide.feature</module>
 		<module>../org.eclipse.fx.ide.updatesite</module>
@@ -113,6 +117,11 @@
 			<id>gef3</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/tools/gef/updates/legacy/releases/</url>
+		</repository>
+		<repository>
+			<id>m2e</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/technology/m2e/releases/</url>
 		</repository>
 		
 		<repository>

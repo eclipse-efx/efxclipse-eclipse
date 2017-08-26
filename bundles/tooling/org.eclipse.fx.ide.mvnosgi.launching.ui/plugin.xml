@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.eclipse.fx.ide.mvnosgi.launching.OSGILauncher"
+            icon="icons/osgiconsole.png"
+            id="org.eclipse.fx.ide.mvnosgi.launching.ui.image">
+      </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.eclipse.fx.ide.mvnosgi.launching.ui.OSGiLaunchConfigurationTabGroup"
+            id="org.eclipse.fx.ide.mvnosgi.launching.ui.OSGiLauncher"
+            type="org.eclipse.fx.ide.mvnosgi.launching.OSGILauncher">
+      </launchConfigurationTabGroup>
+   </extension>
+
+</plugin>
