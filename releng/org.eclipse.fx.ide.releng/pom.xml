@@ -73,6 +73,7 @@
 		<module>../../bundles/tooling/org.eclipse.fx.code.editor.ldef</module>
 		<module>../../bundles/tooling/org.eclipse.fx.code.editor.ldef.ui</module>
 		
+		<module>../../bundles/tooling/org.eclipse.fx.ide.m2e</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.mvnosgi.launching</module>
 		<module>../../bundles/tooling/org.eclipse.fx.ide.mvnosgi.launching.ui</module>
 
