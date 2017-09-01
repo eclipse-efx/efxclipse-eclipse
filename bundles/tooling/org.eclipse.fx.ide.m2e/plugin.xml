@@ -4,9 +4,9 @@
    <extension
          point="org.eclipse.m2e.core.projectConfigurators">
       <configurator
-            class="org.eclipse.fx.ide.m2e.OSGiAccessRuleConfigurator"
+            class="org.eclipse.fx.ide.m2e.OSGiConfigurator"
             id="org.eclipse.fx.ide.m2e.configurator"
-            name="OSGi AccessRule">
+            name="OSGi Configurator">
       </configurator>
    </extension>
    <extension

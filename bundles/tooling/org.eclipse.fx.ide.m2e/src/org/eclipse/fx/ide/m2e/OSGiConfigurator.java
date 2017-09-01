@@ -31,9 +31,9 @@ import org.eclipse.osgi.util.ManifestElement;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
 
-public class OSGiAccessRuleConfigurator extends AbstractProjectConfigurator implements IJavaProjectConfigurator {
+public class OSGiConfigurator extends AbstractProjectConfigurator implements IJavaProjectConfigurator {
 	
-	public OSGiAccessRuleConfigurator() {
+	public OSGiConfigurator() {
 	}
 	
 	@Override
