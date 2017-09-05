@@ -65,7 +65,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		MavenProject mavenProject = facade.getMavenProject(null);
 		Optional<Plugin> osgiLauncherPlugin = mavenProject.getBuildPlugins()
 			.stream()
-			.filter( b -> "at.bestsolution".equals(b.getGroupId()) && "maven-osgi-plugin".equals(b.getArtifactId()))
+			.filter( b -> "at.bestsolution".equals(b.getGroupId()) && "maven-osgi-exec-plugin".equals(b.getArtifactId()))
 			.findFirst();
 		
 		Optional<String> launcherJar = mavenProject.getArtifacts().stream()
