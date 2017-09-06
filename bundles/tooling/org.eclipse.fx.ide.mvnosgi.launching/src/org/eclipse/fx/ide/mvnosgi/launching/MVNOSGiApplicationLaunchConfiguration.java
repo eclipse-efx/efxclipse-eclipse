@@ -230,7 +230,6 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 	}
 
 	private Optional<Manifest> getManifest(Path p) {
-		System.err.println(p);
 		if (Files.isDirectory(p)) {
 			Path mf = p.resolve("META-INF").resolve("MANIFEST.MF");
 			if( ! Files.exists(mf) ) {
