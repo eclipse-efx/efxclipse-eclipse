@@ -173,12 +173,14 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			.getArtifacts()
 			.stream()
 			.map( a -> map(osgiLauncherPlugin, a) )
+			.filter( Optional::isPresent)
+			.map( Optional::get)
 			.collect(Collectors.toSet());
 		
 		IJavaProject project = getJavaProject(projectName);
 		
 		Path path = getWorkspaceRoot().getFolder(project.getOutputLocation()).getLocation().toFile().toPath();
-		bundles.add(new Bundle(osgiLauncherPlugin,getManifest(path), path));
+		bundles.add(new Bundle(osgiLauncherPlugin,getManifest(path).get(), path));
 		
 		Path p = Paths.get(System.getProperty("java.io.tmpdir")).resolve(projectName).resolve("configuration");
 
@@ -227,17 +229,22 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		return p;
 	}
 
-	private Manifest getManifest(Path p) {
+	private Optional<Manifest> getManifest(Path p) {
+		System.err.println(p);
 		if (Files.isDirectory(p)) {
+			Path mf = p.resolve("META-INF").resolve("MANIFEST.MF");
+			if( ! Files.exists(mf) ) {
+				return Optional.empty();
+			}
 			try (InputStream in = Files
-					.newInputStream(p.resolve("META-INF").resolve("MANIFEST.MF"))) {
-				return new Manifest(in);
+					.newInputStream(mf)) {
+				return Optional.of(new Manifest(in));
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
 		} else {
 			try (JarFile f = new JarFile(p.toFile())) {
-				return f.getManifest();
+				return Optional.of(f.getManifest());
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -316,27 +323,14 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		return b.path.toAbsolutePath();
 	}
 	
-	private Bundle map(Optional<Plugin> osgiLauncherPlugin, Artifact a) {
-		try {
-			return _map(osgiLauncherPlugin,a);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+	private Optional<Bundle> map(Optional<Plugin> osgiLauncherPlugin, Artifact a) {
+		return getManifest(a.getFile().toPath())
+				.filter(MVNOSGiApplicationLaunchConfiguration::isBundle)
+				.map( m -> new Bundle(osgiLauncherPlugin, m, a.getFile().toPath()));
 	}
 	
-	private Bundle _map(Optional<Plugin> osgiLauncherPlugin, Artifact a) throws IOException {
-		IMavenProjectFacade dep = MavenPlugin.getMavenProjectRegistry().getMavenProject(a.getGroupId(),
-				a.getArtifactId(), a.getBaseVersion());
-
-		Manifest m;
-
-		if (dep != null && dep.getFullPath(a.getFile()) != null) {
-			m = getManifest(a.getFile().toPath());
-		} else {
-			m = getManifest(a.getFile().toPath());
-		}
-
-		return new Bundle(osgiLauncherPlugin, m, a.getFile().toPath());
+	private static boolean isBundle(Manifest m) {
+		return m.getMainAttributes().getValue("Bundle-SymbolicName") != null;
 	}
 
 	private static String bundleName(Manifest m) {
