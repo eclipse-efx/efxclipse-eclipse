@@ -144,8 +144,6 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 				}
 			}
 			
-			System.err.println(l);
-			
 			return l;
 		}
 		return Collections.emptyList();
@@ -221,7 +219,7 @@ public class FXBeanJavaCompletionProposalComputer implements IJavaCompletionProp
 
 	@Override
 	public List<IContextInformation> computeContextInformation(ContentAssistInvocationContext context, IProgressMonitor monitor) {
-		return null;
+		return Collections.emptyList();
 	}
 
 	@Override
