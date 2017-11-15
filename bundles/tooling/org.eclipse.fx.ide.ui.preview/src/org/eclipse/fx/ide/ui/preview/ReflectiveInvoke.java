@@ -25,7 +25,7 @@ public class ReflectiveInvoke {
 			m.invoke(loader, value);
 		} catch (Throwable e) {
 			try {
-				Method m = loader.getClass().getMethod("setStaticLoad", boolean.class);
+				Method m = loader.getClass().getDeclaredMethod("setStaticLoad", boolean.class);
 				m.setAccessible(true); // Method is package-scoped in Java9
 				m.invoke(loader, value);
 			} catch(Throwable e2) {
