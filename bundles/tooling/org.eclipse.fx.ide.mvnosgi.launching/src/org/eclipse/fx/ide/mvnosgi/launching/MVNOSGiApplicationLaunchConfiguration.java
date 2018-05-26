@@ -290,7 +290,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			if( ! Files.exists(p) ) {
 				try(ZipFile z = new ZipFile(b.path.toFile()) ) {
 					z.stream().forEach( e -> {
-						Path ep = explodeDir.resolve(e.getName());
+						Path ep = p.resolve(e.getName());
 						if( e.isDirectory() ) {
 							try {
 								Files.createDirectories(ep);
