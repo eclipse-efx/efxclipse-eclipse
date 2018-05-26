@@ -243,7 +243,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			}
 		} else {
 			try (JarFile f = new JarFile(p.toFile())) {
-				return Optional.of(f.getManifest());
+				return Optional.ofNullable(f.getManifest());
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
