@@ -295,10 +295,16 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 							try {
 								Files.createDirectories(ep);
 							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
+								throw new RuntimeException(e1);
 							}
 						} else {
+							if( ! Files.exists(ep.getParent()) ) {
+								try {
+									Files.createDirectories(ep.getParent());
+								} catch (IOException e1) {
+									throw new RuntimeException(e1);
+								}
+							}
 							try(OutputStream out = Files.newOutputStream(ep);
 									InputStream in = z.getInputStream(e)) {
 								byte[] buf = new byte[1024];
@@ -307,14 +313,12 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 									out.write(buf, 0, l);
 								}
 							} catch (IOException e2) {
-								// TODO: handle exception
-								e2.printStackTrace();
+								throw new RuntimeException(e2);
 							}
 						}
 					});
 				} catch (Exception e) {
-					// TODO: handle exception
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				}
 			}
 			return p;
