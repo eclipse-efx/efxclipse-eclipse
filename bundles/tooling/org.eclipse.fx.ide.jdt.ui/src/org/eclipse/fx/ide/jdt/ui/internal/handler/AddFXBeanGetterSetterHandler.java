@@ -50,14 +50,12 @@ import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
 import org.eclipse.jdt.internal.corext.CorextMessages;
-import org.eclipse.jdt.internal.corext.ValidateEditException;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility2;
 import org.eclipse.jdt.internal.corext.dom.ASTNodes;
 import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
 import org.eclipse.jdt.internal.corext.refactoring.util.RefactoringASTParser;
 import org.eclipse.jdt.internal.corext.util.CodeFormatterUtil;
-import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jdt.internal.corext.util.Resources;
 import org.eclipse.jdt.internal.ui.actions.ActionMessages;
 import org.eclipse.jdt.internal.ui.actions.SelectionConverter;
@@ -83,7 +81,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.text.edits.TextEdit;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 @SuppressWarnings("restriction")
@@ -287,7 +284,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 	}
 	
 	// From JavaModelUtil
-	private static void applyEdit(ICompilationUnit cu, TextEdit edit, boolean save, IProgressMonitor monitor) throws CoreException, ValidateEditException {
+	private static void applyEdit(ICompilationUnit cu, TextEdit edit, boolean save, IProgressMonitor monitor) throws CoreException {
 		IFile file= (IFile) cu.getResource();
 		if (!save || !file.exists()) {
 			cu.applyTextEdit(edit, monitor);
@@ -299,7 +296,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			try {
 				IStatus status= Resources.makeCommittable(file, null);
 				if (!status.isOK()) {
-					throw new ValidateEditException(status);
+					throw new CoreException(status);
 				}
 
 				cu.applyTextEdit(edit, new SubProgressMonitor(monitor, 1));
