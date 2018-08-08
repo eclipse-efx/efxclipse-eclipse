@@ -32,6 +32,7 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.model.LaunchConfigurationDelegate;
+import org.eclipse.fx.core.SystemUtils;
 import org.eclipse.jdt.core.IJavaModel;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
@@ -54,20 +55,19 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		} else {
 			wc = configuration.getWorkingCopy();
 		}
-		String id = configuration.getAttribute(IJavaLaunchConfigurationConstants.ATTR_SOURCE_PATH_PROVIDER, (String) null);
+		String id = configuration.getAttribute(IJavaLaunchConfigurationConstants.ATTR_SOURCE_PATH_PROVIDER,
+				(String) null);
 		if (!MVNSourcePathProvider.ID.equals(id)) {
 			wc.setAttribute(IJavaLaunchConfigurationConstants.ATTR_SOURCE_PATH_PROVIDER, MVNSourcePathProvider.ID);
 			wc.doSave();
 		}
-		
-		
+
 		IMavenProjectFacade facade = getMavenFacade(configuration);
 		MavenProject mavenProject = facade.getMavenProject(null);
-		Optional<Plugin> osgiLauncherPlugin = mavenProject.getBuildPlugins()
-			.stream()
-			.filter( b -> "at.bestsolution".equals(b.getGroupId()) && "maven-osgi-exec-plugin".equals(b.getArtifactId()))
-			.findFirst();
-		
+		Optional<Plugin> osgiLauncherPlugin = mavenProject.getBuildPlugins().stream().filter(
+				b -> "at.bestsolution".equals(b.getGroupId()) && "maven-osgi-exec-plugin".equals(b.getArtifactId()))
+				.findFirst();
+
 		Optional<String> launcherJar = mavenProject.getArtifacts().stream()
 				.filter(a -> "org.eclipse.equinox.launcher".equals(a.getArtifactId())).findFirst()
 				.map(a -> a.getFile().toString());
@@ -93,24 +93,24 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 
 	private String[] getVMArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) {
 		ArrayList<String> vmArgs = new ArrayList<>();
-		
-		if( osgiLauncherPlugin.isPresent() ) {
+
+		if (osgiLauncherPlugin.isPresent()) {
 			Xpp3Dom d = (Xpp3Dom) osgiLauncherPlugin.get().getConfiguration();
-			for( Xpp3Dom c : d.getChildren() ) {
-				if( "vmProperties".equals(c.getName()) ) {
-					for( Xpp3Dom cc : c.getChildren() ) {
-						if( "property".equals(cc.getName()) ) {
+			for (Xpp3Dom c : d.getChildren()) {
+				if ("vmProperties".equals(c.getName())) {
+					for (Xpp3Dom cc : c.getChildren()) {
+						if ("property".equals(cc.getName())) {
 							String name = null;
 							String value = null;
-							for( Xpp3Dom ccc : cc.getChildren() ) {
-								if( "name".equals(ccc.getName()) ) {
+							for (Xpp3Dom ccc : cc.getChildren()) {
+								if ("name".equals(ccc.getName())) {
 									name = ccc.getValue();
-								} else if( "value".equals(ccc.getName()) ) {
+								} else if ("value".equals(ccc.getName())) {
 									value = ccc.getValue();
 								}
 							}
-							
-							if( name != null && value != null ) {
+
+							if (name != null && value != null) {
 								vmArgs.add("-D" + name + "=" + value);
 							}
 						}
@@ -121,18 +121,19 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 
 		return vmArgs.toArray(new String[0]);
 	}
-	
-	private String[] getProgramArgs(Optional<Plugin> osgiLauncherPlugin, Path configIni, ILaunchConfiguration configuration) {
+
+	private String[] getProgramArgs(Optional<Plugin> osgiLauncherPlugin, Path configIni,
+			ILaunchConfiguration configuration) {
 		List<String> programArgs = new ArrayList<>();
 		programArgs.add("-configuration"); //$NON-NLS-1$
 		programArgs.add("file:" + configIni.toString()); //$NON-NLS-1$
-		
-		if( osgiLauncherPlugin.isPresent() ) {
+
+		if (osgiLauncherPlugin.isPresent()) {
 			Xpp3Dom d = (Xpp3Dom) osgiLauncherPlugin.get().getConfiguration();
-			for( Xpp3Dom c : d.getChildren() ) {
-				if( "programArguments".equals(c.getName()) ) {
-					for( Xpp3Dom cc : c.getChildren() ) {
-						if( "programArgument".equals(cc.getName()) ) {
+			for (Xpp3Dom c : d.getChildren()) {
+				if ("programArguments".equals(c.getName())) {
+					for (Xpp3Dom cc : c.getChildren()) {
+						if ("programArgument".equals(cc.getName())) {
 							programArgs.add(cc.getValue());
 						}
 					}
@@ -165,30 +166,26 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		return MavenPlugin.getMavenProjectRegistry().getProject(project.getProject());
 	}
 
-	private Path generateConfigIni(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) throws CoreException {
+	private Path generateConfigIni(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration)
+			throws CoreException {
 		IMavenProjectFacade facade = getMavenFacade(configuration);
-		
+
 		String projectName = facade.getProject().getName();
-		Set<Bundle> bundles = facade.getMavenProject(new NullProgressMonitor())
-			.getArtifacts()
-			.stream()
-			.map( a -> map(osgiLauncherPlugin, a) )
-			.filter( Optional::isPresent)
-			.map( Optional::get)
-			.collect(Collectors.toSet());
-		
+		Set<Bundle> bundles = facade.getMavenProject(new NullProgressMonitor()).getArtifacts().stream()
+				.map(a -> map(osgiLauncherPlugin, a)).filter(Optional::isPresent).map(Optional::get)
+				.collect(Collectors.toSet());
+
 		IJavaProject project = getJavaProject(projectName);
-		
+
 		Path path = getWorkspaceRoot().getFolder(project.getOutputLocation()).getLocation().toFile().toPath();
-		bundles.add(new Bundle(osgiLauncherPlugin,getManifest(path).get(), path));
-		
+		bundles.add(new Bundle(osgiLauncherPlugin, getManifest(path).get(), path));
+
 		Path p = Paths.get(System.getProperty("java.io.tmpdir")).resolve(projectName).resolve("configuration");
 
 		Optional<Bundle> simpleConfigurator = bundles.stream()
 				.filter(b -> "org.eclipse.equinox.simpleconfigurator".equals(b.symbolicName)).findFirst();
 
-		Optional<Bundle> equinox = bundles.stream().filter(b -> "org.eclipse.osgi".equals(b.symbolicName))
-				.findFirst();
+		Optional<Bundle> equinox = bundles.stream().filter(b -> "org.eclipse.osgi".equals(b.symbolicName)).findFirst();
 
 		try {
 			Files.createDirectories(p);
@@ -199,21 +196,22 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 
 		if (simpleConfigurator.isPresent()) {
 			Path configIni = p.resolve("config.ini");
-			try (BufferedWriter writer = Files.newBufferedWriter(configIni, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+			try (BufferedWriter writer = Files.newBufferedWriter(configIni, StandardOpenOption.CREATE,
+					StandardOpenOption.TRUNCATE_EXISTING)) {
 				Path bundlesInfo = generateBundlesInfo(p, bundles);
 
 				writer.append("osgi.bundles=" + toReferenceURL(simpleConfigurator.get(), false));
 				writer.append(LF);
 				writer.append("osgi.bundles.defaultStartLevel=4");
 				writer.append(LF);
-				writer.append("osgi.install.area=file\\:" + p.getParent().resolve("install").toString());
+				writer.append("osgi.install.area=" + toInstallAreaURL(p));
 				writer.append(LF);
-				writer.append("osgi.framework=file\\:" + equinox.get().path.toString());
+				writer.append("osgi.framework=" + toFrameworkURL(equinox.get()));
 				writer.append(LF);
 				writer.append("eclipse.p2.data.area=@config.dir/.p2");
 				writer.append(LF);
-				writer.append("org.eclipse.equinox.simpleconfigurator.configUrl=file\\:"
-						+ bundlesInfo.toAbsolutePath().toString());
+				writer.append(
+						"org.eclipse.equinox.simpleconfigurator.configUrl=" + toSimpleConfigurationURL(bundlesInfo));
 				writer.append(LF);
 				writer.append("osgi.configuration.cascaded=false");
 				writer.append(LF);
@@ -223,20 +221,44 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			}
 
 		} else {
-			throw new CoreException(new Status(IStatus.ERROR, "org.eclipse.fx.ide.mvnosgi.launching", "Only simple-configurator is supported currently"));
+			throw new CoreException(new Status(IStatus.ERROR, "org.eclipse.fx.ide.mvnosgi.launching",
+					"Only simple-configurator is supported currently"));
 		}
 
 		return p;
 	}
 
+	private static String toInstallAreaURL(Path p) {
+		String rv = p.getParent().resolve("install").toString();
+		if (SystemUtils.isWindows()) {
+			rv = rv.replace("\\", "\\\\").replace(":", "\\:");
+		}
+		return "file\\:" + rv;
+	}
+
+	private static String toFrameworkURL(Bundle bundle) {
+		String rv = bundle.path.toString();
+		if (SystemUtils.isWindows()) {
+			rv = rv.replace('\\', '/').replace(":", "\\:");
+		}
+		return "file\\:" + rv;
+	}
+
+	private static String toSimpleConfigurationURL(Path bundlesInfo) {
+		String rv = bundlesInfo.toAbsolutePath().toString();
+		if( SystemUtils.isWindows() ) {
+			rv = rv.replace('\\', '/').replace(":", "\\:");
+		}
+		return "file\\:" + rv;
+	}
+
 	private Optional<Manifest> getManifest(Path p) {
 		if (Files.isDirectory(p)) {
 			Path mf = p.resolve("META-INF").resolve("MANIFEST.MF");
-			if( ! Files.exists(mf) ) {
+			if (!Files.exists(mf)) {
 				return Optional.empty();
 			}
-			try (InputStream in = Files
-					.newInputStream(mf)) {
+			try (InputStream in = Files.newInputStream(mf)) {
 				return Optional.of(new Manifest(in));
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -259,19 +281,20 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 					new Status(IStatus.ERROR, "org.eclipse.fx.ide.mvnosgi.launching", e.getMessage(), e));
 		}
 
-		try (BufferedWriter writer = Files.newBufferedWriter(bundleInfo, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+		try (BufferedWriter writer = Files.newBufferedWriter(bundleInfo, StandardOpenOption.CREATE,
+				StandardOpenOption.TRUNCATE_EXISTING)) {
 			writer.append("#encoding=UTF-8");
 			writer.append(LF);
 			writer.append("#version=1");
 			writer.append(LF);
 
 			for (Bundle b : bundles) {
-				if( "org.eclipse.osgi".equals(b.symbolicName) ) {
+				if ("org.eclipse.osgi".equals(b.symbolicName)) {
 					continue;
 				}
 				writer.append(b.symbolicName);
 				writer.append("," + b.version);
-				writer.append(",file:" + generateLocalPath(b,configurationDir.resolve(".explode")).toString());
+				writer.append("," + generateLocalPath(b, configurationDir.resolve(".explode")).toUri().toASCIIString());
 				writer.append("," + b.startLevel); // Start Level
 				writer.append("," + b.autoStart); // Auto-Start
 				writer.append(LF);
@@ -283,33 +306,32 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		}
 		return bundleInfo;
 	}
-	
+
 	private Path generateLocalPath(Bundle b, Path explodeDir) {
-		if( b.dirShape && Files.isRegularFile(b.path) ) {
-			Path p = explodeDir.resolve(b.symbolicName+"_"+b.version);
-			if( ! Files.exists(p) ) {
-				try(ZipFile z = new ZipFile(b.path.toFile()) ) {
-					z.stream().forEach( e -> {
+		if (b.dirShape && Files.isRegularFile(b.path)) {
+			Path p = explodeDir.resolve(b.symbolicName + "_" + b.version);
+			if (!Files.exists(p)) {
+				try (ZipFile z = new ZipFile(b.path.toFile())) {
+					z.stream().forEach(e -> {
 						Path ep = p.resolve(e.getName());
-						if( e.isDirectory() ) {
+						if (e.isDirectory()) {
 							try {
 								Files.createDirectories(ep);
 							} catch (IOException e1) {
 								throw new RuntimeException(e1);
 							}
 						} else {
-							if( ! Files.exists(ep.getParent()) ) {
+							if (!Files.exists(ep.getParent())) {
 								try {
 									Files.createDirectories(ep.getParent());
 								} catch (IOException e1) {
 									throw new RuntimeException(e1);
 								}
 							}
-							try(OutputStream out = Files.newOutputStream(ep);
-									InputStream in = z.getInputStream(e)) {
+							try (OutputStream out = Files.newOutputStream(ep); InputStream in = z.getInputStream(e)) {
 								byte[] buf = new byte[1024];
 								int l;
-								while( (l = in.read(buf)) != -1 ) {
+								while ((l = in.read(buf)) != -1) {
 									out.write(buf, 0, l);
 								}
 							} catch (IOException e2) {
@@ -325,13 +347,12 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		}
 		return b.path.toAbsolutePath();
 	}
-	
+
 	private Optional<Bundle> map(Optional<Plugin> osgiLauncherPlugin, Artifact a) {
-		return getManifest(a.getFile().toPath())
-				.filter(MVNOSGiApplicationLaunchConfiguration::isBundle)
-				.map( m -> new Bundle(osgiLauncherPlugin, m, a.getFile().toPath()));
+		return getManifest(a.getFile().toPath()).filter(MVNOSGiApplicationLaunchConfiguration::isBundle)
+				.map(m -> new Bundle(osgiLauncherPlugin, m, a.getFile().toPath()));
 	}
-	
+
 	private static boolean isBundle(Manifest m) {
 		return m.getMainAttributes().getValue("Bundle-SymbolicName") != null;
 	}
@@ -343,19 +364,19 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 
 	private Integer getStartLevel(Optional<Plugin> osgiLauncherPlugin, Manifest m) {
 		String name = bundleName(m);
-		if( osgiLauncherPlugin.isPresent() ) {
+		if (osgiLauncherPlugin.isPresent()) {
 			Xpp3Dom d = (Xpp3Dom) osgiLauncherPlugin.get().getConfiguration();
-			for( Xpp3Dom c : d.getChildren() ) {
-				if( "startLevels".equals(c.getName()) ) {
-					for( Xpp3Dom cc : c.getChildren() ) {
-						if( name.equals(cc.getName()) ) {
+			for (Xpp3Dom c : d.getChildren()) {
+				if ("startLevels".equals(c.getName())) {
+					for (Xpp3Dom cc : c.getChildren()) {
+						if (name.equals(cc.getName())) {
 							return Integer.valueOf(cc.getValue());
 						}
 					}
 				}
 			}
 		}
-		
+
 		switch (name) {
 		case "org.eclipse.core.runtime":
 			return 4;
@@ -376,7 +397,11 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 
 	private String toReferenceURL(Bundle element, boolean project) throws IOException {
 		StringBuilder w = new StringBuilder();
-		w.append("reference\\:file\\:" + element.path.toString());
+		String path = element.path.toString();
+		if (SystemUtils.isWindows()) {
+			path = path.replace('\\', '/').replace(":", "\\:");
+		}
+		w.append("reference\\:file\\:" + path);
 
 		if (element.startLevel != null) {
 			w.append("@" + element.startLevel + "\\:start");
@@ -385,7 +410,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		}
 		return w.toString();
 	}
-	
+
 	public class Bundle {
 		public final String symbolicName;
 		public final String version;
@@ -393,12 +418,15 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		public final Path path;
 		public final boolean dirShape;
 		public final boolean autoStart;
-		
+
 		public Bundle(Optional<Plugin> osgiLauncherPlugin, Manifest m, Path path) {
-			this( bundleName(m), m.getMainAttributes().getValue("Bundle-Version"), getStartLevel(osgiLauncherPlugin,m), path, getStartLevel(osgiLauncherPlugin,m) != null, "dir".equals(m.getMainAttributes().getValue("Eclipse-BundleShape")));
+			this(bundleName(m), m.getMainAttributes().getValue("Bundle-Version"), getStartLevel(osgiLauncherPlugin, m),
+					path, getStartLevel(osgiLauncherPlugin, m) != null,
+					"dir".equals(m.getMainAttributes().getValue("Eclipse-BundleShape")));
 		}
-		
-		public Bundle(String symbolicName, String version, Integer startLevel, Path path, boolean autoStart, boolean dirShape) {
+
+		public Bundle(String symbolicName, String version, Integer startLevel, Path path, boolean autoStart,
+				boolean dirShape) {
 			this.symbolicName = symbolicName;
 			this.version = version;
 			this.startLevel = startLevel == null ? 4 : startLevel;
