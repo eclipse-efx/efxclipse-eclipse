@@ -28,10 +28,11 @@ import org.eclipse.jdt.core.JavaModelException;
 public class RelativeFileLocator {
 	public static File locateFile(IFile file, String filePath) {
 		URI uri = URI.createPlatformResourceURI(file.getProject().getName() + "/" + file.getProjectRelativePath().toString(),true);
-		return locateFile(uri, filePath);
+		return locateFile(uri, filePath.trim());
 	}
 	
 	public static File locateFile(URI uri, String filePath) {
+		filePath = filePath.trim();
 		IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
 		IJavaProject jp = JavaCore.create(p);
 		
