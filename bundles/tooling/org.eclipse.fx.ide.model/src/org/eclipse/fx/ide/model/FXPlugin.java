@@ -65,6 +65,6 @@ public class FXPlugin implements BundleActivator {
 	}
 
 	public static Logger getLogger() {
-		return logService.getLogger(null);
+		return logService.getLogger((String)null);
 	}
 }
