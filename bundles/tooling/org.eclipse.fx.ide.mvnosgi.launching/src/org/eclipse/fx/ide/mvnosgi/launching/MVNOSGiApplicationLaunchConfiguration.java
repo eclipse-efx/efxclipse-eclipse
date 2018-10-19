@@ -7,9 +7,14 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.jar.JarFile;
@@ -44,6 +49,7 @@ import org.eclipse.m2e.core.MavenPlugin;
 import org.eclipse.m2e.core.project.IMavenProjectFacade;
 
 public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDelegate {
+	private static final String OSGI_FRAMEWORK_EXTENSIONS = "osgi.framework.extensions";
 	private static final String LF = System.getProperty("line.separator");
 
 	@Override
@@ -72,12 +78,22 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 				.filter(a -> "org.eclipse.equinox.launcher".equals(a.getArtifactId())).findFirst()
 				.map(a -> a.getFile().toString());
 
-		Path configIni = generateConfigIni(osgiLauncherPlugin, configuration);
-
 		if (launcherJar.isPresent()) {
 			VMRunnerConfiguration runnerConfig = new VMRunnerConfiguration("org.eclipse.equinox.launcher.Main",
 					new String[] { launcherJar.get() });
-			runnerConfig.setVMArguments(getVMArguments(osgiLauncherPlugin, configuration));
+
+			Map<String, String> vmArguments = getVMArguments(osgiLauncherPlugin, configuration);
+			Set<Path> extensionPaths = new HashSet<>();
+			Path configIni = generateConfigIni(osgiLauncherPlugin, configuration, vmArguments, extensionPaths);
+			if( vmArguments.containsKey(OSGI_FRAMEWORK_EXTENSIONS) ) {
+				String extensionClasspath = extensionPaths.stream().map(Path::toString).collect(Collectors.joining(",","file:",""));
+				if( ! extensionClasspath.trim().isEmpty() ) {
+					vmArguments.put("osgi.frameworkClassPath", ".," + extensionClasspath);	
+				}
+			}
+			
+			String[] vmArgs = vmArguments.entrySet().stream().map( e -> "-D" + e.getKey() + "=" + e.getValue() ).toArray( i -> new String[i]);
+			runnerConfig.setVMArguments(vmArgs);
 			runnerConfig.setProgramArguments(getProgramArgs(osgiLauncherPlugin, configIni, configuration));
 			// runnerConfig.setWorkingDirectory(getWorkingDirectory(configuration).getAbsolutePath());
 			// runnerConfig.setEnvironment(getEnvironment(configuration));
@@ -91,8 +107,8 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		}
 	}
 
-	private String[] getVMArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) {
-		ArrayList<String> vmArgs = new ArrayList<>();
+	private Map<String, String> getVMArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) {
+		Map<String,String> vmArgs = new HashMap<>();
 
 		if (osgiLauncherPlugin.isPresent()) {
 			Xpp3Dom d = (Xpp3Dom) osgiLauncherPlugin.get().getConfiguration();
@@ -111,7 +127,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 							}
 
 							if (name != null && value != null) {
-								vmArgs.add("-D" + name + "=" + value);
+								vmArgs.put(name,value);
 							}
 						}
 					}
@@ -119,7 +135,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			}
 		}
 
-		return vmArgs.toArray(new String[0]);
+		return vmArgs;
 	}
 
 	private String[] getProgramArgs(Optional<Plugin> osgiLauncherPlugin, Path configIni,
@@ -166,7 +182,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		return MavenPlugin.getMavenProjectRegistry().getProject(project.getProject());
 	}
 
-	private Path generateConfigIni(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration)
+	private Path generateConfigIni(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration, Map<String, String> vmConfiguration, Set<Path> extensionPaths)
 			throws CoreException {
 		IMavenProjectFacade facade = getMavenFacade(configuration);
 
@@ -198,7 +214,8 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			Path configIni = p.resolve("config.ini");
 			try (BufferedWriter writer = Files.newBufferedWriter(configIni, StandardOpenOption.CREATE,
 					StandardOpenOption.TRUNCATE_EXISTING)) {
-				Path bundlesInfo = generateBundlesInfo(p, bundles);
+				Path explosionPath = p.resolve(".explode");
+				Path bundlesInfo = generateBundlesInfo(p, explosionPath, bundles, vmConfiguration, extensionPaths);
 
 				writer.append("osgi.bundles=" + toReferenceURL(simpleConfigurator.get(), false));
 				writer.append(LF);
@@ -206,7 +223,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 				writer.append(LF);
 				writer.append("osgi.install.area=" + toInstallAreaURL(p));
 				writer.append(LF);
-				writer.append("osgi.framework=" + toFrameworkURL(equinox.get()));
+				writer.append("osgi.framework=" + toFrameworkURL(equinox.get(), explosionPath, vmConfiguration));
 				writer.append(LF);
 				writer.append("eclipse.p2.data.area=@config.dir/.p2");
 				writer.append(LF);
@@ -236,8 +253,21 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		return "file\\:" + rv;
 	}
 
-	private static String toFrameworkURL(Bundle bundle) {
+	private static String toFrameworkURL(Bundle bundle, Path explodePath, Map<String, String> vmConfiguration) {
 		String rv = bundle.path.toString();
+		if( vmConfiguration.containsKey(OSGI_FRAMEWORK_EXTENSIONS) ) {
+			try {
+				if( ! Files.exists(explodePath) ) {
+					Files.createDirectories(explodePath);	
+				}
+				
+				Path targetPath = explodePath.resolve(bundle.path.getFileName());
+				Files.copy(bundle.path, targetPath, StandardCopyOption.REPLACE_EXISTING);
+				rv = targetPath.toString();
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
 		if (SystemUtils.isWindows()) {
 			rv = rv.replace('\\', '/').replace(":", "\\:");
 		}
@@ -272,7 +302,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		}
 	}
 
-	private Path generateBundlesInfo(Path configurationDir, Set<Bundle> bundles) throws CoreException {
+	private Path generateBundlesInfo(Path configurationDir, Path explosionPath, Set<Bundle> bundles, Map<String, String> vmConfiguration, Set<Path> extensionPaths) throws CoreException {
 		Path bundleInfo = configurationDir.resolve("org.eclipse.equinox.simpleconfigurator").resolve("bundles.info");
 		try {
 			Files.createDirectories(bundleInfo.getParent());
@@ -290,14 +320,20 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 
 			for (Bundle b : bundles) {
 				if ("org.eclipse.osgi".equals(b.symbolicName)) {
-					continue;
+					writer.append(b.symbolicName);
+					writer.append("," + b.version);
+					writer.append("," + generateLocalPath(b, explosionPath, vmConfiguration, extensionPaths).toUri().toASCIIString());
+					writer.append(",-1"); // Start Level
+					writer.append(",true"); // Auto-Start
+					writer.append(LF);
+				} else {
+					writer.append(b.symbolicName);
+					writer.append("," + b.version);
+					writer.append("," + generateLocalPath(b, explosionPath, vmConfiguration, extensionPaths).toUri().toASCIIString());
+					writer.append("," + b.startLevel); // Start Level
+					writer.append("," + b.autoStart); // Auto-Start
+					writer.append(LF);					
 				}
-				writer.append(b.symbolicName);
-				writer.append("," + b.version);
-				writer.append("," + generateLocalPath(b, configurationDir.resolve(".explode")).toUri().toASCIIString());
-				writer.append("," + b.startLevel); // Start Level
-				writer.append("," + b.autoStart); // Auto-Start
-				writer.append(LF);
 			}
 
 		} catch (IOException e) {
@@ -307,7 +343,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		return bundleInfo;
 	}
 
-	private Path generateLocalPath(Bundle b, Path explodeDir) {
+	private Path generateLocalPath(Bundle b, Path explodeDir, Map<String, String> vmConfiguration, Set<Path> extensionPaths) {
 		if (b.dirShape && Files.isRegularFile(b.path)) {
 			Path p = explodeDir.resolve(b.symbolicName + "_" + b.version);
 			if (!Files.exists(p)) {
@@ -344,6 +380,27 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 				}
 			}
 			return p;
+		} else if( vmConfiguration.containsKey(OSGI_FRAMEWORK_EXTENSIONS) ) {
+			List<String> extensions = Arrays.asList(vmConfiguration.get(OSGI_FRAMEWORK_EXTENSIONS).split(","));
+			
+			if( "org.eclipse.osgi".equals(b.symbolicName) || extensions.stream().anyMatch( v -> v.trim().equals(b.symbolicName)) ) {
+				try {
+					if( ! Files.exists(explodeDir) ) {
+						Files.createDirectories(explodeDir);	
+					}
+					
+					Path targetFile = explodeDir.resolve(b.path.getFileName());
+					Files.copy(b.path, targetFile, StandardCopyOption.REPLACE_EXISTING);
+					
+					if( ! "org.eclipse.osgi".equals(b.symbolicName) ) {
+						extensionPaths.add(targetFile);
+					}
+					
+					return targetFile;
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+			}
 		}
 		return b.path.toAbsolutePath();
 	}
