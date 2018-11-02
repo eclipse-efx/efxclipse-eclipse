@@ -112,7 +112,7 @@
 		<repository>
 			<id>wst</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/webtools/downloads/drops/R3.9.0/S-3.9.0M7-20170516000202/repository</url>
+			<url>http://download.eclipse.org/webtools/downloads/drops/R3.9.5/R-3.9.5-20180409100740/repository</url>
 		</repository>
 		<repository>
 			<id>gef3</id>
