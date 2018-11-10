@@ -93,6 +93,13 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			}
 			
 			String[] vmArgs = vmArguments.entrySet().stream().map( e -> "-D" + e.getKey() + "=" + e.getValue() ).toArray( i -> new String[i]);
+			String[] additionalArgs = getVMExecArguments(osgiLauncherPlugin, configuration);
+			if( additionalArgs != null ) {
+				String[] nArgs = new String[vmArgs.length+additionalArgs.length];
+				System.arraycopy(vmArgs, 0, nArgs, 0, vmArgs.length);
+			    System.arraycopy(additionalArgs, 0, nArgs, vmArgs.length, additionalArgs.length);
+			    vmArgs = nArgs;
+			}
 			runnerConfig.setVMArguments(vmArgs);
 			runnerConfig.setProgramArguments(getProgramArgs(osgiLauncherPlugin, configIni, configuration));
 			// runnerConfig.setWorkingDirectory(getWorkingDirectory(configuration).getAbsolutePath());
@@ -105,6 +112,19 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 		} else {
 			System.err.println("NOT FOUND");
 		}
+	}
+	
+	private String[] getVMExecArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) {
+		if (osgiLauncherPlugin.isPresent()) {
+			Xpp3Dom d = (Xpp3Dom) osgiLauncherPlugin.get().getConfiguration();
+			for (Xpp3Dom c : d.getChildren()) {
+				if( "exec.args".equals(c.getName()) ) {
+					String value = c.getValue();
+					return value.split(" ");
+				}
+			}
+		}
+		return null;
 	}
 
 	private Map<String, String> getVMArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) {
