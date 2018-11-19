@@ -22,6 +22,7 @@ import org.osgi.service.prefs.BackingStoreException;
 public class JFXWorkbenchPreferencePage extends PreferencePage implements IWorkbenchPreferencePage {
 
 	private Text scenebuilder;
+	private Text sdk;
 
 	public JFXWorkbenchPreferencePage() {
 	}
@@ -44,25 +45,50 @@ public class JFXWorkbenchPreferencePage extends PreferencePage implements IWorkb
 		parent = new Composite(parent, SWT.NONE);
 		parent.setLayout(new GridLayout(3, false));
 		
-		Label l = new Label(parent, SWT.NONE);
-		l.setText("SceneBuilder executable");
-		
-		scenebuilder = new Text(parent, SWT.BORDER);
-		scenebuilder.setText(InstanceScope.INSTANCE.getNode("org.eclipse.fx.ide.ui").get("scenebuilder.exe", ""));
-		scenebuilder.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		
-		final Button b = new Button(parent, SWT.PUSH);
-		b.setText("Browse ...");
-		b.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				FileDialog d = new FileDialog(b.getShell(),SWT.OPEN);
-				String file = d.open();
-				if( file != null ) {
-					scenebuilder.setText(file);
+		{
+			Label l = new Label(parent, SWT.NONE);
+			l.setText("SceneBuilder executable");
+			
+			scenebuilder = new Text(parent, SWT.BORDER);
+			scenebuilder.setText(InstanceScope.INSTANCE.getNode("org.eclipse.fx.ide.ui").get("scenebuilder.exe", ""));
+			scenebuilder.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+			
+			final Button b = new Button(parent, SWT.PUSH);
+			b.setText("Browse ...");
+			b.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					FileDialog d = new FileDialog(b.getShell(),SWT.OPEN);
+					String file = d.open();
+					if( file != null ) {
+						scenebuilder.setText(file);
+					}
 				}
-			}
-		});
+			});			
+		}
+		
+		{
+			Label l = new Label(parent, SWT.NONE);
+			l.setText("JavaFX 11+ SDK");
+			
+			sdk = new Text(parent, SWT.BORDER);
+			sdk.setText(InstanceScope.INSTANCE.getNode("org.eclipse.fx.ide.ui").get("javafx-sdk", ""));
+			sdk.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+			
+			
+			final Button b = new Button(parent, SWT.PUSH);
+			b.setText("Browse ...");
+			b.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					FileDialog d = new FileDialog(b.getShell(),SWT.OPEN);
+					String file = d.open();
+					if( file != null ) {
+						sdk.setText(file);
+					}
+				}
+			});		
+		}
 		
 		return parent;
 	}
@@ -75,6 +101,13 @@ public class JFXWorkbenchPreferencePage extends PreferencePage implements IWorkb
 			pref.put("scenebuilder.exe",text);
 		} else {
 			pref.remove("scenebuilder.exe");
+		}
+		
+		text = sdk.getText().trim();
+		if( ! text.isEmpty() ) {
+			pref.put("javafx-sdk", text.trim()); //$NON-NLS-1$
+		} else {
+			pref.remove("javafx-sdk"); //$NON-NLS-1$
 		}
 		
 		try {

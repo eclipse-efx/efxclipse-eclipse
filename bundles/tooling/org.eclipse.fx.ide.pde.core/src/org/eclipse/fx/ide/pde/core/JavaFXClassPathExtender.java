@@ -13,14 +13,18 @@ package org.eclipse.fx.ide.pde.core;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.fx.ide.jdt.core.FXVersion;
 import org.eclipse.fx.ide.jdt.core.FXVersionUtil;
 import org.eclipse.fx.ide.jdt.core.JavaFXCore;
@@ -186,6 +190,32 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		final IClasspathEntry javaCssExtEntry = getJavaCssExtEntry(version);
 		if (javaCssExtEntry != null) {
 			entries.add(javaCssExtEntry);
+		}
+		
+		if( version == FXVersion.FX11 ) {
+			String sdkPath = InstanceScope.INSTANCE.getNode("org.eclipse.fx.ide.ui").get("javafx-sdk", null);
+			if( sdkPath != null ) {
+				java.nio.file.Path path = Paths.get(sdkPath);
+				if( Files.exists(path) ) {
+					try {
+						entries.addAll(Files.list(path).filter( p -> p.getFileName().toString().endsWith(".jar")).map( p -> {
+							return JavaCore.newLibraryEntry( 
+									new Path(p.toAbsolutePath().toString()), 
+									new Path(p.getParent().resolve("src.zip").toAbsolutePath().toString()),
+									new Path("."),
+									new IAccessRule[]{ 
+											JavaCore.newAccessRule(new Path("javafx/*"),IAccessRule.K_ACCESSIBLE),
+											JavaCore.newAccessRule(new Path("com/sun/*"),IAccessRule.K_DISCOURAGED),
+											JavaCore.newAccessRule(new Path("netscape/javascript/*"),IAccessRule.K_DISCOURAGED)},
+									null,
+									false);
+						}).collect(Collectors.toList()));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
 		}
 
 		// FX8 classpath
