@@ -217,8 +217,8 @@ RobotTask {
 				vendor = "${BundleProject_bundleVendor}"
 				plugins = {
 					"${BundleProject_bundleId}",
-					"org.eclipse.fx.osgi" excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
-					"org.eclipse.fx.javafx" excluded-if "javascript" /# classloaderStrategy == 'ext'; #/
+					fragment "org.eclipse.fx.osgi" excluded-if "javascript" /# classloaderStrategy == 'ext' && BundleProject_EE != 'JavaSE-11'; #/,
+					"org.eclipse.fx.javafx" excluded-if "javascript" /# classloaderStrategy == 'ext' || BundleProject_EE == 'JavaSE-11'; #/
 				}
 			}
 			resources = {
@@ -268,7 +268,7 @@ RobotTask {
 						"org.eclipse.fx.runtime.e4fx.feature",
 						"org.eclipse.fx.runtime.e4fx.p2.feature" excluded-if "javascript" /# !p2Update; #/
 					}
-				} excluded-if "javascript" /# classloaderStrategy == 'ext'; #/,
+				} excluded-if "javascript" /# classloaderStrategy == 'ext' || BundleProject_EE == 'JavaSE-11'; #/,
 				ProductFileFeaturebase "${BundleProject_bundleId}.product" {
 					productName = "${BundleProject_productName}"
 					application = "org.eclipse.fx.ui.workbench.fx.application"
@@ -288,7 +288,28 @@ RobotTask {
 						"org.eclipse.fx.runtime.e4fx.feature",
 						"org.eclipse.fx.runtime.e4fx.p2.feature" excluded-if "javascript" /# !p2Update; #/
 					}
-				} excluded-if "javascript" /# classloaderStrategy != 'ext'; #/,
+				} excluded-if "javascript" /# classloaderStrategy != 'ext' || BundleProject_EE == 'JavaSE-11'; #/,
+				ProductFileFeaturebase "${BundleProject_bundleId}.product" {
+					productName = "${BundleProject_productName}"
+					application = "org.eclipse.fx.ui.workbench.fx.application"
+					version = "1.0.0"
+					programArgs = "-nosplash"
+					vmArgs = "-Dorg.osgi.framework.bundle.parent=ext"
+					startconfigurations = {
+						"org.eclipse.core.runtime" 					autostarted at  0,
+						"org.eclipse.equinox.common" 				autostarted at  2,
+						"org.eclipse.equinox.event"					autostarted at  2,
+						"org.eclipse.equinox.simpleconfigurator" 	autostarted at 	1,
+						"org.eclipse.equinox.ds" 					autostarted at  2,
+						"org.eclipse.osgi" 							autostarted at -1
+					}
+					features = {
+						"${BundleProject_bundleId}.feature",
+						"org.eclipse.fx.runtime.e4fx.feature",
+						"openjfx.standard.feature",
+						"org.eclipse.fx.runtime.e4fx.p2.feature" excluded-if "javascript" /# !p2Update; #/
+					}
+				} excluded-if "javascript" /# BundleProject_EE != 'JavaSE-11'; #/,
 				DynamicFile "${BundleProject_bundleId}.product.product.launch"
 					generated-from "bundleclass://org.eclipse.fx.ide.pde.ui/org.eclipse.fx.ide.pde.ui.templates.FeatureLaunchGenerator"
 					by "java"

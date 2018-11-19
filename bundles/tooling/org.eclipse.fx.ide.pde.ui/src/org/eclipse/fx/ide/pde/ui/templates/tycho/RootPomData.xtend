@@ -17,4 +17,5 @@ import java.util.List
 	String javaFXArtifactVersion; 
 	List<String> modulePaths;
 	List<Repository> repositories;
+	String EE;
 }

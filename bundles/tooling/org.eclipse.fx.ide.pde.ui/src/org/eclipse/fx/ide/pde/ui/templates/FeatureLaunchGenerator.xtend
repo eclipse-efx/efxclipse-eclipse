@@ -15,6 +15,11 @@ class FeatureLaunchGenerator implements Generator<DynamicFile> {
 		launchDef.setProjectName(file.variables.findFirst([e| e.key.equals("projectName")]).defaultValue);
 		launchDef.features.addAll(file.variables.findFirst([e| e.key.equals("feature")]).defaultValue.split(",").map[new LaunchFeature(it.trim)]);
 		
+		if( data.get("BundleProject_EE") == "JavaSE-11" ) {
+			launchDef.features.add(new LaunchFeature("openjfx.standard.feature"));
+			launchDef.classloaderStrategy = null;
+		}
+		
 		return new ByteArrayInputStream(generate(launchDef).toString.bytes);
 	}
 	

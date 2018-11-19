@@ -32,7 +32,7 @@ class RootPomGenerator implements Generator<DynamicFile> {
 					name,
 					groupId,
 					artifactId,
-					null, null, null, null,toPomVersion(version),"1.0.0","4.11","1.8.4","4.2","1.0.0","2.2.0-SNAPSHOT",modules,repos); //FIXME Versions based on release!!!
+					null, null, null, null,toPomVersion(version),"1.0.0","4.11","1.8.4","4.2","1.0.0","2.2.0-SNAPSHOT",modules,repos,data.get("BundleProject_EE") + ""); //FIXME Versions based on release!!!
 
 		return new ByteArrayInputStream(generate(pomdata).toString.bytes);
 	}
@@ -126,14 +126,47 @@ class RootPomGenerator implements Generator<DynamicFile> {
 					<version>${tycho-version}</version>
 					<configuration>
 						<encoding>UTF-8</encoding>
-						<source>1.8</source>
-						<target>1.8</target>
+						<source>«IF data.EE == "JavaSE-11"»11«ELSE»1.8«ENDIF»</source>
+						<target>«IF data.EE == "JavaSE-11"»11«ELSE»1.8«ENDIF»</target>
 						<extraClasspathElements>
-							<extraClasspathElement>
-								<groupId>javafx</groupId>
-								<artifactId>javafx.mvn</artifactId>
-								<version>«data.javaFXArtifactVersion»</version>
-							</extraClasspathElement>
+							«IF data.EE == "JavaSE-11"»
+								<extraClasspathElement>
+									<groupId>org.openjfx</groupId>
+									<artifactId>javafx-base</artifactId>
+									<version>11</version>
+								</extraClasspathElement>
+								<extraClasspathElement>
+									<groupId>org.openjfx</groupId>
+									<artifactId>javafx-graphics</artifactId>
+									<version>11</version>
+								</extraClasspathElement>
+								<extraClasspathElement>
+									<groupId>org.openjfx</groupId>
+									<artifactId>javafx-controls</artifactId>
+									<version>11</version>
+								</extraClasspathElement>
+								<extraClasspathElement>
+									<groupId>org.openjfx</groupId>
+									<artifactId>javafx-fxml</artifactId>
+									<version>11</version>
+								</extraClasspathElement>
+								<extraClasspathElement>
+									<groupId>org.openjfx</groupId>
+									<artifactId>javafx-media</artifactId>
+									<version>11</version>
+								</extraClasspathElement>
+								<extraClasspathElement>
+									<groupId>org.openjfx</groupId>
+									<artifactId>javafx-web</artifactId>
+									<version>11</version>
+								</extraClasspathElement>
+							«ELSE»
+								<extraClasspathElement>
+									<groupId>javafx</groupId>
+									<artifactId>javafx.mvn</artifactId>
+									<version>«data.javaFXArtifactVersion»</version>
+								</extraClasspathElement>
+							«ENDIF»
 						</extraClasspathElements>
 					</configuration>
 				</plugin>
