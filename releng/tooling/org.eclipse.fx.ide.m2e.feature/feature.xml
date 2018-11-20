@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.fx.ide.m2e.feature"
       label="m2e support"
-      version="3.4.1.qualifier">
+      version="3.5.0.qualifier">
 
    <description url="http://www.example.com/description">
       m2e integration for e(fx)clipse applications

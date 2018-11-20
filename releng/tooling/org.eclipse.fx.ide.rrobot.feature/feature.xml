@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.fx.ide.rrobot.feature"
       label="e(fx)clipse - IDE - RRobot"
-      version="3.4.1.qualifier"
+      version="3.5.0.qualifier"
       provider-name="Eclipse.org">
 
    <description>
