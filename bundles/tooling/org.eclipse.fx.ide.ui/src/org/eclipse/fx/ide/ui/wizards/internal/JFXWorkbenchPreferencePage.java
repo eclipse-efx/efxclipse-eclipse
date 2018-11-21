@@ -12,6 +12,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
@@ -81,7 +82,7 @@ public class JFXWorkbenchPreferencePage extends PreferencePage implements IWorkb
 			b.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					FileDialog d = new FileDialog(b.getShell(),SWT.OPEN);
+					DirectoryDialog d = new DirectoryDialog(b.getShell(),SWT.NONE);
 					String file = d.open();
 					if( file != null ) {
 						sdk.setText(file);
