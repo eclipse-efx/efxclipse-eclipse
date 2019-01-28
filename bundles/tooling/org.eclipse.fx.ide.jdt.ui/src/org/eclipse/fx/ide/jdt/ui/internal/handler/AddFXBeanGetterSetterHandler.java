@@ -49,9 +49,9 @@ import org.eclipse.jdt.core.dom.NodeFinder;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
+import org.eclipse.jdt.internal.core.manipulation.StubUtility;
 import org.eclipse.jdt.internal.corext.CorextMessages;
-import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility;
-import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility2;
+import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility2Core;
 import org.eclipse.jdt.internal.corext.dom.ASTNodes;
 import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
 import org.eclipse.jdt.internal.corext.refactoring.util.RefactoringASTParser;
@@ -362,14 +362,14 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 			setterContent = generateSetAccessContent(f, makeFinal, accessMethod, imports);
 		}
 
-		ASTNode insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
+		ASTNode insertion= StubUtility2Core.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, propertyContent , rewrite, insertion);
 
-		insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
+		insertion= StubUtility2Core.getNodeToInsertBefore(rewrite, sibling);
 		addNewAccessor(ownerType, f, getterContent , rewrite, insertion);
 
 		if( setterContent != null ) {
-			insertion= StubUtility2.getNodeToInsertBefore(rewrite, sibling);
+			insertion= StubUtility2Core.getNodeToInsertBefore(rewrite, sibling);
 			addNewAccessor(ownerType, f, setterContent , rewrite, insertion);
 		}
 	}
