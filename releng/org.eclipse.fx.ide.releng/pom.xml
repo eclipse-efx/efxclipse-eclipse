@@ -95,20 +95,30 @@
 
 	<repositories>
 		<repository>
-			<id>oxygen</id>
+			<id>efx-shared-runtime</id>
+			<layout>p2</layout>
+			<url>${efx_shared_runtime}</url>
+		</repository>
+		<repository>
+			<id>efx-runtime</id>
+			<layout>p2</layout>
+			<url>${efx_runtime}</url>
+		</repository>
+		<repository>
+			<id>2018-12</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/eclipse/updates/4.10/</url>
 		</repository>
 		<repository>
 			<id>xtext</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/</url>
+			<url>https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
 		</repository>
-		<repository>
+		<!-- repository>
 			<id>emf</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/emf/emf/updates/</url>
-		</repository>
+		</repository -->
 		<repository>
 			<id>wst</id>
 			<layout>p2</layout>
@@ -121,16 +131,6 @@
 			<url>http://download.eclipse.org/technology/m2e/releases/</url>
 		</repository>
 		
-		<repository>
-			<id>efx-shared-runtime</id>
-			<layout>p2</layout>
-			<url>${efx_shared_runtime}</url>
-		</repository>
-		<repository>
-			<id>efx-runtime</id>
-			<layout>p2</layout>
-			<url>${efx_runtime}</url>
-		</repository>
 	</repositories>
 
 	<pluginRepositories>
