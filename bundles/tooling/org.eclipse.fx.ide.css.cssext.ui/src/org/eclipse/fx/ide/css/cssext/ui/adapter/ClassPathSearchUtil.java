@@ -230,6 +230,9 @@ public class ClassPathSearchUtil {
 	
 	public static List<Entry> checkResource(IResource r) {
 		getLogger().debug("checkResource " + r);
+		if( r == null ) {
+			return Collections.emptyList();
+		}
 		SearchResourceVisitor v = new SearchResourceVisitor();
 		try {
 			r.accept(v);
