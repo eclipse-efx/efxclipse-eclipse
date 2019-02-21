@@ -75,9 +75,11 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 	private IVMInstall getVM(BundleDescription project) {
 		for( String e : project.getExecutionEnvironments() ) {
 			IExecutionEnvironment env = JavaRuntime.getExecutionEnvironmentsManager().getEnvironment(e);
-			IVMInstall vm = findVMForEnv(env);
-			if (vm != null) {
-				return vm;
+			if( env != null ) {
+				IVMInstall vm = findVMForEnv(env);
+				if (vm != null) {
+					return vm;
+				}
 			}
 		}
 		return null;
@@ -86,11 +88,11 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 
 	private IClasspathEntry getJavaCssExtEntry(FXVersion version) {
 		switch (version) {
-		case FX2: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX2_BUNDLE_NAME);
-		case FX8: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
-		case FX9: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
+			case FX2: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX2_BUNDLE_NAME);
+			case FX8: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
+			case FX9: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
+			default: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
 		}
-		return null;
 	}
 
 	private static IClasspathEntry getBundleAsEntryByName(String name) {
@@ -183,6 +185,7 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 
 		final IVMInstall vm = getVM(project);
 		final FXVersion version = FXVersionUtil.getFxVersion(vm);
+		
 		if( DEBUG ) {
 			System.err.println("JavaFXClasspathExtender - The javafx version is: " + version);
 		}
