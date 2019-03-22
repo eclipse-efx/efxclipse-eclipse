@@ -227,7 +227,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 
 					boolean suppress = node.getText().contains("@SuppressWarning"); //$NON-NLS-1$
 
-					if( ! PREDEFINED_VAR_PROPS.contains(property.getName()) ) {
+					if( ! PREDEFINED_VAR_PROPS.contains(property.getName()) && !property.getName().startsWith("-var") ) {
 						warning("\""+property.getName()+"\" is not supported by the given selectors", CssDslPackage.Literals.CSS_DECLARATION__PROPERTY);
 					}
 				}
