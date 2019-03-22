@@ -198,7 +198,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 			ICompositeNode node = NodeModelUtils.getNode(dec.getProperty());
 
 			boolean suppress = node.getText().contains("@SuppressWarning");
-			if( ! suppress && ! PREDEFINED_VAR_PROPS.contains(property.getName()) ) {
+			if( ! suppress && ! PREDEFINED_VAR_PROPS.contains(property.getName()) && !property.getName().startsWith("-var") ) { //$NON-NLS-1$
 				warning("Unknown property: \""+property.getName()+"\"", property, CssDslPackage.Literals.CSS_PROPERTY__NAME);
 			}
 		}
