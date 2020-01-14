@@ -20,6 +20,7 @@ import java.util.Set;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.zip.ZipFile;
 
 import org.apache.maven.artifact.Artifact;
@@ -41,6 +42,7 @@ import org.eclipse.fx.core.SystemUtils;
 import org.eclipse.jdt.core.IJavaModel;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.launching.ExecutionArguments;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
@@ -113,18 +115,26 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 			System.err.println("NOT FOUND");
 		}
 	}
-	
-	private String[] getVMExecArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) {
+
+	private String[] getVMExecArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) throws CoreException {
+		List<String> arguments = new ArrayList<>();
 		if (osgiLauncherPlugin.isPresent()) {
 			Xpp3Dom d = (Xpp3Dom) osgiLauncherPlugin.get().getConfiguration();
 			for (Xpp3Dom c : d.getChildren()) {
 				if( "exec.args".equals(c.getName()) ) {
 					String value = c.getValue();
-					return value.split(" ");
+					Stream.of(value.split(" ")).forEach(arguments::add);
 				}
 			}
 		}
-		return null;
+		
+		Optional<String> launchConfigVmArgsOpt = Optional.ofNullable(
+				(String) configuration.getAttributes().get(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS));
+		launchConfigVmArgsOpt.ifPresent(launchConfigVmArgs -> {
+			String[] launchConfigVMArguments = new ExecutionArguments(launchConfigVmArgs, "").getVMArgumentsArray(); //$NON-NLS-1$
+			Stream.of(launchConfigVMArguments).forEach(arguments::add);
+		});
+		return arguments.isEmpty() ? null : arguments.toArray(new String[arguments.size()]);
 	}
 
 	private Map<String, String> getVMArguments(Optional<Plugin> osgiLauncherPlugin, ILaunchConfiguration configuration) {
@@ -159,7 +169,7 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 	}
 
 	private String[] getProgramArgs(Optional<Plugin> osgiLauncherPlugin, Path configIni,
-			ILaunchConfiguration configuration) {
+			ILaunchConfiguration configuration) throws CoreException {
 		List<String> programArgs = new ArrayList<>();
 		programArgs.add("-configuration"); //$NON-NLS-1$
 		programArgs.add("file:" + configIni.toString()); //$NON-NLS-1$
@@ -176,6 +186,14 @@ public class MVNOSGiApplicationLaunchConfiguration extends LaunchConfigurationDe
 				}
 			}
 		}
+
+		Optional<String> launchConfigProgramArgsOpt = Optional.ofNullable(
+				(String) configuration.getAttributes().get(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS));
+		launchConfigProgramArgsOpt.ifPresent(launchConfigProgramArgs -> {
+			String[] launchConfigVMArguments = new ExecutionArguments("", launchConfigProgramArgs).getProgramArgumentsArray(); //$NON-NLS-1$
+			Stream.of(launchConfigVMArguments).forEach(programArgs::add);
+		});
+		
 		return programArgs.toArray(new String[0]);
 	}
 

@@ -17,7 +17,7 @@ import java.io.File
 import java.util.List
 import java.util.HashMap
 import java.util.ArrayList
-import org.apache.commons.lang.text.StrSubstitutor
+import org.apache.commons.lang3.text.StrSubstitutor
 import java.util.Map
 import org.eclipse.fx.ide.jdt.ui.internal.handler.AbstractAntHandler$BuildConfiguration
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask
