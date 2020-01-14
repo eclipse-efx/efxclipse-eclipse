@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.fx.ide.jdt.ui.internal.handler;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -243,11 +244,21 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 
 			return container;
 		}
+		
+		private static final int getAstLevelNotInlined() {
+			try {
+				Field f = ASTProvider.class.getDeclaredField("SHARED_AST_LEVEL");
+				return ((Integer)f.get(null)).intValue();
+			} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
+				throw new IllegalStateException(e);
+			}
+		}
 
 		@Override
 		protected void okPressed() {
 			try {
-				CompilationUnit astRoot = new RefactoringASTParser(ASTProvider.SHARED_AST_LEVEL).parse(this.type.getCompilationUnit(), true);
+				this.type.getCompilationUnit().getJavaProject();
+				CompilationUnit astRoot = new RefactoringASTParser(getAstLevelNotInlined()).parse(this.type.getCompilationUnit(), true);
 
 				final ICompilationUnit unit= this.type.getCompilationUnit();
 				final ASTRewrite astRewrite= ASTRewrite.create(astRoot.getAST());
