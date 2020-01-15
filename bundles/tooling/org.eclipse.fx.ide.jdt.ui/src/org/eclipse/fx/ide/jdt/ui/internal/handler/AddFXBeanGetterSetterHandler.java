@@ -54,6 +54,7 @@ import org.eclipse.jdt.internal.core.manipulation.StubUtility;
 import org.eclipse.jdt.internal.corext.CorextMessages;
 import org.eclipse.jdt.internal.corext.codemanipulation.StubUtility2Core;
 import org.eclipse.jdt.internal.corext.dom.ASTNodes;
+import org.eclipse.jdt.internal.corext.dom.IASTSharedValues;
 import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
 import org.eclipse.jdt.internal.corext.refactoring.util.RefactoringASTParser;
 import org.eclipse.jdt.internal.corext.util.CodeFormatterUtil;
@@ -247,7 +248,7 @@ public class AddFXBeanGetterSetterHandler extends AbstractHandler {
 		
 		private static final int getAstLevelNotInlined() {
 			try {
-				Field f = ASTProvider.class.getDeclaredField("SHARED_AST_LEVEL");
+				Field f = IASTSharedValues.class.getDeclaredField("SHARED_AST_LEVEL");
 				return ((Integer)f.get(null)).intValue();
 			} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
 				throw new IllegalStateException(e);
