@@ -1,5 +1,5 @@
 package org.eclipse.fx.ide.jdt.core;
 
 public enum FXVersion {
-	FX2, FX8, FX9, FX11, UNKNOWN
+	FX2, FX8, FX9, FX11, FX11PLUS, UNKNOWN
 }

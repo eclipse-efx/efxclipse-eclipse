@@ -195,7 +195,7 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 			entries.add(javaCssExtEntry);
 		}
 		
-		if( version == FXVersion.FX11 ) {
+		if( version == FXVersion.FX11 || version == FXVersion.FX11PLUS ) {
 			String sdkPath = InstanceScope.INSTANCE.getNode("org.eclipse.fx.ide.ui").get("javafx-sdk", null);
 			if( sdkPath != null ) {
 				java.nio.file.Path path = Paths.get(sdkPath);

@@ -29,6 +29,8 @@ public class FXVersionUtil {
 				return FXVersion.FX9;
 			} else if( javaVersion.startsWith("11") ) { //$NON-NLS-1$
 				return FXVersion.FX11;
+			} else {
+				return FXVersion.FX11PLUS;
 			}
 		}
 		return FXVersion.UNKNOWN;
