@@ -31,23 +31,29 @@ import org.eclipse.fx.ide.jdt.core.JavaFXCore;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTask;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.AntTasksFactory;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.ParametersFactory;
+import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXModuleInfoTemplate;
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectCtrlClassTemplate;
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectFXGraphTemplate;
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectFXMLTemplate;
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectMainClassTemplate;
 import org.eclipse.fx.ide.jdt.ui.internal.wizard.templates.FXProjectMainMobileClassTemplate;
+import org.eclipse.jdt.core.IClasspathAttribute;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.JavaPluginImages;
 import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
 import org.eclipse.jdt.internal.ui.util.ExceptionHandler;
 import org.eclipse.jdt.internal.ui.wizards.NewElementWizard;
 import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
+import org.eclipse.jdt.launching.IVMInstall;
+import org.eclipse.jdt.launching.IVMInstall2;
+import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.ui.IPackagesViewPart;
 import org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageOne;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -123,6 +129,7 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 		boolean res= super.performFinish();
 		if (res) {
 			final IJavaElement newElement= getCreatedElement();
+			projectData.projectName = fFirstPage.getProjectName();
 
 			IWorkingSet[] workingSets= fFirstPage.getWorkingSets();
 			if (workingSets.length > 0) {
@@ -140,14 +147,23 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 
 				IClasspathEntry[] currentFX = new IClasspathEntry[i];
 				System.arraycopy(current, 0, currentFX, 0, current.length);
-				currentFX[current.length] = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH);
+				if( isJavaModule(p) ) {
+					IClasspathAttribute moduleAttr = JavaCore.newClasspathAttribute(IClasspathAttribute.MODULE, "true"); //$NON-NLS-1$
+					currentFX[current.length] = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH,ClasspathEntry.NO_ACCESS_RULES,
+							new IClasspathAttribute[] { moduleAttr },
+							false);
+				} else {
+					currentFX[current.length] = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH,ClasspathEntry.NO_ACCESS_RULES,
+							ClasspathEntry.NO_EXTRA_ATTRIBUTES,
+							false);
+				}
 
 				if( projectData.mainApp.equals(NewJavaFXProjectWizardPageThree.MOBILE) ) {
 					currentFX[current.length+1] = JavaCore.newContainerEntry(JavaFXCore.MOBILE_CONTAINER_PATH);
 				}
 
 				p.setRawClasspath(currentFX, new NullProgressMonitor());
-			} catch (JavaModelException e1) {
+			} catch (CoreException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
@@ -248,6 +264,18 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 					mainClass.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
 					in.close();
 				}
+				
+				IVMInstall vm = JavaRuntime.getVMInstall(fSecondPage.getJavaProject());
+				if( vm == null ) {
+					vm = JavaRuntime.getDefaultVMInstall();
+				}
+				
+				if( isJavaModule(p) ) {
+					IFile moduleInfo = p.getProject().getWorkspace().getRoot().getFile(f.getPath().append("module-info.java"));
+					ByteArrayInputStream in = new ByteArrayInputStream(new FXModuleInfoTemplate().generateModuleInfo(projectData).toString().getBytes());
+					moduleInfo.create(in, IFile.FORCE|IFile.KEEP_HISTORY, null);
+					in.close();
+				}
 
 				if( ! projectData.declarativeUiType.equals("None") ) {
 					if( ! projectData.declarativeUiController.trim().isEmpty() ) {
@@ -285,6 +313,18 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 			});
 		}
 		return res;
+	}
+	private static boolean isJavaModule(IJavaProject project) throws CoreException {
+		IVMInstall vm = JavaRuntime.getVMInstall(project);
+		if( vm == null ) {
+			vm = JavaRuntime.getDefaultVMInstall();
+		}
+		
+		if( vm instanceof IVMInstall2 ) {
+			final String javaVersion = ((IVMInstall2) vm).getJavaVersion();
+			return ! javaVersion.startsWith("1.");
+		}
+		return false;
 	}
 
 	private IWorkbenchPart getActivePart() {
@@ -331,6 +371,7 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 	}
 
 	public static class ProjectData {
+		public String projectName = "MyApp";
 		public String mainApp = "Desktop";
 		public String packageName = "application";
 		public String declarativeUiType = "None";

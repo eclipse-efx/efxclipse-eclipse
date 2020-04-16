@@ -77,11 +77,11 @@ public class JavaFXClasspathContainerInitializer extends ClasspathContainerIniti
 
 	private static IClasspathEntry getCssExtClasspathEntry(IVMInstall i) {
 		switch (FXVersionUtil.getFxVersion(i)) {
-		case FX2: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX2_BUNDLE_NAME);
-		case FX8: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
-		case FX9: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME); //TODO Have there been changes in 9?
+			case FX2: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX2_BUNDLE_NAME);
+			case FX8: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
+			case FX9: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME); //TODO Have there been changes in 9?
+			default: return getBundleAsEntryByName(JavaFXCore.CSSEXT_FX8_BUNDLE_NAME);
 		}
-		return null;
 	}
 
 	private static IClasspathEntry getBundleAsEntryByName(String name) {
@@ -159,13 +159,13 @@ public class JavaFXClasspathContainerInitializer extends ClasspathContainerIniti
 
 
 	private static JavaFXContainer getNewContainer(IPath containerPath, IJavaProject project) {
-		final IClasspathEntry jfxLibEntry = BuildPathSupport.getJavaFXLibraryEntry(project);
+		final List<IClasspathEntry> jfxLibEntry = BuildPathSupport.getJavaFXLibraryEntry(project);
 		final IClasspathEntry cssExtEntry = getCssExtClasspathEntry(project);
 
 		final List<IClasspathEntry> entries = new ArrayList<>();
 
 		if (jfxLibEntry != null) {
-			entries.add(jfxLibEntry);
+			entries.addAll(jfxLibEntry);
 		}
 
 		if (cssExtEntry != null) {

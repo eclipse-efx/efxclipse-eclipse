@@ -11,12 +11,18 @@
 package org.eclipse.fx.ide.jdt.core.internal;
 
 import java.io.File;
-import java.util.Map;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.fx.core.log.Logger;
 import org.eclipse.fx.core.log.LoggerCreator;
 import org.eclipse.fx.ide.jdt.core.FXVersion;
@@ -27,8 +33,6 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.IVMInstall;
-import org.eclipse.jdt.launching.IVMInstall2;
-import org.eclipse.jdt.launching.IVMInstall3;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.LibraryLocation;
 
@@ -37,28 +41,73 @@ public class BuildPathSupport {
 
 	private static final Logger LOGGER = LoggerCreator.createLogger(BuildPathSupport.class);
 
-	public static IClasspathEntry getJavaFXLibraryEntry(IJavaProject project) {
-		IPath[] paths = getFxJarPath(project);
-		if( paths != null ) {
+	public static List<IClasspathEntry> getJavaFXLibraryEntry(IJavaProject project) {
+		FXVersion version = getFXVersion(project);
+		if( version == FXVersion.FX2 || version == FXVersion.FX8) {
+			IPath[] paths = getFxJarPath(project);
+			List<IClasspathEntry> rv = new ArrayList<>();
+			if( paths != null ) {
 
-			IPath jarLocationPath = paths[0];
-			IPath javadocLocation = paths[1];
-			IPath fxSource = paths[3];
+				IPath jarLocationPath = paths[0];
+				IPath javadocLocation = paths[1];
+				IPath fxSource = paths[3];
 
-			IClasspathAttribute[] attributes;
-			IAccessRule[] accessRules= { };
-			if (javadocLocation == null || !javadocLocation.toFile().exists()) {
-				attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, WEB_JAVADOC_LOCATION) };
-			} else {
-				attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString()) };
+				IClasspathAttribute[] attributes;
+				IAccessRule[] accessRules= { };
+				if (javadocLocation == null || !javadocLocation.toFile().exists()) {
+					attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, WEB_JAVADOC_LOCATION) };
+				} else {
+					attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString()) };
+				}
+
+				if( jarLocationPath.toFile().exists() ) {
+					rv.add(JavaCore.newLibraryEntry(jarLocationPath, fxSource, null, accessRules, attributes, false));
+				}
 			}
 
-			if( jarLocationPath.toFile().exists() ) {
-				return JavaCore.newLibraryEntry(jarLocationPath, fxSource, null, accessRules, attributes, false);
+			return rv;			
+		} else if( version == FXVersion.FX11 || version == FXVersion.FX11PLUS ) {
+			String sdkPath = InstanceScope.INSTANCE.getNode("org.eclipse.fx.ide.ui").get("javafx-sdk", null);
+			List<IClasspathEntry> entries = new ArrayList<>();
+			if( sdkPath != null ) {
+				java.nio.file.Path path = Paths.get(sdkPath);
+				if( Files.exists(path) ) {
+					try {
+						
+						entries.addAll(Files.list(path).filter( p -> p.getFileName().toString().endsWith(".jar")).map( p -> {
+							IClasspathAttribute moduleAttr = JavaCore.newClasspathAttribute(IClasspathAttribute.MODULE, "true"); //$NON-NLS-1$
+							return JavaCore.newLibraryEntry( 
+									new Path(p.toAbsolutePath().toString()), 
+									new Path(p.getParent().resolve("src.zip").toAbsolutePath().toString()),
+									new Path("."),
+									new IAccessRule[]{ 
+											JavaCore.newAccessRule(new Path("javafx/*"),IAccessRule.K_ACCESSIBLE),
+											JavaCore.newAccessRule(new Path("com/sun/*"),IAccessRule.K_DISCOURAGED),
+											JavaCore.newAccessRule(new Path("netscape/javascript/*"),IAccessRule.K_DISCOURAGED)},
+									new IClasspathAttribute[] { moduleAttr },
+									false);
+						}).collect(Collectors.toList()));
+					} catch (IOException e) {
+						throw new IllegalStateException();
+					}
+				}
 			}
+			return entries;
 		}
+		return Collections.emptyList();
+	}
+	
+	public static FXVersion getFXVersion(IJavaProject project) {
+		try {
+			IVMInstall i = JavaRuntime.getVMInstall(project);
+			if( i == null ) {
+				i = JavaRuntime.getDefaultVMInstall();
+			}
 
-		return null;
+			return FXVersionUtil.getFxVersion(i);
+		} catch (CoreException e) {
+			throw new IllegalStateException(e);
+		}
 	}
 
 	public static IPath[] getFxJarPath(IJavaProject project) {
