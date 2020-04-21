@@ -16,8 +16,11 @@ class FXModuleInfoTemplate {
 	def generateModuleInfo(ProjectData data) '''
 		module «data.projectName» {
 			requires javafx.controls;
+			«IF data.declarativeUiType != "None"»
+			requires javafx.fxml;
+			«ENDIF»
 			
-			opens «data.packageName» to javafx.graphics;
+			opens «data.packageName» to javafx.graphics, javafx.fxml;
 		}
 	'''
 }
