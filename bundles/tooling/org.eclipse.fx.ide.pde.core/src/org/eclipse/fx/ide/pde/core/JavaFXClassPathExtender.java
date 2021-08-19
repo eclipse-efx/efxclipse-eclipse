@@ -200,11 +200,19 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 			if( sdkPath != null ) {
 				java.nio.file.Path path = Paths.get(sdkPath);
 				if( Files.exists(path) ) {
+					
+					java.nio.file.Path srcZip;
+					if( ! Files.exists(path.resolve("src.zip")) ) {
+						srcZip = path.getParent().resolve("src.zip"); // since v17 the source is found in the parent of the lib dir
+					} else {
+						srcZip = path.resolve("src.zip");
+					}
+					
 					try {
 						entries.addAll(Files.list(path).filter( p -> p.getFileName().toString().endsWith(".jar")).map( p -> {
 							return JavaCore.newLibraryEntry( 
 									new Path(p.toAbsolutePath().toString()), 
-									new Path(p.getParent().resolve("src.zip").toAbsolutePath().toString()),
+									new Path(srcZip.toAbsolutePath().toString()),
 									new Path("."),
 									new IAccessRule[]{ 
 											JavaCore.newAccessRule(new Path("javafx/*"),IAccessRule.K_ACCESSIBLE),
