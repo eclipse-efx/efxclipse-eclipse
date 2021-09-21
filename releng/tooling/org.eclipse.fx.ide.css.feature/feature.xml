@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.fx.ide.css.feature"
       label="e(fx)clipse - IDE - CSS"
-      version="3.7.0.qualifier"
+      version="3.7.1.qualifier"
       provider-name="Eclipse.org"
       plugin="org.eclipse.fx.ide.ui">
 
