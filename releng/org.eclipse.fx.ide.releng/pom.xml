@@ -128,7 +128,7 @@
 		<repository>
 			<id>m2e</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/technology/m2e/releases/</url>
+			<url>http://download.eclipse.org/technology/m2e/releases/latest</url>
 		</repository>
 		
 	</repositories>
