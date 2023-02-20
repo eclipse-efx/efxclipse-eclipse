@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.databinding.DataBindingContext;
-import org.eclipse.core.databinding.beans.BeansObservables;
+import org.eclipse.core.databinding.beans.typed.BeanProperties;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
@@ -38,7 +38,7 @@ import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
-import org.eclipse.jface.databinding.swt.SWTObservables;
+import org.eclipse.jface.databinding.swt.typed.WidgetProperties;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -92,14 +92,14 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 		
 		final Button b = new Button(area, SWT.CHECK);
 		b.setText("Use custom definition");
-		IObservableValue useCustomObsModel = BeansObservables.observeDetailValue(master, "useCustom", Boolean.class);
-		ISWTObservableValue useCustomObsUI = SWTObservables.observeSelection(b);
+		IObservableValue useCustomObsModel = BeanProperties.value("useCustom").observeDetail(master);
+		ISWTObservableValue useCustomObsUI = WidgetProperties.buttonSelection().observe(b);
 		dbc.bindValue(useCustomObsUI, useCustomObsModel);
 		
 		
 		final Label l = new Label(area, SWT.NONE);
 		l.setEnabled(useCustom);
-		ISWTObservableValue lEnabled = SWTObservables.observeEnabled(l);
+		ISWTObservableValue lEnabled = WidgetProperties.enabled().observe(l);
 		dbc.bindValue(lEnabled, useCustomObsModel);
 		
 		l.setText("Computed Extensions:");
@@ -175,12 +175,12 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 		
 		extensionViewer.getTable().setHeaderVisible(true);
 		extensionViewer.setContentProvider(new ArrayContentProvider());
-		ISWTObservableValue vClasspathEnabled = SWTObservables.observeEnabled(extensionViewer.getControl());
+		ISWTObservableValue vClasspathEnabled = WidgetProperties.enabled().observe(extensionViewer.getControl());
 		dbc.bindValue(vClasspathEnabled, useCustomObsModel);
 		
 		final Label l2 = new Label(area, SWT.NONE);
 		l2.setEnabled(useCustom);
-		ISWTObservableValue l2Enabled = SWTObservables.observeEnabled(l2);
+		ISWTObservableValue l2Enabled = WidgetProperties.enabled().observe(l2);
 		dbc.bindValue(l2Enabled, useCustomObsModel);
 		l2.setText("User Extensions:");
 		
@@ -194,7 +194,7 @@ public class CSSEditorPropertyPage extends PropertyPage implements IWorkbenchPro
 			}
 		});
 		vUser.setContentProvider(new ArrayContentProvider());
-		ISWTObservableValue vUserEnabled = SWTObservables.observeEnabled(vUser.getControl());
+		ISWTObservableValue vUserEnabled = WidgetProperties.enabled().observe(vUser.getControl());
 		dbc.bindValue(vUserEnabled, useCustomObsModel);
 		
 		final IAction disable = new Action("disable") {

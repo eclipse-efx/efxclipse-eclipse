@@ -111,7 +111,7 @@ import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
-import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.jface.databinding.swt.typed.WidgetProperties;
 import org.eclipse.jface.databinding.viewers.ObservableMapCellLabelProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -803,7 +803,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 
 		this.dbc = new DataBindingContext();
 		IWidgetValueProperty textModify = WidgetProperties.text( SWT.Modify );
-		IWidgetValueProperty selChange = WidgetProperties.selection();
+		IWidgetValueProperty selChange = WidgetProperties.comboSelection();
 
 		{
 			Section section = this.toolkit.createSection( sectionParent, Section.DESCRIPTION | ExpandableComposite.TITLE_BAR | ExpandableComposite.TWISTIE | ExpandableComposite.EXPANDED );
@@ -1131,7 +1131,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart {
 		Composite sectionParent = scrolledForm.getBody();
 
 		IWidgetValueProperty textModify = WidgetProperties.text( SWT.Modify );
-		IWidgetValueProperty selChange = WidgetProperties.selection();
+		IWidgetValueProperty selChange = WidgetProperties.buttonSelection();
 
 		{
 			Section section = this.toolkit.createSection( sectionParent, Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED );

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.databinding.DataBindingContext;
-import org.eclipse.core.databinding.beans.BeanProperties;
+import org.eclipse.core.databinding.beans.typed.BeanProperties;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.fx.ide.fxml.Activator;
 import org.eclipse.fx.ide.fxml.wizards.template.FXMLElement;
@@ -31,8 +31,8 @@ import org.eclipse.jdt.core.search.IJavaSearchScope;
 import org.eclipse.jdt.core.search.SearchEngine;
 import org.eclipse.jdt.ui.IJavaElementSearchConstants;
 import org.eclipse.jdt.ui.JavaUI;
-import org.eclipse.jface.databinding.swt.WidgetProperties;
-import org.eclipse.jface.databinding.viewers.ViewerProperties;
+import org.eclipse.jface.databinding.swt.typed.WidgetProperties;
+import org.eclipse.jface.databinding.viewers.typed.ViewerProperties;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -123,7 +123,7 @@ public class FXMLWizardPage extends AbstractJDTElementPage<FXMLElement> {
 			l.setText(Messages.FXMLWizardPage_9);
 
 			Button b = new Button(parent, SWT.CHECK);
-			dbc.bindValue(WidgetProperties.selection().observe(b), BeanProperties.value("fxRoot").observe(getClazz())); //$NON-NLS-1$
+			dbc.bindValue(WidgetProperties.buttonSelection().observe(b), BeanProperties.value("fxRoot").observe(getClazz())); //$NON-NLS-1$
 		}
 	}
 

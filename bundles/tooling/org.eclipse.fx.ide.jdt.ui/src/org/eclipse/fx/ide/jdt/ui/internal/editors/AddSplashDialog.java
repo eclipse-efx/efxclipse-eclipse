@@ -29,9 +29,9 @@ import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Para
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.Splash;
 import org.eclipse.fx.ide.jdt.ui.internal.editors.model.anttasks.parameters.SplashMode;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
-import org.eclipse.jface.databinding.swt.WidgetProperties;
+import org.eclipse.jface.databinding.swt.typed.WidgetProperties;
 import org.eclipse.jface.databinding.viewers.IViewerValueProperty;
-import org.eclipse.jface.databinding.viewers.ViewerProperties;
+import org.eclipse.jface.databinding.viewers.typed.ViewerProperties;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.LabelProvider;
