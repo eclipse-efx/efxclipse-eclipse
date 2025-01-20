@@ -25,7 +25,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage;
 import org.eclipse.fx.ide.rrobot.model.bundle.FeatureProject;
-import org.eclipse.pde.internal.core.natures.PDE;
 
 
 @SuppressWarnings("restriction")
@@ -38,7 +37,7 @@ public class FeatureProjectHandler extends DefaultProjectHandler<FeatureProject>
 	@Override
 	protected IStatus customizeProject(IProgressMonitor monitor, IProject project, FeatureProject model) {
 		try {
-			addNatureToProject(project, PDE.FEATURE_NATURE, monitor);
+			addNatureToProject(project, org.eclipse.pde.internal.core.natures.FeatureProject.NATURE, monitor);
 		} catch (CoreException e) {
 			return new Status(IStatus.ERROR, PLUGIN_ID, "Unable to add nature");
 		}

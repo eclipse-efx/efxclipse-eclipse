@@ -27,10 +27,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.fx.ide.rrobot.model.bundle.BundlePackage;
 import org.eclipse.fx.ide.rrobot.model.bundle.BundleProject;
 import org.eclipse.jdt.core.IClasspathEntry;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.pde.internal.core.ClasspathComputer;
-import org.eclipse.pde.internal.core.natures.PDE;
+import org.eclipse.pde.internal.core.natures.PluginProject;
 
 
 public class BundleProjectHandler extends JDTProjectHandler<BundleProject> {
@@ -54,7 +52,7 @@ public class BundleProjectHandler extends JDTProjectHandler<BundleProject> {
 		}
 		
 		try {
-			addNatureToProject(project, PDE.PLUGIN_NATURE, monitor);
+			addNatureToProject(project, PluginProject.NATURE, monitor);
 		} catch (CoreException e) {
 			return new Status(IStatus.ERROR, PLUGIN_ID, "Unable to add nature", e);
 		}
