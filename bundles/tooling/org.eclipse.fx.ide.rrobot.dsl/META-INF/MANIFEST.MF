@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.antlr.runtime
 Import-Package: org.apache.log4j,
  org.osgi.framework;version="1.8.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.eclipse.fx.ide.rrobot.dsl;x-internal:=true,
  org.eclipse.fx.ide.rrobot.dsl.formatting;x-internal:=true,
  org.eclipse.fx.ide.rrobot.dsl.parseTreeConstruction;x-internal:=true,

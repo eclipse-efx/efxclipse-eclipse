@@ -49,7 +49,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jdt.annotation;bundle-version="2.0.0";resolution:=optional,
  org.eclipse.jdt.core.manipulation;bundle-version="1.11.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ClassPath: .
 Export-Package: org.eclipse.fx.ide.jdt.ui.internal;x-internal:=true,

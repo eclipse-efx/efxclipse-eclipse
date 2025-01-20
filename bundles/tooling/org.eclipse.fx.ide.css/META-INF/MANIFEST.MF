@@ -26,7 +26,7 @@ Import-Package: org.apache.commons.logging,
  org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
  org.osgi.framework;version="1.8.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.eclipse.fx.ide.css;x-friends:="org.eclipse.fx.ide.css.ui",
  org.eclipse.fx.ide.css.cssDsl;x-friends:="org.eclipse.fx.ide.css.ui",
  org.eclipse.fx.ide.css.cssDsl.impl;x-friends:="org.eclipse.fx.ide.css.ui",

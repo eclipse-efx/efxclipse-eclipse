@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.fx.ide.gmodel;bundle-version="2.3.0";visibility:=ree
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.eclipse.fx.ide.gmodel.ui.quickfix,
  org.eclipse.fx.ide.gmodel.ui.contentassist,
  org.eclipse.fx.ide.gmodel.ui.internal,

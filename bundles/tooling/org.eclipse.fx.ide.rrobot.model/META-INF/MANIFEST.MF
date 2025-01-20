@@ -6,7 +6,7 @@ Bundle-Version: 3.10.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.eclipse.fx.ide.rrobot.model.bundle;x-internal:=true,
  org.eclipse.fx.ide.rrobot.model.bundle.impl,
  org.eclipse.fx.ide.rrobot.model.bundle.util;x-internal:=true,
