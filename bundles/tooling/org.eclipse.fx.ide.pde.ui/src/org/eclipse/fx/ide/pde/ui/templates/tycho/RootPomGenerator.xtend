@@ -32,7 +32,7 @@ class RootPomGenerator implements Generator<DynamicFile> {
 					name,
 					groupId,
 					artifactId,
-					null, null, null, null,toPomVersion(version),"1.0.0","4.11","1.8.4","4.2","1.2.0","2.2.0-SNAPSHOT",modules,repos,data.get("BundleProject_EE") + ""); //FIXME Versions based on release!!!
+					null, null, null, null,toPomVersion(version),"4.0.10","4.11","1.8.4","4.2","1.2.0","2.2.0-SNAPSHOT",modules,repos,data.get("BundleProject_EE") + ""); //FIXME Versions based on release!!!
 
 		return new ByteArrayInputStream(generate(pomdata).toString.bytes);
 	}
@@ -103,7 +103,6 @@ class RootPomGenerator implements Generator<DynamicFile> {
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<resolver>p2</resolver>
 					<pomDependencies>consider</pomDependencies>
 					<environments>
 						<environment>
@@ -196,31 +195,6 @@ class RootPomGenerator implements Generator<DynamicFile> {
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit-version}</version>
-				<scope>test</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito-version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 
 </project>'''
 }

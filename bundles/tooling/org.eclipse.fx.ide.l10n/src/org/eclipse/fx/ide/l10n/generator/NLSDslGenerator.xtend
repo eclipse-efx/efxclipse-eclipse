@@ -70,22 +70,22 @@ class NLSDslGenerator implements IGenerator {
 	@org.eclipse.e4.core.di.annotations.Creatable
 	public class «nls.name»Registry extends org.eclipse.fx.core.text.AbstractTextRegistry<«nls.name»> {
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-number"] != null»
-		@javax.inject.Inject
+		@jakarta.inject.Inject
 		private org.eclipse.fx.core.text.NumberFormatter _number;
 		«ENDIF»
 
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-date"] != null»
-		@javax.inject.Inject
+		@jakarta.inject.Inject
 		private org.eclipse.fx.core.text.DateFormatter _date;
 		«ENDIF»
 
 		«IF nls.eAllContents.filter(typeof(RichVarPart)).findFirst[p|p.findFormatter == "-temporal"] != null»
-		@javax.inject.Inject
+		@jakarta.inject.Inject
 		private org.eclipse.fx.core.text.TemporalAccessorFormatter _temporal;
 		«ENDIF»
 
 		«FOR f : nls.formatterList»
-		@javax.inject.Inject
+		@jakarta.inject.Inject
 		private «f.classRef» cust_«f.name»;
 		«ENDFOR»
 
@@ -95,11 +95,11 @@ class NLSDslGenerator implements IGenerator {
 		])»
 		«val dummy = elements.addAll(nls.includedBundleList)»
 		«FOR b : elements»
-		@javax.inject.Inject
+		@jakarta.inject.Inject
 		private «(b.eContainer as NLS).package.name».«b.name»Registry bundle_«b.name»;
 		«ENDFOR»
 
-		@javax.inject.Inject
+		@jakarta.inject.Inject
 		public void updateMessages(@org.eclipse.e4.core.services.nls.Translation «nls.name» messages) {
 			super.updateMessages(messages);
 		}

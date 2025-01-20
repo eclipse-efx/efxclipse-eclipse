@@ -221,7 +221,6 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 						List<String> l = new ArrayList<String>();
 						l.addAll(Arrays.asList(model.getPluginBase().getId(),
 								"org.eclipse.fx.osgi",
-								"org.eclipse.fx.javafx",
 								"org.eclipse.fx.core.databinding",
 								"org.eclipse.fx.ui.databinding",
 								"org.eclipse.core.databinding",
