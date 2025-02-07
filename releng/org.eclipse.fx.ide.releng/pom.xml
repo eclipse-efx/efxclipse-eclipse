@@ -33,9 +33,9 @@
 		<junit-version>4.13.1</junit-version>
 		<mockito-version>1.8.4</mockito-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<efx_shared_runtime>http://download.eclipse.org/efxclipse/runtime-shared-nightly/site/</efx_shared_runtime>
+		<efx_shared_runtime>http://download.eclipse.org/efxclipse/runtime-shared-nightly/repository/</efx_shared_runtime>
 		<download-publish-path>/home/data/httpd/download.eclipse.org/efxclipse/updates-nightly</download-publish-path>
-		<efx_runtime>http://download.eclipse.org/efxclipse/runtime-nightly/site/</efx_runtime>
+		<efx_runtime>http://download.eclipse.org/efxclipse/runtime-nightly/repository/</efx_runtime>
 		<eclipse-repo.url>https://repo.eclipse.org/content/repositories/releases/</eclipse-repo.url>
 		<tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/efxclipse/org.eclipse.efxclipse.git</tycho.scmUrl>
 	</properties>
