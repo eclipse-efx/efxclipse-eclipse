@@ -18,10 +18,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<name>e(fx)clipse IDE build</name>
 
-	<prerequisites>
-		<maven>3.0</maven>
-	</prerequisites>
-
 	<groupId>org.eclipse.fx.ide</groupId>
 	<artifactId>releng</artifactId>
 	<version>3.11.0-SNAPSHOT</version>
@@ -272,18 +268,10 @@
 								<goal>plugin-source</goal>
 							</goals>
 						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho.extras</groupId>
-					<artifactId>tycho-source-feature-plugin</artifactId>
-					<!-- version>${tycho-version}</version -->
-					<executions>
 						<execution>
-							<id>source-feature</id>
-							<phase>package</phase>
+							<id>feature-source</id>
 							<goals>
-								<goal>source-feature</goal>
+								<goal>feature-source</goal>
 							</goals>
 						</execution>
 					</executions>
@@ -324,23 +312,6 @@
 						<groupId>org.eclipse.tycho</groupId>
 						<artifactId>target-platform-configuration</artifactId>
 						<version>${tycho-version}</version>
-						<configuration>
-							<includePackedArtifacts>false</includePackedArtifacts>
-						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.eclipse.tycho.extras</groupId>
-						<artifactId>tycho-pack200a-plugin</artifactId>
-						<version>${tycho-extras.version}</version>
-						<executions>
-							<execution>
-								<id>pack200-normalize</id>
-								<goals>
-									<goal>normalize</goal>
-								</goals>
-								<phase>verify</phase>
-							</execution>
-						</executions>
 					</plugin>
 					<plugin>
 						<groupId>org.eclipse.cbi.maven.plugins</groupId>
@@ -351,20 +322,6 @@
 								<id>sign</id>
 								<goals>
 									<goal>sign</goal>
-								</goals>
-								<phase>verify</phase>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.eclipse.tycho.extras</groupId>
-						<artifactId>tycho-pack200b-plugin</artifactId>
-						<version>${tycho-extras.version}</version>
-						<executions>
-							<execution>
-								<id>pack200-pack</id>
-								<goals>
-									<goal>pack</goal>
 								</goals>
 								<phase>verify</phase>
 							</execution>
