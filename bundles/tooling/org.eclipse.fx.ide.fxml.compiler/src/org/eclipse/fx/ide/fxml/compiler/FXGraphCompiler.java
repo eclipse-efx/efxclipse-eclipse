@@ -60,9 +60,13 @@ public class FXGraphCompiler {
 	}
 	
 	public void compileFXML(Injector injector, final String string, final String sourcePrefix, String outputPrefix , boolean debug) throws SAXException, IOException, ParserConfigurationException {
-		SAXParserFactory f = SAXParserFactory.newInstance();
-		f.setNamespaceAware(true);
-		SAXParser p = f.newSAXParser();
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		factory.setNamespaceAware(true);
+		factory.setFeature(javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING, true);
+		
+		SAXParser p = factory.newSAXParser();
+		p.setProperty(javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD, ""); //$NON-NLS-1$
+		p.setProperty(javax.xml.XMLConstants.ACCESS_EXTERNAL_SCHEMA, ""); //$NON-NLS-1$
 		
 		FXMLSaxHandler h = injector.getInstance(FXMLSaxHandler.class);
 		IFXMLFile fi = new IFXMLFile() {

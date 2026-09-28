@@ -55,7 +55,12 @@ public class FXMLLoader {
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			factory.setNamespaceAware(true);
+			factory.setFeature(javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
 			SAXParser parser = factory.newSAXParser();
+			parser.setProperty(javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD, "");
+			parser.setProperty(javax.xml.XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+
 			FXMLHandler handler = new FXMLHandler(file);
 			parser.parse(file.getContent(), handler);
 			return handler.model;

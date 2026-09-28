@@ -13,6 +13,7 @@
 package org.eclipse.fx.ide.fxml.refactoring;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -260,15 +261,21 @@ public class RenameJFXControllerParticipant extends RenameParticipant {
 				try {
 					DocumentBuilderFactory dbf = DocumentBuilderFactory
 							.newInstance();
-					DocumentBuilder db = dbf.newDocumentBuilder();
-					Document doc = db.parse(file.getContents());
-					List<String> l = Util.getImportedTypes(doc);
+					dbf.setFeature(javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING, true);
+					dbf.setAttribute(javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD, ""); //$NON-NLS-1$
+					dbf.setAttribute(javax.xml.XMLConstants.ACCESS_EXTERNAL_SCHEMA, ""); //$NON-NLS-1$
 
-					for (String imp : l) {
-						if (imp.startsWith(pack + "*") //$NON-NLS-1$
-								|| imp.startsWith(pack + oldName)) {
-							found = true;
-							break;
+					DocumentBuilder db = dbf.newDocumentBuilder();
+					try (InputStream contents = file.getContents()) {
+						Document doc = db.parse(contents);
+						List<String> l = Util.getImportedTypes(doc);
+
+						for (String imp : l) {
+							if (imp.startsWith(pack + "*") //$NON-NLS-1$
+									|| imp.startsWith(pack + oldName)) {
+								found = true;
+								break;
+							}
 						}
 					}
 				} catch (ParserConfigurationException e) {

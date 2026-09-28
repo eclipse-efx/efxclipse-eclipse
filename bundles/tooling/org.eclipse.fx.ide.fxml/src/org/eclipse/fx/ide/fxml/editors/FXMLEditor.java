@@ -92,7 +92,7 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 		}
 
 		try {
-			SAXParser p = SAXParserFactory.newInstance().newSAXParser();
+			SAXParser p = createSAXParser();
 			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
 				@Override
 				public void processingInstruction(String target, String data) throws SAXException {
@@ -130,7 +130,7 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 		final AtomicReference<String> ref = new AtomicReference<String>();
 
 		try {
-			SAXParser p = SAXParserFactory.newInstance().newSAXParser();
+			SAXParser p = createSAXParser();
 			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
 				@Override
 				public void processingInstruction(String target, String data) throws SAXException {
@@ -221,5 +221,16 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 	@Override
 	public String getPreviewSceneFXML() {
 		return null;
+	}
+
+	private static SAXParser createSAXParser() throws ParserConfigurationException, SAXException {
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		factory.setNamespaceAware(true);
+		factory.setFeature(javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+		SAXParser parser = factory.newSAXParser();
+		parser.setProperty(javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD, ""); //$NON-NLS-1$
+		parser.setProperty(javax.xml.XMLConstants.ACCESS_EXTERNAL_SCHEMA, ""); //$NON-NLS-1$
+		return parser;
 	}
 }
